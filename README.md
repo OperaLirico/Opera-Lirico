@@ -8,7 +8,7 @@
 
 ## 发布到 GitHub Pages
 
-1. 将本项目放入一个 GitHub 仓库，保留 `outputs/vocal_opportunities_app` 路径。
+1. 将本项目文件放在 GitHub 仓库根目录（本项目已按这种结构准备）。
 2. 在仓库 Settings → Pages → Build and deployment 中，将 Source 选为 **GitHub Actions**。
 3. 推送工作流后，在 Actions 中运行 **Daily scrape and publish**；成功后会生成公开网页链接。
 4. PWA 必须经 HTTPS 打开才能安装，GitHub Pages 会提供 HTTPS。
