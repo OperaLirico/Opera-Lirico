@@ -147,7 +147,7 @@ def main() -> None:
     data["catalogue_source"] = "Wikisource Categoria:Canti + curated starter works"
     data["items"] = items + added
     CATALOG.parent.mkdir(parents=True, exist_ok=True)
-    CATALOG.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    CATALOG.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
         f"Song catalogue: {len(items)} existing + {len(added)} new = {len(data['items'])} items; "
         f"next source cursor {data.get('scan_cursor', 0)}",
