@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch the 15 public Italian vocal-opportunity source pages with Scrapling."""
+"""Fetch public Italian vocal-opportunity pages with Scrapling."""
 
 from __future__ import annotations
 
@@ -29,6 +29,20 @@ SOURCES = [
     (13, "Tommaso Traetta Opera Festival", "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/"),
     (14, "CLIP Portofino", "https://www.portofinoclip.it/clip-2026/"),
     (15, "Concorso Francesco Morlacchi", "https://www.concorsomorlacchi.it/"),
+    (16, "Teatro La Fenice - 招募与选拔", "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/"),
+    (17, "Teatro Lirico di Cagliari - 招募与选拔", "https://www.teatroliricodicagliari.it/it/bandiegare/concorsieaudizioni.html"),
+    (18, "Accademia d'Arte Lirica di Osimo", "https://www.accademialiricaosimo.com/"),
+    (19, "Sipario Lirico APS - 试唱", "https://www.siparioliricoaps.it/audizioni/"),
+    (20, "Valsesia Musica - 声乐比赛", "https://www.valsesiamusica.com/sezione_canto_lirico.htm"),
+    (21, "Premio Fausto Ricci - 国际声乐比赛", "https://www.xxisecolo.org/faustoricci/opera.html"),
+    (22, "Aria d'Oro - 国际声乐比赛", "https://www.amatemerano.com/ii-competition-aria-d-oro/"),
+    (23, "Agnesi Opera Competition", "https://www.agnesioperacompetition.com/"),
+    (24, "Nicola Martinucci 国际歌剧比赛", "https://nicolamartinucciprize.com/"),
+    (25, "Norma Fantini Opera Contest", "https://www.normafantinioperacontest.it/"),
+    (26, "Renata Tebaldi 国际声乐比赛", "https://www.fondazionerenatatebaldi.org/"),
+    (27, "Sportello Spettacolo（演艺行业信息平台）", "https://www.sportellospettacolo.it/bandi-call/"),
+    (28, "Opera Mundus（歌剧比赛信息平台）", "https://www.operamundus.com/en/concorsi/"),
+    (29, "Liricamente（声乐行业信息平台）", "https://www.liricamente.it/audizioni-canto-lirico-cori-cantanti-lirici.asp"),
 ]
 
 KEYWORDS = re.compile(
@@ -98,7 +112,7 @@ def main() -> None:
         except Exception as exc:  # Keep going so one inaccessible site does not stop the batch.
             item["error"] = f"{type(exc).__name__}: {exc}"
         results.append(item)
-        print(f"[{number:02d}/15] {item['status']} {item['http_status']} {name} — {item['title'][:100]}", flush=True)
+        print(f"[{number:02d}/{len(SOURCES):02d}] {item['status']} {item['http_status']} {name} — {item['title'][:100]}", flush=True)
         time.sleep(1.2)
 
     json_path = out_dir / "sources.json"
