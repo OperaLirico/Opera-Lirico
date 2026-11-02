@@ -19,8 +19,8 @@ from zoneinfo import ZoneInfo
 API = "https://it.wikisource.org/w/api.php"
 USER_AGENT = "VocalItaliaCatalogue/1.0 (https://github.com/wl19971007-lgtm/leo)"
 CATALOG = Path(__file__).resolve().parent / "data" / "repertoire.json"
-BATCH_SIZE = 30
-MAX_NEW_PER_RUN = 12
+BATCH_SIZE = 12
+MAX_NEW_PER_RUN = 8
 MAX_TEXT_CHARS = 8000
 SKIP_TITLE = re.compile(r"^(Indice:|Pagina:|Autore:|Categoria:|Canti\s*\(|Canzoni\s*\(|Raccolta|Opere\s*\()", re.I)
 
@@ -29,7 +29,10 @@ def api(params: dict) -> dict:
     query = urlencode({"format": "json", "formatversion": 2, **params})
     request = Request(f"{API}?{query}", headers={"User-Agent": USER_AGENT})
     with urlopen(request, timeout=30) as response:
-        return json.loads(response.read().decode("utf-8"))
+        payload = json.loads(response.read().decode("utf-8"))
+    if "error" in payload:
+        raise RuntimeError(json.dumps(payload["error"], ensure_ascii=False))
+    return payload
 
 
 def category_titles() -> list[str]:
@@ -67,7 +70,6 @@ def fetch_pages(titles: list[str]) -> list[dict]:
         "titles": "|".join(titles),
         "explaintext": "1",
         "exsectionformat": "plain",
-        "exchars": str(MAX_TEXT_CHARS),
         "cllimit": "50",
     })
     return payload.get("query", {}).get("pages", [])
@@ -104,6 +106,7 @@ def main() -> None:
             # each title separately. This keeps daily traffic small and polite.
             time.sleep(1.5)
             pages = fetch_pages(batch)
+            print(f"Fetched {len(pages)} candidate pages in one batch.", flush=True)
             for page in pages:
                 title = str(page.get("title", "")).strip()
                 text = str(page.get("extract", "")).strip()
