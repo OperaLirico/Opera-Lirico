@@ -22,7 +22,7 @@ CATALOG = Path(__file__).resolve().parent / "data" / "repertoire.json"
 BATCH_SIZE = 30
 MAX_NEW_PER_RUN = 12
 MAX_TEXT_CHARS = 8000
-SKIP_TITLE = re.compile(r"^(Indice:|Pagina:|Autore:|Categoria:|Canti\\s*\\(|Canzoni\\s*\\(|Raccolta|Opere\\s*\\()", re.I)
+SKIP_TITLE = re.compile(r"^(Indice:|Pagina:|Autore:|Categoria:|Canti\s*\(|Canzoni\s*\(|Raccolta|Opere\s*\()", re.I)
 
 
 def api(params: dict) -> dict:
