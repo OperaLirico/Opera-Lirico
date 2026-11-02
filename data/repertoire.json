@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T18:22:20+01:00",
+  "generated_at": "2026-11-02T18:28:16+01:00",
   "catalogue_source": "Wikisource Categoria:Canti + curated starter works",
   "items": [
     {
@@ -116,5 +116,6 @@
       "scoreUrl": "https://imslp.org/wiki/Raccolta_per_canto_e_piano_1875-79_(Frontini,_Francesco_Paolo)",
       "downloadUrl": null
     }
-  ]
+  ],
+  "scan_cursor": 30
 }
