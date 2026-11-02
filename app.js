@@ -27,7 +27,7 @@ function renderMusicSearch(rawQuery){
  const target=$('#musicSearchResults');
  const query=rawQuery.trim();
  if(!query){
-   target.innerHTML='<div class="music-empty">输入歌名即可查看站内收录的歌词原文。曲目库每天自动扩充。</div>';
+   target.innerHTML='<div class="music-empty">输入歌名即可查看站内歌词原文。曲目库每天尝试从公开文本目录补充，未必涵盖你搜索的作品。</div>';
    return;
  }
  if(!repertoireLoaded){
@@ -40,7 +40,7 @@ function renderMusicSearch(rawQuery){
    return terms.some(term=>haystack.includes(term));
  });
  if(!matches.length){
-   target.innerHTML='<div class="music-empty"><strong>这首作品目前还没有收录。</strong><p>无需跳到其他网站：曲目库每天自动查找并整理新的公开音乐文本。请稍后再回来搜索。</p></div>';
+   target.innerHTML='<div class="music-empty"><strong>这首作品目前还没有收录。</strong><p>不会跳到其他网站。曲目库每天尝试从公开文本目录补充作品；这并不代表系统已单独搜索这首歌，收录后可直接在本站搜索。</p></div>';
    return;
  }
  target.innerHTML=matches.map(item=>`<article class="music-result">
