@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build a local searchable catalogue from public Italian Wikisource song texts.
+"""Build a local searchable catalogue from the Italian Wikisource song index.
 
-The job imports a small number of new pages per daily run, keeps source attribution,
-and never fetches sheet-music files. Text links remain attribution links; search
-results themselves are rendered from the locally published JSON.
+Only a few batched API requests run per daily job. The catalogue cursor is saved
+so successive days continue through the source list without repeatedly fetching
+the same pages. No score files are downloaded by this script.
 """
 from __future__ import annotations
 
@@ -19,9 +19,10 @@ from zoneinfo import ZoneInfo
 API = "https://it.wikisource.org/w/api.php"
 USER_AGENT = "VocalItaliaCatalogue/1.0 (https://github.com/wl19971007-lgtm/leo)"
 CATALOG = Path(__file__).resolve().parent / "data" / "repertoire.json"
+BATCH_SIZE = 30
 MAX_NEW_PER_RUN = 12
 MAX_TEXT_CHARS = 8000
-SKIP_TITLE = re.compile(r"^(Indice:|Pagina:|Autore:|Categoria:|Canti\s*\(|Canzoni\s*\(|Raccolta|Opere\s*\()", re.I)
+SKIP_TITLE = re.compile(r"^(Indice:|Pagina:|Autore:|Categoria:|Canti\\s*\\(|Canzoni\\s*\\(|Raccolta|Opere\\s*\\()", re.I)
 
 
 def api(params: dict) -> dict:
@@ -53,26 +54,23 @@ def category_titles() -> list[str]:
         continuation = payload.get("continue", {})
         if not continuation:
             break
+        time.sleep(1.5)
     return titles
 
 
-def fetch_text(title: str) -> tuple[str, list[str]]:
+def fetch_pages(titles: list[str]) -> list[dict]:
+    if not titles:
+        return []
     payload = api({
         "action": "query",
         "prop": "extracts|categories",
-        "titles": title,
+        "titles": "|".join(titles),
         "explaintext": "1",
         "exsectionformat": "plain",
         "exchars": str(MAX_TEXT_CHARS),
         "cllimit": "50",
     })
-    pages = payload.get("query", {}).get("pages", [])
-    if not pages:
-        return "", []
-    page = pages[0]
-    return str(page.get("extract", "")).strip(), [
-        item["title"].removeprefix("Categoria:") for item in page.get("categories", [])
-    ]
+    return payload.get("query", {}).get("pages", [])
 
 
 def normalize(value: str) -> str:
@@ -84,25 +82,38 @@ def main() -> None:
         data = json.loads(CATALOG.read_text(encoding="utf-8"))
         items = data.get("items", [])
     except Exception:
-        items = []
+        data, items = {}, []
 
+    cursor = int(data.get("scan_cursor", 0) or 0)
     known = {normalize(str(item.get("title", ""))) for item in items}
     added: list[dict] = []
     checked_at = datetime.now(ZoneInfo("Europe/Rome")).isoformat(timespec="seconds")
 
     try:
-        candidates = category_titles()
-        for title in candidates:
-            if len(added) >= MAX_NEW_PER_RUN:
-                break
-            if normalize(title) in known or SKIP_TITLE.search(title):
-                continue
-            try:
-                text, categories = fetch_text(title)
-                if len(text) < 80 or len(text) > MAX_TEXT_CHARS:
+        titles = category_titles()
+        candidates = [title for title in titles if not SKIP_TITLE.search(title)]
+        if not candidates:
+            data["scan_cursor"] = 0
+        else:
+            if cursor >= len(candidates):
+                cursor = 0
+            batch = candidates[cursor:cursor + BATCH_SIZE]
+            if len(batch) < BATCH_SIZE:
+                batch += candidates[:BATCH_SIZE - len(batch)]
+            # Fetch page text in one batched API request instead of requesting
+            # each title separately. This keeps daily traffic small and polite.
+            time.sleep(1.5)
+            pages = fetch_pages(batch)
+            for page in pages:
+                title = str(page.get("title", "")).strip()
+                text = str(page.get("extract", "")).strip()
+                key = normalize(title)
+                if not title or key in known or len(text) < 80 or len(text) > MAX_TEXT_CHARS:
                     continue
-                # The Wikisource Canti category is a public song-text index.
-                # Keep the original source page and its applicable license visible.
+                categories = [
+                    item["title"].removeprefix("Categoria:")
+                    for item in page.get("categories", [])
+                ]
                 url = "https://it.wikisource.org/wiki/" + quote(title.replace(" ", "_"), safe="/()'")
                 added.append({
                     "title": title,
@@ -121,23 +132,27 @@ def main() -> None:
                     "categories": categories,
                     "autoImported": True,
                 })
-                known.add(normalize(title))
-                time.sleep(0.4)
-            except Exception as exc:
-                print(f"Skip {title}: {type(exc).__name__}: {exc}", flush=True)
-                continue
+                known.add(key)
+                if len(added) >= MAX_NEW_PER_RUN:
+                    break
+            data["scan_cursor"] = cursor + len(batch)
+            if data["scan_cursor"] >= len(candidates):
+                data["scan_cursor"] = 0
     except Exception as exc:
-        # A source outage must not erase the already-published catalogue.
+        # Do not retry a throttled/failed batch. Keep the existing catalogue and
+        # cursor; the next scheduled run can resume after the rate limit window.
         print(f"Wikisource catalogue unavailable: {type(exc).__name__}: {exc}", flush=True)
 
-    data = {
-        "generated_at": checked_at,
-        "catalogue_source": "Wikisource Categoria:Canti + curated starter works",
-        "items": items + added,
-    }
+    data["generated_at"] = checked_at
+    data["catalogue_source"] = "Wikisource Categoria:Canti + curated starter works"
+    data["items"] = items + added
     CATALOG.parent.mkdir(parents=True, exist_ok=True)
-    CATALOG.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Song catalogue: {len(items)} existing + {len(added)} new = {len(data['items'])} items", flush=True)
+    CATALOG.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    print(
+        f"Song catalogue: {len(items)} existing + {len(added)} new = {len(data['items'])} items; "
+        f"next source cursor {data.get('scan_cursor', 0)}",
+        flush=True,
+    )
 
 
 if __name__ == "__main__":
