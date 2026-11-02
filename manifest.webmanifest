@@ -1,7 +1,7 @@
 {
-  "name": "声乐机会 Italia",
-  "short_name": "声乐机会",
-  "description": "意大利歌剧、声乐比赛与试唱机会",
+  "name": "意大利声乐现场",
+  "short_name": "声乐现场",
+  "description": "意大利歌剧角色招募、试唱和声乐比赛信息",
   "lang": "zh-CN",
   "start_url": "./",
   "scope": "./",
