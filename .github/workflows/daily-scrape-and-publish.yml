@@ -3,12 +3,14 @@ name: Daily scrape and publish
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - data/repertoire.json
   schedule:
     - cron: "15 6 * * *"
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -32,6 +34,15 @@ jobs:
         run: python scrape_sources.py
       - name: Update local song text catalogue
         run: python update_repertoire.py
+      - name: Save expanded song catalogue
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/repertoire.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update automatically collected song texts'
+            git push origin HEAD:main
+          fi
       - name: Prepare Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
