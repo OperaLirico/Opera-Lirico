@@ -32,15 +32,11 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Scrape public source pages
         run: python scrape_sources.py
-      - name: Update local song text catalogue
-        run: python update_repertoire.py
       - name: Save expanded song catalogue
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          # A user or another workflow may have advanced main after checkout.
-          # Base the published update on the latest catalogue and continue from
-          # its cursor instead of trying to push a stale generated JSON file.
+          # Start with the latest published catalogue and its scan cursor.
           git fetch origin main
           git checkout origin/main -- data/repertoire.json
           python update_repertoire.py
