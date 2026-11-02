@@ -12,19 +12,6 @@ const repertoire = [{"title":"Nessun dorma","aliases":["今夜无人入睡","今
 
 const repertoire = [{"title":"Nessun dorma","aliases":["今夜无人入睡","今夜无人入眠","Turandot","图兰朵"],"composer":"Giacomo Puccini","work":"《图兰朵》第三幕 · 咏叹调","voice":"男高音","summary":"无人入睡！公主在寒夜里仰望星辰。黎明来临时，主人公相信自己将赢得胜利。","textSource":"https://imslp.org/wiki/Turandot_(Puccini,_Giacomo)","score":"https://imslp.org/wiki/Turandot_(Puccini,_Giacomo)","lyrics":"Nessun dorma! Nessun dorma!\nTu pure, o Principessa,\nnella tua fredda stanza,\nguardi le stelle che tremano\nd'amore e di speranza!\n\nMa il mio mistero è chiuso in me,\nil nome mio nessun saprà!\nNo, no! Sulla tua bocca lo dirò,\nquando la luce splenderà!\n\nEd il mio bacio scioglierà\nil silenzio che ti fa mia!\n(Il nome suo nessun saprà...)\nE noi dovrem, ahimè, morir, morir!\n\nDilegua, o notte!\nTramontate, stelle!\nTramontate, stelle!\nAll'alba vincerò!\nVincerò! Vincerò!"},{"title":"Voi che sapete","aliases":["你们可知道","费加罗的婚礼","Le nozze di Figaro","Cherubino"],"composer":"Wolfgang Amadeus Mozart","work":"《费加罗的婚礼》第二幕 · 咏叹调","voice":"女中音 / 女低音","summary":"凯鲁比诺向女士们诉说初尝爱情的心情：欢喜与煎熬交替，让他辗转难安。","textSource":"https://it.wikisource.org/wiki/Le_nozze_di_Figaro/Atto_Secondo/Scena_terza","score":"https://imslp.org/wiki/Le_nozze_di_Figaro,_K.492_(Mozart,_Wolfgang_Amadeus)","lyrics":"Voi che sapete\nChe cosa è amor,\nDonne, vedete\nS’io l’ho nel cor.\n\nQuello ch’io provo\nVi ridirò;\nÈ per me nuovo,\nCapir nol so.\n\nSento un affetto\nPien di desir\nCh’ora è diletto,\nCh’ora è martir.\n\nGelo, e poi sento\nL’alma avvampar,\nE in un momento\nTorno a gelar.\n\nRicerco un bene\nFuori di me,\nNon so chi ’l tiene,\nNon so cos’è.\n\nSospiro e gemo\nSenza voler,\nPalpito e tremo\nSenza saper,\n\nNon trovo pace\nNotte né dì:\nMa pur mi piace\nLanguir così.\n\nVoi che sapete\nChe cosa è amor,\nDonne, vedete\nS’io l’ho nel cor."},{"title":"Ideale","aliases":["理想","Io ti seguii come iride di pace","托斯蒂"],"composer":"Francesco Paolo Tosti","work":"艺术歌曲","voice":"按版本选择","summary":"诗人追忆理想中的爱人，并在最后呼唤她归来，让生命重新迎来晨光。","textSource":"https://www.lieder.net/lieder/get_text.html?RF=0&TextId=5465","score":"https://imslp.org/wiki/Ideale_(Tosti,_Francesco_Paolo)","lyrics":"Io ti seguii come iride di pace\nLungo le vie del cielo:\nIo ti seguii come un’amica face\nDe la notte nel velo.\nE ti sentii ne la luce, ne l’aria,\nNel profumo dei fiori;\nE fu piena la stanza solitaria\nDi te, dei tuoi splendori.\n\nIn te rapito, al suon de la tua voce,\nLungamente sognai;\nE de la terra ogni affanno, ogni croce,\nIn quel giorno scordai.\nTorna, caro ideal, torna un istante\nA sorridermi ancora,\nE a me risplenderà, nel tuo sembiante,\nUna novella aurora."}];
 
-function renderMusicSearch(query){
- const results=$('#musicSearchResults');
- const q=(query||'').trim().toLocaleLowerCase();
- if(!q){results.innerHTML='<div class="music-empty">输入歌名，或点上方示例开始搜索。</div>';return;}
- const hit=repertoire.find(item=>[item.title,...item.aliases,item.composer,item.work].some(value=>value.toLocaleLowerCase().includes(q)||q.includes(value.toLocaleLowerCase())));
- if(!hit){const search=encodeURIComponent(query.trim());results.innerHTML='<div class="music-empty">暂未收录这首作品的歌词。<br><a target="_blank" rel="noopener" href="https://it.wikisource.org/wiki/Speciale:Ricerca?search='+search+'">在意大利文 Wikisource 搜索文本 ↗</a><br><a target="_blank" rel="noopener" href="https://imslp.org/index.php?title=Special:Search&search='+search+'">在 IMSLP 搜索乐谱 ↗</a></div>';return;}
- results.innerHTML='<article class="music-result"><div class="music-result-meta">'+esc(hit.composer)+' · '+esc(hit.work)+' · '+esc(hit.voice)+'</div><h3>'+esc(hit.title)+'</h3><p class="music-summary">'+esc(hit.summary)+'</p><h4>歌词原文</h4><pre class="music-lyrics">'+esc(hit.lyrics)+'</pre><p class="music-source">文本出处：<a target="_blank" rel="noopener" href="'+esc(hit.textSource)+'">查看来源 ↗</a></p><div class="music-score"><div><strong>乐谱</strong><span>打开作品页，查看可用版本</span></div><a class="card-link" target="_blank" rel="noopener" href="'+esc(hit.score)+'">查看乐谱 ↗</a></div></article>';
-}
-$('#musicSearchForm').addEventListener('submit',event=>{event.preventDefault();renderMusicSearch($('#musicSearchInput').value);});
-$('#musicSearchInput').addEventListener('input',event=>{if(!event.target.value.trim())renderMusicSearch('');});
-document.querySelectorAll('.search-chip').forEach(button=>button.addEventListener('click',()=>{$('#musicSearchInput').value=button.dataset.query;renderMusicSearch(button.dataset.query);}));
-renderMusicSearch('');
-
 function esc(text=''){return String(text).replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]));}
 function renderMusicSearch(rawQuery){
  const target=$('#musicSearchResults');
@@ -48,7 +35,7 @@ function renderMusicSearch(rawQuery){
    <div class="music-result-top"><span class="music-kind">${esc(item.kind)}</span><span class="music-voice">${esc(item.voice)}</span></div>
    <h3>${esc(item.title)}</h3>
    <p class="music-byline">${esc(item.composer)} · ${esc(item.work)}</p>
-   <div class="music-text"><div class="music-text-label">歌词原文 · 意大利语</div><p class="lyrics">${esc(item.text).replaceAll('\\n','<br>')}</p></div>
+   <div class="music-text"><div class="music-text-label">歌词原文 · 意大利语</div><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div>
    <p class="music-meaning"><strong>大意：</strong>${esc(item.summary)}</p>
    <div class="music-score"><div><span class="music-text-label">乐谱</span><p>在 IMSLP 查看可用版本、声部和下载选项。</p></div><a href="${esc(item.scoreUrl)}" target="_blank" rel="noopener">查看乐谱 ↗</a></div>
    <div class="music-source"><a href="${esc(item.textSource)}" target="_blank" rel="noopener">文本出处：${esc(item.textSourceName)} ↗</a></div>
