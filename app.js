@@ -50,7 +50,7 @@ function renderMusicSearch(rawQuery){
    <div class="music-text"><div class="music-text-label">歌词原文 · 意大利语</div><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div>
    <p class="music-meaning"><strong>大意：</strong>${esc(item.summary)}</p>
    <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'本站提供已核验的可下载版本。':'本站暂未收录可合法直接下载的谱子；找到可站内提供的版本后会在此显示下载按钮。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':'<span class="score-unavailable">暂无站内下载</span>'}</div>
-   <div class="music-source"><span>文本出处：<a href="${esc(item.textSource)}" target="_blank" rel="noopener">${esc(item.textSourceName||'Wikisource')} ↗</a> · 许可与出处以来源页为准</span></div>
+   <div class="music-source"><span>文本出处：${esc(item.textSourceName||'公开文本来源')} · 本文已收录在本站，搜索和阅读无需跳转。</span></div>
  </article>`).join('');
 }
 function formatDate(iso){return new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(iso));}
