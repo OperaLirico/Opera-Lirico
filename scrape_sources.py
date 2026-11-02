@@ -37,10 +37,34 @@ KEYWORDS = re.compile(
     r"2026|2027|chius[oa]|apert[oa]",
     re.IGNORECASE,
 )
+DEADLINE_RE = re.compile(r"scadenz|entro|termine|iscrizion|apert[oa]|chius[oa]|deadlin|application", re.IGNORECASE)
+ANNOUNCEMENT_RE = re.compile(r"audizion|concor|bando|selezion|candidat|casting", re.IGNORECASE)
+DATE_RE = re.compile(r"\b(?:\d{1,2}[./-]\d{1,2}[./-]20\d{2}|\d{1,2}\s+[a-zà-ÿ]+\s+20\d{2}|20\d{2})\b", re.IGNORECASE)
+GENERIC_LINES = {"coro", "concorso", "audizioni", "audizione", "bando", "news", "home", "privacy", "cookie"}
 
 
 def clean_line(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
+
+
+def rank_relevant_lines(lines: list[str]) -> list[str]:
+    ranked: list[tuple[int, int, str]] = []
+    for index, line in enumerate(lines):
+        if not KEYWORDS.search(line) or line.casefold() in GENERIC_LINES:
+            continue
+        if len(line) < 22 and not DATE_RE.search(line):
+            continue
+        score = 0
+        if DEADLINE_RE.search(line):
+            score += 5
+        if ANNOUNCEMENT_RE.search(line):
+            score += 3
+        if DATE_RE.search(line):
+            score += 2
+        if re.search(r"soprano|mezzosoprano|contralto|tenore|baritono|basso|ruolo|young artist", line, re.IGNORECASE):
+            score += 1
+        ranked.append((-score, index, line))
+    return [line for _, _, line in sorted(ranked)[:15]]
 
 
 def main() -> None:
@@ -70,7 +94,7 @@ def main() -> None:
             text = response.get_all_text(separator="\n") or ""
             lines = [clean_line(line) for line in text.splitlines()]
             lines = [line for line in lines if line]
-            item["relevant_lines"] = [line for line in lines if KEYWORDS.search(line)][:15]
+            item["relevant_lines"] = rank_relevant_lines(lines)
         except Exception as exc:  # Keep going so one inaccessible site does not stop the batch.
             item["error"] = f"{type(exc).__name__}: {exc}"
         results.append(item)
