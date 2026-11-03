@@ -125,6 +125,7 @@ def main() -> None:
                     "work": "Wikisource · Canti",
                     "voice": "待分类",
                     "kind": "声乐文本",
+                    "language": "it",
                     "text": text,
                     "summary": "每日目录自动收录的声乐文本，曲种与声部尚未人工核对。",
                     "textSource": url,
