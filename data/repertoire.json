@@ -19,7 +19,8 @@
       "textSource": "https://imslp.org/wiki/Turandot_(Puccini,_Giacomo)",
       "textSourceName": "IMSLP 作品页",
       "scoreUrl": "https://imslp.org/wiki/Turandot_(Puccini,_Giacomo)",
-      "downloadUrl": null
+      "downloadUrl": null,
+      "language": "it"
     },
     {
       "title": "Voi che sapete",
@@ -38,7 +39,8 @@
       "textSource": "https://it.wikisource.org/wiki/Le_nozze_di_Figaro/Atto_Secondo/Scena_terza",
       "textSourceName": "Wikisource 原文",
       "scoreUrl": "https://imslp.org/wiki/Le_nozze_di_Figaro,_K.492_(Mozart,_Wolfgang_Amadeus)",
-      "downloadUrl": null
+      "downloadUrl": null,
+      "language": "it"
     },
     {
       "title": "Libiamo ne’ lieti calici",
@@ -58,7 +60,8 @@
       "textSource": "https://it.wikisource.org/wiki/Pagina:La_traviata.djvu/7",
       "textSourceName": "Wikisource 原文",
       "scoreUrl": "https://imslp.org/wiki/La_traviata_(Verdi,_Giuseppe)",
-      "downloadUrl": null
+      "downloadUrl": null,
+      "language": "it"
     },
     {
       "title": "Casta Diva",
@@ -77,7 +80,8 @@
       "textSource": "https://it.wikisource.org/wiki/Casta_Diva",
       "textSourceName": "Wikisource 原文",
       "scoreUrl": "https://imslp.org/wiki/Norma_(Bellini,_Vincenzo)",
-      "downloadUrl": null
+      "downloadUrl": null,
+      "language": "it"
     },
     {
       "title": "Ideale",
@@ -95,7 +99,8 @@
       "textSource": "https://www.lieder.net/lieder/get_text.html?RF=0&TextId=5465",
       "textSourceName": "LiederNet 原文与出处",
       "scoreUrl": "https://imslp.org/wiki/Ideale_(Tosti,_Francesco_Paolo)",
-      "downloadUrl": null
+      "downloadUrl": null,
+      "language": "it"
     },
     {
       "title": "Quanto t’amo",
@@ -114,7 +119,8 @@
       "textSource": "https://it.wikisource.org/wiki/Quanto_t%27amo",
       "textSourceName": "Wikisource 原文",
       "scoreUrl": "https://imslp.org/wiki/Raccolta_per_canto_e_piano_1875-79_(Frontini,_Francesco_Paolo)",
-      "downloadUrl": null
+      "downloadUrl": null,
+      "language": "it"
     }
   ],
   "scan_cursor": 36
