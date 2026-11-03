@@ -23,12 +23,47 @@ function googleReadUrl(item){
   url.searchParams.set("op","translate");
   return url.toString();
 }
+function normalizeSearch(value=""){
+ return String(value).normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLocaleLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9\\u3400-\\u9fff]+/g," ").trim().replace(/\\s+/g," ");
+}
+function editDistance(a,b,limit){
+ const left=Array.from(a),right=Array.from(b);
+ if(Math.abs(left.length-right.length)>limit)return limit+1;
+ let previous=right.map((_,i)=>i+1);
+ previous.unshift(0);
+ for(let i=0;i<left.length;i++){
+   const current=[i+1];
+   let rowMin=current[0];
+   for(let j=0;j<right.length;j++){
+     current[j+1]=Math.min(current[j]+1,previous[j+1]+1,previous[j]+(left[i]===right[j]?0:1));
+     rowMin=Math.min(rowMin,current[j+1]);
+   }
+   if(rowMin>limit)return limit+1;
+   previous=current;
+ }
+ return previous[right.length];
+}
+function closeSearchWord(queryWord,candidateWord){
+ if(queryWord===candidateWord)return true;
+ if(queryWord.length<=3 || candidateWord.length<=3)return false;
+ const limit=queryWord.length<=6?1:2;
+ return editDistance(queryWord,candidateWord,limit)<=limit;
+}
+function fuzzyFieldMatch(query,field){
+ if(!query||!field)return false;
+ if(field.includes(query))return true;
+ const queryWords=query.split(" ");
+ const fieldWords=field.split(" ");
+ if(queryWords.some(word=>/[\\u3400-\\u9fff]/.test(word)))return false;
+ return queryWords.every(word=>fieldWords.some(candidate=>closeSearchWord(word,candidate)));
+}
 async function loadRepertoire(){
  try{
    const response=await fetch(new URL('data/repertoire.json',sourceRoot),{cache:'no-store'});
    if(!response.ok)throw new Error('HTTP '+response.status);
    const data=await response.json();
    repertoire=data.items||[];
+   $('#repertoireCount').textContent=`${repertoire.length} 首已收录`;
    repertoireLoaded=true;
    renderMusicSearch($('#musicSearchInput').value);
  }catch(error){
@@ -47,13 +82,14 @@ function renderMusicSearch(rawQuery){
    target.innerHTML='<div class="music-empty">曲目库正在更新，请稍候。</div>';
    return;
  }
- const terms=query.toLocaleLowerCase().split(/[\\/,，、;；|]+/).map(x=>x.trim()).filter(Boolean);
+ const terms=query.split(/[\\/,，、;；|]+/).map(x=>normalizeSearch(x)).filter(Boolean);
  const matches=repertoire.filter(item=>{
-   const haystack=[item.title,...(item.aliases||[]),item.composer,item.work,item.kind,item.text].filter(Boolean).join(' ').toLocaleLowerCase();
-   return terms.some(term=>haystack.includes(term));
+   const fields=[item.title,...(item.aliases||[]),item.composer,item.work,item.kind,item.text].filter(Boolean).map(normalizeSearch);
+   return terms.some(term=>fields.some(field=>fuzzyFieldMatch(term,field)));
+ });
  });
  if(!matches.length){
-   target.innerHTML='<div class="music-empty"><strong>这首作品目前还没有收录。</strong><p>不会跳到其他网站。曲目库每天尝试从公开文本目录补充作品；这并不代表系统已单独搜索这首歌，收录后可直接在本站搜索。</p></div>';
+   target.innerHTML='<div class="music-empty"><strong>暂未收录</strong><p>本站没有这首作品，目前无结果。</p></div>';
    return;
  }
  target.innerHTML=matches.map(item=>`<article class="music-result">
