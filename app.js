@@ -10,6 +10,19 @@ const opportunities = [
 
 let repertoire = [];
 let repertoireLoaded = false;function esc(text=''){return String(text).replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]));}
+const languageNames={it:"意大利语",fr:"法语",en:"英语",de:"德语",es:"西班牙语",pt:"葡萄牙语",ru:"俄语"};
+function languageLabel(code="it"){const key=String(code).toLowerCase().split("-")[0];return languageNames[key]||"原文语言";}
+function googleReadUrl(item){
+  if((item.text||"").length>5000)return "";
+  const language=String(item.language||"auto").toLowerCase().split("-")[0];
+  const url=new URL("https://translate.google.com/");
+  url.searchParams.set("sl",language);
+  url.searchParams.set("tl","zh-CN");
+  url.searchParams.set("hl","zh-CN");
+  url.searchParams.set("text",item.text||"");
+  url.searchParams.set("op","translate");
+  return url.toString();
+}
 async function loadRepertoire(){
  try{
    const response=await fetch(new URL('data/repertoire.json',sourceRoot),{cache:'no-store'});
@@ -47,9 +60,10 @@ function renderMusicSearch(rawQuery){
    <div class="music-result-top"><span class="music-kind">${esc(item.kind)}</span><span class="music-voice">${esc(item.voice)}</span></div>
    <h3>${esc(item.title)}</h3>
    <p class="music-byline">${esc(item.composer)} · ${esc(item.work)}</p>
-   <div class="music-text"><div class="music-text-label">歌词原文 · 意大利语</div><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div>
+   <div class="music-text"><div class="music-text-label">歌词原文 · ${esc(languageLabel(item.language))}</div><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div>
+   <div class="music-reading"><div><span class="music-text-label">泛读 · ${esc(languageLabel(item.language))}</span><p>在 Google 翻译中打开后，点击“听取原文”；会按这首作品的原文语言朗读。</p></div>${googleReadUrl(item)?'<a class="reading-link" href="'+esc(googleReadUrl(item))+'" target="_blank" rel="noopener noreferrer">Google 翻译朗读原文 ↗</a>':'<span class="score-unavailable">文本超过 Google 翻译单次朗读长度</span>'}</div>
    <p class="music-meaning"><strong>大意：</strong>${esc(item.summary)}</p>
-   <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'本站提供已核验的可下载版本。':'本站暂未收录可合法直接下载的谱子；找到可站内提供的版本后会在此显示下载按钮。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':'<span class="score-unavailable">暂无站内下载</span>'}</div>
+   <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'本站提供已核验的可下载版本。':'本站暂未托管乐谱 PDF。可以先查看 IMSLP 对应作品页；版本与地区版权请自行核对。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':item.scoreUrl?'<a class="score-imslp" href="'+esc(item.scoreUrl)+'" target="_blank" rel="noopener noreferrer">IMSLP 查看乐谱 ↗</a>':'<span class="score-unavailable">暂无乐谱链接</span>'}</div>
    <div class="music-source"><span>文本出处：${esc(item.textSourceName||'公开文本来源')} · 本文已收录在本站，搜索和阅读无需跳转。</span></div>
  </article>`).join('');
 }
