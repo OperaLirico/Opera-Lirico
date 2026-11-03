@@ -35,11 +35,11 @@
     
     <section class="music-section" id="music-library">
       <div class="section-head"><div><div class="eyebrow">ARIA · LIEDER</div><h2>搜歌名，查文本和乐谱</h2></div><span class="count-pill">歌词 · 乐谱</span></div>
-      <p class="music-intro">输入意大利文、英文或中文歌名。已收录作品在本站直接显示歌词；尚未收录时不会跳走；曲目库每天按目录尝试补充，不会针对这次输入即时联网搜索。</p>
+      <p class="music-intro">输入意大利文、英文或中文歌名。已收录作品在本站显示歌词，可用 Google 翻译听取原文，也可打开 IMSLP 查看乐谱。</p>
       <form id="musicSearchForm" class="music-search"><label class="music-search-field"><span aria-hidden="true">⌕</span><input id="musicSearchInput" type="search" placeholder="例如 Nessun dorma / 今夜无人入睡" autocomplete="off" aria-label="搜索咏叹调或艺术歌曲"></label><button type="submit">搜索</button></form>
       <div class="search-examples"><span>试试：</span><button type="button" class="search-chip" data-query="Nessun dorma">Nessun dorma</button><button type="button" class="search-chip" data-query="Voi che sapete">Voi che sapete</button><button type="button" class="search-chip" data-query="Ideale">Ideale</button></div>
       <div id="musicSearchResults" aria-live="polite"></div>
-      <p class="music-rights-note">歌词和搜索结果都在本站显示，不会跳转到维基百科或 IMSLP。曲目目录每天尝试扩充；乐谱只有在确认可合法提供并已保存到本站后才开放下载，目前还没有可站内下载的谱子。中文大意仅供理解歌词。</p>
+      <p class="music-rights-note">歌词和搜索结果在本站显示。朗读按钮会打开 Google 翻译，并按曲目语言设置原文；打开后点击“听取原文”。乐谱链接到对应 IMSLP 作品页。目前本站没有托管 PDF；只有确认具体版本可合法提供后，才会增加站内下载。</p>
     </section>
 
     <section class="notice" id="freshnessNotice">
@@ -58,6 +58,6 @@
     <div id="sources" class="source-list" aria-live="polite"></div>
     <footer><span>意大利声乐现场 · Italia</span><span>来源包括官网与专业平台，详情以主办方公告为准</span></footer>
   </main>
-  <script src="app.js?v=daily-clarity-4" defer></script>
+  <script src="app.js?v=read-imslp-5" defer></script>
 </body>
 </html>
