@@ -7,3 +7,5 @@
 
 
 .score-download{display:inline-flex;align-items:center;justify-content:center;padding:11px 16px;border-radius:999px;background:#173c35;color:#fff;text-decoration:none;font-size:13px;font-weight:700}.score-unavailable{color:#737c75;font-size:13px;padding:10px 0}.music-empty p{line-height:1.65}
+
+.music-reading{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:14px 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:#fbfaf6}.music-reading p{margin:5px 0 0;color:var(--muted);font-size:12px;line-height:1.55}.music-reading>a{flex-shrink:0;padding:10px 14px;border-radius:999px;background:#ece9df;color:var(--green);text-decoration:none;font-size:12px;font-weight:700}.music-reading>a:hover{text-decoration:underline}@media(max-width:600px){.music-reading{align-items:stretch;flex-direction:column}.music-reading>a{text-align:center}}
