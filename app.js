@@ -24,7 +24,7 @@ function googleReadUrl(item){
   return url.toString();
 }
 function normalizeSearch(value=""){
- return String(value).normalize("NFD").replace(/[\\u0300-\\u036f]/g,"").toLocaleLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9\\u3400-\\u9fff]+/g," ").trim().replace(/\\s+/g," ");
+ return String(value).normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLocaleLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9\u3400-\u9fff]+/g," ").trim().replace(/\s+/g," ");
 }
 function editDistance(a,b,limit){
  const left=Array.from(a),right=Array.from(b);
@@ -54,7 +54,7 @@ function fuzzyFieldMatch(query,field){
  if(field.includes(query))return true;
  const queryWords=query.split(" ");
  const fieldWords=field.split(" ");
- if(queryWords.some(word=>/[\\u3400-\\u9fff]/.test(word)))return false;
+ if(queryWords.some(word=>/[\u3400-\u9fff]/.test(word)))return false;
  return queryWords.every(word=>fieldWords.some(candidate=>closeSearchWord(word,candidate)));
 }
 async function loadRepertoire(){
@@ -82,11 +82,10 @@ function renderMusicSearch(rawQuery){
    target.innerHTML='<div class="music-empty">曲目库正在更新，请稍候。</div>';
    return;
  }
- const terms=query.split(/[\\/,，、;；|]+/).map(x=>normalizeSearch(x)).filter(Boolean);
+ const terms=query.split(/[\/,，、;；|]+/).map(x=>normalizeSearch(x)).filter(Boolean);
  const matches=repertoire.filter(item=>{
    const fields=[item.title,...(item.aliases||[]),item.composer,item.work,item.kind,item.text].filter(Boolean).map(normalizeSearch);
    return terms.some(term=>fields.some(field=>fuzzyFieldMatch(term,field)));
- });
  });
  if(!matches.length){
    target.innerHTML='<div class="music-empty"><strong>暂未收录</strong><p>本站没有这首作品，目前无结果。</p></div>';
