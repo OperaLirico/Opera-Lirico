@@ -55,6 +55,15 @@ GENERIC_LABEL = re.compile(r"(?i)(apri( il bando)?|leggi|scopri|qui|dettagli|vai
 # Page chrome and civic portals are reachable and keyword-rich, yet they are not
 # audition pages; keep them out of the source list.
 CHROME_RE = re.compile(r"sito istituzionale|clicca qui|compila|modulo di domanda|invia la domanda", re.IGNORECASE)
+# A theatre also advertises ushering, box office and back-office jobs. Those pages
+# are full of call-for-application wording but have nothing to do with singing.
+STAFF_RE = re.compile(
+    r"maschere|accoglienza|amministrativ|personale|biglietteria|tirocin|segreteria|addett|"
+    r"operatore|magazzino|cassier|autista|guardaroba",
+    re.IGNORECASE,
+)
+PORTAL_RE = re.compile(r"trasparenza|amm\.trasp|archivio/archiviobandi", re.IGNORECASE)
+OFFTOPIC_RE = re.compile(r"coreograf|danza contemporanea|concorso di scrittura|racconto breve", re.IGNORECASE)
 AUDITIONISH_RE = re.compile(
     r"audizion|audition|concors|concor|casting|bando|selezion|open ?call|premio|provino|cantanti|orchestra|coro",
     re.IGNORECASE,
@@ -164,14 +173,15 @@ def main() -> None:
     cursor: int = int(payload.get("cursor", 0))
     core_items: list[dict] = load(PAGE, [])
 
-    # Drop entries that earlier runs accepted too easily: share links, files,
-    # form pages and civic portals that only mention the word "bando".
+    # Drop anything that slipped through earlier rules (share links, files,
+    # job ads for ushers and box office, transparency portals).
     cleaned = [
         item for item in registry
         if not SKIP_HOST_RE.search(item.get("url", ""))
         and not SKIP_EXT_RE.search(item.get("url", ""))
         and not CHROME_RE.search(" ".join([item.get("source", ""), item.get("title", "")]))
-        and len(item.get("relevant_lines", [])) >= MIN_LINES
+        and not STAFF_RE.search(" ".join([item.get("source", ""), item.get("title", ""), item.get("url", "")]))
+        and not PORTAL_RE.search(item.get("url", ""))
     ]
     if len(cleaned) != len(registry):
         print(f"[extra] removed {len(registry) - len(cleaned)} non-source link(s)", flush=True)
@@ -247,6 +257,9 @@ def main() -> None:
             or len(probe["relevant_lines"]) < MIN_LINES
             or not AUDITIONISH_RE.search(blob)
             or CHROME_RE.search(probe.get("title", ""))
+            or STAFF_RE.search(blob)
+            or PORTAL_RE.search(target)
+            or OFFTOPIC_RE.search(blob)
         ):
             print(f"[extra] skip {probe['status']} {target[:70]}", flush=True)
             continue
