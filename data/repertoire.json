@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T15:32:29+01:00",
+  "generated_at": "2026-11-09T15:39:28+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -675,8 +675,378 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Hellelidens Sang",
+      "aliases": [],
+      "composer": "Carl Nielsen",
+      "work": "/lieder/get_settings.html?ComposerId=5177",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "da",
+      "text": "Helleliden aksler sin Kofte graa\nhun vil sig af Gaarde drage:\nHun haster saa haardt over Borge-Bro --\nOg ser sig kun lidet tilbage.\n\tNu løves mit håb i Lunde.\n\nHvi skal jeg tjene for Terne-løn\nog Linned og Sindel sømme?\nDet Naadsens brød bliver Sten i Mund\nog tunge bliver Nattens Drømme.\n\nMin Ridder er gangen i Elver-Dans\nbag skove og dybe Dale,\nmen jeg vil gaa til den Elvermøs Høj\nog fange min Elsker i Tale.\n\nJeg banker på med min røde Haand,\nden bløder af Tornenes Flænge:\nStat op, Hr. Ridder, og lad mig ind,\nI dvæled i Højen for længe!\n\nJeg drager en Tråd af min hvide Særk\nog syer mig fast til Jer Side,\nsaa tager jeg saks og den blanke Kniv\nde skal paa den Elvermø bide.\n\nStat op, Hr. Ridder, det lider mod Dag,\nden Hane gol over Vænge:\nI sover hos Helleliden nu --\ndér burde I sovet længe!\n\tNu løves mit håb i Lunde.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=76905",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Holger Henrik Herholdt Drachmann",
+      "settings": [
+        {
+          "composer": "Carl Nielsen",
+          "title": "/lieder/get_settings.html?ComposerId=5177",
+          "instrumentation": "voice and orchestra or piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "O doulce Main, Main belle. Main pollie",
+      "aliases": [],
+      "composer": "Wilhelm Killmayer",
+      "work": "/lieder/get_settings.html?ComposerId=4635",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "O doulce Main, Main belle. Main pollie,\nMain qui les cueurs fait lier et deslie,\nMain qui le mien a prins sans y toucher ;\nMain qui embrasse, et semond d'approcher ;\nMain qui à moy doibt ouvrir (ô main forte)\nQui fors à moy, à tous ferme la porte ;\nMain qui souvent en estraignant le doigt,\nSans dire mot, m'a dit je sçay bien quoy.\nMain qui la trousse et flesche, sans doubler,\nA Cupido seule pourrois oster ;\nDy-je la main que Cupido feroit\nMouvoir d'amour quand il la toucheroit.\nMain qui peult seule et le soir et matin\nLaisser la mienne approcher du tetin.\nMain qui permet s'il est besoing, qu'on puisse\nEn se jouant sçavoir quelle est la cuisse.\nMain qui permet par foys oultre passer,\nMais ce seroit assez pour trespasser.\nMain qui peult bien faire encore autre chose,\nQui plaist autant, mais que dire je n'ose.\nMain à qui seulle appartient qu'elle sçache\nCe qu'on ne voit, ce qu'on cherche, et qu'on cache :\nMain qui peult mieulx par escript asseurer\nQue l'œil par veoir, et bouche pour jurer.\nO digne main qui jusque au Ciel approche,\nMain qui fait honte à la neige et reproche,\nMain qui esteinct le neu de fermeté.\nMain qui chatouille en toute honnesteté,\nMain que Venus veult pour sienne advouer,\nMain qui du lut doulcement sçais joueur,\nMain quant Orpheus mesmes l'escouteroit,\nComme vaincu la harpe laisseroit,\nMain que Pallas choisiroit pour escrire,\nMain qui autant que la bouche peulx dire.\nMain qui trop plus d'heur envoye en absence,\nQue l'œil n'en peult octroyer en presence.\nMain fretillante, ostez vos gans, oster,\nEt vos plaisirs par vos doigts me comptez\nJ'entend ceux-là dont faut que soys temoing\nEt quant de toy, helas ! je serois loing,\nMais je te prie, fais responce à la mienne,\nMais r'escry moy, que soubdain je revienne.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=87269",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Claude Chappuys",
+      "settings": [
+        {
+          "composer": "Wilhelm Killmayer",
+          "title": "/lieder/get_settings.html?ComposerId=4635",
+          "instrumentation": "soprano, clarinet, violin, cello, and piano"
+        },
+        {
+          "composer": "Wilhelm Killmayer",
+          "title": "/lieder/get_settings.html?ComposerId=4635",
+          "instrumentation": "soprano and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "For the glory of adoring you",
+      "aliases": [],
+      "composer": "Giovanni Battista Bononcini",
+      "work": "/lieder/get_settings.html?ComposerId=3494",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "For the glory of adoring you\nI want to love you,\nO dear eyes [literally lights].\nLoving I will suffer,\nBut always I will love you,\nYes, yes, in my suffering,\nI will suffer,\nI will love you,\nDear eyes.\n\nWithout hope of delight,\nVain affection\nIt is to sigh,\nBut your sweet rays\nWho could ever gaze upon\nAnd not, and not love you?\nI will suffer,\nI will love you,\nDear eyes!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=21170",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Barbara Miller",
+      "settings": [
+        {
+          "composer": "Giovanni Battista Bononcini",
+          "title": "/lieder/get_settings.html?ComposerId=3494",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ambdós s’estimaven, però cap",
+      "aliases": [],
+      "composer": "Agathe Ursula Backer-Grøndahl",
+      "work": "/lieder/get_settings.html?ComposerId=3264",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "Ambdós s’estimaven, però cap\nvolia confessar-ho a l’altre;\nes miraven amb hostilitat,\ni volien morir-se d’amor.\n\nEs separaren finalment i es veien\nde tant en tant en somnis;\nfeia temps que eren morts,\ni amb prou feines ho sabien.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=160094",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Manuel Capdevila i Font",
+      "settings": [
+        {
+          "composer": "Agathe Ursula Backer-Grøndahl",
+          "title": "/lieder/get_settings.html?ComposerId=3264",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Rosa Bleiter",
+          "title": "/lieder/get_settings.html?ComposerId=10741",
+          "instrumentation": ""
+        },
+        {
+          "composer": "János Bókay",
+          "title": "/lieder/get_settings.html?ComposerId=3482",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Alas, I am forced",
+      "aliases": [],
+      "composer": "Alexander Utendal",
+      "work": "/lieder/get_settings.html?ComposerId=23869",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Alas, I am forced as I burn to be quiet\nFor as much as I want to extinguish it\nSo much more desire re-lights those fires\nWhich lie beneath the dying flame.\n\nSo happy am I (and that soothes me)\nTo suffer more than I can suffer\nAnd to endure the pain which grieves me;\nGrieves? No: which pleases me.\n\nThrough this sweet pain I adore the beauty\nWho, binding me with meek cruelty,\nLooses me from the bonds of ignorance.\n\nThrough her comes to me that powerful thought\nWhich makes my heart leap to heaven,\nWinged with faith, love and hope.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=111006",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by David Wyatt",
+      "settings": [
+        {
+          "composer": "Alexander Utendal",
+          "title": "/lieder/get_settings.html?ComposerId=23869",
+          "instrumentation": "bass and lute"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Winter",
+      "aliases": [],
+      "composer": "Wilhelm Killmayer",
+      "work": "/lieder/get_settings.html?ComposerId=4635",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "When unseen, and indeed past, are the images\n of the season, winter's duration comes.\n The field is empty, the view is milder,\n and storms blow round about and rain showers.\n\n Like a day of rest is the end of the year,\n like a questioning tone that seeks an answer,\n and then appears springtime's new becoming,\n and Nature shines with its glory on earth.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=8151",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by John Glenn Paton",
+      "settings": [
+        {
+          "composer": "Wilhelm Killmayer",
+          "title": "/lieder/get_settings.html?ComposerId=4635",
+          "instrumentation": "tenor and piano"
+        },
+        {
+          "composer": "Hermann Reutter",
+          "title": "/lieder/get_settings.html?ComposerId=5486",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Des Mädchens Wunsch und Geständnis",
+      "aliases": [],
+      "composer": "Carl Loewe",
+      "work": "/lieder/get_settings.html?ComposerId=1674",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "O nimm mich an als deine Magd!\nUnd dulde mich in deiner Nähe,\ndir dien' ich, wenn der Morgen tagt,\nbis ich den  Abendstern ersehe.\nIch sorge deine Häuslicheit,\nund deinen Wunsch und deinen willen\neil' ich, eh' ihn ein wort gebeut,\nso still, so freudig zu erfüllen.\n\nUnd kehrst du als des Tages Held\nvon deines Wirkens heil'gen Wegen\ndann heim aus dem Geräusch der Welt,\nwie freudig trät' ich dir entgegen.\nDich grüssend küßt  ich deine Hand,\nden Boden, dein Fuß betreten,\nnicht sag't ich, was mein Herz empfand,\ndu hörtest nur mein stilles Beten.\n\nSpricht nur dein Aug' ein freundlich Wort,\nwinkt mir dein Gruß nur einmal täglich,\ndann schleich \"ins Kämmerlein ich fort,\nveredelt und beglückt unsäglich.\nDie Sensucht, die mich zu dir zieht,\ndu kannst sie nimmermehr ergründen,\ndie Lieb\" in meiner Brust erglüht,\nso heiß mir niemals nachempfinden.\n\nIch fordre nicht, ersehne nur\nZu meinem Glück und meinem Frieden,\nzu folgen deines Daseins Spur,\nfern von der nicht’gen Welt geschieden.\nWohl gabst du mir, o theurer Mann,\nmit dir die höchste Königshabe,\nindess ich dir nichts bieten kann\nals meine Lieb' und Liedergabe.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=27251",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Thelyma Nelly Helene Branco",
+      "settings": [
+        {
+          "composer": "Carl Loewe",
+          "title": "/lieder/get_settings.html?ComposerId=1674",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Italian (Italiano)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "I, a poor young nun!",
+      "aliases": [],
+      "composer": "Johannes Brahms",
+      "work": "/lieder/get_settings.html?ComposerId=3535",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "[I]1, a poor young nun!\nOh mother! what have you done!\nSpring passed by the latticework,\n[Brought]2 me not a single floweret.\n\n[Ah,]3 how far, far down below [there]4\nTwo lambs amble in the valley!\nGodspeed, ye lambs, [you saw]5\nSpring for the first time!\n\n[Ah,]3 how far, far above [there]4\nTwo birdlets are flying peacefully!\nGodspeed, ye birdlets, you are flying\nToward the better homeland!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=208056",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Johannes Brahms",
+          "title": "/lieder/get_settings.html?ComposerId=3535",
+          "instrumentation": "duet"
+        },
+        {
+          "composer": "Zdenko Antonín Václav Fibich",
+          "title": "/lieder/get_settings.html?ComposerId=4025",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Heinrich von Herzogenberg",
+          "title": "/lieder/get_settings.html?ComposerId=4407",
+          "instrumentation": "low voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Dans l'aube la plus pure",
+      "aliases": [],
+      "composer": "Erkki Gustaf Melartin",
+      "work": "/lieder/get_settings.html?ComposerId=5028",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Dans l'aube la plus pure,\nlorsque les nuages virent au rouge,\nj'ai sur la houle pourpre,\nrencontré la reine des songes du printemps.\n\nJe la vis se balancer lentement,\nsur le rivage envahi de broussailles,\net tristement secouer son épaisse,\nlongue et brillante chevelure.\n\nLorsque la grive entonna dans le bois\nmal réveillé ses premières trilles,\nlorsque les vagues s'éveillèrent dans le détroit,\nelle ne se trouvait déjà plus là.\n\nOn dit d'un mortel qui rencontre\nainsi le surnaturel,\nque dans la vie il se heurtera\nà des dangers où qu'il aille.\n\nIl porte toutefois en lui un danger,\ndont il ne sera jamais libéré,\nla multitude de dangereuses images\nque l'on appelle rêverie.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=107766",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Pierre Mathé",
+      "settings": [
+        {
+          "composer": "Erkki Gustaf Melartin",
+          "title": "/lieder/get_settings.html?ComposerId=5028",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Pierre Mathé",
+          "title": "./get_texts.html?ContribId=613",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Am Rhein und beim Wein",
+      "aliases": [],
+      "composer": "Franz Ries",
+      "work": "/lieder/get_settings.html?ComposerId=10567",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Mit Rheinwein füllt den Becher,\nDer perlt so klar und frisch! --\nIch saß als wack'rer Zecher\nAn manchem Schenkentisch,\nSah weißen Wein und roten\nIn Kelchen spiegelblank,\nDoch nichts hat überboten,\nDer Heimat Göttertrank!\nDa bergen doch die Fässer\nDen allerbesten Wein:\nEs zecht [sich]1 nirgends besser\nAls an dem deutschen Rhein! --\n\n  Zum Lorbeer, zu den Palmen\nTrieb mich die Sehnsucht hin;\nIch sang der Minne Psalmen\nDer stolzen Römerin.\nBetrogen und verlassen!\nDas war des Liedes schluß. --\nKomm! laß dich fest umfassen\nZum heißen Liebeskuß,\nDu herrlichste der Rosen,\nDu rheinisch Mägdelein! --\nIch kenne kein süßres Kosen,\nAls an dem deutschen Rhein!\n\n  Schenkt ein den Saft der Trauben,\nDes Rheingaus goldnen Schatz!\nIn grünen Rebenlauben,\nDa ist der schönste Platz!\nEin wundersames Klingen\nDurch Thal und Hügel zieht,\nDes Stromes Wogen singen\nDen Chor zu meinem Lied.\nBei Sang und Kuß und Reben\nErblüht uns Seligsein!\nWill zechen, lieben, leben,\nAm Rhein, am deutschen Rhein!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=13719",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "",
+      "settings": [
+        {
+          "composer": "Franz Ries",
+          "title": "/lieder/get_settings.html?ComposerId=10567",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "I want to build a house",
+      "aliases": [],
+      "composer": "Gaetano Donizetti",
+      "work": "/lieder/get_settings.html?ComposerId=3898",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "I want to build a house surrounded by the sea\nmade of the feathers of a peacock.\nTralla la le la, tra la la la.\n\nOf gold and silver I will make the stairs\nand of precious stones, the balconies.\nTralla la le la, tra la la la.\n\nWhen my Nennalla leans out\neveryone will say, here comes the sun.\nTralla la le la, tra la la la.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=112783",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Laura Stanfield Prichard",
+      "settings": [
+        {
+          "composer": "Gaetano Donizetti",
+          "title": "/lieder/get_settings.html?ComposerId=3898",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Jusqu'à la mort",
+      "aliases": [],
+      "composer": "Barbara Strozzi",
+      "work": "/lieder/get_settings.html?ComposerId=15040",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Jusqu'à la mort\nJe promets de vous adorer,\nJe veux vous aimer\nMalgré le temps\nEt le destin,\nJusqu'à la mort.\nQue vos cheveux en anneaux\nQui magnifiquement resplendissent en masse d'or,\nSoient par la main de l'âge changés en argent ;\nLes ruines bien-aimées\nDe votre beauté que j'adore tant,\nQu'elles soient foulées par le temps résolu à les épuiser.\nQue toute lumière s'éteigne\nDans vos pupilles, et l'écarlate et le vermillon\nde vos joues et de vos lèvres dépérissent.\nPour la pensée\nQui nourrit l'âme\nLa palme sera gagnée\nPar l'archer aveugle.\nLe désir qui vous entoure,\nQui soupire toujours pour vous,\nAura plaisir à vous ouvrir la port de mon cœur\nJusqu'à la mort.\nQue ma foi soit troublée\nPar le poison des amants\nQui gouverne les larmes,\nL'origine de tout mal : la jalousie.\nJe servirai le tyran\nQui me condamne à mourir,\nParmi du martyre, parmi\nJusqu'à la mort.\nQue ma fidélité soit bouleversée\nPar l'ennemie de l'amour,\nLa mère de la douleur,\nLa folie de tout cœur : la séparation.\nEn l'adorant\nAvec tous mes vœux,\nVous me verrez tel Antée soulever plus fort\nJusqu'à la mort.\nQue la fortune\nM'amène loin,\nMais toujours en vain,\nElle rassemblera des soucis.\nLe fleuve d'oubli ne contient pas l'eau\nQui suffit pour tempérer l'incendie,\nCar pour éteindre le feu de mon amour\nIl faut une mer, et même une mer serait trop peu.\nJe sais que pour toutes les étincelles des amants\nToutes les mers ne suffiraient pas.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=120840",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "Barbara Strozzi",
+          "title": "/lieder/get_settings.html?ComposerId=15040",
+          "instrumentation": "soprano, continuo"
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Guy Laffaille",
+          "title": "./get_texts.html?ContribId=393",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 48
+  "lieder_position": 96
 }
