@@ -110,6 +110,28 @@ CITY_MAP = {
     "vibo valentia": "维博瓦伦蒂亚",
     "vicenza": "维琴察",
 }
+# Many conservatories are named after a composer, not a city: "Conservatorio
+# Alfredo Casella" lives in L'Aquila and the page title often mentions no place.
+NAME_CITY = {
+    "casella": "拉奎拉",
+    "cimarosa": "阿韦利诺",
+    "sala": "贝内文托",
+    "braga": "泰拉莫",
+    "toscanini": "里贝拉",
+    "scontrino": "特拉帕尼",
+    "cilea": "雷焦卡拉布里亚",
+    "perosi": "坎波巴索",
+    "mascagni": "拉斯佩齐亚",
+    "boccherini": "卢卡",
+    "paganini": "热那亚",
+    "rossini": "佩萨罗",
+    "bellini": "卡塔尼亚",
+    "donizetti": "贝加莫",
+    "bottesini": "克雷莫纳",
+    "galluppi": "卡坦扎罗",
+    "tartini": "的里雅斯特",
+    "maderna": "切塞纳",
+}
 
 
 def get_json(url: str) -> dict:
@@ -219,11 +241,18 @@ def city_for(text: str) -> str:
     for name, label in sorted(CITY_MAP.items(), key=lambda pair: -len(pair[0])):
         if re.search(rf"\b{re.escape(name)}\b", lowered):
             return label
+    for name, label in sorted(NAME_CITY.items(), key=lambda pair: -len(pair[0])):
+        if re.search(rf"\b{re.escape(name)}\b", lowered):
+            return label
     return "意大利"
 
 
 def title_school(title: str) -> str:
-    head = re.split(r"\s[|–—]\s|&#?\w+;", title, maxsplit=1)[0]
+    parts = [core.clean_line(part) for part in re.split(r"\s+[|–—]\s+|\s+-\s+", title) if part.strip()]
+    for part in parts:
+        if re.search(r"conservatorio|istituto", part, re.IGNORECASE):
+            return part[:70]
+    head = re.split(r"&#?\w+;", title, maxsplit=1)[0]
     return core.clean_line(head)[:70] or "Conservatorio"
 
 
