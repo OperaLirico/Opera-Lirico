@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T18:21:51+01:00",
+  "generated_at": "2026-11-09T18:38:13+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -2416,10 +2416,365 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Ant kalvos dairaus aplinkui",
+      "aliases": [],
+      "composer": "Ludwig van Beethoven",
+      "work": "/lieder/get_settings.html?ComposerId=3351",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "lt",
+      "text": "Ant kalvos dairaus aplinkui\nŪkanoton žydrumon\nTolumoj regiu aš pievas\nKur tave, miela, radau.\n\nMus tos tolumos išskyrė,\nSkiria slėniai ir kalnai\nMūsų meilę, mūsų laimę,\nMūsų kančią amžinai.\n\nNematai tu mano žvilgsnio\nKaršto, kaip aušros dangus\nIr atodūsiai ištirpsta\nErdvėje, kur skiria mus.\n\nNegi nieks tavęs neranda,\nMeilės laišku nieks nebus?\nMan dainas dainuoti tenka,\nJos išreikš manus skausmus.\n\nMeilės giesmę ims giedoti\nVisos erdvės ir būtis\nMylinti širdis pasieks tai,\nKo taip trokšta jos širdis.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=269901",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Giedrius Prunskus",
+      "settings": [
+        {
+          "composer": "Ludwig van Beethoven",
+          "title": "/lieder/get_settings.html?ComposerId=3351",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Dutch (Nederlands)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "A la bien‑aimée",
+      "aliases": [],
+      "composer": "Fritz Büchtger",
+      "work": "/lieder/get_settings.html?ComposerId=12851",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Lorsque dans la paix profonde où je te regarde,\nje m’abîme en silence dans la contemplation de ce qui en toi est sacré,\nj’entends alors nettement le souffle léger\nde l’ange qui se drape en toi.\n\nEt un sourire étonné, interrogateur, s’esquisse sur mes lèvres.\nNe serais-je pas le jouet d’un rêve\noù s’accomplit à jamais en toi\nmon voeu le plus fou, mon unique désir ?\n\nMon esprit plonge d’abîme en abîme\net je perçois, venus des lointains nocturnes de la divinité,\nle bruissement mélodieux des sources du destin.\n\nInterdit, je tourne mon regard vers le ciel, là-haut,\noù me sourient toutes les étoiles;\net je tombe à genoux pour écouter leur chant de lumière.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=108060",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Stéphane Goldet, Pierre de Rosamel",
+      "settings": [
+        {
+          "composer": "Fritz Büchtger",
+          "title": "/lieder/get_settings.html?ComposerId=12851",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Rudolf Halaczinsky",
+          "title": "/lieder/get_settings.html?ComposerId=8499",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Ernest Willem Mulder",
+          "title": "/lieder/get_settings.html?ComposerId=5123",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Sonett über Goethes Gedicht \"Der Gott...",
+      "aliases": [],
+      "composer": "Hanns Eisler",
+      "work": "/lieder/get_settings.html?ComposerId=3958",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "O bittrer Argwohn unsrer Mahadöhs,\ndie Huren möchten in den Freudenhäusern,\nwenn sie die vorgeschrieb'ne Wonne äußern\nnicht ehrlich sein. Das wäre aber bös.\n\nWie schön singt jener, der das alles weiß,\nvon jener einzigen, um die's ihm leid war,\ndie für ihn auch zu sterben noch bereit war\nfür den von Anfang ausgemachten Preis!\n\nWie streng er prüfte, ob sie ihn auch liebte!\nAusdrücklich heißt's, er hab' ihr Pein bereitet.\nSechs waren schon geprüft und erst die siebte\nvergoß die Tränen, als sie ihn verlor.\nDoch wie belohnte er sie auch, doch wie belohnte er sie auch!\nBeneidet von allen hob er sie zum Schluß zu sich empor.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=3028",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Bertolt Brecht",
+      "settings": [
+        {
+          "composer": "Hanns Eisler",
+          "title": "/lieder/get_settings.html?ComposerId=3958",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Che d'è sto taluorno",
+      "aliases": [],
+      "composer": "Giovanni Paisiello",
+      "work": "/lieder/get_settings.html?ComposerId=5264",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Che d'è sto taluorno,\ndon turzo del core?\nChe bide qua cuorno,\nche rride accossì?\nSignora, mi scusi:\nmi avanzo gnossì;\nma si sto cetrulo\nmm'ha rutto... perdoni...\nmi ha rotto i calzoni,\nper dirla così.\nTu mò pecché rride?\nCa vide pe scarda\nno piezzo de caso?\nMa si la mustarda\nmme saglie a lo naso,\nsta joja, si conte;\nla faccio fenì.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=125679",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Giovanni Battista Lorenzi",
+      "settings": [
+        {
+          "composer": "Giovanni Paisiello",
+          "title": "/lieder/get_settings.html?ComposerId=5264",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ist auch alles Trug und Wahn",
+      "aliases": [],
+      "composer": "Franz Krause",
+      "work": "/lieder/get_settings.html?ComposerId=4724",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ist auch alles Trug und Wahn\nUnd die Wahrheit stehts unnennbar,\nDennoch blickt der Berg mich an\nZackig und genau erkennbar.\n\nHirsch und Rabe, rote Rose,\nMeeresblau und bunte Welt:\nSammle dich - und sie zerfällt\nIns Gestalt- und Namenlose.\n\nSammle dich und kehre ein,\nLerne schauen, lerne lesen!\nSammle dich - und Welt wird Schein.\nSammle dich - und Schein wird Wesen.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=51031",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hermann Hesse",
+      "settings": [
+        {
+          "composer": "Franz Krause",
+          "title": "/lieder/get_settings.html?ComposerId=4724",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Un jeune moine est sorti du couvent",
+      "aliases": [],
+      "composer": "Roland de Lassus",
+      "work": "/lieder/get_settings.html?ComposerId=4785",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Un jeune moine est sorti du convent,\nA rencontré une nonnette au corps gent.\nSe print a luy demander\nS'elle vouloit brinbaler\nOu dancer le petit pas.\n   Vray dieu helas!\n   Vous ne brinbalerez, moine!\n   Vray dieu helas!\n   Vous ne brinbalerez pas.\nHe moine, moine, qu'apelez brinbaler?\nMa jeune dame, baiser & accoller\nEn nostre religion\nBrinbaler nous apelons,\nCors à cors, nus en deux draps.\n   Vray dieu helas!\n   Vous ne brinbalerez, moine!\n   Vray dieu helas!\n   Vous ne brinbalerez pas.\nEt moine, moine, que diront vos abéz?\nIl sont déçeus tous voire très bien gabéz\nEn lieu de bien entonner\nVous faites le lict branler,\nLa reigle ne l'entend pas.\n   Vray dieu helas!\n   Vous ne brinbalerez, moine!\n   Vray dieu helas!\n   Vous ne brinbalerez pas.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=1133",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Roland de Lassus",
+          "title": "/lieder/get_settings.html?ComposerId=4785",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Kum i kuma",
+      "aliases": [],
+      "composer": "Stanisław Moniuszko",
+      "work": "/lieder/get_settings.html?ComposerId=5083",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "pl",
+      "text": "Kuma sobie siedziała,\nMotek nici zwijała.\nKum dziwował się kumie,\nŻe tak pięknie wić umie.\n\nKufel piwa zgotował,\nKumę piwem częstował,\nI dziwował się kumie,\nŻe tak dobrze pić umie.\n\nA po szumnej biesiedzie,\nKiedy do dom ją wiedzie,\nKum dziwował się kumie,\nŻe nic chodzić nie umie.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=38141",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Jan Czeczot",
+      "settings": [
+        {
+          "composer": "Stanisław Moniuszko",
+          "title": "/lieder/get_settings.html?ComposerId=5083",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "In difesa d'un sembiante",
+      "aliases": [],
+      "composer": "Antonio Sartorio",
+      "work": "/lieder/get_settings.html?ComposerId=31614",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "In difesa d'un sembiante\nmi farò veder amante.\nAvrà il piede scatenato,\nchi mi stringe questo core\ndentro il carcere dorato\nd'un volume sfavillante.\nIn difesa d'un sembiante\nmi farò veder amante.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=126394",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Giacomo Francesco Bussani",
+      "settings": [
+        {
+          "composer": "Antonio Sartorio",
+          "title": "/lieder/get_settings.html?ComposerId=31614",
+          "instrumentation": "2 violins, soprano voice, and continuo"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Remembrance",
+      "aliases": [],
+      "composer": "Peter Cornelius",
+      "work": "/lieder/get_settings.html?ComposerId=585",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "From a quiet place,\nfrom a cool place,\nI [carry]1 away\nan ivy leaf.\n\nI hear a requiem,\nsoft and weak,\nwhenever I pick up\nthat leaf.\n\nWhen all my sorrow\nhas ended,\nlay this leaf\nupon my heart.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=4049",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Emily Ezust",
+      "settings": [
+        {
+          "composer": "Peter Cornelius",
+          "title": "/lieder/get_settings.html?ComposerId=585",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Carl Noseda",
+          "title": "/lieder/get_settings.html?ComposerId=27136",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Den snilde Guten",
+      "aliases": [],
+      "composer": "Edvard Grieg",
+      "work": "/lieder/get_settings.html?ComposerId=4256",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "no",
+      "text": "Det er han Jon, som gjætte her til no,\nden eldste Son hans Aamund upp i Brôte;\ndei øygnar Garden langt burti ei To,\nsom hev seg inn i bratte Berget skoti.\nNo er han glad, for her han skal ifraa;\nhan er alt vaksen og skal ut og slaa.\n\nHans unge Andlit er so godt og rundt,\nmed ljose Luggen tett um Panna vunden;\npaa Lippa gror eit Dun so let tog tunt,\nog kvite smiler Tennerne i Munnen.\nSom Killing lett han hoppar Stokk og Stein\nog synger kvat og lær aat alle Mein.\n\nNo skal han fylgja denne fyrste Ykti\nog visa henne Veg og Merke-Lei,\nso ho kan kjenna denne ville Hei\nsom aldri noko Folk hev butt hell bygt i.\nMed nye Buskap maa ho og bli kjend;\ntil framand seint vert Dyrehugen vend.\n\nSo driv dei Buskap fram i Morgon klaare,\ni Luft so rein som aldri fyrr ho saag;\ndet er som Ur og Koll forsonad laag\ni Glans av dette Ljos fraa Himlen bôre.\nHo drikk den lette Luft i djupe Drag\nog sygar Liv av denne Herrens Dag.\n\nHan syng og blistrar, driv, og stunfom røder,\nhalvt gutebljug, halvt mannsleg klok og kaut;\ndet gjeng um Ver og Vind og Sol som gløder,\num Fjelli her og desse snilde Naut.\nHan mangt fortel um kvart og eit av Dyri.\nMen mest han veit um »Dokka«, Bjøllekyri.\n\nOg fri og glad og reint som kjend ho blir\nog svallar med i denne gode Trygdi;\nhan hev kje denne halve, kalde Flir\nsom desse tunge Gutar nedi Bygdi.\nHan nemner henne beint og godt og greit;\nHaugtussa-Namne visst han aldri veit.\n\nHan syner henne Gjætle-Berg og Bekk\nog Svartedalen lang med Kvervesteinen,\nsom stundom snur seg, plent som Liv han fekk,\nog Skare-Ufs, der Farfar hans skaut Reinen.\nMen der i grøne, svale Bjørkeli,\nder hev det ein gong vori Bjønnehi.\n\nHo spør som halvt i Skjemt, um her er Troll;\n»aa ja,« han svarar utan Spott i Tanke;\n»det bur nok sumt i baade Kuv og Koll;\nmen meir det sviv ikring paa Videvanke.«\nOg no ho vita fær, at Jon er klok;\nhan grev i Kufta si og finn - ei Bok.\n\n»Kan hende trur du kje at slikt kan finnast?«\n- det kjem eit Mistru-Drag um Munnen fjaag -;\n»men meir en ein eg veit, som væl kan minnast\nat slike Ting han klaart med Augo saag.\nOg her i denne Bok, eg eingong fann,\ndu skal faa sjaa, at denne Tru er sann.«\n\nDet er so knapt ho kan si Glede styra.\nAtt-under Stein dei set seg baae tvo\nher Ku og Smale gjeng so godt i Ro,\nso no dei kan seg trygt med Kunskap hyra.\nHo ser paa Jon med mjuke Augnelag.\nAt Dreng kan vera ven ho veit i Dag.\n\nHan les i Boki, svart som bakt i Jord,\nSo radt og greidt, han trur mest aldri stikta;\nder stend um Nøkk og Troll med reine Ord,\nog daa me veit, det kan kje vera dikta.\nKvart Ord ho syp og lyer trutt og ant\nog lær og ropar: »sjaa um d'er kje sant!«\n\nNo kan dei lengje nok faa læ og flira;\ndet stend i Boki; og han Jon det trur!\n- So glade sit dei saman der i Ur,\nog Sogur gjeng, og der tarv ingen fira.\nOg Nistematen saman gneg dei paa;\nJon sit og sit og gløymer reint aa gaa.\n\nMed Undring høyrer han det store Ord,\nat um han Tagnad tru vil ærleg lova,\nso er ho sjølv av desse faa paa Jord,\nsom hev den underfulle Synegaava.\nHan gjev si Hand. Av Vyrdnad er han fyllt.\nOg alt ho no fortèl. Han er som tryllt.\n\nSo lid det til; dei tenkja maa paa Klokka.\nDet er alt seint; ho er visst mote sju.\nFor siste Gong han helsar Sau og Ku\nog kjæler kjærleg for den blide »Dokka«.\nSo maa han gaa. Aaleine stend ho der.\n- Men Dokka fekk fraa same Stund ho kjær.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=41611",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Arne Garborg",
+      "settings": [
+        {
+          "composer": "Edvard Grieg",
+          "title": "/lieder/get_settings.html?ComposerId=4256",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Toc, toc, toc toc, ‑ il cloue à coups...",
+      "aliases": [],
+      "composer": "Gabriel-André Fabre",
+      "work": "/lieder/get_settings.html?ComposerId=24362",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Toc, toc, toc toc, - il cloue à coups pressés ;\nToc, toc, - le menuisier des trépassés.\n\"Bon menuisier, bon menuisier,\nDans le sapin, dans le noyer,\nTaille un cercueil très grand, très lourd,\nPour que j'y couche mon amour.\"\n\nToc toc, toc toc, - il cloue à coups pressés,\nToc toc, - le menuisier des trépassés.\n\"Qu'il soit tendu de satin blanc\nComme ses dents, comme ses dents ;\nEt mets aussi des rubans bleus\nComme ses yeux, comme ses yeux.\"\n\nToc toc, toc toc, - il cloue à coups pressés.\nToc toc, - le menuisier des trépassés.\n\"Là-bas, là-bas près du ruisseau,\nSous les ormeaux, sous les ormeaux,\nÀ l'heure où chante le coucou,\nUn autre l'a baisée au cou.\"\n\nToc toc, toc toc, - il cloue à coups pressés,\nToc, toc, - le menuisier des trépassés.\n\"Bon menuisier, bon menuisier,\nDans le sapin, dans le noyer,\nTaille un cercueil très grand, très lourd,\nPour que j'y couche mon amour.\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=46072",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Ioannes Papadiamantopoulos",
+      "settings": [
+        {
+          "composer": "Gabriel-André Fabre",
+          "title": "/lieder/get_settings.html?ComposerId=24362",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Richard Hageman",
+          "title": "/lieder/get_settings.html?ComposerId=4305",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Xavier Perreau",
+          "title": "/lieder/get_settings.html?ComposerId=32433",
+          "instrumentation": "baritone and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "L'heure sonne. Un jour va naître",
+      "aliases": [],
+      "composer": "Reynaldo Hahn",
+      "work": "/lieder/get_settings.html?ComposerId=4309",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "L'heure sonne. Un jour va naître.\nLe nuage erre au zénith ;\nLa barque est sous ta fenêtre ;\nL'hirondelle est dans son nid ;\nDans ton âme qu'il féconde\nL'amour veille nuit et jour... --\nLaisse fuir la barque et l'onde !\nNe laisse pas fuir l'amour.\n\nÀ nos coeurs qui se désolent\nLes heures parlent parfois,\nQuand dans l'ombre elles s'envolent\nDe quelque église des bois.\nLes pires et les meilleures\nSur nous passent tour à tour... --\nAnge ! laisse fuir les heures !\nNe laisse pas fuir l'amour.\n\nEst-il une chose au monde\nQui ne tremble à quelque vent ?\nLe nuage est comme l'onde,\nClair parfois, sombre souvent.\nIl s'en va ! triste voyage,\nSans but, sans port ; sans retour... --\nOh ! laissé fuir le nuage !\nNe laisse pas fuir l'amour.\n\nL'onde, la nuée et l'heure,\nTout passe, et nous. pleurons tous !\nQu'une chose en nous demeure\nQuand tout change autour de nous !\nL'oiseau quitte à tire-d'aile\nSon doux nid, sa vieille tour... --\nOh ! laisse fuir l'hirondelle !\nNe laisse pas fuir l'amour.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=150455",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Victor Hugo",
+      "settings": [
+        {
+          "composer": "Reynaldo Hahn",
+          "title": "/lieder/get_settings.html?ComposerId=4309",
+          "instrumentation": "vocal duet for tenor and baritone with piano"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 288,
+  "lieder_position": 336,
   "aria_opera": 0,
   "aria_scene": 8
 }
