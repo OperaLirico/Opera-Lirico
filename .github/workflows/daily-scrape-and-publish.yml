@@ -33,7 +33,7 @@ jobs:
       - name: Scrape public source pages
         run: python scrape_sources.py
       - name: Scrape conservatory admission pages
-        run: python scrape_conservatori.py
+        run: python run_conservatori.py
       - name: Save expanded song catalogue
         run: |
           git config user.name 'github-actions[bot]'
