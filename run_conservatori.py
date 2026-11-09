@@ -175,6 +175,26 @@ def drop_file_names() -> None:
         print(f"Dropped {removed} file-name line(s)")
 
 
+def tidy_dates() -> None:
+    """A requirement sentence is not an exam slot; drop the ones the page carried in."""
+    if not DATA.exists():
+        return
+    payload = json.loads(DATA.read_text(encoding="utf-8"))
+    removed = 0
+    for item in payload.get("items", []):
+        kept = [
+            line
+            for line in item.get("exam_dates") or []
+            if not REQUIREMENT_SHAPE.search(line) and not REQ_NOISE.search(line)
+        ]
+        if len(kept) != len(item.get("exam_dates") or []):
+            removed += len(item.get("exam_dates") or []) - len(kept)
+            item["exam_dates"] = kept
+    if removed:
+        DATA.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"Dropped {removed} requirement line(s) from exam dates")
+
+
 def pdf_rank(url: str) -> int:
     tail = url.rsplit("/", 1)[-1]
     score = 0
@@ -273,6 +293,7 @@ if __name__ == "__main__":
     backfill(previous)
     drop_other_notices()
     drop_file_names()
+    tidy_dates()
     if DATA.exists():
         payload = json.loads(DATA.read_text(encoding="utf-8"))
         fill_from_pdfs(payload)
