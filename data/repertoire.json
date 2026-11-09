@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T20:16:57+01:00",
+  "generated_at": "2026-11-09T20:28:09+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -4561,10 +4561,355 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Die Stunde, da ich dich zuerst ersah",
+      "aliases": [],
+      "composer": "Johanna Müller-Hermann",
+      "work": "/lieder/get_settings.html?ComposerId=34551",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "de",
+      "text": "O daß ich fände dich in solcher Nacht,\ndich Müde, unter Wipfeln Wandelnde!\nWie stüßt' ich gerne deinen schweren Gang,\nwie höb' ich gerne dich an Brust und Arm,\nwie trug' ich gerne dich in Haus und Dach,\ndaß du geborgen froh im Sturme seist!\n\nO daß ich fande dich in solcher Nacht,\ndich Hehre, unter Sternen Wandelnde!\nWie sant' ich gerne an des Weges Nand,\nwie preßt' ich gerne in den Staub die Stirn,\nwie strömt' ich gerne Blut und Leben aus\nvor dir in Dunkel hin in Sand und Nacht!\n\n                                 ---------------\nWas soll der armen Seele weiter frommen?\nSie beugt ihr Haupt und leidet nur den Sturm.\nUm dich, was litte sie nicht still und gerne!\n\nUnd will der leßte Tropfen Blutes rinnen\nder Seele der am Wege Sterbenden,\nnoch einmal hebe dann die schwere Wimper\nentschleiernd, deines Strahlenauges Wonne\nherabzutauen auf die Scheidende.\n\nUnd nur ein Jauchzen soll ihr Sterben sein,\nein Gutenacht vor träumevollem Schlaf,\nund lächelnd schläft sie, wie ein sel'ges Kind.\n\n                                 ---------------\nDie Stunde, da ich dich zuerst ersah,\nmein Bruder, höre, solches war die Stunde:\n\nIch sahe dich, und alle Menge wogte,\ndu ragtest über, und du sahest nicht.\nIch sahe dich, du schrittest ohne Pfade\nund schrittest sicher, und du sahest nicht.\nIch sahe dich, und deine Blicke schimmern\nvon andern Sonnen, und du sahest nicht.\nIch sahe dich, und deine Lippen bebten\nvon andern Lauten, und du sahest nicht.\nIch sahe dich und sah [in]1 jener Stunde:\ndu bist der Fremde, und der einsam ist.\nIch sahe dich und sah in jener Stunde\nzu Häupten deinen Kranz und liebte dich!\n\n                                 ---------------\nDa ich des Abends meine Wege schreite\nso friedenvoll und selig deines Bildes,\nkam mir ein Lied der hohen Liebe also :\n\nDein Leib sei heilig, heilig deine Seele.\nAuf deinen Lippen nimmer meine Lippen,\nnur deinen Hånden neig' ich meine Lippen.\n\nDein Leib sei heilig, heilig deine Seele.\nIn deinen Armen nimmer meine Arme,\nnur deine Hände fühlen meine Stirne.\n\nDein Leib sei heilig, heilig deine Seele.\nNicht deinem Schoße wird es sich erbringen,\nin Leuchten nur gebar es meine Stirne.\n\nDein Leib sei heilig, heilig deine Seele.\nDie andern hebt der Strom und trägt und schlingt,\nwir aber ragen voller großer Ruhe\n- zwei Klippen -- einsam gegen allen Strom.\n\n                                 ---------------\nDu standest vor der großen roten Sonne\n― ein schwarzes Bildnis auf dem Flammengrunde —\nund hattest deine beiden Arme offen,\ngleichwie gekreuzigt in der roten Sonne;\nund als ich aus des Waldes Wipfeln trat\nan Weges Ende, und du sahest mich,\nda stieg ein Leuchten auf in deinen Zügen,\nund Lächeln wob um deine sel'gen Lippen\nund bliebest in Verklärung regungslos\nund ohne Gruß zu mir:\n                                                                Ich aber weiß,\nnoch stehest du und harrst und leuchtest nur\nbald aber wirst du mir entgegenkommen,\ndie Arme offen vor der großen Sonne,\nlangsam und lieblich wie ein schwebend Bild.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=191574",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Walter Calé",
+      "settings": [
+        {
+          "composer": "Johanna Müller-Hermann",
+          "title": "/lieder/get_settings.html?ComposerId=34551",
+          "instrumentation": "voice and piano or orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Jerusalem",
+      "aliases": [],
+      "composer": "Charles Gounod",
+      "work": "/lieder/get_settings.html?ComposerId=1028",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "en",
+      "text": "Her plaintive tribes come no more to sing their canticles at her holy\n temples. Her ramparts are in ruins! Her Levites tremble and moan! No\n more flowers on maiden foreheads! Her soul is plunged into endless\n pain and the weight of sadness oppresses her. Tears burn in her eyes!\n Jerusalem! Come back to the Lord God! Hear God the Saviour! Hold out\n your arms to Him, give Him your heart!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=6799",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Faith J. Cormier",
+      "settings": [
+        {
+          "composer": "Charles Gounod",
+          "title": "/lieder/get_settings.html?ComposerId=1028",
+          "instrumentation": "voice and piano or orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Maintenant le champ nu montre",
+      "aliases": [],
+      "composer": "(Franz) Joseph Haydn",
+      "work": "/lieder/get_settings.html?ComposerId=4366",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "fr",
+      "text": "Simon\n Maintenant le champ nu montre\n Le nombre des hôtes non invités\n Qui ont trouvé la nourriture dans les blés en herbe,\n Et cherchent encore en errant.\n De ces petites rapines il ne se plaint pas,\n Le paysan, et le remarque à peine ;\n À l'excès il ne voudrait pas\n Pourtant être livré.\n Ce qui peut l'en préserver\n Il le voit comme un bienfait,\n Et il paie volontiers son tribut à la chasse\n Qui réjouit ses bons seigneurs.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=85899",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "(Franz) Joseph Haydn",
+          "title": "/lieder/get_settings.html?ComposerId=4366",
+          "instrumentation": "bass and orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Rozcinam pomarańczę bólu",
+      "aliases": [],
+      "composer": "Tadeusz Baird",
+      "work": "/lieder/get_settings.html?ComposerId=16905",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "pl",
+      "text": "rozcinam pomarańczę bólu\npołową bólu karmię twoje usta\ngłodni tak dzielą chleb\nspragnieni wodę\n\nuboga jestem - mam tylko ciało\nusta ściągnięte tęsknotą\nręce - jesienne liście\nwyglądające odlotu\n\nrozcinam pomarańczę bólu\nsprawiedliwie na pół\ngorzkim ziarnem karmię twoje usta",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=53897",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Halina Póswiatowska",
+      "settings": [
+        {
+          "composer": "Tadeusz Baird",
+          "title": "/lieder/get_settings.html?ComposerId=16905",
+          "instrumentation": "mezzo-soprano and chamber orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Sången",
+      "aliases": [],
+      "composer": "Ivar Hallström",
+      "work": "/lieder/get_settings.html?ComposerId=4319",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "sv",
+      "text": "Så är sagan nu om sången,\nså det ädla Suomifolket,\nså den vise barden säger:\nSången är av sorg upprunnen,\nmen av sång är glädje vunnen.\n\nLångt i fjärran ödemarkens\nvindomsusade, förgätna,\nsorgsna mo, vid insjöns stränder\noch den höga åsens branter,\nstår en koja, gömd och ringa.\nLåg är kojan, hög är furan,\nhögt är forsens dån, och mäktigt\nmer än alla mänskotankar\nslår naturens stora hjärta.\nRunotar, den ädla sångens\nhöga moder, bor i kojan,\nbor allena, bor i armod,\nbor i sorg och bor i längtan,\nsällare än lyckans skötbarn,\nrikare än kungadöttrar,\nicke heller alltför ensam.\nMånga spår till kojan leda,\nlätta spår, som vända tyngre,\nmed ett sviket hopp, tillbaka.\n\nKom en dag en munter yngling:\n\"Frid med dig, du sångarmoder,\ndiktens ädla fostrarinna!\nLänge dina spår jag följde,\nsökte dig i stadens vimmel,\nsökte dig i bygdens lekar,\nsökte dig i tärnans löjen\noch vid bägarns rand förgäves.\nNu, o moder, ett mig lova:\nlär mig sångens gudagåva!\"\n\nRunotar, den ädla sångens\nhöga moder, log och sade:\n\"Fann du icke mig i staden,\nej i bygdens glada lekar,\nej i tärnans lätta löjen\noch vid bräddade pokalen;\nvarför kom du hit till öde\ntuvans ljung och vågens flöde?\"\n\nSade ynglingen: \"O moder,\nvid din härd vill jag förbliva,\ndina furor vill jag slöjda,\ntusen år jag stum vill lyssna\nhär på dina tusen sånger\noch den första och den sista\ndjupt uti mitt minne rista.\"\n\nSade sångens visa moder:\n\"Tusen år kan du förbliva,\ntusen sånger kan jag giva,\noch den första och den sista\nkan du djupt i minnet rista.\nOch dock kan jag dig ej lova\nsångens goda gudagåva.\"\n\nSade ynglingen bedrövad:\n\"Öppen är min själ, mitt öra;\nvad skall jag, o moder, göra?\"\nSade Runotar, den visa:\n\"Gå allen i ödemarken,\ngöm en sorg uti ditt hjärta,\ndå skall sången ro dig giva,\nsjälvmant dina läppar liva.\nSången är av sorg upprunnen,\nmen är sångens gåva funnen,\nse, så är din sorg försvunnen,\noförgänglig glädje vunnen.\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=149477",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Zachris Topelius",
+      "settings": [
+        {
+          "composer": "Ivar Hallström",
+          "title": "/lieder/get_settings.html?ComposerId=4319",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "In doornte en dorte ik dreef mijn hart",
+      "aliases": [],
+      "composer": "Johannes Röntgen",
+      "work": "/lieder/get_settings.html?ComposerId=5539",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "nl",
+      "text": "BEERTE\nIn doornte en dorte ik dreef mijn hart\nAls 't lam door 't duin,\nWier wol door 't bos doorkorven werd,\nWier hoef door 't puin; -\n\nDie hoopt die groene heuvlen daar\nZijn fris en zoet,\nEn 't ruist van blijde waatren waar\n'k Mijn dorst in boet;\n\nEn die in ruigt, duin op, duin af,\nDoor droog zand dwaalt:\nDoorn priemt, braam steekt: hoe stug en straf\nIs 't helm dat frisheid faalt.\n\n't Breekt door, 't staat hoog, van laatsten wal\nStort zonheet zand naar 't blauw -\nHeil, 'k hoorde - ik zie der waatren val:\nDaar baad, daar koel 'k mij gauw.\n\nHet daalt, het holt, het spelt in 't nat.\nAi mij, wat zilte poel.\nWier wond schrijnt en wie dorst is 't bad\nPijnlijk en bijtend koel.\n\nEn eenzaam 't dwaalt, en 't blinkend strand\nLigt leeg als strand kan zijn.\nTot de nacht komt en 't zinkt in 't zand,\nOntsterft aan moeite en pijn.\n\nJACOBA\nDat dolend hart, mijn lief, was al te droef.\nEen heldrer toon nu, zij 't al niet te hoog.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=466334",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Albert Verwey",
+      "settings": [
+        {
+          "composer": "Johannes Röntgen",
+          "title": "/lieder/get_settings.html?ComposerId=5539",
+          "instrumentation": "voice"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ganz still zuweilen, wie ein Traum",
+      "aliases": [],
+      "composer": "Karl Höller",
+      "work": "/lieder/get_settings.html?ComposerId=4446",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ganz still zuweilen, wie [ein]1 Traum,\nklingt in dir auf ein fernes Lied ...\ndu weißt nicht, wie es plötzlich kam,\ndu weißt nicht, was es von dir will ...\nund wie [ein]1 Traum ganz leis und still\nverklingt es wieder, wie es kam ...\n\nWie plötzlich mitten im Gewühl\nder Straße, mitten oft im Winter\nein Hauch von Rosen dich [umweht]2,\nwie oder dann und wann ein Bild\naus [längstvergessenen]3 Kindertagen\nmit fragenden Augen vor dir steht ...\n\nGanz still und leise, wie [ein]1 Traum ...\ndu weißt nicht, wie es plötzlich kam,\ndu weißt nicht, was es von dir will,\nund wie [ein]1 Traum ganz leis und still\nverblaßt es wieder, wie es kam.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=30742",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Cäsar Flaischlen",
+      "settings": [
+        {
+          "composer": "Karl Höller",
+          "title": "/lieder/get_settings.html?ComposerId=4446",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Paul Richter",
+          "title": "/lieder/get_settings.html?ComposerId=16295",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Thou beauteous spring",
+      "aliases": [],
+      "composer": "William Henry Humiston",
+      "work": "/lieder/get_settings.html?ComposerId=4488",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Thou beauteous spring, ye perfumed flow'rs,\no sweetest song of nightingales,\nthou highest joy, thou deepest grief,\nthou holy blessed tone from heav'n,\nI love thee, love with all my heart.\nAnd when I gaze into thine eyes,\nthy lovely arms about me clasped,\nthen moved by thy sweet glowing kiss\necstatic thrills run thro' and thro'.\nThen not a word can pass my lips\nexcept continually to sing:\nThou beauteous spring, ye perfumed flow'rs,\no sweetest song of nightingales,\nthou highest joy, thou deepest grief,\nthou holy blessed tone from heav'n,\nI love thee, love with all my heart.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=139211",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation Singable translation by William Henry Humiston",
+      "settings": [
+        {
+          "composer": "William Henry Humiston",
+          "title": "/lieder/get_settings.html?ComposerId=4488",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Un giovanotto ama una fanciulla",
+      "aliases": [],
+      "composer": "Eyvind Alnæs",
+      "work": "/lieder/get_settings.html?ComposerId=3171",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Un giovanotto ama una fanciulla,\nquesta ha scelto un altro,\nma quest'altro ama un'altra,\ne si è fidanzato con lei.\n\nLa fanciulla prende per dispetto\nil primo brav'uomo\nche incontra per la strada;\nil giovanotto se ne accora.\n\nE' una storia vecchia,\nma resta sempre nuova;\ne a chi vive questa storia,\nsi spezza il cuore in due.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=26940",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Amelia Maria Imbarrato",
+      "settings": [
+        {
+          "composer": "Eyvind Alnæs",
+          "title": "/lieder/get_settings.html?ComposerId=3171",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "(Karl Otto) Robert Bachhofer",
+          "title": "/lieder/get_settings.html?ComposerId=13974",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Reiner Bredemeyer",
+          "title": "/lieder/get_settings.html?ComposerId=3549",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ylöspäin",
+      "aliases": [],
+      "composer": "Karl Hasse",
+      "work": "/lieder/get_settings.html?ComposerId=16023",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fi",
+      "text": "En minä valita niin kuin ne,\njoilla ei toivoa ole.\nMinähän tiedän, että aikanaan\npasuuna soi kutsuen, suuni vaikenee,\nja mitä olette haudanneet, nousee ylös.\n\nYlös, ylös kaipaa minun soittoni!\nYlös, ylös kohoaa kellon henki\nvapautuen lyönti lyönniltä malmin kahleista!\nSinä ihmissielu, joka vapiset lyönnit kuullessasi,\nminä vien sinut ylös kuin kotkan siivillä!\nKunnia Jumalalle korkeuksissa!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=56093",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Erkki Pullinen",
+      "settings": [
+        {
+          "composer": "Karl Hasse",
+          "title": "/lieder/get_settings.html?ComposerId=16023",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Finnish (Suomi)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Erkki Pullinen",
+          "title": "./get_texts.html?ContribId=597",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Sera di tempesta",
+      "aliases": [],
+      "composer": "Hans Uwe Strübing",
+      "work": "/lieder/get_settings.html?ComposerId=29999",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Oh, le ore rosse della sera!\nAlla finestra aperta oscilla vibrando\nil pergolato che con l'azzurro si confonde,\ndove hanno il nido i fantasmi dell'ansia.\n\nDanza la polvere nel puzzo delle  fogne.\nSulla vetrata batte e tintinna il vento.\nIn un corteo di selvaggi destrieri\nfulmini spingono nubi risonanti.\n\nCon fragore si spacca lo specchio dello stagno.\nPer la finestra un grido di gabbiani.\nIl cavaliere rosso  galoppa giù dal colle\ne si sfracella sull'abete in fiamme.\n\nNell'ospedale urlano gli infermi.\nVola la notte in un piumaggio  azzurro.\nScintillante la pioggia all'improvviso\ncadendo giù scroscia sopra i tetti.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=30846",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Ferdinando Albeggiani",
+      "settings": [
+        {
+          "composer": "Hans Uwe Strübing",
+          "title": "/lieder/get_settings.html?ComposerId=29999",
+          "instrumentation": "soprano and piano"
+        },
+        {
+          "composer": "Jan Stuten",
+          "title": "/lieder/get_settings.html?ComposerId=8683",
+          "instrumentation": "low voice and chamber orchestra or piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Es ist ein Flüstern in der Nacht",
+      "aliases": [],
+      "composer": "Heinrich, Freiherr von Bach",
+      "work": "/lieder/get_settings.html?ComposerId=10923",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Es ist ein Flüstern in der Nacht,\nEs hat mich ganz um den Schlaf gebracht:\nIch fühl's, es will sich was verkünden\nUnd kann den Weg nicht zu mir finden.\n\nSind's Liebesworte, vertraut dem Wind,\nDie unterwegs verwehet sind?\nOder ist's Unheil aus künftigen Tagen,\nDas emsig drängt, sich anzusagen?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=15419",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Theodor Storm",
+      "settings": [
+        {
+          "composer": "Heinrich, Freiherr von Bach",
+          "title": "/lieder/get_settings.html?ComposerId=10923",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Erich Brandt",
+          "title": "/lieder/get_settings.html?ComposerId=43844",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Robert Gund",
+          "title": "/lieder/get_settings.html?ComposerId=4290",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 576,
+  "lieder_position": 624,
   "aria_opera": 0,
   "aria_scene": 8
 }
