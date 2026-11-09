@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-09T19:41:34+01:00",
+  "generated_at": "2026-11-09T19:54:17+01:00",
   "items": [
     {
       "number": 1,
       "city": "都灵",
       "school": "Conservatorio Giuseppe Verdi",
       "url": "https://www.conservatoriotorino.eu/segreteria/ammissioni/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
+      "checked_at": "2026-11-09T19:54:17+01:00",
       "status": "error",
       "http_status": null,
       "title": "",
@@ -15,41 +15,69 @@
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.conservatoriotorino.eu/segreteria/ammissioni/",
+      "error": "Timeout: Failed to perform, curl: (28) Connection timed out after 25001 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
       "discovered": false
     },
     {
       "number": 2,
       "city": "米兰",
       "school": "Conservatorio Giuseppe Verdi",
-      "url": "https://www.consmi.it/ammissioni/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "url": "https://www.consmi.it/segreteria-didattica/",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Ammissioni suppletive - Conservatorio Milano — Segreteria didattica del Conservatorio Milano",
       "deadline_lines": [],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
+      "requirements": [
+        "Richiesta Diploma accademico di I e II livello"
+      ],
+      "fallback_lines": [
+        "Informazioni per iscrizioni Erasmus",
+        "Ammissioni, rinnovi d’iscrizione e tasse:",
+        "iscrizioni.tasse@consmilano.it",
+        "Corsi propedeutici e pre-propedeutici:"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.consmi.it/ammissioni/",
-      "discovered": false
+      "error": null,
+      "discovered": true
     },
     {
       "number": 3,
       "city": "罗马",
       "school": "Conservatorio Santa Cecilia",
       "url": "https://conservatoriosantacecilia.it/triennio-piani-di-studio-e-ammissione/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Triennio - piani di studio e ammissione - Santa Cecilia - Roma",
       "deadline_lines": [],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriosantacecilia.it/triennio-piani-di-studio-e-ammissione/",
+      "requirements": [
+        "Programma del corso e dell’esame di ammissione",
+        "Programma del corso e dell’esame di ammissione",
+        "Programma di studio ed esame di ammissione",
+        "Programma di studio ed esame di ammissione e diploma",
+        "Programma di ammissione e diploma",
+        "Programma di ammissione e diploma",
+        "Programma di ammissione e diploma",
+        "Programma di ammissione e diploma"
+      ],
+      "fallback_lines": [
+        "Triennio - piani di studio e ammissione - Santa Cecilia - Roma",
+        "Triennio – piani di studio e ammissione",
+        "PIANI DI STUDIO E DI AMMISSIONE",
+        "Di seguito sono pubblicati tutti i programmi di studio e di ammissione delle discipline afferenti al Triennio di 1° Livello"
+      ],
+      "documents": [
+        "http://www.conservatoriosantacecilia.it/wp-content/uploads/2015/06/PROGRAMMA-LAUREA-TRIENNALE-ARPA-CONSERVATORIO-S.CECILIA.pdf",
+        "http://www.conservatoriosantacecilia.it/wp-content/uploads/2015/06/Programma-studio-ed-esami-batteria-2015.pdf",
+        "http://www.conservatoriosantacecilia.it/wp-content/uploads/2015/06/programma_1_anno_triennio_flauto_dolce.pdf",
+        "http://www.conservatoriosantacecilia.it/wp-content/uploads/2015/06/programma_3_anno_triennio_flauto_dolce.pdf",
+        "http://www.conservatoriosantacecilia.it/wp-content/uploads/2015/06/programma_ammissione_jazz_triennio.pdf",
+        "http://www.conservatoriosantacecilia.it/wp-content/uploads/2015/06/programma_annualita_TR_CHITARRA.pdf"
+      ],
+      "error": null,
       "discovered": false
     },
     {
@@ -57,16 +85,37 @@
       "city": "博洛尼亚",
       "school": "Conservatorio G.B. Martini",
       "url": "https://consbo.it/iscriviti/ammissioni/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://consbo.it/iscriviti/ammissioni/",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "AMMISSIONI – Conservatorio di Musica di Bologna Giovan Battista Martini",
+      "deadline_lines": [
+        "Sono state pubblicate le graduatorie di ammissione a seguito della riapertura del bando di ammissione per l’A.A. 2026/2027. Le richieste di immatricolazione (iscrizione al primo anno) andranno presentate entro 10 giorni dalla pubblicazione della presente graduatoria"
+      ],
+      "exam_dates": [
+        "CONVOCAZIONE AMMISSIONI CANTO A.A. 2026-2027 – 26/27/28 MAGGIO"
+      ],
+      "requirements": [
+        "DICHIARAZIONE SOSTITUTIVA DEL TITOLO DI STUDIO",
+        "Esiti prove di ammissione di lingua italiana A.A. 2026/2027",
+        "CONVOCAZIONE COLLOQUIO MUSICA ELETTRONICA",
+        "Si fa presente che per sostenere la prova teorica è necessario superare la prova pratica, gli studenti che risulteranno NON IDONEI o ASSENTI alla prova pratica non saranno ammessi a sostenere le prove successive; il calendario di convocazione verrà pubblicato al termine delle prove pratiche.",
+        "DICHIARAZIONE SOSTITUTIVA DEL TITOLO DI STUDIO"
+      ],
+      "fallback_lines": [
+        "AMMISSIONI – Conservatorio di Musica di Bologna Giovan Battista Martini",
+        "Ripertura Ammissioni a.a. 2026/2027",
+        "IMMATRICOLAZIONI A.A. 2026/2027",
+        "Graduatorie di ammissione - Direzione d'Orchestra (Trienni e Bienni)"
+      ],
+      "documents": [
+        "https://consbo.it/wp-content/uploads/2026/03/Bando-di-ammissione-a.a.-2026-2027.pdf",
+        "https://consbo.it/wp-content/uploads/2026/05/4670-2026-Calendario-ammissioni-A.A.-2026-2027.pdf",
+        "https://consbo.it/wp-content/uploads/2026/05/CALENDARIO-PROVE-DI-AMMISSIONE-DI-CANTO-A.A.-2026-2027-5246-2026.pdf",
+        "https://consbo.it/wp-content/uploads/2026/09/CONVOCAZIONE-PROVE-DI-TEORIA-RIAPERTURA-AMMISSIONI.pdf",
+        "https://consbo.it/wp-content/uploads/2026/09/ESIITI-PROVA-ITALIANO.pdf"
+      ],
+      "error": null,
       "discovered": false
     },
     {
@@ -74,16 +123,31 @@
       "city": "博洛尼亚",
       "school": "Martini — 学年日程与截止",
       "url": "https://consbo.it/didattica/manifesto-degli-studi-tasse-e-regolamenti/a-a-2026-2027/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://consbo.it/didattica/manifesto-degli-studi-tasse-e-regolamenti/a-a-2026-2027/",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "A.A. 2026/2027 – Conservatorio di Musica di Bologna Giovan Battista Martini",
+      "deadline_lines": [
+        "iscrizione entro il 31 ottobre 2026",
+        "iscrizione entro il 09 dicembre 2026",
+        "iscrizione entro il 5 aprile 2027"
+      ],
+      "exam_dates": [
+        "Lo studente è tenuto all’iscrizione fuori corso (vedi paragrafo 1.8 e Appendice) nei seguenti casi:"
+      ],
+      "requirements": [
+        "giustificazione documentata, in mancanza della quale non verrà inserito negli elenchi della sessione autunnale. Nel caso si sostengano esami di fine periodo della materia principale, nella sessione autunnale, è necessario procedere all’iscrizione all’anno accademico successivo"
+      ],
+      "fallback_lines": [
+        "ISCRIZIONI ANNI SUCCESSIVI AL PRIMO",
+        "Scadenze Ammissioni, Trasferimenti e Iscrizioni",
+        "Presentazione domande ammissioni AMMISIONI on line – Tutti i corsi e TRASFERIMENTI",
+        "(iscrizione al Primo anno e saldo Prima rata con contestuale presentazione ISSEU)"
+      ],
+      "documents": [
+        "https://consbo.it/wp-content/uploads/2026/03/Calendario-Accademico-a.a.-2026-2027.pdf"
+      ],
+      "error": null,
       "discovered": false
     },
     {
@@ -91,16 +155,34 @@
       "city": "威尼斯",
       "school": "Conservatorio Benedetto Marcello",
       "url": "https://www.conservatoriovenezia.eu/ammissioni-e-immatricolazioni/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Ammissioni e Immatricolazioni - Conservatorio di Musica Benedetto Marcello",
       "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.conservatoriovenezia.eu/ammissioni-e-immatricolazioni/",
+      "exam_dates": [
+        "Secondo periodo (Corsi Accademici, Corsi Propedeutici al Triennio, Attività Formativa di Base): 15/06/2026 – 15/07/2026",
+        "Guida iscrizione agli esami di ammissione – Corsi Accademici Triennio e Biennio 26/27"
+      ],
+      "requirements": [
+        "Per poter sostenere l’esame di ammissione è necessario aver completato l’invio della domanda online entro il termine indicato.",
+        "Per essere ammessi all’esame è necessario completare la domanda d’iscrizione a"
+      ],
+      "fallback_lines": [
+        "Ammissioni e Immatricolazioni - Conservatorio di Musica Benedetto Marcello",
+        "ESITO ESAMI DI AMMISSIONE CANTO",
+        "Presentazione domande per esame d’ammissione",
+        "Secondo periodo (Corsi Accademici, Corsi Propedeutici al Triennio, Attività Formativa di Base): 15/06/2026 – 15/07/2026"
+      ],
+      "documents": [
+        "https://www.conservatoriovenezia.eu/wp-content/uploads/2021/12/Esame-ammissione-Prova-B-CPT.pdf",
+        "https://www.conservatoriovenezia.eu/wp-content/uploads/2025/04/Esame-di-ammissione-al-Triennio-SECONDA-PROVA.pdf",
+        "https://www.conservatoriovenezia.eu/wp-content/uploads/2026/03/Guida-ammissioni-Isidata-AFB-CPT-26-27.pdf",
+        "https://www.conservatoriovenezia.eu/wp-content/uploads/2026/03/Guida-ammissioni-Isidata-TRIENNIO-e-BIENNIO-26-27.pdf",
+        "https://www.conservatoriovenezia.eu/wp-content/uploads/2026/06/Guida-ammissioni-Attivita-Formative-di-Base-e-Corsi-Propedeutici-al-Triennio-25-26-no-canto.pdf",
+        "https://www.conservatoriovenezia.eu/wp-content/uploads/2026/09/GUIDA-IMMATRICOLAZIONI-SECONDO-PERIODO-2026.pdf"
+      ],
+      "error": null,
       "discovered": false
     },
     {
@@ -108,16 +190,27 @@
       "city": "那不勒斯",
       "school": "Conservatorio San Pietro a Majella",
       "url": "https://www.sanpietroamajella.it/calendario-ammissioni-a-a-26-27/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Calendario Ammissioni a.a. 26-27. | Conservatorio di Musica San Pietro a Majella",
       "deadline_lines": [],
-      "exam_dates": [],
+      "exam_dates": [
+        "Per le ammissioni di canto jazz che si svolgeranno il 17 luglio p.v. le audizioni si svolgeranno come segue: Ore 8.30 Dalla lettera A alla lettera D inclusa da Amendola a Dell’Aversano Ore 11.00",
+        "Dalla lettera E alla lettera N inclusa da Esposito a Naclerio Ore 14.00 Dalla lettera P alla lettera inclusa S da Palese a Striano. Biennio: Ore 15 Tutti Propedeutico: Ore 16.30 Tutti."
+      ],
       "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.sanpietroamajella.it/calendario-ammissioni-a-a-26-27/",
+      "fallback_lines": [
+        "Calendario Ammissioni a.a. 26-27. | Conservatorio di Musica San Pietro a Majella",
+        "Calendario Ammissioni a.a. 26-27.",
+        "Aggiornato Calendario ammissioni a.a. 2026-2027. Per consultarlo clicca",
+        ". Per gli esami di ammissione a composizione jazz leggere il seguente"
+      ],
+      "documents": [
+        "https://www.sanpietroamajella.it/wp-content/uploads/2025/03/Calendario-esami-ammissioni-CP-I-E-II-LIVELLO-agg6-7..pdf",
+        "https://www.sanpietroamajella.it/wp-content/uploads/2026/10/calendario-attivita-didattica-2627.pdf"
+      ],
+      "error": null,
       "discovered": false
     },
     {
@@ -125,50 +218,85 @@
       "city": "巴里",
       "school": "Conservatorio Niccolò Piccinni",
       "url": "https://www.consba.it/it/6584/ammissioni",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Ammissioni - Conservatorio di Musica Bari",
       "deadline_lines": [],
       "exam_dates": [],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "Ammissioni - Conservatorio di Musica Bari"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.consba.it/it/6584/ammissioni",
+      "error": null,
       "discovered": false
     },
     {
       "number": 9,
       "city": "佛罗伦萨",
       "school": "Conservatorio Luigi Cherubini",
-      "url": "https://www.consfi.it/calendario-corsi/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.consfi.it/calendario-corsi/",
-      "discovered": false
+      "url": "https://www.consfi.it/tempistica-candidature-e-prove-di-esame-di-ammissione/",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Calendario Corsi | Conservatorio di Musica Luigi Cherubini — TEMPISTICA AMMISSIONI – Corsi di CANTO 2026-27 (Triennio, Biennio e Giovani Talenti) | Conservatori",
+      "deadline_lines": [
+        "15 aprile 2026 ore 12.00 | Termine per la presentazione delle domande di ammissione"
+      ],
+      "exam_dates": [
+        "16 febbraio 2026 ore 12.00 | Apertura delle procedure online per la presentazione delle domande di ammissione",
+        "Il Conservatorio di Musica “Luigi Cherubini” di Firenze istituisce il percorso formativo rivolto ai “Giovani Talenti” finalizzato a valorizzare e favorire la formazione accademica di giovani studenti (per i corsi di Canto: che abbiano compiuto o compiano 17 anni di età al 31/12/2026) iscritti ad una scuola secondaria di secondo grado che, non avendo ancora conseguito il diploma di scuola secondaria superiore necessario per l’accesso ai corsi accademici, siano dotati di particolari e spiccate attitudini, adeguate qualità musicali e acquisita e verificata preparazione tecnica pari o superiore ai requisiti minimi richiesti per l’accesso ai corsi accademici di primo livello (Triennio)."
+      ],
+      "requirements": [
+        "NOTA BENE: è presente un refuso nel Decreto: All’art. 4, comma 1, punto b, il titolo è da leggersi: b) Diploma di primo livello (TRIENNIO)",
+        "Verifica di competenza della Lingua italiana: riservata agli studenti internazionali regolarmente immatricolati.",
+        "Anche coloro i quali siano in possesso della certificazione di livello B2 conseguita presso gli enti certificatori accreditati dovranno sostenere la verifica di competenza della lingua italiana.",
+        "Invio della comunicazione agli studenti internazionali che non sono risultati idonei alla verifica di competenza delle lingua italiana, che saranno obbligati a frequentare apposito Corso organizzato dal Conservatorio."
+      ],
+      "fallback_lines": [
+        "TEMPISTICA AMMISSIONI – Corsi di CANTO 2026-27 (Triennio, Biennio e Giovani Talenti) | Conservatorio di Musica Luigi Cherubini",
+        "Pagina dedicata alle tempistiche e alle procedure relative alle Ammissioni per l’Anno Accademico 2026 – 27.",
+        "(Triennio, Biennio e Giovani Talenti).",
+        "Preselezione Corsi di Canto (Triennio, Biennio e Giovani Talenti)"
+      ],
+      "documents": [
+        "https://www.consfi.it/wp-content/uploads/2026/02/2026-27_DD_tempistica-ammissioni_CANTO_signed.pdf",
+        "https://www.consfi.it/wp-content/uploads/2026/03/2026-27_DD_ammissioni_TUTTI-I-CORSI_signed-copia-1.pdf",
+        "https://www.consfi.it/wp-content/uploads/2026/04/ORARI-DI-CONVOCAZIONE-PER-LE-PROVE-IN-PRESENZA-AMMISSIONI-DI-CANTO-BIENNIO.pdf",
+        "https://www.consfi.it/wp-content/uploads/2026/04/ORARI-DI-CONVOCAZIONE-PER-LE-PROVE-IN-PRESENZA-AMMISSIONI-DI-CANTO-TRIENNIO.pdf",
+        "https://www.consfi.it/wp-content/uploads/2026/05/Calendario-ammissioni-26-27_Agg.-06.05.2026-1.pdf",
+        "https://www.consfi.it/wp-content/uploads/2026/05/Decreto-Direttore_graduatoria-ammissioni_2026-2027_Prot.pdf"
+      ],
+      "error": null,
+      "discovered": true
     },
     {
       "number": 10,
       "city": "布雷西亚",
       "school": "Conservatorio Luca Marenzio",
       "url": "https://www.consbs.it/ammissioni/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "AMMISSIONI 2024-25 - Test di ingresso - Elenchi dei candidati - Conservatorio di Musica \"Luca Marenzio\" CONSERVATORIO DI MUSICA \"Luca Marenzio\" BRESCIA",
       "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
+      "exam_dates": [
+        "Si comunicano gli elenchi dei candidati ai test di ingresso previsti per l’ammissione ai corsi, che si terranno il 10 giugno. Le stesse informazioni si trovano anche nella sezione Home/Didattica/"
+      ],
+      "requirements": [
+        "TRIENNI – Corsi di Diploma Accademico di I Livello",
+        "BIENNI – Corsi di Diploma Accademico di II Livello",
+        "Test d'ingresso per la lingua italiana"
+      ],
+      "fallback_lines": [
+        "AMMISSIONI 2024-25 - Test di ingresso - Elenchi dei candidati - Conservatorio di Musica \"Luca Marenzio\" CONSERVATORIO DI MUSICA \"Luca Marenzio\" BRESCIA",
+        "Orari e iscrizione al prestito",
+        "Ammissione 2024/25 Candidati Internazionali",
+        "AMMISSIONI 2024-25 – Test di ingresso – Elenchi dei candidati"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.consbs.it/ammissioni/",
+      "error": null,
       "discovered": false
     },
     {
@@ -176,16 +304,26 @@
       "city": "墨西拿",
       "school": "Conservatorio Arcangelo Corelli",
       "url": "https://www.consme.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "CONSERVATORIO MESSINA HOME",
       "deadline_lines": [],
       "exam_dates": [],
       "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.consme.it/",
+      "fallback_lines": [
+        "Graduatorie ammissioni corsi Accademici a.a. 2026-27 (2)",
+        "Graduatorie ammissioni corsi Accademici a.a. 2026-27",
+        "Graduatorie ammissioni corsi Propedeutici a.a. 2026-27",
+        "Verbale n. 1 - Procedura selettiva per soli titoli per la costituzione di una graduatoria a tempo determinato SAD AFAM019 Strumenti a Percussione"
+      ],
+      "documents": [
+        "https://www.consme.it/images/news/2026/graduatoria%20ammissioni%20a.a.%202026_27%20CORSI%20ACCADEMICI.pdf",
+        "https://www.consme.it/images/news/2026/graduatoria%20ammissioni%20a.a.%202026_27%20PROPEDEUTICI.pdf",
+        "https://www.consme.it/images/bandi_e_graduatorie/2026_2027/ALLEGATO%20A%20BANDO%20AFAM030.pdf",
+        "https://www.consme.it/images/bandi_e_graduatorie/2026_2027/ALLEGATO%20B%20BANDO%20AFAM030.pdf"
+      ],
+      "error": null,
       "discovered": false
     },
     {
@@ -193,16 +331,32 @@
       "city": "乌迪内",
       "school": "Conservatorio Jacopo Tomadini",
       "url": "https://www.conservatorio.udine.it/didattica/ammissione-e-iscrizioni.html",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Ammissione e iscrizione",
       "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
+      "exam_dates": [
+        "Con il Decreto Ministeriale 933/2022, a decorrere dall’anno accademico 2022 - 2023 è stata consentita la contemporanea iscrizione a due corsi di diploma accademico di primo o di secondo livello o di perfezionamento o master anche presso più istituzioni dell’alta formazione artistica, musicale e coreutica di cui all’articolo 2 della legge 21 dicembre 1999 n. 508 conseguendo due titoli di studio distinti (art. 2 comma 1)."
+      ],
+      "requirements": [
+        "Diploma Accademico II Livello (Biennio)",
+        "Diploma Accademico I Livello (Triennio)",
+        "Il corso di diploma accademico di primo livello ha l'obiettivo di assicurare un'adeguata padronanza di metodi e tecniche artistiche, nonché l'acquisizione di specifiche competenze disciplinari e professionali. Si conclude con il conseguimento del Diploma Accademico di I livello;",
+        "Per essere ammessi ad un Corso di Diploma Accademico di II Livello, occorre essere in possesso di uno dei seguenti titoli:",
+        "Laurea o Diploma Accademico di I Livello",
+        "Altro titolo di studio conseguito all’estero, riconosciuto idoneo.",
+        "Il contributo è riferito all’iscrizione ad un numero di corsi singoli fino al raggiungimento dei crediti ammissibile pari a 40 cf.",
+        "È altresì consentita l’iscrizione contemporanea a un corso di diploma accademico e a un corso di perfezionamento o master, di dottorato di ricerca o di specializzazione (art. 2, comma 2)."
+      ],
+      "fallback_lines": [
+        "Diploma Accademico II Livello (Biennio)",
+        "Diploma Accademico I Livello (Triennio)",
+        "Presso il Conservatorio sono attivi i Corsi Propedeutici relativi alle scuole indicate di seguito:",
+        "Con successivo bando, emanato con decreto direttoriale, verranno indicati i Corsi Propedeutici per i quali sono aperte le ammissioni per l’a.a. 2026/2027 in base ai posti disponibili."
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.conservatorio.udine.it/didattica/ammissione-e-iscrizioni.html",
+      "error": null,
       "discovered": false
     },
     {
@@ -210,16 +364,30 @@
       "city": "帕多瓦",
       "school": "Conservatorio Cesare Pollini",
       "url": "https://www.conservatoriopollini.it/site/it/didattica-iscrizioni/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio Pollini",
       "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.conservatoriopollini.it/site/it/didattica-iscrizioni/",
+      "exam_dates": [
+        "Diploma di scuola secondaria di secondo grado, o titolo estero equivalente. Preparazione tecnica specifica (strumentale, vocale, compositiva o di direzione) e culturale musicale generale adeguata agli obiettivi formativi previsti in uscita dallo specifico corso di studi triennale richiesto. Per ogni corso è predisposto un programma per l’esame di ammissione volto ad accertare adeguate competenze teorico-pratiche e dei Test di verifica delle competenze in Teoria, solfeggio e Armonia. I candidati all’ammissione che non dovessero superare l’esame e/o i Test predetti, saranno indirizzati alla frequenza dei Corsi Propedeutici. Non sono previsti limiti d'età per l'accesso. E' consentita la doppia iscrizione Conservatorio/Università in base alla legge 240/2010 e al D.M. del 28/09/2011"
+      ],
+      "requirements": [
+        "Diploma Accademico di Primo Livello",
+        "Diploma Accademico di Secondo Livello"
+      ],
+      "fallback_lines": [
+        "AMMISSIONI CORSI ACCADEMICI E PREACCADEMICI",
+        "GUIDA alla procedura di accesso e iscrizione alle ammissioni in ESSE3",
+        "AMMISSIONI MUSICA VOCALE DA CAMERA - BIENNIO - 2026 2027",
+        "CALENDARIO ESAMI DI AMMISSIONE - Sessione Autunnale - a.a. 2026/2027"
+      ],
+      "documents": [
+        "https://www.conservatoriopollini.it/public/040926-114133-bd90bace-030926-151900-d1dea66e-calendario-ammissioni-settembre-2026.pdf",
+        "https://www.conservatoriopollini.it/public/080526-091303-guidaalliscrizioneammissioneperstudentiesterni.pdf",
+        "https://www.conservatoriopollini.it/public/090926-113123-06b39acb-ammissioni-musica-vocale-da-camera-biennio-2026-2027.pdf"
+      ],
+      "error": null,
       "discovered": false
     },
     {
@@ -227,7 +395,7 @@
       "city": "热那亚",
       "school": "Conservatorio Niccolò Paganini",
       "url": "https://www.conspaganini.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
+      "checked_at": "2026-11-09T19:54:17+01:00",
       "status": "error",
       "http_status": null,
       "title": "",
@@ -236,7 +404,7 @@
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://www.conspaganini.it/",
+      "error": "Timeout: Failed to perform, curl: (28) Operation timed out after 25001 milliseconds with 0 bytes received. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
       "discovered": false
     },
     {
@@ -244,50 +412,93 @@
       "city": "亚历山德里亚",
       "school": "Conservatorio Antonio Vivaldi",
       "url": "https://conservatoriovivaldi.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio A. Vivaldi Alessandria",
+      "deadline_lines": [
+        "Scadenza iscrizioni sabato 28 novembre 2026",
+        "15 ottobre 2026 - Scadenza iscrizioni: 10 ottobre 2026",
+        "26 settembre 2026 - Scadenza iscrizioni: 24 settembre 2026",
+        "5 e 6 ottobre 2026 - Scadenza iscrizioni: 28 settembre 2026",
+        "21 e 22 settembre 2026 - Scadenza iscrizioni: 14 settembre 2026",
+        "5 - 10 ottobre 2026 - Scadenza delle iscrizioni: 15 settembre 2026"
+      ],
+      "exam_dates": [
+        "Corsi Propedeutici 26/27",
+        "Propedeutici 25/26",
+        "Serata dedicata al Biennio di musicoterapia e agli studenti del corso Venerdì 27 novembre 2026 ore 21:00 – Auditorium Pittaluga via Parma, 1 – Alessandria Ingresso a offerta libera, fino a esaurimento posti. per info: infoavenahele@gmail.com",
+        "ESITI ESAMI DI AMMISSIONE ANNO ACCADEMICO 2026/2027 – Sessione autunnale LA GRADUATORIA DEFINITIVA DEGLI AMMESSI SARA’ PUBBLICATA A PARTIRE DA LUNEDI’ 5 OTTOBRE 2026DOPO GLI ESITI DELLE PROVE DI AREA COMUNE E DI LINGUA ITALIANA PER STRANIERI IN BLU GLI ESITI DEFINITI DELLE PROVE E DEGLI AMMESSI Ricordiamo che solo…"
+      ],
+      "requirements": [
+        "Dopo l’iscrizione potete contattare l’ufficio Supporto Informatico per attivare il vs nuovo account “nome.cognome@conservatoriovivaldi.it”, necessario per potersi iscrivere ai corsi, agli esami, prenotare le aule e per la DaD.",
+        "ERASMUS+ Avviso assistenti di lingua italiana"
+      ],
+      "fallback_lines": [
+        "Corsi Accademici di 1° livello {triennio}",
+        "Corsi Accademici di 2° livello {biennio}",
+        "Ammissioni Iscrizioni Trasferimenti e Modulistica",
+        "Scadenza iscrizioni sabato 28 novembre 2026"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriovivaldi.it/",
+      "error": null,
       "discovered": false
     },
     {
       "number": 16,
       "city": "阿韦利诺",
       "school": "Conservatorio Domenico Cimarosa",
-      "url": "https://conservatoriocimarosa.org/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriocimarosa.org/",
-      "discovered": false
+      "url": "https://conservatoriocimarosa.org/iscrizioni",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio di musica D. Cimarosa – conservatorio di musica — Iscrizioni – Conservatorio di musica D. Cimarosa",
+      "deadline_lines": [
+        "PROROGA CON MORA ISCRIZIONE AGLI ANNI SUCCESSIVI A.A. 2026-2027"
+      ],
+      "exam_dates": [
+        "Se il tuo ISEE è compreso tra € 20.000,00 a € 30.000,00 la tassa annuale d’iscrizione e frequenza viene calcolata in base al reddito, tenuto conto del Decreto Ministeriale n. 234 del 26 giugno 2020. Di seguito si riporta la tabella delle fasce reddituali con le debite variazioni applicate da questo Conservatorio:"
+      ],
+      "requirements": [
+        "Corsi per il conseguimento del diploma accademico di primo livello",
+        "Corsi per il conseguimento del diploma accademico di secondo livello",
+        "Per l’immatricolazione è necessario collegarsi al link:",
+        "Corsi per il conseguimento del diploma accademico di Primo Livello",
+        "Corsi per il conseguimento del diploma accademico di Secondo Livello",
+        "Per l’iscrizione agli anni successivi al primo è necessario collegarsi al link:",
+        "Per l’immatricolazione è necessario collegarsi al link:",
+        "Per l’iscrizione agli anni successivi al primo è necessario collegarsi al link"
+      ],
+      "fallback_lines": [
+        "Iscrizioni – Conservatorio di musica D. Cimarosa",
+        "Elezioni del Direttore triennio 2026/2029",
+        "Elezioni del Consiglio Accademico triennio 2025/2028",
+        "Corsi di I e II Livello – Immatricolazione (I anno)"
+      ],
+      "documents": [
+        "https://conservatoriocimarosa.org/wp-content/uploads/2025/08/GUIDA-ALLISCRIZIONE-ONLINE-ESSE3.pdf",
+        "https://conservatoriocimarosa.org/wp-content/uploads/2026/05/GUIDA-ALLIMMATRICOLAZIONE-ONLINE-ESSE3-1.pdf",
+        "https://conservatoriocimarosa.org/wp-content/uploads/2026/07/GUIDA-ALLISCRIZIONE-ONLINE-ESSE3-4-1.pdf",
+        "https://conservatoriocimarosa.org/wp-content/uploads/2026/07/Proroga-con-mora-iscrizione-agli-anni-successivi-–-A.A.-2026-2027-1-1.pdf"
+      ],
+      "error": null,
+      "discovered": true
     },
     {
       "number": 17,
       "city": "博尔扎诺",
       "school": "Conservatorio Claudio Monteverdi",
       "url": "https://cons.bz.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatory C. Monteverdi",
       "deadline_lines": [],
       "exam_dates": [],
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://cons.bz.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -295,16 +506,16 @@
       "city": "坎波巴索",
       "school": "Conservatorio Lorenzo Perosi",
       "url": "https://conservatorioperosi.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": ".: Conservatorio di Musica Lorenzo Perosi :.",
       "deadline_lines": [],
       "exam_dates": [],
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatorioperosi.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -312,16 +523,23 @@
       "city": "卡斯泰尔弗兰科",
       "school": "Conservatorio Agostino Steffani",
       "url": "https://conscfv.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Benvenuto - Conservatorio Steffani",
+      "deadline_lines": [
+        "Scadenza 1 ottobre 2026. Tassa ammissione: 70 euro."
+      ],
       "exam_dates": [],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "Dottorato di Interesse Nazionale ARMH - Ammissioni III Ciclo (42°)",
+        "GRADUATORIA AMMISSIONI A.A. 2026-27 - SECONDA SESSIONE",
+        "Dottorato di Interesse Nazionale ARMH – Ammissioni III Ciclo (42°)",
+        "BANDO DI AMMISSIONE PER IL DOTTORATO DI INTERESSE NAZIONALE"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conscfv.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -329,16 +547,23 @@
       "city": "卡塔尼亚",
       "school": "Conservatorio Vincenzo Bellini",
       "url": "https://istitutobellini.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio Bellini Catania – Conservatorio Bellini",
       "deadline_lines": [],
-      "exam_dates": [],
+      "exam_dates": [
+        "Prime immatricolazioni - dal 29 maggio al 30 giugno 2026",
+        "Iscrizione ad anni successivi al primo - dal 1 luglio al 31 luglio 2026"
+      ],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "Programmi di ammissione 2026 – 2027",
+        "Prime immatricolazioni - dal 29 maggio al 30 giugno 2026",
+        "Iscrizione ad anni successivi al primo - dal 1 luglio al 31 luglio 2026"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://istitutobellini.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -346,7 +571,7 @@
       "city": "切塞纳",
       "school": "Conservatorio Bruno Maderna",
       "url": "https://conservatoriomaderna-cesena.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
+      "checked_at": "2026-11-09T19:54:17+01:00",
       "status": "error",
       "http_status": null,
       "title": "",
@@ -355,7 +580,7 @@
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriomaderna-cesena.it/",
+      "error": "Timeout: Failed to perform, curl: (28) Connection timed out after 25001 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
       "discovered": false
     },
     {
@@ -363,7 +588,7 @@
       "city": "科森扎",
       "school": "Conservatorio Stanislao Giacomantonio",
       "url": "https://portale.conservatoriodicosenza.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
+      "checked_at": "2026-11-09T19:54:17+01:00",
       "status": "error",
       "http_status": null,
       "title": "",
@@ -372,7 +597,7 @@
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://portale.conservatoriodicosenza.it/",
+      "error": "DNSError: Failed to perform, curl: (6) Could not resolve host: portale.conservatoriodicosenza.it (Domain name not found). See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
       "discovered": false
     },
     {
@@ -380,16 +605,20 @@
       "city": "库内奥",
       "school": "Conservatorio Giorgio Federico Ghedini",
       "url": "https://conservatoriocuneo.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Home - Conservatorio Cuneo",
       "deadline_lines": [],
       "exam_dates": [],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "Laboratorio corale (nuove iscrizioni) lezioni di prova",
+        "Pedagogia musicale e psicologia della musica AFAM053 Decreto di nomina del Presidente Decreto di nomina della Commissione Verbale di insediamento",
+        "Contrabbasso AFAM004 (ex CODI/04) Estrazione della Commissione Nomina del Presidente della Commissione Nomina della Commissione"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriocuneo.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -397,16 +626,25 @@
       "city": "费尔莫",
       "school": "Conservatorio G.B. Pergolesi",
       "url": "https://conservatorio.net/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio Statale di Musica \"G.B. Pergolesi\" – Istituto di Alta Formazione Artistica e Musicale",
       "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
+      "exam_dates": [
+        "Calendario esami di ammissione a.a. 2026/2027 – Corsi Accademici – Propedeutici – rev. del 11/09/2026"
+      ],
+      "requirements": [
+        "Erasmus+, il programma dell’UE per l’istruzione, la formazione, la gioventù e lo sport"
+      ],
+      "fallback_lines": [
+        "Assegnazione docenti corsi propedeutici – a.a. 2026/2027",
+        "Ammissioni corsi di Formazione di base VIOLINO a.a. 2026/2027 – Graduatoria",
+        "AMMISSIONI A.A. 2026/2027 – FORMAZIONE DI BASE – GRADUATORIA",
+        "AMMISSIONI A.A. 2026-2027- GRADUATORIE CORSI ACCADEMICI E PROPEDEUTICI"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatorio.net/",
+      "error": null,
       "discovered": false
     },
     {
@@ -414,16 +652,16 @@
       "city": "费拉拉",
       "school": "Conservatorio Girolamo Frescobaldi",
       "url": "https://conservatorioferrara.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "http_error",
+      "http_status": 404,
+      "title": "404 Not Found",
       "deadline_lines": [],
       "exam_dates": [],
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatorioferrara.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -431,41 +669,72 @@
       "city": "福贾",
       "school": "Conservatorio Umberto Giordano",
       "url": "https://conservatoriofoggia.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
-      "exam_dates": [],
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio di Musica Umberto Giordano - Foggia",
+      "deadline_lines": [
+        "Sono aperti i termini per la presentazione delle domande per sostenere l’ammissione ai Corsi Liberi per l’a.a. 2021/22.Scadenza delle domande 22 gennaio 2022. Avviso e allegati",
+        "RINNOVO ISCRIZIONI A.A. 2021/2022 – PROROGA",
+        "Sono aperti i termini per la presentazione delle domande per sostenere l’ammissione ai Corsi Liberi per l’a.a. 2020/21.Scadenza delle domande 25 gennaio 2021. Avviso e allegati",
+        "Ammissioni a.a. 2020/2021 – proroga termini domande ammissione",
+        "Sono aperti i termini per la presentazione delle domande per sostenere l’ammissione ai Corsi Liberi per l’a.a. 2019/20.Scadenza delle domande 8 febbraio 2020. Avviso e allegati",
+        "Si comunica che dal 1 aprile al 15 maggio 2019 sarà possibile presentare domanda per sostenere l’esame di ammissione per l’a.a.2019/2020. Leggi i dettagli negli avvisi Ammissione triennio Ammissione biennio Ammissione propedeutico e base"
+      ],
+      "exam_dates": [
+        "Si avvisa che gli esami di ammissione della sede di Rodi Garganico previsti per il 20, 21 e 22 settembre, sono rinviati ai giorni 11, 12 e 13 ottobre con gli stessi orari. Disposto Prot. n. 6.149",
+        "Si comunica che il Consiglio Accademico nella riunione del 29 aprile 2019 ha determinato l’innalzamento del limite d’età per l’accesso ai Corsi Propedeutici portandolo a 18 anni, con esclusione di Composizione e Direzione d’orchestra per i quali non sono previsti limiti di età. Il Consiglio ha inoltre determinato che sarà possibile richiedere l’ammissione ad un’annualità […]",
+        "Calendario esami di ammissione Decreto di riapertura delle procedure di ammissioni per l’a.a. 2018/2019. Termine per la presentazione delle domande 20 ottobre 2018. Leggi il decreto",
+        "Audizione studenti Scadenza domande 27 aprile 2018 Leggi l’avviso"
+      ],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "Immatricolazioni Corsi Base a.a. 2026/2027",
+        "Immatricolazioni a.a. 2026/2027",
+        "Immatricolazioni sessione suppletiva a.a. 2026/2027",
+        "Esami di ammissione per l’a.a. 2026/27"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriofoggia.it/",
+      "error": null,
       "discovered": false
     },
     {
       "number": 27,
       "city": "弗罗西诺内",
       "school": "Conservatorio Licinio Refice",
-      "url": "https://conservatorio-frosinone.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "url": "https://conservatorio-frosinone.it/didattica/corsi-propedeutici-afam/programmi-di-ammissione.html",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio Licinio Refice - On line il nuovo portale — Conservatorio Licinio Refice - Programmi di Ammissione",
       "deadline_lines": [],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatorio-frosinone.it/",
-      "discovered": false
+      "requirements": [
+        "Teoria, Ritmica e Percezione Musicale, requisiti di ammissione e programma di esame"
+      ],
+      "fallback_lines": [
+        "Conservatorio Licinio Refice - Programmi di Ammissione",
+        "Elezioni Presidente del Conservatorio Statale di Musica “Licinio Refice” di Frosinone per il triennio 2022-2025",
+        "Programmi di Ammissione e Programmi di Studio Trienni",
+        "Programmi di Ammissione e Programmi di Studio Bienni"
+      ],
+      "documents": [
+        "https://conservatorio-frosinone.it/media/1098598/allegato_a_-_programma_di_ammissione_al_cpa_di_organo.pdf",
+        "https://conservatorio-frosinone.it/media/791359/programma_ammissione_propedeutico_e_triennio_tromba_rinas._e_barocca_.pdf",
+        "https://conservatorio-frosinone.it/media/812816/programma_trpm_ammissione_propedeutico_08.04.19.pdf",
+        "https://conservatorio-frosinone.it/media/869498/violino-_programma__esami_ammissione__corsi_propedeutici_afam.pdf",
+        "https://conservatorio-frosinone.it/media/930676/programma_di_ammissione_ai_corsi_propedeutici_di_violoncello_barocco.pdf",
+        "https://conservatorio-frosinone.it/media/948474/ammissione_cpa_percussioni.pdf"
+      ],
+      "error": null,
+      "discovered": true
     },
     {
       "number": 28,
       "city": "拉斯佩齐亚",
       "school": "Conservatorio Giacomo Puccini",
       "url": "https://conservatoriopuccini.com/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
+      "checked_at": "2026-11-09T19:54:17+01:00",
       "status": "error",
       "http_status": null,
       "title": "",
@@ -474,7 +743,7 @@
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriopuccini.com/",
+      "error": "CertificateVerifyError: Failed to perform, curl: (60) SSL: certificate subject name 'Plesk' does not match target hostname 'conservatoriopuccini.com'. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
       "discovered": false
     },
     {
@@ -482,16 +751,23 @@
       "city": "拉蒂纳",
       "school": "Conservatorio Ottorino Respighi",
       "url": "https://conslatina.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio Statale di Musica | Latina",
+      "deadline_lines": [
+        "NUOVA_Proroga_Presentazione_Domanda-Ammissione2026-27"
+      ],
       "exam_dates": [],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "AMMISSIONI 2024-25_GRADUATORIE 1a parte",
+        "AMMISSIONI 2024-25_GRADUATORIE 2a parte",
+        "CALENDARI_AMMISSIONI_Contribuzione Studentesca2026",
+        "Decreto_Ammissioni-Suppletive_2026-27"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conslatina.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -499,16 +775,32 @@
       "city": "莱切",
       "school": "Conservatorio Tito Schipa",
       "url": "https://conservatoriolecce.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio Tito Schipa - Istituto superiore di studi musicali",
       "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
+      "exam_dates": [
+        "AMMISSIONI (APERTURA DOMANDE: 14 MAGGIO –> 30 GIUGNO 2026) – IMMATRICOLAZIONI – REISCRIZIONI ED INFORMAZIONI GENERALI SU TUTTI I CORSI ATTIVI PRESSO IL CONSERVATORIO (PREACCADEMICI – PROPEDEUTICI – TRIENNI �..."
+      ],
+      "requirements": [
+        "Diploma Accademico di I Livello (Triennio)",
+        "Diploma Accademico di II Livello (Biennio)",
+        "Diploma Accademico di I Livello (Triennio)",
+        "Diploma Accademico di II Livello (Biennio)",
+        "Diploma Accademico di I Livello (Triennio)",
+        "Diploma accademico di II Livello – Biennio",
+        "Diploma Accademico di I Livello (Triennio)",
+        "Diploma Accademico di II Livello (Biennio)"
+      ],
+      "fallback_lines": [
+        "Diploma Accademico di I Livello (Triennio)",
+        "Diploma Accademico di II Livello (Biennio)",
+        "DOMANDE DI AMMISSIONE AL CONSERVATORIO PER L’A.A. 2026/27",
+        "Calendario e Commissioni esami di AMMISSIONE a.a 2026/27 – Lecce"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriolecce.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -516,50 +808,79 @@
       "city": "卢卡",
       "school": "Conservatorio Luigi Boccherini",
       "url": "https://boccherini.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Home - Conservatorio di Musica Luigi Boccherini",
       "deadline_lines": [],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
+      "requirements": [
+        "Diploma accademico di I livello",
+        "Diploma accademico di II livello",
+        "Diploma accademico di I livello"
+      ],
+      "fallback_lines": [
+        "CONSERVATORIO BOCCHERINI, 283 DOMANDE DI AMMISSIONE E 145 NUOVI STUDENTI PER L’ANNO ACCADEMICO 2026/2027"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://boccherini.it/",
+      "error": null,
       "discovered": false
     },
     {
       "number": 32,
       "city": "曼托瓦",
       "school": "Conservatorio Lucio Campiani",
-      "url": "https://conservatoriomantova.com/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
+      "url": "https://conservatoriomantova.com/it/ammissioni",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Home | Conservatorio di Mantova — Ammissioni | Conservatorio di Mantova",
+      "deadline_lines": [
+        "La domanda di ammissione per i Corsi Accademici di I e II Livello e Corsi Propedeutici, per a.a. 2026/27 (seconda sessione), va presentata entro il 29 agosto 2026 in modalità telematica tramite il"
+      ],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriomantova.com/",
-      "discovered": false
+      "requirements": [
+        "Per l’ammissione è richiesto il possesso di un diploma di scuola secondaria di secondo grado, o di altro titolo di studio conseguito all’estero riconosciuto idoneo.",
+        "In caso di spiccate capacità e attitudini, possono essere ammessi studenti non ancora in possesso del diploma di maturità, che deve comunque essere conseguito entro il termine del corso accademico.",
+        "Per l’ammissione è richiesto il possesso di un diploma accademico di I livello, o di un diploma di laurea, o di un diploma di previgente ordinamento congiunto ad un diploma di scuola secondaria di secondo grado, o di altro titolo di studio conseguito all’estero e riconosciuto idoneo.",
+        "Tutorato, piano di studi e riconoscimento crediti"
+      ],
+      "fallback_lines": [
+        "Ammissioni | Conservatorio di Mantova",
+        "Programmi esami corsi propedeutici",
+        "Programmi esami corsi primo livello (triennio)",
+        "Programmi esami corsi di secondo livello (biennio)"
+      ],
+      "documents": [
+        "https://conservatoriomantova.com/media/file/pagine/73/guida_ammissione-nuovo_compressed.pdf"
+      ],
+      "error": null,
+      "discovered": true
     },
     {
       "number": 33,
       "city": "马泰拉",
       "school": "Conservatorio Egidio Romualdo Duni",
       "url": "https://conservatoriomatera.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio di Matera",
+      "deadline_lines": [
+        "solo per gli studenti risultati AMMESSI a seguito del superamento del concorso di ammissione, a partire dalle 12:00 del 26/10/2026 entro le 12:00 del 29/10/2026",
+        "Iscrizioni entro le ore 14:00 del 14 ottobre 2026. Disponibile anche il calendario ufficiale delle prove di ammissione",
+        "Il 6 e 7 ottobre masterclass del M° Bastien David sulla musica contemporanea in Sala Rota. Evento aperto a studenti interni ed esterni al Conservatorio."
+      ],
       "exam_dates": [],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "Immatricolazioni e rinnovo iscrizioni",
+        "Per gli studenti immatricolati al primo anno dei corsi accademici di primo livello",
+        "Immatricolazioni Anno Accademico 2026/2027",
+        "solo per gli studenti risultati AMMESSI a seguito del superamento del concorso di ammissione, a partire dalle 12:00 del 26/10/2026 entro le 12:00 del 29/10/2026"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriomatera.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -567,67 +888,117 @@
       "city": "米兰",
       "school": "Conservatorio G. Verdi（旧域名）",
       "url": "https://consmilano.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio di Milano \"Giuseppe Verdi\"",
       "deadline_lines": [],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
+      "requirements": [
+        "Il Conservatorio di Milano dispone di un Sistema di Gestione Qualità certificato ai sensi della norma Uni En Iso 9001 relativamente al seguente campo di applicazione: progettazione ed erogazione di corsi di Diploma accademico di I e II livello, attività di produzione e servizi di biblioteca nel settore musicale"
+      ],
+      "fallback_lines": [
+        "Informazioni per iscrizioni Erasmus",
+        "Bando per audizioni strumentisti solisti con la Youth Orchestra del Conservatorio",
+        "Bando Integrativo Orchestra Erasmus – Produzioni 2027 cat. Strumenti",
+        "Bando per audizioni strumentisti solisti con Youth Orchestra del Conservatorio di Milano – Concerti: 13, 14 Febbraio, 7 marzo e 22 Maggio 2027"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://consmilano.it/",
+      "error": null,
       "discovered": false
     },
     {
       "number": 35,
       "city": "莫诺波利",
       "school": "Conservatorio Nino Rota",
-      "url": "https://conservatoriodimonopoli.org/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
+      "url": "https://conservatoriodimonopoli.org/iscrizioni/",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio di Musica Nino Rota - Conservatorio di Musica di Monopoli — Iscrizioni - Conservatorio di Musica di Monopoli",
+      "deadline_lines": [
+        "Bando assegnazione PC agli studenti 2026-2028 - scadenza ore 12 del 02/12/2026"
+      ],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
+      "requirements": [
+        "Per accedere ai corsi del Conservatorio di Musica Nino Rota di Monopoli è obbligatorio superare una prova di ammissione.",
+        "È previsto il pagamento di un Contributo per effettuare l’iscrizione alla prova di ammissione.",
+        "(l’eventuale idoneità acquisita al momento della prova di ammissione non indica automatico accesso al Conservatorio) con contestuale presentazione delle disposizioni di pagamento delle tasse e dei contributi previsti. Per informazioni consulta il",
+        "Per procedere con il rinnovo iscrizione, effettuare il pagamento delle rispettive tasse e contributi di iscrizione e predisporre il piano di studi, sarà necessario accedere al proprio profilo privato.",
+        "Si consigliano studenti e genitori (studenti minorenni), non ancora in possesso di credenziali di accesso, a consultare e compilare il seguente modulo per richiedere i dati di accesso:"
+      ],
+      "fallback_lines": [
+        "Iscrizioni - Conservatorio di Musica di Monopoli",
+        "Per accedere ai corsi del Conservatorio di Musica Nino Rota di Monopoli è obbligatorio superare una prova di ammissione.",
+        "La procedura di iscrizione è esclusivamente on-line con la piattaforma",
+        "Le prove si differenziano in base al corso scelto. Tutti i programmi di ammissione sono pubblicati in Didattica >"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriodimonopoli.org/",
-      "discovered": false
+      "error": null,
+      "discovered": true
     },
     {
       "number": 36,
       "city": "诺瓦拉",
       "school": "Conservatorio Guido Cantelli",
-      "url": "https://consno.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
+      "url": "https://consno.it/segreteria/segreteria-ammissioni-2026-2027/",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Home - Conservatorio Cantelli — Ammissioni Anno Accademico 2026-2027 - Conservatorio Cantelli",
+      "deadline_lines": [
+        "Termine presentazione domande immatricolazione 4 luglio 2026"
+      ],
       "exam_dates": [],
       "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://consno.it/",
-      "discovered": false
+      "fallback_lines": [
+        "Ammissioni Anno Accademico 2026-2027 - Conservatorio Cantelli",
+        "Ammissioni Anno Accademico 2026-2027",
+        "Sono aperte le procedure di ammissione ai corsi del Conservatorio “Guido Cantelli” di Novara per l’Anno Accademico 2026/2027",
+        "Le domande di ammissione potranno essere presentate"
+      ],
+      "documents": [
+        "https://consno.it/wp-content/uploads/2026/05/CALENDARIO-AMMISSIONI-SESSIONE-ESTIVA.pdf",
+        "https://consno.it/wp-content/uploads/2026/06/GUIDA_IMMATRICOLAZIONE_26-27-1-1.pdf",
+        "https://consno.it/wp-content/uploads/2026/06/RISULTATI-AMMISSIONI-SESSIONE-ESTIVA-3-1.pdf",
+        "https://consno.it/wp-content/uploads/2026/09/GUIDA_IMMATRICOLAZIONE_26-27-SESSIONE-AUTUNNALE.pdf",
+        "https://consno.it/wp-content/uploads/2026/09/RISULTATI-AMMISSIONI-SESSIONE-AUTUNNALE-1.pdf",
+        "https://consno.it/wp-content/uploads/2026/03/GUIDA-PROCEDURA-ONLINE.pdf"
+      ],
+      "error": null,
+      "discovered": true
     },
     {
       "number": 37,
       "city": "巴勒莫",
       "school": "Conservatorio Alessandro Scarlatti",
       "url": "https://conservatoriopalermo.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Home - Conservatorio Palermo",
+      "deadline_lines": [
+        "Avviso - Riapertura termine di scadenza ammissione ai dottorati di ricerca"
+      ],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriopalermo.it/",
+      "requirements": [
+        "Richiedi tutte le informazioni per iscrizioni, immatricolazioni e masterclass"
+      ],
+      "fallback_lines": [
+        "Calendario Esami, Iscrizioni, Diplomi accademici",
+        "Bando ammissione Master di II livello Musica Contemporanea per Interpreti e Compositori A.A 2026/2027",
+        "Bando Ammissione Dottorato di ricerca 42 ciclo A.A 2026-2027",
+        "Riapertura termini ammissione Biennio accademico di II livello per 2026/2027"
+      ],
+      "documents": [
+        "https://conservatoriopalermo.it/wp-content/uploads/2025/05/Riapertura-termini-Bando-ammissione-Percorsi-di-Formazione-iniziale-di-cui-DPCM-04.08.2023-con-allegati.pdf",
+        "https://conservatoriopalermo.it/wp-content/uploads/2026/07/Bando-ammissione-Master-di-II-livello-Musica-Contemporanea-per-Interpreti-e-Compositori.pdf",
+        "https://conservatoriopalermo.it/wp-content/uploads/2026/09/Bando-ammissione-Dottorato-di-ricerca-42-ciclo-anno-accademico-2026-2027-def.pdf",
+        "https://conservatoriopalermo.it/wp-content/uploads/2026/09/Riapertura-termini-Bando-ammissione-Corso-propedeutico-2026-2027.pdf",
+        "https://conservatoriopalermo.it/wp-content/uploads/2026/09/Riapertura-termini-ammissione-Biennio-accademico-di-II-livello-per-2026.2027.pdf",
+        "https://conservatoriopalermo.it/wp-content/uploads/2026/09/Riapertura-termini-ammissione-Triennio-accademico-di-I-livello-per-2026.2027.pdf"
+      ],
+      "error": null,
       "discovered": false
     },
     {
@@ -635,16 +1006,26 @@
       "city": "佩鲁贾",
       "school": "Conservatorio Francesco Morlacchi",
       "url": "https://conservatorioperugia.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
-      "exam_dates": [],
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio di Musica \"F. Morlacchi\" di Perugia – Istituzione di Alta Cultura",
+      "deadline_lines": [
+        "Domande di Ammissione - Scadenza 31/07/2026"
+      ],
+      "exam_dates": [
+        "Domande di Iscrizione - Dal 01/06/26 al 31/07/26",
+        "Risultati Esami di Ammissione A.A. 2026/2027 – AGGIORNATI AL 13/10/2026"
+      ],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "Domande di Ammissione A.A. 2026/2027",
+        "Domande di Ammissione - Scadenza 31/07/2026",
+        "Domande di Iscrizione A.A. 2026/2027",
+        "Domande di Iscrizione - Dal 01/06/26 al 31/07/26"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatorioperugia.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -652,7 +1033,7 @@
       "city": "佩萨罗",
       "school": "Conservatorio Gioachino Rossini",
       "url": "https://conservatoriorossini.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
+      "checked_at": "2026-11-09T19:54:17+01:00",
       "status": "error",
       "http_status": null,
       "title": "",
@@ -661,7 +1042,7 @@
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriorossini.it/",
+      "error": "Timeout: Failed to perform, curl: (28) Connection timed out after 25000 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
       "discovered": false
     },
     {
@@ -669,7 +1050,7 @@
       "city": "皮亚琴察",
       "school": "Conservatorio Giuseppe Nicolini",
       "url": "https://conservatorionicolini.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
+      "checked_at": "2026-11-09T19:54:17+01:00",
       "status": "error",
       "http_status": null,
       "title": "",
@@ -678,7 +1059,7 @@
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatorionicolini.it/",
+      "error": "DNSError: Failed to perform, curl: (6) Could not resolve host: conservatorionicolini.it (DNS server returned answer with no data). See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
       "discovered": false
     },
     {
@@ -686,16 +1067,21 @@
       "city": "波坦察",
       "school": "Conservatorio Carlo Gesualdo",
       "url": "https://conservatoriopotenza.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Home - Conservatorio Potenza",
       "deadline_lines": [],
       "exam_dates": [],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "Esito esami di ammissione sessione straordinaria a.a. 2026/2027",
+        "Di seguito la pubblicazione delle Graduatorie Ammissioni straordinarie A.A. 2026/2027.",
+        "Esito esami di ammissione sessione straordinaria a.a. 2026/2027 – Conservatorio Potenza",
+        "Avviso pubblicazione calendario tesi esame finale sessione autunnale a.a. 2025/2026"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriopotenza.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -703,16 +1089,16 @@
       "city": "雷焦卡拉布里亚",
       "school": "Conservatorio Francesco Cilea",
       "url": "https://conservatoriocilea.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "http_error",
+      "http_status": 403,
+      "title": "Wait a moment...",
       "deadline_lines": [],
       "exam_dates": [],
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriocilea.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -720,16 +1106,23 @@
       "city": "里贝拉",
       "school": "Conservatorio Arturo Toscanini",
       "url": "https://conservatoriotoscanini.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio Toscanini – Conservatorio di Musica di Stato Arturo Toscanini di Ribera",
       "deadline_lines": [],
-      "exam_dates": [],
+      "exam_dates": [
+        "D.D. del 23 ottobre 2026 – Calendario esami di ammissione straordinaria AA 2026_2027 – 3° Appello straordinario per giustificati motivi"
+      ],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "D.D. del 23 ottobre 2026 – Calendario esami di ammissione straordinaria AA 2026_2027 – 3° Appello straordinario per giustificati motivi",
+        "Sei uno studente? Scarica l’App “MyAfam” sul tuo smartphone (Android e iOs) per gestire libretto, iscrizioni, pagamenti…",
+        "Piani annuali di indirizzo e programmazione",
+        "AFAM – MUR – Padiglione Italia"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriotoscanini.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -737,16 +1130,25 @@
       "city": "罗维戈",
       "school": "Conservatorio Francesco Venezze",
       "url": "https://conservatoriorovigo.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio di Musica F. Venezze di Rovigo – Corsi e concerti",
       "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
+      "exam_dates": [
+        "SEMINARIO – IL FAGOTTO ANTICO A.A.26/27 – ISCRIZIONI"
+      ],
+      "requirements": [
+        "Si consegue il titolo di studio previo superamento della prova finale, che ha la funzione di mettere in luce le competenze acquisite dal candidato durante il percorso formativo."
+      ],
+      "fallback_lines": [
+        "SEMINARIO – IL FAGOTTO ANTICO A.A.26/27 – ISCRIZIONI",
+        "AVVISO – Iscrizione ai corsi di recupero del Debito Formativo – Teoria Musicale – A.A. 2026/27",
+        "BANDO DI CONCORSO PER L’AMMISSIONE AL CORSO DI DOTTORATO DI RICERCA AFAM XLII CICLO MUSICA PERSEGUITATA E PATRIMONI MUSICALI",
+        "BANDO DI CONCORSO PER L’AMMISSIONE AL CORSO DI DOTTORATO DI RICERCA AFAM XLII CICLO MUSICA PIANISTICA ITALIANA"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriorovigo.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -754,7 +1156,7 @@
       "city": "萨莱诺",
       "school": "Conservatorio Giuseppe Martucci",
       "url": "https://consalerno.com/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
+      "checked_at": "2026-11-09T19:54:17+01:00",
       "status": "error",
       "http_status": null,
       "title": "",
@@ -763,7 +1165,7 @@
       "requirements": [],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://consalerno.com/",
+      "error": "DNSError: Failed to perform, curl: (6) Could not resolve host: consalerno.com (DNS server returned general failure). See https://curl.se/libcurl/c/libcurl-errors.html first for more details.",
       "discovered": false
     },
     {
@@ -771,16 +1173,21 @@
       "city": "萨萨里",
       "school": "Conservatorio Luigi Canepa",
       "url": "https://conservatorio.sassari.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Home Page - Conservatorio Musica Sassari",
       "deadline_lines": [],
       "exam_dates": [],
-      "requirements": [],
+      "requirements": [
+        "Avviso pubblico di procedura selettivo – comparativa, per soli titoli, finalizzata all’individuazione di esperti cui attribuire incarichi di insegnamento nei corsi propedeutici e nei corsi di diploma accademico di I livello per le discipline di: AFAM027: canto rinascimentale e barocco",
+        "Avviso pubblico di procedura selettivo – comparativa, per soli titoli, finalizzata all’individuazione di esperti cui attribuire incarichi di insegnamento nei corsi di diploma accademico di I e II livello per le discipline di: AFAM054: Movimento espressivo e consapevolezza corporea per le arti performative",
+        "Avviso pubblico di procedura selettivo – comparativa, per soli titoli, finalizzata all’individuazione di esperti cui attribuire incarichi di insegnamento nei corsi propedeutici e nei corsi di diploma accademico di I livello per le discipline di: AFAM027: canto rinascimentale e barocco",
+        "Avviso pubblico di procedura selettivo – comparativa, per soli titoli, finalizzata all’individuazione di esperti cui attribuire incarichi di insegnamento nei corsi di diploma accademico di I e II livello per le discipline di: AFAM054: Movimento espressivo e consapevolezza corporea per le arti performative"
+      ],
       "fallback_lines": [],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatorio.sassari.it/",
+      "error": null,
       "discovered": false
     },
     {
@@ -788,101 +1195,226 @@
       "city": "锡耶纳",
       "school": "Conservatorio Rinaldo Franci",
       "url": "https://conservatoriosiena.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Home - Conservatorio di Siena - Istituto di Alta Formazione Musicale \"Rinaldo Franci\"",
       "deadline_lines": [],
       "exam_dates": [],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "Corsi Propedeutici e Giovani Talenti",
+        "RISULTATI PROVA SCRITTA 29 OTTOBRE 2026 E VALUTAZIONE TITOLI"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriosiena.it/",
+      "error": null,
       "discovered": false
     },
     {
       "number": 48,
       "city": "泰拉莫",
       "school": "Conservatorio Gaetano Braga",
-      "url": "https://conservatoriobraga.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
-      "deadline_lines": [],
+      "url": "https://conservatoriobraga.it/contents.asp?id=667&pagina=Ammissioni+A%2EA%2E+2026%2F2027",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Istituto Statale Superiore di Studi Musicali e Coreutici G. Braga Teramo — Ammissioni A.A. 2026/2027: Conservatorio Braga - Teramo",
+      "deadline_lines": [
+        ") in tempo utile nel rispetto delle scadenze previste per l’immatricolazione o reiscrizione. In caso di iscrizione tardiva, si precisa che saranno accettate solo Attestazioni ISEE per prestazioni universitarie valide fino al 31/12/2026. Non saranno accettate Attestazioni ISEE “non applicabili alle prestazioni universitarie”."
+      ],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatoriobraga.it/",
-      "discovered": false
+      "requirements": [
+        "Prova di italiano per gli studenti internazionali",
+        "-conseguimento, presso il Conservatorio “G. Braga”, di un Diploma Accademico di livello pari o superiore;",
+        "La domanda di ammissione ai Corsi Propedeutici e ai Corsi di Diploma Accademico di I e II livello deve essere compilata esclusivamente mediante la piattaforma e on-line “"
+      ],
+      "fallback_lines": [
+        "Ammissioni A.A. 2026/2027: Conservatorio Braga - Teramo",
+        "Iscrizione a Corsi Singoli, Corsi Liberi, Giovani Talenti, Workshop-Masterclass-Seminari",
+        "CALENDARI DEGLI ESAMI DI AMMISSIONE",
+        "Ammissioni 2026/2027 - Sessione Straordinaria di Novembre"
+      ],
+      "documents": [
+        "https://conservatoriobraga.it/PUBLIC/AMMISSIONI 26 27 - INTERNAZIONALI prot..pdf",
+        "https://conservatoriobraga.it/public/AMMISSIONI 26 27 - ITALIANI E COMUNITARI prot.pdf",
+        "https://conservatoriobraga.it/public/CALENDARIO AMMISSIONI AUTUNNALE 26 27.pdf",
+        "https://conservatoriobraga.it/public/CALENDARIO AMMISSIONI ESTIVE 26 27.pdf",
+        "https://www.conservatoriobraga.it/public/ISTRUZIONI-AMMISSIONI-ISIDATA.pdf"
+      ],
+      "error": null,
+      "discovered": true
     },
     {
       "number": 49,
       "city": "特拉帕尼",
       "school": "Conservatorio Antonio Scontrino",
       "url": "https://conservatorioscontrino.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorioscontrino.it - Musica",
       "deadline_lines": [],
       "exam_dates": [],
       "requirements": [],
-      "fallback_lines": [],
+      "fallback_lines": [
+        "Conservatorioscontrino.it non è più disponibile qui. Per favore prova"
+      ],
       "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatorioscontrino.it/",
+      "error": null,
       "discovered": false
     },
     {
       "number": 50,
       "city": "特伦托",
       "school": "Conservatorio F.A. Bonporti",
-      "url": "https://conservatorio.tn.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "url": "https://conservatorio.tn.it/ammissioni-bonporti/",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Pagina principale - Conservatorio \"F.A. Bonporti\" di Trento e Riva del Garda — Ammissioni 2026/2027 - Conservatorio \"F.A. Bonporti\" di Trento e Riva del Garda",
       "deadline_lines": [],
-      "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://conservatorio.tn.it/",
-      "discovered": false
+      "exam_dates": [
+        "Le prove di ammissione e di lingua si terranno nel periodo compreso tra il 7 e il 12 settembre.",
+        "Decreto esami di ammissione 2026/2027: 12 ottobre 2026 (",
+        "Decreto esami di ammissione 2026/2027: 26 ottobre 2026 (",
+        "Decreto esami di ammissione 2026/2027: 30 ottobre 2026 ("
+      ],
+      "requirements": [
+        "si suddividono in quattro percorsi differenti. Per l’ammissione a ciascun percorso è necessario il superamento di un apposito",
+        "I corsi di diploma accademico di primo livello si esprimono di norma nella misura dei",
+        "I corsi di diploma accademico di secondo livello si esprimono di norma nella misura dei",
+        "Gli studenti internazionali che desiderano sostenere l’esame di ammissione a uno dei corsi del Conservatorio devono preliminarmente superare una prova di conoscenza della lingua italiana di livello B2, richiesta sia per i corsi di primo livello sia per quelli di secondo livello."
+      ],
+      "fallback_lines": [
+        "Ammissioni 2026/2027 - Conservatorio \"F.A. Bonporti\" di Trento e Riva del Garda",
+        "si suddividono in quattro percorsi differenti. Per l’ammissione a ciascun percorso è necessario il superamento di un apposito",
+        "I corsi propedeutici hanno una durata minima di",
+        "riapertura, limitatamente ad alcuni corsi, del periodo per la presentazione delle domande di ammissione"
+      ],
+      "documents": [
+        "https://conservatorio.tn.it/wp-content/uploads/2026/07/DECRETO-RIAPERTURA-AMMISSIONI-2627-SETTEMBRE.pdf",
+        "https://conservatorio.tn.it/wp-content/uploads/2026/10/Decreto-ammissioni_ottobre26-1.pdf",
+        "https://conservatorio.tn.it/wp-content/uploads/2019/09/Reg.-biennio-definitivo-approvato-16.9.19.pdf",
+        "https://conservatorio.tn.it/wp-content/uploads/2021/05/Regolamento-approvato-C.A..pdf"
+      ],
+      "error": null,
+      "discovered": true
     },
     {
       "number": 51,
       "city": "维博瓦伦蒂亚",
       "school": "Conservatorio Fausto Torrefranca",
-      "url": "https://consvv.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "url": "https://consvv.it/newscons/ammissione-ai-corsi-2026-27",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio Statale di Musica Fausto Torrefranca - Vibo Valentia — Ammissione ai corsi per l'a.a. 2026-27 | Conservatorio Fausto Torrefranca",
       "deadline_lines": [],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://consvv.it/",
-      "discovered": false
+      "requirements": [
+        "Il pagamento della tassa di ammissione di € 50 deve essere esclusivamente effettuato tramite PAGOPA (vedi: istruzioni per compilare la domanda di ammissione), a pagamento effettuato non è necessario allegare la ricevuta.",
+        "Diploma Accademico, Diploma di Vecchio ordinamento, o singole Licenze, già conseguiti presso un Istituto Superiore di Studi Musicali (Conservatorio o Istituto Musicale Pareggiato) specificando la data e l’Istituto o Conservatorio presso cui è stato conseguito il titolo.",
+        "Certificazione di TEORIA SOLFEGGIO E DETTATO MUSICALE, oppure Certificazione di TEORIA RITMICA E PERCEZIONE MUSICALE di livello Propedeutico (ex livello B), o altro Diploma accademico di primo livello o di previgente ordinamento."
+      ],
+      "fallback_lines": [
+        "Ammissione ai corsi per l'a.a. 2026-27 | Conservatorio Fausto Torrefranca",
+        "Ammissione ai corsi per l’a.a. 2026-27",
+        "Ammissione ai corsi per l’anno accademico 2026-27",
+        "Portale ISIDATA Studenti per presentare la domanda di ammissione on-line"
+      ],
+      "documents": [
+        "https://consvv.it/wp-content/uploads/ammissioni_26-27.pdf"
+      ],
+      "error": null,
+      "discovered": true
     },
     {
       "number": 52,
       "city": "维琴察",
       "school": "Conservatorio Arrigo Pedrollo",
-      "url": "https://consvi.it/",
-      "checked_at": "2026-11-09T19:41:34+01:00",
-      "status": "error",
-      "http_status": null,
-      "title": "",
+      "url": "https://consvi.it/studenti/site/it/news_dettaglio/id_4425_news_bando-per-l’individuazione-di-studentesse-e-studenti-destinatari-delle-attivitÀ-di-collaborazione-connesse-ai-servizi-resi-dal-conservatorio-a-a-2026-2027.html",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio di Musica di Vicenza 'Arrigo Pedrollo' — Conservatorio di Musica di Vicenza 'Arrigo Pedrollo'",
+      "deadline_lines": [],
+      "exam_dates": [
+        "06 Novembre 2026 - BANDO PER L’INDIVIDUAZIONE DI STUDENTESSE E STUDENTI DESTINATARI DELLE ATTIVITÀ DI COLLABORAZIONE CONNESSE AI SERVIZI RESI DAL CONSERVATORIO A.A. 2026/2027"
+      ],
+      "requirements": [],
+      "fallback_lines": [
+        "RISULTATI esami di ammissione a.a. 2026/2027 - CORSI ACCADEMICI e CORSI PROPEDEUTICI",
+        "AGGIORNAMENTO ESAMI DI AMMISSIONE A.A. 2026/2027 - sessione eautunnale",
+        "ESAMI DI AMMISSIONE A.A. 2026/2027 - sessione autunnale",
+        "06 Novembre 2026 - BANDO PER L’INDIVIDUAZIONE DI STUDENTESSE E STUDENTI DESTINATARI DELLE ATTIVITÀ DI COLLABORAZIONE CONNESSE AI SERVIZI RESI DAL CONSERVATORIO A.A. 2026/2027"
+      ],
+      "documents": [
+        "https://consvi.it/public/061126-121739-bando200oreaa20262027signed.pdf"
+      ],
+      "error": null,
+      "discovered": true
+    },
+    {
+      "number": 200,
+      "city": "意大利",
+      "school": "Conservatorio statale di Musica \"Alfredo Casella\"",
+      "url": "https://www.consaq.it/component/content/article/37-notizie/didattica/6098-37-ammissioni-proroga-domande-fino-al-31-luglio-2026.html",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Conservatorio statale di Musica \"Alfredo Casella\"",
+      "deadline_lines": [
+        "Ammissioni: Proroga domande fino al 31 Luglio 2026",
+        "Manifesto Proroga Ammissioni"
+      ],
+      "exam_dates": [],
+      "requirements": [
+        "Le candidate e i candidati che richiedono l'ammissione ai corsi erogati dal Conservatorio \"A. Casella\" sono tenuti alla presentazione delle domande online secondo la procedura riportata alla",
+        "CORSI DI DIPLOMA ACCADEMICO DI I LIVELLO",
+        "CORSI DI DIPLOMA ACCADEMICO DI II LIVELLO",
+        "MUSICOTERAPIA - DIPLOMA ACCADEMICO DI II LIVELLO",
+        "I candidati in possesso di licenza di solfeggio di vecchio ordinamento o certificazione finale di materie musicali di base (corsi pre-AFAM), non sono tenuti a svolgere la prova di solfeggio, allegando, contestualmente alla domanda di ammissione la propria certificazione in pdf."
+      ],
+      "fallback_lines": [
+        "— Corso Propedeutico MT 48 CFA",
+        "Ammissioni: Proroga domande fino al 31 Luglio 2026",
+        "Le candidate e i candidati che richiedono l'ammissione ai corsi erogati dal Conservatorio \"A. Casella\" sono tenuti alla presentazione delle domande online secondo la procedura riportata alla",
+        "CORSI PROPEDEUTICI al I livello"
+      ],
+      "documents": [],
+      "error": null,
+      "discovered": false
+    },
+    {
+      "number": 201,
+      "city": "贝内文托",
+      "school": "Ammissioni - Conservatorio Statale di Musica di Benevento Nicola Sala",
+      "url": "https://www.conservatorio.bn.it/ammissioni/",
+      "checked_at": "2026-11-09T19:54:17+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Ammissioni - Conservatorio Statale di Musica di Benevento Nicola Sala",
       "deadline_lines": [],
       "exam_dates": [],
-      "requirements": [],
-      "fallback_lines": [],
-      "documents": [],
-      "error": "TimeoutError: no response within 40s: https://consvi.it/",
+      "requirements": [
+        "AVVISO DI AMMISSIONE A.A. 2026/2027 Corso di Diploma Accademico di Primo Livello in Didattica della Musica – DCPL21 Indirizzo: “Metodologie e tecniche per la disabilità”",
+        "ESAME DI AMMISSIONE AL CORSO DI DIPLOMA ACCADEMICO DI I LIVELLO IN CANTO JAZZ"
+      ],
+      "fallback_lines": [
+        "Ammissioni - Conservatorio Statale di Musica di Benevento Nicola Sala",
+        "Risultati esami ammissioni A.A. 2026/2027",
+        "AVVISO DI AMMISSIONE A.A. 2026/2027 APERTURA DEI TERMINI PER LA PRESENTAZIONE DELLE DOMANDE DI AMMISSIONE AI CORSI DI STUDIO",
+        "Calendario delle prove di ammissione – a.a. 2026/2027"
+      ],
+      "documents": [
+        "https://www.conservatorio.bn.it/wp-content/uploads/2023/10/Programmi-di-ammissione-ai-corsi-accademici-di-I-Livello-triennio.pdf",
+        "https://www.conservatorio.bn.it/wp-content/uploads/2024/01/AMMISSIONE-BIENNIO-Programmi-POPULAR-MUSIC.pdf",
+        "https://www.conservatorio.bn.it/wp-content/uploads/2024/01/AMMISSIONI-POPULAR-MUSIC-elenco-brani-Biennio.pdf",
+        "https://www.conservatorio.bn.it/wp-content/uploads/2024/03/Immatricolazione-studenti-internazionali-Anno-Accademico-2024-2025.-1.pdf",
+        "https://www.conservatorio.bn.it/wp-content/uploads/2024/07/Ammissione-Biennio-Arpa.pdf",
+        "https://www.conservatorio.bn.it/wp-content/uploads/2024/07/Ammissione-Biennio-Batteria-e-percussioi-pop-rock.pdf"
+      ],
+      "error": null,
       "discovered": false
     }
   ]

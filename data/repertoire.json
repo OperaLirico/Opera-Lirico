@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T19:50:11+01:00",
+  "generated_at": "2026-11-09T19:57:14+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -3486,10 +3486,370 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Du bist da droben im Palast begehrt",
+      "aliases": [],
+      "composer": "Frederic Balazs",
+      "work": "/lieder/get_settings.html?ComposerId=3283",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "de",
+      "text": "Du bist da droben im Palast begehrt,\nerlauchter Sänger lauterer Gedichte,\nwo Tänzer stillstehn, deinem Angesichte\nund deinem Munde durstend zugekehrt.\nUnd es gefällt dir, dieser dürftigen Tür\nGriff anzurühren? Ist es auszuhalten,\ndaß deiner Fülle Klang in goldnen Falten\nvor eine Türe fällt, zu arm dafür?\nSieh die zerbrochnen Fenster. Fledermaus\nund Eule baun im Dach. Und meine Grille\nzirpt gegen deine Mandoline. Stille.\nDas Echo macht noch trauriger das Haus,\ndrin eine Stimme weint, so wie die deine\nda draußen singen muß ... allein, alleine.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=21777",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Rainer Maria Rilke",
+      "settings": [
+        {
+          "composer": "Frederic Balazs",
+          "title": "/lieder/get_settings.html?ComposerId=3283",
+          "instrumentation": "high voice and string quartet or chamber orchestra"
+        },
+        {
+          "composer": "Celius Dougherty",
+          "title": "/lieder/get_settings.html?ComposerId=3903",
+          "instrumentation": "soprano and piano"
+        },
+        {
+          "composer": "Eleanor Everest Freer",
+          "title": "/lieder/get_settings.html?ComposerId=6519",
+          "instrumentation": "mezzo-soprano and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The Waltz of the Leaves",
+      "aliases": [],
+      "composer": "Louis Abadie",
+      "work": "/lieder/get_settings.html?ComposerId=22762",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "The autumn wind as it passes\ncarries off the birds\nin the air\nand the leaves in the woods.\nWarm days and soft breezes\nare now banished for a long time.\nWaltz like madwomen,\npoor leaves, waltz!\n\nOn the edge of the roads\nin the south as in the north,\nlook, they're all dancing\nthis waltz of death.\nThe wind that invites them\nnever finds enough of them.\nWhirl, whirl faster,\npoor leaves, waltz!\n\nYes, every leaf falls,\nelm, oak or linden;\nevery man heads for the tomb,\nthe child like the grandparent.\nThe dreams of this world\nare soon effaced.\nCarry on with your dance,\npoor leaves, waltz!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=150146",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Peter Low",
+      "settings": [
+        {
+          "composer": "Louis Abadie",
+          "title": "/lieder/get_settings.html?ComposerId=22762",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Joseph Bovet",
+          "title": "/lieder/get_settings.html?ComposerId=22760",
+          "instrumentation": "four-part men's chorus a cappella"
+        },
+        {
+          "composer": "Émile Durand",
+          "title": "/lieder/get_settings.html?ComposerId=22761",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Devant le couchant",
+      "aliases": [],
+      "composer": "Carmen Brouard",
+      "work": "/lieder/get_settings.html?ComposerId=20927",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Je subis la langueur du jour déjà pâli…\nJe suis très lasse, et je ne veux plus que l’oubli.\n\nSi l’on parle de moi, l’on mentira sans doute.\nEt mes pieds ont été déchirés par la route.\n\nCertes, on doit trouver plus loin des cieux meilleurs,\nDes visages plus doux… Je veux aller ailleurs…\n\nJe vous l’ai dit, je suis affaiblie et très lasse…\nTel le dernier rayon du soir dernier s’efface…\n\nMa douleur m’apparaît très lourde et très légère.\nOubliez-moi qui suis une âme passagère.\n\nJe suis venue ici, je ne sais pas pourquoi,\nEt j’ai vu des passants se détourner de moi.\n\nSans vous comprendre et sans que vous m’ayez comprise,\nJ’ai passé parmi vous, noire dans l’ombre grise.\n\nSans hâte et sans effroi, je rentre dans la nuit…\nAvec tout ce qui glisse, avec tout ce qui fuit.\n\nJe pars comme on retourne, allégée et ravie\nDe pardonner enfin à l’amour et la vie.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=68081",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Pauline Mary Tarn",
+      "settings": [
+        {
+          "composer": "Carmen Brouard",
+          "title": "/lieder/get_settings.html?ComposerId=20927",
+          "instrumentation": "medium voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Chant des esprits sur les eaux",
+      "aliases": [],
+      "composer": "Danielle Baas",
+      "work": "/lieder/get_settings.html?ComposerId=22320",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "L'âme des hommes\nEst comme l'eau :\nElle vient du ciel,\nElle s'élève vers le ciel,\nEt à nouveau elle doit\nRedescendre vers la terre,\nÉternellement changeante.\n\nElle court depuis les hautes,\nAbruptes parois rocheuses\nCette pure clarté,\nPuis se pulvérise doucement\nEn ondes nébuleuses\nSur les rochers lisses,\nEt facilement accueillie\nElle ondule, se dissimulant\nAvec un léger murmure\nDans les profondeurs d'en bas.\n\nDes falaises en surplomb,\nS'opposant à sa chute,\nElle écume, grincheuse,\nDegré par degré\nVers l'abîme.\n\nDans son lit aplani,\nElle se glisse dans les prés du val,\nEt dans le miroir du lac\nTous les astres\nAdmirent leur visage.\n\nPour la vague, le vent\nEst un amant charmant ;\nDepuis le sol, il se mêle\nÀ l'écume des vagues.\n\nÂme de l'homme,\nComme tu ressembles à l'eau !\nDestin de l'homme,\nComme tu ressembles au vent.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=47080",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Pierre Mathé",
+      "settings": [
+        {
+          "composer": "Danielle Baas",
+          "title": "/lieder/get_settings.html?ComposerId=22320",
+          "instrumentation": "soprano and piano"
+        },
+        {
+          "composer": "Wilhelm Reinhard Berger",
+          "title": "/lieder/get_settings.html?ComposerId=3393",
+          "instrumentation": "four-part mixed chorus and orchestra"
+        },
+        {
+          "composer": "Michael Gees",
+          "title": "/lieder/get_settings.html?ComposerId=4150",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Coquelicots",
+      "aliases": [],
+      "composer": "Richard Georg Strauss",
+      "work": "/lieder/get_settings.html?ComposerId=5869",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Les coquelicots, ce sont les saines rondelettes\nau teint vermillon\navec des tâches de rousseur,\nd'humeur toujours joyeuse,\ngentilles, gaies comme des pinsons,\njamais lasses à la danse ;\nelles peuvent rire à en pleurer\net semblent n'être nées\nque pour faire la nique aux bleuets,\nmais elles dissimulent bien souvent\nle cœur le plus tendre, le meilleur\ndans les entrelacs de leurs facéties,\nelles qu'on aimerait, Seigneur !\nétouffer de baisers\nsi on n'avait pas tout le temps peur,\nen étreignant la mâtine,\nqu'elle n'explose et se mue\nen brandons enflammés !",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=95973",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Stéphane Goldet, Pierre de Rosamel",
+      "settings": [
+        {
+          "composer": "Richard Georg Strauss",
+          "title": "/lieder/get_settings.html?ComposerId=5869",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Dutch (Nederlands)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "I heard 'mid oak‑trees olden",
+      "aliases": [],
+      "composer": "Charles Villiers Stanford, Sir",
+      "work": "/lieder/get_settings.html?ComposerId=5824",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "I heard ‘mid oak trees olden\nBlackbirds unbeholden\nRain, in gushes golden,\nRapture from above.\nI saw them spread their wooing,\nFlying and pursuing,\nFluttering, billing, cooing,\nThrough the rustling grove.\nAnd then my song I started,\nHow we two were parted,\nWe so constant hearted\nTo our early love.\n\nBut as I made my murmur,\nThoughts of thee, my charmer,\nMade my faith grow firmer,\nTill I thus could sing;\n“These giddy blackbirds pairing,\nApril’s balmy air in,\nMeet again uncaring,\nWith return of spring;\nWhen we at last, delighted,\nProve the love we’ve plighted,\nUntil death united\nBy the marriage ring.”",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=77171",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Alfred Perceval Graves",
+      "settings": [
+        {
+          "composer": "Charles Villiers Stanford, Sir",
+          "title": "/lieder/get_settings.html?ComposerId=5824",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Two lips",
+      "aliases": [],
+      "composer": "Gerald Finzi",
+      "work": "/lieder/get_settings.html?ComposerId=4038",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "I kissed them in fancy as I came\nAway in the morning glow:\nI kissed them through the glass of her picture-frame:\nShe did not know.\nI kissed them in love, in troth, in laughter,\nWhen she knew all; long so!\nThat I should kiss them in a shroud thereafter\nShe did not know.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=7250",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Thomas Hardy",
+      "settings": [
+        {
+          "composer": "Gerald Finzi",
+          "title": "/lieder/get_settings.html?ComposerId=4038",
+          "instrumentation": "low voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ich bin böse auf ihn, Mutter",
+      "aliases": [],
+      "composer": "Alfonso Letelier",
+      "work": "/lieder/get_settings.html?ComposerId=20626",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ich bin böse auf ihn, Mutter,\nauf den Edelmann, den Ihr meint:\nBitter bin ich ihm feind!\n\nBetet mich an, stets mich betrachtend\n- wie Gott, und Der sieht sein Gebaren -,\nmich als seine Dame achtend:\nIch kann ihn nur als Feind gewahren.\n\nZum Teufel soll er fahren,\nobwohl er’s nicht übel meint:\nBitter bin ich ihm feind!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=104423",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sebastian Viebahn",
+      "settings": [
+        {
+          "composer": "Alfonso Letelier",
+          "title": "/lieder/get_settings.html?ComposerId=20626",
+          "instrumentation": "low-medium voice and piano"
+        },
+        {
+          "composer": "German (Deutsch)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Sebastian Viebahn",
+          "title": "./get_texts.html?ContribId=946",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Keep the fire a‑burning",
+      "aliases": [],
+      "composer": "Lyell Cresswell",
+      "work": "/lieder/get_settings.html?ComposerId=17839",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Keep the fire a-burning\nKeep the wheel a-turning\nNever mind the squirming\nOf the Old Deceiver.\n\nHe's got to feel the strong rack\nHe's got to stand a-w-a-y back\nHe cannot walk the pure track\nOf a good Believer.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=57917",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Lyell Cresswell",
+          "title": "/lieder/get_settings.html?ComposerId=17839",
+          "instrumentation": "high voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Plaisir d'amour ne dure qu'un moment",
+      "aliases": [],
+      "composer": "Giulio Alary",
+      "work": "/lieder/get_settings.html?ComposerId=27233",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Plaisir d'amour ne dure qu'un moment ;\nChagrin d'amour dure toute la vie,\nJ'ai tout quitté pour l'ingrate Sylvie :\nElle me quitte, et prend un autre amant.\nPlaisir d'amour ne dure qu'un moment ;\nChagrin d'amour dure toute la vie.\n\nTant que cette eau coulera doucement\nVers [le]1 ruisseau qui borde la prairie,\nJe t'aimerai, me répétoit Sylvie :\nL'eau coule encore ; elle a changé pourtant,\nPlaisir d'amour ne dure qu'un moment ;\nChagrin d'amour dure toute la vie.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=5686",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Jean-Pierre Claris de Florian",
+      "settings": [
+        {
+          "composer": "Giulio Alary",
+          "title": "/lieder/get_settings.html?ComposerId=27233",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Fanny Hensel",
+          "title": "/lieder/get_settings.html?ComposerId=5037",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Johann Paul-Egide Schwarzendorf",
+          "title": "/lieder/get_settings.html?ComposerId=4987",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "How say they that the Ho is wide",
+      "aliases": [],
+      "composer": "Fritz Bennicke Hart",
+      "work": "/lieder/get_settings.html?ComposerId=4343",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "How say they that the Ho is wide,\nWhen I could ford it if I tried?\nHow say they Sung is far away,\nWhen I can see it every day?\n\nYet must indeed the Ho be deep,\nWhen I have never dared the leap;\nAnd since I am content to stay,\nSung must indeed be far away.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=145067",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Helen Jane Waddell",
+      "settings": [
+        {
+          "composer": "Fritz Bennicke Hart",
+          "title": "/lieder/get_settings.html?ComposerId=4343",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Bohémiens",
+      "aliases": [],
+      "composer": "Théodore Terestchenko",
+      "work": "/lieder/get_settings.html?ComposerId=24288",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Jouant du violon, un tzigane au teint noir\nEst debout, qui regarde au loin mourir le soir.\nBelle et sombre à ses pieds une femme est couchée :\nElle écoute en rêvant, la poitrine penchée,\nLes yeux fixes, les bras tombant le long du corps,\nUn chant sourd, monotone, aux funèbres accords.\nL'archet strident soudain fait crier une corde :\nEst-ce pour réveiller un désir qui la morde,\nOu pour lui rappeler d'amoureuses douleurs ?\n— Et de fauves éclairs brillent parmi ses pleurs.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=153452",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Henri Cazalis",
+      "settings": [
+        {
+          "composer": "Théodore Terestchenko",
+          "title": "/lieder/get_settings.html?ComposerId=24288",
+          "instrumentation": "medium voice, piano, and violin"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 432,
+  "lieder_position": 480,
   "aria_opera": 0,
   "aria_scene": 8
 }

@@ -1,5 +1,26 @@
 {
-  "updated_at": "2026-11-09T19:41:34+01:00",
-  "cursor": 1,
-  "items": []
+  "updated_at": "2026-11-09T19:54:17+01:00",
+  "cursor": 2,
+  "items": [
+    {
+      "number": 200,
+      "city": "意大利",
+      "school": "Conservatorio statale di Musica \"Alfredo Casella\"",
+      "url": "https://www.consaq.it/component/content/article/37-notizie/didattica/6098-37-ammissioni-proroga-domande-fino-al-31-luglio-2026.html",
+      "homepage": "https://www.consaq.it/",
+      "source": "wikidata",
+      "wikidata_label": "Biblioteca Susanna Pezzopane del Conservatorio di musica Alfredo Casella",
+      "added_at": "2026-11-09T19:54:17+01:00"
+    },
+    {
+      "number": 201,
+      "city": "贝内文托",
+      "school": "Ammissioni - Conservatorio Statale di Musica di Benevento Nicola Sala",
+      "url": "https://www.conservatorio.bn.it/ammissioni/",
+      "homepage": "https://www.conservatorio.bn.it/",
+      "source": "wikidata",
+      "wikidata_label": "Conservatorio Statale di Musica Nicola Sala - Benevento",
+      "added_at": "2026-11-09T19:54:17+01:00"
+    }
+  ]
 }
