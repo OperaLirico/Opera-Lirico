@@ -1,181 +1,146 @@
 {
-  "updated_at": "2026-11-09T19:05:00+01:00",
+  "updated_at": "2026-11-09T18:38:12+01:00",
   "cursor": 0,
   "items": [
     {
       "number": 31,
-      "source": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico",
+      "source": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antic",
       "url": "https://www.indafondazione.org/bando-audizioni-per-filottete/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
+      "checked_at": "2026-11-09T18:36:53+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico",
+      "title": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico | Fondazione ONLUS | Siracusa",
       "relevant_lines": [
+        "Bando audizioni Filottete-2026",
+        "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico | Fondazione ONLUS | Siracusa",
         "Bando audizioni per Filottete",
-        "L'INDA avvia le audizioni per la produzione di Filottete",
-        "Scadenza presentazione domande"
+        "La Fondazione INDA pubblica il bando per la partecipazione alle audizioni dello spettacolo Filottete diretto da Luca Micheletti.",
+        "Le audizioni sono in programma sabato 5 e domenica 6 dicembre presso il Teatro Franco Parenti a Milano",
+        "Si precisa che le audizioni sono rivolte soltanto ad interpreti maschili",
+        "Calendar 2027",
+        "Ott 27, 2026"
       ],
       "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
+      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
+      "discovered_at": "2026-11-09T18:21:34+01:00"
     },
     {
       "number": 32,
       "source": "OPEN CALL Artists - Winterwerft",
       "url": "https://winterwerft.de/opencall/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
+      "checked_at": "2026-11-09T18:36:55+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "OPEN CALL Artists - Winterwerft",
       "relevant_lines": [
-        "OPEN CALL",
-        "We invite performing artists to apply"
+        "Programm 2026",
+        "Programm 2026",
+        "Winterwerft 2027",
+        "Bis zum 08.11.2026 haben wir unseren Open Call für das Programm an den zwei Wochenenden der Winterwerft 2027 geöffnet (29.01.-31.01. & 05.02.-07.02.27)",
+        "Im Fokus der Winterwerft steht die Auseinandersetzung mit den großen Krisen unserer Zeit: Ökologischer Kollaps, soziale Ungleichheit und zunehmende Entfremdung.",
+        "Winterwerft 2027 lädt Künstler*innen ein, diese Fragen durch Theater, Performance, Tanz, Musik und kollektives Schaffen zu erforschen.",
+        "Der open call ist ab dem 17.Oktober 2026 geöffnet und wird laufend gesichtet. Die Bewerbung muss bis zum 08. November 2026 um Mitternacht eingegangen sein."
       ],
       "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
+      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
+      "discovered_at": "2026-11-09T18:21:36+01:00"
     },
     {
       "number": 33,
-      "source": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia al mondo\"",
+      "source": "Audizioni per la produzione Pulcinella - Trianon Viviani",
       "url": "https://www.teatrotrianon.org/audizioni-per-la-produzione-pulcinella-ovvero-una-cosa-che-somiglia-al-mondo/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
+      "checked_at": "2026-11-09T18:37:02+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Audizioni per la produzione Pulcinella",
+      "title": "Audizioni per la produzione Pulcinella, ovvero una cosa che somiglia al mondo - teatro Trianon Viviani",
       "relevant_lines": [
-        "Audizioni",
-        "La ricerca è rivolta a interpreti"
+        "Le candidature dovranno pervenire entro e non oltre il 13 novembre 2026 all’indirizzo",
+        "Si aprono le candidature per il ruolo di Pulcinella nello spettacolo Pulcinella, ovvero una cosa che somiglia al mondo, scritto e diretto da Noemi Francesca e prodotto dal Trianon Viviani, in scena a Napoli dal 14 al 23 maggio 2027.",
+        "Le persone selezionate saranno invitate a partecipare agli incontri di audizione che si terranno il 30 novembre e il 1° dicembre 2026 presso il teatro Trianon Viviani.",
+        "audizionipulcinella@teatrotrianon.org",
+        "Il periodo di impegno previsto è aprile e maggio 2027."
       ],
       "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
+      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
+      "discovered_at": "2026-11-09T18:21:38+01:00"
     },
     {
       "number": 34,
       "source": "Audizioni - MusicalMusical",
       "url": "https://www.musical.it/audizioni/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
+      "checked_at": "2026-11-09T18:37:06+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni - MusicalMusical",
       "relevant_lines": [
-        "Audizioni aperte",
-        "Casting per cantanti"
+        "Audizioni produzioni professionistiche",
+        "Audizioni per PERFORMER, BALLERINI e ACROBATI – Jurassic World The Experience, Milano",
+        "Audizioni per DALIDA in Paradisco – Parigi, Francia",
+        "Audizioni Produzioni non professionistiche",
+        "Attoparallelo, Vercelli – Audizioni per Robin Hood – Prima della leggenda",
+        "Audizioni per BIANCANEVE & la magia del tempo – I PerFORMErs – Produzioni Artistiche"
       ],
       "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
+      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
+      "discovered_at": "2026-11-09T18:21:41+01:00"
     },
     {
       "number": 35,
       "source": "Partecipa al Festival – Fondazione Campania dei Festival",
       "url": "https://contact.fondazionecampaniadeifestival.it/partecipa-al-festival/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
+      "checked_at": "2026-11-09T18:37:09+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Partecipa al Festival",
+      "title": "Partecipa al Festival – Fondazione Campania dei Festival",
       "relevant_lines": [
-        "Call for artists",
-        "Scadenza candidature"
+        "Il termine ultimo per l’invio delle candidature è il 15 novembre 2026 alle ore 16.",
+        "Compila il form per candidarti alle selezioni artistiche dell’edizione 2027 del Campania Teatro Festival, hai tempo fino al 15 NOVEMBRE 2026 alle ore 16.00",
+        "FORM PROPOSTE ARTISTICHE 2026"
       ],
       "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
+      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
+      "discovered_at": "2026-11-09T18:21:44+01:00"
     },
     {
       "number": 36,
-      "source": "Casting Robin Hood: cercasi attori, cantanti e performer",
+      "source": "Casting Robin Hood: cercasi attori, cantanti e ballerini - Piemonte",
       "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
+      "checked_at": "2026-11-09T18:37:11+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Casting Robin Hood",
+      "title": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacolo teatrale - Piemonte - Provinispettacolo",
       "relevant_lines": [
-        "Casting",
-        "Cercasi attori e cantanti"
+        "Oltre ai ruoli principali, il casting è aperto anche a",
+        "entro il 16 novembre 2026",
+        "ruolo per il quale si presenta la candidatura",
+        "Le candidature dovranno essere inviate",
+        "Le selezioni sono aperte a candidati con diversi livelli di esperienza artistica:",
+        "Per partecipare alle selezioni è necessario inviare la propria candidatura via email all’indirizzo:",
+        "I candidati per l’ensemble e il corpo di ballo dovranno invece inviare:"
       ],
       "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
+      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
+      "discovered_at": "2026-11-09T18:21:46+01:00"
     },
     {
       "number": 37,
-      "source": "Audizioni Cantanti Lirici e Professori d'Orchestra – Roma",
+      "source": "Audizioni Cantanti Lirici e Professori d'Orchestra – Opera e Lirica, Roma",
       "url": "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
+      "checked_at": "2026-11-09T18:37:13+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Audizioni Cantanti Lirici e Professori d'Orchestra",
+      "title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma - www.castingeprovini.com",
       "relevant_lines": [
-        "Audizioni cantanti lirici",
-        "Professori d'orchestra"
+        "Audizioni Cantanti Lirici e Professori d’Orchestra a cura di Opera e Lirica – Roma",
+        "Le Audizioni si svolgeranno il",
+        "Durante l’audizione sarà presente un pianista accompagnatore di Opera e Lirica.",
+        "Per partecipare all’audizione è necessario inviare richiesta tramite mail",
+        "sarà possibile sostenere l’audizione esclusivamente dopo aver ricevuto la conferma scritta da parte di Opera e Lirica.",
+        "Bando di selezione per Artisti del Coro Fondazione Teatro dell’Opera di Roma"
       ],
       "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
-    },
-    {
-      "number": 38,
-      "source": "Open Call | De Arte Saltandi",
-      "url": "https://www.deartesaltandibrigateatro.it/open-call/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
-      "status": "ok",
-      "http_status": 200,
-      "title": "Open Call | De Arte Saltandi",
-      "relevant_lines": [
-        "Open call",
-        "Selezione interpreti"
-      ],
-      "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
-    },
-    {
-      "number": 39,
-      "source": "Regolamento – Premio Carlo Annoni",
-      "url": "https://www.premiocarloannoni.it/regolamento/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
-      "status": "ok",
-      "http_status": 200,
-      "title": "Regolamento – Premio Carlo Annoni",
-      "relevant_lines": [
-        "Premio Carlo Annoni",
-        "Bando e regolamento"
-      ],
-      "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
-    },
-    {
-      "number": 41,
-      "source": "Archivio Bandi Concorso",
-      "url": "https://www.teatroecritica.net/archivio-bandi/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
-      "status": "ok",
-      "http_status": 200,
-      "title": "Archivio Bandi Concorso",
-      "relevant_lines": [
-        "Archivio bandi",
-        "Concorsi e selezioni"
-      ],
-      "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
-    },
-    {
-      "number": 42,
-      "source": "Lavora con noi",
-      "url": "https://www.teatrostabileveneto.it/lavora-con-noi/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
-      "status": "ok",
-      "http_status": 200,
-      "title": "Lavora con noi",
-      "relevant_lines": [
-        "Lavora con noi",
-        "Selezioni e audizioni"
-      ]
-      ,
-      "error": null,
-      "discovered_at": "2026-11-09T19:05:00+01:00"
-    },
-    {
-      "number": 45,
-      "source": "Compagnia Abbondanza/Bertoni – audizioni",
-      "url": "https://www.compagniaabbondanzabertoni.it/audizioni/",
-      "checked_at": "2026-11-09T19:05:00+01:00",
-      "status": "ok",
-      "http_code": 200
+      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
+      "discovered_at": "2026-11-09T18:21:49+01:00"
     }
   ]
 }
