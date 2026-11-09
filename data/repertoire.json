@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T21:19:55+01:00",
+  "generated_at": "2026-11-09T23:16:30+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -6356,10 +6356,390 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "In het heden het verleden",
+      "aliases": [],
+      "composer": "Franz Peter Schubert",
+      "work": "/lieder/get_settings.html?ComposerId=2520",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "nl",
+      "text": "Roos en lelie, morgendauwrijk,\nBloei'n in 't tuintje van mijn buren,\nVerderop, vertrouwd en bosrijk,\nStijgen rotsen hoog als muren.\nEn met machtig woud omgeven\nEn een ridderslot als toren,\nWendt zich af de bergtopketen,\nTot hij raakt in 't dal verloren.\n\nEn dan geurt het, als van oudsher,\nToen wij nog aan liefde leden,\nEn de snaren van mijn souter\nMet het morgenlicht nog streden;\nWaar uit bossen met een volle\nRonde toon het jachtlied zoefde,\nOm te warmen, te verkoelen\nAl naar 't hart zoiets behoefde.\n\nNu de bossen eeuwig groeien,\nPut maar moed uit zulke zaken,\nWat normaal slechts u zou boeien,\nLaat dat and'ren nu ook smaken.\nNiemand zal ons dan verwijten\nDat wij slechts onszelf iets gunnen,\nNee, bij alle levensfeiten\nMoet gij nu genieten kunnen.\n\nEn met dit gezang en wending\nZijn wij terug bij Hafis' mythe,\nWant het past, de dagwegzending\nMet genieters te genieten.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=85801",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Lau Kanen",
+      "settings": [
+        {
+          "composer": "Franz Peter Schubert",
+          "title": "/lieder/get_settings.html?ComposerId=2520",
+          "instrumentation": "ttbb quartet with piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Dutch (Nederlands)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "To be poor yet give everything you own",
+      "aliases": [],
+      "composer": "Guillaume Boni",
+      "work": "/lieder/get_settings.html?ComposerId=3491",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "To be poor yet give everything you own,\nTo simulate a smile, while your heart is grieving,\nTo hate the truth and like dissimulation,\nTo possess everything and enjoy nothing;\n\nTo be freed yet to keep your bonds,\nTo be brave yet shiver with fear,\nTo wish to die yet be forced to live,\n[And profitless to spend all your goods]1;\n\nTo have always, as your slave-like act of homage,\nShame on your brow, loss in your hand ;\nIn her thoughts, with proud courage,\n\nEndlessly to hear new intrigues:\nThese are the things which lodge in my heart\nUncertain hope and sure torture.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=109181",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by David Wyatt",
+      "settings": [
+        {
+          "composer": "Guillaume Boni",
+          "title": "/lieder/get_settings.html?ComposerId=3491",
+          "instrumentation": "vocal quartet"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "L'amor és un pou fosc",
+      "aliases": [],
+      "composer": "Johannes Brahms",
+      "work": "/lieder/get_settings.html?ComposerId=3535",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "L'amor és un pou fosc,\nuna font massa perillosa;\non jo, pobre de mi, caigué,\nno puc veure ni sentir,\nnomés puc pensar en el meu goig,\nnomés plànyer el meu dolor.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=72514",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "Johannes Brahms",
+          "title": "/lieder/get_settings.html?ComposerId=3535",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Afrikaans",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Liefdesliedje",
+      "aliases": [],
+      "composer": "Richard Georg Strauss",
+      "work": "/lieder/get_settings.html?ComposerId=5869",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "nl",
+      "text": "Hoor mijn liefdesliedje klein,\nIsabel, jij mooie vrouw.\nBuiten bloeit de rosmarijn\nEn zijn bloempjes zijn zo blauw.\n\nBijtjes vliegen vlug en fijn,\nMet bloemdauw besproeid;\nMorgen zal het honing zijn,\nWat zo blauw nu bloeit!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=126926",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Lau Kanen",
+      "settings": [
+        {
+          "composer": "Richard Georg Strauss",
+          "title": "/lieder/get_settings.html?ComposerId=5869",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Dutch (Nederlands)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Hoch oben von dem Eichenast",
+      "aliases": [],
+      "composer": "Yrjö Henrik Kilpinen",
+      "work": "/lieder/get_settings.html?ComposerId=4636",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Hoch oben von dem Eichenast\neine bunte Meise läutet\nein frohes Lied, ein helles Lied,\nich weiß auch, was das bedeutet.\n\nEs schmilzt der Schnee, es kommt das Gras,\ndie Blumen werden blühen,\nes wird die ganze weite Welt\nin Frühlingsfarben glühen.\n\nDie Meise läutet den Frühling ein,\nich hab es schon lange vernommen,\ner ist zu mir bei Eis und Schnee\nmit Singen und Klingen gekommen.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=129257",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hermann Löns",
+      "settings": [
+        {
+          "composer": "Yrjö Henrik Kilpinen",
+          "title": "/lieder/get_settings.html?ComposerId=4636",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Finnish (Suomi)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Der arme Thoms",
+      "aliases": [],
+      "composer": "Joh. Chr. Jusdorf",
+      "work": "/lieder/get_settings.html?ComposerId=4569",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Thoms saß am hallenden See;\nIhm that es am Herzen so weh.\nDa klagten der Nachtigall Töne:\nHelene!\nHelene!\nSo klagte der Nachhall am See.\n\nThoms saß am hallenden See;\nIhm tat es im Herzen so weh!\nDa sangen ein Klaglied die Schwäne:\nHelene!\nHelene!\nAntworteten Winde vom See.\n\nThoms saß am hallenden See;\nO wehe mir, rief er, o weh!\nVerblaßt ist die Wange zu Schnee,\nHelene!\nHelene!\nRief dumpf aus den Tiefen die See.\n\nIch folg', o hallender See!\nO kühle das brennende Weh,\nOb lachend die Welt es verhöhne!\nHelene!\nHelene!\nRief leise verhallend der See.\n\nWer wankt so spät an dem wogenden See,\nUnd seufzet, o weh mir, o weh!\nWen suchest Du, einsame Schöne?\nHelene!\nHelene!\nSuch' Thoms in dem hallenden See!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=108568",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Johannes Daniel Falk",
+      "settings": [
+        {
+          "composer": "Joh. Chr. Jusdorf",
+          "title": "/lieder/get_settings.html?ComposerId=4569",
+          "instrumentation": "voice, guitar, and flute"
+        },
+        {
+          "composer": "Nikolaus, Freiherr von Krufft",
+          "title": "/lieder/get_settings.html?ComposerId=4733",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Go to the text.",
+          "title": "/lieder/get_text.html?TextId=5528",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Why, fair maid in every feature",
+      "aliases": [],
+      "composer": "Harriet Abrams",
+      "work": "/lieder/get_settings.html?ComposerId=17219",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Why, fair maid in every feature,\nAre such signs so fair expressed?\nCan a wandering wretched creature\nWith such terror fill thy breast?\n\nDoes my frenzy look so ugly?\nTrust me, sweet, life's airs are vain,\nNot for kingdoms would I harm thee,\nShun not then, poor Crazy Jane.\n\nDoes my frenzy seem to harm thee?\nMark me and avoid my woe,\nWhen men flatter, sigh, and languish,\nThink them false, I found them so.\n\nFor I love thee so sincerely\nNone could ever love again,\nYoung Henry fled and with him forever\nFled the wits of Crazy Jane.\n\nFondly my young heart receiv'd him,\nWhich was doomed to love but one.\nHe sighed - he vowed - and I believed him,\nHe was false - and I undone.\n\nSince that hour has reason never\nHeld her empire o'er my brain,\nYoung Henry fled and with him forever\nFled the wits of Crazy Jane.\n\nLonely now and broken hearted,\nAnd with frenzied thoughts beset\nOn that spot where last we parted,\nOn that spot where first we met.\n\nThen I will sing my lovelorn ditty,\nStill I'll lonely pace the plain,\nAnd each passerby in pity cries:\n\"God help poor Crazy Jane!\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=55103",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Matthew Gregory Lewis",
+      "settings": [
+        {
+          "composer": "Harriet Abrams",
+          "title": "/lieder/get_settings.html?ComposerId=17219",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "John Davy",
+          "title": "/lieder/get_settings.html?ComposerId=17352",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Laridah",
+      "aliases": [],
+      "composer": "Hans Sommer",
+      "work": "/lieder/get_settings.html?ComposerId=5800",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Alas, my beloved has run away on me,\nLaridah!\nAt first I wanted to catch her again,\nLaridah!\nBut then I thought about it:\nLaridah!\nSometimes losing is actually winning.\nLaridah!\n\nTo be sure, she was a sweet girl,\nLaridah!\nAnd we had many a flower bed,\nLaridah!\nNot only violets, tulips and roses,\nLaridah!\nWe also had two little apricot trees.\nLaridah!\n\nAnd we lived all alone,\nLaridah!\nHad not a single neighbour,\nLaridah!\nAnd our nest was safe from wagging tongues,\nLaridah!\n[Safe from] nagging and giggling.\nLaridah!\n\nAh, now I am singing about all the lovely things,\nLaridah!\nWhich I wanted to forget.\nLaridah!\nNo, such singing is not a smart thing to do,\nLaridah!\nFor the rabbit has run away.\nLaridah!\n\nFaithfulness was not her thing,\nLaridah!\nTherefore it’s better that I laugh:\nLaridah!\nIf it had not happened to me yesterday,\nLaridah!\nI would have had to look out for it tomorrow.\nLaridah!\n\nSo, my heart, be contented,\nLaridah!\nThere are many rabbits here on earth,\nLaridah!\nIf one has run away on you,\nLaridah!\nYou can buy another.\nLaridah!\n\nA lovely, soft, white one,\nLaridah!\nMucki-Nucki shall be its name,\nLaridah!\nAh, how quickly my heart pounds,\nLaridah!\nWhen [the rabbit] leaps across my threshold,\nLaridah!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=108847",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Hans Sommer",
+          "title": "/lieder/get_settings.html?ComposerId=5800",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Da jeg saae hende igjen",
+      "aliases": [],
+      "composer": "Jesper Mark Pedersen",
+      "work": "/lieder/get_settings.html?ComposerId=25441",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "da",
+      "text": "Vi saae hinanden efter mange Aar;\nJeg saae -- i Dybet, da jeg saae Øiet!\nMin Tanke aldrig hun vide faaer,\nVi hilsedes, vi vare saa fornøied'\nDet var et stort Minut og dog saa rigt,\nEn Duft af Blomster strømmed' mig imøde!\nJeg tænkte paa - en Sang, et Ungdoms-Digt,\nJeg nynner den - og mine Kinder gløde.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=89512",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hans Christian Andersen",
+      "settings": [
+        {
+          "composer": "Jesper Mark Pedersen",
+          "title": "/lieder/get_settings.html?ComposerId=25441",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ilma on täynnä huiluja ja viuluja",
+      "aliases": [],
+      "composer": "Ferdinand Gottfried Baake",
+      "work": "/lieder/get_settings.html?ComposerId=3254",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fi",
+      "text": "Ilma on täynnä huiluja ja viuluja,\ntrumpetit raikuvat niiden kanssa;\nsiinä pyörii hääkarkelossaan hän,\njota sydämeni kaikkein eniten rakastaa.\n\nIlma on täynnä helinää ja jyminää,\nrumpujen pauketta ja skalmeijan laulua;\nmutta samanaikaisesti nyyhkivät ja vaikeroivat\nsuloiset enkelit.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=57650",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Erkki Pullinen",
+      "settings": [
+        {
+          "composer": "Ferdinand Gottfried Baake",
+          "title": "/lieder/get_settings.html?ComposerId=3254",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Louis Ehlert",
+          "title": "/lieder/get_settings.html?ComposerId=8098",
+          "instrumentation": "mixed chorus a cappella"
+        },
+        {
+          "composer": "Jean Paul Ertel",
+          "title": "/lieder/get_settings.html?ComposerId=9204",
+          "instrumentation": "voice and harmonium"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ik weet een Frauken amoreus",
+      "aliases": [],
+      "composer": "Ture Rangström",
+      "work": "/lieder/get_settings.html?ComposerId=5434",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ik weet een Frauken amoreus,\ndie ik van Herten minne;\nihr Wesen is so gracieus,\nsie steht in mynen Sinne.\nGracieus is sie in aller Stund;\nman findt der nit sehr vele:\nWann sie hat einen lachenden Mund,\ntwee Brüstekens rund\nund eene sneewitte Kehle.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=71900",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Walther von der Vogelweide",
+      "settings": [
+        {
+          "composer": "Ture Rangström",
+          "title": "/lieder/get_settings.html?ComposerId=5434",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The lamps sparkle in the king's palace",
+      "aliases": [],
+      "composer": "Albert Hermann Dietrich",
+      "work": "/lieder/get_settings.html?ComposerId=8849",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "The lamps sparkle in the king's palace,\nFlutes and violins ring out;\nThe king's beautiful daughter\nIs dancing her wedding dance in the palace.\n\nShe is wearing the wreath of myrtles in her hair,\nBut she goes about mute and constrained;\nUpon her breast she wears a blooming rose,\nBut her cheeks, they are so pale.\n\nShe is dancing with a foreign prince,\nHe wears royal purple and silk;\nBut more handsome, a thousand times more handsome was\nThe lad in page's attire.\n\nAt the golden table twelve maidens stand\nTo serve the sparkling wine;\nTwelve pages circle around the bridal pair\nWith flaming torches and wreaths.\n\nAll of a sudden the torches flicker out,\nAll of a sudden the violins are mute;\nThe old king starts from his chair:\n\"Tell me, what is the meaning of this silence?\"\n\n\"Lord King, do not enflame in rage,\nWe cannot blow [our horns] or bow [our violins];\nThe merman is playing the harp before your palace,\nWe must give way to the merman.\"\n\nAnd hark, up from the sea there wafts\nA sweet and sorrowful reverberation,\nIt creeps so gently through the twilit night\nInto the festive halls [of the castle].\n\nIt creeps so gently into the ear of the bride;\nIt seems to her, as if from the depths,\nAs if from the depths with all-encompassing power\nHer dearest lover were calling her.\n\nHer eyes fill, she knows not why,\nShe cannot help dissolving in tears;\nFrom out of her curls the myrtle wreath\nFalls wilted at her feet.\n\nThe king shudders in his very marrow,\nHe flees in horror from the sound;\nThe foreign prince hastens\nTo his horses in the stable.\n\nIn the festive hall lies the pale bride,\nHer heart has burst;\nThe morning light gloomily illumines the windows,\nThe echoes of the merman's harp have faded away.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=74339",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Albert Hermann Dietrich",
+          "title": "/lieder/get_settings.html?ComposerId=8849",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Charles Edward Horn",
+          "title": "/lieder/get_settings.html?ComposerId=4466",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 816,
+  "lieder_position": 864,
   "aria_opera": 0,
   "aria_scene": 8
 }
