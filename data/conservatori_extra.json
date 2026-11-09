@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-09T20:24:51+01:00",
-  "cursor": 3,
+  "updated_at": "2026-11-09T20:35:00+01:00",
+  "cursor": 2,
   "items": [
     {
       "number": 200,
@@ -9,7 +9,6 @@
       "url": "https://www.consaq.it/component/content/article/37-notizie/didattica/6098-37-ammissioni-proroga-domande-fino-al-31-luglio-2026.html",
       "homepage": "https://www.consaq.it/",
       "source": "wikidata",
-      "wikidata_label": "Biblioteca Susanna Pezzopane del Conservatorio di musica Alfredo Casella",
       "added_at": "2026-11-09T19:54:17+01:00"
     },
     {
@@ -19,17 +18,16 @@
       "url": "https://www.conservatorio.bn.it/ammissioni/",
       "homepage": "https://www.conservatorio.bn.it/",
       "source": "wikidata",
-      "wikidata_label": "Conservatorio Statale di Musica Nicola Sala - Benevento",
       "added_at": "2026-11-09T19:54:17+01:00"
     },
     {
       "number": 300,
       "city": "米兰",
-      "school": "Accademia Teatro alla Scala",
-      "url": "https://www.accademialascala.it/musica",
+      "school": "Accademia Teatro alla Scala - corso cantanti lirici",
+      "url": "https://www.accademialascala.it/musica/corso-per-cantanti-lirici",
       "homepage": "https://www.accademialascala.it/",
       "source": "curated-accademia",
-      "added_at": "2026-11-09T20:30:00+01:00"
+      "added_at": "2026-11-09T20:35:00+01:00"
     },
     {
       "number": 301,
