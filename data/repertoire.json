@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T23:16:30+01:00",
+  "generated_at": "2026-11-09T23:25:01+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -6736,10 +6736,375 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Love is a sickness full of woes",
+      "aliases": [],
+      "composer": "Phyllis Batchelor",
+      "work": "/lieder/get_settings.html?ComposerId=44820",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Love is a sickness full of woes,\n  All remedies refusing;\nA plant that [with most]1 cutting grows,\n  Most barren with best using,\n      Why so?\n\nMore we enjoy it, more it dies;\n  If not enjoy'd, it sighing cries --\n      Heigh ho!\n\nLove is a torment of the mind,\n  A tempest everlasting;\nAnd Jove hath made [it of]2 a kind\n  Not well, nor full, nor fasting.\n      Why so?\n\nMore we enjoy it, more it dies;\n  If not enjoy'd, it sighing cries --\n      Heigh ho!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=4181",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "possibly by Samuel Daniel",
+      "settings": [
+        {
+          "composer": "Phyllis Batchelor",
+          "title": "/lieder/get_settings.html?ComposerId=44820",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Madeleine Dring",
+          "title": "/lieder/get_settings.html?ComposerId=3915",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Hans Gál",
+          "title": "/lieder/get_settings.html?ComposerId=7222",
+          "instrumentation": "women's chorus"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Liebe",
+      "aliases": [],
+      "composer": "Louis [Ludwig] Spohr",
+      "work": "/lieder/get_settings.html?ComposerId=5814",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Wenn im Lenze ringsum Alles lacht,\ndie Natur sich regt in frischem Leben,\nfühlst du da nicht sehnsuchtsvolles Beben,\nLust und Schmerz  zugleich in dir erwacht?\n\nAch, wenn rings im Lenze Alles lacht,\nfühl' auch ich ein neues Leben,\nholdes Ahnen, süßes Beben\ntief im Herzen mir erwacht.\n\nUnd den Liebling deiner Träume\nhast du nur im Geist gesehn?\nDen ich suchte durch die Räume\nglaub' ich nun vor mir zu sehn!\n\nAch und wollt' er voll Entzücken\ndeine Hand jetzt feurig drücken,\nzürnest Du? --\nIch glaube: nein!\n\nSeinen Armen zu entfliehen,\ndie ans glüh'nde Herz dich ziehen,\nkönntest du so grausam sein?\nIch glaube, ach, ich fürchte: nein!\n\nFühlst du das Herz auch schlagen?\nAch ja, mit bangem Zagen!\nUnd dies Gefühl? Dies Bangen?\nDies Beben? Dies Verlangen?\n\nWas kann es sein? Ich weiss es nicht!\nDies Beben, dies Verlangen,\ndies Streben und dies Bangen,\nwas könnte es denn sein?\n\nIch glaub' es nicht zu kennen,\ndoch müsst ich es benennen,\nso könnt' es Liebe sein!\nJa dies Gefühl, dies Bebeben,\ndies neue rege Leben,\nes wird wohl Liebe sein,\nes muss die Liebe sein,\nes muss die Liebe sein!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=33345",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Louis [Ludwig] Spohr",
+          "title": "/lieder/get_settings.html?ComposerId=5814",
+          "instrumentation": "duet for soprano and tenor with piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Wenn erst der Wald entlaubt wird",
+      "aliases": [],
+      "composer": "Paulo Florence",
+      "work": "/lieder/get_settings.html?ComposerId=4052",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Wenn erst der Wald entlaubt wird von den Winden,\nGehst du zum Friedhof, Trauer im Gemüth,\nUnd wirst mein Grab in einem Winkel finden,\nVon vielen dunklen Blumen überblüht.\n\nDie ließ mein Herz erblühn; du sollst sie pflücken,\nDein schönes blondes Haar damit zu schmücken.\n\nDie Lieder sind's, die ich nicht aufgeschrieben,\nDie Liebesworte, die unsagbar blieben.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=59083",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Paul Heyse",
+      "settings": [
+        {
+          "composer": "Paulo Florence",
+          "title": "/lieder/get_settings.html?ComposerId=4052",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Hans Sommer",
+          "title": "/lieder/get_settings.html?ComposerId=5800",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Francesco Paolo Tosti",
+          "title": "/lieder/get_settings.html?ComposerId=5990",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Autumn",
+      "aliases": [],
+      "composer": "Jules Massenet",
+      "work": "/lieder/get_settings.html?ComposerId=5000",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Let us profit from the days of autumn\nWhere in the heavens,\nThere seems to languor\nPlaintive goodbyes...\nLet us profit from the days of autumn\n\nI remember the tender things\nThat the lovers told each other;\nThey made eternal vows...\nAll below...\nWhen flowered with roses!\n\nLet us profit from the days of autumn\nWhere in the heavens,\nThere seems to languor\nPlaintive goodbyes...\nLet us profit from the days of autumn\n\nAlas!  The destiny which pushes us,\nIs sometimes so rigorous!..\nReturn handsome lovers,\nWhen will the sweet season return?..\n\nLet us profit from the days of autumn!...",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=27339",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Rachel O'Connell",
+      "settings": [
+        {
+          "composer": "Jules Massenet",
+          "title": "/lieder/get_settings.html?ComposerId=5000",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Estava enfadat amb el meu amic",
+      "aliases": [],
+      "composer": "William Alwyn",
+      "work": "/lieder/get_settings.html?ComposerId=3175",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "Estava enfadat amb el meu amic:\nli vaig fer saber el meu enuig, i el meu enuig cessà.\nEstava enfadat amb el meu enemic:\nno li vaig fer saber, el meu enuig creixé.\n\nI en temors el vaig regar\nnit i dia amb les meves llàgrimes;\ni el vaig assolellar amb somriures\ni amb delicats, falsos enganys.\n\nI va créixer dia i nit,\nfins a donar una llustrosa poma.\nI el meu enemic la veié brillar\ni sabia que era meva.\n\nI me la robà al meu jardí\nquan la nit havia velat l’estrella polar,\ni jo, content, al matí vaig veure\nel meu enemic estirat sota l’arbre.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=571974",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "William Alwyn",
+          "title": "/lieder/get_settings.html?ComposerId=3175",
+          "instrumentation": ""
+        },
+        {
+          "composer": "George Antheil",
+          "title": "/lieder/get_settings.html?ComposerId=3204",
+          "instrumentation": ""
+        },
+        {
+          "composer": "(Thomas) Athanasios Aronis",
+          "title": "/lieder/get_settings.html?ComposerId=3228",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Senza nisciuno",
+      "aliases": [],
+      "composer": "Ernesto de Curtis",
+      "work": "/lieder/get_settings.html?ComposerId=10433",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Tramonta 'o sole,\nvintiquatt'ore...\nSona 'avemmaria...\nSenza parole\nmme faccio 'a croce\ne penzo a mamma mia...\n\nChe mala sciorte, ahimé!\nSulo,\nsenza nisciuno...\ne tu...\ntu morta si' pe' me...\ntu morta si' pe' me...\n\nE tu addó' staje?\nTu ride e si' felice\no si' scuntenta?\nNun chiagne maje?\nE stu turmiento\nnun te turmenta?\n\nChe malasciorte, ahimé!\nSulo,\nsenza nisciuno...\ne tu...\ntu morta si' pe' me\ntu morta si' pe' me!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=34948",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Antonio Barbieri",
+      "settings": [
+        {
+          "composer": "Ernesto de Curtis",
+          "title": "/lieder/get_settings.html?ComposerId=10433",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Crepuscle",
+      "aliases": [],
+      "composer": "Robert Schumann",
+      "work": "/lieder/get_settings.html?ComposerId=5685",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "El crepuscle vol desplegar les ales,\nesborronats s’agiten els arbres,\npassen els núvols com somnis feixucs –\nquè significa aquesta basarda?\n\nSi estimes més un cabirol que cap altre,\nno el deixis pasturar tot sol,\nels caçadors van pel bosc i fan sonar els corns,\na estones, llurs veus vagaregen.\n\nSi tens un amic ací baix,\nno confiïs en ell a aquesta hora,\nbé que sembli amic als ulls i a la boca,\nell trama la guerra en una pau traïdora.\n\nAquell que avui fatigat defalleix,\nes lleva demà com tornat a néixer.\nMés d’un es troba perdut a la nit –\nvés en compte, resta despert i eixerit!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=602677",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "Robert Schumann",
+          "title": "/lieder/get_settings.html?ComposerId=5685",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "C. Otto Weber",
+          "title": "/lieder/get_settings.html?ComposerId=9198",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Black lake",
+      "aliases": [],
+      "composer": "Karl Heinz Taubert",
+      "work": "/lieder/get_settings.html?ComposerId=16352",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Behind a stern ring of rocky cliffs\nThat are softened by meadow roses,\nThere stretches a dark mirror of water,\nIn order to tell of clouds, forest and mountain.\n\nBlack blueness, cool dampness\nFills the syncline to the brim, its silence\nSeems to rise from the lake to the luminosity\nOf the fresh summit snow.\n\nDown toward the valley with a sleepy trickling\nLanguid threads of water creep,\nAbove the silt and brown gravel\nOld tree skeletons are bleaching [in the sun].\n\nMountain pines gaze [into the distance], larches cast their shade,\nEven the wind, which was only just astir,\nHesitates now, and fatigued, it seeks\nA place to lay itself to rest.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=106075",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Karl Heinz Taubert",
+          "title": "/lieder/get_settings.html?ComposerId=16352",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Es war einmal eine Ziege",
+      "aliases": [],
+      "composer": "Paul Dessau",
+      "work": "/lieder/get_settings.html?ComposerId=3862",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Es war einmal eine Ziege\nDie sagte: An meiner Wiege\nSang man mir, ein starker Mann\nWird kommen und mich frein.\nDer Ochse sah sie komisch an\nUnd sagte zu dem Schwein:\nDas wird der Metzger sein.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=73793",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Bertolt Brecht",
+      "settings": [
+        {
+          "composer": "Paul Dessau",
+          "title": "/lieder/get_settings.html?ComposerId=3862",
+          "instrumentation": "voice and instrumental ensemble"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Yon wild mossy mountains",
+      "aliases": [],
+      "composer": "Percy Aldridge Grainger",
+      "work": "/lieder/get_settings.html?ComposerId=4242",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "sco",
+      "text": "Yon wild mossy mountains sae lofty and wide,\nThat nurse in their bosom the youth o' the Clyde,\nWhere the grouse lead their coveys thro' the heather to feed,\nAnd the shepherd tents his flock as he pipes on his reed.\n\nNot Gowrie's rich valley nor Forth's sunny shores\nTo me hae the charms o' yon wild, mossy moors;\nFor there, by a lanely, [sequesterèd]1 stream,\nResides a sweet lassie, my thought and my dream.\n\nAmang thae wild mountains shall still be my path.\nIlk stream foaming down its ain, green. narrow strath;\nFor there wi' my lassie the [lang day]2 I rove,\nWhile o'er us unheeded flie the swift hours o' love.\n\nShe is not the fairest, altho' she is fair;\nO' nice education but sma' is her share;\nHer parentage humble as humble can be;\nBut I lo'e the dear lassie because she lo'es me.\n\nTo Beauty what man but maun yield him a prize,\nIn her armour of glances, and blushes, and sighs?\nAnd when Wit and Refinement hae polish'd her darts,\nThey dazzle our een, as they [flie]3 to our hearts.\n\nBut kindness, sweet kindness, in the fond-sparkling e'e\nHas lustre outshining the diamond to me,\nAnd the heart beating love as I'm clasp'd in her arms,\nO, these are my lassie's all-conquering charms!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=3430",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Robert Burns",
+      "settings": [
+        {
+          "composer": "Percy Aldridge Grainger",
+          "title": "/lieder/get_settings.html?ComposerId=4242",
+          "instrumentation": "tenor and piano"
+        },
+        {
+          "composer": "(Franz) Joseph Haydn",
+          "title": "/lieder/get_settings.html?ComposerId=4366",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Es wird dir sonderbar erscheinen",
+      "aliases": [],
+      "composer": "Manfred Frischknecht",
+      "work": "/lieder/get_settings.html?ComposerId=15997",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Es wird dir sonderbar erscheinen,\nDaß ich zuweilen wie ein Knabe\nNicht schlafen kann vor lautem Weinen\nUnd bitterlich das Heimweh habe,\n\nUnd daß ich tagelang in Träumen\nHinschlendre mit geheimem Leid\nAn fremden, stillen Gartensäumen,\nGedenkend meiner Kinderzeit ...",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=50682",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hermann Hesse",
+      "settings": [
+        {
+          "composer": "Manfred Frischknecht",
+          "title": "/lieder/get_settings.html?ComposerId=15997",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Heinrich Pestalozzi",
+          "title": "/lieder/get_settings.html?ComposerId=16206",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Christian Immo Schneider",
+          "title": "/lieder/get_settings.html?ComposerId=11859",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Was sich uns reicht mit dem Sternenlicht",
+      "aliases": [],
+      "composer": "Franz Furrer-Münch",
+      "work": "/lieder/get_settings.html?ComposerId=41187",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Was sich uns reicht mit dem Sternenlicht,\nwas sich uns reicht,\nfass es wie Welt in dein Angesicht,\nnimm es nicht leicht.\n\nZeige der Nacht, dass du still empfingst,\nwas sie gebracht.\nErst wenn du ganz zu ihr übergingst,\nkennt dich die Nacht.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=625438",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Rainer Maria Rilke",
+      "settings": [
+        {
+          "composer": "Franz Furrer-Münch",
+          "title": "/lieder/get_settings.html?ComposerId=41187",
+          "instrumentation": "voice and instrumental ensemble"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 864,
+  "lieder_position": 912,
   "aria_opera": 0,
   "aria_scene": 8
 }
