@@ -9,8 +9,8 @@ const opportunities = [
 ];
 
 let repertoire = [];
-let repertoireLoaded = false;function esc(text=''){return String(text).replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[c]));}
-const languageNames={it:"意大利语",fr:"法语",en:"英语",de:"德语",es:"西班牙语",pt:"葡萄牙语",ru:"俄语",da:"丹麦语",sv:"瑞典语",no:"挪威语",nl:"荷兰语",pl:"波兰语",cs:"捷克语",hu:"匈牙利语",fi:"芬兰语",el:"希腊语",la:"拉丁语",is:"冰岛语",cy:"威尔士语",ga:"爱尔兰语",sco:"苏格兰语",gd:"苏格兰盖尔语",ca:"加泰罗尼亚语",ro:"罗马尼亚语",hr:"克罗地亚语",sr:"塞尔维亚语",bg:"保加利亚语",uk:"乌克兰语",sl:"斯洛文尼亚语",sk:"斯洛伐克语",et:"爱沙尼亚语",lv:"拉脱维亚语",lt:"立陶宛语",ka:"格鲁吉亚语",hy:"亚美尼亚语",eo:"世界语",he:"希伯来语",yi:"意第绪语",ar:"阿拉伯语",tr:"土耳其语",fa:"波斯语",hi:"印地语",ja:"日语",ko:"韩语",zh:"中文",id:"印尼语",ms:"马来语",tl:"他加禄语",vi:"越南语",th:"泰语",scn:"西西里语",nap:"那不勒斯语",vec:"威尼斯语",lmo:"伦巴第语",oc:"奥克语",eu:"巴斯克语",gl:"加利西亚语",rm:"罗曼什语",af:"南非荷兰语",und:"原文语言"};
+let repertoireLoaded = false;function esc(text=''){return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+const languageNames={it:"意大利语",fr:"法语",en:"英语",de:"德语",es:"西班牙语",pt:"葡萄牙语",ru:"俄语",da:"丹麦语",sv:"瑞典语",no:"挪威语",nl:"荷兰语",pl:"波兰语",cs:"捷克语",hu:"匈牙利语",fi:"芬兰语",el:"希腊语",la:"拉丁语",is:"冰岛语",cy:"威尔士语",ga:"爱尔兰语",sco:"苏格兰语",gd:"苏格兰盖尔语",ca:"加泰罗尼亚语",ro:"罗马尼亚语",hr:"克罗地亚语",sr:"塞尔维亚语",bg:"保加利亚语",uk:"乌克兰语",sl:"斯洛文尼亚语",sk:"斯洛伐克语",et:"爱沙尼亚语",lv:"拉脱维亚语",lt:"立陶宛语",ka:"格鲁吉亚语",hy:"亚美尼亚语",eo:"世界语",he:"希伯来语",yi:"意第绪语",ene:"英语",ar:"阿拉伯语",tr:"土耳其语",fa:"波斯语",hi:"印地语",ja:"日语",ko:"韩语",zh:"中文",id:"印尼语",ms:"马来语",tl:"他加禄语",vi:"越南语",th:"泰语",scn:"西西里语",nap:"那不勒斯语",vec:"威尼斯语",lmo:"伦巴第语",oc:"奥克语",eu:"巴斯克语",gl:"加利西亚语",rm:"罗曼什语",af:"南非荷兰语",und:"原文语言"};
 function languageLabel(code="it"){const key=String(code).toLowerCase().split("-")[0];return languageNames[key]||"原文语言";}
 function googleReadUrl(item){
   if((item.text||"").length>5000)return "";
@@ -138,7 +138,7 @@ function renderMusicSearch(rawQuery){
    <p class="music-byline">${esc([item.composer,item.work?item.work:(item.poet?"词："+item.poet:"")].filter(Boolean).join(" · "))}</p>
    ${context?`<p class="music-hit">“${esc(hit.term)}”出现在原文：${esc(context)}…</p>`:''}
    <div class="music-text"><div class="music-text-label">歌词原文 · ${esc(languageLabel(item.language))}</div><p class="lyrics lyrics-preview">${esc(preview)}${hasMore?'…':''}</p>${hasMore?`<div class="lyrics-full" hidden><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div><button type="button" class="lyrics-toggle" data-open="0">展开全文 ↓</button>`:''}</div>
-   <div class="music-reading"><div><span class="music-text-label">泛读 · ${esc(languageLabel(item.language))}</span><p>在 Google 翻译中打开后，点击“听取原文”；会按这首作品的原文语言朗读。</p></div>${googleReadUrl(item)?'<a class="reading-link" href="'+esc(googleReadUrl(item))+'" target="_blank" rel="noopener noreferrer">Google 翻译朗读原文 ↗</a>':'<span class="score-unavailable">文本超过 Google 翻译单次朗读长度</span>'}</div>
+   <div class="music-reading"><div><span class="music-text-label">泛读 · ${esc(languageLabel(item.language))}</span><p>在 Google 翻译中打开后，点击“听取原文”；会按这首作品的原文语言阅读。</p></div>${googleReadUrl(item)?'<a class="reading-link" href="'+esc(googleReadUrl(item))+'" target="_blank" rel="noopener noreferrer">Google 翻译朗读原文 ↗</a>':'<span class="score-unavailable">文本超过 Google 翻译单次朗读长度</span>'}</div>
    <p class="music-meaning"><strong>大意：</strong>${esc(item.summary)}</p>
    <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'本站提供已核验的可下载版本。':'本站暂未托管乐谱 PDF。可以先查看 IMSLP 对应作品页；版本与地区版权请自行核对。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':item.scoreUrl?'<a class="score-imslp" href="'+esc(item.scoreUrl)+'" target="_blank" rel="noopener noreferrer">IMSLP 查看乐谱 ↗</a>':'<span class="score-unavailable">暂无乐谱链接</span>'}</div>
    <div class="music-source"><span>文本出处：${esc(item.textSourceName||'公开文本来源')} · 本文已收录在本站，搜索和阅读无需跳转。</span></div>
@@ -163,6 +163,15 @@ function renderSources(){
  }).join(''):'<div class="empty">没有找到符合条件的来源。</div>';
 }
 let conservatoriData=[];
+function fileLabel(url){
+ try{
+   const raw=decodeURIComponent((url.split('/').pop()||'').split('?')[0]);
+   const clean=raw.replace(/\.pdf$/i,'').replace(/[_+]+/g,' ').replace(/\s+/g,' ').trim();
+   if(!clean)return 'PDF';
+   const short=clean.length>52?clean.slice(0,52)+'…':clean;
+   return /\d{4}|bando|ammission|calendario|programma/i.test(short)?short:`简章：${short}`;
+ }catch(error){return 'PDF';}
+}
 function renderConservatori(){
  const wrap=$('#conservatori');if(!wrap)return;
  const readable=conservatoriData.filter(c=>c.status==='ok');
@@ -172,7 +181,7 @@ function renderConservatori(){
    const dates=(c.exam_dates||[]).slice(0,3);
    const reqs=(c.requirements||[]).slice(0,3);
    const docs=(c.documents||[]).slice(0,4);
-   return `<article class="cons-card"><div class="cons-head"><h3>${esc(c.city)} · ${esc(c.school)}</h3><span class="status ${c.status==='ok'?'':'error'}">${c.status==='ok'?'已读取官网':'暂时无法读取'}</span></div>${deadlines.length?`<p class="cons-block"><strong>报名期限：</strong>${deadlines.map(esc).join('；')}</p>`:''}${dates.length?`<p class="cons-block"><strong>考试日期：</strong>${dates.map(esc).join('；')}</p>`:''}${reqs.length?`<p class="cons-block"><strong>入学要求：</strong>${reqs.map(esc).join('；')}</p>`:''}${docs.length?`<p class="cons-docs">官方文件：${docs.map(d=>`<a href="${esc(d)}" target="_blank" rel="noopener">PDF</a>`).join(' · ')}</p>`:''}<a class="card-link" href="${esc(c.url)}" target="_blank" rel="noopener">打开学院官网页面 <span>↗</span></a></article>`;
+   return `<article class="cons-card"><div class="cons-head"><h3>${esc(c.city)} · ${esc(c.school)}</h3><span class="status ${c.status==='ok'?'':'error'}">${c.status==='ok'?(c.cached?'上次读取':'已读取官网'):'暂时无法读取'}</span></div>${deadlines.length?`<p class="cons-block"><strong>报名期限：</strong>${deadlines.map(esc).join('；')}</p>`:''}${dates.length?`<p class="cons-block"><strong>考试日期：</strong>${dates.map(esc).join('；')}</p>`:''}${reqs.length?`<p class="cons-block"><strong>入学要求：</strong>${reqs.map(esc).join('；')}</p>`:''}${(c.fallback_lines||[]).length?`<p class="cons-block"><strong>页面要点：</strong>${(c.fallback_lines||[]).slice(0,3).map(esc).join('；')}</p>`:''}${docs.length?`<p class="cons-docs">官方简章：${docs.map(d=>`<a href="${esc(d)}" target="_blank" rel="noopener">${esc(fileLabel(d))}</a>`).join(' · ')}</p>`:''}<a class="card-link" href="${esc(c.url)}" target="_blank" rel="noopener">打开学院官网页面 <span>↗</span></a></article>`;
  }).join(''):'<div class="empty">暂时读不到音乐学院数据。</div>';
 }
 async function loadConservatori(){
