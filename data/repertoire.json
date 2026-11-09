@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T00:21:07+01:00",
+  "generated_at": "2026-11-10T00:36:03+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -8596,10 +8596,405 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Every night you shall review your day",
+      "aliases": [],
+      "composer": "Friedel Bansmann",
+      "work": "/lieder/get_settings.html?ComposerId=15898",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Every night you shall review your day\nTo see if it might please God,\n[To see] if it was joyful in deed and faithfulness,\nIf it lay despondent in anxiety and regret;\nYou shall say the names of your loved ones,\nQuietly confess to yourself hatred and injustice,\nBe heartily sorry for all evil,\nTake no shadow to bed with you,\nCast all worry from your soul\nSo that it may rest, distant and childlike.\n\nThen confidently in your cleansed inner being\nYou shall remember your most precious things,\nYour mother, you childhood;\nLo, then you are purified and are ready\nTo drink deeply from the cool well-spring of sleep,\nWhere golden dreams beckon comfortingly,\nAnd, with a clear mind, to begin the new day\nAs a hero and a victor.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=127869",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Friedel Bansmann",
+          "title": "/lieder/get_settings.html?ComposerId=15898",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Paul Haegele",
+          "title": "/lieder/get_settings.html?ComposerId=16017",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Heinz-Otto Hoffmann",
+          "title": "/lieder/get_settings.html?ComposerId=16074",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "An album",
+      "aliases": [],
+      "composer": "Georges Auric",
+      "work": "/lieder/get_settings.html?ComposerId=3249",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "To learn is not an imposition,\ngirl reader who cannot read:\nbe very careful with this album\nborn of disastrous delirium.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=121727",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Peter Low",
+      "settings": [
+        {
+          "composer": "Georges Auric",
+          "title": "/lieder/get_settings.html?ComposerId=3249",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Peter Low",
+          "title": "./get_texts.html?ContribId=12",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Els lliris de neu dringuen de nou",
+      "aliases": [],
+      "composer": "Heinrich (Ludwig Egmont) Dorn",
+      "work": "/lieder/get_settings.html?ComposerId=7151",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "Els lliris de neu dringuen de nou,\nels lliris de neu ens porten de nou\ndies alegres i cançons;\nque bonic que sonen\na la vall i a les alçàries.\nLa reina fa la seva entrada!\nLa reina ha aparegut;\nl’heu de servir fidelment\namb posat i esguard alegres!\nOh, feu entrar la reina!\n\nElla arriba d’un espai d’estrelles,\ni en el seu escut porta\nla bondat i la dolcesa,\nella porta l’alegria i el goig\ncom un estel al seu pit;\nés benigne per a tothom,\nels senyors i els servents,\nels bons i els dolents,\nels malvats i els justos,\na tots els considera amb gentilesa.\n\nHo pregunteu i per tant ho sabeu,\ni qui ja ho sap ho oblida,\nés la reina primavera;\naneu al seu encontre amb cançons,\namb el so i el dring dels violins!\nLa reina fa la seva entrada!\nLa reina ha aparegut.\nL’heu de servir fidelment\namb posat i esguard alegres!\nOh, feu entrar la reina!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=599704",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "Heinrich (Ludwig Egmont) Dorn",
+          "title": "/lieder/get_settings.html?ComposerId=7151",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Heinrich Esser",
+          "title": "/lieder/get_settings.html?ComposerId=3986",
+          "instrumentation": "vocal duet with piano"
+        },
+        {
+          "composer": "Friedrich Wilhelm Jähns",
+          "title": "/lieder/get_settings.html?ComposerId=8655",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Foran Sydens kloster",
+      "aliases": [],
+      "composer": "Edvard Grieg",
+      "work": "/lieder/get_settings.html?ComposerId=4256",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "no",
+      "text": "»Hvem banker så silde på klostrets port?«\n»Fattig-mø ifra fremmed land!«\n»Hvad lider så du, og hvad har du gjort?«\n»Alt, et hjerte det lide kan.\nMen Intet har jeg gjort,\njeg trætner, jeg trænger,\njeg kan ikke stort,\nog dog må jeg længer.\nLuk op, luk op, jeg har ikke sted,\njeg har ikke fred.«\n\n»Hvad hedder det land, som du har forladt?«\n»Norden-landene, langt herfra!«\n»Hvad voldte, du standsed just her i nat?«\n»Kvinne-røsters \"Haleluja\"!\nDet sken, det sang af fred,\npå sinnet det sænktes,\nog alt, hvad jeg led,\nsig løfted og længtes.\nLuk op, luk op, for ejer I fred,\nså giv mig med!«\n\n»Først nævn mig din smærte; hvad hedder den?«\n»Aldrig mere jeg kan få ro.«\n»Så tabte du Nogen, din far, din ven?«\n»Ja, jeg tabte dem begge to!\nOg alt, jeg havde kjært,\nselv tanken i hjærte,\nja hver jeg havde nært,\nfra længes jeg lærte.\nLuk op, luk op, jeg synker; jeg ser,\njeg kan ikke mer!«\n\n»Din far, hvordan var det, du tabte ham?«\n»Dræbt han blev, og jeg så derpå!«\n»Din ven, hvordan var det, du tabte ham?«\n»Han drap far, og jeg så derpå.\nHan tog mig, men jeg græd\nog bad hele Tiden,\nså slap han mig ned,\nså flygted jed siden.\nLuk op, luk op, jeg elsker, det er Gru,\njeg elsker ham endnu.«\n\nKOR af NONNERNE fra den OPLYSTE KIRKE:\nKom barn, kom brud,\nkom in til Gud,\nkom synd, kom savn,\ni Jesu favn.\nHvil synkende sorgen\npå Horebs top,\nmed lærken i morgen\nså kvidrer du op.\n\nHer attrå du bytter,\nher længsler du flytter,\nher frygten den faller,\nhvor Frelseren kaller,\nher, knækket som sivet,\ndu rejser dig hel,\ni hedninge-livet\nforliste sjæl!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=2636",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Bjørnstjerne Bjørnson",
+      "settings": [
+        {
+          "composer": "Edvard Grieg",
+          "title": "/lieder/get_settings.html?ComposerId=4256",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Vöglein im Walde dort",
+      "aliases": [],
+      "composer": "Franz Wilhelm Abt",
+      "work": "/lieder/get_settings.html?ComposerId=3121",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Vöglein im Walde dort,\nVöglein, ihr zieht nun fort,\nsaget, wohin?\nDem Land wir entfliehen,\nwo's Leben verblüht,\nhinüber wir ziehen,\nwo Frühling noch glüht;\ndort drüben ist traut ein gar wohnlicher Ort,\nes treibt uns hinüber, d'rum ziehen wir fort.\n\nEilende Wellen dort,\nWellen, ihr ziehet fort,\nsaget, wohin?\nNicht fürfen wir weilen,\nwir halten nicht Rast,\nzum Meere wir eilen,\ndas bald uns umfasst.\nD'rum zieh'n wir hinunter in tändelndem Spiel,\nwir suchen und finden am Ende das Ziel.\n\nRauschende Lüfte dort,\nLüfte, zieht immer fort,\nsaget, wohin?\nWir streben, wir ringen\nuns mutig hervor,\nwir steigen, wir dringen\nzum Himmel empor.\nDort oben ist Friede, dort oben ist Ruh',\nwir schweben der Heimat, der glücklichen, zu.\n\nHerzlein, was gräst du dich?\nHerzlein, was sehnst du dich?\nSage, wohin?\nDahin ist geschwunden\nDie Zeit und das Glück,\nMir kehret die Jugend\nDoch nimmer zurück.\n{ O könnt' ich dahin, wo das Herz sich erfreut,\n{ Hier wird, was gealtert, doch nimmer erneut.\n| Du sehnst dich hinüber, dort wirst du erfreut,\n| Ja, einst wird das Herz wohl auch wieder erneut.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=132971",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Martin Linsser",
+      "settings": [
+        {
+          "composer": "Franz Wilhelm Abt",
+          "title": "/lieder/get_settings.html?ComposerId=3121",
+          "instrumentation": "vocal duet for soprano and alto with piano"
+        },
+        {
+          "composer": "Andreas Zöllner",
+          "title": "/lieder/get_settings.html?ComposerId=19911",
+          "instrumentation": "men's chorus a cappella"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Heaven and the stars",
+      "aliases": [],
+      "composer": "Fyodor Stepanovich Akimenko",
+      "work": "/lieder/get_settings.html?ComposerId=3147",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Brilliant heavens of evening,\n  Distant stars clearly shining,\n  Bright as the rapture of childhood,\nO why dare I send you nevermore greeting --\nStars, who are shining as clear as my joy?\n\n  What is thy sorrow?\n  Mortals make question.\n  This is my sorrow;\nThe heavens and the stars are -- heaven and stars ever,\nI am alas! but a perishing man!\n\n  Forever mortal\n  Envies his neighbor;\n  I envy rather\nYe in your freedom, ye stars ever radiant,\nAnd only would be in your places!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=73779",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Martha Gilbert Dickinson Bianchi",
+      "settings": [
+        {
+          "composer": "Fyodor Stepanovich Akimenko",
+          "title": "/lieder/get_settings.html?ComposerId=3147",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Boris Vladimirovich Asafiev",
+          "title": "/lieder/get_settings.html?ComposerId=3231",
+          "instrumentation": ""
+        },
+        {
+          "composer": "César Antonovich Cui",
+          "title": "/lieder/get_settings.html?ComposerId=3795",
+          "instrumentation": "chorus a cappella"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Frühlings‑Begrüßung",
+      "aliases": [],
+      "composer": "Ludwig Erk",
+      "work": "/lieder/get_settings.html?ComposerId=16877",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Und nun wird es wieder grün,\nUnd die bunten Blumen blüh'n:\nBlümlein gelb und roth und blau,\nSeid gegrüßt in Feld und Au!\n\nUnd was flattert durch die Luft\nLustig nach dem Frühlingsduft?\nSchmetterling' im Sonnenstrahl,\nSeid gegrüßt viel tausendmal!\n\nUnd der Vogel singt sein Lied,\nFreut sich, daß der Winter schied:\nVöglein, singt durch Berg und Thal,\nSeid gegrüßt viel tausendmal!\n\nFrühling, und so grüß' ich dich,\nDenn du kamst ja auch für mich,\nGabst mir Freuden ohne Zahl,\nSei gegrüßt viel tausendmal!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=53705",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "August Heinrich Hoffmann von Fallersleben",
+      "settings": [
+        {
+          "composer": "Ludwig Erk",
+          "title": "/lieder/get_settings.html?ComposerId=16877",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Hans Michael Schletterer",
+          "title": "/lieder/get_settings.html?ComposerId=13967",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The trout",
+      "aliases": [],
+      "composer": "Friedrich August Baumbach",
+      "work": "/lieder/get_settings.html?ComposerId=33794",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "A brooklet soft and gentle --\nrushing on with glee --\nA trout like arrow darting -\nso playfully and free -\nAnd standing by the brook-side\nI gazed in pure delight.\nAt happy fishlet playing\nIn lucid brooklet bright.\n\nA fisherman with rod stood\nwatching from nearby\nHe followed fishlet's movements\nWith cold and scheming eye.\n\"So long stays clear that brooklet\"\nI thought, with comfort sure\n\"He cannot trap my fishlet --\nOr catch it with his lure.\"\n\nBut soon with crude impatience --\nHe broke the calm -\nHe stirred and muddied all that water --\nAnd just as I had feared --\nHe tugged upon his rod --\nAnd dangled my fishlet on his hook.\nOh, how my heart was burning\nBetrayed were fish and brook!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=36452",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Shula Keller",
+      "settings": [
+        {
+          "composer": "Friedrich August Baumbach",
+          "title": "/lieder/get_settings.html?ComposerId=33794",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Christian Friedrich Daniel Schubart",
+          "title": "/lieder/get_settings.html?ComposerId=2518",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Franz Peter Schubert",
+          "title": "/lieder/get_settings.html?ComposerId=2520",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Das Ständchen",
+      "aliases": [],
+      "composer": "Erich Wolfgang Korngold",
+      "work": "/lieder/get_settings.html?ComposerId=4699",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Auf die Dächer zwischen blassen\nWolken [schaut]1 der Mond herfür,\nEin Student dort auf den Gassen\nSingt vor seiner Liebsten Tür.\n\nUnd die Brunnen rauschen wieder\nDurch die stille Einsamkeit,\nUnd der Wald vom Berge nieder,\nWie in alter, schöner Zeit.\n\nSo in meinen jungen Tagen\nHab ich manche Sommernacht\nAuch die Laute hier geschlagen\nUnd manch lust'ges Lied erdacht.\n\nAber von der stillen Schwelle\nTrugen sie mein Lieb zur Ruh,\nUnd du, fröhlicher Geselle,\nSinge, sing nur immer zu!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=5297",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Joseph Karl Benedikt, Freiherr von Eichendorff",
+      "settings": [
+        {
+          "composer": "Erich Wolfgang Korngold",
+          "title": "/lieder/get_settings.html?ComposerId=4699",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Erich Wolfgang Korngold",
+          "title": "/lieder/get_settings.html?ComposerId=4699",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Eduard Lassen",
+          "title": "/lieder/get_settings.html?ComposerId=4784",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Once the goat came as a messenger",
+      "aliases": [],
+      "composer": "Richard Georg Strauss",
+      "work": "/lieder/get_settings.html?ComposerId=5869",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Once the goat came as a messenger\nTo the house of the Rosenkavalier,\nHe knocked with his paw,\nHis entry was blocked by a bouquet of roses.\n\nWith the bouquet’s thorns the ostrich quickly stabs\nThe messenger-goat through his thick pelt.\nOh goat, be off with your tail between your legs\nBack where you came from, back where you came from!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=106729",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Richard Georg Strauss",
+          "title": "/lieder/get_settings.html?ComposerId=5869",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The lover",
+      "aliases": [],
+      "composer": "Johann Anton André",
+      "work": "/lieder/get_settings.html?ComposerId=3191",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Fortunate, fortunate is he\nwho catches sight of you,\nand drinks in your Heaven,\nwhen your face,\nsuffused in angel-light\nbeckons with a greeting of peace.\n\nA sweet gaze,\nA sign, a nod,\nshines upon me like the spring sun.\nThe entire day\nI will contemplate it,\nand float in heavenly bliss.\n\nYour lovely image\nwill lead me mildly\nby a gentle flower-chain;\nIn my arms\nit awakens warm,\nand goes with me to bed.\n\nFortunate, fortunate is he\nwho catches sight of you,\nand drinks in your Heaven,\nwhom a sweet gaze\nand a sign and a nod\nlures to sweeter kisses.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=8281",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Emily Ezust",
+      "settings": [
+        {
+          "composer": "Johann Anton André",
+          "title": "/lieder/get_settings.html?ComposerId=3191",
+          "instrumentation": ""
+        },
+        {
+          "composer": "August Harder",
+          "title": "/lieder/get_settings.html?ComposerId=4335",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Johann Wenzeslaus Kalliwoda",
+          "title": "/lieder/get_settings.html?ComposerId=4582",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "How Long? Not Long!",
+      "aliases": [],
+      "composer": "Shelton L. Becton",
+      "work": "/lieder/get_settings.html?ComposerId=34163",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "How long? Not long\nbefore I reach the promised land,\nHow long? Not long\nbefore I make it to the Kingdom.\n\nJust a few more weary days\nbefore I reach the promised land.\nThere to sing His endless praise,\nI'm on my way to the Kingdom.\n\nTrials may seem hard sometimes\nbefore I reach the promised land.\nBut there eternally sublime,\nYes, when I make it to the Kingdom.\n\nTroubles cannot last always\nbefore you reach the promised land.\nSo lift your head and count the days\nbefore you make it to the Kingdom.\n\nHow long? Not long...",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=295391",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "from Volkslieder",
+      "settings": [
+        {
+          "composer": "Shelton L. Becton",
+          "title": "/lieder/get_settings.html?ComposerId=34163",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 1104,
+  "lieder_position": 1152,
   "aria_opera": 0,
   "aria_scene": 8
 }
