@@ -11,6 +11,7 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.svg">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="extra.css">
   <title>意大利声乐现场 · 试唱、招募与比赛</title>
 </head>
 <body>
@@ -35,7 +36,7 @@
     
     <section class="music-section" id="music-library">
       <div class="section-head"><div><div class="eyebrow">ARIA · LIEDER</div><h2>搜歌名，查文本和乐谱</h2></div><span id="repertoireCount" class="count-pill">读取曲目…</span></div>
-      <p class="music-intro">输入意大利文、英文或中文歌名。已收录作品在本站显示歌词，可用 Google 翻译听取原文，也可打开 IMSLP 查看乐谱。</p>
+      <p class="music-intro">输入意大利文、英文或中文歌名，边输入边出结果：支持关键词、前缀与少量拼写容错。歌词默认折叠，点“展开全文”再读；也可用 Google 翻译听取原文、打开 IMSLP 查看乐谱。</p>
       <form id="musicSearchForm" class="music-search"><label class="music-search-field"><span aria-hidden="true">⌕</span><input id="musicSearchInput" type="search" placeholder="例如 Nessun dorma / 今夜无人入睡" autocomplete="off" aria-label="搜索咏叹调或艺术歌曲"></label><button type="submit">搜索</button></form>
       <div class="search-examples"><span>试试：</span><button type="button" class="search-chip" data-query="Nessun dorma">Nessun dorma</button><button type="button" class="search-chip" data-query="Voi che sapete">Voi che sapete</button><button type="button" class="search-chip" data-query="Ideale">Ideale</button><button type="button" class="search-chip" data-query="Libiamo">Libiamo</button><button type="button" class="search-chip" data-query="Casta Diva">Casta Diva</button><button type="button" class="search-chip" data-query="Quanto t’amo">Quanto t’amo</button></div>
       <div id="musicSearchResults" aria-live="polite"></div>
@@ -48,6 +49,13 @@
     </section>
 
     <section class="section-head sources-head">
+      <div><div class="eyebrow">CONSERVATORI</div><h2>音乐学院入学考试</h2></div>
+      <span id="conservatoriCount" class="count-pill">—</span>
+    </section>
+    <p class="cons-note">这里是各公立音乐学院（conservatorio）官网入学考试页面的每日摘录：报名期限、考试日期、语言与曲目要求都来自官方页面原文。完整的考试日程和分专业曲目要求通常放在校方 PDF 里，下面会直接给出官方文件链接。</p>
+    <div id="conservatori" class="cons-list" aria-live="polite"></div>
+
+    <section class="section-head sources-head">
       <div><div class="eyebrow">SOURCES</div><h2>来源动态</h2></div>
       <span id="sourceCount" class="count-pill">—</span>
     </section>
@@ -58,6 +66,6 @@
     <div id="sources" class="source-list" aria-live="polite"></div>
     <footer><span>意大利声乐现场 · Italia</span><span>来源包括官网与专业平台，详情以主办方公告为准</span></footer>
   </main>
-  <script src="app.js?v=fuzzy-search-6" defer></script>
+  <script src="app.js?v=conservatori-search-1" defer></script>
 </body>
 </html>

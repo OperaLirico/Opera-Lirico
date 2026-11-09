@@ -32,15 +32,16 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Scrape public source pages
         run: python scrape_sources.py
+      - name: Scrape conservatory admission pages
+        run: python scrape_conservatori.py
       - name: Save expanded song catalogue
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          # Start with the latest published catalogue and its two cursors.
+          # Start with the latest published catalogue and its scan cursor.
           git fetch origin main
           git checkout origin/main -- data/repertoire.json
           python update_repertoire.py
-          python update_arias.py
           git add data/repertoire.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update automatically collected song texts'
