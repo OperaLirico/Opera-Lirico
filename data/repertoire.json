@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T00:02:40+01:00",
+  "generated_at": "2026-11-10T00:21:07+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -8251,10 +8251,355 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Merellä",
+      "aliases": [],
+      "composer": "Oskar Merikanto",
+      "work": "/lieder/get_settings.html?ComposerId=5040",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "fi",
+      "text": "Syvästi meri huokaa,\nsen rinta kuohuaa.\nMutt' rauhallisna taivas\nvaloa vuodattaa.\n\nMin' olen meri, minä,\nlevoton, aaltoinen.\nSin' olet taivahani,\nvaloisa, rauhainen.\n\nKuvasi, armas, kannan\nnyt vasten rintoain,\nja sinut itses kätken\nsyvälle sielussain.\n\nVoi laivan myrsky murtaa,\nja kenties uppoan,\nmutt' sinut sielussani\nvien aallon pohjahan.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=124518",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Juhana Heikki Erkko",
+      "settings": [
+        {
+          "composer": "Oskar Merikanto",
+          "title": "/lieder/get_settings.html?ComposerId=5040",
+          "instrumentation": "voice and orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The dandy",
+      "aliases": [],
+      "composer": "Max Kowalski",
+      "work": "/lieder/get_settings.html?ComposerId=8232",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "With a ghostly light ray\n The moon illumines the crystal flasks\n Upon the dark altar-the holy Washbasin\n Of the taciturn Dandy from Bergamo.\n\n In the resonant bronze basin\n The fountains laugh a metallic clangor.\n With a ghostly light ray\n The moon illumines the crystal flasks.\n\n Pierrot with waxen complexion\n Stands deep in thought:  What makeup for today?\n He shoves aside the red and oriental green\n And paints his face in sublime style\n With a ghostly light ray.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=19401",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Mimmi Fulmer, Ric Merritt",
+      "settings": [
+        {
+          "composer": "Max Kowalski",
+          "title": "/lieder/get_settings.html?ComposerId=8232",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Arnold Franz Walter Schoenberg",
+          "title": "/lieder/get_settings.html?ComposerId=2512",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Otto Vrieslander",
+          "title": "/lieder/get_settings.html?ComposerId=7596",
+          "instrumentation": "medium voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ismène croit à mes promesses",
+      "aliases": [],
+      "composer": "Dmitry Stepanovich Bortnyansky",
+      "work": "/lieder/get_settings.html?ComposerId=3512",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Ismène croit à mes promesses,\nDans mon retour voit son bonheur.\nComment recevoir ses caresses,\nComment abuser sa candeur ?\nLui dir' ou taire mes faiblesses,\nDéchirer ou tromper son cœur ?\n\nPour toucher l'objet qui m'enchaîne\nJ'ai fait d'inutiles efforts\nAvec la trop sensible Ismène\nJe suis léger, j'ai tout le tort ;\nD'un cœur dédaigne j'ai la peine,\nD'un cœur ingrat j'ai les remords.\n\nMais dans Rosine une âme pure\nSembloit excuser mon penchant,\nOn ne vit rien dans la nature\nD'aussi parfait, d'aussi touchant ;\nEn l'adorant le cœur s'épure,\nCar on l'imite en l'adorant.\n\nCheveux dont la teinte est si belle,\nQue l'art ne sauroit l'imiter,\nSur mon cœur, sur ce cœur fidèle\nJe veux en tout temps vous porter ;\nQuand il ne battra plus pour elle,\nMa tombe doit vous conserver.\n\nCombien de fois pendant l'absence\nDe mes pleurs je veux vous baigner,\nCes pleurs couleront en silence,\nRosine doit les ignorer ;\nIls seront doux en sa présence,\nSeul il est affreux de pleurer.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=39980",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "François-Hermann Lafermière",
+      "settings": [
+        {
+          "composer": "Dmitry Stepanovich Bortnyansky",
+          "title": "/lieder/get_settings.html?ComposerId=3512",
+          "instrumentation": "medium voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Pans Flöte",
+      "aliases": [],
+      "composer": "Jean-René Buvat",
+      "work": "/lieder/get_settings.html?ComposerId=13725",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Zum Hyazinthenfest\n hat er mir eine Hirtenpfeife geschenkt,\n aus schön geschnittenem Schilfrohr,\n mit weißem Wachs aneinandergefügt,\n das meinen Lippen süß wie Honig schmeckt.\n\n Er lehrt mich das Flötenspiel, ich sitze auf seinem\n Schoß, aber ich zittere ein wenig.\n Er spielt nach mir, so leise,\n daß ich ihn fast nicht höre.\n\n Wir haben uns nichts zu sagen,\n so nah sind wir einander,\n aber unsere Lieder wollen sich antworten,\n und eines ums andere Mal\n begegnen sich unsere Münder auf der Flöte .\n\n Es ist spät,\n horch, der Gesang der grünen Frösche,\n der mit der Nacht anhebt.\n Meine Mutter wird niemals glauben,\n daß ich so lange\n meinen verlorenen Gürtel gesucht habe.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=10362",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Nele Gramß",
+      "settings": [
+        {
+          "composer": "Jean-René Buvat",
+          "title": "/lieder/get_settings.html?ComposerId=13725",
+          "instrumentation": ""
+        },
+        {
+          "composer": "André-Marie Cuvelier",
+          "title": "/lieder/get_settings.html?ComposerId=15113",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Claude Achille Debussy",
+          "title": "/lieder/get_settings.html?ComposerId=658",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "El bufó",
+      "aliases": [],
+      "composer": "Max Reger",
+      "work": "/lieder/get_settings.html?ComposerId=5461",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "Cap pare que m’aixequi el mentó,\ncap mare que m’acaroni els cabells,\ncap amic que visqui prop del meu cor,\ncap dona que afalagui el meu esguard!\n\nI malgrat tot, jo envio una rialla\nque és rebuda amb un somriure,\ns’obren totes les portes,\ncar el bufó, el bufó ha arribat.\n\nPerò quan la gentada s’ha dispersat,\naixeco gemegant els braços;\nel que vaig jurar anit al coixí\nés un odi arrossegat per les llàgrimes.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=348052",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "Max Reger",
+          "title": "/lieder/get_settings.html?ComposerId=5461",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Salvador Pila",
+          "title": "./get_texts.html?ContribId=646",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The quiet cloud",
+      "aliases": [],
+      "composer": "Franz Bauer",
+      "work": "/lieder/get_settings.html?ComposerId=15901",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "A slender, white\nA gentle, quiet\nCloud wafts about in the blueness.\nLower your gaze and feel\n[The cloud] with white coolness\nBlissfully pass through your blue dreams.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=122594",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Franz Bauer",
+          "title": "/lieder/get_settings.html?ComposerId=15901",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Oskar Baumann",
+          "title": "/lieder/get_settings.html?ComposerId=15902",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Johannes Boris Borowski",
+          "title": "/lieder/get_settings.html?ComposerId=48508",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Vergessen",
+      "aliases": [],
+      "composer": "Max Stange",
+      "work": "/lieder/get_settings.html?ComposerId=5825",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Stiller See, in deine Fluten\nwill ich meine Liebe senken:\nEinen Ball aus Feuergluten\nwill ich deiner Nixe schenken.\n\nZwischen ihren kühlen Armen\nwird den heißen Ball sie pressen,\nund aus Mitleid und Erbarmen\nschenkt sie mir dafür Vergessen.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=98154",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Paul Schüler",
+      "settings": [
+        {
+          "composer": "Max Stange",
+          "title": "/lieder/get_settings.html?ComposerId=5825",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Infin che'l tempo e' belo",
+      "aliases": [],
+      "composer": "Anonymous/Unidentified Artist",
+      "work": "/lieder/get_settings.html?ComposerId=70",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Infin che'l tempo è belo,\nandemo a far bordelo,\nandemo a ciassisar, puti galanti.\nNon stemo a consumar,\npiù tempo a smorosar,\nche'l fruto de l'amor xe pene e pianti.\nAndemo a ciassisar, puti galanti.\n\nMontemo in bateleto,\nmarciemo col frescheto,\nmetemose a sonar,femo fracasso.\nNon stemo a consumar,\npiù tempo a smorosar,\nche'l fruto de l'amor xe pene e pianti.\nAndemo a ciassisar, puti galanti!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=27682",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Anonymous/Unidentified Artist",
+          "title": "/lieder/get_settings.html?ComposerId=70",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Le retour du soldat",
+      "aliases": [],
+      "composer": "(Franz) Joseph Haydn",
+      "work": "/lieder/get_settings.html?ComposerId=4366",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Quand le souffle mortel de cette guerre sauvage s'éteignit\nEt qu'une agréable paix fut revenue,\nAvec bien de doux enfants sans père\nEt bien des veuves en deuil,\nJe quittai le front et ses champs de tentes\nOù  longtemps je fus pensionnaire\nAvec pour toute fortune mon havresac,\nPauvre et honnête soldat.\n\nJ'atteignis enfin la belle vallée\nOù dans mon enfance je m'amusais,\nJe passai le moulin et l'aubépine aux rendez-vous\nOù souvent je courtisais Nancy ;\nJe n'aperçus qu'elle, ma mie chérie,\nEn-bas près de la maison de sa mère,\nEt je me retournai pour cacher le flot\nQui montait dans mes yeux.\n\nD'une vois altérée je dis «Douce fille,\nDouce comme ce bourgeon d'aubépine,\nÔ qu'il est heureux, heureux,\nCelui qui est le plus cher à ton cœur !\nMa bourse est légère, j'ai loin à aller\nEt je serais content d'être ton pensionnaire ;\nJ'ai longtemps servi mon roi et mon pays,\nAies pitié d'un soldat. »\n\nElle me regarda fixement, elle rougit comme une rose,\nPuis, pâle comme un lis,\nElle tomba dans mes bras et s'écria :\n« Es-tu mon, cher Willie ? »\n« Par celui qui fit ce soleil et ce ciel,\nPar celui qui estima le véritable amour,\nJe suis cet homme,et puissent les véritables amoureux\nÊtre toujours ainsi récompensés.\nLes guerres sont finies, et je suis rentré à la maison,\nEt je te retrouve toujours fidèle ;\nBien que pauvres en avoirs, nous sommes riches d'amour,\nEt en plus, jamais nous ne nous séparerons. »\nElle répondit « Mon grand-père m'a laissé de l'or\nUne ferme bien pourvue ;\nEt viens, mon fidèle soldat,\nTu y es, mon chéri, le bienvenu ! »",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=1286511",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Pierre Mathé",
+      "settings": [
+        {
+          "composer": "(Franz) Joseph Haydn",
+          "title": "/lieder/get_settings.html?ComposerId=4366",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Trinklied im Frühling",
+      "aliases": [],
+      "composer": "(Philipp) Friedrich Silcher",
+      "work": "/lieder/get_settings.html?ComposerId=5754",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Der Himmel lacht und heitre Lüfte spielen,\nder Frühling kehrt zurück in seiner gold'nen Pracht;\nmit lautem Jubelsang wird hier im Kühlen\nder schönen Zeit ein volles Glas gebracht.\nDie Treu' verklärt die fröhlichen Gesichter,\ndie Freude thronet hier im Königshaus;\ndie Lieb' entflammt die hellen Frühlingslichter\nund spannt den Bogen drüber aus.\n\nIn roter Glut die Goldpokale funkeln,\ndie Sonne schaut mit Lust nach ihrem Kind, dem Wein,\nund Geistertöne klingen durch die dunklen\nGewölbe dieser Blütenbäume drein:\nO seht die Schar der kleinen Geister lauschen,\ndie in der Tiefe sich mit holdem Feuer tränkt!\nWo ihres Meeres wild'ste Fluten rauschen,\nda sei die ganze  Seele drein versenkt.\n\nDer Strom des Lebens mag hinunterquellen,\nwenn nur die Trauben stets an seinem Ufer glüh'n,\nund süße Augen auf die dunklen Wellen\nverklärend ihre Sonnenblicke sprüh'n:\nDrum, wenn am Himmel heitre Lüfte spielen,\nder Frühling wiederkehrt in seiner gold'nen Pracht,\nwird unter hellem Jubelsang im Kühlen\nder schönen Zeit ein volles Glas gebracht.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=22738",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hermann Kurz",
+      "settings": [
+        {
+          "composer": "(Philipp) Friedrich Silcher",
+          "title": "/lieder/get_settings.html?ComposerId=5754",
+          "instrumentation": "vocal quartet a cappella"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ein Münichsgesang",
+      "aliases": [],
+      "composer": "Adalbert (Béla) Laszky",
+      "work": "/lieder/get_settings.html?ComposerId=9420",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ein Mägdlein lag auf der Krankenstatt\nRallera la la la rallera,\nVerzweifelnd am Leben, so müd und matt,\nRallera la la la trallera,\nRallera la la la trallera.\nDa klang Gesang, den Gang entlang,\nDa lauschte das Mägdlein, da flüstert es bang.\nEin Lied rallera, ein Lied trallera\nEin Lied macht mich wieder gesund, la la.\n\nDa rief mancher Sänger zur Kranken herein\nRallera la la la trallera,\nDas mochte ein fahrender Bettelmönch sein,\nRallera la la la trallera,\nRallera la la la trallera.\nEr hört und spricht, so lasst uns allein,\nDa sang der Mönch dem Mägdelein,\nEin Lied rallera, ein Lied trallera\nEin Lied mit heiligem Mund, la la.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=89509",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "possibly by Reinhold Max Eichler",
+      "settings": [
+        {
+          "composer": "Adalbert (Béla) Laszky",
+          "title": "/lieder/get_settings.html?ComposerId=9420",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Weimars Volkslied",
+      "aliases": [],
+      "composer": "Franz (Ferenc) Liszt",
+      "work": "/lieder/get_settings.html?ComposerId=4870",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Von der Wartburg Zinnen nieder\nWeht ein Hauch und wird zu Klängen,\n[Tönt an]1 Ilm und Saale wieder\n[Laut in hellen]2 Festgesängen.\nUnd vom Land, wo sie erschallten,\nTönt's in alle Welt hinaus:\nMöge Gott dich stets erhalten,\nWeimars edles Fürstenhaus!\n\nHochgepries'ner Helden Wiege,\nWirkungsstätte [hehrer]3 Frauen,\nFelsenfest in Leid und Siege\nZierest du die deutschen Gauen.\nDeiner Ahnen [weises]4 Walten\n[Strömet Segen]5 auf dich aus:\nMöge Gott dich stets erhalten,\nWeimars edles Fürstenhaus!\n\nSterne, strahlend allen Weiten,\nWaren Perlen deiner Krone,\nGeister, lebend allen Zeiten,\nLebten nahe deinem Throne.\nGroßer Dichter Erzgestalten\nSchau'n wir stolz und rufen aus:\nMöge Gott dich stets erhalten,\nWeimars edles Fürstenhaus!\n\n[Alte]6 Sage deutscher Treue\nLebe fort in Fürst und Bauer,\n[Volkesliebe]7 sei die neue,\n[Die]8 lebend'ge Wartburgsmauer.\nLaßt die Banner uns entfalten,\nHeut' wie [stets]9 der Zeit voraus!\nMöge Gott dich stets erhalten,\nWeimars edles Fürstenhaus!\n\nMöge Segen dir entsprossen\nAus vereinten Sarkophagen,\nWo unsterbliche Genossen\nDiadem und Lorbeer tragen.\nAus geweihter Gräber Spalten\nBrechen Lebensblumen aus:\nMöge Gott dich stets erhalten,\nWeimars edles Fürstenhaus!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=26986",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Peter Cornelius",
+      "settings": [
+        {
+          "composer": "Franz (Ferenc) Liszt",
+          "title": "/lieder/get_settings.html?ComposerId=4870",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 1056,
+  "lieder_position": 1104,
   "aria_opera": 0,
   "aria_scene": 8
 }
