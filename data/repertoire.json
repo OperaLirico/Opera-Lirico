@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T15:54:33+01:00",
+  "generated_at": "2026-11-09T16:20:02+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -1560,10 +1560,375 @@
       "licenseNote": "剧本原文为公版；Wikisource 转录依 CC BY-SA 提供，引用请保留来源链接。",
       "poet": "Francesco Maria Piave",
       "autoImported": true
+    },
+    {
+      "title": "Arrestati!",
+      "aliases": [],
+      "composer": "Richard Wagner",
+      "work": "/lieder/get_settings.html?ComposerId=2951",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "it",
+      "text": "Ruota del Tempo, che con fragore sibili,\nfalce affilata dell'Eternità;\nSfere luminose del Cosmo immenso\nChe circondate la sfera terrestre;\nCreazione incessante: fermatevi,\nbasta divenire, voglio solo essere!\n\nArrestati, potenza creatrice,\nVolontà prima, che eternamente genera!\nFermate il respiro, l'impulso placate,\ne, per un solo attimo, restate mute!\nArterie pulsanti soffocate il battito;\nsia posta fine al giorno eterno del volere!\nChe io possa, beato e in dolce oblio,\nDi ogni delizia fare esperienza!\n\nQuando, in estasi, si incrociano gli sguardi\nPer dissetarsi insieme anima con anima;\nQuando  un essere si ritrova nell'altro\nE ogni speranza trova compimento,\nLe labbra si chiudono in muto stupore,\nil cuore non sente più desideri:\ne l'uomo avverte la traccia dell'Eterno,\ne tu, sacra Natura, riveli il tuo mistero!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=32406",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Ferdinando Albeggiani",
+      "settings": [
+        {
+          "composer": "Richard Wagner",
+          "title": "/lieder/get_settings.html?ComposerId=2951",
+          "instrumentation": "female voice and piano or orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Binnorie",
+      "aliases": [],
+      "composer": "Rebecca Clarke",
+      "work": "/lieder/get_settings.html?ComposerId=3731",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "There were twa sisters sat in a bower;\nBinnorie, O Binnorie!\nThere came a knight to be their wooer,\nBy the bonnie milldams o' Binnorie.\n\nHe courted the eldest with glove and ring,\nBinnorie, O Binnorie!\nBut he loved the youngest above all thing. Oh Binnorie!\n\nThe eldest she was vexed sair,\nBinnorie, O Binnorie!\nAnd sair envied her sister fair.\nBy the bonnie milldams, the milldams o' Binnorie.\n\nUpon a morning fair and clear,\nShe cried upon her sister dear,\n\"O sister, sister, take my hand,\nAnd let's go down to the river strand.\"\n\nShe's ta'en her by the lily hand,\nBinnorie, O Binnorie!\nAnd led her down to the riverstrand.\nBinnorie, O Binnorie!\n\nThe youngest stood upon a stone,\nBinnorie, O Binnorie!\nThe eldest came and pushed her in.\n\n\"O sister, sister, reach your hand!\nAnd ye shall be heir o' half my land.\nO sister, reach me but your glove!\nAnd sweet William shall be your love.\"\n\nSometimes she sank, sometimes she swam,\nUntil she cam to the miller's dam.\nOut then came the miller's son,\nAnd saw the fair maid swimming in.\n\n\"O father, father, draw your dam!\nThere's either a mermaid or a milkwhite swan.\"\nThe miller hasted and drew his dam,\nAnd there he found a drowned woman.\n\nYou couldna see her middle sma',\nHer gowden girdle was so braw.\nYou couldna see her lily feet,\nHer gowden fringes were so deep.\n\nAll among her yellow hair\nA string o' pearls was twisted rare.\nYou couldna see her fingers sma',\nWi' diamond rings they were cover'd a'.\n\nAnd by there came a harper fine\nThat harpit to the king at dine.\nAnd when he looked that lady on,\nHe sigh'd and made a heavy moan.\n\nHe's made a harp of her breastbone,\nWhose sound would melt a heart of stone.\nHe's ta'en three locks o' her yellow hair,\nAnd wi' them strung his harp sae rare.\n\nHe went into her father's hall,\nAnd there was the court assembled all.\nHe laid his harp upon a stone,\nAnd straight it began to play alone.\n\n\"O yonder sits my father, the King,\nBinnorie, O Binnorie!\nAnd yonder sits my mother, the Queen;\nBy the bonnie milldams o' Binnorie,\nAnd yonder stands my brother Hugh,\nBinnorie, O Binnorie!\nAnd by him my William,sweet and true.\nO Binnorie.\"\n\nBut the last tune that the harp played then --\nBinnorie, O Binnorie!\nWas \"Woe, woe to my sister, false Helèn!\"\n\nBy the bonnie milldams, the milldams,\nThe bonnie milldams o' Binnorie.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=73446",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "from Volkslieder",
+      "settings": [
+        {
+          "composer": "Rebecca Clarke",
+          "title": "/lieder/get_settings.html?ComposerId=3731",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Luci mie belle",
+      "aliases": [],
+      "composer": "Giovanni Simone Mayr",
+      "work": "/lieder/get_settings.html?ComposerId=7092",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Luci mie belle\nScese dal cielo,\nSotto quel velo\nFulgide stelle,\nQuando vi miro\nStrugger mi sento,\nPago e contento\nPiango e sospiro\nPerché descritta\nV'è la sconfitta\nDi questo tenero\nAmante cor.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=23382",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Giovanni Simone Mayr",
+          "title": "/lieder/get_settings.html?ComposerId=7092",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Auf dem Strome",
+      "aliases": [],
+      "composer": "Robert Kahn",
+      "work": "/lieder/get_settings.html?ComposerId=4574",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Am Himmel der Wolken\nerdunkelnder Kranz ...\nAuf schauerndem Strome\nmetallischer Glanz ...\nDie Wälder zu Seiten\nso finster und tot ...\nUnd in flüsterndem Gleiten\nvorüber mein Boot ...\n\nEin Schrei aus der Ferne --\ndann still wie zuvor ...\nWie weit sich von Menschen\nmein Leben verlor! ...\nEine Welle läuft leise\nschon lang nebenher,\nsie denkt wohl, ich reise\nhinunter zum Meer ...\n\nJa, ich reise, ich reise,\nweiß selbst nicht wohin ...\nImmer weiter und weiter\nverlockt mich mein Sinn ...\nSchon kündet ein Schimmer\nvom morgenden Rot, --\nund ich treibe noch immer\nim flüsternden Boot.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=32965",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Christian Morgenstern",
+      "settings": [
+        {
+          "composer": "Robert Kahn",
+          "title": "/lieder/get_settings.html?ComposerId=4574",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Ernest Vietor",
+          "title": "/lieder/get_settings.html?ComposerId=6075",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Colei che prega",
+      "aliases": [],
+      "composer": "Joseph Abenheim",
+      "work": "/lieder/get_settings.html?ComposerId=10906",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Laura prega! Arpe angeliche echeggiano\nla pace di Dio nel suo cuore infermo\ne, come il profumo del sacrificio di Abele,\naleggiano i suoi sospiri verso il cielo.\n\nCome si inginocchia, assorta in devozione,\nbella, come Raffaello dipinse l'innocenza;\ngià trasfigurata dalla luce,\nche splende sugli abitatori del cielo.\n\nE lei sente, nelle lievi aure soavi,\nfelice, il presente del paradiso,\nvede con lo spirito già le cime delle palme,\ndove splende per lei il serto di luce!\n\nCosì per la devozione, così per la fede in Dio,\nsi gonfia il suo puro petto d'angelo,\nvedere questa santa che prega\nè uno sguardo su quel mondo.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=75825",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Amelia Maria Imbarrato",
+      "settings": [
+        {
+          "composer": "Joseph Abenheim",
+          "title": "/lieder/get_settings.html?ComposerId=10906",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Johann Christian Baldewein",
+          "title": "/lieder/get_settings.html?ComposerId=23025",
+          "instrumentation": "soprano and piano"
+        },
+        {
+          "composer": "Heinrich Proch",
+          "title": "/lieder/get_settings.html?ComposerId=5395",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The fearful hour of farewell nears",
+      "aliases": [],
+      "composer": "Friedrich Burchard Beneken",
+      "work": "/lieder/get_settings.html?ComposerId=31385",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "The fearful hour of farewell nears\nWith all of its agonies;\nThe moon lights [the hour's] path\nWith pale rays of death.\n\n  Whence do I take courage for parting\nThat my heart may not break?\nLook down, oh God, from heaven\nAnd gaze upon my weakness!\n\n  Farewell, valued friend! Ah, I cannot\nGive you any blessing.\nGo! Live as a Christian and endure as a man,\nAnd turn your eyes toward a better life!\n\n  Perhaps after a long night\nA morning still shines for you here;\nPerhaps love shall still smile upon you\nAnd wreathe you with joys.\n\n  Now we part with sighs,\nAnd faithful tears in our hearts;\nNow, without comfort from you,\nI must return alone.\n\n  But after only a short time, Beloved,\nI shall embrace you anew;\nOh may you then receive me,\nComforted and more joyful.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=116109",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Friedrich Burchard Beneken",
+          "title": "/lieder/get_settings.html?ComposerId=31385",
+          "instrumentation": "voice and piano or harpsichord or organ"
+        },
+        {
+          "composer": "Daniel Gottlob Türk",
+          "title": "/lieder/get_settings.html?ComposerId=29997",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Johann Rudolf Zumsteeg",
+          "title": "/lieder/get_settings.html?ComposerId=6290",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Oh, fair to see",
+      "aliases": [],
+      "composer": "Gerald Finzi",
+      "work": "/lieder/get_settings.html?ComposerId=4038",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Oh, fair to see\n[Blossom-laden]1 cherry tree,\n  Arrayed in sunny white;\n  An April day's delight,\nOh, fair to see!\n\nOh, fair to see\nFruit-laden cherry tree,\n  With balls of shining red\n  Decking a leafy head,\nOh, fair to see!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=26833",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Christina Georgina Rossetti",
+      "settings": [
+        {
+          "composer": "Gerald Finzi",
+          "title": "/lieder/get_settings.html?ComposerId=4038",
+          "instrumentation": "high voice, piano"
+        },
+        {
+          "composer": "John Francis Holcombe Read",
+          "title": "/lieder/get_settings.html?ComposerId=7921",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Martin Edward Fallas Shaw",
+          "title": "/lieder/get_settings.html?ComposerId=5721",
+          "instrumentation": "unison chorus and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "That Nightingale Lea",
+      "aliases": [],
+      "composer": "Antonín Dvořák",
+      "work": "/lieder/get_settings.html?ComposerId=3933",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "That Nightingale Lea, just a small field,\nmy dearest lad, we will not be wed,\nwe cannot wed, we are not allowed,\nwe cannot wed,\nmy dear lad, for your mother says no.\nSo what if my mother tells us no,\nmy mother does not have the say-so.\nYou are my dearest girl, you are my only true love;\ngive me your hand, your dear soft hand, as you say good night.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=154126",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Patrick John Corness",
+      "settings": [
+        {
+          "composer": "Antonín Dvořák",
+          "title": "/lieder/get_settings.html?ComposerId=3933",
+          "instrumentation": "duet for soprano and alto with piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Dem Verklärten",
+      "aliases": [],
+      "composer": "Sharon Eitan",
+      "work": "/lieder/get_settings.html?ComposerId=38378",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ach bitter und karg war mein Brot,\nVerblichen –\nDas Gold meiner Wangen Bernstein.\n\nIn die Höhlen schleiche ich\nMit den Pantern\nIn der Nacht.\n\nSo bange mir in der Dämmerungweh .....\nLegen sich auch schlafen\nDie Sterne auf meine Hand.\n\nDu staunst über ihr Leuchten –\nDoch fremd dir die Not\nMeiner Einsamkeit.\n\nEs erbarmen sich auf den Gassen\nDie wilden Tiere meiner.\nIhr Heulen endet in Liebesklängen.\n\nDu aber wandelst entkommen dem Irdischen\nUm den Sinai lächelnd verklärt –\nFremdfern vorüber meiner Welt.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=147442",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Else Lasker-Schüler",
+      "settings": [
+        {
+          "composer": "Sharon Eitan",
+          "title": "/lieder/get_settings.html?ComposerId=38378",
+          "instrumentation": "soprano and piano"
+        },
+        {
+          "composer": "Konrad Hupfer",
+          "title": "/lieder/get_settings.html?ComposerId=38416",
+          "instrumentation": "voice and instrumental ensemble"
+        },
+        {
+          "composer": "Eric Mayr",
+          "title": "/lieder/get_settings.html?ComposerId=38539",
+          "instrumentation": "soprano and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Der Einsame",
+      "aliases": [],
+      "composer": "Johann Friedrich Hugo, Freiherr von Dalberg",
+      "work": "/lieder/get_settings.html?ComposerId=7147",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Schon sinds drei Tag' und länger,\nseit er nicht wiederkam!\nO Hain, du kennst den Sänger;\nantworte meinem Gram.\nWie öd' ach! und wie graulich\ndu jetzo mir erscheinst,\ndu Hain, so hold und traulich\nmir und dem Sänger einst!\n\nHier war's, wo seit dem Lenze\nwir oft im Klee geruht.\nEr sang, ich wand ihm Kränze\nfür seinen Schäferhut.\nOft auch, dass eins der Lieder\nich Blöde mit begann.\nVom Haine tönt' es wieder;\nwir sah'n uns lächelnd an.\n\nJüngst sang er, trüb' und dunkel,\nnur halbe Melodien,\nso schön auch mit Gefunkel\nder Abend uns beschien.\nFehlt dir was? wollt' ich fragen;\nDa drückt' er mir die Hand.\nNicht Wort' und Töne sagen,\nWas meine Seel' empfand.\n\nWeg ging er nun erblödet;\nich Arme blieb allein!\nNun stehst du so verödet,\ndu anmutvoller Hain!\nNun wird mein Auge trübe\nbei schönem Abendglanz!\nWenn ich hier länger bliebe,\nwehmütig würd' ich ganz!\n\nFürwahr, beim Abendsterne!\ntönt, Jüngling, dein Gesang;\nfürwahr, dann bleib' ich gerne\nden ganzen Abend lang!\nUnd wenn mir freundlich glänzet\nim roten Glanz dein Blick,\ndann wirst du neu gekränzet!\nKomm, Jüngling, komm zurück!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=121711",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Johann Heinrich Voss",
+      "settings": [
+        {
+          "composer": "Johann Friedrich Hugo, Freiherr von Dalberg",
+          "title": "/lieder/get_settings.html?ComposerId=7147",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Johann Friedrich Reichardt",
+          "title": "/lieder/get_settings.html?ComposerId=5468",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ich bin von heim gelaufen",
+      "aliases": [],
+      "composer": "Victor Hansmann",
+      "work": "/lieder/get_settings.html?ComposerId=10815",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ich bin von heim gelaufen\nVom Bergdorf reichsstadtwärts,\nDenn meine Faust möcht' raufen,\nUnd wandern möcht' mein Herz!\n\nDrum hab' ich mich verschrieben\nDein Frundsberg, meinem Herrn,\nMöcht' trinken, streiten und lieben\nUnd schweifen in die Fern'.\n\nDaheim wird wohl von Allen\nDer arge Heinz gesucht --\nDie glauben, ich läg' zerfallen\nIn tiefer Felsenschlucht.\n\nWo werd' ich einst wohl liegen -- --\nIn Wälschland oder am Rhein?\nHei! -- kriegen, siegen, liegen,\nHeia! -- spielt auf, schenkt ein!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=82142",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Karl Stieler",
+      "settings": [
+        {
+          "composer": "Victor Hansmann",
+          "title": "/lieder/get_settings.html?ComposerId=10815",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Hans Hermann",
+          "title": "/lieder/get_settings.html?ComposerId=4397",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Eugen Hildach",
+          "title": "/lieder/get_settings.html?ComposerId=4417",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The Fox And The Raven",
+      "aliases": [],
+      "composer": "Richard Hageman",
+      "work": "/lieder/get_settings.html?ComposerId=4305",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "A raven sat upon a tree,\nAnd not a word he spoke,\nFor his beak contained a piece of Brie,\nOr maybe, it was Roquefort.\nWe’ll make it any kind you please,\nAt all events it was a cheese.\n\nBeneath the tree’s umbrageous limb,\nA hungry fox sat smiling;\nHe saw the raven watching him,\nAnd spoke in words beguiling:\n“J’admire,” said he, “ton beau plumage...”\n(The which was simply persiflage.)\n\n“Sweet fowl” he said,\n“I understand you’re more than merely natty,\nI hear you sing to beat the band\nAnd Adelina Patti.\n\nPray render with your liquid tongue\nA bit from ‘Götterdämmerung’.”\nThis subtle speech was aimed to please the crow,\nAnd it succeeded;\nHe thought no bird in all the trees\nCould sing as well as he did.\nIn flattery completely doused\nHe gave the “Jewel Song” from Faust.\nBut gravitation’s law, of course,\nAs Isaac Newton showed it,\nExerted on the cheese its force,\nAnd elsewhere soon bestowed it.\n\nIn fact, there is no need to tell what happened\nWhen to earth it fell.\nI blush to add that when the bird\nTook in the situation\nHe said one brief emphatic word,\nUnfit for publication.\nThe fox not famed for his guts\nFor once was bold and answered:\n“Nuts!”",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=592655",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Guy Wetmore Carryl",
+      "settings": [
+        {
+          "composer": "Richard Hageman",
+          "title": "/lieder/get_settings.html?ComposerId=4305",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 144,
+  "lieder_position": 192,
   "aria_opera": 0,
   "aria_scene": 8
 }
