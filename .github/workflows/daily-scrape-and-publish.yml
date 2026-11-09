@@ -36,10 +36,11 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          # Start with the latest published catalogue and its scan cursor.
+          # Start with the latest published catalogue and its two cursors.
           git fetch origin main
           git checkout origin/main -- data/repertoire.json
           python update_repertoire.py
+          python update_arias.py
           git add data/repertoire.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update automatically collected song texts'
