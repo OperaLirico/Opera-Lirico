@@ -71,11 +71,42 @@ async function loadRepertoire(){
    $('#musicSearchResults').innerHTML='<div class="music-empty">曲目库暂时无法更新，请稍后重试。</div>';
  }
 }
+function keywordContext(item,term){
+ const text=(item.text||'').replace(/[ \t]+/g,' ');
+ for(const line of text.split('\n')){
+   if(normalizeSearch(line).includes(term))return line.trim().slice(0,96);
+ }
+ return '';
+}
+function scoreItem(item,terms){
+ const title=normalizeSearch(item.title||'');
+ const aliases=(item.aliases||[]).map(normalizeSearch);
+ const work=normalizeSearch(item.work||'');
+ const composer=normalizeSearch(item.composer||'');
+ const poet=normalizeSearch(item.poet||'');
+ const text=normalizeSearch(item.text||'');
+ let best=0,bestTerm='';
+ for(const term of terms){
+   if(!term)continue;
+   let s=0;
+   if(title===term)s=100;
+   else if(title.startsWith(term))s=80;
+   else if(title.split(' ').some(word=>word.startsWith(term)))s=70;
+   else if(title.includes(term))s=60;
+   else if(work.includes(term)||aliases.some(alias=>alias.includes(term)))s=45;
+   else if(composer.includes(term))s=35;
+   else if(poet.includes(term))s=25;
+   else if(text.includes(term))s=14;
+   else if(fuzzyFieldMatch(term,title)||aliases.some(alias=>fuzzyFieldMatch(term,alias)))s=8;
+   if(s>best){best=s;bestTerm=term;}
+ }
+ return {score:best,term:bestTerm};
+}
 function renderMusicSearch(rawQuery){
  const target=$('#musicSearchResults');
  const query=rawQuery.trim();
  if(!query){
-   target.innerHTML='<div class="music-empty">输入歌名即可查看站内歌词原文。曲目库每天尝试从公开文本目录补充，未必涵盖你搜索的作品。</div>';
+   target.innerHTML='<div class="music-empty">输入歌名、作曲家或唱段首句，边输入边出结果；歌词默认折叠，点“展开全文”再读。</div>';
    return;
  }
  if(!repertoireLoaded){
@@ -83,24 +114,35 @@ function renderMusicSearch(rawQuery){
    return;
  }
  const terms=query.split(/[\/,，、;；|]+/).map(x=>normalizeSearch(x)).filter(Boolean);
- const matches=repertoire.filter(item=>{
-   const fields=[item.title,...(item.aliases||[]),item.composer,item.poet,item.work,item.kind,item.text].filter(Boolean).map(normalizeSearch);
-   return terms.some(term=>fields.some(field=>fuzzyFieldMatch(term,field)));
- });
+ const scored=repertoire.map(item=>({item,hit:scoreItem(item,terms)}))
+   .filter(entry=>entry.hit.score>0)
+   .sort((a,b)=>b.hit.score-a.hit.score||a.item.title.localeCompare(b.item.title));
+ const total=scored.length;
+ const matches=scored.slice(0,12);
  if(!matches.length){
-   target.innerHTML='<div class="music-empty"><strong>暂未收录</strong><p>本站没有这首作品，目前无结果。</p></div>';
+   const near=repertoire.map(item=>({item,sim:editDistance(normalizeSearch(query),normalizeSearch(item.title),6)}))
+     .filter(entry=>entry.sim<=6).sort((a,b)=>a.sim-b.sim).slice(0,5);
+   target.innerHTML=`<div class="music-empty"><strong>暂未收录“${esc(query)}”</strong><p>曲目库里没有这个词。${near.length?'也许你想找：'+near.map(entry=>`<button type="button" class="search-chip" data-suggest="${esc(entry.item.title)}">${esc(entry.item.title)}</button>`).join(' '):'可以先试短一点的词，例如只输入 nessun、libiamo、amore。'}</p></div>`;
    return;
  }
- target.innerHTML=matches.map(item=>`<article class="music-result">
+ const expansions=[...new Set(matches.flatMap(entry=>[entry.item.composer,entry.item.work].filter(Boolean)))].slice(0,6);
+ const summary=`<p class="result-meta">共 ${total} 条相关，按匹配程度排序，先显示前 ${matches.length} 条。${expansions.length?'继续检索：':''}${expansions.map(value=>`<button type="button" class="search-chip" data-suggest="${esc(value)}">${esc(value)}</button>`).join(' ')}</p>`;
+ target.innerHTML=summary+matches.map(({item,hit})=>{
+   const context=hit.score>=14?keywordContext(item,hit.term):'';
+   const plain=(item.text||'').replace(/\s+/g,' ').trim();
+   const preview=plain.slice(0,110);
+   const hasMore=(item.text||'').trim().length>110;
+   return `<article class="music-result">
    <div class="music-result-top"><span class="music-kind">${esc(item.kind)}</span><span class="music-voice">${esc(item.voice)}</span></div>
    <h3>${esc(item.title)}</h3>
    <p class="music-byline">${esc([item.composer,item.work?item.work:(item.poet?"词："+item.poet:"")].filter(Boolean).join(" · "))}</p>
-   <div class="music-text"><div class="music-text-label">歌词原文 · ${esc(languageLabel(item.language))}</div><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div>
+   ${context?`<p class="music-hit">“${esc(hit.term)}”出现在原文：${esc(context)}…</p>`:''}
+   <div class="music-text"><div class="music-text-label">歌词原文 · ${esc(languageLabel(item.language))}</div><p class="lyrics lyrics-preview">${esc(preview)}${hasMore?'…':''}</p>${hasMore?`<div class="lyrics-full" hidden><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div><button type="button" class="lyrics-toggle" data-open="0">展开全文 ↓</button>`:''}</div>
    <div class="music-reading"><div><span class="music-text-label">泛读 · ${esc(languageLabel(item.language))}</span><p>在 Google 翻译中打开后，点击“听取原文”；会按这首作品的原文语言朗读。</p></div>${googleReadUrl(item)?'<a class="reading-link" href="'+esc(googleReadUrl(item))+'" target="_blank" rel="noopener noreferrer">Google 翻译朗读原文 ↗</a>':'<span class="score-unavailable">文本超过 Google 翻译单次朗读长度</span>'}</div>
    <p class="music-meaning"><strong>大意：</strong>${esc(item.summary)}</p>
    <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'本站提供已核验的可下载版本。':'本站暂未托管乐谱 PDF。可以先查看 IMSLP 对应作品页；版本与地区版权请自行核对。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':item.scoreUrl?'<a class="score-imslp" href="'+esc(item.scoreUrl)+'" target="_blank" rel="noopener noreferrer">IMSLP 查看乐谱 ↗</a>':'<span class="score-unavailable">暂无乐谱链接</span>'}</div>
    <div class="music-source"><span>文本出处：${esc(item.textSourceName||'公开文本来源')} · 本文已收录在本站，搜索和阅读无需跳转。</span></div>
- </article>`).join('');
+ </article>`;}).join('');
 }
 function formatDate(iso){return new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(iso));}
 function renderOpportunities(){
@@ -119,6 +161,27 @@ function renderSources(){
    const stamp=s.checked_at?new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',dateStyle:'medium',timeStyle:'short'}).format(new Date(s.checked_at)):'—';
    return `<article class="source-card"><div class="source-title"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.source)}</a><span class="status ${s.status==='ok'?'':'error'}">${s.status==='ok'?'页面可访问':`暂时无法读取 ${esc(s.http_status||'')}`}</span></div><p class="source-snippet"><strong>${esc(s.title||'暂未读取到页面标题')}</strong>${lines.length?'<br>'+lines.map(esc).join(' · '):'<br>这次没有找到可展示的招募或比赛相关内容。'}</p><div class="source-foot"><span>最近查看：${stamp}</span><span>${s.status==='ok'?'自动摘录网页内容；请打开公告核对详情':'本次读取失败；可直接打开官网查看'}</span></div></article>`;
  }).join(''):'<div class="empty">没有找到符合条件的来源。</div>';
+}
+let conservatoriData=[];
+function renderConservatori(){
+ const wrap=$('#conservatori');if(!wrap)return;
+ const readable=conservatoriData.filter(c=>c.status==='ok');
+ $('#conservatoriCount').textContent=`${readable.length}/${conservatoriData.length}`;
+ wrap.innerHTML=conservatoriData.length?conservatoriData.map(c=>{
+   const deadlines=(c.deadline_lines||[]).slice(0,2);
+   const dates=(c.exam_dates||[]).slice(0,3);
+   const reqs=(c.requirements||[]).slice(0,3);
+   const docs=(c.documents||[]).slice(0,4);
+   return `<article class="cons-card"><div class="cons-head"><h3>${esc(c.city)} · ${esc(c.school)}</h3><span class="status ${c.status==='ok'?'':'error'}">${c.status==='ok'?'已读取官网':'暂时无法读取'}</span></div>${deadlines.length?`<p class="cons-block"><strong>报名期限：</strong>${deadlines.map(esc).join('；')}</p>`:''}${dates.length?`<p class="cons-block"><strong>考试日期：</strong>${dates.map(esc).join('；')}</p>`:''}${reqs.length?`<p class="cons-block"><strong>入学要求：</strong>${reqs.map(esc).join('；')}</p>`:''}${docs.length?`<p class="cons-docs">官方文件：${docs.map(d=>`<a href="${esc(d)}" target="_blank" rel="noopener">PDF</a>`).join(' · ')}</p>`:''}<a class="card-link" href="${esc(c.url)}" target="_blank" rel="noopener">打开学院官网页面 <span>↗</span></a></article>`;
+ }).join(''):'<div class="empty">暂时读不到音乐学院数据。</div>';
+}
+async function loadConservatori(){
+ try{
+   const res=await fetch(new URL('data/conservatori.json',sourceRoot),{cache:'no-store'});
+   if(!res.ok)throw new Error(`HTTP ${res.status}`);
+   const data=await res.json();conservatoriData=data.items||[];
+ }catch(error){conservatoriData=[];}
+ renderConservatori();
 }
 async function loadData(){
  $('#updatedAt').textContent='正在更新来源动态…';
@@ -143,8 +206,31 @@ $('#installButton').addEventListener('click',async()=>{if(installPrompt){install
 if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!window.navigator.standalone){$('#installButton').hidden=false;}
 if('serviceWorker' in navigator && /^https?:$/.test(location.protocol))navigator.serviceWorker.register(new URL('service-worker.js',sourceRoot)).catch(()=>{});
 $('#musicSearchForm').addEventListener('submit',event=>{event.preventDefault();renderMusicSearch($('#musicSearchInput').value);});
-$('#musicSearchInput').addEventListener('input',event=>renderMusicSearch(event.target.value));
+let musicSearchTimer=null;
+$('#musicSearchInput').addEventListener('input',event=>{const value=event.target.value;clearTimeout(musicSearchTimer);musicSearchTimer=setTimeout(()=>renderMusicSearch(value),140);});
+document.addEventListener('click',event=>{
+ const suggest=event.target.closest('[data-suggest]');
+ if(suggest){
+   const value=suggest.dataset.suggest||'';
+   $('#musicSearchInput').value=value;
+   renderMusicSearch(value);
+   window.scrollTo({top:document.getElementById('music-library').offsetTop-20,behavior:'smooth'});
+   return;
+ }
+ const toggle=event.target.closest('.lyrics-toggle');
+ if(toggle){
+   const card=toggle.closest('.music-result');
+   const full=card.querySelector('.lyrics-full');
+   const preview=card.querySelector('.lyrics-preview');
+   const open=toggle.dataset.open==='1';
+   if(full)full.hidden=open;
+   if(preview)preview.hidden=!open;
+   toggle.dataset.open=open?'0':'1';
+   toggle.textContent=open?'展开全文 ↓':'收起 ↑';
+ }
+});
 document.querySelectorAll('.search-chip').forEach(button=>button.addEventListener('click',()=>{const q=button.dataset.query;$('#musicSearchInput').value=q;renderMusicSearch(q);}));
 renderMusicSearch('');
 loadRepertoire();
 loadData();
+loadConservatori();
