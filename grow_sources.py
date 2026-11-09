@@ -44,7 +44,12 @@ TIMEOUT = 30
 # A link worth following: it names an audition/competition, or lives on such a page.
 LINK_TEXT_RE = re.compile(r"audizion|audition|concors|concor|bando|candidat|casting|selezion", re.IGNORECASE)
 LINK_PATH_RE = re.compile(r"audizion|concors|bando|casting|selezion|lavora-con-noi|bandi", re.IGNORECASE)
-SKIP_HOST_RE = re.compile(r"facebook|instagram|twitter|x\.com|youtube|linkedin|whatsapp|tiktok|google|apple|spotify", re.IGNORECASE)
+SKIP_HOST_RE = re.compile(
+    r"facebook|instagram|twitter|x\.com|youtube|linkedin|whatsapp|tiktok|google|apple|spotify"
+    r"|wa\.me|wa\.link|t\.me|m\.me|bit\.ly|tinyurl|goo\.gl", re.IGNORECASE,
+)
+# Aggregators put share buttons next to every notice; they are not sources.
+SHARE_LABEL_RE = re.compile(r"share|condividi|whatsapp|telegram|invia|copia link|stampa", re.IGNORECASE)
 SKIP_EXT_RE = re.compile(r"\.(pdf|jpg|jpeg|png|gif|zip|doc|docx|xls|xlsx|mp3|mp4)($|\?)", re.IGNORECASE)
 GENERIC_LABEL = re.compile(r"(?i)(apri( il bando)?|leggi|scopri|qui|dettagli|vai|apri il bando→|→|&rarr;)")
 
@@ -121,6 +126,8 @@ def harvest_links(response, base_url: str) -> list[tuple[str, str]]:
         target = urljoin(base_url, href.strip())
         if not target.startswith("http") or SKIP_HOST_RE.search(target) or SKIP_EXT_RE.search(target):
             continue
+        if SHARE_LABEL_RE.search(label) or SHARE_LABEL_RE.search(target):
+            continue
         if not (LINK_TEXT_RE.search(label) or LINK_PATH_RE.search(target)):
             continue
         out.append((core.clean_line(label)[:90], target.split("#")[0]))
@@ -149,6 +156,14 @@ def main() -> None:
     cursor: int = int(payload.get("cursor", 0))
     core_items: list[dict] = load(PAGE, [])
 
+    # Drop anything that slipped through earlier rules (share links, files).
+    cleaned = [
+        item for item in registry
+        if not SKIP_HOST_RE.search(item.get("url", "")) and not SKIP_EXT_RE.search(item.get("url", ""))
+    ]
+    if len(cleaned) != len(registry):
+        print(f"[extra] removed {len(registry) - len(cleaned)} non-source link(s)", flush=True)
+    registry = cleaned
     for item in registry:
         item.pop("_response", None)
 
