@@ -64,6 +64,7 @@ async function loadRepertoire(){
    const data=await response.json();
    repertoire=data.items||[];
    $('#repertoireCount').textContent=`${repertoire.length} 首已收录`;
+   const statSongs=$('#statSongs');if(statSongs)statSongs.textContent=repertoire.length;
    repertoireLoaded=true;
    renderMusicSearch($('#musicSearchInput').value);
  }catch(error){
@@ -149,6 +150,7 @@ function renderOpportunities(){
  const now=Date.now();
  const current=opportunities.filter(o=>new Date(o.deadline).getTime()>=now);
  $('#opportunityCount').textContent=current.length;
+ const statCalls=$('#statCalls');if(statCalls)statCalls.textContent=current.length;
  $('#opportunities').innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">截止 ${formatDate(o.deadline)}</span></div><h3>${esc(o.title)}</h3><p>${esc(o.summary)}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>主办方：${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a></article>`).join(''):'<div class="empty">目前没有已确认仍在报名的项目。你可以看看下方各机构的最新动态。</div>';
 }
 function renderSources(){
@@ -156,33 +158,77 @@ function renderSources(){
  const status=$('#statusFilter').value;
  const filtered=sourceData.filter(s=>(status==='all'||(status==='ok'?s.status==='ok':s.status!=='ok'))&&(!q||`${s.source} ${s.title} ${(s.relevant_lines||[]).join(' ')}`.toLocaleLowerCase().includes(q)));
  $('#sourceCount').textContent=`${filtered.length}/${sourceData.length}`;
+ const statSources=$('#statSources');if(statSources)statSources.textContent=sourceData.filter(x=>x.status==='ok').length;
  $('#sources').innerHTML=filtered.length?filtered.map(s=>{
    const lines=(s.relevant_lines||[]).filter(x=>!x.includes('Privacy')&&!x.includes('cookie')).slice(0,4);
    const stamp=s.checked_at?new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',dateStyle:'medium',timeStyle:'short'}).format(new Date(s.checked_at)):'—';
    return `<article class="source-card"><div class="source-title"><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.source)}</a><span class="status ${s.status==='ok'?'':'error'}">${s.status==='ok'?'页面可访问':`暂时无法读取 ${esc(s.http_status||'')}`}</span></div><p class="source-snippet"><strong>${esc(s.title||'暂未读取到页面标题')}</strong>${lines.length?'<br>'+lines.map(esc).join(' · '):'<br>这次没有找到可展示的招募或比赛相关内容。'}</p><div class="source-foot"><span>最近查看：${stamp}</span><span>${s.status==='ok'?'自动摘录网页内容；请打开公告核对详情':'本次读取失败；可直接打开官网查看'}</span></div></article>`;
  }).join(''):'<div class="empty">没有找到符合条件的来源。</div>';
 }
-let conservatoriData=[];
+let conservatoriData=[];let consQuery='';let consDateOnly=false;
 function fileLabel(url){
  try{
    const raw=decodeURIComponent((url.split('/').pop()||'').split('?')[0]);
    const clean=raw.replace(/\.pdf$/i,'').replace(/[_+]+/g,' ').replace(/\s+/g,' ').trim();
    if(!clean)return 'PDF';
    const short=clean.length>52?clean.slice(0,52)+'…':clean;
-   return /\d{4}|bando|ammission|calendario|programma/i.test(short)?short:`简章：${short}`;
+   return short;
  }catch(error){return 'PDF';}
 }
+function staleMark(text){
+ const years=(String(text||'').match(/\b20\d{2}\b/g)||[]).map(Number);
+ if(!years.length)return '';
+ return Math.max(...years)<2026?'<span class="cons-stale">旧公告 · 参考价值有限</span>':'';
+}
+function pickDocs(list){
+ const items=(list||[]).map(url=>({url,rank:/bando|ammission|iscrizion/i.test(url)?2:(/calendario|programma|prova|graduator/i.test(url)?1:0)}))
+   .sort((a,b)=>b.rank-a.rank||a.url.length-b.url.length);
+ const top=items.filter(x=>x.rank===2);
+ return (top.length?top.slice(0,2):items.slice(0,3)).map(x=>x.url);
+}
+function consCard(c,academy){
+ const deadlines=(c.deadline_lines||[]).slice(0,2);
+ const dates=(c.exam_dates||[]).slice(0,2);
+ const reqs=(c.requirements||[]).slice(0,2);
+ const said=[...deadlines,...dates,...reqs].join(' ');
+ const soft=(c.fallback_lines||[]).filter(line=>!said.includes(line.slice(0,40))).slice(0,2);
+ const docs=pickDocs(c.documents);
+ const stale=staleMark([...deadlines,...dates].join(' '));
+ return `<article class="cons-card${academy?' cons-card--academy':''}">
+   <div class="cons-head"><h3>${esc(c.city)}<small>${esc(c.school)}</small></h3><span class="status ${c.status==='ok'?'':'error'}">${c.status==='ok'?(c.cached?'上次读取':'官网可读'):'暂时读不到'}</span></div>
+   ${stale?`<div>${stale}</div>`:''}
+   ${deadlines.length?`<p class="cons-block cons-block--date"><strong>报名期限</strong>${deadlines.map(esc).join('；')}</p>`:''}
+   ${dates.length?`<p class="cons-block cons-block--date"><strong>考试日期</strong>${dates.map(esc).join('；')}</p>`:''}
+   ${reqs.length?`<p class="cons-block"><strong>入学要求</strong>${reqs.map(esc).join('；')}</p>`:''}
+   ${soft.length?`<p class="cons-block cons-block--soft"><strong>页面要点</strong>${soft.map(esc).join('；')}</p>`:''}
+   ${docs.length?`<p class="cons-docs"><strong>官方简章</strong>${docs.map(d=>`<a class="doc-link" href="${esc(d)}" target="_blank" rel="noopener">${esc(fileLabel(d))}</a>`).join('')}</p>`:''}
+   <a class="card-link" href="${esc(c.url)}" target="_blank" rel="noopener">打开学院官网 <span>↗</span></a>
+ </article>`;
+}
 function renderConservatori(){
- const wrap=$('#conservatori');if(!wrap)return;
+ const wrap=$('#consGroups');
+ if(!wrap)return;
  const readable=conservatoriData.filter(c=>c.status==='ok');
  $('#conservatoriCount').textContent=`${readable.length}/${conservatoriData.length}`;
- wrap.innerHTML=conservatoriData.length?conservatoriData.map(c=>{
-   const deadlines=(c.deadline_lines||[]).slice(0,2);
-   const dates=(c.exam_dates||[]).slice(0,3);
-   const reqs=(c.requirements||[]).slice(0,3);
-   const docs=(c.documents||[]).slice(0,4);
-   return `<article class="cons-card"><div class="cons-head"><h3>${esc(c.city)} · ${esc(c.school)}</h3><span class="status ${c.status==='ok'?'':'error'}">${c.status==='ok'?(c.cached?'上次读取':'已读取官网'):'暂时无法读取'}</span></div>${deadlines.length?`<p class="cons-block"><strong>报名期限：</strong>${deadlines.map(esc).join('；')}</p>`:''}${dates.length?`<p class="cons-block"><strong>考试日期：</strong>${dates.map(esc).join('；')}</p>`:''}${reqs.length?`<p class="cons-block"><strong>入学要求：</strong>${reqs.map(esc).join('；')}</p>`:''}${(c.fallback_lines||[]).length?`<p class="cons-block"><strong>页面要点：</strong>${(c.fallback_lines||[]).slice(0,3).map(esc).join('；')}</p>`:''}${docs.length?`<p class="cons-docs">官方简章：${docs.map(d=>`<a href="${esc(d)}" target="_blank" rel="noopener">${esc(fileLabel(d))}</a>`).join(' · ')}</p>`:''}<a class="card-link" href="${esc(c.url)}" target="_blank" rel="noopener">打开学院官网页面 <span>↗</span></a></article>`;
- }).join(''):'<div class="empty">暂时读不到音乐学院数据。</div>';
+ const stat=$('#statSchools');if(stat)stat.textContent=readable.length;
+ const q=normalizeSearch(consQuery);
+ const filtered=conservatoriData.filter(c=>{
+   if(q&&!normalizeSearch(`${c.city||''} ${c.school||''}`).includes(q))return false;
+   if(consDateOnly&&!((c.deadline_lines||[]).length||(c.exam_dates||[]).length))return false;
+   return true;
+ }).sort((a,b)=>{
+   const da=(a.deadline_lines||[]).length+(a.exam_dates||[]).length;
+   const db=(b.deadline_lines||[]).length+(b.exam_dates||[]).length;
+   if(db!==da)return db-da;
+   return String(a.city||'').localeCompare(String(b.city||''),'zh');
+ });
+ const groups=[
+   {title:'歌剧院学院',hint:'Teatro · Accademia',academy:true,items:filtered.filter(c=>(c.number||0)>=300)},
+   {title:'公立音乐学院',hint:'Conservatorio',academy:false,items:filtered.filter(c=>(c.number||0)<300)}
+ ].filter(g=>g.items.length);
+ wrap.innerHTML=groups.map(g=>`<section class="cons-group"><div class="cons-group-head"><h3>${g.title}</h3><span>${g.hint} · ${g.items.length} 所</span></div><div class="cons-list">${g.items.map(c=>consCard(c,g.academy)).join('')}</div></section>`).join('');
+ const emptyBox=$('#conservatoriEmpty');
+ if(emptyBox)emptyBox.innerHTML=filtered.length?'':'<div class="empty">没有符合条件的院校。换个城市名，或关掉“只看有日期”。</div>';
 }
 async function loadConservatori(){
  try{
@@ -209,6 +255,10 @@ async function loadData(){
 }
 $('#searchInput').addEventListener('input',renderSources);
 $('#statusFilter').addEventListener('change',renderSources);
+const consInput=$('#consSearchInput');
+if(consInput)consInput.addEventListener('input',event=>{consQuery=event.target.value;renderConservatori();});
+const consToggle=$('#consDateOnly');
+if(consToggle)consToggle.addEventListener('click',()=>{consDateOnly=!consDateOnly;consToggle.setAttribute('aria-pressed',String(consDateOnly));renderConservatori();});
 $('#refreshButton').addEventListener('click',loadData);
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;$('#installButton').hidden=false;});
 $('#installButton').addEventListener('click',async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('#installButton').hidden=true;}else{alert('iPhone 用户可在 Safari 中点“分享”，再选“添加到主屏幕”。');}});
