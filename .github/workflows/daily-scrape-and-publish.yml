@@ -43,9 +43,9 @@ jobs:
           git checkout origin/main -- data/repertoire.json
           python prune_repertoire.py
           python update_repertoire.py
-          git add data/repertoire.json
+          git add data/repertoire.json data/conservatori.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Update automatically collected song texts'
+            git commit -m 'Update song catalogue and conservatory snapshot'
             git push origin HEAD:main
           fi
       - name: Prepare Pages artifact

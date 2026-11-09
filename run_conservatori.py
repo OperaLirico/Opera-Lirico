@@ -1,20 +1,29 @@
 #!/usr/bin/env python3
-"""Run the conservatory collector with retries around the network call.
+"""Run the conservatory collector, retrying the fetch and keeping the last good copy.
 
-Conservatory sites time out often enough that a single attempt leaves holes in
-the board — one run loses Turin, the next loses Genoa. ``fetch_page`` builds a
-fresh request each time, so retrying at the fetcher boundary is enough, and a
-site that still fails is recorded as unreachable instead of aborting the run.
+Two problems show up in practice:
+
+* Conservatory sites time out often. One run loses Turin, the next loses Genoa,
+  so a single attempt leaves visible holes in the board.
+* A failed run therefore must not delete what a previous run already read.
+
+So: retry at the fetcher boundary, and after the collector writes its file,
+replace any failed record with the most recent successful snapshot of that
+institution (marked ``cached`` with its own ``checked_at``) when one exists in
+the repository. A site that never succeeds stays marked unreachable.
 """
 
 from __future__ import annotations
 
+import json
 import time
+from pathlib import Path
 
 import scrape_conservatori as core
 
 ATTEMPTS = 3
-TIMEOUT = 45
+TIMEOUT = 30
+DATA = Path(__file__).resolve().parent / "data" / "conservatori.json"
 
 
 class RetryingFetcher:
@@ -27,10 +36,51 @@ class RetryingFetcher:
             except Exception as exc:  # curl timeouts, TLS resets, empty replies
                 last_error = exc
                 if attempt < ATTEMPTS:
-                    time.sleep(4 * attempt)
+                    time.sleep(3 * attempt)
         raise last_error if last_error else RuntimeError("fetch failed")
 
 
+def snapshots() -> dict[int, dict]:
+    """Successful records already in the repository, keyed by institution number."""
+    if not DATA.exists():
+        return {}
+    try:
+        payload = json.loads(DATA.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return {}
+    keep: dict[int, dict] = {}
+    for item in payload.get("items", []):
+        if item.get("status") == "ok":
+            keep[item.get("number")] = item
+    return keep
+
+
+def backfill(previous: dict[int, dict]) -> None:
+    if not previous or not DATA.exists():
+        return
+    payload = json.loads(DATA.read_text(encoding="utf-8"))
+    replaced = 0
+    for item in payload.get("items", []):
+        if item.get("status") == "ok":
+            continue
+        old = previous.get(item.get("number"))
+        if not old:
+            continue
+        for field in ("deadline_lines", "exam_dates", "requirements", "documents", "title"):
+            if old.get(field):
+                item[field] = old[field]
+        item["status"] = "ok"
+        item["cached"] = True
+        item["checked_at"] = old.get("checked_at")
+        item["note"] = "本次未连通，显示上一次成功读取的内容"
+        replaced += 1
+    if replaced:
+        DATA.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"Kept the previous snapshot for {replaced} institution(s)")
+
+
 if __name__ == "__main__":
+    previous = snapshots()
     core.Fetcher = RetryingFetcher
     core.main()
+    backfill(previous)
