@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T21:03:23+01:00",
+  "generated_at": "2026-11-09T21:19:55+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -5971,10 +5971,395 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Ehe",
+      "aliases": [],
+      "composer": "Adolf Paul Böhm",
+      "work": "/lieder/get_settings.html?ComposerId=38125",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Sie haben sich nichts zu sagen,\nSie sitzen still und stumm\nUnd hören die Stunden schlagen,\nDie Langeweil' geht um.\n\nDie Liebe ist längst gegangen,\nUnd auch das Glück ist hin,\nUnd hin ist das Verlangen\nMitsamt dem Jugendsinn.\n\nMissmut sitzt ihm zur Seite,\nDie Sehnsucht sitzt bei ihr,\nUnd traurig alle beide,\nAch, bis zu Thränen schier.\n\nKeins bricht das tiefe Schweigen,\nKein Laut dringt in den Raum,\nNur schwere Seufzer steigen,\nVerstohlen, hörbar kaum.\n\nUnd die Gewohnheit leise\nSchwingt ihren Zauberstab\nUnd zwingt in ihre Kreise\nDie beiden still hinab.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=146697",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Thekla Lingen",
+      "settings": [
+        {
+          "composer": "Adolf Paul Böhm",
+          "title": "/lieder/get_settings.html?ComposerId=38125",
+          "instrumentation": "soprano and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Une fois le bouc vint comme messager",
+      "aliases": [],
+      "composer": "Richard Georg Strauss",
+      "work": "/lieder/get_settings.html?ComposerId=5869",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Une fois le bouc vint comme messager\nÀ la maison du chevalier à la rose ;\nIl frappa avec sa patte,\nUn bouquet de roses gardait l'entrée.\n\nLe bouquet piqua vite ses épines\nDans la peau épaisse du messager-bouc.\nÔ bouc, va-t'en avec ta queue entre les jambes,\nEn arrière, en arrière !",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=106087",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "Richard Georg Strauss",
+          "title": "/lieder/get_settings.html?ComposerId=5869",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The lover's illness",
+      "aliases": [],
+      "composer": "Charles Camille Saint-Saëns",
+      "work": "/lieder/get_settings.html?ComposerId=5601",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "This illness, which stabs me day and night1,\nAnd which steals the freedom of my youth,\nMust I always obey it in this way,\nReceiving only cruelty?\n    Loyally\n    Loving\n    I fell\n    My feelings\n    Troubled\nAnd my illness doubled.\n\nThese golden curls, and the lilies of her skin\nBeneath a sun shining doubly-clear\nHave struck me to the core so far\nThat I feel myself almost frozen.\n    Burning,\n    Flashing,\n    Her eye\n    The fire\n    Of torches\n   Slowly scorches.\n\nI realise, but it's too late,\nThat the murderer of my cool reason\nHas escaped through the portal of my eyes\nTo brew for me this bitter poison.\n  Worries\n    surround me\n    Confound me\n    Since cruel\n    Love's rule\n  Bound me.\n\nAnd though I may die, cruel one,\nPreserving this holy friendship\nAll my cries will not bother you\nWho ought to be moved to pity.\n    Cupid dear\n    Come here\n    Fly fast\n    Fly high\n    Guide my path\n    To death.\n\nNeither my shy and modest heart,\nNor the trouble it causes me to love you,\nNot tears, sighs and bitter regrets --\nNone of these, my lady, will be able to move you enough\n  If sometimes you rest\n    Your eye\n    On the sorrow\n    That follows\n    When I\n  Put love to the test.\n\nSome other hunter it will be who takes\nThe prey that I've been coursing\nWithout deserving, he'll enjoy that hour\nWhich has so fiercely tortured my soul.\n    It's no use;\n    Abused\n    By bitter\n    Ill\n    I will\n  Pursue a love that's fitter.\n\nSome dolt or gross servant it will be instead\nWho profits from the hour that should be mine\nAnd caresses he rounded belly\nAnd the blushing crimson of her breast.\n  By night and day\n    Love sounds\n    This knell\n    Confounds\n    My way\n  And makes my life a hell.\n\nI clearly see that I should really die\nWithout a hope of lessening of pain;\nSo if my death gives such great pleasure,\nThen that will be my finest hour, my joy,\n    In submission\n    Death's commission\n    To seize\n    My spirit\n    And give it\n    Release.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=89422",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by David Wyatt",
+      "settings": [
+        {
+          "composer": "Charles Camille Saint-Saëns",
+          "title": "/lieder/get_settings.html?ComposerId=5601",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "David Wyatt",
+          "title": "./get_texts.html?ContribId=601",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ich bin ein Fischer an dieser Küste",
+      "aliases": [],
+      "composer": "Arnold Mendelssohn",
+      "work": "/lieder/get_settings.html?ComposerId=5033",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ich bin ein Fischer an dieser Küste,\nDie schönsten Fische fang' ich mir ein.\nMein Fischernetz ist ein Netz der Liebe;\nAuch die Muräne schwimmt wohl hinein.\nLäßt mich ein günstig Geschick sie fangen,\nDann, o wie werden sie neidisch sein.\nAch, wie schön ist das Fischermädchen,\nAch, wie schafft sie mir Noth und Pein!\n\nEs hat ein Unstern gestern geschienen,\nDenn um ein Haar nur, so fing ich sie ein.\nSchon in den Maschen wollt' ich sie haschen,\nDa muß das Netz auch zerrissen sein.\nFührt sie mein Glücke wieder zurücke,\nSoll sie mir nicht mehr entgehn, o nein!\nAch, wie schön ist das Fischermädchen,\nAch, wie schafft sie mir Noth und Pein!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=30266",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Paul Heyse",
+      "settings": [
+        {
+          "composer": "Arnold Mendelssohn",
+          "title": "/lieder/get_settings.html?ComposerId=5033",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "My dove, my beautiful one",
+      "aliases": [],
+      "composer": "David Arditti",
+      "work": "/lieder/get_settings.html?ComposerId=3213",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "My dove, my beautiful one,\n  Arise, arise!\n  The night-dew lies\nUpon my lips and eyes.\n\nThe odorous winds are weaving\n  A music of sighs:\n  Arise, arise,\nMy dove, my beautiful one!\n\nI wait by the cedar tree,\n  My sister, my love.\n  White breast of the dove,\nMy breast shall be your bed.\n\nThe pale dew lies\n  Like a veil on my head.\n  My fair one, my fair dove,\nArise, arise!1",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=9009",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "James Joyce",
+      "settings": [
+        {
+          "composer": "David Arditti",
+          "title": "/lieder/get_settings.html?ComposerId=3213",
+          "instrumentation": "tenor and string quartet"
+        },
+        {
+          "composer": "James Brown",
+          "title": "/lieder/get_settings.html?ComposerId=6731",
+          "instrumentation": "tenor or baritone and piano"
+        },
+        {
+          "composer": "David Del Tredici",
+          "title": "/lieder/get_settings.html?ComposerId=3844",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Nel porto (Capri)",
+      "aliases": [],
+      "composer": "Edward Elgar, Sir",
+      "work": "/lieder/get_settings.html?ComposerId=3963",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Lascia che ti stringa saldamente la mano\nla burrasca spazza la terra e il mare\nl'amore soltanto potrà durare.\n\nAbbracciami forte, le ondate si frangono rapide,\nSpruzzano schiuma le raffiche del vento;\nl'amore soltanto rimane fermo.\n\nBaciami sulle labbra, e lieve sussurra:\nRallegrati, i marosi possono affievolirsi oggi stesso;\nl'amore soltanto resterà in eterno.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=68663",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Ferdinando Albeggiani",
+      "settings": [
+        {
+          "composer": "Edward Elgar, Sir",
+          "title": "/lieder/get_settings.html?ComposerId=3963",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Go to the text.",
+          "title": "/lieder/get_text.html?TextId=47564",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Nachtigall, hüte dich!",
+      "aliases": [],
+      "composer": "Franz Barraga",
+      "work": "/lieder/get_settings.html?ComposerId=27464",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Nachtigall, hüte dich!\nSinge nicht so lieblich!\nAch, dein allzuschönes Singen\nWird dich um die Freiheit bringen.\n  [Hüte]1 dich!\n\nSchöne Blume, hüte dich,\nBlühe nicht [so]2 glühend,\nDufte nicht so voll Entzücken!\nWer dich siehet, will dich pflücken,\n  [Hüte]1 dich!\n\nSchönes Mädchen, hüte dich!\nLächle nicht so gütig!\nDeine Schönheit, deine Güte --\nDenk' an Nachtigall und Blüte.\n  [Hüte,\n  Hüte]3 dich!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=34431",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hermann von Lingg",
+      "settings": [
+        {
+          "composer": "Franz Barraga",
+          "title": "/lieder/get_settings.html?ComposerId=27464",
+          "instrumentation": "vocal quartet for male voices"
+        },
+        {
+          "composer": "Reinhold Becker",
+          "title": "/lieder/get_settings.html?ComposerId=3344",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "August Busch",
+          "title": "/lieder/get_settings.html?ComposerId=25507",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Seit die Sonne ihren lichten Schein",
+      "aliases": [],
+      "composer": "Dorothee Fischer",
+      "work": "/lieder/get_settings.html?ComposerId=43942",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Seit die Sonne ihren lichten Schein\nvor der Kälte hat geneiget\nund der kleine Vögelein\nsommerliches Singen schweiget,\ntraurig ist das Herze mein;\ndenn es will nun Winter sein,\nder uns seine Kraft erzeiget\nan den Blumen, da man sieht\nlichte Gluten\nblaß verbluten;\ndavon mir geschieht\nLeid, und Liebes flieht.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=50008",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Will Vesper",
+      "settings": [
+        {
+          "composer": "Dorothee Fischer",
+          "title": "/lieder/get_settings.html?ComposerId=43942",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Robert Kahn",
+          "title": "/lieder/get_settings.html?ComposerId=4574",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "My life has its secret",
+      "aliases": [],
+      "composer": "Georges Bizet",
+      "work": "/lieder/get_settings.html?ComposerId=3441",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "My life has its secret, my soul has its mystery:\nAn eternal love conceived in one moment:\nThe illness is without remedy, so I had to silence it,\nAnd she who caused it never knew anything about it.\n\nThus I will have passed near her unperceived,\nEver at her side -- and ever solitary;\nAnd up to the end of my time on the earth\nI will never have dared to ask anything -- and will have received nothing.\n\nAs for her, whom Heaven has made sweet and tender,\nShe follows her path, preoccupied and without hearing\nThe murmur of love arising from her footsteps.\n\nTo her austere duty piously faithful,\nShe will say, reading these verses full of her:\n\"Who is this woman then?\" -- and will not understand.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=129584",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Emily Ezust",
+      "settings": [
+        {
+          "composer": "Georges Bizet",
+          "title": "/lieder/get_settings.html?ComposerId=3441",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "René de Boisdeffre",
+          "title": "/lieder/get_settings.html?ComposerId=28638",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Martial Caillebotte",
+          "title": "/lieder/get_settings.html?ComposerId=26363",
+          "instrumentation": "medium voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Namenloses Weh",
+      "aliases": [],
+      "composer": "Agathe Ursula Backer-Grøndahl",
+      "work": "/lieder/get_settings.html?ComposerId=3264",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Wohl dem, der noch vertrauen kann\nSein Weh an andre Herzen,\nDer da noch Mut und Kraft gewann,\nZu klagen seine Schmerzen.\n\nEs gibt ein Leid, es gibt ein Weh,\nDas tief im Innern glutet.\nWas auch im Lauf der Zeit gescheh,\nEs schweigt und zuckt und blutet.\n\nEs gibt ein Weh, das niemand kennt,\nWas findet keinen Namen --\nO wohl dem, der dies Weh nicht kennt!\nGott schütz ihn weiter.  Amen.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=52015",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Agathe Ursula Backer-Grøndahl",
+          "title": "/lieder/get_settings.html?ComposerId=3264",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Kindertraum",
+      "aliases": [],
+      "composer": "Frank Valentin Van der Stucken",
+      "work": "/lieder/get_settings.html?ComposerId=5878",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Wer weiss, was Kindlein träumen?\nVon Lieb', von Leid? Wer weiss?\nWer kennt der Seele stilles Verlangen?\nWer kann versteh'n die kleine Trän'?\nIst's himmelisch Glück? Ist's irdisches Leid?\n\nWas sagt der Blume Geflüster?\nDie Sternenpracht der Nacht?\nUnd wer hört in dem nächtlich stillen Düster\nAus süsser Kinder Herzenschlag?\nWer weiss, was Kindlein träumen? Wer weiss?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=47866",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation Singable translation by Carl Hebbel",
+      "settings": [
+        {
+          "composer": "Frank Valentin Van der Stucken",
+          "title": "/lieder/get_settings.html?ComposerId=5878",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Wandering song",
+      "aliases": [],
+      "composer": "Ottmar Gerster",
+      "work": "/lieder/get_settings.html?ComposerId=4165",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "From the [mountain]1 to the hills,\nand throughout the valley,\nsomething resounds as if on wings,\nsomething is stirring like a song!\nAnd to absolute impulse\njoy yields, reason yields;\nand let your striving be for love!\nAnd let your life be the deed.\n\nBecause the bonds have been broken,\ntrust has been violated;\ncan I say, can I even know,\nexposed to which whims of fate\nI shall now depart, I shall now wander,\nshall, like a widow in mourning,\nreplacing one with another,\nturn farther and farther away.\n\nDo not stay pinned to the floor -\nbe fresh and daring, and go on your way,\nhead and arm full of cheerful strength;\neverywhere we are at home!\nWherever the sun delights us,\nwe are free of every care;\nthat we may scatter within it\nis the reason the world is so huge.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=6660",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Emily Ezust",
+      "settings": [
+        {
+          "composer": "Ottmar Gerster",
+          "title": "/lieder/get_settings.html?ComposerId=4165",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Gustav Hecht",
+          "title": "/lieder/get_settings.html?ComposerId=17306",
+          "instrumentation": "mixed chorus a cappella"
+        },
+        {
+          "composer": "Fanny Hensel",
+          "title": "/lieder/get_settings.html?ComposerId=5037",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 768,
+  "lieder_position": 816,
   "aria_opera": 0,
   "aria_scene": 8
 }
