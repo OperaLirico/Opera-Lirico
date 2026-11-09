@@ -58,12 +58,15 @@ CHROME_RE = re.compile(r"sito istituzionale|clicca qui|compila|modulo di domanda
 # A theatre also advertises ushering, box office and back-office jobs. Those pages
 # are full of call-for-application wording but have nothing to do with singing.
 STAFF_RE = re.compile(
-    r"maschere|accoglienza|amministrativ|personale|biglietteria|tirocin|segreteria|addett|"
-    r"operatore|magazzino|cassier|autista|guardaroba",
+    r"maschere|accoglienza|amministra|personale|biglietteria|tirocin|segreteria|addett|"
+    r"operatore|magazzino|cassier|autista|guardaroba|organico",
     re.IGNORECASE,
 )
 PORTAL_RE = re.compile(r"trasparenza|amm\.trasp|archivio/archiviobandi", re.IGNORECASE)
-OFFTOPIC_RE = re.compile(r"coreograf|danza contemporanea|concorso di scrittura|racconto breve", re.IGNORECASE)
+OFFTOPIC_RE = re.compile(
+    r"coreograf|danza|danzator|balletto|concorso di scrittura|racconto breve|concorso letterario",
+    re.IGNORECASE,
+)
 AUDITIONISH_RE = re.compile(
     r"audizion|audition|concors|concor|casting|bando|selezion|open ?call|premio|provino|cantanti|orchestra|coro",
     re.IGNORECASE,
@@ -174,7 +177,8 @@ def main() -> None:
     core_items: list[dict] = load(PAGE, [])
 
     # Drop anything that slipped through earlier rules (share links, files,
-    # job ads for ushers and box office, transparency portals).
+    # jobs for ushers and box office, transparency portals, dance and writing
+    # competitions).
     cleaned = [
         item for item in registry
         if not SKIP_HOST_RE.search(item.get("url", ""))
@@ -182,6 +186,7 @@ def main() -> None:
         and not CHROME_RE.search(" ".join([item.get("source", ""), item.get("title", "")]))
         and not STAFF_RE.search(" ".join([item.get("source", ""), item.get("title", ""), item.get("url", "")]))
         and not PORTAL_RE.search(item.get("url", ""))
+        and not OFFTOPIC_RE.search(" ".join([item.get("source", ""), item.get("title", "")]))
     ]
     if len(cleaned) != len(registry):
         print(f"[extra] removed {len(registry) - len(cleaned)} non-source link(s)", flush=True)
