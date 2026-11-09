@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T18:38:13+01:00",
+  "generated_at": "2026-11-09T19:02:47+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -2771,10 +2771,365 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "January",
+      "aliases": [],
+      "composer": "Karl Hasse",
+      "work": "/lieder/get_settings.html?ComposerId=16023",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "en",
+      "text": "As pure as the white snow in the field\nThis new year still lies before us,\nBut what shall sprout within it\nHas already been sown years and years ago.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=101956",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Karl Hasse",
+          "title": "/lieder/get_settings.html?ComposerId=16023",
+          "instrumentation": "SATB quartet and piano or orchestra"
+        },
+        {
+          "composer": "Otto Scheuch",
+          "title": "/lieder/get_settings.html?ComposerId=16242",
+          "instrumentation": "tenor, SATB chorus, and optional string quartet or piano ad libitum"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Folternde Rache",
+      "aliases": [],
+      "composer": "Georg Philipp Telemann",
+      "work": "/lieder/get_settings.html?ComposerId=5933",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Folternde Rache, flammende Qual wird dich schrecken, ängsten, nagen!\nWo du nicht den Zorn gehemmt, eh' der Zorn am Ende kömmt,\nwird dich der ins Martertal unter winseln, heulen, zagen,\nschäumender Eifer auf ewig verjagen.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=127002",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Georg Philipp Telemann",
+          "title": "/lieder/get_settings.html?ComposerId=5933",
+          "instrumentation": "soprano and oboe and continuo"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "In the flower garden",
+      "aliases": [],
+      "composer": "Andre Asriel",
+      "work": "/lieder/get_settings.html?ComposerId=3237",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "By the lake, hidden between firs and silvery poplars.\nProtected by a wall and bushes, a garden\nSo wisely planted with various flowers\nThat it blooms from March to October.\nHere, early in the morning, but not too often, I sit\nAnd wish that I too, might at all times,\nIn all the different weathers - good, bad -\nBring forth something pleasing of one sort or another.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=70241",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Andre Asriel",
+          "title": "/lieder/get_settings.html?ComposerId=3237",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Hanns Eisler",
+          "title": "/lieder/get_settings.html?ComposerId=3958",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Andante",
+      "aliases": [],
+      "composer": "Hans Peter Nowak",
+      "work": "/lieder/get_settings.html?ComposerId=6840",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Ever again comfortingly\nAnd ever new in the eternal radiance of creation\nThe world smiles into my eyes,\nIt lives and moves in a thousand breathing forms,\nThe butterfly flutters in the sunny wind,\nThe swallow sails in the blissful blue,\nThe ocean flood streams at the rocky shore.\nEver again star and tree,\nCloud and bird are my near relatives,\nThe rocky cliff greets me as a brother,\nThe boundless ocean calls to me as a friend.\nUncomprehended my path leads me\nToward some lost, blue distance,\nNowhere is meaning, nowhere a certain goal –\nNevertheless every forest stream, every buzzing fly\nSpeaks to me of a deep law,\nOf holy order,\nWhose heavenly vault is also stretched out above me,\nWhose secret sounds,\nAs they do in the course of the stars,\nAlso ring in the beats of my heart.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=117659",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Hans Peter Nowak",
+          "title": "/lieder/get_settings.html?ComposerId=6840",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Josef Röösli",
+          "title": "/lieder/get_settings.html?ComposerId=16231",
+          "instrumentation": "reciter and piano"
+        },
+        {
+          "composer": "Heinz Sälter",
+          "title": "/lieder/get_settings.html?ComposerId=16240",
+          "instrumentation": "alto, four-part mixed chorus, piano, and orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Поле зыблется цветами",
+      "aliases": [],
+      "composer": "Nikolay Yakovlevich Afanasyev",
+      "work": "/lieder/get_settings.html?ComposerId=3133",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ru",
+      "text": "Поле зыблется цветами…\nВ небе льются света волны…\nВешних жаворонков пенья\nГолубые бездны полны.\n\nВзор мой тонет в блеске полдня…\nНе видать певцов за светом…\nТак надежды молодые\nТешат сердце мне приветом…\n\nИ откуда раздаются\nГолоса их, я не знаю…\nНо, им внемля, взоры к небу,\nУлыбаясь, обращаю.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=137746",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Apollon Nikolayevich Maykov",
+      "settings": [
+        {
+          "composer": "Nikolay Yakovlevich Afanasyev",
+          "title": "/lieder/get_settings.html?ComposerId=3133",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Vojtěch Hlaváč",
+          "title": "/lieder/get_settings.html?ComposerId=10693",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Aleksandr Nikolayevich Shefer",
+          "title": "/lieder/get_settings.html?ComposerId=5726",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Mon cœur chante et c'est près de toi",
+      "aliases": [],
+      "composer": "Cécile Chaminade",
+      "work": "/lieder/get_settings.html?ComposerId=3705",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Mon cœur chante et c'est près de toi\nQu'il éclate ainsi d'allégresse\nUn mot le fait trembler d'é moi,\nUn mot le fait pâmer d'ivresse\nMon cœur chante et c'est près de toi !\n\nMon cœur saigne et c'est loin de toi,\nQuand le sort mauvais nous sépare,\nTout n'est que deuil, tout n'est qu'effroi\nTout m'apparait vide ou barre ;\nMon cœur saigne et c'est loin de toi !\n\nMon cœur vit et c'est grace à toi !\nDe sa douleur nait son poème ;\nTantôt martyr ou tantôt roi,\nIl n'est jamais seul puisqu'il aime,\nMon cœur vit et c'est grace à toi !",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=31951",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Charles Fuster",
+      "settings": [
+        {
+          "composer": "Cécile Chaminade",
+          "title": "/lieder/get_settings.html?ComposerId=3705",
+          "instrumentation": "high voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Weh'n im Garten die Arome",
+      "aliases": [],
+      "composer": "Theodor Streicher",
+      "work": "/lieder/get_settings.html?ComposerId=5871",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Weh'n im Garten die Arome\n  Deines Haares süß und linde,\nZärtlich an die Brust der Rose\n  Fällt die trunkne Hyacinthe.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=33467",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Georg Friedrich Daumer",
+      "settings": [
+        {
+          "composer": "Theodor Streicher",
+          "title": "/lieder/get_settings.html?ComposerId=5871",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Koleda milostná",
+      "aliases": [],
+      "composer": "Bohuslav Martinů",
+      "work": "/lieder/get_settings.html?ComposerId=4989",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "cs",
+      "text": "Tři sta ptáčků štěbetalo\nv tom lesíku javorovém.\nCo to oni štěbetali,\naj se hory zelenaly.\nSvítilo se po všem dvoře,\npo všem dvoře, až v komoře.\nV té komoře bílé lože,\nna tom loži milá leží,\nzlatý prsten v ruce drží.\nKdo ten prsten snímat bude?\nA kdož jinej, než můj milej!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=29951",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "from Volkslieder",
+      "settings": [
+        {
+          "composer": "Bohuslav Martinů",
+          "title": "/lieder/get_settings.html?ComposerId=4989",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Winzer und Winzerin",
+      "aliases": [],
+      "composer": "Heinrich August Marschner",
+      "work": "/lieder/get_settings.html?ComposerId=4976",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Munt're Winzer! heuer winket\nechter Labewein.\nSammelt, eh' die Sonne sinket,\nTrauben rot und weiß, und trinket\nbei der Sterne Schein!\n\nIn der Kelter weite Kufe\nschüttet sie hinein!\nFolget Bacchus' frohem Rufe!\nAuf des Lebens höchster Stufe\nstrahlt der [edle]1 Wein.\n\nSprechen hübsche Winzerinnen\nfreundlich bei uns ein,\nsingen wir, sie zu gewinnen,\nzechend, mit vergnügten Sinnen,\nLust'ge Melodei'n.\n\n[Warum weilt ihr an der Pfoste,\nsüße Mägdelein?\nDie nicht singen mag, die koste\nhier vom Weine, dort vom Moste!\nNur nicht blöde sein!]2\n\nHast du Kummer, lieber Zecher?\nLerne dich erfreu'n!\nLeere dreimal deinen Becher,\ndenn der beste Sorgenbrecher\nist und bleibt der Wein!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=138429",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Wilhelm Christoph Leonhard Gerhard",
+      "settings": [
+        {
+          "composer": "Heinrich August Marschner",
+          "title": "/lieder/get_settings.html?ComposerId=4976",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Raven",
+      "aliases": [],
+      "composer": "Edgar Pierre Joseph Tinel",
+      "work": "/lieder/get_settings.html?ComposerId=5969",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "nl",
+      "text": "Gij zijt gestorven, en rust daar zoo zoet,\nen ligt daar zoo stil in uw doodkist neer . . .\nMaar ach! al die min, die mijn hert heeft gevoed,\nmaar ach! al die droomen van 't dichtergemoed,\ndie bleven, die bleven, en roepen U weer!\n\nGij zijt gestorven, en rust daar zoo zoet,\nen ligt daar zoo kalm onder 't wuivende gras . . .\nMaar ach! al mijn hopen, in aakligen gloed,\nals pikzwarte raven met bekken vol bloed,\ndoorboren mijn boezem met spottend gekras!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=115965",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Charles Polydore de Mont",
+      "settings": [
+        {
+          "composer": "Edgar Pierre Joseph Tinel",
+          "title": "/lieder/get_settings.html?ComposerId=5969",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The letter",
+      "aliases": [],
+      "composer": "Paul von Klenau",
+      "work": "/lieder/get_settings.html?ComposerId=4659",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Von Langenau is writing a letter, lost in thought.\nHe is drawing slowly with large, serious, upright letters:\n\n\"My good mother,\n\"Be proud: I am carrying the flag,\n\"Be without worry. I am carrying the flag.\n\"Love me: I am carrying the flag-\"\n\nThe he puts the letter under his uniform,\nin the most secret place, next to the rose petal.\nAnd thinks: he will soon be fragrant with it.\nAnd thinks: perhaps someone will find it one day...\nAnd thinks - ...; because the enemy is near.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=13650",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Knut W. Barde",
+      "settings": [
+        {
+          "composer": "Paul von Klenau",
+          "title": "/lieder/get_settings.html?ComposerId=4659",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Ton de Leeuw",
+          "title": "/lieder/get_settings.html?ComposerId=4806",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Frank Martin",
+          "title": "/lieder/get_settings.html?ComposerId=4984",
+          "instrumentation": "alto and chamber orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Politická velkost",
+      "aliases": [],
+      "composer": "Leonard J[ordan] Lehrman",
+      "work": "/lieder/get_settings.html?ComposerId=10618",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "cs",
+      "text": "Ni štěstí, majestát, klid, sláva, poesie,\nni síla s obratností v umu, zbrani,\nstád nejsou pastýři, jež krotí tyranie,\nrytm verše srdce jich se netkne ani,\nstín hanby jejich jest jen historie,\nskla svoje umění před průvodem jich sklání,\nco slepé davy spějí v zapomnění\nprzníce nebe rysy pochmurnými\njich vlastních podob. Jistě k nesečtení\njsou davy těch, jež síla či zvyk svými\nv jho spíná pouty. Člověk v ryzím chtění\nbuď svrchovaný a svůj trůn vztyč tam\nnad vládou nadějí i strachy zlými,\nje zdeptaje buď vládcem sebou sám.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=852579",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Jaroslav Vrchlický",
+      "settings": [
+        {
+          "composer": "Leonard J[ordan] Lehrman",
+          "title": "/lieder/get_settings.html?ComposerId=10618",
+          "instrumentation": "soprano, mezzo-soprano, or tenor with piano"
+        },
+        {
+          "composer": "Leonard J[ordan] Lehrman",
+          "title": "/lieder/get_settings.html?ComposerId=10618",
+          "instrumentation": "bass and piano"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 336,
+  "lieder_position": 384,
   "aria_opera": 0,
   "aria_scene": 8
 }
