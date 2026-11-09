@@ -71,8 +71,9 @@ TIMEOUT = 25
 MAX_PDF_BYTES = 12 * 1024 * 1024
 MAX_PDF_PAGES = 5
 PDF_BUDGET = 26  # ~2 per institution, keeps the job inside a few minutes
-ACADEMY_BUDGET = 16  # theatre academies would otherwise never get any of it
+ACADEMY_BUDGET = 16  # theatre academies keep getting skipped when this is shared
 DATA = Path(__file__).resolve().parent / "data" / "conservatori.json"
+MANUAL = Path(__file__).resolve().parent / "data" / "conservatori_manual.json"
 
 
 HARD_DEADLINE = 40  # seconds; covers a stalled TLS handshake the curl timeout misses
@@ -294,6 +295,36 @@ def fill_from_pdfs(payload: dict, academies: bool, budget: int) -> int:
     print(f"Read {budget} budget bando PDF(s), enriched {filled} institution(s)")
 
 
+def apply_manual(payload: dict) -> None:
+    """Verified facts win. Each theatre academy's bando is checked by hand; the scrape only fills gaps."""
+    if not MANUAL.exists():
+        return
+    try:
+        manual = json.loads(MANUAL.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return
+    index = {item.get("number"): item for item in manual.get("items", [])}
+    changed = 0
+    for item in payload.get("items", []):
+        entry = index.get(item.get("number"))
+        if not entry:
+            continue
+        for field in ("deadline_lines", "exam_dates", "requirements"):
+            if entry.get(field):
+                item[field] = list(entry[field])
+        notes = list(entry.get("notes") or [])
+        if notes:
+            kept = [line for line in item.get("fallback_lines") or [] if line not in notes]
+            item["fallback_lines"] = (notes + kept)[:3]
+        item["manual"] = True
+        item["manual_status"] = entry.get("status") or "unknown"
+        item["manual_source"] = entry.get("source_url")
+        item["manual_checked_at"] = entry.get("checked_at")
+        changed += 1
+    if changed:
+        print(f"Applied the hand-checked notes for {changed} institution(s)")
+
+
 def save(payload: dict) -> None:
     DATA.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -311,4 +342,5 @@ if __name__ == "__main__":
         clean_fallbacks(payload)
         fill_from_pdfs(payload, academies=True, budget=ACADEMY_BUDGET)
         fill_from_pdfs(payload, academies=False, budget=PDF_BUDGET)
+        apply_manual(payload)
         save(payload)
