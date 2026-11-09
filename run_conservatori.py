@@ -20,6 +20,8 @@ import time
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
 from pathlib import Path
 
+from scrapling.fetchers import Fetcher as RawFetcher
+
 import scrape_conservatori as core
 
 ATTEMPTS = 2
@@ -34,7 +36,9 @@ POOL = ThreadPoolExecutor(max_workers=core.WORKERS)
 
 
 def _attempt(url: str):
-    return POOL.submit(core.Fetcher.get, url, timeout=TIMEOUT, retries=0)
+    # ``core.Fetcher`` is replaced by RetryingFetcher below; submitting *that* would
+    # re-enter this pool and deadlock, so the raw client is captured once here.
+    return POOL.submit(RawFetcher.get, url, timeout=TIMEOUT, retries=0)
 
 
 class RetryingFetcher:
