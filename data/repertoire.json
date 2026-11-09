@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T20:28:09+01:00",
+  "generated_at": "2026-11-09T20:35:53+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -4906,10 +4906,355 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Hearts rest, the flowers sleep",
+      "aliases": [],
+      "composer": "Franz Wilhelm Abt",
+      "work": "/lieder/get_settings.html?ComposerId=3121",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Hearts rest, the flowers sleep\n  Devoutly in the blessed night of stars.\nIn the quiet harbour of my heart\n  Faithful love keeps watch without resting.\nI would so dearly love to lament to you\n  That which makes me so happy, so miserable,\nAnd to say it to you in your slumber:\n  \"You are my dream in the quiet night!\"\n\nYou do not sense my faithful love hovering\n  Around you, you lovely, sweet maiden.\nIf nothing else remains to me upon earth\n  You are nevertheless my bliss.\nThough you do not incline your head\n  In the splendour of its [fullness of]1 curls,\nFor you continues to sound the song of songs:\n  \"You are my dream in the quiet night!\"\n\nAnd if dismally and more dismally life calls\n  Me forth into solemn battle,\nThen I would walk once more past\n  The little window of your chamber.\nOnly once then look down amiably\n  Into the eyes that keep watch only for you,\nAnd listen quietly to the song of songs:\n  \"You are my dream in the quiet night!\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=534538",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Franz Wilhelm Abt",
+          "title": "/lieder/get_settings.html?ComposerId=3121",
+          "instrumentation": "voice, piano, and cello or horn or clarinet or violin or flute"
+        },
+        {
+          "composer": "Wm. Borchert",
+          "title": "/lieder/get_settings.html?ComposerId=23540",
+          "instrumentation": "men's chorus"
+        },
+        {
+          "composer": "Albert Hermann Dietrich",
+          "title": "/lieder/get_settings.html?ComposerId=8849",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Den Eenlige",
+      "aliases": [],
+      "composer": "Niels Wilhelm Gade",
+      "work": "/lieder/get_settings.html?ComposerId=4121",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "da",
+      "text": "Tre rejsende drog fa herberget ud:\nFarvel! Du dejligste terne! --\nMig venter min viv -- mig venter mig brud --\nMig venter slet ingen i det fjerne.\n\nDen første hun gav så venligt et nik,\nOg hånd hun rakte den anden;\nDen tredje hun gar så blysomt et blik\nOg rødmed fra halsen op til panden.\n\nDen første hun gav en blomst til hans viv\nDen anden majlov til bruden\nDen tredjehun gav til ensomme liv\nSin sjæl et tåreblik fra ruden.\n\nDe rejsende skiltes hver på sin vej-\nSnart visne blomster og blade;\nMen sjælen i blikket visner kun ej\nOg den skal ret aldrig mig forlade.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=38376",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Bernhardt Severin Ingemann",
+      "settings": [
+        {
+          "composer": "Niels Wilhelm Gade",
+          "title": "/lieder/get_settings.html?ComposerId=4121",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Sister fairest, why art thou sighing",
+      "aliases": [],
+      "composer": "George Whitefield Chadwick",
+      "work": "/lieder/get_settings.html?ComposerId=3701",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Sister fairest, why art thou sighing?\n\"Dear one, a ring was on my hand;\nnow in the sea's cold deep 'tis lying,\nno diver brings it back to land.\"\n\nSister sweetest, why art thou weeping?\n\"Dear one, a rose bloomed on my tree;\nsome cruel hand, while I was sleeping,\nhath reft my rose away from me.\"\n\nSister saddest, why art thou pining?\n\"Dear one, I had a lover true;\ndeath smote him in my arms reclining.\nand I for death am pining too!\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=49296",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Arlo Bates",
+      "settings": [
+        {
+          "composer": "George Whitefield Chadwick",
+          "title": "/lieder/get_settings.html?ComposerId=3701",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Chandos Anthem no 10: The Lord is my...",
+      "aliases": [],
+      "composer": "Georg Friedrich Händel",
+      "work": "/lieder/get_settings.html?ComposerId=4326",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "1 Sinfonia\n\n2 Tenor\n The Lord is my light and my salvation, whom then\n shall I fear? The Lord is the strength of my life, of\n whom then shall I be af raid? (Psalm 27 (26)-1)\n\n3 Chorus\n Though a host of men were laid against me, yet shall\n my heart not be afraid: though there rose up war\n against me,yet will I put my trust in him. (Psalm 27 (26)-3)\n\n4 Tenor\n One thing have I desired from the Lord, which I will\n require: that I may dwell in the house of the Lord all\n the days of my life to behold the fair beauty of the Lord\n and to visit his temple. (Psalm 27 (26)-4)\n\n5 Chorus\n I will offer in his dwellings an oblation with great\n gladness: I will sing and speak praises unto the Lord. (Psalm 27 (26)-6)\n\n6 Chorus\n For who is God but the Lord: or who hath any\n strength except the Lord? (Psalm 18 (17)-32)\n\n The earth trembled and quaked; the very foundations\n also of the hills shook and were removed. (Psalm 18 (17)-8)\n\n He cast forth lightnings and gave his\n thunder and destroyed them. (Psalm 18 (17)-15)\n\n7 Chorus\n They are brought down and fall'n: but we are risen. (Psalm 20 (19)-8)\n\n8 Chorus\n O praise the Lord with me and let us magnify his\n name together. (Psalm 34 (33)-3)\n\n9 Tenor\n The Lord is my strength and my shield, my heart has\n trusted in him and I am helped: therefore my heart\n danceth for joy, and in my song will I praise him. (Psalm 28 (27)-7)\n\n10  Soprano\n It is the Lord that ruleth the sea, the Lord sitteth\n above the waterflood and the Lord remaineth a king\n forever. (Psalm 29 (28)-10)\n\n11 Chorus\n Sing praises into the Lord O ye saints of his: and give\n thanks unto him for a remembrance of his holiness. (Psalm 30 (29)-5)\n\n I will remember thy name from one generation to another:\n therefore shall the people give thanks unto thee, world\n without end. (Psalm 45 (44)-18)\n\n Amen.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=58624",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Bible or other Sacred Texts",
+      "settings": [
+        {
+          "composer": "Georg Friedrich Händel",
+          "title": "/lieder/get_settings.html?ComposerId=4326",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Souvent sur la montagne, à l'ombre du...",
+      "aliases": [],
+      "composer": "Darius Milhaud",
+      "work": "/lieder/get_settings.html?ComposerId=5061",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Souvent sur la montagne, à l'ombre du vieux chêne,\nAu coucher du soleil, tristement je m'assieds ;\nJe promène au hasard mes regards sur la plaine,\nDont le tableau changeant se déroule à mes pieds.\n\nIci gronde le fleuve aux vagues écumantes ;\nIl serpente, et s'enfonce en un lointain obscur ;\nLà le lac immobile étend ses eaux dormantes\nOù l'étoile du soir se lève dans l'azur.\n\nAu sommet de ces monts couronnés de bois sombres,\nLe crépuscule encor jette un dernier rayon ;\nEt le char vaporeux de la reine des ombres\nMonte, et blanchit déjà les bords de l'horizon.\n\nCependant, s'élançant de la flèche gothique,\nUn son religieux se répand dans les airs :\nLe voyageur s'arrête, et la cloche rustique\nAux derniers bruits du jour mêle de saints concerts.\n\nMais à ces doux tableaux mon âme indifférente\nN'éprouve devant eux ni charme ni transports ;\nJe contemple la terre ainsi qu'une ombre errante\nLe soleil des vivants n'échauffe plus les morts.\n\nDe colline en colline en vain portant ma vue,\nDu sud à l'aquilon, de l'aurore au couchant,\nJe parcours tous les points de l'immense étendue,\nEt je dis : \" Nulle part le bonheur ne m'attend. \"\n\nQue me font ces vallons, ces palais, ces chaumières,\nVains objets dont pour moi le charme est envolé ?\nFleuves, rochers, forêts, solitudes si chères,\nUn seul être vous manque, et tout est dépeuplé !\n\nQue le tour du soleil ou commence ou s'achève,\nD'un oeil indifférent je le suis dans son cours ;\nEn un ciel sombre ou pur qu'il se couche ou se lève,\nQu'importe le soleil ? je n'attends rien des jours.\n\nQuand je pourrais le suivre en sa vaste carrière,\nMes yeux verraient partout le vide et les déserts :\nJe ne désire rien de tout ce qu'il éclaire ;\nJe ne demande rien à l'immense univers.\n\nMais peut-être au-delà des bornes de sa sphère,\nLieux où le vrai soleil éclaire d'autres cieux,\nSi je pouvais laisser ma dépouille à la terre,\nCe que j'ai tant rêvé paraîtrait à mes yeux !\n\nLà, je m'enivrerais à la source où j'aspire ;\nLà, je retrouverais et l'espoir et l'amour,\nEt ce bien idéal que toute âme désire,\nEt qui n'a pas de nom au terrestre séjour !\n\nQue ne puîs-je, porté sur le char de l'Aurore,\nVague objet de mes voeux, m'élancer jusqu'à toi !\nSur la terre d'exil pourquoi resté-je encore ?\nIl n'est rien de commun entre la terre et moi.\n\nQuand là feuille des bois tombe dans la prairie,\nLe vent du soir s'élève et l'arrache aux vallons ;\nEt moi, je suis semblable à la feuille flétrie :\nEmportez-moi comme elle, orageux aquilons !",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=9796",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Alphonse Marie Louis de Lamartine",
+      "settings": [
+        {
+          "composer": "Darius Milhaud",
+          "title": "/lieder/get_settings.html?ComposerId=5061",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Louis Niedermeyer",
+          "title": "/lieder/get_settings.html?ComposerId=5174",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Henri Rabaud",
+          "title": "/lieder/get_settings.html?ComposerId=26453",
+          "instrumentation": "voice and piano or orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Pianissimo",
+      "aliases": [],
+      "composer": "Celius Dougherty",
+      "work": "/lieder/get_settings.html?ComposerId=3903",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Sax mute,\nSax crying\nGold!\nAll the world's dying,\nAmber lights, purple, rose,\nBreathing,\nBreathing the music goes.\nLight as petals drifting the trumpet blows,\nLight as breezes lifting,\nShadows so light the trumpet blows.\n\nSlim fingers, flying feet,\nAnd his arm around me,\nAnd the beat and the throb of the crying brass,\nSoftly crying, softly dying.\n\nAnd the moments pass, and it’s got to end.\nSo soft he dances, so strong and soft,\nLike the lanterns swaying up aloft;\nAnd I like his breathing in my hair,\nAnd the music stops, and I care.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=1285752",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Eli Ives Collins",
+      "settings": [
+        {
+          "composer": "Celius Dougherty",
+          "title": "/lieder/get_settings.html?ComposerId=3903",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Die Stunden! wo wir auf das helle Blauen",
+      "aliases": [],
+      "composer": "Wolfgang Fortner",
+      "work": "/lieder/get_settings.html?ComposerId=4074",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Die Stunden! wo wir auf das helle Blauen\nDes Meeres starren und den Tod verstehn,\nSo leicht und feierlich und ohne Grauen,\n\nWie kleine Mädchen, die sehr blaß aussehn,\nMit großen Augen, und die immer frieren,\nAn einem Abend stumm vor sich hinsehn\n\nUnd wissen, daß das Leben jetzt aus ihren\nSchlaftrunknen Gliedern still hinüberfließt\nIn Bäum' und Gras, und sich matt lächelnd zieren\n\nWie eine Heilige, die ihr Blut vergießt.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=28784",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hugo Hofmann, Edler von Hofmannsthal",
+      "settings": [
+        {
+          "composer": "Wolfgang Fortner",
+          "title": "/lieder/get_settings.html?ComposerId=4074",
+          "instrumentation": "male voice and piano"
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Logik",
+      "aliases": [],
+      "composer": "Gary Bachlund",
+      "work": "/lieder/get_settings.html?ComposerId=8142",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Die Nacht war kalt und sternenklar,\nDa trieb im Meer bei Norderney\nEin Suahelischnurrbarthaar. -\nDie nächste Schiffsuhr wies auf drei.\n\nMir scheint da mancherlei nicht klar,\nMan fragt doch, wenn man Logik hat,\nWas sucht ein Suahelihaar\nDenn nachts um drei am Kattegatt?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=56488",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hans Bötticher",
+      "settings": [
+        {
+          "composer": "Gary Bachlund",
+          "title": "/lieder/get_settings.html?ComposerId=8142",
+          "instrumentation": "medium voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "En famille",
+      "aliases": [],
+      "composer": "William Walton",
+      "work": "/lieder/get_settings.html?ComposerId=6118",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "In the early springtime after their tea,\nThrough the young fields of the\nspringing Bohea,\nJemima, Jocasta, Dina and Deb\nWalked with their father\nSir Joshua Jebb -\nAn admiral red, whose only notion,\n(A butterfly poised on a pigtailed ocean)\nIs of the peruked sea whose swell\nBreaks on the flowerless rocks of Hell.\nUnder the thin trees,\nDeb and Dinah,\nJemima, Jocasta, walked, and finer\nTheir black hair seemed (flat-sleek to see)\nThan the young leaves of the\nspringing Bohea;\nTheir cheeks were like\nnutmeg-flowers when swells\nThe rain into foolish silver bells.\nThey said, \"If the door you would\nonly slam,\nOr if, Papa, you would once say \"Damn\" -\nInstead of merely roaring \"Avast\"\nOr boldly invoking the nautical Blast -\nWe should now stand\nin the street of Hell\nWatching siesta shutters that fell\nWith a noise like amber softly sliding;\nOur moon-like glances through\nthese gliding\nWould see at her table preened and set\nMyrrhina sitting at her toilette\nWith eyelids closed as soft\nas the breeze\nThat flows from gold flowers\non the incense-trees.\n\nThe Admiral said,\n\"You could never call -\nI assure you it would not do at all!\nShe gets down from table\nwithout saying \"Please\",\nForgets her prayers and to cross her Ts,\nIn short, her scandalous reputation\nHas shocked the whole of the\nHellish nation;\nAnd every turbaned Chinoiserie,\nWith whom we should sip\nour black Bohea,\nWould stretch out her simian\nfingers thin\nTo scratch you, my dears, like a\nmandoline;\nFor Hell is just as properly proper\nAs Greenwich, or as, Bath, or Joppa!\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=15088",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Edith Sitwell",
+      "settings": [
+        {
+          "composer": "William Walton",
+          "title": "/lieder/get_settings.html?ComposerId=6118",
+          "instrumentation": "reciter and chamber ensemble"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Du hast mir viel gegeben",
+      "aliases": [],
+      "composer": "Max von Lüttwitz",
+      "work": "/lieder/get_settings.html?ComposerId=9221",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Du hast mir viel gegeben,\ndu schenktest mir dein Herz;\ndu nahmst mir alles wieder\nund ließest mir den Schmerz.\n\nDu zeigtest mir den Himmel\nund seiner Sonne Pracht;\ndu hast ihn schnell geschlossen,\nund um mich her ist Nacht.\n\nIch ziehe nun ins Weite,\nGott schenke mir die Ruh',\nwenn mich in fernem Lande\ndeckt Mutter Erde zu.\n\nWenn's an des Tales Felsen\nwie leise Seufzer klagt,\nso denk', 's ist meine Stimme,\ndie „Lebewohl“ dir sagt.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=139209",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "possibly by Nikolaus Lenau",
+      "settings": [
+        {
+          "composer": "Max von Lüttwitz",
+          "title": "/lieder/get_settings.html?ComposerId=9221",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Wenn dies Herz hat ausgeschlagen",
+      "aliases": [],
+      "composer": "Carl Heinrich Döring",
+      "work": "/lieder/get_settings.html?ComposerId=9343",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Wenn dies Herz hat ausgeschlagen,\nMögt ihr's still zu Grabe tragen,\nSpart am Sarge Kranz und Bier,\nNur ein Kreuz vergönnet mir.\nPflanzt auch keine duft'gen Rosen\nAuf das Grab des Freudelosen,\nWählt für meine Schlummerstatt\nImmergrün und Epheublatt.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=79461",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Julius Karl Reinhold Sturm",
+      "settings": [
+        {
+          "composer": "Carl Heinrich Döring",
+          "title": "/lieder/get_settings.html?ComposerId=9343",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Clara Mathilda Faisst",
+          "title": "/lieder/get_settings.html?ComposerId=15987",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Ernst Leopold Christian Mielck",
+          "title": "/lieder/get_settings.html?ComposerId=38901",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ich glaube an Alles noch nie Gesagte",
+      "aliases": [],
+      "composer": "Steven Ebel",
+      "work": "/lieder/get_settings.html?ComposerId=32288",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ich glaube an Alles noch nie Gesagte.\nIch will meine frömmsten Gefühle befrein.\nWas noch keiner zu wollen wagte,\nwird mir einmal unwillkürlich sein.\n\nIst das vermessen, mein Gott, vergieb.\nAber ich will dir damit nur sagen:\nMeine beste Kraft soll sein wie ein Trieb,\nso ohne Zürnen und ohne Zagen;\nso haben dich ja die Kinder lieb.\n\nMit diesem Hinfluten, mit diesem Münden\nin breiten Armen ins offene Meer,\nmit dieser wachsenden Wiederkehr\nwill ich dich bekennen, will ich dich verkünden\nwie keiner vorher.\n\nUnd ist das Hoffahrt, so lass mich hoffährtig sein\nfür mein Gebet,\ndas so ernst und allein\nvor deiner wolkigen Stirne steht.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=27503",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Rainer Maria Rilke",
+      "settings": [
+        {
+          "composer": "Steven Ebel",
+          "title": "/lieder/get_settings.html?ComposerId=32288",
+          "instrumentation": "mezzo-soprano or tenor and piano"
+        },
+        {
+          "composer": "Siegfried Fournes",
+          "title": "/lieder/get_settings.html?ComposerId=42041",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Geoffrey Gordon",
+          "title": "/lieder/get_settings.html?ComposerId=32666",
+          "instrumentation": "soprano, mezzo-soprano, alto, tenor, baritone and bass"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 624,
+  "lieder_position": 672,
   "aria_opera": 0,
   "aria_scene": 8
 }
