@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T20:06:28+01:00",
+  "generated_at": "2026-11-09T20:16:57+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -4201,10 +4201,370 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Récitatif",
+      "aliases": [],
+      "composer": "(Franz) Joseph Haydn",
+      "work": "/lieder/get_settings.html?ComposerId=4366",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "fr",
+      "text": "URIEL:\n Et Dieu créa l'homme à son\n image, à l'image de Dieu il le créa.\n Homme et femme, il les créa. Le souffle\n de la vie il lui souffla dans son visage et\n l'homme devint une âme vivante.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=87120",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "(Franz) Joseph Haydn",
+          "title": "/lieder/get_settings.html?ComposerId=4366",
+          "instrumentation": "tenor and orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Divan",
+      "aliases": [],
+      "composer": "Ulvi Cemal Erkin",
+      "work": "/lieder/get_settings.html?ComposerId=31211",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "tr",
+      "text": "Ah! Vardım ki yurdundan ayak göçürmüş,\nYavru gitmiş, ıssız kalmış otağı.\nCamlar şikest olmuş, meyler dökülmüş.\nSakiler meclisten çekmiş ayağı.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=123335",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Bayburtlu Zihni",
+      "settings": [
+        {
+          "composer": "Ulvi Cemal Erkin",
+          "title": "/lieder/get_settings.html?ComposerId=31211",
+          "instrumentation": "bass-baritone and orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Örök mámor",
+      "aliases": [],
+      "composer": "Emmerich Kálmán",
+      "work": "/lieder/get_settings.html?ComposerId=8018",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "hu",
+      "text": "Tavaszi virágzársad illatában\nhadd üdvözűljek én.\nBibor ajkadnak minden mosolyában\noh menny fény!\n\nSzerelmes szivünk minden lüktetése\nAz örök mámor egy picinyke része.\n\nSzeremünknek ez örök mámorában\naz ajkam csókra vár,\nNe vesztegeljünk e tavaszi lázban,\nminden percért mi kár!\n\nAz örök mámor bármi véghetetlen:\nA csókok csókját csókolkjuk ketten.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=27914",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Attila Gerö",
+      "settings": [
+        {
+          "composer": "Emmerich Kálmán",
+          "title": "/lieder/get_settings.html?ComposerId=8018",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Das ist der alte Märchenwald!",
+      "aliases": [],
+      "composer": "Aleksandr Tikhonovich Gretchaninov",
+      "work": "/lieder/get_settings.html?ComposerId=4254",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Das ist der alte Märchenwald!\nEs duftet die Lindenblüte!\nDer wunderbare Mondenglanz\nBezaubert mein Gemüte.\n\nIch ging fürbaß, und wie ich ging,\nErklang es in der Höhe.\nDas ist die Nachtigall, sie singt\nVon Lieb' und Liebeswehe.\n\nSie singt von Lieb' und Liebesweh,\nVon Tränen und von Lachen,\nSie jubelt so traurig, sie schluchzet so froh,\nVergessene Träume erwachen. --\n\nIch ging fürbaß, und wie ich ging,\nDa sah ich vor mir liegen,\nAuf freiem Platz, ein großes Schloß,\nDie Giebel hoch aufstiegen.\n\nVerschlossene Fenster, überall\nEin Schweigen und ein Trauern;\nEs schien, als wohne der stille Tod\nIn diesen öden Mauern.\n\nDort vor dem Tor lag eine Sphinx,\nEin Zwitter von Schrecken und Lüsten,\nDer Leib und die Tatze wie ein Löw',\nEin Weib an Haupt und Brüsten.\n\nEin schönes Weib! Der weiße Blick,\nEr sprach von wildem Begehren;\nDie stummen Lippen wölbten sich\nUnd lächelten stilles Gewähren.\n\nDie Nachtigall, sie sang so süß --\nIch konnt nicht widerstehen --\nUnd als ich küßte das holde Gesicht,\nDa war's um mich geschehen.\n\nLebendig ward das Marmorbild,\nder Stein begann zu ächzen --\nSie trank meiner Küsse lodernde Glut\nMit Dürsten und mit Lechzen.\n\nSie trank mir fast den Odem aus --\nUnd endlich, wollustheischend,\nUmschlang sie mich, meinen armen Leib\nMit den Löwentatzen zerfleischend.\n\nEntzückende Marter und wonniges Weh!\nDer Schmerz wie die Lust unermeßlich!\nDerweilen des Mundes Kuß mich beglückt,\nVerwunden die Tatzen mich gräßlich.\n\nDie Nachtigall sang: \"O schöne Sphinx!\nO Liebe! was soll es bedeuten,\nDaß du vermischest mit Todesqual\nAll deine Seligkeiten?\n\nO schöne Sphinx! O löse mir\nDas Rätsel, das wunderbare!\nIch hab darüber nachgedacht\nSchon manche tausend Jahre.\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=34500",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Heinrich Heine",
+      "settings": [
+        {
+          "composer": "Aleksandr Tikhonovich Gretchaninov",
+          "title": "/lieder/get_settings.html?ComposerId=4254",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Heinrich von Herzogenberg",
+          "title": "/lieder/get_settings.html?ComposerId=4407",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Friedrich Jaecker",
+          "title": "/lieder/get_settings.html?ComposerId=10000",
+          "instrumentation": "soprano, alto flute, viola"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Når Viin, og hvad der hører til",
+      "aliases": [],
+      "composer": "Friedrich Ludwig Æmelius Kunzen",
+      "work": "/lieder/get_settings.html?ComposerId=4741",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "da",
+      "text": "Når Viin, og hvad der hører til,\nOpvarmer os til Glæde;\nEnhver da strax, om hvad han vil,\nEr rede til at qvæde.\nEndskjøndt, når han skal sige Skandt,\nEr sådant tidt det bare Tant:\nHvad om man dog var lidt klog iblandt?\n\nEt Suk for elskte Fædreland\nVed første Skål skal stige:\nLyksalig leve hver en Mand\nI Dannerkongens Rige!\nVor Konge først, og så hver Sjel,\nHvis Værk og Flid er Landets Vel,\nHøjt Kongen og Landet Fred og Held!\n\nDen næste Skål skal offres dem,\nHvis Sveed os Brødet vinder,\nOg dem, der værne om vort Hjem,\nOg skrække vore Fiender.\nVelsign o Himmel, Mandens Sved!\nGlæd Landet med den gyldne Fred,\nKjæk Stridsmanden ståe til Kamp bereed!\n\nOg Borger, Konstner, Handelsmand,\nOg hvo det endog være,\nSom stræber for vort Fædreland,\nDets Velfærd og dets Ære;\nMed Held de bruge Træ og Steen,\nOg Skib og Øxe, Rok og Pen,\nTil Hæder og Held for Nordens Mænd!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=129820",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Christen Henriksen Pram",
+      "settings": [
+        {
+          "composer": "Friedrich Ludwig Æmelius Kunzen",
+          "title": "/lieder/get_settings.html?ComposerId=4741",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Spring",
+      "aliases": [],
+      "composer": "Werner Bühler",
+      "work": "/lieder/get_settings.html?ComposerId=15945",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "In dusky vaults\n I have long dreamt\n of your trees and blue skies,\n of your scents and the songs of birds.\n\n Now you lie revealed\n in glistening splendour,\n flushed with light,\n like a wonder before me.\n\n You know me again,\n you beckon tenderly to me;\n all of my limbs quiver\n from your blissful presence!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=7958",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Emily Ezust",
+      "settings": [
+        {
+          "composer": "Werner Bühler",
+          "title": "/lieder/get_settings.html?ComposerId=15945",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Richard Czelinski",
+          "title": "/lieder/get_settings.html?ComposerId=15958",
+          "instrumentation": "voice, violin, and piano"
+        },
+        {
+          "composer": "Heinz Dankert",
+          "title": "/lieder/get_settings.html?ComposerId=15964",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Twenty years",
+      "aliases": [],
+      "composer": "Francis Boott",
+      "work": "/lieder/get_settings.html?ComposerId=3500",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Beg your pardon, old fellow! I think\nI was dreaming just now when you spoke.\nThe fact is, the musical clink\nOf the ice on your wine-goblet's brink\nA chord of my memory woke.\n\nAnd I stood in the pasture-field where\nTwenty summers ago I had stood;\nAnd I heard in that sound, I declare,\nThe clinking of bells in the air,\nOf the cows coming home from the wood.\n\nThen the apple-bloom shook on the hill;\nAnd the mullein-stalks tilted each lance;\nAnd the sun behind Rapalye's mill\nWas my uttermost West, and could thrill\nLike some fanciful land of romance.\n\nThen my friend was a hero, and then\nMy girl was an angel. In fine,\nI drank buttermilk; for at ten\nFaith asks less to aid her than when\nAt thirty we doubt over wine.\n\nAh, well, it DOES seem that I must\nHave been dreaming just now when you spoke,\nOr lost, very like, in the dust\nOf the years that slow fashioned the crust\nOn that bottle whose seal you last broke.\n\nTwenty years was its age, did you say?\nTwenty years? Ah, my friend, it is true!\nAll the dreams that have flown since that day,\nAll the hopes in that time passed away,\nOld friend, I've been drinking with you!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=83038",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "",
+      "settings": [
+        {
+          "composer": "Francis Boott",
+          "title": "/lieder/get_settings.html?ComposerId=3500",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Lass dich belauschen",
+      "aliases": [],
+      "composer": "Robert Emmerich",
+      "work": "/lieder/get_settings.html?ComposerId=8703",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Lass dich belauschen,\nDu stille Nacht!\nNur Wasser rauschen,\nNur Liebe wacht.\n\nVom Walde drüben\nTönt süsser Schall,\nEs singt von [Lieben]1\nDie Nachtigall.\n\nDer Vogel schweiget,\nDer Mond entwich,\nZur Blume neiget\nDie Blume sich.\n\nDer Liebe Fülle\nDurchströmt die Flur,\nIn Nacht und Stille\nSinkt die Natur.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=21910",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Justinus",
+      "settings": [
+        {
+          "composer": "Robert Emmerich",
+          "title": "/lieder/get_settings.html?ComposerId=8703",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Edgar Hansen",
+          "title": "/lieder/get_settings.html?ComposerId=15877",
+          "instrumentation": "TTBB chorus a cappella"
+        },
+        {
+          "composer": "Friedrich Hinrichs",
+          "title": "/lieder/get_settings.html?ComposerId=9169",
+          "instrumentation": "duet for 2 sopranos with piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "In loving thee thou know'st I am...",
+      "aliases": [],
+      "composer": "Richard Simpson",
+      "work": "/lieder/get_settings.html?ComposerId=9051",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "In loving thee thou know'st I am forsworn,\nBut thou art twice forsworn, to me love swearing;\nIn act thy bed-vow broke, and new faith torn,\nIn vowing new hate after new love bearing:\nBut why of two oaths' breach do I accuse thee,\nWhen I break twenty? I am perjur'd most;\nFor all my vows are oaths but to misuse thee,\nAnd all my honest faith in thee is lost:\nFor I have sworn deep oaths of thy deep kindness,\nOaths of thy love, thy truth, thy constancy;\nAnd, to enlighten thee, gave eyes to blindness,\nOr made them swear against the thing they see;\n    For I have sworn thee fair; more perjur'd I,\n    To swear against the truth so foul a lie!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=67469",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "William Shakespeare",
+      "settings": [
+        {
+          "composer": "Richard Simpson",
+          "title": "/lieder/get_settings.html?ComposerId=9051",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Italian (Italiano)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Da steh' ich denn und träume",
+      "aliases": [],
+      "composer": "Heinrich (Ludwig Egmont) Dorn",
+      "work": "/lieder/get_settings.html?ComposerId=7151",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Da steh' ich denn und träume\nUnd sinne die ganze Nacht,\nWas mich um all' mein Leben\nUnd all' meine Liebe gebracht.\n\nIch hab' ein Mal voll Wehmuth\nIn's Auge Dir geschaut,\nDas war so wunderselig\nVon Silberperlen umthaut;\n\nIch habe zu tief Dich geschlossen\nIn meine arme Brust,\nKaum, daß ich den Himmel geahnet,\nKaum, da^szlig; ich's selber gewußt.\n\nIch habe zu heiß Dich geliebet,\nIch habe zu fest Dir vertraut,\nIch habe zu warm Dir, zu wonnig\nIn's dunkle Auge geschaut.\n\nIch hab' in tausend Thränen\nDie stille Nächte durchwacht,\nDas hat mich um all' mein Leben\nUm all' meine Liebe gebracht.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=103526",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Otto Inkermann",
+      "settings": [
+        {
+          "composer": "Heinrich (Ludwig Egmont) Dorn",
+          "title": "/lieder/get_settings.html?ComposerId=7151",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Nothing comes, nothing will ever come for my Soul",
+      "aliases": [],
+      "composer": "Alban Maria Johannes Berg",
+      "work": "/lieder/get_settings.html?ComposerId=3386",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Nothing comes, nothing will ever come for my Soul.\nI have waited, waited, oh waited !\nThe days are creeping past, they flutter away.\nMy ashblond silken hair blows pointlessly over my sallow face.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=120",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Anne Ozorio",
+      "settings": [
+        {
+          "composer": "Alban Maria Johannes Berg",
+          "title": "/lieder/get_settings.html?ComposerId=3386",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Sur ton sein pâle mon cœur dort",
+      "aliases": [],
+      "composer": "Fernand Corot",
+      "work": "/lieder/get_settings.html?ComposerId=24769",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Sur [ton sein]1 pâle mon cœur dort\nD'un sommeil doux comme la mort :\nMort exquise, mort parfumée\n[Du]2 souffle de la bien aimée :\nSur [un lys]3 pâle mon cœur dort ...",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=9776",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Henri Cazalis",
+      "settings": [
+        {
+          "composer": "Fernand Corot",
+          "title": "/lieder/get_settings.html?ComposerId=24769",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "René Doire",
+          "title": "/lieder/get_settings.html?ComposerId=32118",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Henri Duparc",
+          "title": "/lieder/get_settings.html?ComposerId=3926",
+          "instrumentation": "high voice and piano or orchestra"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 528,
+  "lieder_position": 576,
   "aria_opera": 0,
   "aria_scene": 8
 }
