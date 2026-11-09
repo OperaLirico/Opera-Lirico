@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-09T14:50:45+01:00",
-  "catalogue_source": "Wikisource Categoria:Canti + curated starter works",
+  "generated_at": "2026-11-09T15:32:29+01:00",
+  "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
       "title": "Nessun dorma",
@@ -325,7 +325,358 @@
       "licenseNote": "请查看来源页的公版或许可标注；转录文本依 Wikisource 适用许可提供出处。",
       "categories": [],
       "autoImported": true
+    },
+    {
+      "title": "La luna y la muerte",
+      "aliases": [],
+      "composer": "Lucien Goethals",
+      "work": "/lieder/get_settings.html?ComposerId=38990",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "es",
+      "text": "La luna tiene dientes de marfil.\n¡Qué vieja y triste asoma!\nEstán los cauces secos,\nlos campos sin verdores\ny los árboles mustios\nsin nidos y sin hojas.\nDoña Muerte, arrugada,\npasea por sauzales\ncon su absurdo cortejo\nde ilusiones remotas.\nVa vendiendo colores\nde cera y de tormenta\ncomo un hada de cuento\nmala y enredadora.\n\nLa luna le ha comprado\npinturas a la Muerte.\nEn esta noche turbia\n¡está la luna loca!\n\nYo mientras tanto pongo\nen mi pecho sombrío\nuna feria sin músicas\ncon las tiendas de sombra.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=267252",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Federico García Lorca",
+      "settings": [
+        {
+          "composer": "Lucien Goethals",
+          "title": "/lieder/get_settings.html?ComposerId=38990",
+          "instrumentation": "voice and orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Die zerbrochene Vase",
+      "aliases": [],
+      "composer": "Adolf Wallnöfer",
+      "work": "/lieder/get_settings.html?ComposerId=6113",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ein Schlag hat jene Schale einst berühret,\nin der die selt'ne Blume dort verblüht;\nkaum hat man einen Klang dabei verspüret,\nund kaum das Aug' den feinen Riss noch sieht!\n\nUnd doch der Sprung in dem kristall'nen Glase\nvon Tag zu Tage langsam weiter reißt,\nso unaufhaltsam wachsend um die Vase,\nbis er sie wie ein silbern Haar umkreist.\n\nDie Blume welkt und stirbt, denn tropfenweise\ndas Wasser aus der Schale sickernd fließt.\nNoch weiß es niemand, darum naht euch leise\nund rührt nicht d'ran, nun sie zerbrochen ist.\n\nSo trifft das Herz auch wohl mit einem Schlage\ndie Hand, die wir geliebt mit treuem Sinn,\nund es zerreißt stets mehr von Tag zu Tage,\nund seiner Liebe Blume stirbt dahin!\n\nWohl ahnt die Welt nichts, doch im tiefsten Grunde,\nda blutet's in dem Herzen heimlich dann.\nO tastet nicht an die verborg'ne Wunde!\nEs ist gebrochen, rühret nicht daran!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=137006",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Ernst Ziegler",
+      "settings": [
+        {
+          "composer": "Adolf Wallnöfer",
+          "title": "/lieder/get_settings.html?ComposerId=6113",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Their groves o' sweet myrtle",
+      "aliases": [],
+      "composer": "(Franz) Joseph Haydn",
+      "work": "/lieder/get_settings.html?ComposerId=4366",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "sco",
+      "text": "Their groves o' sweet myrtle let foreign lands reckon,\nWhere bright-beaming summers exalt the perfume,\nFar dearer to me yon lone glen o' green breckan,\nWi' the burn stealing under the lang yellow broom;\nFar dearer to me yon humble broom bowers,\nWhere the blue-bell and gowan lurk lowly unseen,\nFor there, lightly tripping amang the wild flowers,\nA listening the linnet, aft wanders my Jean.\n\nTho' rich is the breeze in their gay sunny valleys,\nAnd cauld, Caledonia's blast on the wave;\nTheir sweet-scented woodlands that skirt the proud palace,\nWhat are they? The haunt o' the tyrant and slave!\nThe slave's spicy forests, and gold-bubbling fountains,\nThe brave Caledonian views wi' disdain:\nHe wanders as free as the wind o'er his mountains,\nSave love's willing fetters, the chains o' his Jean.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=91968",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Robert Burns",
+      "settings": [
+        {
+          "composer": "(Franz) Joseph Haydn",
+          "title": "/lieder/get_settings.html?ComposerId=4366",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Morning dew",
+      "aliases": [],
+      "composer": "(Friedrich) August Bungert",
+      "work": "/lieder/get_settings.html?ComposerId=3610",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "With caresses and loving, we [wished]1\nTo enjoy the delightful night.\nWhere have the hours gone?\nThe rooster is already awake,\n\nThe sun, it brings much sorrow,\nThe passing night weeps;\nSo I must weep and depart,\nFor the world is already awake\n\nI wish there were no sun\nSave for your eyes so clear,\nWe would tarry in daylight and bliss,\nAnd the world would sleep forever.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=73562",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "(Friedrich) August Bungert",
+          "title": "/lieder/get_settings.html?ComposerId=3610",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Kasimir Danysz",
+          "title": "/lieder/get_settings.html?ComposerId=21363",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Adalbert von Goldschmidt",
+          "title": "/lieder/get_settings.html?ComposerId=4216",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Dans la chambre",
+      "aliases": [],
+      "composer": "Ernst Baeker",
+      "work": "/lieder/get_settings.html?ComposerId=28977",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Éclat du soleil d'automne.\nL'adorable soir regarde si calmement dedans.\nUn petit feu rouge\nCrépite dans le fourneau et flambe.\nAinsi avec ma tête sur tes genoux\nC'est agréable pour moi.\nQuand mes yeux reposent ainsi dans les tiens,\nAvec quelle douceur les minutes passent.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=111302",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "Ernst Baeker",
+          "title": "/lieder/get_settings.html?ComposerId=28977",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Alban Maria Johannes Berg",
+          "title": "/lieder/get_settings.html?ComposerId=3386",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Michael Brough",
+          "title": "/lieder/get_settings.html?ComposerId=25632",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Quand les roses s'épanouissent",
+      "aliases": [],
+      "composer": "Frank Valentin Van der Stucken",
+      "work": "/lieder/get_settings.html?ComposerId=5878",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Quand les roses s'épanouissent,\nLe printemps touche à sa fin;\nQuand le soleil brille au plus haut,\nLe solstice s'approche.\n\nToute vie doit s'éteindre,\nQui ne peut plus croître:\nEt je vais aussi, dans mon tombeau,\nÔ ma chère, m'incliner.\n\nMaintenant que j'ai trouvé l'amour, à quoi\nPuis-je encore aspirer ici-bas ?\nOuvre-moi tes bras et laisse-moi\nMourir dans un baiser !",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=60979",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Pierre Mathé",
+      "settings": [
+        {
+          "composer": "Frank Valentin Van der Stucken",
+          "title": "/lieder/get_settings.html?ComposerId=5878",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Carl Friedrich Zöllner",
+          "title": "/lieder/get_settings.html?ComposerId=30929",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Dutch (Nederlands)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Now begin on Christmas Day",
+      "aliases": [],
+      "composer": "John La Montaine",
+      "work": "/lieder/get_settings.html?ComposerId=4750",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Moonless darkness stands between.\nPast, O Past, no more be seen!\nBut the Betlehem star may lead me\nTo the sight of him who freed me\nFrom the self that I have been.\n\nMake me pure, Lord,\nThou art holy;\nMake me meek, Lord:\nThou wert lowly,\nNow beginning, and always;\nNow beginning, and allway;\nNow beginning on Christmas Day.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=8332",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Gerard Manley Hopkins",
+      "settings": [
+        {
+          "composer": "John La Montaine",
+          "title": "/lieder/get_settings.html?ComposerId=4750",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Die bunten Kühe",
+      "aliases": [],
+      "composer": "Max Reger",
+      "work": "/lieder/get_settings.html?ComposerId=5461",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Drei bunte Kühe in guter Ruh\nUnd des Nachbarn Hanne dazu,\n  Traf ich heute in der Früh,\n  Junghanne und ihre bunten Küh.\n\nDas gab einen guten, glücklichen Tag.\nDie Sonne auf allen Wiesen lag,\n  Die ganze Welt war so bunt und blank.\n  Der Hanne und ihren Kühen Dank!\n\nWas glaubt ihr, trifft man in der Früh,\nStatt der drei bunten drei schwarze Küh\n  Und statt der Hanne die alte Gret?\n  Der ganze Tag ist verwünscht und verweht.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=5540",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Gustav Falke",
+      "settings": [
+        {
+          "composer": "Max Reger",
+          "title": "/lieder/get_settings.html?ComposerId=5461",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Now God be with old Simeon",
+      "aliases": [],
+      "composer": "Melvill David",
+      "work": "/lieder/get_settings.html?ComposerId=15048",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Now God be with old Simeon,\nFor he made cans for many a one,\nAnd a good old man was he.\nAnd Jenkin was his journeyman,\nAnd he could tipple off ev'ry can,\nAnd thus he said to me:\n\"To whom drink you?\"\n\"Sir Knave, to you.\"\nThen hey ho jolly Jenkin,\nI spy a kanve in drinking,\nCome pass the bowl to me.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=46622",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Melvill David",
+          "title": "/lieder/get_settings.html?ComposerId=15048",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "White rose sighed in the morn",
+      "aliases": [],
+      "composer": "Arthur Foote",
+      "work": "/lieder/get_settings.html?ComposerId=4064",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "White rose sighed in the morn,\nRed rose laughed in the noon,\nAnd \"Sweetest sweetness is ended soon,\"\nAnd \"Never heed for the thorn.\"\n\n\"Love's hour passes away,\"\nWhite rose breathed in my ear;\nRed rose whispered \"No need to fear;\nThe day is enough for day.\"\n\nShall I need white or red?\nShall I heed both aright?\nSighing and laughing, red and white,\n'Tis \"Love her\" they both have said.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=88449",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "",
+      "settings": [
+        {
+          "composer": "Arthur Foote",
+          "title": "/lieder/get_settings.html?ComposerId=4064",
+          "instrumentation": "vocal duet for soprano and tenor with piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Das Vaterhaus",
+      "aliases": [],
+      "composer": "Ignaz von Seyfried",
+      "work": "/lieder/get_settings.html?ComposerId=22861",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Wir rasseln durch ein Städtchen\nso öd' und friedhofstill,\nnur blass behaucht vom Monde,\nder eben scheiden will.\n\nEin Kirchhof scheint das Städtchen,\nein Grabstein jedes Haus;\nes seh'n die Fensterreihen\nwie Epitaphien aus.\n\nInmitten ragt der Kirchturm\nempor [in]1 Sternennacht,\nder, wie das Bild des Heilands,\nstill ob dem Friedhof wacht.\n\nDoch wie die nächt'ge Windsbraut\nan Gräbern stürmt vorbei,\nso brausen wir vorüber\nan fahler Häuserreih'.\n\nUnd mit [mir]2 huscht Erinn'rung\nvorüber Grab an Grab;\nals Nachttau fällt die Träne\nmir auf die Hand herab.\n\nAch, dort das kleine Häuschen\nan wohlbekanntem Ort!\nDer Jugend gold'ne Träume\nsind all' begraben dort.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=143156",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Ignaz von Seyfried",
+          "title": "/lieder/get_settings.html?ComposerId=22861",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Abschied vom Liebchen",
+      "aliases": [],
+      "composer": "Franz Wilhelm Abt",
+      "work": "/lieder/get_settings.html?ComposerId=3121",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Wie wird mir so bang, da ich scheiden soll,\nWie wird mir's im Herzen so weh,\nWeil Liebchen, die Augen von Thränen voll,\nIch drüben am Fenster seh;\nSie schwenkt das Tüchlein, sie winkt und nickt,\nHat tausend Küsse mir nachgeschickt,\nUnd flüstert ein stilles Ade --\nAde, Ade,\nUnd flüstert ein stilles Ade. --\n\nO Schifflein, du, an der Garonne Strand,\nDu eilst in die wogende Fluth,\nDu läßt mir mein Liebchen im weiten Land,\nMein Liebchen so fromm und gut.\nLeb wohl, du Mägdlein, mit holdem Blick,\nNoch schaut dein Treuer nach dir zurück,\nUnd flüstert ein stilles Ade --\nAde, Ade,\nUnd flüstert ein stilles Ade.\n\nBehüt' dich der Himmel, du herz'ge Maid,\nGedenk' in der Ferne auch mein,\nUnd wär' ich auch viel tausend Meilen weit,\nMein Herz wird bei dir stets sein,\nIm Morgenroth, bei des Abend's grau'n\nWerd' stets dein liebliches Bild ich schau'n,\nAuf Wiederseh'n, Liebchen Ade,\nAde, Ade,\nAuf Wiederseh'n, Liebchen Ade.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=73855",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "from Volkslieder",
+      "settings": [
+        {
+          "composer": "Franz Wilhelm Abt",
+          "title": "/lieder/get_settings.html?ComposerId=3121",
+          "instrumentation": "vocal quartet of male voices"
+        },
+        {
+          "composer": "Theodor Bubeck",
+          "title": "/lieder/get_settings.html?ComposerId=10576",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Louis Flügge",
+          "title": "/lieder/get_settings.html?ComposerId=21332",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
     }
   ],
-  "scan_cursor": 144
+  "scan_cursor": 144,
+  "lieder_position": 48
 }
