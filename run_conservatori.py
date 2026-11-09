@@ -7,7 +7,7 @@ Two problems show up in practice:
   so a single attempt leaves visible holes in the board.
 * A failed run therefore must not delete what a previous run already read.
 
-So: retry at the fetcher boundary, and after the collector writes its file,
+So: retry once at the fetcher boundary, and after the collector writes its file,
 replace any failed record with the most recent successful snapshot of that
 institution (marked ``cached`` with its own ``checked_at``) when one exists in
 the repository. A site that never succeeds stays marked unreachable.
@@ -21,8 +21,8 @@ from pathlib import Path
 
 import scrape_conservatori as core
 
-ATTEMPTS = 3
-TIMEOUT = 30
+ATTEMPTS = 2
+TIMEOUT = 25
 DATA = Path(__file__).resolve().parent / "data" / "conservatori.json"
 
 
