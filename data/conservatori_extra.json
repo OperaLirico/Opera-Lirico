@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-09T20:13:53+01:00",
-  "cursor": 0,
+  "updated_at": "2026-11-09T20:30:00+01:00",
+  "cursor": 2,
   "items": [
     {
       "number": 200,
@@ -21,6 +21,105 @@
       "source": "wikidata",
       "wikidata_label": "Conservatorio Statale di Musica Nicola Sala - Benevento",
       "added_at": "2026-11-09T19:54:17+01:00"
+    },
+    {
+      "number": 300,
+      "city": "米兰",
+      "school": "Accademia Teatro alla Scala",
+      "url": "https://www.accademialascala.it/musica",
+      "homepage": "https://www.accademialascala.it/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
+    },
+    {
+      "number": 301,
+      "city": "罗马",
+      "school": "Accademia Nazionale di Santa Cecilia",
+      "url": "https://santacecilia.it/corso/canto/",
+      "homepage": "https://santacecilia.it/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
+    },
+    {
+      "number": 302,
+      "city": "佛罗伦萨",
+      "school": "Accademia del Maggio Musicale Fiorentino",
+      "url": "https://www.maggiofiorentino.com/accademia/",
+      "homepage": "https://www.maggiofiorentino.com/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
+    },
+    {
+      "number": 303,
+      "city": "都灵",
+      "school": "Scuola di canto corale del Teatro Regio",
+      "url": "https://www.teatroregio.torino.it/scuola-canto-corale/",
+      "homepage": "https://www.teatroregio.torino.it/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
+    },
+    {
+      "number": 304,
+      "city": "罗马",
+      "school": "Scuola di canto corale del Teatro dell'Opera",
+      "url": "https://www.operaroma.it/opera-giovani/scuola-di-canto-corale/bandi/",
+      "homepage": "https://www.operaroma.it/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
+    },
+    {
+      "number": 305,
+      "city": "那不勒斯",
+      "school": "Accademia per cantanti lirici del Teatro San Carlo",
+      "url": "https://www.teatrosancarlo.it/educational/accademia-per-cantanti-lirici/",
+      "homepage": "https://www.teatrosancarlo.it/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
+    },
+    {
+      "number": 306,
+      "city": "巴勒莫",
+      "school": "Accademia Lirica del Teatro Massimo",
+      "url": "https://www.teatromassimo.it/notizie/pubblicato-il-bando-dellaccademia-lirica-2026-2027/",
+      "homepage": "https://www.teatromassimo.it/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
+    },
+    {
+      "number": 307,
+      "city": "热那亚",
+      "school": "Accademia del Teatro Carlo Felice",
+      "url": "https://www.carlofelice.it/accademia/",
+      "homepage": "https://www.carlofelice.it/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
+    },
+    {
+      "number": 308,
+      "city": "诺瓦拉",
+      "school": "Accademia AMO del Teatro Coccia",
+      "url": "https://www.teatrococcia.it/accademia-amo.html",
+      "homepage": "https://www.teatrococcia.it/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
+    },
+    {
+      "number": 309,
+      "city": "佩萨罗",
+      "school": "Accademia Rossiniana Alberto Zedda",
+      "url": "https://www.rossinioperafestival.it/formazione/accademia-rossiniana-alberto-zedda/bando/",
+      "homepage": "https://www.rossinioperafestival.it/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
+    },
+    {
+      "number": 310,
+      "city": "帕尔马",
+      "school": "Accademia Verdiana del Teatro Regio di Parma",
+      "url": "https://teatroregioparma.it/formazione/accademia-verdiana/accademia-verdiana-2026/",
+      "homepage": "https://teatroregioparma.it/",
+      "source": "curated-accademia",
+      "added_at": "2026-11-09T20:30:00+01:00"
     }
   ]
 }
