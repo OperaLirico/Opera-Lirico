@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T19:02:47+01:00",
+  "generated_at": "2026-11-09T19:50:11+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -3126,10 +3126,370 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "As‑tu vu de tes yeux",
+      "aliases": [],
+      "composer": "Ture Rangström",
+      "work": "/lieder/get_settings.html?ComposerId=5434",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "As-tu vu de tes yeux\nLe jeu du soleil sur les champs et les flots\nTandis qu'avec crainte ton oreille entend\nLes aboiements de chiens et le bruit des sabots\nDe la chasse cruelle,\nLa chasse cruelle de la nuit.\n\nAs-tu fui à travers bois\nComme une biche, et tremblé de peur,\nTandis que tu sautais cruellement en avant\nAvec une lance levée vers toi\nDans la chasse cruelle,\nLa chasse cruelle de la nuit.\n\nAs-tu peur que la tourterelle des bois\nS'envole au-dessus de la gâtine et de la lande\nTandis que d'étranges sons, tout comme toi,\nEffarouchaient l'oiseau de son nid douillet,\nDans la chasse cruelle,\nLa chasse cruelle de la nuit.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=85543",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Pierre Mathé",
+      "settings": [
+        {
+          "composer": "Ture Rangström",
+          "title": "/lieder/get_settings.html?ComposerId=5434",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Pierre Mathé",
+          "title": "./get_texts.html?ContribId=613",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Put your head, darling, darling, darling",
+      "aliases": [],
+      "composer": "Ivor (Bertie) Gurney",
+      "work": "/lieder/get_settings.html?ComposerId=1090",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Put your head, darling, darling, darling,\nYour darling black head my heart above;\nOh, mouth of honey, with the thyme for fragrance,\nwho, with heart in breast, could deny you love?\nOh, many and many a young girl for me is pining,\nLetting her locks of gold to the cold wind free,\nFor me, the foremost of our gay young fellows;\nBut I'd leave a hundred, pure love, for thee!\nThen put your head, darling, darling, darling,\nYour darling black head my heart above;\nOh, mouth of honey, with the thyme for fragrance,\nWho, with heart in breast, could deny you love?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=144887",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Samuel Ferguson, Sir",
+      "settings": [
+        {
+          "composer": "Ivor (Bertie) Gurney",
+          "title": "/lieder/get_settings.html?ComposerId=1090",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Das Hütchen wollt im Garten herum...",
+      "aliases": [],
+      "composer": "Friedrich August Reissiger",
+      "work": "/lieder/get_settings.html?ComposerId=11116",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Das Hütchen wollt im Garten herum spazieren gehn,\nDa sah es mit einem Buche einen dicken Pfaffen stehn,\nDer war wie Stroh so dumm\nUnd hing das Maul so krumm!\nDa zupgt es ihn am Schopfe:\n\"Was hast du denn im Kopfe?\"\n\n\"Ach!\"  sprach der Pfaff':  \"ich soll da zur Kirchenversammlung gehn,\nLateinisch disputieren, und thu kein Wort verstehn!\nMich hat man ausgewählt,\nDer nicht bis dreie zählt;\nIch weiß vor Angst und Bangen\nNicht, wo ich soll anfangen?\"  --\n\n\"Getrost du, großer Esel!\"  sprach Hütchen, das kleine Ding:\n\"Da!  --  nimm, von Lorbeerkringeln, den Firlefanzering,\nDen steck dir an, so schafft\nEr Weisheit dir und Kraft:\nDu siegst an jedem Orte\nMit jedem deiner Worte!\"\n\nDas Pfäfflein nahm das Ringlein, und sagte zierlich Dank,\nUnd fand sodann kein klügeres im Saal, auf keiner Bank.\nEs war im Herzen froh,\nUnd sprach wie Cicero,\nCitirte, disputirte,\nBis keiner mehr sich rührte!\n\nAch!  liefe doch das Hütchen in der ganzen Welt herum,\nUnd schenkte solche Ringlein an Jeden, der da dumm!\nAch, aus Verlegenheit\nHülf' es gar Manchem heut!\nKomm', Hütchen, liebes Dinglein,\nBring tausend solche Ringlein!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=113823",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "August Kopisch",
+      "settings": [
+        {
+          "composer": "Friedrich August Reissiger",
+          "title": "/lieder/get_settings.html?ComposerId=11116",
+          "instrumentation": "tenor or soprano and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ich hatte gestern Skrupel",
+      "aliases": [],
+      "composer": "Georg Vierling",
+      "work": "/lieder/get_settings.html?ComposerId=10630",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ich hatte gestern Skrupel\n  Und ging zu meinem alten Wirth;\nDer lös'te jede Frage,\n  Er ist ein ächter Seelenhirt.\n\nSogleich zu seinem Stalle\n  Zeucht er zurück ein jegliches\nDer Schafe seiner Herde,\n  Das sich vom rechten Weg verirrt.\n\nEr zeigte mir im Glase\n  Den Becher Dschem's, den magischen;\nIn seiner Tiefe sah ich\n  Das Wahre klar und unverwirrt.\n\nIch sahe, daß voll Weisheit\n  Nur was die süße Nachtigall\nAuf ihrem Aste flötet,\n  Die Taube, die verliebte, girrt.\n\nIch sahe, daß voll Tiefsinn\n  Die wunderliche Stanze nur,\nDie uns der Käfer murmelt,\n  Der um den Kelch der Lilie schwirrt.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=84714",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Georg Friedrich Daumer",
+      "settings": [
+        {
+          "composer": "Georg Vierling",
+          "title": "/lieder/get_settings.html?ComposerId=10630",
+          "instrumentation": "bass and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Cançó de nit al bosc",
+      "aliases": [],
+      "composer": "Franz Peter Schubert",
+      "work": "/lieder/get_settings.html?ComposerId=2520",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "Sempre et saludem, oh nit,\nperò doblement aquí al bosc,\non els teus ulls riuen més furtivament,\non els teus passos ressonen més fluixet!\n\nA les copes de branques de fullatge\nhi aboques els teu argent,\nsostens la lluna, amb els seus raigs suaus,\na la casa de fulles, com un fanal per a nosaltres.\n\nVentijols xiuxiuejants\nsón la teva paraula;\nraigs que giravolten\nsón els teus fils,\ntot el que toca la teva boca apaivagadora,\ntanca els ulls i cau adormit.\n\nI tanmateix, -- tot és massa formós per estar adormit,\nper això, aixeca i desperta amb el toc de corns,\namb la clara remor del batec de les onades,\nel que dejorn jeia estamordit per la son!\n\nEl fullatge del bosc\nja es belluga,\nels ocellets creuen\nque la nit ha marxat.\n\nEls cabirols errants\ntímidament es retiren;\ns’imaginen que aviat\nes farà de dia;\n\ndes de la font ressona\ncom si ella s’hagués desvetllat;\nel brancam del bosc\nbramula poderosament;\n\ni nosaltres cridem tot cantant:\nal bosc la nit és com a casa,\ni llarga estona repeteix l’eco:\nella és com a casa en el bosc!\n\nAixí doncs et saludem doblement\naquí al bosc, oh plàcida nit,\non tot el que és bell de tu se’ns representa\ni ens somriu encara molt més formós.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=922368",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "Franz Peter Schubert",
+          "title": "/lieder/get_settings.html?ComposerId=2520",
+          "instrumentation": "vocal quartet of male voices and horn quartet"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Dutch (Nederlands)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Frühling grüßte grün",
+      "aliases": [],
+      "composer": "Johannes Dürrner",
+      "work": "/lieder/get_settings.html?ComposerId=14735",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Frühling grüßte grün,  --\nFrühlings ging die Maid:\nHerz, und willst du blühn,\nHeut ist Blüthezeit!\nFrühling, meine Lust,\nFrühling, du mein Leid:  --\nAls das Veilchen lag an meiner Brust,\nSprach sein Aug':  \"Gegrüßt du süße Maid!\"\n\nAls die Knospe schwoll\nAn den Rosenstrauch,\nHerz, wie trankst du voll\nSeiner Lippen Hauch.\nGen des Baches Saum\nGab er dir Geleit;\nWo die Zweige neigt der Weidenbaum,\nSprach sein Mund:  \"Dich lieb' ich, schöne Maid!\"\n\nNachtigall am Bach\nWar's dein süßer Sang,\nWar's sein süß'res Ach,\nWas mein Herz bezwang?\nHerz, nun immerfort,\nWenn es Blüthen schneit,\nFlüstert Hoffnung dir sein trautes Wort:\n\"Bald dir kehr' ich wieder, liebe Maid!\"\n\nAber Rose liegt,\nNachtigall, sie schied,\nSchon die Lerche fliegt\nÜbers öde Ried;\nHerz, dein Sehnen dringt\nWie so weit, so weit;\nAber nie, ach, nimmer wieder klingt\nDir sein Gruß:  \"Willkommen, treue Maid!\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=90987",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Georg Scheurlin",
+      "settings": [
+        {
+          "composer": "Johannes Dürrner",
+          "title": "/lieder/get_settings.html?ComposerId=14735",
+          "instrumentation": "baritone or mezzo-soprano, piano, and violoncello"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Cima",
+      "aliases": [],
+      "composer": "Alfonso Leng",
+      "work": "/lieder/get_settings.html?ComposerId=20625",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "es",
+      "text": "La hora de la tarde, la que pone\nsu sangre en las montañas.\n\nAlguien en esta hora está sufriendo;\nuna pierde, angustiada,\nen este atardecer el solo pecho\ncontra el cual estrechaba.\n\nHay algún corazón en donde moja\nla tarde aquella cima ensangrentada.**\n\nEl valle ya está en sombra\ny se llena de calma.\nPero mira de lo hondo que se enciende\nde rojez la montaña.\n\nYo me pongo a cantar siempre a esta hora\nmi invariable canción atribulada.\n\n¡Será yo la que baño\nla cumbre de escarlata?\n\nLlevo a mi corazón la mano, y siento\nque mi costado mana.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=34894",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Lucila de María del Perpetuo Socorro Godoy Alcayaga",
+      "settings": [
+        {
+          "composer": "Alfonso Leng",
+          "title": "/lieder/get_settings.html?ComposerId=20625",
+          "instrumentation": "low voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Kleiner Haushalt",
+      "aliases": [],
+      "composer": "Carl Loewe",
+      "work": "/lieder/get_settings.html?ComposerId=1674",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Einen Haushalt klein und fein\nHab' ich angestellt;\nDer soll mein Freund sein,\nDem er wohlgefällt.\n\nDer Specht, der Holz mit dem Schnabel haut,\nHat das Haus mir aufgebaut;\nDaß das Haus beworfen sei,\nTrug die Schwalbe Mörtel bei,\nUnd als Dach hat sich zuletzt\nObendrauf ein Schwamm gesetzt.\n\nDrinnen die Kammern\nUnd die Gemächer,\nSchränke und Fächer,\nFlimmern und flammern;\nAlles hat mir unbezahlt\nSchmetterling mit Duft bemalt.\n\nO wie rüstig in dem Haus\nGeht die Wirtschaft ein und aus.\n\nWasserjüngferchen, das flinke,\nHolt mir Wasser, das ich trinke;\nBiene muß mir Essen holen,\nFrage nicht, wo sie's gestohlen.\n\nSchüsseln sind die Eichelnäpfchen,\nUnd die Krüge Tannenzäpfchen,\nMesser, Gabel,\nRosendorn und Vogelschnabel.\n\nStorch im Haus ist Kinderwärter,\nMaulwurf Gärtner,\nUnd Beschließerin im Häuslein\nIst das Mäuslein.\n\nAber die Grille\nSingt in der Stille,\nSie ist das Heimchen, ist immer daheim,\nUnd weiß nichts als den einen Reim.\n\nDoch im ganzen Haus das beste\nSchläft noch feste.\nIn dem Winkel, in dem Bettchen,\nZwischen zweien Rosenblättchen,\nSchläft das Schätzchen Tausendschönchen,\nIhr zu Fuß ein Kaiserkrönchen.\n\nHüter ist Vergißmeinnicht,\nDer vom Bette wanket nicht;\nGlühwurm mit dem Kerzenschimmer\nHellt das Zimmer.\n\nDie Wachtel wacht\nDie ganze Nacht,\nUnd wenn der Tag beginnt,\nRuft sie: Kind! Kind!\nWach auf geschwind.\n\nWenn die Liebe wachet auf,\nGeht das Leben raschen Lauf.\n\nIn seidnen Gewändern,\nGewebt aus Sommerfaden,\nIn flatternden Bändern,\nVon Sorgen unbeladen,\nLustig aus dem engen Haus\nDie Flur hinaus.\n\nSchönen Wagen\nHab' ich bestellt,\nUns zu tragen\nDurch die Welt.\n\nVier Heupferdchen sollen ihn\nAls vier Apfelschimmel ziehn;\n\nSie sind wohl ein gut Gespann,\nDas mit Rossen sich messen kann;\nSie haben Flügel,\nSie leiden nicht Zügel,\nSie kennen alle Blumen der Au',\nUnd alle Tränken von Tau genau.\n\nEs geht nicht im Schritt;\nKind, kannst du mit?\nEs geht im Trott!\nNur zu mit Gott!\nLaß du sie uns tragen\nNach ihrem Behagen;\nUnd wenn sie uns werfen vom Wagen herab,\nSo finden wir unter Blumen ein Grab.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=14073",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Friedrich Rückert",
+      "settings": [
+        {
+          "composer": "Carl Loewe",
+          "title": "/lieder/get_settings.html?ComposerId=1674",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Italian (Italiano)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Bow your head, oh flower, bend it down...",
+      "aliases": [],
+      "composer": "Carl Nielsen",
+      "work": "/lieder/get_settings.html?ComposerId=5177",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Bow your head, oh flower, bend it down to the leaves,\nWith closed blossom, await the night's blissful peace\nThe night, the gentle, the silent, come, oh bend to slumber.\nSleep under the golden stars, sleep blissfully and soundly.\nSleep as a child, gently cradled in his mother's embrace,\nOnly half waking and sweetly smiling his mother's name.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=109782",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Anna Hersey",
+      "settings": [
+        {
+          "composer": "Carl Nielsen",
+          "title": "/lieder/get_settings.html?ComposerId=5177",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Anna Hersey",
+          "title": "./get_texts.html?ContribId=853",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Love me Sweet, with all thou art",
+      "aliases": [],
+      "composer": "Émile Antoine Bruguière",
+      "work": "/lieder/get_settings.html?ComposerId=7427",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Love me Sweet, with all thou art,\nFeeling, thinking, seeing;\nLove me in the lightest part,\nLove me in full being.\n\nLove me with thine open youth\nIn its frank surrender;\nWith the vowing of thy mouth,\nWith its silence tender.\n\nLove me with thine azure eyes,\nMade for earnest grantings;\nTaking colour from the skies,\nCan Heaven's truth be wanting?\n\nLove me with their lids, that fall\nSnow-like at first meeting;\nLove me with thine heart, that all\nNeighbours then see beating.\n\nLove me with thine hand stretched out\nFreely -- open-minded:\nLove me with thy loitering foot, --\nHearing one behind it.\n\nLove me with thy voice, that turns\nSudden faint above me;\nLove me with thy blush that burns\nWhen I murmur 'Love me!'\n\nLove me with thy thinking soul,\nBreak it to love-sighing;\nLove me with thy thoughts that roll\nOn through living -- dying.\n\nLove me in thy gorgeous airs,\nWhen the world has crowned thee;\nLove me, kneeling at thy prayers,\nWith the angels round thee.\n\nLove me pure, as muses do,\nUp the woodlands shady:\nLove me gaily, fast and true,\nAs a winsome lady.\n\nThrough all hopes that keep us brave,\nFarther off or nigher,\nLove me for the house and grave,\nAnd for something higher.\n\nThus, if thou wilt prove me, Dear,\nWoman's love no fable,\nI will love thee -- half a year --\nAs a man is able.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=61113",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Elizabeth Barrett Browning",
+      "settings": [
+        {
+          "composer": "Émile Antoine Bruguière",
+          "title": "/lieder/get_settings.html?ComposerId=7427",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Robert Coningsby Clarke",
+          "title": "/lieder/get_settings.html?ComposerId=7425",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Paolo Giorzo",
+          "title": "/lieder/get_settings.html?ComposerId=15236",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Posta de lluna",
+      "aliases": [],
+      "composer": "Marie Blanche Selva",
+      "work": "/lieder/get_settings.html?ComposerId=34742",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "L’espai en dolces claredats somriu.\nBesa la lluna les humils teulades\ni els camps, on tot reposa.\nAssossegades han mort les fresses de la nit d’estiu.\n\nSota la llum que brilla com un riu,\nles cases una a una es són tancades.\nFins el mussol, qui totes les vetllades\nfa penitència en l’olivar soliu,\n\nara ha callat... La lluna se n’adona\nque és tard i fa serena i ja fa estona\nque és tota sola sobre el camp dormit.\n\nVa davallant pel cel, mig ensonyada.\nToca a ponent... La lluna s’és colgada\ndarrera la muntanya. Bona nit!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=427695",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Miquel Ferrà i Juan",
+      "settings": [
+        {
+          "composer": "Marie Blanche Selva",
+          "title": "/lieder/get_settings.html?ComposerId=34742",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "I am so still",
+      "aliases": [],
+      "composer": "Heinz Becker",
+      "work": "/lieder/get_settings.html?ComposerId=38346",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "I am so still,\nAll blood ebbs away.\n\nSo soft around me.\nI no longer know anything.\n\nMy heart so small,\nDied quietly of pain.\n\nOnce blue and divine!\nOh, heaven, come.\n\nA deep tone –\nNight everywhere.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=148512",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Michael P Rosewall",
+      "settings": [
+        {
+          "composer": "Heinz Becker",
+          "title": "/lieder/get_settings.html?ComposerId=38346",
+          "instrumentation": "voice, trumpet, piano"
+        },
+        {
+          "composer": "Heinz Becker",
+          "title": "/lieder/get_settings.html?ComposerId=38346",
+          "instrumentation": "voice and instrumental ensemble"
+        },
+        {
+          "composer": "Oskar Gottlieb Blarr",
+          "title": "/lieder/get_settings.html?ComposerId=13822",
+          "instrumentation": "voice, piano, and trombone"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 384,
+  "lieder_position": 432,
   "aria_opera": 0,
   "aria_scene": 8
 }
