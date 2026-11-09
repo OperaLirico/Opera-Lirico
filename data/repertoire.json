@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T23:50:08+01:00",
+  "generated_at": "2026-11-10T00:02:40+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -7856,10 +7856,405 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Ach aus eines Engels Fühlung falle",
+      "aliases": [],
+      "composer": "Torbjörn Iwan Lundquist",
+      "work": "/lieder/get_settings.html?ComposerId=41492",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "de",
+      "text": "Ach aus eines Engels Fühlung falle\nSchein in dieses Meer auf einem Mond,\ndrin meine Herz, stillringende Koralle,\nsein jüngsten Zweigungen bewohnt.\n\nNot, mir von unkenntlichem Verüber\nzugefügte, bleibt mir ungewiss,\nStrömung zögert, Strömung drängt hinüber,\nTiefe wirkt und Hindernis.\n\nAus dem starren fühllosen Alten drehn\nsich Geschöpfe, plötzlich auserlesen,\nund das ewig Stumme aller Wesen\nüberstürzt ein dröhnendes Geschehn.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=44164",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Rainer Maria Rilke",
+      "settings": [
+        {
+          "composer": "Torbjörn Iwan Lundquist",
+          "title": "/lieder/get_settings.html?ComposerId=41492",
+          "instrumentation": "voice and piano or orchestra"
+        },
+        {
+          "composer": "Roland Voortman",
+          "title": "/lieder/get_settings.html?ComposerId=6092",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Era al juny",
+      "aliases": [],
+      "composer": "Nadia Boulanger",
+      "work": "/lieder/get_settings.html?ComposerId=3517",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "Era al juny, al jardí,\nera la nostra hora i el nostre dia;\ni els nostres ulls esguardaven amb tant d’amor,\nles coses,\nque ens semblava que suaument s’obrien,\nens miraven i ens estimaven\nles roses.\n\nEl cel era més pur del que mai havia estat:\nels insectes i els ocells\nvolaven en l’or i en la joia\nd’un aire frèvol com la seda;\ni les nostres besades eren tan belles\nque exaltaven la llum i els ocells.\n\nS’hagués dit d’una felicitat que tot d’una s’atzura\ni vol el cel sencer per resplendir;\ntota la vida entrava, per dolces esquerdes,\nal nostre ésser, per engrandir-lo.\n\nI no eren més que crits invocadors,\ni folls rampells i pregàries i vots,\ni la necessitat, sobtada, de crear déus de nou\nper tal de creure.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=294897",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "Nadia Boulanger",
+          "title": "/lieder/get_settings.html?ComposerId=3517",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Philippe Gaubert",
+          "title": "/lieder/get_settings.html?ComposerId=12349",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Das Meer liegt glatt und atmet kaum",
+      "aliases": [],
+      "composer": "Ludwig Keller",
+      "work": "/lieder/get_settings.html?ComposerId=11744",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Das Meer liegt glatt und atmet kaum\nIn heißer Sonnenglut,\nNur meine Barke weckt den Schaum\nDer bläulich hellen Flut.\n\nSonst ist es still, kein Windeshauch,\nKein ferner Ruderschlag;\nDenn Wind und Wellen feiern auch\nDer Ruhe heil'gen Tag.\n\nVom Felseneiland bläulich fern\nSchaut still ein Kirchlein her,\nDas kündet jetzt [den]1 Dienst des Herrn\nMit Glockenklang in's Meer.\n\nIn seinem Kahn der Fischer kniet\nIn frommer Andachtsruh,\nDes Meeres fromme Welle zieht\nDem Felseneiland zu.\n\nDer Kahn, den jetzt kein Ruder schwenkt,\nDer folgt demselben Drang,\nDie Wolke selbst zum Felsen lenkt —\nTut das im Meer der Klang?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=153523",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Ludwig August Frankl",
+      "settings": [
+        {
+          "composer": "Ludwig Keller",
+          "title": "/lieder/get_settings.html?ComposerId=11744",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Josef Staudigl",
+          "title": "/lieder/get_settings.html?ComposerId=11004",
+          "instrumentation": "bass or baritone and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "I surge to the other side",
+      "aliases": [],
+      "composer": "Alphons Diepenbrock",
+      "work": "/lieder/get_settings.html?ComposerId=3875",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "I surge to the other side,\nand every pain\nthat was will become a sting\nof sensual pleasure.\nOnly a little more time more,\nand I will be gone,\nand I will lie intoxicated in the lap of love.\nUnending life\nis weakened within me;\nI look down at you\nfrom above.\nOn that hill,\nyour splendor fades\nand a shadow brings\nthe cooling wreath.\nO! Beloved,\ndraw me in powerfully\nso that I may slumber\nand know love.\nI feel death’s\nrejuvenating flood;\ninto balm and ether\nmy blood is transformed –\nI live by day\nfull of faith and courage,\nand die by nights’\nholy glow.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=297480",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Amy Pfrimmer",
+      "settings": [
+        {
+          "composer": "Alphons Diepenbrock",
+          "title": "/lieder/get_settings.html?ComposerId=3875",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Kurt Erickson",
+          "title": "/lieder/get_settings.html?ComposerId=28939",
+          "instrumentation": "mezzo-soprano, viola, and piano"
+        },
+        {
+          "composer": "Alma Mahler",
+          "title": "/lieder/get_settings.html?ComposerId=4936",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "La mort de la mort",
+      "aliases": [],
+      "composer": "Paul Hindemith",
+      "work": "/lieder/get_settings.html?ComposerId=4425",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "La mort est devenue fatiguée,\nElle s'étire pour se reposer\nDans un jardin d'été,\nLes fleurs poussent au-dessus d'elle.\nElles poussent haut,\nDe ses os d'ivoire brillent\nLes premiers asters.\n\nLa mort est allongée, étirée,\nLes fleurs se dressent :\nRecouverte de roses rouges,\nElle finit son temps.\nLes os pâlissent totalement,\nSe décomposent et se flétrissent\nDans tout l'éclat du soleil de midi.\n\nLa mort devient vie forte,\nElle s'élève renouvelée,\nUne petite fille, enveloppée de fleurs,\nAu milieu des feuilles d'asters rouges.\nElle marche et brille de beauté.\nTous les hommes sont morts.\nSa chevelure vole dorée dans le fœhn.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=102210",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "Paul Hindemith",
+          "title": "/lieder/get_settings.html?ComposerId=4425",
+          "instrumentation": "mezzo-soprano, 2 violas, 2 violoncellos"
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Norwegian (Bokmål)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Schön, wie Thirza, bist du",
+      "aliases": [],
+      "composer": "Gerrit Jan van Eijken",
+      "work": "/lieder/get_settings.html?ComposerId=3954",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Schön, wie Thirza, bist du,\nwonnevollen Anblicks,\nwie die Pracht Jerusalems\nund wie kriegerische\nHeldenheere furchtbar.\nWende, weh, sie töten,\nwende deine Blicke,\nende meinem Herzen\ndiesen Zauberbann!\n\nAufgelöst in Sehnsucht,\nnimmermehr begnügter,\nschmacht' ich hin und sterbe,\nsterb' an einem Glücke,\ndas die Brust, die schwache,\nmenschliche, nicht fassen,\nnicht ertragen kann.\n\nWende, weh, sie töten,\nwende deine Blicke,\nende meinem Herzen\ndiesen Zauberbann!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=4308",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Georg Friedrich Daumer",
+      "settings": [
+        {
+          "composer": "Gerrit Jan van Eijken",
+          "title": "/lieder/get_settings.html?ComposerId=3954",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Erich J. Wolff",
+          "title": "/lieder/get_settings.html?ComposerId=6222",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "And when you rise early from your bed",
+      "aliases": [],
+      "composer": "Hugo Wolf",
+      "work": "/lieder/get_settings.html?ComposerId=6218",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "And when you rise early from your bed,\nYou banish every cloud form the sky,\nYou lure the sun onto those  hills,\nAnd angels compete to\nBring your shoes and  clothes.\nThen, when you go out to Holy Mass,\nYou draw everyone along with you,\nAnd when you near the blessed place,\nYour gaze lights up the lamps.\nYou take holy water, make the sign of the cross\nAnd moisten your white brow,\nAnd you bow and bend the knee -\nOh, how beautifully it all becomes you!\nHow sweetly, blessedly has God endowed you,\nWho have received the crown of beauty.\nHow sweetly, blessedly you walk through life;\nThe palm of beauty was bestowed on you.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=20719",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Donna",
+      "settings": [
+        {
+          "composer": "Hugo Wolf",
+          "title": "/lieder/get_settings.html?ComposerId=6218",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Le chant du garçon archer",
+      "aliases": [],
+      "composer": "Michael Brough",
+      "work": "/lieder/get_settings.html?ComposerId=25632",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Avec la flèche, avec l'arc,\nÀ travers montagne et vallée,\nL'archer va et vient\nTôt dans les rayons du matin.\n\nComme dans le royaume des airs\nLe roi est le milan --\nÀ travers montagnes et gorges\nL'archer règne libre.\n\nL'espace lui appartient,\nQuoi que sa flèche atteigne\nC'est sa proie :\nQue cela halète ou vole.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=56569",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "Michael Brough",
+          "title": "/lieder/get_settings.html?ComposerId=25632",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Robert Schumann",
+          "title": "/lieder/get_settings.html?ComposerId=5685",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Mai",
+      "aliases": [],
+      "composer": "Jean Sibelius",
+      "work": "/lieder/get_settings.html?ComposerId=5742",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "L'air est ensoleillé et les nuages scintillent\nLes vagues bleu clair étincellent et charment ;\nDans les haies les oiseaux bâtissent leurs nids ;\nLes tempêtes déchaînées se mettent au repos.\n\nFleurs et plantes s'étalent sur les murs,\nLes chiches et les ladres deviennent charitables,\nLe chant du coucou sonne clair comme une cloche ;\nLe mouton a mis de côté son habit de laine.\n\nLes vaches regardent avec plaisir vers les champs,\nLe temps a passé si lentement dans l'étable ;\nAu soleil, les dames cancanent plus gaiement\nQue lorsqu'elles tremblotaient près de la cheminée.\n\nLes oiseaux des tempêtes s'arrêtent sur les falaises.\nVoyez les bandes de mouettes et de hérons !\nElles ne tournoient plus autour des mâts agités.\nHeureux dans mon jardin, un merle me réjouit ;\n\nEt dans ma tête où demeuraient des ombres,\nQui ne croyait plus à la lumière du soleil,\nPerce un chaud rayon de jouvence :\nLe printemps a trouvé le chemin de mon cœur.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=106765",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Pierre Mathé",
+      "settings": [
+        {
+          "composer": "Jean Sibelius",
+          "title": "/lieder/get_settings.html?ComposerId=5742",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Finnish (Suomi)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Carpenter's song",
+      "aliases": [],
+      "composer": "Franz Peter Schubert",
+      "work": "/lieder/get_settings.html?ComposerId=2520",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "The work I produce with my hands goes through all the world\nAnd brings me many a dollar in income,\nWhich I am extremely pleased about.\nPeople from all walks of life need the carpenter;\nBy means of my hand the child will soon\nBe lulled into a gentle sleep.\n\nThe bed for the wedding night\nWill also be made by means of my industry\nAnd put together artistically.\nHowever stingy a miser is\nAt the end of the day he needs a coffin,\nAnd those things pay well.\n\nSo I am always in a good humour\nAnd I do my work well\nWhether it be a table or a cupboard.\nAnd to those who are good enough to order a lot\nAnd always pay me in ready cash,\nTo them I say, 'Thank you very much'.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=120972",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Malcolm Wren",
+      "settings": [
+        {
+          "composer": "Franz Peter Schubert",
+          "title": "/lieder/get_settings.html?ComposerId=2520",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Dutch (Nederlands)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Hassids are dancing",
+      "aliases": [],
+      "composer": "Hermann Reutter",
+      "work": "/lieder/get_settings.html?ComposerId=5486",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Night blows\nwith flags torn away from death.\n\nBlack hats,\nGod's lightning rods,\nstir up the sea\n\nweigh it\nweigh it out\n\ntoss it onto the beach\nthere where the light\nhas carved out black wounds.\n\nOn the tongue\nthe world tastes\nsung out\nwhich breathes with the lungs of the hereafter.\n\nOn the seven-branched candelabra\nthe Pleiades pray.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=52821",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by John Glenn Paton",
+      "settings": [
+        {
+          "composer": "Hermann Reutter",
+          "title": "/lieder/get_settings.html?ComposerId=5486",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "John Glenn Paton",
+          "title": "./get_texts.html?ContribId=18",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ich fühle dich immer",
+      "aliases": [],
+      "composer": "Adolf Wallnöfer",
+      "work": "/lieder/get_settings.html?ComposerId=6113",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "In das stille, verlöschende Abendrot,\ndarin die Sonne versank,\nblicke ich einsam hinüber,\nvon Sehnsucht krank.\n\nO, wie ich schaffe und ringe,\num zu vergessen!\nOft meint' ich wohl, dass es gelang,\ndenn ich denke viele fremde Dinge\nstundenlang.\n\nIch spreche dich nie und sehe dich kaum,\nes war ja alles nur ein Traum,\nso traurig und bange\nwie flüsterndes Herbstesweh'n,\nund will doch nimmer vergeh'n\nund währt so lange.\n\nEs lebt und atmet um mich\nim Abendschimmer;\ndenk' ich auch nicht an dich,\nich fühle dich immer!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=151065",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Margarete Susman",
+      "settings": [
+        {
+          "composer": "Adolf Wallnöfer",
+          "title": "/lieder/get_settings.html?ComposerId=6113",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 1008,
+  "lieder_position": 1056,
   "aria_opera": 0,
   "aria_scene": 8
 }
