@@ -60,6 +60,8 @@ PDF_PENALTY = re.compile(
 )
 FILE_NAME = re.compile(r"\.pdf\b|^[\w\-.%()]+$")
 MONTH_OR_DATE = re.compile(r"\b20\d{2}\b|gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre|\d{1,2}/\d{1,2}", re.IGNORECASE)
+# A theatre homepage is mostly season marketing: subscription, tickets, newsletters.
+FALLBACK_NOISE = re.compile(r"scopri la programmazione|abbonament|biglietti|sottoscrivi|newsletter|cookie|privacy|operazione rif\.|propedeutic|stagione (concertistica|sinfonica|lirica|teatrale)|^programma di sala", re.IGNORECASE)
 REQ_NOISE = re.compile(r"^Articolo|moduli|si ricorda|^N\.B\.|diploma accademico", re.IGNORECASE)
 REQUIREMENT_SHAPE = re.compile(r"diploma|titolo estero|preparazione|conoscenza|requisit|certificazione", re.IGNORECASE)
 DATE_IN_LINE = re.compile(r"\b20\d{2}\b|\b\d{1,2}\s*(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)", re.IGNORECASE)
@@ -68,7 +70,8 @@ ATTEMPTS = 2
 TIMEOUT = 25
 MAX_PDF_BYTES = 12 * 1024 * 1024
 MAX_PDF_PAGES = 5
-PDF_BUDGET = 30  # ~2 per institution, keeps the job inside a few minutes
+PDF_BUDGET = 26  # ~2 per institution, keeps the job inside a few minutes
+ACADEMY_BUDGET = 16  # theatre academies would otherwise never get any of it
 DATA = Path(__file__).resolve().parent / "data" / "conservatori.json"
 
 
@@ -223,14 +226,23 @@ def pdf_read(url: str) -> list[str]:
     return [line for line in lines if len(line) > 12 and not PDF_NOISE.search(line)]
 
 
-def fill_from_pdfs(payload: dict) -> None:
-    """Give the card the dates that only exist inside the official bando."""
+def clean_fallbacks(payload: dict) -> None:
+    """A theatre homepage is mostly season marketing; keep only admission-shaped lines."""
+    for item in payload.get("items", []):
+        kept = [line for line in item.get("fallback_lines") or [] if not FALLBACK_NOISE.search(line)]
+        item["fallback_lines"] = kept[:3]
+
+
+def fill_from_pdfs(payload: dict, academies: bool, budget: int) -> int:
+    """Read the official bando. Theatre academies go first: their bando is the only place with dates."""
     if PdfReader is None:
         print("pypdf not installed, skipping PDF reading")
-        return
-    budget = PDF_BUDGET
+        return 0
     filled = 0
     for item in payload.get("items", []):
+        is_academy = (item.get("number") or 0) >= 300
+        if is_academy != academies:
+            continue
         if item.get("status") != "ok":
             continue
         documents = item.get("documents") or []
@@ -279,7 +291,7 @@ def fill_from_pdfs(payload: dict) -> None:
             # so keep reading a second document until both fields are covered.
             if item.get("deadline_lines") and item.get("exam_dates"):
                 break
-    print(f"Read {PDF_BUDGET - budget} bando PDF(s), enriched {filled} institution(s)")
+    print(f"Read {budget} budget bando PDF(s), enriched {filled} institution(s)")
 
 
 def save(payload: dict) -> None:
@@ -296,5 +308,7 @@ if __name__ == "__main__":
     tidy_dates()
     if DATA.exists():
         payload = json.loads(DATA.read_text(encoding="utf-8"))
-        fill_from_pdfs(payload)
+        clean_fallbacks(payload)
+        fill_from_pdfs(payload, academies=True, budget=ACADEMY_BUDGET)
+        fill_from_pdfs(payload, academies=False, budget=PDF_BUDGET)
         save(payload)
