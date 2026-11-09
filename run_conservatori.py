@@ -3,27 +3,35 @@
 
 Two problems show up in practice:
 
-* Conservatory sites time out often. One run loses Turin, the next loses Genoa,
-  so a single attempt leaves visible holes in the board.
-* A failed run therefore must not delete what a previous run already read.
+* Conservatory sites time out or stall mid-handshake. One run loses Turin, the
+  next loses Genoa, and a stalled connection can hold the whole job open.
+* A failed run must not delete what a previous run already read.
 
-So: retry once at the fetcher boundary, and after the collector writes its file,
-replace any failed record with the most recent successful snapshot of that
-institution (marked ``cached`` with its own ``checked_at``) when one exists in
-the repository. A site that never succeeds stays marked unreachable.
+So: retry once at the fetcher boundary behind a hard per-request deadline,
+and after the collector writes its file, replace any failed record with the
+most recent successful snapshot of that institution (marked ``cached`` with
+its own ``checked_at``) when one exists in the repository. A site that never
+succeeds stays marked unreachable.
 """
 
 from __future__ import annotations
 
 import json
 import time
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
 from pathlib import Path
 
 import scrape_conservatori as core
 
 ATTEMPTS = 2
 TIMEOUT = 25
+HARD_DEADLINE = 40  # seconds; covers a stalled handshake that curl's timeout misses
 DATA = Path(__file__).resolve().parent / "data" / "conservatori.json"
+POOL = ThreadPoolExecutor(max_workers=1)
+
+
+def _attempt(url: str):
+    return POOL.submit(core.Fetcher.get, url, timeout=TIMEOUT, retries=0)
 
 
 class RetryingFetcher:
@@ -32,7 +40,9 @@ class RetryingFetcher:
         last_error: Exception | None = None
         for attempt in range(1, ATTEMPTS + 1):
             try:
-                return core.Fetcher.get(url, timeout=TIMEOUT, retries=0)
+                return _attempt(url).result(timeout=HARD_DEADLINE)
+            except FutureTimeout:
+                raise TimeoutError(f"no response within {HARD_DEADLINE}s: {url}")
             except Exception as exc:  # curl timeouts, TLS resets, empty replies
                 last_error = exc
                 if attempt < ATTEMPTS:
