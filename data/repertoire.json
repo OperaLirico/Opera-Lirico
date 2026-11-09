@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T19:57:14+01:00",
+  "generated_at": "2026-11-09T20:06:28+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -3846,10 +3846,365 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Trauerlied",
+      "aliases": [],
+      "composer": "Albert of Saxe-Coburg-Saalfeld and Gotha, Prince",
+      "work": "/lieder/get_settings.html?ComposerId=22678",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ich zog auf meinen Lebens Wegen\ndem Schimmerlicht des Glücks entgegen\ndas mir nur vorwärts immer schien,\nund immer vorwärts mit Verlangen\nkam ich dem Schimmer nach gegangen\nund sah ihm immer vorwärts flieh'n,\nund sah ihm immer vorwärts flieh'n.\n\nAuf einmal, wie ist mir geschehen,\nmuss ich darnach mich rückwärts drehen,\ndort blickt michs an wie Abendschein.\nWie bin ich denn vorbei gekommen?\nWie bin ich denn vorbei gekommen?\nEs muss in Traum gewesen sein,\nEs muss in Traum gewesen sein.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=76471",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Friedrich Rückert",
+      "settings": [
+        {
+          "composer": "Albert of Saxe-Coburg-Saalfeld and Gotha, Prince",
+          "title": "/lieder/get_settings.html?ComposerId=22678",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Homesickness",
+      "aliases": [],
+      "composer": "Heinrich von Herzogenberg",
+      "work": "/lieder/get_settings.html?ComposerId=4407",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "The world becomes different with every step\nthat takes me farther away from my beloved;\nmy heart -- it will not go any farther with me.\nHere the sun shines coldly upon the land,\nhere everything seems unfamiliar to me,\neven the very flowers along the stream!\nEvery thing has\nSo strange a look, so wrong a face.\nThe streamlet murmurs well and speaks:\n\"Poor boy, come along beside me -\nyou see forget-me-nots here as well!\"\nYes, they are beautiful everywhere,\nbut these are not anything like the ones there.\nOnward, simply onward!\nMy eyes spill over.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=25628",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Emily Ezust",
+      "settings": [
+        {
+          "composer": "Heinrich von Herzogenberg",
+          "title": "/lieder/get_settings.html?ComposerId=4407",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Hans Huber",
+          "title": "/lieder/get_settings.html?ComposerId=4481",
+          "instrumentation": "low voice and piano"
+        },
+        {
+          "composer": "(Karl) Emil Kauffmann",
+          "title": "/lieder/get_settings.html?ComposerId=8513",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Les cors",
+      "aliases": [],
+      "composer": "Marie-Joseph-Alexandre Déodat de Séverac",
+      "work": "/lieder/get_settings.html?ComposerId=14696",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Voici les cors qui sonnent l'amour,\nqui sonnent la mort,\nqui sonnent maints amants et maints cerfs frissonnent d'amour,\nde sonnent les cors.\nLeur plainte couleur de vieux jour\nCouleur de vieil or\nLeur plainte vibre et chaque âme prends atteinte de jour et\n[page missing]\nOn ne vit pas de ce qui crève...\nPourquoi encor sonner?\n' cors.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=13424",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Paul Rey",
+      "settings": [
+        {
+          "composer": "Marie-Joseph-Alexandre Déodat de Séverac",
+          "title": "/lieder/get_settings.html?ComposerId=14696",
+          "instrumentation": "medium voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Im Wogen und Drängen der Leute",
+      "aliases": [],
+      "composer": "Lothar Grünwald",
+      "work": "/lieder/get_settings.html?ComposerId=23586",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "(Heinrich.)\nIm Wogen und Drängen der Leute,\nDie scharenweise ziehn\nHinaus zum Friedhof heute,\nTrug's mich des Weg's auch hin.\n\nEs wankte einher dicht neben\nMir traumversunken ein Greis,\nDaß vorbei sein Kämpfen und Streben,\nErzählten die Locken weiß.\n\nEin Kränzlein hielten umwunden\nDie Hände voll Herzensglühn,\nKunstlos war es gewunden\nAus Blumen und Immergrün.\n\nIn des Alten durchfurchtem Gesichte,\nDas starr war aufs Kränzlein gebannt,\nLas ich die ganze Geschichte,\nDie sich um die Blumen da wand . . .\n\nIm dumpfen Blick war zu lesen:\n»Da trag' zu dem Grab' ich Dich hin,\nDas umschließt, die mein Alles gewesen,\nOhne die ich so elend nun bin!\n\nStatt ihn auf das Grab ihr zu legen\nDen Kranz, läg' ich doch bei ihr,\nDie ich such' auf all meinen Wegen!\nWann holt sie mich endlich von hier?!\n\nIch leb', seit sie schied von hinnen,\nIm Erinnern vergangener Zeit:\nÜber sie, ihr Walten sinnen\nIst all meine, all meine Freud'!\n\n. . . Wie ich ihr vom Hagedorne\nZum erstenmal Rosen gepflückt,\nWie mein Kind sie nährte im Korne –\nWie das Aug' ich ihr zugedrückt –\n\nWie friedlich sind wir geschritten\nDen Lebensweg vereint!\nWir haben gekämpft und gelitten –\nZu Zweien gelacht und geweint!\n\nO daß am Wanderstabe\nMein Fuß allein jetzt wallt\nDen Weg, den ich vor mir noch habe:\nO wär' ich am Ziele doch bald!\n\nUnd wie ich den Blick auf ihn richte,\nIn meinem Auge er sieht:\nIch kenn' seines Kränzleins Geschichte, –\nUnd Thränen bethauen mein Lid . . .\n–    –    –    –    –    –    –    –    –\nO daß ich das Glück mir zertreten,\nDas Deine Liebe mir gab! . . .\nNicht einmal weinen und beten\nDarf ich auf Deinem Grab!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=37433",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Sidonie Grünwald-Zerkovitz",
+      "settings": [
+        {
+          "composer": "Lothar Grünwald",
+          "title": "/lieder/get_settings.html?ComposerId=23586",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Queen and huntress, chaste and fair",
+      "aliases": [],
+      "composer": "Dominick Argento",
+      "work": "/lieder/get_settings.html?ComposerId=3215",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Queen and huntress, chaste and fair,\nNow the sun is laid to sleep,\nSeated in thy silver chair,\nState in wonted manner keep:\n  Hesperus entreats thy light,\n  Goddess excellently bright.\n\nEarth, let not thy envious shade\nDare itself to interpose;\nCynthia's shining orb was made\nHeav'n to clear when day did close;\n  Bless us then with wishèd sight,\n  Goddess excellently bright.\n\nLay thy bow of pearl apart,\nAnd thy crystal shining quiver;\nGive unto the flying hart\nSpace to breathe, how short so-ever:\n  Thou that mak'st a day of night,\n  Goddess excellently bright.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=8960",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Ben Jonson",
+      "settings": [
+        {
+          "composer": "Dominick Argento",
+          "title": "/lieder/get_settings.html?ComposerId=3215",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "(Edward) Benjamin Britten",
+          "title": "/lieder/get_settings.html?ComposerId=3567",
+          "instrumentation": "tenor, horn, and strings or piano"
+        },
+        {
+          "composer": "Mary Grant Carmichael",
+          "title": "/lieder/get_settings.html?ComposerId=3676",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Gretel's warning",
+      "aliases": [],
+      "composer": "Ludwig van Beethoven",
+      "work": "/lieder/get_settings.html?ComposerId=3351",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "With loving looks and play and song,\nThe young and handsome Christel wooed;\nAs lovely, as sanguine and slim as he was,\nNo other young man even got close.\nNo, no one\nin your circle,\nNo one for whom I could feel this!\nHe noticed this, ah!\nAnd did not rest\nUntil he'd gotten everything,\nUntil he'd had his way.\n\nTrue it was that in the town there were many lads\nAs young and handsome as he was,\nBut the girls looked only at him\nAnd kissed and cuddled with him.\nSoon their words\nOf adulation seized him,\nAnd his heart was won over.\nTo me he grew cold,\nThen soon he fled\nAnd left me here, and left me here,\nAnd left me here in sorrow.\n\nHis loving looks and play and song,\nSo sweet and blissful,\nHis kiss, that struck me to my soul,\nDelighted me no more.\nObserve my predicament,\nYou sisters all,\nShould a false friend twinkle his eyes at you,\nDon't trust\nWhat he says!\nO consider me, wretched me,\nO consider me and run away!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=128955",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Emily Ezust",
+      "settings": [
+        {
+          "composer": "Ludwig van Beethoven",
+          "title": "/lieder/get_settings.html?ComposerId=3351",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Emily Ezust",
+          "title": "./get_texts.html?ContribId=1",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Die Abendglocken",
+      "aliases": [],
+      "composer": "Maximilian Emanuel in Bayern",
+      "work": "/lieder/get_settings.html?ComposerId=29858",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Die Abendglocken läuten\nund tönen himmelwärts;\nbald zieht's durch meine Seele\nwie Freude, bald wie Schmerz.\n\nWie Freud', wenn ich gedenke\nder Stunden voller Lust,\nwo ich, mein Lieb, dich wiegte\nan meiner treuen Brust.\n\nWie Schmerz, wenn ich bedenke,\ndass du für mich dahin,\ndass all' die schönen Träume\nder Zukunft mir entflieh'n!\n\nDie Abendglocken läuten\nund tönen himmelwärts;\nwann werden sie dir läuten\nzur ew'gen Ruh', mein Herz?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=160537",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "August Gemming",
+      "settings": [
+        {
+          "composer": "Maximilian Emanuel in Bayern",
+          "title": "/lieder/get_settings.html?ComposerId=29858",
+          "instrumentation": "medium voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Doina",
+      "aliases": [],
+      "composer": "Nicolae Bretan",
+      "work": "/lieder/get_settings.html?ComposerId=3553",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ro",
+      "text": "De la Nistru pân-la Tisa\nTot românul plânsu-mi-s-a\nCă nu mai poate străbate\nDe-atâta străinătate.\nDin Hotin şi pân-la Mare\nVin muscalii de-a călare,\nDe la Mare la Hotin\nMereu calea ne-o aţin;\nDin Boian la Vatra-Dornii\nAu umplut omida cornii\nŞi străinul te tot paşte\nDe nu te mai poţi cunoaşte;\nSus la munte, jos pe vale,\nŞi-au făcut duşmanii cale,\nDin Sătmar pân- în Săcele\nNumai vaduri ca acele.\nVai de biet român săracul,\nÎndărăt tot dă ca racul,\nNici îi merge, nici se-ndeamnă\nNici îi este toamna toamnă,\nNici e vară vara lui\nŞi-i străin în ţara lui.\nDe la Turnu-n Dorohoi\nCurg duşmanii în puhoi\nŞi s-aşează pe la noi;\nŞi cum vin cu drum de fier,\nToate cântecele pier,\nZboară pasările toate\nNumai umbra spinului\nDe neagra străinătate.\nÎn uşa creştinului.\nÎşi dezbracă ţara sânul,\nCodru ­ frate cu românul ­\nDe săcure se tot pleacă\nŞi izvoarele îi seacă ­\nSărac în ţară săracă!\n\nCine-au îndrăgit străinii\nMânca-i-ar inima cânii,\nMânca-i-ar casa pustia\nŞi neamul nemernicia!\n\nŞtefane, Măria Ta,\nTu la Putna nu mai sta,\nLas-arhimandritului\nToată grija schitului,\nLasă grija sfinţilor,\nÎn sama părinţilor,\nClopotele să se tragă\nZiua-ntreagă, noaptea-ntreagă,\nDoar s-a-ndura Dumnezeu\nCa să-ţi mântui neamul tău!\nTu te-nalţă din mormânt\nSă te-aud din corn sunând\nŞi Moldova adunând!\nDe-i suna din corn o dată\nAi s-aduni Moldova toată,\nDe-i suna de două ori\n­ Îţi vin codrii-n ajutor,\nDe-i suna a treia oară\nToţi duşmanii or să piară,\nDin hotară în hotară ­\nÎndrăgi-i-ar ciorile\nŞi spânzurătorile!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=52269",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Mihai Eminescu",
+      "settings": [
+        {
+          "composer": "Nicolae Bretan",
+          "title": "/lieder/get_settings.html?ComposerId=3553",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Disse il ver? parlò per gioco?",
+      "aliases": [],
+      "composer": "Antonio Caldara",
+      "work": "/lieder/get_settings.html?ComposerId=3654",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Disse il ver? parlò per gioco?\nMi confondo a' detti sui\ne comincio a poco a poco\ndi me stesso a dubitar.\n\nPianger fanno i pianti altrui,\nsospirar gli altrui sospiri;\nben potrian gli altrui deliri\ninsegnarmi a delirar.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=124476",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Pietro Antonio Domenico Bonaventura Trapassi",
+      "settings": [
+        {
+          "composer": "Antonio Caldara",
+          "title": "/lieder/get_settings.html?ComposerId=3654",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Andrew Schneider",
+          "title": "/lieder/get_settings.html?ComposerId=30668",
+          "instrumentation": "tenor voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Zwei Fräulein",
+      "aliases": [],
+      "composer": "Johann Vesque von Püttlingen",
+      "work": "/lieder/get_settings.html?ComposerId=6068",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Auf einem hohen Berge, da steht ein altes Schloss,\ndarinnen hausen zwei Fräulein mit ihrem Dienertross;\ndie eine, das ist die Eule, die hat ein finster Gesicht,\nhat gar eine spitzige Nase und scheut das Tageslicht;\ndie andre, das ist die Dohle, die trägt ein pechschwarz Kleid\nund leidet immerwährend an böser Heiserkeit.\nUnd wenn die zwei zusammen anstimmen ihr Abendlied,\nda graust's davor dem Wandrer, der spät vorüberzieht,\nund wenn die zwei zusammen anstimmen ihr Abendlied,\nda graust's davor dem Wander, der spät vorüberzieht,\nda graust's davor dem Wandrer, der spät vorüberzieht.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=24415",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Kosten",
+      "settings": [
+        {
+          "composer": "Johann Vesque von Püttlingen",
+          "title": "/lieder/get_settings.html?ComposerId=6068",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Fisher lad",
+      "aliases": [],
+      "composer": "(August Joseph) Norbert Burgmüller",
+      "work": "/lieder/get_settings.html?ComposerId=3617",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "The longed-for gleam of the evening star\nShines upon the margin of the floodwaters,\nThe lad pulls in the boat\nThat [lies quietly]1 in the harbour.\n\n\"My day's work is [faithfully]2 completed,\nBut, dear soul, tell me,\nOh tell me, how shall the long night\nPass for me without you?\"\n\nOn the shore stands a willow tree\nAnd leaning against it a stone,\n[Below]3 it lie in a narrow space\nHer cold dead bones.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=102416",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "(August Joseph) Norbert Burgmüller",
+          "title": "/lieder/get_settings.html?ComposerId=3617",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Friedrich von Kerstorf",
+          "title": "/lieder/get_settings.html?ComposerId=11536",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Josephine Lang",
+          "title": "/lieder/get_settings.html?ComposerId=4770",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Wiegenlied einer unglücklichen Mutter",
+      "aliases": [],
+      "composer": "Bernard van Dieren",
+      "work": "/lieder/get_settings.html?ComposerId=3876",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Schlaf sanft, mein Kind, schlaf sanft und schön!\nMich dauert's sehr, dich weinen sehn.\n\nUnd schläfst du sanft, bin ich so froh,\nUnd wimmerst du  --  das schmerzt mich so!\nSchlaf sanft, du kleines Mutterherz,\nDein Vater macht mir bittern Schmerz.\nSchlaf sanft, mein Kind, etc.\n\nDein Vater, als er zu mir trat,\nUnd süß, so süß um Liebe bat,\nDa kannt' ich noch sein Truggesicht,\nNoch seine süße Falschheit nicht.\nNun, leider!  seh' ich's,  seh' ich's ein,\nWie nichts wir ihm nun beide sein.\nSchlaf sanft, mein Kind, etc.\n\nRuh' sanft, mein Süsser, schlafet noch!\nUnd wenn du aufwachst, lächle noch,\nDoch nicht, wie einst dein Vater that,\nDer lächelnd mich so trogen hat.\nBehüt' dich Gott!  --  doch machts mir Schmerz,\nDaß du auch trägst sein G'sicht und Herz.\nSchlaf sanft, mein Kind, etc.\n\nWas kann ich thun?  Eins kann ich noch.\nIhn lieben will ich immer doch!\nWo er geh und steh nah und fern,\nMein Herz soll folgen ihm so gern.\nIn Wohl und Weh', wie's um ihn sei,\nMein Herz noch imm'r ihm wohne bei.\nSchlaf sanft, mein Kind, etc.\n\nNein, schöner Kleiner, thu es nie:\nDein Herz zur Falschheit neige nie;\nSei treuer Liebe immer treu,\nVerlaß sie nicht, zu wählen neu;\nDir gut und hold, verlaß sie nie  --\nAngstseufzer, schrecklich drücken sie!\nSchlaf sanft, mein Kind, etc.\n\nKind, seit dein Vater von mir wich,\nLieb' ich statt deines Vater dich!\nMein Kind und ich, wir wollen leben;\nIn Trübsal wird es Trost mir geben  --\nMein Kind und ich, voll Seligkeit,\nVergessen Männergrausamkeit  --\nSchlaf sanft, mein Kind, etc.\n\nLeb' wohl denn, falscher Jüngling, wohl!\nDer je kein Mädchen täuschen soll!\nAch jede, wünsch' ich, seh' auf mich,\nTrau keinem Mann und hüte sich!\nWenn erst sie haben unser Herz,\nForthin machts ihnen keinen Schmerz  --\nSchlaf sanft, mein Kind, etc.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=90077",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Johann Gottfried Herder",
+      "settings": [
+        {
+          "composer": "Bernard van Dieren",
+          "title": "/lieder/get_settings.html?ComposerId=3876",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Johann Friedrich Reichardt",
+          "title": "/lieder/get_settings.html?ComposerId=5468",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Go to the text.",
+          "title": "/lieder/get_text.html?TextId=73022",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 480,
+  "lieder_position": 528,
   "aria_opera": 0,
   "aria_scene": 8
 }
