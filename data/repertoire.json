@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T16:37:26+01:00",
+  "generated_at": "2026-11-09T18:21:51+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -2066,10 +2066,360 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "When thou didst give thy love to me",
+      "aliases": [],
+      "composer": "William Busch",
+      "work": "/lieder/get_settings.html?ComposerId=3623",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "When thou didst give thy love to me,\nAsking no more of gods or men\nI vow'd I would contented be,\nIf Fate should grant us summers ten.\n\nBut now that twice the term is sped,\nAnd ever young my heart and gay,\nI fear the words that then I said,\nAnd turn my face from Fate away.\n\nTo bid thee happily good-bye\nI have no hope that I can see,\nNo way that I shall bravely die,\nUnless I give my life for thee.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=47147",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Robert Seymour Bridges",
+      "settings": [
+        {
+          "composer": "William Busch",
+          "title": "/lieder/get_settings.html?ComposerId=3623",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Der Flüchtling",
+      "aliases": [],
+      "composer": "Franz von Blon",
+      "work": "/lieder/get_settings.html?ComposerId=7609",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Mutter, ich komme durch Nacht und Graus,\nVerfolgt und flüchtig zum Vaterhaus.\n\nMutter, ich komme durch Schnee und Wind --\nDein unglückselig verlorenes Kind.\n\nMutter, ich komme -- laß rnhn mich aus\nNur eine Stunde im Vaterhaus.\n\nDie Häscher folgen, muß weiter fliehn,\nMeine Füße bluten, meine Schläfe glühn.\n\nAn deinem Herzen einen Augenblick,\nDann ruft mich weiter mein Geschick.\n\nEinen Tropfen Wasser, einen Kuß, eh' ich geh!\nAuf ewig, Mutter, ade, ade!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=87634",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Julius Schanz",
+      "settings": [
+        {
+          "composer": "Franz von Blon",
+          "title": "/lieder/get_settings.html?ComposerId=7609",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Wilhelm Heiser",
+          "title": "/lieder/get_settings.html?ComposerId=4377",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Leopold Rosenfeld",
+          "title": "/lieder/get_settings.html?ComposerId=11571",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Nursery song",
+      "aliases": [],
+      "composer": "Pyotr Ilyich Tchaikovsky",
+      "work": "/lieder/get_settings.html?ComposerId=2762",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "My Lizzie-boy is so tiny, so tiny,\nthat from a mosquito’s wings\nshe made herself two lace collars,\nand – went to starch them, and went to starch them!\n\nMy Lizzie-boy is so tiny, so tiny,\nthat from a round walnut\nshe made a chair, in which you can hear an echo,\nand shouted, and shouted!\n\nMy Lizzie-boy is so tiny, so tiny,\nthat from an eggshell\nshe had a fancy phaeton\nmade upon her command, made upon command!\n\nMy Lizzie-boy is so tiny, so tiny,\nthat from a crayfish shell\nshe sewed four slippers\nand – to the ball, and – to the ball!\n\nMy Lizzie-boy is so tiny, so tiny,\nthat from a lilac leaf\nshe made a parasol to shade herself\nand strolled, and strolled!\n\nMy Lizzie-boy is so tiny, so tiny,\nthat by puffing on a dandelion,\nshe created a little sofa\nand slept right there, and slept right there!\n\nMy Lizzie-boy is so tiny, so tiny,\nthat to weave herself a canvas\nout of spiderwebs\nshe planned, she planned!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=117493",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Laura Stanfield Prichard",
+      "settings": [
+        {
+          "composer": "Pyotr Ilyich Tchaikovsky",
+          "title": "/lieder/get_settings.html?ComposerId=2762",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ich war nur Wunsch in deiner Nähe",
+      "aliases": [],
+      "composer": "Carl Frühling",
+      "work": "/lieder/get_settings.html?ComposerId=23382",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ich war nur Wunsch in deiner Nähe,\n  Doch als ich von dir ging.\nDa löste sich der Wunsch in Wehe,\n  Das mich gelind umfing.\n\nVerschwunden war das tolle Sehnen\n  Nach einem schönsten Glück --\nDie Seele wanderte mit Thränen\n  Des Nachts zu dir zurück.\n\nUnd wär' ich selber mitgekommen,\n  Ich hätte nichts gesagt\nAls: nimm das Herz, das du genommen,\n  Und schütz' es, bis es tagt.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=81163",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Emil Kuh",
+      "settings": [
+        {
+          "composer": "Carl Frühling",
+          "title": "/lieder/get_settings.html?ComposerId=23382",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Sun of the sleepless, sorrowful star",
+      "aliases": [],
+      "composer": "Sigizmund Mikhailovich Blumenfel'd",
+      "work": "/lieder/get_settings.html?ComposerId=7344",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Sun of the sleepless, sorrowful star,\nHow tearfully your ray always flickers,\nHow darkness is gloomier around its light,\nHow it resembles the ghost of the days long gone!\nThat way the past radiates for us in the night of life,\nBut its powerless rays can't warm us any more,\nStar of the past, I can see you in my bitter hour,\nVisible, but far away, glowing, but cold.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=118635",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sergey Rybin",
+      "settings": [
+        {
+          "composer": "Sigizmund Mikhailovich Blumenfel'd",
+          "title": "/lieder/get_settings.html?ComposerId=7344",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Pallady Andreyevich Bogdanov",
+          "title": "/lieder/get_settings.html?ComposerId=35161",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Klaus Miehling",
+          "title": "/lieder/get_settings.html?ComposerId=28708",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Auf winterlichem Felde",
+      "aliases": [],
+      "composer": "Adolf Wallnöfer",
+      "work": "/lieder/get_settings.html?ComposerId=6113",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Mir ist, als ob auf dieser Flur\ndas ganze Totenreich mich grüßte!\nIn starrem Schlafe liegt die Welt,\nund nur der Strom rauscht rastlos durch die Wüste.\n\nSo eilt in ew'ger Wachsamkeit,\nwenn wir uns auch zur Ruhe legen,\nder Allgedanke durch den Tod der Zeit\ndem großen Schöpfungsziel entgegen.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=151128",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hanns von Gumppenberg",
+      "settings": [
+        {
+          "composer": "Adolf Wallnöfer",
+          "title": "/lieder/get_settings.html?ComposerId=6113",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "If you are set on abandoning me",
+      "aliases": [],
+      "composer": "Georg Friedrich Händel",
+      "work": "/lieder/get_settings.html?ComposerId=4326",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "If you are set on abandoning me,\nI know not how to live without you,\na lonesome, estranged turtledove.\nAnd if you think not to love me,\nI shall love you as faithfully as mercilessly,\nmore than ever, yet equally wretched.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=399854",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Andrew Schneider",
+      "settings": [
+        {
+          "composer": "Georg Friedrich Händel",
+          "title": "/lieder/get_settings.html?ComposerId=4326",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Liebchens Erinnerung",
+      "aliases": [],
+      "composer": "Karl Gottlieb Reissiger",
+      "work": "/lieder/get_settings.html?ComposerId=5477",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Wie wohl ist mir im Herzen,\nWie warmer Sonnenschein,\nAls zög’ mit Lust und Scherzen\nDer holde Frühling ein;\nAls grünten neu die Matten,\nAls wehte frisch die Luft,\nAls gäb' der Baum schon Schatten,\nUnd jede Blume Duft.\n\nWas macht mich denn so fröhlich,\nAls würd’ ich wieder jung?\nAch, Liebchen ich bin seelig\nIn der Erinnerung!\nIn diesen schönen Stunden,\nDie Andern düster sind,\nDa hab' ich dich gefunden,\nDu wunderlieblich Kind!\n\nIm kerzenhellen Saale,\nUnd bei Musik und Tanz,\nSah ich zum Erstenmale\nDich in der Anmuth Glanz;\nEin Frühling stieg mir nieder,\nAls ich zuerst dich sah,\nDrum kehrt der Tag jetzt wieder,\nIst wieder Frühling da.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=131233",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Karl Gottlieb Reissiger",
+          "title": "/lieder/get_settings.html?ComposerId=5477",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The swallows",
+      "aliases": [],
+      "composer": "Josephine Lang",
+      "work": "/lieder/get_settings.html?ComposerId=4770",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "The snow is gone, has flowed away\nInto the great, vast ocean.\nThe swallows have returned,\nThey came back, I know not whence.\nI only know that they found each other again,\nBecause love does not abandon love,\nAnd they are setting up house here,\nFor love builds a nest for love.\n\n   Often when they had flown away,\nAnd the time of flowers approached,\nThen they came flying back again;\nThey came, what concern was it of mine?\nI was happiest when I saw them leave\nFor a warmer clime far away.\nI could not stand their chatter,\nOf which I as yet understood nothing.\n\n   Often when they had disturbed my sleep\nIt happened that my displeasure was directed at them,\nA maiden must love something;\nShe loves, ah, she loves to sleep.\nBut this time, like old friends,\nI greeted them joyfully and they greeted me;\nTruly, we are kindred spirits!\nThey love, they love as I do!\n\n   They chatter and rhapsodize and dream,\nAnd indulge in many a loving jest\nUpon sunny rooves and trees,\nAnd you, you understand them, my heart!\nThat which would eternally have remained a mystery,\nOnly tenderness can decipher,\nSwallows understand only love,\nLove understands nature.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=27813",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Josephine Lang",
+          "title": "/lieder/get_settings.html?ComposerId=4770",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Sharon Krebs",
+          "title": "./get_texts.html?ContribId=491",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Why do I see the perfumed rose pale?",
+      "aliases": [],
+      "composer": "Joseph Guy Marie Ropartz",
+      "work": "/lieder/get_settings.html?ComposerId=2383",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Why do I see the perfumed rose pale?\nTell me, tell me, o my beloved, tell me why!\nWhy, in the fluffy grass, do the violets,\nUsually so fresh, today possess\nAn air of boredom?\nWhy does the song of the larks\nSo nostalgically die on the roads?\nWhy do the bouquets of jasmine exhale\nThe death-tinged fragrance of incense?\nWhy, like the final fire of a just-extinguished torch\ndoes the sun on the limitless horizon\nShine a beam less blazing and less beautiful?\nWhy is the whole world gray and mournful\nLike a tombstone?\nWhy am I so weary, so sad, and so sick?\nMy dearly beloved, oh tell why, tell me why,\nIf you can still find a word which can persuade me,\nTell me why you have left me?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=31103",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Ahmed E. Ismail",
+      "settings": [
+        {
+          "composer": "Joseph Guy Marie Ropartz",
+          "title": "/lieder/get_settings.html?ComposerId=2383",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Song of the Spanish Gypsies",
+      "aliases": [],
+      "composer": "Margaret Ruthven Lang",
+      "work": "/lieder/get_settings.html?ComposerId=4771",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Today, she passed me lying dead.\nAnd when I saw how fair she was,\nA cov'ring o'er her face I spread.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=89483",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Alma Strettell",
+      "settings": [
+        {
+          "composer": "Margaret Ruthven Lang",
+          "title": "/lieder/get_settings.html?ComposerId=4771",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Rozmowa",
+      "aliases": [],
+      "composer": "César Antonovich Cui",
+      "work": "/lieder/get_settings.html?ComposerId=3795",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "pl",
+      "text": "Kochanko moja! na co nam rozmowa?\nCzemu, chcąc z tobą uczucia podzielać,\nNie mogę duszy prosto w duszę przelać?\nZa co ją trzeba rozdrabiać na słowa,\nKtóre nim słuch twój i serce dościgną,\nW ustach wietrzeją, na powietrzu stygną?\n\nKocham, ach! kocham, po sto razy wołam:\nA ty się smucisz i zaczynasz gniewać,\nŻe ja kochania mojego nie zdołam\nDosyć wymówić, wyrazić, wyśpiewać;\nI jak w letargu, nie widzę sposobu\nWydać znak życia, bym uniknął grobu.\n\nStrudziłem usta daremnem użyciem:\nTeraz je z twemi chcę stopić ustami,\nI chcę rozmawiać tylko serca biciem,\nI westchnieniami i całowaniami,\nI tak rozmawiać, godziny, dni, lata,\nDo końca świata i po końcu świata.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=11396",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Adam Mickiewicz",
+      "settings": [
+        {
+          "composer": "César Antonovich Cui",
+          "title": "/lieder/get_settings.html?ComposerId=3795",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Mikhail Ivanovich Glinka",
+          "title": "/lieder/get_settings.html?ComposerId=4197",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Stanisław Moniuszko",
+          "title": "/lieder/get_settings.html?ComposerId=5083",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 240,
+  "lieder_position": 288,
   "aria_opera": 0,
   "aria_scene": 8
 }
