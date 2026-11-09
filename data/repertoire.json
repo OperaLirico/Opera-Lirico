@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T15:39:28+01:00",
+  "generated_at": "2026-11-09T15:54:33+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -1045,8 +1045,525 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Transfixed in the quiet circle of gentle...",
+      "aliases": [],
+      "composer": "Winfried (Petrus Ignatius) Zillig",
+      "work": "/lieder/get_settings.html?ComposerId=6277",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "en",
+      "text": "Transfixed in the quiet circle of gentle hills,\nThere winds a river of eternally identical days,\nThere my bosom no long wishes to know of distant things,\nAnd smilingly longing folds its wings.\n\nMany others are standing boldly in the stirrups,\nTo capture the highest goods of life,\nAnd -- what they desire, they first must dare,\nA stern spirit governs the horse's reins. -\n\nWhat do you sing so enticingly, you quiet meadows,\nYou homeland with the rainbow bridges,\nYou merry images of innocent, colourful games?\n\nI am seized by the storm! light and shadow wrestle wildly,\nThrough gaps in the clouds flaming rapture breaks forth -\nOnward, my steed! we shall yet find the way to our goal!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=97914",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Winfried (Petrus Ignatius) Zillig",
+          "title": "/lieder/get_settings.html?ComposerId=6277",
+          "instrumentation": "soprano and orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Als über den Flieder das Mondlicht rann",
+      "aliases": [],
+      "composer": "Hans Fleischer",
+      "work": "/lieder/get_settings.html?ComposerId=10436",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Als über den Flieder das Mondlicht rann,\nDa steckt' er mir heimlich ein Ringlein an,\nUnd küßte den Ring und die Hand dazu\nUnd lauschte selig dem ersten \"Du\".\n\nDas Mondenlicht sah in den Ring hinein,\nDas gab einen fröhlichen, hellen Schein,\nDer Fliederbaum neigte die Blüten stumm,\nDie Gräser raunten: \"Das Glück geht um!\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=25988",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anna",
+      "settings": [
+        {
+          "composer": "Hans Fleischer",
+          "title": "/lieder/get_settings.html?ComposerId=10436",
+          "instrumentation": "mezzo-soprano and piano"
+        },
+        {
+          "composer": "Gustav Götze",
+          "title": "/lieder/get_settings.html?ComposerId=26900",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Robert Huch",
+          "title": "/lieder/get_settings.html?ComposerId=9344",
+          "instrumentation": "soprano and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Brooklet and tears",
+      "aliases": [],
+      "composer": "Antonín Dvořák",
+      "work": "/lieder/get_settings.html?ComposerId=3933",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Thro' the grove a brooklet flows in leafy shade...\nWilt thou water my exhausted steed, sweet maid?\nI am but a child, Sir,\nand your steed is wild, Sir,\nand I am afraid.\n\nPurple roses, clust'ring, half conceal thy door...\nSweet maid, surely thou hast lovers in galore...\nYoung men come and go, Sir,\nbut none stay to woo, Sir,\nand my heart is sore.\n\nAll around thy cottage Spring her blossoms spread...\nTell me, then, sweet maiden, why art thou so sad?...\nNe'er have I known gladness;\nwed to grief and sadness,\ntears my heart would shed.\n\nMaiden, fair sweet maiden,\nwith thy heart loveladen\nseek a youth to wed!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=72530",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation Singable translation by John Bernhoff",
+      "settings": [
+        {
+          "composer": "Antonín Dvořák",
+          "title": "/lieder/get_settings.html?ComposerId=3933",
+          "instrumentation": "duet for soprano and alto with piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Maienfahrt",
+      "aliases": [],
+      "composer": "Theodor Salzmann",
+      "work": "/lieder/get_settings.html?ComposerId=28080",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Der Mai bricht in den Wald herein,\nEr soll uns hoch willkommen sein.\nDie Röslein erwachen im grünen Wald --\nWie war der Winter lang und kalt!\nDer Mai flicht bunten blühenden Kranz,\nDie Knaben führen die Mädchen zum Tanz[,]\n       Tandaradei!\n       Fahr in den Mai!\n    Bald blühn im Hag die Rosen.\n\nDie Maiensonne träufelt Gold,\nJung Heinrich ist der Kathrin hold.\nDie dünkt an Ehren sich so reich,\nAls hätt' sie Sitz im Himmelreich.\nWer hat sie so nachdenklich gemacht?\nWer pflanzte ihr Maien vors Fenster bei Nacht?\n       Tandaradei!\n       Fahr in den Mai!\n    Bald blühn im Hag die Rosen.\n\nZur Linde zieht der frohe Reihn,\nDie schöne Kathrin geht allein.\nJung Heinrich rückt verlegen nah:\n\"Schön Kathrin! War heut schon einmal da!\"\nVon Aug zu Auge Blitze sprühn,\nUnd drunter rote Röslein blühn.\n       Tandaradei!\n       Fahr in den Mai!\n    So blühn im Hag die Rosen.\n\nO Mädel, wo kam dein Hochmut hin?\nSchlich dir ein andres in den Sinn?\nNoch nie hat Kathrin so gern getanzt!\n\"Du Böser! hast du mir die Maien gepflanzt?\"\nBlaublümle steckt sie ihm ans Herz,\nUnd als er scheidet, fühlt sie Schmerz.\n       Tandaradei!\n       Fahr in den Mai!\n    Ach, blüht und duftet, ihr Rosen!\n\nDer Frühling den Winter überwand,\nEin jedes Herz seine Wonne fand.\nO eisiger Stolz, wie mußt du weichen,\nWenn warme Lieb' dich thut erreichen!\nJung Heinrich jauchzt und küßt Kathrin,\nUnd die lacht selig vor sich hin.\n       Tandaradei!\n       Fahr in den Mai!\n    Süß duften im Hag die Rosen.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=131455",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Georg Karl Claudius",
+      "settings": [
+        {
+          "composer": "Theodor Salzmann",
+          "title": "/lieder/get_settings.html?ComposerId=28080",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Noite cheia de estrelas",
+      "aliases": [],
+      "composer": "Oscar Lorenzo Fernândez",
+      "work": "/lieder/get_settings.html?ComposerId=4014",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "pt",
+      "text": "A noite baixou silente...\nE então, cantei tristemente\nAs mágoas para esquecê-las...\nE a noite ouvindo o meu canto\nQue era a música de um pranto\nEncheu-se toda de estrelas.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=64019",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Adelmar Tavares da Silva",
+      "settings": [
+        {
+          "composer": "Oscar Lorenzo Fernândez",
+          "title": "/lieder/get_settings.html?ComposerId=4014",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Wir tragen die Maske",
+      "aliases": [],
+      "composer": "Gary Bachlund",
+      "work": "/lieder/get_settings.html?ComposerId=8142",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Die Maske tragen wir, die lügt,\ndie Wang' verbirgt, das Auge trübt, -\nso zahlen wir für Menschenlist:\ndas Herz zerbricht, doch Lächeln sprießt\nund unser Worte Schwall betrügt.\n\nWarum soll denn versteh'n die Welt,\nwelch' Tränen sie und Seufzer zählt?\nSie soll nur seh'n uns als vergnügt,\nund nur maskiert.\n\nWir lächeln, doch der Schrei - Oh Christ! -\naus tief gequälter Seele fließt;\nwir singen, doch wie hart der Steg\nauf dem wir gehn, wie lang der Weg!\nMach' nur, daß dies die Welt nicht spürt:\nWir sind maskiert!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=59850",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Walter A. Aue",
+      "settings": [
+        {
+          "composer": "Gary Bachlund",
+          "title": "/lieder/get_settings.html?ComposerId=8142",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Brittney Elizabeth Boykin",
+          "title": "/lieder/get_settings.html?ComposerId=31178",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Sheila Silver",
+          "title": "/lieder/get_settings.html?ComposerId=38877",
+          "instrumentation": "baritone and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "You are approaching!",
+      "aliases": [],
+      "composer": "Johanna Kinkel",
+      "work": "/lieder/get_settings.html?ComposerId=4643",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "You are approaching! And my cheeks\nBecome aurora-red;\nYou are leaving, and my eyes\nFill with tears.\nWhen I am thinking of you,\nThe flames climb up\nFrom the deepest of my heart,\nBut you do not see it!\n\nMelodic sighs are sounding,\nA full choir,\nMy lips are aspirating\nSongs devoted to you.\nIn my heart, there is a voice\nThat calls your name;\nIt calls it out loudly, pleading,\nAch, you do not notice.\n\nMy proud courage is broken,\nAnd so are my hope and my lust for life;\nMy heart is bleeding\nOut of an incurable wound.\nIt will have to put up with a great deal of pain\nUntil it is broken by the sympathy of  death.\nNameless pain,\nWoe betide, you do not feel it!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=105798",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Anja Bunzel",
+      "settings": [
+        {
+          "composer": "Johanna Kinkel",
+          "title": "/lieder/get_settings.html?ComposerId=4643",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Anja Bunzel",
+          "title": "./get_texts.html?ContribId=1022",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Kukuk, was rufst im Wald mich an?",
+      "aliases": [],
+      "composer": "Gustav Borchers",
+      "work": "/lieder/get_settings.html?ComposerId=11619",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Kukuk, was rufst im Wald mich an?\nWas will dein lustig Schreien?\nKommt bald ein wohlgeborner Mann,\nMich aus dem Haus zu freien?\nKukuk! er soll nur kommen,\nKukuk! er wird genommen.\nKukuk!\n\nKukuk, wie lange dauert's noch?\nIch warte ja schon lange,\n[Vertraue]1 mir's, damit ich doch\nBald an zu nähen fange.\nKukuk! den Flachs zum Linnen\nKukuk! muß ich noch spinnen.\nKukuk!\n\nKukuk, mir geht es von der Hand,\nWie du die Flügel schwenkest,\nIch schaffe mir das Brautgewand\nViel schneller, als du denkest.\nKukuk! du Guter, Weiser,\nKukuk! du schreist dich heiser!\nKukuk!\n\nKukuk, ich wollt' du schwiegest erst\nAuf deinem Baum verstohlen,\nWenn du nicht selbst der Kukuk wärst,\nSollt' dich der Kukuk holen!\nKukuk! in Kukuks Namen!\nKukuk! flieg in den Samen!\nKukuk! Kukuk! Kukuk!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=33196",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Julius Wolff",
+      "settings": [
+        {
+          "composer": "Gustav Borchers",
+          "title": "/lieder/get_settings.html?ComposerId=11619",
+          "instrumentation": "soprano and piano"
+        },
+        {
+          "composer": "Heinrich Karl Johann Hofmann",
+          "title": "/lieder/get_settings.html?ComposerId=8045",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Hugo Wilhelm Ludwig Kaun",
+          "title": "/lieder/get_settings.html?ComposerId=4598",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Lullaby",
+      "aliases": [],
+      "composer": "Johanna Kinkel",
+      "work": "/lieder/get_settings.html?ComposerId=4643",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Oh you are completely spoiled, dear child of my heart,\nSo be contented and go to sleep quickly.\nSleep, sleep, sleep, sleep.\n\nHow happy you are,\nHow rich you are,\nYour father, your mother do everything\nThat you want;\nYou lie in a warm little bed\nSo soft and downy,\nYou are given delightful soups\nWith sweet sugar in them.\nWah, wa, cries the child, wah, wa.\n\nOh you are completely spoiled, dear child of my heart,\n... ... ...\n\nThere outdoors howls\nThe ice-cold wind,\nIt cries and blows through Berlin,\nThe great, great city;\nThe storm-wind is jealous\nOf you, my dear child,\nBecause, unlike you,\nHe doesn’t have a downy feather bed.\nWhoosh, whoosh, blows the wind, whoosh, whoosh.\n\nOh you are completely spoiled, dear child of my heart,\n... ... ...\n\nThere outdoors a horse\nIs pulling a sled,\nThe sleigh bells are ringing,\nThe little horse, however, is sad;\nWith snorting and neighing\nIt complains loudly\nThat no one gives him sugar\nOr dainty soups.\nJingle jing, ring [the bells on] the horse, jingle jing.\n\nOh you are completely spoiled, dear child of my heart,\n... ... ...\n\nThere outdoors in the snow\nStand a group of musicians,\nThe woman sings a song,\nThe man plays the fiddle in accompaniment;\nEven if their throats\nAnd their fingers hurt,\nThey must sing\nAnd fiddle without rest or repose.\nLala, la sings the woman,\nFeefeedee boom, plays the man, Feefeedee boom.\n\nOh you are completely spoiled, dear child of my heart,\n... ... ...",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=109218",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Johanna Kinkel",
+          "title": "/lieder/get_settings.html?ComposerId=4643",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Sharon Krebs",
+          "title": "./get_texts.html?ContribId=491",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "An die Hoffnung",
+      "aliases": [],
+      "composer": "Wilhelm Volckmar",
+      "work": "/lieder/get_settings.html?ComposerId=43523",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Die du gleich der Morgenstunde\nprangst mit rosigem Gesicht,\nheilest auch die tiefste Wunde,\nleuchtest mit des Himmels Licht.\nO Hoffnung, ach verlass mich nicht,\nwenn des Lebens Stab einst bricht!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=159313",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Wilhelm Volckmar",
+          "title": "/lieder/get_settings.html?ComposerId=43523",
+          "instrumentation": "vocal duet with piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Pendel",
+      "aliases": [],
+      "composer": "Margarete Schweikert",
+      "work": "/lieder/get_settings.html?ComposerId=16838",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Eine schlank und blond, die andre\nSchlank und schwarz, nun Herzschlag wandre\nIn dem alten Pendelgange\nZwischen diesen beiden Schönen\nTick und Tack, ich hörs am Klange,\nHörs am Hin- und Wiedertönen.\nSchwingst in abgemeßner Mitte,\nRechts zwei Schritte, links zwei Schritte:\nSchwarze-Blonde, Schlag um Schlag,\nSchwarze-Blonde, durch den Tag,\nSchwarze-Blonde, Schwarze-Blonde.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=53488",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Gustav Falke",
+      "settings": [
+        {
+          "composer": "Margarete Schweikert",
+          "title": "/lieder/get_settings.html?ComposerId=16838",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The opium‑smoker",
+      "aliases": [],
+      "composer": "Louis Campbell-Tipton",
+      "work": "/lieder/get_settings.html?ComposerId=3664",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "I am engulfed, and drown deliciously\nSoft music like a perfume, and sweet light\nGolden with audible odours exquisite\nSwathe me with cerements for eternity\nTime is no more, I pause and yet I flee\nA million ages wrap me round with night.\nI drain a million ages of delight\nI hold the future in my memory.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=39657",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Arthur Symons",
+      "settings": [
+        {
+          "composer": "Louis Campbell-Tipton",
+          "title": "/lieder/get_settings.html?ComposerId=3664",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "La traviata · Atto I · Scena I",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待分类",
+      "kind": "歌剧选段",
+      "language": "it",
+      "text": "Violetta seduta sur un divano sta discorrendo col Dottore e con alcuni amici, mentre altri vanno ad incontrare quelli che sopraggiungono, tra’ quali sono il Barone, e Flora al braccio del Marchese.\nI Dell’invito trascorsa è già l’ora...\nVoi tardaste...\nII Giocammo da Flora,\nE giocando quell’ore volàr.\nVioletta Flora, amici, la notte che resta (va loro incontro)\nD’altre gioie qui fate brillar...\nFra le tazze è più viva la festa....\nFlora e Marchese E goder voi potrete?\nVioletta Lo voglio;\nAl piacere m’affido, ed io soglio\nCon tal farmaco i mali sopir.\nTutti Sì, la vita s’addoppia al gioir.",
+      "summary": "歌剧剧本选段，含本场全部唱词；搜索唱段首句即可定位。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_primo",
+      "textSourceName": "Wikisource 剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "剧本原文为公版；Wikisource 转录依 CC BY-SA 提供，引用请保留来源链接。",
+      "poet": "Francesco Maria Piave",
+      "autoImported": true
+    },
+    {
+      "title": "La traviata · Atto I · Scena II",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待分类",
+      "kind": "歌剧选段",
+      "language": "it",
+      "text": "Detti, il Visconte Gastone di Letorieres, Alfredo Germont; Servi affaccendati intorno alla mensa.\nGastone In Alfredo Germont, o signora,\nEcco un altro che molto vi onora;\nPochi amici a lui simili sono...\nVioletta Mio visconte, mercè di tal dono...\n(dà la mano ad Alfredo che gliela bacia)\nMarchese Caro Alfredo...\nAlfredo Marchese... (si stringono la mano)\nGastone T’ho detto\nL’amistà qui s’intreccia al diletto. (ad Alfredo)\n(I Servi frattanto avranno imbandite le vivande)\nVioletta Pronto è il tutto?... (un Servo accenna che sì)\nMiei cari, sedete;\nÈ al convito che s’apre ogni cor.\nTutti Ben diceste.... le cure segrete\nFuga sempre l’amico licor.\n(Siedono in modo che Violetta resti tra Alfredo e Gastone; di fronte vi sarà Flora tra il Marchese ed il Barone; gli altri siedono a piacere. V’ha un momento di silenzio; frattanto passano i piatti, e Violetta e Gastone parlano sottovoce tra loro, poi:)\nGastone Sempre Alfredo a voi pensa.\nVioletta Scherzate?\nGastone Egra foste, e ogni dì con affanno\nQui volò, di voi chiese...\nVioletta Cessate.\nNulla son io per lui...\nAlfredo Non v’inganno.\nVioletta Vero è dunque?.. onde ciò?.. nol comprendo (ad Alfredo)\nAlfredo Sì, egli è ver. (sospirando)\nVioletta Le mie grazie vi rendo.\nVoi, barone, non feste altrettanto... (al Barone)\nBarone Vi conosco da un anno soltanto.\nVioletta Ed ei solo da qualche minuto.\nFlora Meglio fora se avesse taciuto. (piano al Barone)\nBarone M’è increscioso quel giovin... (piano a Flora)\nFlora Perché?\nA me invece simpatico gli è.\nGastone E tu dunque non apri più bocca? (ad Alfredo)\nMarchese È a madama che scuoterlo tocca... (a Violetta)\nVioletta Sarò l’Ebe che versa... (mesce ad Alfredo)\nAlfredo E ch’io bramo\nImmortal come quella. (con galanteria)\nTutti Beviamo.\nGastone O barone, nè un verso, un viva\nTroverete in quest’ora giuliva?..\n(Barone accenna che no)\nDunque a te... (ad Alfredo)\nTutti Sì, sì, un brindisi.\nAlfredo L’estro\nNon m’arride...\nGastone E non se’ tu maestro?\nAlfredo Vi fia grato?.. (a Violetta)\nVioletta Sì.\nAlfredo Sì?.. L’ho in cor. (s’alza)\nMarchese Dunque attenti...\nTutti Sì, attenti al cantor.\nAlfredo Libiam ne’ lieti calici\nChe la bellezza infiora,\nE la fuggevol ora\nS’innebrii a voluttà.\nLibiam ne’ dolci fremiti\nChe suscita l’amore,\nPoichè quell’occhio al core (indicando Violetta)\nOnnipotente va.\nTutti Libiamo; amor fra i calici\nPiù caldi baci avrà.\nVioletta Tra voi, saprò dividere (s’alza)\nIl tempo mio giocondo;\nTutto è follia nel mondo\nCiò che non è piacer.\nGodiam, fugace e rapido\nÈ il gaudio dell’amore;\nÈ fior che nasce e muore,\nNè più si può goder.\nTutti Godiam... c’invita un fervido\nAccento lusinghier.\nGodiam... la tazza e il cantico\nLe notti abbella e il riso;\nIn questo paradiso\nNe scopra il nuovo dì.\nVioletta La vita è nel tripudio... (ad Alfredo)\nAlfredo Quando non s’ami ancora. (a Violetta)\nVioletta Nol dite a chi lo ignora... (ad Alfredo)\nAlfredo È il mio destin così... (a Violetta)\nTutti Godiam... la tazza e il cantico\nLe notti abbella e il riso;\nIn questo paradiso\nNe scopra il nuovo dì. (s’ode musica dall’altra sala)\nTutti Che è ciò?\nVioletta Non gradireste ora le danze?\nTutti Oh il gentile pensier!.. tutti accettiamo.\nVioletta Usciamo dunque... (s’avviano alla porta di mezzo, ma Violetta colta da subito pallore dice:)\nOimè!...\nTutti Che avete?..\nVioletta Nulla,\nNulla.\nTutti Che mai v’arresta?..\nVioletta Usciamo... (fa qualche passo, ma è obbligata a nuovamente fermarsi e sedere) Oh Dio!..\nTutti Ancora!..\nAlfredo Voi soffrite!\nTutti Oh ciel!.. ch’è questo!\nVioletta È un tremito che provo... or là passate,\n(indica l’altra stanza)\nTra poco anch’io sarò...\nTutti Come bramate. (tutti passano all’altra sala, meno Alfredo che resta indietro.)",
+      "summary": "歌剧剧本选段，含本场全部唱词；搜索唱段首句即可定位。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_primo",
+      "textSourceName": "Wikisource 剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "剧本原文为公版；Wikisource 转录依 CC BY-SA 提供，引用请保留来源链接。",
+      "poet": "Francesco Maria Piave",
+      "autoImported": true
+    },
+    {
+      "title": "La traviata · Atto I · Scena III",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待分类",
+      "kind": "歌剧选段",
+      "language": "it",
+      "text": "Violetta, Alfredo, e Gastone a tempo.\nVioletta (guardandosi allo specchio)\nOh qual pallor!.. (volgendosi si accorge d’Alfredo)\nVoi qui!...\nAlfredo Cessata è l’ansia,\nChe vi turbò?\nVioletta Sto meglio.\nAlfredo Ah in cotal guisa\nV’ucciderete... aver v’è d’uopo cura\nDell’esser vostro...\nVioletta E lo potrei?\nAlfredo Se mia\nFoste, custode veglierei pe’ vostri\nSoavi dì.\nVioletta Che dite?.. ha forse alcuno\nCura di me?\nAlfredo Perchè nessuno al mondo (con fuoco)\nV’ama...\nVioletta Nessun?..\nAlfredo Tranne sol io.\nVioletta Gli è vero!..\nSì grande amor dimenticato avea... (ridendo)\nAlfredo Ridete!.. e in voi v’ha un core?...\nVioletta Un cor?.. sì... forse... e a che lo richiedete?..\nAlfredo Oh, se ciò fosse, non potreste allora\nCeliar...\nVioletta Dite davvero?...\nAlfredo Io non v’inganno.\nVioletta Da molto è che mi amate?\nAlfredo Ah sì, da un anno.\nUn dì, felice, eterea,\nMi balenaste innante,\nE da quel dì tremante\nVissi d’ignoto amor.\nDi quell’amor ch’è l'anima\nDell’universo intero,\nMisterïoso, altero,\nCroce e delizia al cor.\nVioletta Ah, se ciò è ver, fuggitemi\nSolo amistade io v’offro:\nAmar non so, nè soffro\nDi così eroico ardor.\nIo sono franca, ingenua;\nAltra cercar dovete;\nNon arduo troverete\nDimenticarmi allor.\nGastone (si presenta sulla porta di mezzo) Ebben?.. che diavol fate?\nVioletta Si folleggiava...\nGastone Ah! Ah!... sta ben... restate. (rientra)\nVioletta Amor dunque non più... vi garba il patto?\nAlfredo Io v’obbedisco... Parto... (per andarsene)\nVioletta A tal giungeste?\n(si toglie un fiore dal seno)\nPrendete questo fiore.\nAlfredo Perché?...\nVioletta Per riportarlo..\nAlfredo Quando? (tornando)\nVioletta Quando\nSarà appassito.\nAlfredo Allor domani...\nVioletta Ebbene;\nDomani.\nAlfredo Io son felice! (prende con trasporto il fiore)\nVioletta D’amarmi dite ancora?\nVioletta Oh quanto v’amo!.. (per partire)\nVioletta Partite?..\nAlfredo Parto. (torna a lei e le bacia la mano.)\nVioletta Addio.\nAlfredo Di più non bramo. (esce)",
+      "summary": "歌剧剧本选段，含本场全部唱词；搜索唱段首句即可定位。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_primo",
+      "textSourceName": "Wikisource 剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "剧本原文为公版；Wikisource 转录依 CC BY-SA 提供，引用请保留来源链接。",
+      "poet": "Francesco Maria Piave",
+      "autoImported": true
+    },
+    {
+      "title": "La traviata · Atto I · Scena IV",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待分类",
+      "kind": "歌剧选段",
+      "language": "it",
+      "text": "Violetta, e tutti gli altri che tornano dalla sala riscaldati dalle danze.\nTutti Si ridesta in ciel l’aurora,\nE n’è forza di partir;\nMercè a voi, gentil signora,\nDi sì splendido gioir.\nLa città di feste è piena,\nVolge il tempo dei piacer;\nNel riposo ancor la lena\nSi ritempri per goder! (partono dalla destra)",
+      "summary": "歌剧剧本选段，含本场全部唱词；搜索唱段首句即可定位。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_primo",
+      "textSourceName": "Wikisource 剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "剧本原文为公版；Wikisource 转录依 CC BY-SA 提供，引用请保留来源链接。",
+      "poet": "Francesco Maria Piave",
+      "autoImported": true
+    },
+    {
+      "title": "La traviata · Atto I · Scena V",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待分类",
+      "kind": "歌剧选段",
+      "language": "it",
+      "text": "Violetta sola.\nÈ strano!.. è strano!.. in core\nScolpiti ho quegli accenti!...\nSarìa per me sventura un serio amore?...\nChe risolvi, o turbata anima mia?..\nNull’uomo ancora t’accendeva... oh gioia\nCh’io non conobbi, essere amata amando!..\nE sdegnarla poss’io\nPer l’aride follie del viver mio?\nAh, forse è lui che l’anima\nSolinga ne’ tumulti\nGodea sovente pingere\nDe’ suoi colori occulti!..\nLui che modesto e vigile\nAll’egre soglie ascese,\nE nuova febbre accese,\nDestandomi all’amor.\nA quell’amor ch’è palpito\nDell’universo intero,\nMisterïoso, altero,\nCroce e delizia al cor.\nA me fanciulla, un candido\nE trepido desire\nQuesti effigiò dolcissimo\nSignor dell’avvenire,\nQuando ne’ cieli il raggio\nDi sua beltà vedea,\nE tutta me pascea\nDi quel divino error.\nSentìa che amore è il palpito\nDell’universo intero,\nMisterïoso altero,\nCroce e delizia al cor.\n(resta concentrata un’istante, poi dice:)\nFollie!.. follie!... delirio vano è questo!...\nIn quai sogni mi perdo,\nPovera donna, sola\nAbbandonata in questo\nPopoloso deserto\nChe appellano Parigi,\nChe spero or più?.. che far degg’io!... gioire.\nDi voluttà nei vortici finire.\nSempre libera degg’io\nTrasvolar di gioia in gioia,\nPerchè ignoto al viver mio\nNulla passi del piacer.\nNasca il giorno, il giorno muoja,\nSempre me la stessa trovi,\nLe dolcezze a me rinnovi\nMa non muti il mio pensier. (entra a sinistra)\nFINE DELL’ATTO PRIMO.",
+      "summary": "歌剧剧本选段，含本场全部唱词；搜索唱段首句即可定位。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_primo",
+      "textSourceName": "Wikisource 剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "剧本原文为公版；Wikisource 转录依 CC BY-SA 提供，引用请保留来源链接。",
+      "poet": "Francesco Maria Piave",
+      "autoImported": true
+    },
+    {
+      "title": "La traviata · Atto II · Scena I",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待分类",
+      "kind": "歌剧选段",
+      "language": "it",
+      "text": "Alfredo entra in costume di caccia.\nLunge da lei per me non v’ha diletto!... (depone il fucile)\nVolaron già tre lune\nDacchè la mia Violetta\nAgi per me lasciò, dovizie, amori,\nE le pompose feste\nOve, agli omaggi avvezza,\nVedea schiavo ciascun di sua bellezza...\nEd or contenta in questi ameni luoghi\nSolo esiste per me... qui presso a lei\nIo rinascer mi sento,\nE dal soffio d’amor rigenerato\nScordo ne’ gaudii suoi tutto il passato.\nDe’ miei bollenti spiriti\nIl giovanile ardore\nElla temprò col placido\nSorriso dell’amore!\nDal dì che disse: Vivere\nIo voglio a te fedel,\nDell’universo immemore\nMi credo quasi in ciel.",
+      "summary": "歌剧剧本选段，含本场全部唱词；搜索唱段首句即可定位。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_secondo",
+      "textSourceName": "Wikisource 剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "剧本原文为公版；Wikisource 转录依 CC BY-SA 提供，引用请保留来源链接。",
+      "poet": "Francesco Maria Piave",
+      "autoImported": true
+    },
+    {
+      "title": "La traviata · Atto II · Scena II",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待分类",
+      "kind": "歌剧选段",
+      "language": "it",
+      "text": "Detto ed Annina in arnese da viaggio.\nAlfredo Annina, donde vieni?\nAnnina Da Parigi.\nAlfredo Chi tel commise?\nAnnina Fu la mia signora.\nAlfredo Perchè?\nAnnina Per alienar cavalli, cocchi,\nE quanto ancor possiede...\nAlfredo Che mai sento!\nAnnina Lo spendio è grande a viver qui solinghi...\nAlfredo E tacevi?...\nAnnina Mi fu il silenzio imposto.\nAlfredo Imposto!... e v’abbisognan?...\nAnnina Mille luigi.\nAlfredo Or vanne... andrò a Parigi...\nQuesto colloquio ignori la signora...\nAnnina (parte)",
+      "summary": "歌剧剧本选段，含本场全部唱词；搜索唱段首句即可定位。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_secondo",
+      "textSourceName": "Wikisource 剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "剧本原文为公版；Wikisource 转录依 CC BY-SA 提供，引用请保留来源链接。",
+      "poet": "Francesco Maria Piave",
+      "autoImported": true
+    },
+    {
+      "title": "La traviata · Atto II · Scena III",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待分类",
+      "kind": "歌剧选段",
+      "language": "it",
+      "text": "Alfredo solo.\nOh mio rimorso!... Oh infamia!...\nE vissi in tale errore!...\nMa il turpe sonno a frangere\nIl ver mi balenò.\nPer poco in seno aquetati,\nO grido dell’onore,\nM’avrai securo vindice,\nQuest’onta laverò. (esce)",
+      "summary": "歌剧剧本选段，含本场全部唱词；搜索唱段首句即可定位。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_secondo",
+      "textSourceName": "Wikisource 剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "剧本原文为公版；Wikisource 转录依 CC BY-SA 提供，引用请保留来源链接。",
+      "poet": "Francesco Maria Piave",
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 96
+  "lieder_position": 144,
+  "aria_opera": 0,
+  "aria_scene": 8
 }
