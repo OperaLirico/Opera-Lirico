@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T20:49:23+01:00",
+  "generated_at": "2026-11-09T21:03:23+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -5626,10 +5626,355 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Chronica",
+      "aliases": [],
+      "composer": "Thomas F. Schubert",
+      "work": "/lieder/get_settings.html?ComposerId=21521",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "de",
+      "text": "Mutter und Vater sind im Himmel\nUnd sprühen ihre Kraft\nAn singenden Fernen vorbei,\nAn spielenden Sternen vorbei\n  Auf mich nieder.\nHimmel bebender Leidenschaft\n  Prangen auf,\nO, meine ganze Sehnsucht reisst sich auf\nDurch goldenes Sonnenblut zu gleiten!\nFühle Mutter und Vater wiederkeimen\nAuf meinen ahnungsbangen Mutterweiten.\n  Drei Seelen breiten\nAus stillen Morgenträumen\nZum Gottland ihre Wehmut aus.\nDenn drei sind wir Schwestern,\nUnd die vor mir träumten schon in Sphinxgestalten\nZu Pharaozeiten.\nMich formte noch im tiefsten Weltenschooss\n  Die schwerste Künstlerhand.\nUnd wisset, wer meine Brüder sind!\nSie waren die drei Könige, die gen Osten zogen\nDem weissen Sterne nach durch brennenden Wüstenwind.\nAber acht Schicksale wucherten aus unserem Blut\nUnd lauern hinter unseren Himmeln:\nVier plagen uns im Abendrot,\nVier verdunkeln uns die Morgenglut,\nSie brachten über uns Hungersnot\nUnd Herzensnot und Tod!\nUnd es steht:\nUeber unserem letzten Grab ihr Fortleben noch,\nDen Fluch über alle Welten zu weben,\nSich ihres Bösen zu freuen.\nAber die Winde werden einst ihren Staub scheuen.\n  Satanas miserere eorum!!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=147643",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Else Lasker-Schüler",
+      "settings": [
+        {
+          "composer": "Thomas F. Schubert",
+          "title": "/lieder/get_settings.html?ComposerId=21521",
+          "instrumentation": "soprano and orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "La morte è una notte fresca",
+      "aliases": [],
+      "composer": "Károly Aggházy",
+      "work": "/lieder/get_settings.html?ComposerId=9133",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "La morte è una notte fresca,\nla vita un giorno afoso,\nGià si fa buio, ho sonno,\ne mi ha stancato il giorno.\n\nC'è un albero vicino al mio letto,\nlì canta un usignolo;\nCanta soltanto d' amore --\nIn sogno lo sento pure.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=39353",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Ferdinando Albeggiani",
+      "settings": [
+        {
+          "composer": "Károly Aggházy",
+          "title": "/lieder/get_settings.html?ComposerId=9133",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Frances Allitsen",
+          "title": "/lieder/get_settings.html?ComposerId=3170",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Albert Felix, Graf Amadei",
+          "title": "/lieder/get_settings.html?ComposerId=3176",
+          "instrumentation": "low voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Marriage",
+      "aliases": [],
+      "composer": "Georg Philipp Telemann",
+      "work": "/lieder/get_settings.html?ComposerId=5933",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "How wisely he does, who does not\nsole his shoe with depraved meanness,\nby which he gets some love.\nIndeed money covers some errors;\nbut whoever expects from marriage\nmerely to fill the fat bag\nwith wealth, not virtue,\nseldom will obtain happiness.\n\nAn honourable heart, a chaste body,\nis more estimable than all the gold\nwhich those set as their only criterion,\nthose whose favorite pastime\nis looking at the attained dowry -\nthose who, when the purchase has been made,\nand they examine it, too late,\ncurse their guilty cross, avarice.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=904",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Poppy Holden",
+      "settings": [
+        {
+          "composer": "Georg Philipp Telemann",
+          "title": "/lieder/get_settings.html?ComposerId=5933",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Die beiden Bonzen",
+      "aliases": [],
+      "composer": "Johann Rudolf Zumsteeg",
+      "work": "/lieder/get_settings.html?ComposerId=6290",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Zween Mönche von des Indus Strand\n Hausirten einst nach alter Sitte,\n Mit Stab und Ranzen durch das Land,\n Und sahen eine Bauerhütte,\n In deren grünbezäunten Hof\n Ein wichtiges paar Enten soff.\n\n Sie nahten sich mit ernstem Schritte\n Und stürzten blaß zur Erde hin.\n Was soll's mit diesen Komplimenten,\n Ihr Herren? Rief die Meierin.\n Ach! gutes Weib, in diesen Enten\n Wohnt unsrer Väter irrer Geist.\n Ach! warum können wir's nicht wehren,\n Daß bald ein Kannibal sie speißt!\n\n So heulten sie mit bittern Zähren;\n Der Bäurin ward's im Busen warm:\n Ich wollte sie euch gern verehren;\n Doch, liebe Herren, ich bin arm,\n Und muß, aus Mangel, eh'ster Tagen\n Sie nach der Stadt zu Markte tragen.\n\n Nun ging der Jammer erst recht an.\n Die Bonzen schrieen Mord und Zeter!\n Barbarin! gieb uns unsre Väter!\n Was haben sie dir Leids getan?\n Gieb, gieb, gieb uns die Enten, unsre Väter\n Die Wittwe bebt! Mit bangem Stöhnen\n Schenkt sie die Enten ihren Söhnen;\n Die tragen sie vergnügt nach Haus,\n Und frassen sie zum Abendschmaus.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=12767",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Gottlieb Konrad Pfeffel",
+      "settings": [
+        {
+          "composer": "Johann Rudolf Zumsteeg",
+          "title": "/lieder/get_settings.html?ComposerId=6290",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Chant du soir pour la bien‑aimée lointaine",
+      "aliases": [],
+      "composer": "Franz Peter Schubert",
+      "work": "/lieder/get_settings.html?ComposerId=2520",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Regardez dehors, mes yeux, vers la vallée !\nLà on peut vivre pleinement ;\nLà on peut se rafraîchir dans la clair de lune\nEt dans la paix sacrée.\nLà écoute mon cœur, maintenant sans trouble,\nLà écoute ces doux sons,\nQui, comme de loin, pour la joie et le chagrin,\nSe pressent sur toi.\n\nIls se pressent si merveilleusement,\nIls émeuvent tous mes désirs.\nOh, dis-moi, pressentiment, es-tu vrai ?\nEs-tu une vaine illusion ?\nEst-ce qu'un jour mes yeux, dans un plaisir pur,\nSouriront, comme maintenant dans les larmes ?\nEst-ce qu'un jour mon cœur, si souvent indigné,\nSera envahi par une paix bénie ?\n\nQuand le pressentiment et le souvenir\nSe réunissent devant notre regard,\nAlors au crépuscule s'atténuent\nLes ombres les plus profondes de l'âme.\nHélas, si nous n'avions pas avec les rêves\nÀ entremêler la réalité,\nComme pauvre en couleur, éclat et lumière\nTu serais, ô vie humaine !\n\nAinsi le cœur espère fidèlement et constamment\nJusqu'à la tombe ;\nAvec l'amour il embrasse le présent,\nEt semble riche en biens,\nPossessions qu'il a créé lui-même,\nEt qu'aucun sort ne peut pas lui voler ;\nIl vit et s'agite dans la chaleur et la force,\nÀ travers la confiance et la foi.\n\nEt même si dans la nuit et le brouillard\nTout autour est mort,\nCe cœur a depuis longtemps pour chaque combat\nAcquis un bouclier.\nAvec orgueil dans l'adversité,\nIl supporte ce qui lui a été alloué.\nAinsi je m'endors, ainsi je m'éveille,\nSi ce n'est pas dans la joie, pourtant en paix.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=81283",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "Franz Peter Schubert",
+          "title": "/lieder/get_settings.html?ComposerId=2520",
+          "instrumentation": "voice, piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Dutch (Nederlands)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Aan twee lieve kleine jongens",
+      "aliases": [],
+      "composer": "Johan Schmier",
+      "work": "/lieder/get_settings.html?ComposerId=31088",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "nl",
+      "text": "Zie daar, lieve wigtjes!\nEen bundel gedigtjes,\nVermaakt er u meê!\nEn springt naar uw wooning,\nMaar... eerst ter belooning\nEen kusjen of twee.\n\nDoor liefde gedrongen\nHeb ik ze gezongen,\nEn wilt gij er meer,\nGij moogt er om vragen.\nWanneer ze u behagen\nHup, hup, komt huppelend weêr.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=122610",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hieronymus van Alphen",
+      "settings": [
+        {
+          "composer": "Johan Schmier",
+          "title": "/lieder/get_settings.html?ComposerId=31088",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Grabschrift",
+      "aliases": [],
+      "composer": "Lise Maria Mayer",
+      "work": "/lieder/get_settings.html?ComposerId=5011",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Gute Nacht, du liebe Welt!\nweil es meinem Gott gefällt,\nwill ich Abschied nehmen;\nmeine Kinder sind nun groß,\ndrum geh ich in Erdenschoß,\nwill mir Ruh bezähmen.\n\nHatt' im Leben viele Plag,\nlange Nächt' und heiße Tag\nund viel Sorg um morgen;\nmeine Sorgen groß und klein\nschlafen alle mit mir ein,\nwie bin ich geborgen!\n\nFalte ruhig meine Händ',\nalles kommt zu seinem End',\nso in Gottes Namen!\nJa, mein Bett ist schon gemacht,\ndarum sag' ich: \"Gute Nacht,\ngute Nacht und Amen!\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=15469",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hermann Sudermann",
+      "settings": [
+        {
+          "composer": "Lise Maria Mayer",
+          "title": "/lieder/get_settings.html?ComposerId=5011",
+          "instrumentation": "female voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Le réveil du printemps",
+      "aliases": [],
+      "composer": "Dmitri Dmitriyevich Shostakovich",
+      "work": "/lieder/get_settings.html?ComposerId=5739",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Hier mon chat a regardé le calendrier\nEt sa queue s'est aussitôt levée.\nPuis il a dévalé les escaliers,\nComme d'habitude, et a miaulé\nAvec chaleur et lascivement :\n  « C'est la noce au printemps ! Les gens se marient !\n  Venez vite, les chats, au grenier ! »\n\nEt mon cactus, merveille entre les merveilles !\nHumecté de restes de thé et de café,\nComme un nouveau Lazare, avance et ressuscite\nEt chaque jour sur la terre pousse toute une forêt dense.\n  Le bruit est vert ! J'étais ébahi :\n  « Combien de pensées il fait pousser ! »\n\nDéjà du pavé la boue gelée,\nEn jurant, les balayeurs la balaient.\nUn prince aujourd'hui s'est promené pour moi,\nIl a pris une écharpe chaude et des skis...\n  « Printemps, printemps ! » Je chante comme le barde,\n  emporte le rebut de l'hiver au mont-de-piété !\n\nLe soleil brille, Oh, mon Dieu !\nLe ciel bleu du printemps a effrayé la fumée et la suie.\nLe gel ne mord plus personne.\nMais de nombreuses personnes n'ont plus,\n  Comme en hiver, à manger... Les arbres attendent...\n  L'eau dégèle, et il y a plus d'ivrognes que jamais.\n\nOh, mon Créateur ! Merci pour le printemps !\nJe pensais qu'il ne reviendrait pas, mais...\nQue je m'échappe vers la forêt silencieuse\nLoin de l'amertume quotidienne, du choléra et de la capitale.\n  Un vent printanier est à ma porte...\n  De qui vais-je tomber amoureux, bon sang ?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=111218",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "Dmitri Dmitriyevich Shostakovich",
+          "title": "/lieder/get_settings.html?ComposerId=5739",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Der Herzenswechsel",
+      "aliases": [],
+      "composer": "Friedrich Heinrich Himmel",
+      "work": "/lieder/get_settings.html?ComposerId=4424",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Du gibst mir also nicht dein Herz?\nSo gib das meine mir!\nWas soll das meine dir?\nGib es mir wieder! Doch laß sein!\nBekäm' ich's auch zurück,\nDu stielst es mir ja tausendmal\nMit jedem neuen Blick.\n\nBehalt es! Wahr in deiner Brust,\nFortan der Herzen zwei.\nWohl hauchet eins das andre an\nMit Lieb und zarter Treu.\nUnd weg denn, Zweifel - Weg, o Schmerz!\nIhr findet keine Statt;\nIch glaub es fest, ich hab ihr Herz,\nWeil sie das meine hat.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=26177",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Johann Gottfried Herder",
+      "settings": [
+        {
+          "composer": "Friedrich Heinrich Himmel",
+          "title": "/lieder/get_settings.html?ComposerId=4424",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ich küsse dir vom Aug die Thräne",
+      "aliases": [],
+      "composer": "Wilhelm Kienzl",
+      "work": "/lieder/get_settings.html?ComposerId=4633",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ich küsse dir vom Aug die Thräne,\nDie du um mich geweinet, fort,\nIch küsse deinen Mund und wähne,\nIch küsse dir vom Mund das Wort.\n\nIch küsse deine schöne Stirne\nUnd deine seidnen Wimpern auch,\nEs weht vom Leuchten der Gestirne\nDurch Winternacht ein Frühlingshauch.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=89785",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hermann von Lingg",
+      "settings": [
+        {
+          "composer": "Wilhelm Kienzl",
+          "title": "/lieder/get_settings.html?ComposerId=4633",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Albert Wolfermann",
+          "title": "/lieder/get_settings.html?ComposerId=27170",
+          "instrumentation": "low voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Aus der Kindheit",
+      "aliases": [],
+      "composer": "Richard Georg Strauss",
+      "work": "/lieder/get_settings.html?ComposerId=5869",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ein Hügel war's, wo ich im Gras\nzur Sommerzeit am liebsten sass\nals frohes Kind allein;\nweit um mich her die grüne Au\nund über mir nur tiefes Blau\nund goldner Sonnenschein.\n\nDa schwärmten Falter mir vorbei,\nund fleiss'ge Bienen summten frei\nmir um das blonde Haar.\nGoldkäfer stellten oft sich ein,\nund Grillen musizierten fein\nzum Tanz der Mückenschar.\n\nUnd wenn der Tag zu Rüste ging,\nwie selig da mein Auge hing\nan Wolken, goldumsäumt!\nO, das war tiefe Poesie, -\nso lebensvolle, wie ich nie -\nmir je als Mann erträumt.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=59168",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Julius Karl Reinhold Sturm",
+      "settings": [
+        {
+          "composer": "Richard Georg Strauss",
+          "title": "/lieder/get_settings.html?ComposerId=5869",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Königin",
+      "aliases": [],
+      "composer": "Paul Hermann Franz Graener",
+      "work": "/lieder/get_settings.html?ComposerId=4239",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Alle Königskerzen werden blühen\nAn den Rainen deinen Weg entlang,\nAlle Purpurdisteln werden glühen\nAn der Straße, die dich führt dein Gang.\n\nAlle Quellen werden fröhlich springen,\nWenn dein Kommen benedeit den Wald,\nAlle Vögel werden lustig singen,\nWenn sich nahet deine Holdgestalt.\n\nFeld und Flur, sie werden herrlich prangen\nUnd die Sonne lacht darüber hin,\nWenn sie lächelnd kommt den Weg gegangen,\nMeine wunderschöne Königin.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=45482",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hermann Löns",
+      "settings": [
+        {
+          "composer": "Paul Hermann Franz Graener",
+          "title": "/lieder/get_settings.html?ComposerId=4239",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 720,
+  "lieder_position": 768,
   "aria_opera": 0,
   "aria_scene": 8
 }
