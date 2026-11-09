@@ -3,69 +3,121 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#173c35">
-  <meta name="description" content="意大利歌剧角色招募、试唱和声乐比赛信息，直达主办方公告。">
+  <meta name="theme-color" content="#12352e">
+  <meta name="description" content="意大利歌剧院学院与音乐学院入学考试、歌剧角色招募、试唱和声乐比赛信息，含官方简章与直达链接。">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.svg">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="extra.css">
-  <title>意大利声乐现场 · 试唱、招募与比赛</title>
+  <link rel="stylesheet" href="styles.css?v=ux5">
+  <title>意大利声乐现场 · 考试、试唱与曲目库</title>
 </head>
 <body>
+  <a class="skip-link" href="#music-library">跳到曲目搜索</a>
+
   <header class="topbar">
-    <a class="brand" href="./" aria-label="意大利声乐现场首页"><span class="brand-mark">♫</span><span>意大利声乐现场 <small>ITALIA</small></span></a>
-    <button id="installButton" class="install-button" hidden>添加到主屏幕</button>
+    <div class="shell topbar-inner">
+      <a class="brand" href="./" aria-label="意大利声乐现场首页">
+        <span class="brand-mark" aria-hidden="true">♫</span>
+        <span class="brand-text">意大利声乐现场<small>ITALIA · AUDIZIONI</small></span>
+      </a>
+      <nav class="nav" aria-label="板块导航">
+        <a href="#open-calls">正在报名</a>
+        <a href="#music-library">曲目库</a>
+        <a href="#conservatori">入学考试</a>
+        <a href="#sources">来源动态</a>
+      </nav>
+      <button id="installButton" class="install-button" hidden>添加到主屏幕</button>
+    </div>
   </header>
+
   <main>
-    <section class="hero">
-      <div class="eyebrow">OPERA · AUDIZIONI · CONCORSI</div>
-      <h1>让下一次登台，从这里开始。</h1>
-      <p>汇集意大利歌剧角色招募、试唱和声乐比赛，点开即可查看主办方原始公告。</p>
-      <div class="hero-meta"><span class="live-dot"></span><span id="updatedAt">正在读取来源动态…</span><button id="refreshButton" class="text-button">刷新</button></div>
+    <section class="shell hero">
+      <div class="eyebrow">Opera · Audizioni · Concorsi</div>
+      <h1>让下一次<em>登台</em>，<br>从这里开始。</h1>
+      <p class="lede">剧院学院与音乐学院的入学考试、歌剧角色招募、试唱与比赛，逐条对照官网原文；报名期限、考试日期、曲目要求写成一句一句能读的中文，官方简章一键直达。</p>
+      <div class="hero-status">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span id="updatedAt">正在读取来源动态…</span>
+        <button id="refreshButton" class="text-button" type="button">刷新</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="statCalls">—</b><span>正在报名</span></div>
+        <div class="stat"><b id="statSchools">—</b><span>院校在读</span></div>
+        <div class="stat"><b id="statSongs">—</b><span>曲目收录</span></div>
+        <div class="stat"><b id="statSources">—</b><span>信息来源</span></div>
+      </div>
     </section>
 
-    <section class="section-head">
-      <div><div class="eyebrow">OPEN CALLS</div><h2>正在报名</h2></div>
-      <span id="opportunityCount" class="count-pill">—</span>
+    <section class="shell section" id="open-calls">
+      <div class="section-head">
+        <div><div class="eyebrow">Open calls</div><h2>正在报名</h2><p>已确认仍在招募的项目，截止时间按罗马时间显示。</p></div>
+        <span id="opportunityCount" class="count-pill">—</span>
+      </div>
+      <div id="opportunities" class="opportunity-list" aria-live="polite"></div>
     </section>
-    <div id="opportunities" class="opportunity-list" aria-live="polite"></div>
 
-    
-    <section class="music-section" id="music-library">
-      <div class="section-head"><div><div class="eyebrow">ARIA · LIEDER</div><h2>搜歌名，查文本和乐谱</h2></div><span id="repertoireCount" class="count-pill">读取曲目…</span></div>
-      <p class="music-intro">输入意大利文、英文或中文歌名，边输入边出结果：支持关键词、前缀与少量拼写容错。歌词默认折叠，点“展开全文”再读；也可用 Google 翻译听取原文、打开 IMSLP 查看乐谱。</p>
-      <form id="musicSearchForm" class="music-search"><label class="music-search-field"><span aria-hidden="true">⌕</span><input id="musicSearchInput" type="search" placeholder="例如 Nessun dorma / 今夜无人入睡" autocomplete="off" aria-label="搜索咏叹调或艺术歌曲"></label><button type="submit">搜索</button></form>
-      <div class="search-examples"><span>试试：</span><button type="button" class="search-chip" data-query="Nessun dorma">Nessun dorma</button><button type="button" class="search-chip" data-query="Voi che sapete">Voi che sapete</button><button type="button" class="search-chip" data-query="Ideale">Ideale</button><button type="button" class="search-chip" data-query="Libiamo">Libiamo</button><button type="button" class="search-chip" data-query="Casta Diva">Casta Diva</button><button type="button" class="search-chip" data-query="Quanto t’amo">Quanto t’amo</button></div>
+    <section class="shell section music-section" id="music-library">
+      <div class="section-head">
+        <div><div class="eyebrow">Aria · Lieder</div><h2>搜歌名，查文本与乐谱</h2><p>输入意大利文、英文或中文歌名，边输入边出结果：关键词、前缀与少量拼写容错。歌词默认折叠，点“展开全文”再读。</p></div>
+        <span id="repertoireCount" class="count-pill">读取曲目…</span>
+      </div>
+      <form id="musicSearchForm" class="music-search" role="search">
+        <label class="music-search-field">
+          <span aria-hidden="true">⌕</span>
+          <input id="musicSearchInput" type="search" placeholder="例如 Nessun dorma / 今夜无人入睡" autocomplete="off" aria-label="搜索咏叹调或艺术歌曲">
+        </label>
+        <button type="submit">搜索</button>
+      </form>
+      <div class="chipbar">
+        <span>试试：</span>
+        <button type="button" class="search-chip" data-query="Nessun dorma">Nessun dorma</button>
+        <button type="button" class="search-chip" data-query="Voi che sapete">Voi che sapete</button>
+        <button type="button" class="search-chip" data-query="Ideale">Ideale</button>
+        <button type="button" class="search-chip" data-query="Libiamo">Libiamo</button>
+        <button type="button" class="search-chip" data-query="Casta Diva">Casta Diva</button>
+        <button type="button" class="search-chip" data-query="Quanto t’amo">Quanto t’amo</button>
+      </div>
       <div id="musicSearchResults" aria-live="polite"></div>
       <p class="music-rights-note">歌词和搜索结果在本站显示。朗读按钮会打开 Google 翻译，并按曲目语言设置原文；打开后点击“听取原文”。乐谱链接到对应 IMSLP 作品页。目前本站没有托管 PDF；只有确认具体版本可合法提供后，才会增加站内下载。</p>
     </section>
 
-    <section class="notice" id="freshnessNotice">
-      <span class="notice-icon">i</span>
-      <p>我们每天查看剧院、院校和比赛主办方官网，也参考专业演艺信息平台。网页抓取可能遗漏信息；报名资格、费用和截止时间请以主办方公告为准。无法确认是否仍在报名的内容只会出现在下方来源动态中。</p>
+    <section class="shell" id="conservatori">
+      <div class="section-head">
+        <div><div class="eyebrow">Conservatori · Accademie</div><h2>入学考试与招生简章</h2><p>54 所公立音乐学院 + 11 所歌剧院学院。日期与要求来自官网原文；官网把内容放在简章 PDF 里的，会读出来补上，并给出官方文件直达链接。</p></div>
+        <span id="conservatoriCount" class="count-pill">—</span>
+      </div>
+      <div class="cons-toolbar">
+        <label class="searchbox"><span aria-hidden="true">⌕</span><input id="consSearchInput" type="search" placeholder="搜索城市或学院名称，例如 米兰 / 博洛尼亚" autocomplete="off" aria-label="搜索院校"></label>
+        <button id="consDateOnly" class="ghost-toggle" type="button" aria-pressed="false">只看有日期</button>
+      </div>
+      <div id="consGroups" class="cons-groups" aria-live="polite"></div>
+      <div id="conservatoriEmpty"></div>
     </section>
 
-    <section class="section-head sources-head">
-      <div><div class="eyebrow">CONSERVATORI</div><h2>音乐学院入学考试</h2></div>
-      <span id="conservatoriCount" class="count-pill">—</span>
+    <section class="shell section sources-section" id="sources">
+      <div class="section-head">
+        <div><div class="eyebrow">Sources</div><h2>来源动态</h2><p>每天逐页检查的剧院、院校与比赛主办方页面；读不到时会显示上一次成功读取的内容。</p></div>
+        <span id="sourceCount" class="count-pill">—</span>
+      </div>
+      <section class="notice">
+        <span class="notice-icon" aria-hidden="true">i</span>
+        <p>我们每天查看剧院、院校和比赛主办方官网，也参考专业演艺信息平台。网页抓取可能遗漏信息；报名资格、费用和截止时间请以主办方公告为准。</p>
+      </section>
+      <div class="filters">
+        <label class="searchbox"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="搜索机构名称或公告内容" autocomplete="off"></label>
+        <select id="statusFilter" aria-label="筛选来源"><option value="all">全部来源</option><option value="ok">页面可访问</option><option value="error">暂时无法读取</option></select>
+      </div>
+      <div id="sources" class="source-list" aria-live="polite"></div>
     </section>
-    <p class="cons-note">这里是各公立音乐学院（conservatorio）官网入学考试页面的每日摘录：报名期限、考试日期、语言与曲目要求都来自官方页面原文。完整的考试日程和分专业曲目要求通常放在校方 PDF 里，下面会直接给出官方文件链接。</p>
-    <div id="conservatori" class="cons-list" aria-live="polite"></div>
 
-    <section class="section-head sources-head">
-      <div><div class="eyebrow">SOURCES</div><h2>来源动态</h2></div>
-      <span id="sourceCount" class="count-pill">—</span>
-    </section>
-    <div class="filters">
-      <label class="searchbox"><span>⌕</span><input id="searchInput" type="search" placeholder="搜索机构名称或公告内容" autocomplete="off"></label>
-      <select id="statusFilter" aria-label="筛选来源"><option value="all">全部来源</option><option value="ok">页面可访问</option><option value="error">暂时无法读取</option></select>
-    </div>
-    <div id="sources" class="source-list" aria-live="polite"></div>
-    <footer><span>意大利声乐现场 · Italia</span><span>来源包括官网与专业平台，详情以主办方公告为准</span></footer>
+    <footer class="shell">
+      <span>意大利声乐现场 · <a href="./">Italia</a></span>
+      <span>来源为官网与专业平台，详情以主办方公告为准</span>
+    </footer>
   </main>
-  <script src="app.js?v=conservatori-search-1" defer></script>
+
+  <script src="app.js?v=ux5" defer></script>
 </body>
 </html>
