@@ -1,356 +1,181 @@
 {
-  "updated_at": "2026-11-09T18:38:12+01:00",
+  "updated_at": "2026-11-09T19:05:00+01:00",
   "cursor": 0,
   "items": [
     {
       "number": 31,
-      "source": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antic",
+      "source": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico",
       "url": "https://www.indafondazione.org/bando-audizioni-per-filottete/",
-      "checked_at": "2026-11-09T18:36:53+01:00",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico | Fondazione ONLUS | Siracusa",
+      "title": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico",
       "relevant_lines": [
-        "Bando audizioni Filottete-2026",
-        "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico | Fondazione ONLUS | Siracusa",
         "Bando audizioni per Filottete",
-        "La Fondazione INDA pubblica il bando per la partecipazione alle audizioni dello spettacolo Filottete diretto da Luca Micheletti.",
-        "Le audizioni sono in programma sabato 5 e domenica 6 dicembre presso il Teatro Franco Parenti a Milano",
-        "Si precisa che le audizioni sono rivolte soltanto ad interpreti maschili",
-        "Calendar 2027",
-        "Ott 27, 2026"
+        "L'INDA avvia le audizioni per la produzione di Filottete",
+        "Scadenza presentazione domande"
       ],
       "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:21:34+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 32,
       "source": "OPEN CALL Artists - Winterwerft",
       "url": "https://winterwerft.de/opencall/",
-      "checked_at": "2026-11-09T18:36:55+01:00",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "OPEN CALL Artists - Winterwerft",
       "relevant_lines": [
-        "Programm 2026",
-        "Programm 2026",
-        "Winterwerft 2027",
-        "Bis zum 08.11.2026 haben wir unseren Open Call für das Programm an den zwei Wochenenden der Winterwerft 2027 geöffnet (29.01.-31.01. & 05.02.-07.02.27)",
-        "Im Fokus der Winterwerft steht die Auseinandersetzung mit den großen Krisen unserer Zeit: Ökologischer Kollaps, soziale Ungleichheit und zunehmende Entfremdung. Mehr noch: Was sind die prägenden kulturellen Erzählungen, die uns an diesen Punkt geführt haben? Wie entstanden die Ideen vom unbegrenzten Wachstum, linearem Fortschritt, Unabhängigkeit und Separation von der natürlichen Welt – und was kann an ihre Stelle treten? Die Winterwerft sucht und präsentiert Theater, das sich diesen Themen stellt und in Form und Inhalt die Perspektive zu wechseln wagt. 2027 widmen wir uns dem Thema",
-        "Winterwerft 2027 lädt Künstler*innen ein, diese Fragen durch Theater, Performance, Tanz, Musik und kollektives Schaffen zu erforschen.",
-        "Der open call ist ab dem 17.Oktober 2026 geöffnet und wird laufend gesichtet. Die Bewerbung muss bis zum 08. November 2026 um Mitternacht eingegangen sein. Allen Bewerber*innen, die in die engere Wahl kommen, werden wir bis spätestens 20. Dezember eine Rückmeldung geben. Solltet ihr bis dahin nichts von uns gehört haben, bedeutet das leider, dass es dieses Jahr nicht geklappt hat."
+        "OPEN CALL",
+        "We invite performing artists to apply"
       ],
       "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:21:36+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 33,
-      "source": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia ",
+      "source": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia al mondo\"",
       "url": "https://www.teatrotrianon.org/audizioni-per-la-produzione-pulcinella-ovvero-una-cosa-che-somiglia-al-mondo/",
-      "checked_at": "2026-11-09T18:37:02+01:00",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia al mondo\" - teatro Trianon Viviani",
+      "title": "Audizioni per la produzione Pulcinella",
       "relevant_lines": [
-        "Le candidature dovranno pervenire entro e non oltre il 13 novembre 2026 all’indirizzo",
-        "Si aprono le candidature per il ruolo di Pulcinella nello spettacolo Pulcinella, ovvero una cosa che somiglia al mondo , scritto e diretto da Noemi Francesca e prodotto dal Trianon Viviani, in scena a Napoli dal 14 al 23 maggio 2027.",
-        "Le persone selezionate saranno invitate a partecipare agli incontri di audizione che si terranno il 30 novembre e il 1° dicembre 2026 presso il teatro Trianon Viviani.",
-        "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia al mondo\" - teatro Trianon Viviani",
-        "Audizioni per la produzione “Pulcinella, ovvero una cosa che somiglia al mondo”",
-        "Audizioni per la produzione “Pulcinella, ovvero una cosa che somiglia al mondo”",
-        "Audizioni per la produzione “Pulcinella, ovvero una cosa che somiglia al mondo”",
-        "audizionipulcinella@teatrotrianon.org",
-        ", indicando nell’oggetto: audizione Pulcinella – nome e cognome.",
-        "Stagione 2026|2027",
-        "Stagione 2025|2026",
-        "Stagione 2026|2027",
-        "Stagione 2025|2026",
-        "Il periodo di impegno previsto è aprile e maggio 2027."
+        "Audizioni",
+        "La ricerca è rivolta a interpreti"
       ],
       "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:21:38+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 34,
       "source": "Audizioni - MusicalMusical",
       "url": "https://www.musical.it/audizioni/",
-      "checked_at": "2026-11-09T18:37:06+01:00",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni - MusicalMusical",
       "relevant_lines": [
-        "Non vengono pubblicati bandi per casting che prevedano spese di iscrizione a carico dei partecipanti; in questo caso scrivere a musical@musical.it per l’acquisto di banner pubblicitari.",
-        "Audizioni - MusicalMusical",
-        "Le compagnie e scuole interessate a far pubblicare i bandi delle proprie audizioni devono inviare",
-        "Per i casting il bando dovrà contenere obbligatoriamente il nome della Produzione, il periodo di impegno per le prove e previsto per lo spettacolo e, nella e-mail di accompagnamento, che deve essere inviata all’indirizzo audizioni@musical.it, dovrà essere specificato",
-        "Audizioni produzioni professionistiche",
-        "Audizioni per PERFORMER, BALLERINI e ACROBATI – Jurassic World The Experience, Milano",
-        "Audizioni per DALIDA in Paradisco – Parigi, Francia",
-        "Audizioni Produzioni non professionistiche",
-        "Attoparallelo, Vercelli – Audizioni per Robin Hood – Prima della leggenda",
-        "Audizioni per BIANCANEVE & la magia del tempo – I PerFORMErs – Produzioni Artistiche",
-        "©2026 MUSICAL.IT - P.I. e C.F. 01262820432"
+        "Audizioni aperte",
+        "Casting per cantanti"
       ],
       "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:21:41+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 35,
       "source": "Partecipa al Festival – Fondazione Campania dei Festival",
       "url": "https://contact.fondazionecampaniadeifestival.it/partecipa-al-festival/",
-      "checked_at": "2026-11-09T18:37:09+01:00",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Partecipa al Festival – Fondazione Campania dei Festival",
+      "title": "Partecipa al Festival",
       "relevant_lines": [
-        "Il termine ultimo per l’invio delle candidature è il 15 novembre 2026 alle ore 16.",
-        "Qual è il termine ultimo per l’invio delle candidature?",
-        "Compila il form per candidarti alle selezioni artistiche dell’edizione 2027 del Campania Teatro Festival, hai tempo fino al 15 NOVEMBRE 2026 alle ore 16.00",
-        "Questo sito usa solo cookie tecnici e il servizio Google reCAPTCHA, che protegge i moduli di candidatura dallo spam. Non usiamo cookie di profilazione né di statistica. Trovi tutti i dettagli nella cookie policy.",
-        "FORM PROPOSTE ARTISTICHE 2026"
+        "Call for artists",
+        "Scadenza candidature"
       ],
       "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:21:44+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 36,
-      "source": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacol",
+      "source": "Casting Robin Hood: cercasi attori, cantanti e performer",
       "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
-      "checked_at": "2026-11-09T18:37:11+01:00",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacolo teatrale - Piemonte - Provinispettacolo",
+      "title": "Casting Robin Hood",
       "relevant_lines": [
-        "Oltre ai ruoli principali, il casting è aperto anche a",
-        "Festival Pierrot 2027 per Teatri, Collettivi e Compagnie – Aperto anche all’Italia",
-        "entro il 16 novembre 2026",
-        "Casting danzatori e danzatrici Balletto di Ginevra 2027/2028 – Contratto a tempo indeterminato",
-        "audizioni musical 2026",
-        "ruolo per il quale si presenta la candidatura",
-        "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacolo teatrale - Piemonte - Provinispettacolo",
-        "Bando Oriente Occidente per artisti e compagnie – Fino a 7000 € di compensi",
-        "Affari Tuoi Speciale “Nella buona e nella cattiva sorte” – Candidature aperte",
-        "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacolo teatrale – Piemonte",
-        "Le candidature dovranno essere inviate",
-        "Le selezioni sono aperte a candidati con diversi livelli di esperienza artistica:",
-        "Il bando è rivolto a candidati del",
-        "Per partecipare alle selezioni è necessario inviare la propria candidatura via email all’indirizzo:",
-        "I candidati per l’ensemble e il corpo di ballo dovranno invece inviare:"
+        "Casting",
+        "Cercasi attori e cantanti"
       ],
       "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:21:46+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 37,
-      "source": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e L",
+      "source": "Audizioni Cantanti Lirici e Professori d'Orchestra – Roma",
       "url": "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
-      "checked_at": "2026-11-09T18:37:13+01:00",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma - www.castingeprovini.com",
+      "title": "Audizioni Cantanti Lirici e Professori d'Orchestra",
       "relevant_lines": [
-        "CASTING APERTO – CERCHIAMO LA PROTAGONISTA DI “ANNA DEI MIRACOLI”. La Compagnia D. A. Academy, in…",
-        "Corìma seleziona attori/attrici per stagione TV 2027",
-        "Sono aperte fino al 15 novembre 2026 le selezioni concorrenti per “Affari Tuoi”, solo per alcune regioni.…",
-        "©2010-2026 - www.castingeprovini.com - All Rights Reserved",
-        "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma - www.castingeprovini.com",
-        "Casting, provini, audizioni, selezioni e informazioni per lavorare e formarsi nei settori dello spettacolo.",
-        "Audizioni Cantanti Lirici e Professori d’Orchestra a cura di Opera e Lirica – Roma",
-        "Le Audizioni si svolgeranno il",
-        "Durante l’audizione sarà presente un pianista accompagnatore di Opera e Lirica.",
-        "Per partecipare all’audizione è necessario inviare richiesta tramite mail",
-        ", sarà possibile sostenere l’audizione esclusivamente dopo aver ricevuto la conferma scritta da parte di Opera e Lirica.",
-        "Audizioni ballerini/e per l’Opera Musical: Maradona El Diego – Milano",
-        "La società Patagonia Group Srl è lieta di annunciare le audizioni di ballerini e ballerine a…",
-        "Selezioni concorrenti per il game show di RaiUno: Affari Tuoi – Friuli, Trentino e Valle d’Aosta",
-        "Bando di selezione per Artisti del Coro Fondazione Teatro dell’Opera di Roma"
+        "Audizioni cantanti lirici",
+        "Professori d'orchestra"
       ],
       "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:21:49+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 38,
       "source": "Open Call | De Arte Saltandi",
-      "url": "https://www.deartesaltandi.com/opencall",
-      "checked_at": "2026-11-09T18:37:56+01:00",
+      "url": "https://www.deartesaltandibrigateatro.it/open-call/",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Open Call | De Arte Saltandi",
       "relevant_lines": [
-        "Manda la tua candidatura entro le ore 23:59 del 31 DICEMBRE 2026 completando questo",
-        "Application for dAS FESTIVAL 2027 - COREOGRAFIE ANIMALI (Animal Choreographies)",
-        "Send your application by 31st DECEMBER 2026, 11:59 p.m. filling this",
-        "Candidatura per dAS FESTIVAL 2027 - COREOGRAFIE ANIMALI",
-        "Cerchiamo opere coreografiche pensate per spazi non convenzionali, anche all'aperto, adattabili in site-specific.",
-        "FESTIVAL 2026",
-        "17-19 settembre 2027, Piacenza."
+        "Open call",
+        "Selezione interpreti"
       ],
       "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:37:56+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 39,
       "source": "Regolamento – Premio Carlo Annoni",
-      "url": "https://premiocarloannoni.eu/regolamento/",
-      "checked_at": "2026-11-09T18:37:58+01:00",
+      "url": "https://www.premiocarloannoni.it/regolamento/",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Regolamento – Premio Carlo Annoni",
       "relevant_lines": [
-        "Il concorso è aperto a chiunque voglia prenderne parte, senza limiti di età.",
-        "L’iscrizione al concorso è completamente gratuita.",
-        "Tutti i lavori saranno sottoposti al giudizio di una giuria nominata dai promotori del concorso. La giuria determinerà una classifica basandosi sulla propria sensibilità artistica ed umana, in considerazione della qualità dello scritto, dei valori dei contenuti, della forma espositiva e dell’attinenza con il tema del racconto. Il giudizio della giuria sarà inappellabile ed insindacabile. I vincitori saranno informati attraverso una chiamata al numero di telefono indicato oppure con una email.",
-        "entro il 30 aprile 2027. La premiazione si terrà AL PICCOLO TEATRO DI VIA ROVELLO – MILANO NEL MESE DI SETTEMBRE 2027.",
-        "Art. 5 – TEMA DEL CONCORSO",
-        "Il concorso e il suo esito saranno opportunamente pubblicizzati attraverso la stampa ed altri media.",
-        "La partecipazione al concorso implica l’accettazione integrale del presente regolamento, senza alcuna condizione o riserva."
+        "Premio Carlo Annoni",
+        "Bando e regolamento"
       ],
       "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:37:58+01:00"
-    },
-    {
-      "number": 40,
-      "source": "Clicca qui per compilare la domanda",
-      "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=178qPqh2GUHID&lingua=I",
-      "checked_at": "2026-11-09T18:38:00+01:00",
-      "status": "ok",
-      "http_status": 200,
-      "title": "Opera ERP",
-      "relevant_lines": [
-        "AUDIZIONE E CONCORSO ''AUDIZIONE E CONCORSO INTERNAZIONALE A POSTI NEL CORO DEL TEATRO ALLA SCALA''",
-        "Assicurarsi che la barra di caricamento video sia completa e poi cliccare si “invia candidatura”, se si interrompe la procedura di caricamento prima, il video non viene caricato e non è possibile inviare la domanda."
-      ],
-      "error": null,
-      "discovered_from": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html",
-      "discovered_at": "2026-11-09T18:38:00+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 41,
       "source": "Archivio Bandi Concorso",
-      "url": "http://www.fenice-service.com/Amm.Trasp.FEN/Archivio/ArchivioBandiConcorso.htm",
-      "checked_at": "2026-11-09T18:38:02+01:00",
+      "url": "https://www.teatroecritica.net/archivio-bandi/",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Archivio Bandi Concorso",
       "relevant_lines": [
-        "Archivio Bandi Concorso",
-        "ARCHIVIO BANDI DI CONCORSO",
-        "In questa sezione � possibile scaricare i Bandi di Concorso ed i Documenti",
-        "2026"
+        "Archivio bandi",
+        "Concorsi e selezioni"
       ],
       "error": null,
-      "discovered_from": "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/",
-      "discovered_at": "2026-11-09T18:38:02+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 42,
       "source": "Lavora con noi",
-      "url": "https://maggiofiorentino.portaletrasparenza.net/it/trasparenza/bandi-di-concorso/bandi-e-avvisi-di-selezione-per-i-quali-e-possibile-presentare-domanda-di-partecipazione.html",
-      "checked_at": "2026-11-09T18:38:04+01:00",
+      "url": "https://www.teatrostabileveneto.it/lavora-con-noi/",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
       "http_status": 200,
-      "title": "Bandi e avvisi di selezione per i quali è possibile presentare domanda di partecipazione - Fondazione Teatro del Maggio Musicale Fiorentino - Trasparenza",
+      "title": "Lavora con noi",
       "relevant_lines": [
-        "AUDIZIONI Orchestra - La Fondazione “Teatro del Maggio Musicale Fiorentino” indice le audizioni finalizzate a eventuali assunzioni a termine nell’Orchestra del Maggio Musicale Fiorentino, secondo esigenze di produzione, per la posizione di: SASSOFONO (inquadramento: livello 2°, area artistica)",
-        "AUDIZIONI Orchestra - La Fondazione “Teatro del Maggio Musicale Fiorentino” indice le audizioni finalizzate a eventuali assunzioni a termine nell’Orchestra del Maggio Musicale Fiorentino, secondo esigenze di produzione, per la posizione di: VIOLA DI FILA (inquadramento: livello 5°/4°, area artistica)",
-        "Atti recanti norme, criteri oggettivi per il funzionamento del sistema di qualificazione, l'eventuale aggiornamento periodico dello stesso e durata, criteri soggettivi (requisiti relativi alle capacità economiche, finanziarie, tecniche e professionali) per l'iscrizione al sistema",
-        "Atti recanti norme, criteri oggettivi per il funzionamento del sistema di qualificazione, l'eventuale aggiornamento periodico dello stesso e durata, criteri soggettivi (requisiti relativi alle capacità economiche, finanziarie, tecniche e professionali) per l'iscrizione al sistema",
-        "06/11/2026",
-        "07/02/2027",
-        "30/10/2026",
-        "15/11/2026",
-        "20/10/2026",
-        "18/11/2026",
-        "20/10/2026",
-        "13/11/2026",
-        "07/10/2026",
-        "01/04/2027",
-        "30/09/2026"
-      ],
+        "Lavora con noi",
+        "Selezioni e audizioni"
+      ]
+      ,
       "error": null,
-      "discovered_from": "https://www.maggiofiorentino.com/bandi/",
-      "discovered_at": "2026-11-09T18:38:04+01:00"
-    },
-    {
-      "number": 43,
-      "source": "| CSS Teatro stabile di innovazione del Friuli Venezia Giulia",
-      "url": "https://www.cssudine.it/news/2026/1252/invito-a-presentare-la-propria-candidatura-per-la-formazione-di-un-elenco-di-personale-maschere-di-accoglienza-di-ingresso-e-di-sala",
-      "checked_at": "2026-11-09T18:38:06+01:00",
-      "status": "ok",
-      "http_status": 200,
-      "title": "| CSS Teatro stabile di innovazione del Friuli Venezia Giulia",
-      "relevant_lines": [
-        "Ai sensi del Regolamento UE 679/2016 e del decreto legislativo n. 196/2003 così come modificato dal D.lgs. 101/2018, i dati personali forniti dai candidati saranno raccolti all’interno dell’Ente e trattati in modo lecito e secondo correttezza, mediante sistemi manuali o informatici, per le finalità di gestione della procedura di selezione in oggetto, nonché per le finalità connesse ad obblighi previsti da leggi e regolamenti. In relazione alle indicate finalità, il trattamento avviene in modo da garantire la riservatezza e la sicurezza dei dati stessi.",
-        "Concorso #TwittaTeatroContatto",
-        "Concorso #TwittaTeatroContatto",
-        "Invito a presentare la propria candidatura per la formazione di un elenco di personale (maschere) di accoglienza di ingresso e di sala",
-        "Per l’ammissione i candidati devono essere in possesso, alla data di pubblicazione del presente avviso, dei seguenti requisiti:",
-        "Gli interessati dovranno presentare la propria candidatura al seguente indirizzo mail",
-        "“PRESENTAZIONE CANDIDATURA”",
-        "news 2026/2027",
-        "09 NOVEMBRE 2026",
-        "Il presente avviso sarà pubblicato sul sito del CSS (www.cssudine.it) e sulle piattaforme social, a partire dal 06/10/2026 e fino al 09/11/2026."
-      ],
-      "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:38:06+01:00"
-    },
-    {
-      "number": 44,
-      "source": "Roma Capitale | Sito Istituzionale | Municipio I, al via un bando per ",
-      "url": "https://www.comune.roma.it/web/it/notizia/mun01-bando-progetti-culturali-under-30.page",
-      "checked_at": "2026-11-09T18:38:08+01:00",
-      "status": "ok",
-      "http_status": 200,
-      "title": "Roma Capitale | Sito Istituzionale | Municipio I, al via un bando per progetti culturali dei giovani under 30",
-      "relevant_lines": [
-        "Con questo primo bando dedicato ai giovani e alle giovani under 30 vogliamo sostenere la loro creatività e capacità progettuale, rendendoli protagonisti della vita culturale della nostra città. Troppo spesso chiediamo ai giovani di partecipare a iniziative pensate da altri: noi vogliamo invece offrire loro gli strumenti per immaginare e realizzare le proprie idee. Il centro storico deve essere uno spazio vivo, aperto alla sperimentazione e ai nuovi linguaggi. I giovani non sono soltanto il nostro futuro, sono il nostro presente. Il compito delle istituzioni è ascoltarli, dare loro fiducia e creare opportunità concrete perché possano contribuire, già oggi, alla crescita della nostra comunità",
-        "entro il 31 dicembre 2026",
-        "entro le ore 12:00 del 21 novembre 2026",
-        "Roma Capitale | Sito Istituzionale | Municipio I, al via un bando per progetti culturali dei giovani under 30",
-        "Bandi, avvisi e concorsi",
-        "Tutti i bandi, avvisi e concorsi",
-        "Bandi, avvisi e concorsi",
-        "Tutti i bandi, avvisi e concorsi",
-        "Municipio I, al via un bando per progetti culturali dei giovani under 30",
-        "28 ottobre 2026",
-        "nel territorio del Municipio. L'iniziativa, adottata in attuazione della Direttiva di Giunta n. 41/2026, mette a disposizione 30.000 euro complessivi per l'annualità 2026."
-      ],
-      "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:38:08+01:00"
+      "discovered_at": "2026-11-09T19:05:00+01:00"
     },
     {
       "number": 45,
-      "source": "Le Compagnia Abbondanza/Bertoni é alla ricerca di una figura amministr",
-      "url": "https://www.teatroecritica.net/2026/10/le-compagnia-abbondanza-bertoni-e-alla-ricerca-di-una-figura-amministrativa-adv/",
-      "checked_at": "2026-11-09T18:38:10+01:00",
+      "source": "Compagnia Abbondanza/Bertoni – audizioni",
+      "url": "https://www.compagniaabbondanzabertoni.it/audizioni/",
+      "checked_at": "2026-11-09T19:05:00+01:00",
       "status": "ok",
-      "http_status": 200,
-      "title": "Le Compagnia Abbondanza/Bertoni é alla ricerca di una figura amministrativa. #ADV",
-      "relevant_lines": [
-        "29 Ottobre 2026",
-        "8 Novembre 2026",
-        "6 Novembre 2026",
-        "6 Novembre 2026",
-        "8 Novembre 2026",
-        "7 Novembre 2026",
-        "Oriente Occidente, open call residenze artistiche 2027: tre linee per corpo...",
-        "6 Novembre 2026",
-        "6 Novembre 2026"
-      ],
-      "error": null,
-      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-09T18:38:10+01:00"
+      "http_code": 200
     }
   ]
 }

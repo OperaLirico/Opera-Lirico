@@ -52,6 +52,14 @@ SKIP_HOST_RE = re.compile(
 SHARE_LABEL_RE = re.compile(r"share|condividi|whatsapp|telegram|invia|copia link|stampa", re.IGNORECASE)
 SKIP_EXT_RE = re.compile(r"\.(pdf|jpg|jpeg|png|gif|zip|doc|docx|xls|xlsx|mp3|mp4)($|\?)", re.IGNORECASE)
 GENERIC_LABEL = re.compile(r"(?i)(apri( il bando)?|leggi|scopri|qui|dettagli|vai|apri il bando→|→|&rarr;)")
+# Page chrome and civic portals are reachable and keyword-rich, yet they are not
+# audition pages; keep them out of the source list.
+CHROME_RE = re.compile(r"sito istituzionale|clicca qui|compila|modulo di domanda|invia la domanda", re.IGNORECASE)
+AUDITIONISH_RE = re.compile(
+    r"audizion|audition|concors|concor|casting|bando|selezion|open ?call|premio|provino|cantanti|orchestra|coro",
+    re.IGNORECASE,
+)
+MIN_LINES = 3
 
 
 def now_iso() -> str:
@@ -156,10 +164,14 @@ def main() -> None:
     cursor: int = int(payload.get("cursor", 0))
     core_items: list[dict] = load(PAGE, [])
 
-    # Drop anything that slipped through earlier rules (share links, files).
+    # Drop entries that earlier runs accepted too easily: share links, files,
+    # form pages and civic portals that only mention the word "bando".
     cleaned = [
         item for item in registry
-        if not SKIP_HOST_RE.search(item.get("url", "")) and not SKIP_EXT_RE.search(item.get("url", ""))
+        if not SKIP_HOST_RE.search(item.get("url", ""))
+        and not SKIP_EXT_RE.search(item.get("url", ""))
+        and not CHROME_RE.search(" ".join([item.get("source", ""), item.get("title", "")]))
+        and len(item.get("relevant_lines", [])) >= MIN_LINES
     ]
     if len(cleaned) != len(registry):
         print(f"[extra] removed {len(registry) - len(cleaned)} non-source link(s)", flush=True)
@@ -229,7 +241,13 @@ def main() -> None:
             break
         probe = scrape_entry(target, label or target, next_number, origin)
         probe.pop("_response", None)
-        if probe["status"] != "ok" or not probe["relevant_lines"]:
+        blob = " ".join([probe.get("source", ""), probe.get("title", "")] + probe["relevant_lines"])
+        if (
+            probe["status"] != "ok"
+            or len(probe["relevant_lines"]) < MIN_LINES
+            or not AUDITIONISH_RE.search(blob)
+            or CHROME_RE.search(probe.get("title", ""))
+        ):
             print(f"[extra] skip {probe['status']} {target[:70]}", flush=True)
             continue
         # Anchor texts on aggregators are often "Apri il bando"; use the page
