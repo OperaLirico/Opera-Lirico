@@ -59,6 +59,9 @@ PDF_PENALTY = re.compile(
     re.IGNORECASE,
 )
 FILE_NAME = re.compile(r"\.pdf\b|^[\w\-.%()]+$")
+MONTH_OR_DATE = re.compile(r"\b20\d{2}\b|gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre|\d{1,2}/\d{1,2}", re.IGNORECASE)
+REQ_NOISE = re.compile(r"^Articolo|moduli|si ricorda|^N\.B\.|diploma accademico", re.IGNORECASE)
+REQUIREMENT_SHAPE = re.compile(r"diploma|titolo estero|preparazione|conoscenza|requisit|certificazione", re.IGNORECASE)
 DATE_IN_LINE = re.compile(r"\b20\d{2}\b|\b\d{1,2}\s*(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)", re.IGNORECASE)
 
 ATTEMPTS = 2
@@ -231,23 +234,30 @@ def fill_from_pdfs(payload: dict) -> None:
                     item["deadline_lines"] = keep
                     added = True
             if not item.get("exam_dates"):
+                # A bando also lists "Diploma di scuola secondaria" under requirements;
+                # only a real month or a slash date marks an exam slot.
                 keep = [
                     line
                     for line in dates
-                    if DATE_IN_LINE.search(line)
+                    if MONTH_OR_DATE.search(line)
                     and re.search(r"ammission|prova|esame|audizion|colloquio", line, re.IGNORECASE)
+                    and len(line) < 160
+                    and not REQUIREMENT_SHAPE.search(line)
                 ][:2]
                 if keep:
                     item["exam_dates"] = keep
                     added = True
             if not item.get("requirements"):
-                keep = requirements[:2]
+                keep = [line for line in requirements if len(line) >= 30 and not REQ_NOISE.search(line)][:2]
                 if keep:
                     item["requirements"] = keep
                     added = True
             if added:
                 item["pdf_checked"] = url
                 filled += 1
+            # One bando often carries the deadline, its calendar carries the slots,
+            # so keep reading a second document until both fields are covered.
+            if item.get("deadline_lines") and item.get("exam_dates"):
                 break
     print(f"Read {PDF_BUDGET - budget} bando PDF(s), enriched {filled} institution(s)")
 
