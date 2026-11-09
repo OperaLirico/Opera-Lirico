@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T20:35:53+01:00",
+  "generated_at": "2026-11-09T20:49:23+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -5251,10 +5251,385 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Beloved husband, my hopes are in you",
+      "aliases": [],
+      "composer": "Antonio Caldara",
+      "work": "/lieder/get_settings.html?ComposerId=3654",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Beloved husband, my hopes are in you\nI entrust my fate within you\nAnd for you, whatever may be,\nAlways you will treasure me.\n\nIf my death should come to me\nAnd I am not denied the pleasure\nof boasting that I am your treasure\nEven death will pleasant be.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=94640",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Christian Anderson",
+      "settings": [
+        {
+          "composer": "Antonio Caldara",
+          "title": "/lieder/get_settings.html?ComposerId=3654",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Baldassare Galuppi",
+          "title": "/lieder/get_settings.html?ComposerId=17671",
+          "instrumentation": "strings, soprano voice, and continuo"
+        },
+        {
+          "composer": "Giovanni Adolfo Hasse",
+          "title": "/lieder/get_settings.html?ComposerId=4356",
+          "instrumentation": "strings, soprano voice, and continuo"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Jeg gjemmer en undersød Drøm",
+      "aliases": [],
+      "composer": "Sigurd Lie",
+      "work": "/lieder/get_settings.html?ComposerId=4841",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "no",
+      "text": "Jeg gjemmer en undersøt drøm i mit hjerte,\nog ingen ved det.\nDer er ingen, som ved, at det svulmer herinde\nlik sjøen, den blaa, for sommerens vinde.\nIngen.\nHver morgenstund vaakner jeg under dens tindrende\nsolstraalehvælv.\nHver aftenstund synker min sjæl i dens stjerneskinsitrende elv.\nOg ingen ved det!\nJeg maa le, jeg maa le,\nfor det er dog for latterlig, at det er jeg,\njeg, som gaar her\nsmilende, nynnende, syngende, favnende\nbusker og trær,\nat det er jeg ...\nDer bruser vaar i mit gamle sind,\nog jeg er din, og tænk du er min,\nmin !",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=51693",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Nils Collett Vogt",
+      "settings": [
+        {
+          "composer": "Sigurd Lie",
+          "title": "/lieder/get_settings.html?ComposerId=4841",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Parabázis",
+      "aliases": [],
+      "composer": "Wolfgang Michael Rihm",
+      "work": "/lieder/get_settings.html?ComposerId=2336",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "hu",
+      "text": "Jó időben és kedéllyel\nharcra késztetett eszem,\nhogy kilessem és megértsem,\nbölcs Natúra mint teremt.\nÉs az ős örökvaló Egy\nrendre megnyilatkozott:\nMind egyéni lábakon megy;\nnagy parány, piciny nagyok;\ns változó de változatlan\nkörbe-körben és amott\nlétrehozva s új alakban –\nmegcsodálni én vagyok.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=108751",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Tamás Rédey",
+      "settings": [
+        {
+          "composer": "Wolfgang Michael Rihm",
+          "title": "/lieder/get_settings.html?ComposerId=2336",
+          "instrumentation": "baritone and piano"
+        },
+        {
+          "composer": "Othmar Schoeck",
+          "title": "/lieder/get_settings.html?ComposerId=5665",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Hungarian (Magyar)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Lena, our loved one is gone",
+      "aliases": [],
+      "composer": "Stephen Collins Foster",
+      "work": "/lieder/get_settings.html?ComposerId=889",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Lena, the pride of our home,\nGone from the earth. Oh! where does she roam?\nFond hearts still sigh o'er her tomb,\nLena, our loved one is gone.\n\nLena the gentle and fair\nHappy by day and at night free from care,\nLena, with light waving hair,\nLena, our loved one is gone.\n\nLena, with young tender eyes,\nLending to earth the light of the skies\nLena's dear mem'ry ne'er dies,\nLena our loved one is gone.\n\nPure as the dew drop was she\nSmiling on earth ever joyous and free,\nDear, dear to sad memory\nLena our loved one is gone.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=112663",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "George Cooper",
+      "settings": [
+        {
+          "composer": "Stephen Collins Foster",
+          "title": "/lieder/get_settings.html?ComposerId=889",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Fischreiche Wässer! Schönbäumige Wälder!",
+      "aliases": [],
+      "composer": "Hanns Eisler",
+      "work": "/lieder/get_settings.html?ComposerId=3958",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Fischreiche Wässer! Schönbäumige Wälder!\nBirken- und Beerenduft!\nVieltöniger Wind, [durchschaukelnd]1 eine Luft\nSo mild, als stünden jene eisern Milchbehälter\nDie dort vom weißen Gute rollen, offen!\nGeruch und Ton und Bild und Sinn verschwimmt.\nDer Flüchtling sitzt im Erlengrund und nimmt\nSein schwier'ges Handwerk wieder auf: das Hoffen.\n\nEr achtet gut der schöngehäuften Ähre\nUnd starker Kreatur, die sich zum Wasser neigt\nDoch derer auch, die Korn und Milch nicht nährt.\nEr fragt die Fähre, die mit Stämmen fährt:\nIst dies das Holz, ohn das kein Holzbein wäre?\nUnd sieht ein Volk, das in zwei Sprachen schweigt.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=3024",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Bertolt Brecht",
+      "settings": [
+        {
+          "composer": "Hanns Eisler",
+          "title": "/lieder/get_settings.html?ComposerId=3958",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Do not wander, my light, out there",
+      "aliases": [],
+      "composer": "Johannes Brahms",
+      "work": "/lieder/get_settings.html?ComposerId=3535",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Do not wander, my light, out there\n in the field!\n Your feet, your tender feet, would get\n too wet, too soft.\n\n All flooded are the paths there,\n and the bridges,\n so amply there\n did my eyes weep.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=4226",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Emily Ezust",
+      "settings": [
+        {
+          "composer": "Johannes Brahms",
+          "title": "/lieder/get_settings.html?ComposerId=3535",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Afrikaans",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "La forêt ainsi qu'une mer",
+      "aliases": [],
+      "composer": "Joseph Béesau",
+      "work": "/lieder/get_settings.html?ComposerId=13735",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "La forêt ainsi qu'une mer\nGronde, roule, allonge ses vagues:\nQue terrible est ce vent d'hiver\nAvec tous ses hurlements vagues!\n\nSont-ce des cris de trépassés,\nDes tocsins de cloches d'alarmes?\nCe vent fou nous a tout glacés:\nOh! comme il pleut! Sont-ce des larmes?\n\nAujourd'hui, c'est le Jour des Morts;\nChacune des feuilles qui tombe\nEveille en nos coeurs un remord,\nEn nous rappelant une tombe.\n\nIl eût fallu les aimer plus,\nCes aimés que trop tard on pleure,\nQuand les regrets sont superflus,\nQuand on a laissé passer l'heure.\n\nOh! les survivants, aimons-nous!\nProche est la mort, la vie est brève;\nC'est la leçon de ces vents fous:\n- Cette pauvre vie est un rêve!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=104864",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Henri Cazalis",
+      "settings": [
+        {
+          "composer": "Joseph Béesau",
+          "title": "/lieder/get_settings.html?ComposerId=13735",
+          "instrumentation": "high voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "So fliehst du mich, du tugendhafte Seele",
+      "aliases": [],
+      "composer": "Franz Anton Hoffmeister",
+      "work": "/lieder/get_settings.html?ComposerId=4434",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "So fliehst du mich, du tugendhafte Seele,\nUnd dein Geschick reißt dich von mir dahin!\nO!  daß ich dich vergebens sah und wähle,\nUnd mir allein zum Unglück zärtlich bin!\nEntferne dich, nur lehre mich indessen\nDie schwere Kunst dich zu vergessen.\n\nEin harter Schluß vom ewigen Geschicke\nHat mir dein Herz, dein edles Herz entdeckt,\nUnd durch die Macht der unschuldvollen Blicke\nDen redlichen den besten Trieb erweckt;\nUnd diesen Trieb, die Zeit und Sehnsucht mehren,\nSoll eines Zufalls Blindheit stören?\n\nWie ruhig schlug, eh es dein Reiz empörte,\nMein stilles Herz in dieser frohen Brust,\nWie reichlich trug die Freiheit, die ich ehrte,\nZufriedenheit und unbesorgte Lust!\nUnd all mein Glück mir plötzlich zu entführen,\nMuß ich dich kennen, und verlieren.\n\nO!  rührt dich noch der Kummer treuer Seelen,\nEin edler Trieb, der deiner Tugend kennt,\nUnd der den Freund, den deine Blicke wählen,\nWeit glücklicher, als Buss und Reue nennt.\nO!  rührt dich dieß, so ruf ihm noch zurücke,\nDein Herz war größer, als dein Glücke.\n\nDu Himmel weists, was meine Wünsche waren,\nWie nie dies Herz an Gold und Ehre hing,\nUnd jeder Wunsch in meinen blühnden Jahren\nNach einem Freund und einer Doris ging,\nWie mich allein ein Trieb, der von dir stammte,\nMit ächter Zärtlichkeit entflammte.\n\nJetzt da dein Bild im ersten Glanz der Jugend\nMein ganzes Herz zur Zärtlichkeit geneigt,\nUnd Ruh, und Lust, und jeden Lohn der Tugend\nIn dem Besitz von deiner Schönheit zeigt.\nJetzt soll, mein Kind, mein Unglück zu vermehren,\nDein Schicksal meine Wahl zerstören!\n\nDie Zeit vertreibt die holden Augenblicke,\nUnd droht den Tag, der mein Verhängniß bringt.\nO!  warum lebt kein günstiges Geschicke,\nDas noch vorher dein Bild aus mir verdringt?\nIch fliehe dich, ich tadle meine Triebe,\nUnd weiche doch der Macht der Liebe.\n\nSo folge dann, o!  Muster edler Schönen,\nDem harten Schluß, der diese Bande trennt!\nHier klagt dein Freund, der unter tausend Thränen,\nDem stillen Wald den leeren Namen nennt.\nO!  gönne nur den Stunden, die ihn kränken,\nEin mitleidsvolles Angedenken.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=33332",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Eberhard Friedrich, Freiherr von Gemmingen",
+      "settings": [
+        {
+          "composer": "Franz Anton Hoffmeister",
+          "title": "/lieder/get_settings.html?ComposerId=4434",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Johann Xaver Sterkel",
+          "title": "/lieder/get_settings.html?ComposerId=7149",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Your silveriness shone",
+      "aliases": [],
+      "composer": "Ludwig van Beethoven",
+      "work": "/lieder/get_settings.html?ComposerId=3351",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Your silveriness shone\nThrough the green of the oaks,\nWhich poured coolness\nDown upon me,\nOh moon, and smiled peace\nTo me, the happy lad.\n\nWhen your light now\nShines through the window,\nIt smiles no peace\nTo me, the lad,\nIt sees my cheek pale,\nMy eyes wet with tears.\n\n[Soon]1, dear friend,\nAh, [soon, your silver\nShall]2 illuminate\nThe gravestone\nThat holds my ashes,\n[Holds the ashes of the young lad!]3",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=126888",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Ludwig van Beethoven",
+          "title": "/lieder/get_settings.html?ComposerId=3351",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Gustav Blasser",
+          "title": "/lieder/get_settings.html?ComposerId=18083",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Moritz, Graf von Dietrichstein",
+          "title": "/lieder/get_settings.html?ComposerId=3879",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Louisa",
+      "aliases": [],
+      "composer": "Franz Wilhelm Abt",
+      "work": "/lieder/get_settings.html?ComposerId=3121",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "How beautiful you are, o maiden,\nYou lovely, budding child!\nI do not believe, that in summertime\nThat the roses could be more beautiful.\n\nSoon the rose will fade on its stem,\nSo that one will wish to pluck it;\nBut you alone bloom more beautifully\nOn each new day.\n\nThe nightingale's song is lovely\nThere in the meadow,\nYet even more beautiful sounds\nSpring from your tender mouth.\n\nOn your sweet cheeks,\nAnd on your lips,\nLike a thousand fresh roses\nThe glory of youth laughs.\n\nA net of golden filigree\nIs your blond hair!\nAnd from a clear brow\nYour two blue eyes sparkle.\n\nAround your lips hovers\nThe happy, girlish trace of a joke;\nYet still there remains, of all your beauties,\nIndeed the most beautiful of all, your heart.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=90019",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Michael P Rosewall",
+      "settings": [
+        {
+          "composer": "Franz Wilhelm Abt",
+          "title": "/lieder/get_settings.html?ComposerId=3121",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Carl Ludwig Fischer",
+          "title": "/lieder/get_settings.html?ComposerId=10723",
+          "instrumentation": "soprano or tenor and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Den store Mester kommer",
+      "aliases": [],
+      "composer": "Niels Peter Hillebrandt",
+      "work": "/lieder/get_settings.html?ComposerId=4420",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "da",
+      "text": "Den store Mester kommer;\n    Fuldkjærlig er hans Id:\nHan sidder ved Smeltediglen\n    Og luttrer Sølvet med Flid.\n\nHan seer paa Diglen nøie;\n    Han veier Tid og Stund;\nNaar Ertsen i Strøm udsmelter,\n    Han stirrer dybt i dens Grund.\n\nHan kjender Tegn og Mærke\n    Paa Klarheds Gjennembrud,\nNaar Sølvstoffets ædle Indre\n    Af Ertsen luttrer sig ud.\n\nDet Øieblik han venter\n    Og agter kjærlig paa,\nNaar klarlig hans eget Billed\n    Vil dybt i Sølvspeilet staae.\n\nDa glædes høie Mester:\n    Da Værket er fuldbragt;\nDa priser det ædle Sølvstof\n    Sin Mesters Daad i sin Pragt.\n\n-- Den store Mester kommer,\n    Som smelter Sjæl og Sind;\nHan sidder ved Hjertegruben;\n    Han seer i Sjælene ind.\n\nOg har i Hjertedybet\n    Sit Billed klart han seet,\nSaa glædes den høie Mester --\n    Saa er hans Gjerning alt skeet.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=8657",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Bernhardt Severin Ingemann",
+      "settings": [
+        {
+          "composer": "Niels Peter Hillebrandt",
+          "title": "/lieder/get_settings.html?ComposerId=4420",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Caspar Christian Hoffmann",
+          "title": "/lieder/get_settings.html?ComposerId=4433",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Carl Nielsen",
+          "title": "/lieder/get_settings.html?ComposerId=5177",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Invenerunt me costudes civitatis",
+      "aliases": [],
+      "composer": "Heinrich Schütz",
+      "work": "/lieder/get_settings.html?ComposerId=5688",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "la",
+      "text": "Invenerunt me costudes civitatis.\nPaululum cum pertransirem eos,\ninveni quem diligit anima mea.\nTenui nec dimittam illum.\nEgredimini, filiae Hierusalem,\net congratulamini mihi,\ncantate dilecto meo cum laetitia,\ncantate dilecto meo cum jubilo.\ncantate dileto meo cum cythara.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=123528",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Bible or other Sacred Texts",
+      "settings": [
+        {
+          "composer": "Heinrich Schütz",
+          "title": "/lieder/get_settings.html?ComposerId=5688",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 672,
+  "lieder_position": 720,
   "aria_opera": 0,
   "aria_scene": 8
 }
