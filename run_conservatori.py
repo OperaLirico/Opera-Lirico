@@ -16,6 +16,7 @@ the repository. A site that never succeeds stays marked unreachable.
 from __future__ import annotations
 
 import json
+import re
 import time
 from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeout
 from pathlib import Path
@@ -23,6 +24,14 @@ from pathlib import Path
 from scrapling.fetchers import Fetcher as RawFetcher
 
 import scrape_conservatori as core
+
+# Announcements that reach the admission page but are not admission deadlines:
+# grants, research doctorates, seminars, staff shortlists, "admitted students" lists.
+OTHER_NOTICE = re.compile(
+    r"assegnazion|dottorat|seminari|individuazione di|graduator|ammess|borsa di studio|"
+    r"masterclass|rassegna|stagione concertistica",
+    re.IGNORECASE,
+)
 
 ATTEMPTS = 2
 TIMEOUT = 25
@@ -98,8 +107,26 @@ def backfill(previous: dict[int, dict]) -> None:
         print(f"Kept the previous snapshot for {replaced} institution(s)")
 
 
+def drop_other_notices() -> None:
+    """Strip scholarship/doctorate/seminar notices that slipped into the timeline fields."""
+    if not DATA.exists():
+        return
+    payload = json.loads(DATA.read_text(encoding="utf-8"))
+    removed = 0
+    for item in payload.get("items", []):
+        for field in ("deadline_lines", "exam_dates", "requirements"):
+            kept = [line for line in item.get(field) or [] if not OTHER_NOTICE.search(line)]
+            if len(kept) != len(item.get(field) or []):
+                removed += len(item.get(field) or []) - len(kept)
+                item[field] = kept
+    if removed:
+        DATA.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"Dropped {removed} non-admission notice(s)")
+
+
 if __name__ == "__main__":
     previous = snapshots()
     core.Fetcher = RetryingFetcher
     core.main()
     backfill(previous)
+    drop_other_notices()
