@@ -10,7 +10,7 @@ const opportunities = [
 
 let repertoire = [];
 let repertoireLoaded = false;function esc(text=''){return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
-const languageNames={it:"意大利语",fr:"法语",en:"英语",de:"德语",es:"西班牙语",pt:"葡萄牙语",ru:"俄语",da:"丹麦语",sv:"瑞典语",no:"挪威语",nl:"荷兰语",pl:"波兰语",cs:"捷克语",hu:"匈牙利语",fi:"芬兰语",el:"希腊语",la:"拉丁语",is:"冰岛语",cy:"威尔士语",ga:"爱尔兰语",sco:"苏格兰语",gd:"苏格兰盖尔语",ca:"加泰罗尼亚语",ro:"罗马尼亚语",hr:"克罗地亚语",sco2:"苏格兰语",sr:"塞尔维亚语",bg:"保加利亚语",uk:"乌克兰语",sl:"斯洛文尼亚语",sk:"斯洛伐克语",et:"爱沙尼亚语",lv:"拉脱维亚语",lt:"立陶宛语",ka:"格鲁吉亚语",hy:"亚美尼亚语",eo:"世界语",he:"希伯来语",yi:"意第绪语",ene:"英语",ar:"阿拉伯语",tr:"土耳其语",fa:"波斯语",hi:"印地语",ja:"日语",ko:"韩语",zh:"中文",id:"印尼语",ms:"马来语",tl:"他加禄语",vi:"越南语",th:"泰语",scn:"西西里语",nap:"那不勒斯语",vec:"威尼斯语",lmo:"伦巴第语",oc:"奥克语",eu:"巴斯克语",gl:"加利西亚语",rm:"罗曼什语",af:"南非荷兰语",und:"原文语言"};
+const languageNames={it:"意大利语",fr:"法语",en:"英语",de:"德语",es:"西班牙语",pt:"葡萄牙语",ru:"俄语",da:"丹麦语",sv:"瑞典语",no:"挪威语",nl:"荷兰语",pl:"波兰语",cs:"捷克语",hu:"匈牙利语",fi:"芬兰语",el:"希腊语",la:"拉丁语",is:"冰岛语",cy:"威尔士语",ga:"爱尔兰语",sco:"苏格兰语",gd:"苏格兰盖尔语",ca:"加泰罗尼亚语",ro:"罗马尼亚语",hr:"克罗地亚语",sr:"塞尔维亚语",bg:"保加利亚语",uk:"乌克兰语",sl:"斯洛文尼亚语",sk:"斯洛伐克语",et:"爱沙尼亚语",lv:"拉脱维亚语",lt:"立陶宛语",ka:"格鲁吉亚语",hy:"亚美尼亚语",eo:"世界语",he:"希伯来语",yi:"意第绪语",ene:"英语",ar:"阿拉伯语",tr:"土耳其语",fa:"波斯语",hi:"印地语",ja:"日语",ko:"韩语",zh:"中文",id:"印尼语",ms:"马来语",tl:"他加禄语",vi:"越南语",th:"泰语",scn:"西西里语",nap:"那不勒斯语",vec:"威尼斯语",lmo:"伦巴第语",oc:"奥克语",eu:"巴斯克语",gl:"加利西亚语",rm:"罗曼什语",af:"南非荷兰语",und:"原文语言"};
 function languageLabel(code="it"){const key=String(code).toLowerCase().split("-")[0];return languageNames[key]||"原文语言";}
 function googleReadUrl(item){
   if((item.text||"").length>5000)return "";
@@ -57,6 +57,69 @@ function fuzzyFieldMatch(query,field){
  if(queryWords.some(word=>/[\u3400-\u9fff]/.test(word)))return false;
  return queryWords.every(word=>fieldWords.some(candidate=>closeSearchWord(word,candidate)));
 }
+const MONTHS={gennaio:1,febbraio:2,marzo:3,aprile:4,maggio:5,giugno:6,luglio:7,agosto:8,settembre:9,ottobre:10,novembre:11,dicembre:12};
+function isoFromText(text){
+ // The closing date is almost always the last date in the sentence:
+ // "a partire dal 22 ottobre 2026 ... entro e non oltre il 27 gennaio 2027".
+ const source=String(text||'');
+ const slash=[...source.matchAll(/(\d{1,2})\/(\d{1,2})\/(20\d{2})/g)];
+ if(slash.length){const m=slash[slash.length-1];return `${m[3]}-${String(m[2]).padStart(2,'0')}-${String(m[1]).padStart(2,'0')}`;}
+ const named=[...source.matchAll(/(\d{1,2})\s*(?:º|°)?\s*(gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)\s*(20\d{2})/gi)];
+ if(named.length){const m=named[named.length-1];return `${m[3]}-${String(MONTHS[m[2].toLowerCase()]).padStart(2,'0')}-${String(m[1]).padStart(2,'0')}`;}
+ const iso=[...source.matchAll(/\b(20\d{2})-(\d{2})-(\d{2})\b/g)];
+ if(iso.length){const m=iso[iso.length-1];return `${m[1]}-${m[2]}-${m[3]}`;}
+ return '';
+}
+function daysUntil(iso){
+ if(!iso)return null;
+ // Whole calendar days in Rome time: on the closing day itself the answer is 0.
+ const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+ const [ty,tm,td]=today.split('-').map(Number);
+ const [dy,dm,dd]=iso.split('-').map(Number);
+ if(!ty||!dy)return null;
+ const diff=Math.round((Date.UTC(dy,dm-1,dd)-Date.UTC(ty,tm-1,td))/86400000);
+ return Number.isFinite(diff)?diff:null;
+}
+function countdown(iso){
+ const left=daysUntil(iso);
+ if(left===null)return '';
+ if(left<0)return ' · 已截止';
+ if(left===0)return ' · 今天截止';
+ return ` · 剩 ${left} 天`;
+}
+function itemNorm(item){
+ if(!item.__norm){
+   item.__norm={
+     title:normalizeSearch(item.title||''),
+     aliases:(item.aliases||[]).map(normalizeSearch),
+     work:normalizeSearch(item.work||''),
+     composer:normalizeSearch(item.composer||''),
+     poet:normalizeSearch(item.poet||''),
+     text:normalizeSearch(item.text||'')
+   };
+ }
+ return item.__norm;
+}
+function scoreItem(item,terms){
+ const norm=itemNorm(item);
+ const {title,aliases,work,composer,poet,text}=norm;
+ let best=0,bestTerm='';
+ for(const term of terms){
+   if(!term)continue;
+   let s=0;
+   if(title===term)s=100;
+   else if(title.startsWith(term))s=80;
+   else if(title.split(' ').some(word=>word.startsWith(term)))s=70;
+   else if(title.includes(term))s=60;
+   else if(work.includes(term)||aliases.some(alias=>alias.includes(term)))s=45;
+   else if(composer.includes(term))s=35;
+   else if(poet.includes(term))s=25;
+   else if(text.includes(term))s=14;
+   else if(fuzzyFieldMatch(term,title)||aliases.some(alias=>fuzzyFieldMatch(term,alias)))s=8;
+   if(s>best){best=s;bestTerm=term;}
+ }
+ return {score:best,term:bestTerm};
+}
 async function loadRepertoire(){
  try{
    const response=await fetch(new URL('data/repertoire.json',sourceRoot),{cache:'no-store'});
@@ -79,30 +142,6 @@ function keywordContext(item,term){
  }
  return '';
 }
-function scoreItem(item,terms){
- const title=normalizeSearch(item.title||'');
- const aliases=(item.aliases||[]).map(normalizeSearch);
- const work=normalizeSearch(item.work||'');
- const composer=normalizeSearch(item.composer||'');
- const poet=normalizeSearch(item.poet||'');
- const text=normalizeSearch(item.text||'');
- let best=0,bestTerm='';
- for(const term of terms){
-   if(!term)continue;
-   let s=0;
-   if(title===term)s=100;
-   else if(title.startsWith(term))s=80;
-   else if(title.split(' ').some(word=>word.startsWith(term)))s=70;
-   else if(title.includes(term))s=60;
-   else if(work.includes(term)||aliases.some(alias=>alias.includes(term)))s=45;
-   else if(composer.includes(term))s=35;
-   else if(poet.includes(term))s=25;
-   else if(text.includes(term))s=14;
-   else if(fuzzyFieldMatch(term,title)||aliases.some(alias=>fuzzyFieldMatch(term,alias)))s=8;
-   if(s>best){best=s;bestTerm=term;}
- }
- return {score:best,term:bestTerm};
-}
 function renderMusicSearch(rawQuery){
  const target=$('#musicSearchResults');
  const query=rawQuery.trim();
@@ -121,7 +160,7 @@ function renderMusicSearch(rawQuery){
  const total=scored.length;
  const matches=scored.slice(0,12);
  if(!matches.length){
-   const near=repertoire.map(item=>({item,sim:editDistance(normalizeSearch(query),normalizeSearch(item.title),6)}))
+   const near=repertoire.map(item=>({item,sim:editDistance(normalizeSearch(query),itemNorm(item).title,6)}))
      .filter(entry=>entry.sim<=6).sort((a,b)=>a.sim-b.sim).slice(0,5);
    target.innerHTML=`<div class="music-empty"><strong>暂未收录“${esc(query)}”</strong><p>曲目库里没有这个词。${near.length?'也许你想找：'+near.map(entry=>`<button type="button" class="search-chip" data-suggest="${esc(entry.item.title)}">${esc(entry.item.title)}</button>`).join(' '):'可以先试短一点的词，例如只输入 nessun、libiamo、amore。'}</p></div>`;
    return;
@@ -148,10 +187,26 @@ function renderMusicSearch(rawQuery){
 function formatDate(iso){return new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(iso));}
 function renderOpportunities(){
  const now=Date.now();
- const current=opportunities.filter(o=>new Date(o.deadline).getTime()>=now);
+ // Handbook entries are one-off; the academies come straight from today's data,
+ // so a registration that opens tomorrow shows up on the front page by itself.
+ const derived=conservatoriData.filter(c=>c.manual_status==='open').map(c=>{
+   const iso=isoFromText((c.deadline_lines||[]).join(' '));
+   if(!iso)return null;
+   return {
+     title:`${c.city} · ${c.school}`,
+     category:'学院报名中',
+     place:c.city,
+     deadline:`${iso}T23:59:00+01:00`,
+     summary:(c.deadline_lines||[])[0]||'',
+     url:c.manual_source||c.url,
+     source:'学院官网'
+   };
+ }).filter(Boolean);
+ const merged=[...derived,...opportunities].sort((a,b)=>new Date(a.deadline)-new Date(b.deadline));
+ const current=merged.filter(o=>new Date(o.deadline).getTime()>=now);
  $('#opportunityCount').textContent=current.length;
  const statCalls=$('#statCalls');if(statCalls)statCalls.textContent=current.length;
- $('#opportunities').innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">截止 ${formatDate(o.deadline)}</span></div><h3>${esc(o.title)}</h3><p>${esc(o.summary)}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>主办方：${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a></article>`).join(''):'<div class="empty">目前没有已确认仍在报名的项目。你可以看看下方各机构的最新动态。</div>';
+ $('#opportunities').innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">截止 ${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(o.summary)}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>主办方：${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a></article>`).join(''):'<div class="empty">目前没有已确认仍在报名的项目。你可以看看下方各机构的最新动态。</div>';
 }
 function renderSources(){
  const q=$('#searchInput').value.trim().toLocaleLowerCase();
@@ -178,7 +233,7 @@ function fileLabel(url){
 function staleMark(text){
  const years=(String(text||'').match(/\b20\d{2}\b/g)||[]).map(Number);
  if(!years.length)return '';
- return Math.max(...years)<2026?'<span class="cons-stale">旧公告 · 参考价值有限</span>':'';
+ return Math.max(...years)<2026?'<span class="cons-stale">旧公告 · 参考价值有限</span>':'。'.slice(1)||'';
 }
 function pickDocs(list){
  const items=(list||[]).map(url=>({url,rank:/bando|ammission|iscrizion/i.test(url)?2:(/calendario|programma|prova|graduator/i.test(url)?1:0)}))
@@ -194,7 +249,8 @@ function consCard(c,academy){
  const soft=(c.fallback_lines||[]).filter(line=>!said.includes(line.slice(0,40))).slice(0,2);
  const docs=pickDocs(c.documents);
  const stale=staleMark([...deadlines,...dates].join(' '));
- const openMark=c.manual_status==='open'?'<span class="badge badge--gold">报名进行中</span>':'';
+ const openIso=isoFromText(deadlines.join(' '));
+ const openMark=c.manual_status==='open'?`<span class="badge badge--gold">报名进行中${countdown(openIso)}</span>`:'';
  return `<article class="cons-card${academy?' cons-card--academy':''}">
    <div class="cons-head"><h3>${esc(c.city)}<small>${esc(c.school)}</small></h3><span class="status ${c.status==='ok'?'':'error'}">${c.status==='ok'?(c.cached?'上次读取':'官网可读'):'暂时读不到'}</span></div>
    ${openMark?`<div>${openMark}</div>`:''}
@@ -241,6 +297,7 @@ async function loadConservatori(){
    const data=await res.json();conservatoriData=data.items||[];
  }catch(error){conservatoriData=[];}
  renderConservatori();
+ renderOpportunities();
 }
 async function loadData(){
  $('#updatedAt').textContent='正在更新来源动态…';
@@ -289,7 +346,7 @@ document.addEventListener('click',event=>{
    if(full)full.hidden=open;
    if(preview)preview.hidden=!open;
    toggle.dataset.open=open?'0':'1';
-   toggle.textContent=open?'展开全文 ↓':'收起 ↑';
+   toggle.textContent=open?'收起 ↑':'展开全文 ↓';
  }
 });
 document.querySelectorAll('.search-chip').forEach(button=>button.addEventListener('click',()=>{const q=button.dataset.query;$('#musicSearchInput').value=q;renderMusicSearch(q);}));
