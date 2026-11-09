@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T23:37:57+01:00",
+  "generated_at": "2026-11-09T23:50:08+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -7476,10 +7476,390 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Ne crois pas que les morts soient morts...",
+      "aliases": [],
+      "composer": "Ernest Amédée Chausson",
+      "work": "/lieder/get_settings.html?ComposerId=3710",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "fr",
+      "text": "Ne crois pas que les morts soient morts !\nTant qu'il y aura des vivants\nLes morts vivront, les morts vivront.\n\nLorsque le soleil s'est couché,\nTu n'as qu'à fermer tes deux yeux\nPour qu'il s'y lève, rallumé.\n\nL'oiseau s'envole, l'oiseau s'en va;\nMais pendant qu'il plane là?haut\nSon ombre reste sur la terre.\n\nLe souffle que tu m'as fait boire\nSur tes lèvres en t'en allant\nIl est en moi, il est en moi;\n\nUn autre te l'avait donné\nEn s'en allant; en m'en allant,\nJe le donnerai à un autre.\n\nDe bouche en bouche il a passé,\nDe bouche en bouche il passera,\nAinsi jamais ne se perdra.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=13457",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Jean Richepin",
+      "settings": [
+        {
+          "composer": "Ernest Amédée Chausson",
+          "title": "/lieder/get_settings.html?ComposerId=3710",
+          "instrumentation": "high voice and piano or orchestra"
+        },
+        {
+          "composer": "Alexandre Georges",
+          "title": "/lieder/get_settings.html?ComposerId=4160",
+          "instrumentation": "high voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Allà als jardins dels salzes el meu amor...",
+      "aliases": [],
+      "composer": "Samuel Hans Adler",
+      "work": "/lieder/get_settings.html?ComposerId=3131",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "Allà als jardins dels salzes el meu amor i jo ens vàrem trobar;\nella passava pels jardins dels salzes\namb els seus petits peus blancs com la neu.\nElla em proposà de prendre l’amor amb calma,\ncom les fulles creixen als arbres;\nperò jo, jove i forassenyat, no estigué d’acord amb ella.\n\nEl meu amor érem en un camp prop del riu,\ni a la meva espatlla , ella posà la seva mà blanca com la neu.\nElla em proposà de prendre la vida amb calma,\ncom l’herba creix a les prades;\nperò jo era jove i forassenyat, i ara estic ple de llàgrimes.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=384449",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "Samuel Hans Adler",
+          "title": "/lieder/get_settings.html?ComposerId=3131",
+          "instrumentation": "baritone and piano"
+        },
+        {
+          "composer": "Allan Blank",
+          "title": "/lieder/get_settings.html?ComposerId=3446",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "James Brash",
+          "title": "/lieder/get_settings.html?ComposerId=14231",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "It isnae me",
+      "aliases": [],
+      "composer": "Edward Elgar, Sir",
+      "work": "/lieder/get_settings.html?ComposerId=3963",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "It isnae me that's keerin - or no an awfu lot,\nBut - it's sair, whiles, mindin things ye thocht ye had forgot.\nAn when wee Tam the Fiddler played 'The Lea Rig'[2] doon the street,\nI gied masel a shock tae find that I wis near tae greet.\n\nIt isnae me that's keerin - or no for vera lang,\nBut - there's mony happy times awa since last I heard yon sang.\nAn someway -- Och, I dinnae ken! I cannae say things richt --\nI wish young Tam the Fiddler hadnae played yon sang last nicht.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=47565",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Sally Holmes",
+      "settings": [
+        {
+          "composer": "Edward Elgar, Sir",
+          "title": "/lieder/get_settings.html?ComposerId=3963",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Rheinweinlied",
+      "aliases": [],
+      "composer": "Adolph Bernhard Marx",
+      "work": "/lieder/get_settings.html?ComposerId=7743",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Der Asmannshäuser\nIm Purpurschein\nIst K&oul;nig und Kaiser\nAm goldenen Rhein.\n\nWie blitzt er im Glase!\nSein Rheingold wie echt!\nWie sitzt ihm der Mantel\nSo stolz und gerecht!\n\nWie taumeln die Zecher\nZu Boden all,\nUnd taumeln und jubeln\nBei Paukenschall!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=55518",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Moritz Veit",
+      "settings": [
+        {
+          "composer": "Adolph Bernhard Marx",
+          "title": "/lieder/get_settings.html?ComposerId=7743",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Dedication",
+      "aliases": [],
+      "composer": "(Maria) Anna Stubenberg, Gräfin",
+      "work": "/lieder/get_settings.html?ComposerId=11359",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "My words are nothing! but a small greeting,\nBecause in my heart I feel as if I should greet you.\n\nMy words are nothing! only you give them power,\nBecause you have often already found the song for the words.\n\nMy words are nothing! because they wafted away without singing;\nBut your song continuously passes from heart to heart.\n\nMy words are nothing! because I am a child of man;\nSongs are the language of angels alone.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=109979",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "(Maria) Anna Stubenberg, Gräfin",
+          "title": "/lieder/get_settings.html?ComposerId=11359",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Sharon Krebs",
+          "title": "./get_texts.html?ContribId=491",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "La notte",
+      "aliases": [],
+      "composer": "Albert Felix, Graf Amadei",
+      "work": "/lieder/get_settings.html?ComposerId=3176",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Dal bosco viene la notte,\ndagli alberi si insinua lieve,\nsi guarda intorno intorno\n- ora stai all'erta!\n\nTutte le luci di questo mondo,\ntutti i fiori, tutti i colori\nspegne, e ruba\ni covoni dal campo.\n\nPorta via tutto ciò che è bello,\nl'argento dal fiume,\nporta via dalla cupola\ndel duomo l'oro.\n\nDepredato sta il cespuglio,\nstringiti più vicina, cuore a cuore,\nah, la notte mi spaventa,\npuò rubarmi anche te.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=25856",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Amelia Maria Imbarrato",
+      "settings": [
+        {
+          "composer": "Albert Felix, Graf Amadei",
+          "title": "/lieder/get_settings.html?ComposerId=3176",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Franz Ippisch",
+          "title": "/lieder/get_settings.html?ComposerId=23315",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Richard Stöhr",
+          "title": "/lieder/get_settings.html?ComposerId=5855",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "«Ich freu mich, sprach das Mägdelein",
+      "aliases": [],
+      "composer": "Ernst Frank",
+      "work": "/lieder/get_settings.html?ComposerId=9144",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "«Ich freu mich, sprach das Mägdelein,\nUnd will den Sommer fröhlich sein\nUnd lauter guter Dinge;\nMein Herze ist von Freuden voll,\nDaß ich mich wohl gehaben soll\nMit einem Edelinge.\n\nLieb Tochter, war der Mutter Rath,\nDer Knabe sich vermessen hat,\nEr hat dich hintergangen.\nDie Rosen haben Dornen all,\nWenn er dir zuwirft seinen Ball,\nSo sollst du ihn nit fangen.\n\nFrau Mutter, laßt die Rosen stehn,\nIch will zu meinem Buhlen gehn\nUnd weiß ihn wohl zu finden;\nEs klingt sein Lied wie keins im Land,\nEr fängt mich höflich bei der Hand\nIm Reien an der Linden.\n\nLieb Kind, nimm dir des Meiers Sohn,\nDeß Liedel geht aus anderm Ton,\nEr hat die Truh voll Gulden;\nDein Vater bläst das Jägerhorn,\nIch hab im Haus nicht Flachs, nicht Korn,\nDer Ritter hat nur Schulden.\n\nDen Dorfknab mag ich nimmer ha'n,\nDer Ritter hat mir's angethan,\nVerguldt sind seine Sporen,\nMein Freundschaft und mein Heimlichkeit\nGehören ihm in Ewigkeit,\nIhm hab ich mich verschworen. --\n\nO weh, ihr Rosen, welk und blaß,\nWie wurdet ihr von Thränen naß,\nWie seid ihr nun verzaget.\nAuf einem Grabe ganz allein\nDa sitzt ein kleines Vögelein\nZur Winterszeit und klaget.»",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=58940",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Julius Wolff",
+      "settings": [
+        {
+          "composer": "Ernst Frank",
+          "title": "/lieder/get_settings.html?ComposerId=9144",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Heinrich Klussmann",
+          "title": "/lieder/get_settings.html?ComposerId=18009",
+          "instrumentation": "soprano or tenor and piano"
+        },
+        {
+          "composer": "Arnold Mendelssohn",
+          "title": "/lieder/get_settings.html?ComposerId=5033",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "She works softly in the chamber",
+      "aliases": [],
+      "composer": "Paul Hindemith",
+      "work": "/lieder/get_settings.html?ComposerId=4425",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "She works softly in the chamber\nand the farm lies long deserted.\nIn the elders by the chamber\nwoefully a blackbird warbles.\n\nSilverly and strangely mirrored\nshines her image in the gloaming,\nturning paler in the mirror,\nand she’s dreading its appearance.\n\nIn the dark a farmhand’s singing,\nunreal, and she stares grief-stricken.\nRedness trickles through the darkness.\nAt the door the south-wind rattles.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=118210",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Bertram Kottmann",
+      "settings": [
+        {
+          "composer": "Paul Hindemith",
+          "title": "/lieder/get_settings.html?ComposerId=4425",
+          "instrumentation": "alto, flute, clarinet, and string quartet"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ein Veilchen auf der Wiese stand",
+      "aliases": [],
+      "composer": "Johann André",
+      "work": "/lieder/get_settings.html?ComposerId=60",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Ein Veilchen auf der Wiese stand,\nGebückt in sich und unbekannt;\nEs war ein herzigs Veilchen.\n[Da]1 kam [eine]2 junge Schäferin\nMit leichtem [Schritt]3 und muntrem Sinn\nDaher, daher,\nDie Wiese her, und sang.\n\nAch! denkt das Veilchen, wär ich nur\nDie schönste Blume der Natur,\nAch, nur ein kleines Weilchen,\nBis mich das Liebchen abgepflückt\nUnd an dem Busen matt gedrückt!\nAch nur, ach nur\nEin Viertelstündchen lang!\n\nAch! aber ach! das Mädchen kam\nUnd nicht in Acht das Veilchen nahm,\n[Ertrat]4 das arme Veilchen.\nEs sank und starb und freut' sich noch:\nUnd sterb' ich denn, so sterb' ich doch\nDurch sie, durch sie,\nZu ihren Füßen doch.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=6645",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Johann Wolfgang von Goethe",
+      "settings": [
+        {
+          "composer": "Johann André",
+          "title": "/lieder/get_settings.html?ComposerId=60",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Anna Amalia, Herzogin von Sachsen-Weimar",
+          "title": "/lieder/get_settings.html?ComposerId=3199",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Algernon Bennet Langton Ashton",
+          "title": "/lieder/get_settings.html?ComposerId=3235",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Sing denn das letzte Lied zu Ende",
+      "aliases": [],
+      "composer": "Karim Adam Al-Zand",
+      "work": "/lieder/get_settings.html?ComposerId=21593",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Sing denn das letzte Lied zu Ende\nund lasst uns gehen.\nVergiss die Nacht, wenn keine Nacht mehr ist.\nWen suche ich mit meinen Armen zu umfangen?\nNie lassen Träume sich festhalten.\nMeine Hände drücken sehnlich Leere mir ans Herz,\nund es zersprengt mir fast die Brust.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=110746",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Bertram Kottmann",
+      "settings": [
+        {
+          "composer": "Karim Adam Al-Zand",
+          "title": "/lieder/get_settings.html?ComposerId=21593",
+          "instrumentation": "mezzo-soprano and piano"
+        },
+        {
+          "composer": "Karim Adam Al-Zand",
+          "title": "/lieder/get_settings.html?ComposerId=21593",
+          "instrumentation": "baritone and piano"
+        },
+        {
+          "composer": "Karim Adam Al-Zand",
+          "title": "/lieder/get_settings.html?ComposerId=21593",
+          "instrumentation": "mezzo-soprano and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Liebestraum",
+      "aliases": [],
+      "composer": "Heinrich Proch",
+      "work": "/lieder/get_settings.html?ComposerId=5395",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Was ich erlebt in schöner Zeit,\nder Liebe Glück und Seligkeit,\nhat mir mit holder Zaubermacht\nein süßer Traum zurückgebracht.\n\nMein heißes Sehnen, glühend Lieben,\nes war wie vor und eh' geblieben,\nkein Zweifel quälte meine Brust,\nkein Argwohn trübte meine Lust.\n\nEs strahlt' aus ihren klaren Blicken\ndas reinste himmlische Entzücken,\nund Lipp' an Lippe, Herz an Herz\nentfloh uns jeder Erdenschmerz.\n\nIn ihren Augen glänzten Tränen,\nes bebt das Herz in stillem Sehnen,\nund was ich einst in schöner Zeit\nerlebt - der Liebe Seligkeit -\n\nhat mir mit holder Zaubermacht\nein süßer Traum zurückgebracht.\nO dass dies meine letzte Nacht!\nO dass ich nimmermehr erwacht!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=88408",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Heinrich Proch",
+      "settings": [
+        {
+          "composer": "Heinrich Proch",
+          "title": "/lieder/get_settings.html?ComposerId=5395",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Nüsse knacken",
+      "aliases": [],
+      "composer": "Heinrich Kaspar Schmid",
+      "work": "/lieder/get_settings.html?ComposerId=17091",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Holler, boller Rumpelsack --\nNiklas trug sie huckepack,\nWeihnachtsnüsse gelb und braun,\nrunzlig, punzlig anzuschaun.\n\nKnackt die Schale, springt der Kern:\nWeihnachtsnüsse eß ich gern.\nKomm bald wieder in dies Haus,\nguter alter Nikolaus!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=80937",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Albert Sergel",
+      "settings": [
+        {
+          "composer": "Heinrich Kaspar Schmid",
+          "title": "/lieder/get_settings.html?ComposerId=17091",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 960,
+  "lieder_position": 1008,
   "aria_opera": 0,
   "aria_scene": 8
 }
