@@ -41,6 +41,7 @@ jobs:
           # Start with the latest published catalogue and its scan cursor.
           git fetch origin main
           git checkout origin/main -- data/repertoire.json
+          python prune_repertoire.py
           python update_repertoire.py
           git add data/repertoire.json
           if ! git diff --cached --quiet; then
