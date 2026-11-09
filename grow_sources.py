@@ -1,0 +1,255 @@
+#!/usr/bin/env python3
+"""Let the theatre / audition source list grow on its own.
+
+``scrape_sources.py`` holds a hand-checked list of 29 pages and scrapes them
+every day. That list is a snapshot, not a growing thing: new seasons, new
+competitions and new houses never appear unless someone edits the file.
+
+This script adds two behaviours on top:
+
+1. **Rediscovery** — audition pages link to other institutions' audition pages.
+   Every run harvests outbound links that look like calls for singers, verifies
+   them by fetching (reachable + actually about auditions/competitions), and
+   appends the good ones to ``data/sources_extra.json`` (committed, so the list
+   survives between runs).
+2. **Rotating coverage** — the discovered list is re-scraped in batches of
+   ``BATCH`` per run, round-robin through a stored cursor, so daily runtime stays
+   bounded while every discovered page still gets refreshed regularly.
+
+Everything known (hand-checked + discovered) is merged into ``data/sources.json``,
+which is what the site renders.
+"""
+
+from __future__ import annotations
+
+import json
+import re
+import time
+from datetime import datetime
+from pathlib import Path
+from urllib.parse import urljoin, urlparse
+from zoneinfo import ZoneInfo
+
+import scrape_sources as core
+
+DATA = Path(__file__).resolve().parent / "data"
+REGISTRY = DATA / "sources_extra.json"
+PAGE = DATA / "sources.json"
+
+BATCH = 12           # discovered pages refreshed per run
+MAX_NEW = 8          # new sources accepted per run
+MAX_CANDIDATES = 18  # outbound links inspected per run
+TIMEOUT = 30
+
+# A link worth following: it names an audition/competition, or lives on such a page.
+LINK_TEXT_RE = re.compile(r"audizion|audition|concors|concor|bando|candidat|casting|selezion", re.IGNORECASE)
+LINK_PATH_RE = re.compile(r"audizion|concors|bando|casting|selezion|lavora-con-noi|bandi", re.IGNORECASE)
+SKIP_HOST_RE = re.compile(r"facebook|instagram|twitter|x\.com|youtube|linkedin|whatsapp|tiktok|google|apple|spotify", re.IGNORECASE)
+SKIP_EXT_RE = re.compile(r"\.(pdf|jpg|jpeg|png|gif|zip|doc|docx|xls|xlsx|mp3|mp4)($|\?)", re.IGNORECASE)
+GENERIC_LABEL = re.compile(r"(?i)(apri( il bando)?|leggi|scopri|qui|dettagli|vai|apri il bando→|→|&rarr;)")
+
+
+def now_iso() -> str:
+    return datetime.now(ZoneInfo("Europe/Rome")).isoformat(timespec="seconds")
+
+
+def load(path: Path, default):
+    if not path.exists():
+        return default
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return default
+
+
+def fetch(url: str):
+    response = core.Fetcher.get(url, timeout=TIMEOUT, retries=0)
+    status = getattr(response, "status", None) or 0
+    title = core.clean_line(response.css("title::text").get() or "")
+    text = response.get_all_text(separator="\n") or ""
+    lines = [core.clean_line(x) for x in text.splitlines()]
+    lines = [x for x in lines if x]
+    return {
+        "status": "ok" if status < 400 else "http_error",
+        "http_status": status,
+        "title": title,
+        "relevant_lines": core.rank_relevant_lines(lines),
+        "response": response,
+    }
+
+
+def scrape_entry(url: str, name: str, number: int, discovered_from: str = "") -> dict:
+    item = {
+        "number": number,
+        "source": name,
+        "url": url,
+        "checked_at": now_iso(),
+        "status": "error",
+        "http_status": None,
+        "title": "",
+        "relevant_lines": [],
+        "error": None,
+    }
+    if discovered_from:
+        item["discovered_from"] = discovered_from
+    try:
+        page = fetch(url)
+        item["http_status"] = page["http_status"]
+        item["status"] = page["status"]
+        item["title"] = page["title"]
+        item["relevant_lines"] = page["relevant_lines"]
+        item["_response"] = page["response"]
+    except Exception as exc:
+        item["error"] = f"{type(exc).__name__}: {exc}"
+    return item
+
+
+def harvest_links(response, base_url: str) -> list[tuple[str, str]]:
+    try:
+        nodes = response.css("a")
+    except Exception:
+        return []
+    out: list[tuple[str, str]] = []
+    for node in nodes:
+        try:
+            label = node.css("::text").get() or ""
+            href = node.css("::attr(href)").get() or ""
+        except Exception:
+            continue
+        if not href:
+            continue
+        target = urljoin(base_url, href.strip())
+        if not target.startswith("http") or SKIP_HOST_RE.search(target) or SKIP_EXT_RE.search(target):
+            continue
+        if not (LINK_TEXT_RE.search(label) or LINK_PATH_RE.search(target)):
+            continue
+        out.append((core.clean_line(label)[:90], target.split("#")[0]))
+    return out
+
+
+def known_hosts(known: list[dict]) -> set[str]:
+    hosts = set()
+    for item in known:
+        host = urlparse(item.get("url", "")).netloc.lower()
+        if host:
+            hosts.add(host.removeprefix("www."))
+    return hosts
+
+
+def hub_rank(candidate: tuple[str, str, str]) -> tuple[int, int]:
+    """Listing pages age well; single-notice permalinks expire. Prefer hubs."""
+    url = candidate[1]
+    last = url.split("?")[0].rstrip("/").rsplit("/", 1)[-1]
+    return (1 if re.search(r"\d{4,}", last) else 0, url.count("/"))
+
+
+def main() -> None:
+    payload = load(REGISTRY, {})
+    registry: list[dict] = payload.get("items", [])
+    cursor: int = int(payload.get("cursor", 0))
+    core_items: list[dict] = load(PAGE, [])
+
+    for item in registry:
+        item.pop("_response", None)
+
+    # 1. Refresh a rotating slice of the discovered list.
+    batch: list[dict] = []
+    if registry:
+        start = cursor % len(registry)
+        batch = [registry[(start + i) % len(registry)] for i in range(min(BATCH, len(registry)))]
+    refreshed: list[dict] = []
+    for item in batch:
+        fresh = scrape_entry(item["url"], item["source"], item["number"], item.get("discovered_from", ""))
+        fresh.pop("_response", None)
+        if fresh["status"] == "ok":
+            fresh["discovered_at"] = item.get("discovered_at", fresh["checked_at"])
+            refreshed.append(fresh)
+            print(f"[extra] ok {fresh['http_status']} {fresh['source'][:40]}", flush=True)
+        else:
+            # Keep the last good extract rather than blanking a working source.
+            item["checked_at"] = fresh["checked_at"]
+            item["http_status"] = fresh["http_status"]
+            item["error"] = fresh["error"]
+            item["misses"] = int(item.get("misses", 0)) + 1
+            refreshed.append(item)
+            print(f"[extra] fail {fresh['http_status']} {item['source'][:40]}", flush=True)
+        time.sleep(1.2)
+    cursor = (cursor + len(batch)) % max(len(registry), 1)
+
+    by_number: dict[int, dict] = {item["number"]: item for item in refreshed}
+
+    # 2. Harvest new candidates from the freshly read pages.
+    seen = known_hosts(core_items + registry)
+    candidates: list[tuple[str, str, str]] = []
+    for item in core_items:
+        if len(candidates) >= MAX_CANDIDATES:
+            break
+        if item.get("status") != "ok":
+            continue
+        # The core scraper discarded the DOM, so re-read only a few hub pages.
+        if not re.search(r"audizion|concor|bando|casting|bandi|selezion|lavora", item["url"], re.IGNORECASE):
+            continue
+        try:
+            page = fetch(item["url"])
+        except Exception:
+            continue
+        hosts = {urlparse(c[1]).netloc.lower().removeprefix("www.") for c in candidates}
+        for label, target in harvest_links(page["response"], item["url"]):
+            host = urlparse(target).netloc.lower().removeprefix("www.")
+            if host in seen or host in hosts:
+                continue
+            hosts.add(host)
+            candidates.append((label, target, item["url"]))
+            if len(candidates) >= MAX_CANDIDATES:
+                break
+        time.sleep(1.2)
+
+    candidates.sort(key=hub_rank)
+
+    # 3. Verify the candidates before trusting them.
+    next_number = max([item["number"] for item in registry + core_items] + [28]) + 1
+    added = 0
+    for label, target, origin in candidates:
+        if added >= MAX_NEW:
+            break
+        probe = scrape_entry(target, label or target, next_number, origin)
+        probe.pop("_response", None)
+        if probe["status"] != "ok" or not probe["relevant_lines"]:
+            print(f"[extra] skip {probe['status']} {target[:70]}", flush=True)
+            continue
+        # Anchor texts on aggregators are often "Apri il bando"; use the page
+        # title (or the host) so the source list reads like a list of names.
+        if len(label) < 12 or GENERIC_LABEL.fullmatch(label.strip() or "x"):
+            host = urlparse(target).netloc.removeprefix("www.")
+            probe["source"] = (probe["title"] or host)[:70]
+        probe["discovered_at"] = probe["checked_at"]
+        by_number[next_number] = probe
+        next_number += 1
+        added += 1
+        print(f"[extra] new {probe['http_status']} {probe['source'][:50]} — {target[:60]}", flush=True)
+        time.sleep(1.2)
+
+    # A discovered notice page eventually expires; stop carrying dead links.
+    keep = [
+        item for item in by_number.values()
+        if item.get("status") == "ok" or int(item.get("misses", 0)) < 4
+    ]
+    dropped = len(by_number) - len(keep)
+    if dropped:
+        print(f"[extra] dropped {dropped} expired source(s)", flush=True)
+    registry_out = sorted(keep, key=lambda item: item["number"])
+
+    REGISTRY.write_text(
+        json.dumps({"updated_at": now_iso(), "cursor": cursor, "items": registry_out},
+                   ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    # 4. Publish the merged list the site renders.
+    merged = list(core_items) + registry_out
+    PAGE.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"registry={len(registry_out)} new={added} merged={len(merged)} next_cursor={cursor}")
+
+
+if __name__ == "__main__":
+    main()

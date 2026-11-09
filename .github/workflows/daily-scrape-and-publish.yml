@@ -34,6 +34,8 @@ jobs:
         run: python scrape_sources.py
       - name: Scrape conservatory admission pages
         run: python run_conservatori.py
+      - name: Grow the audition source list
+        run: python grow_sources.py
       - name: Save expanded song catalogue
         run: |
           git config user.name 'github-actions[bot]'
@@ -43,9 +45,9 @@ jobs:
           git checkout origin/main -- data/repertoire.json
           python prune_repertoire.py
           python update_repertoire.py
-          git add data/repertoire.json data/conservatori.json
+          git add data/repertoire.json data/conservatori.json data/sources_extra.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Update song catalogue and conservatory snapshot'
+            git commit -m 'Update song catalogue and scraped snapshots'
             git push origin HEAD:main
           fi
       - name: Prepare Pages artifact
