@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Refresh discovered audition sources daily; discover new ones only weekly.
+"""Refresh the registered source snapshot and screen new candidates weekly.
 
-The daily run refreshes a rotating batch of already-approved sources. The
-weekly --discover run additionally harvests outbound links from known official
-hubs, verifies candidates, and appends qualifying sources. This avoids
-repeating candidate searches every day.
+The daily run refreshes a rotating batch of the legacy discovered registry.
+The weekly --discover run harvests outbound links from known hubs, applies a
+conservative vocal-relevance screen, and queues passing URLs for review. A
+heuristic pass is not publisher verification or opportunity approval.
 
-All known sources are merged into data/sources.json for the site."""
+The merged source snapshot is written to data/sources.json; new candidate URLs
+remain separately recorded in data/source_candidates.json."""
 
 from __future__ import annotations
 
@@ -276,7 +277,7 @@ def main(discover: bool = False) -> None:
     added = 0
 
     if discover:
-        # 2. Harvest new candidates from known official hubs (weekly only).
+        # 2. Harvest and screen candidate URLs from known hubs (weekly only).
         seen = known_hosts(core_items + registry)
         candidates: list[tuple[str, str, str]] = []
         for item in core_items:
@@ -354,7 +355,7 @@ def main(discover: bool = False) -> None:
         encoding="utf-8",
     )
 
-    # 4. Publish the merged list the site renders.
+    # 4. Refresh the merged source snapshot; this is not opportunity publication.
     merged = list(core_items) + registry_out
     PAGE.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"registry={len(registry_out)} candidates_queued={added} merged={len(merged)} next_cursor={cursor}")
