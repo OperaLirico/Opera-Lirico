@@ -64,9 +64,10 @@ AUDITIONISH_RE = re.compile(
 MIN_LINES = 3
 VOICE_RE = re.compile(
     r"canto|cantant|soprano|mezzosoprano|contralto|tenore|baritono|basso|"
-    r"voce|vocal|liric|opera|young artist|chorus|coro|corale",
+    r"voce|vocal|young artist|chorus|coro|corale",
     re.IGNORECASE,
 )
+OPERA_CONTEXT_RE = re.compile(r"opera|liric", re.IGNORECASE)
 
 
 def candidate_rejection_reason(probe: dict, target: str) -> str | None:
@@ -81,8 +82,11 @@ def candidate_rejection_reason(probe: dict, target: str) -> str | None:
     )
     if not AUDITIONISH_RE.search(blob):
         return "no_audition_signal"
-    if not VOICE_RE.search(blob):
+    has_voice_role = bool(VOICE_RE.search(blob))
+    if not has_voice_role and not OPERA_CONTEXT_RE.search(blob):
         return "no_vocal_or_opera_signal"
+    if OFFTOPIC_RE.search(blob) and not has_voice_role:
+        return "off_topic_artistic_call"
     if CHROME_RE.search(probe.get("title", "")):
         return "page_chrome"
     if STAFF_RE.search(blob):
