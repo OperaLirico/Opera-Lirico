@@ -39,6 +39,8 @@ jobs:
     steps:
       - name: Get project files
         uses: actions/checkout@v4
+        with:
+          ref: main
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
