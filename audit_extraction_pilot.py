@@ -97,12 +97,27 @@ def robots_allows(url, text):
     longest=max(size for size,_ in matches)
     return any(kind=="allow" for size,kind in matches if size==longest)
 
-def fetch_robots(origin):
-    response=request_bytes(origin.rstrip("/")+"/robots.txt")
-    if response["status"]=="redirect_requires_policy_check":
-        return {"status":"robots_redirect_requires_review","http_status":response["http_status"],
-            "final_url":response.get("redirect_url"),"body":b"","error":"robots.txt redirected across hosts"}
-    return response
+def fetch_robots(origin,max_redirects=2):
+    current_origin=origin.rstrip("/")
+    visited={current_origin}
+    for _ in range(max_redirects+1):
+        response=request_bytes(current_origin+"/robots.txt")
+        if response["status"]!="redirect_requires_policy_check":
+            response["robots_origin"]=current_origin
+            return response
+        target=urllib.parse.urlsplit(response["redirect_url"])
+        if target.scheme not in ("http","https") or target.path.rstrip("/")!="/robots.txt" or target.query:
+            return {"status":"robots_redirect_requires_review","http_status":response["http_status"],
+                "final_url":response.get("redirect_url"),"body":b"",
+                "error":"robots.txt redirect did not remain on a robots.txt path"}
+        next_origin=f"{target.scheme}://{target.netloc}"
+        if next_origin in visited:
+            return {"status":"robots_redirect_loop","http_status":response["http_status"],
+                "final_url":response.get("redirect_url"),"body":b"","error":"robots.txt redirect loop"}
+        visited.add(next_origin)
+        current_origin=next_origin
+    return {"status":"robots_redirect_limit","http_status":None,
+        "final_url":current_origin+"/robots.txt","body":b"","error":"robots.txt redirect limit reached"}
 
 def permitted_fetch(url,source_url,source_robots,max_redirects=2):
     current=url
