@@ -158,17 +158,6 @@ async function fetchJson(url, headers = {}) {
   if (!r.ok) throw new Error("API returned HTTP " + r.status);
   return body;
 }
-async function cloudflareMetrics(env) {
-  const start = new Date(Date.now() - 29 * 86400000).toISOString().slice(0, 10);
-  const end = new Date().toISOString().slice(0, 10);
-  const q = 'query { viewer { accounts(filter: { accountTag: "' + env.CF_ACCOUNT_ID + '" }) { rumPageloadEventsAdaptiveGroups(limit: 1000, filter: { siteTag: "' + env.CF_WEB_ANALYTICS_SITE_TAG + '", date_geq: "' + start + '", date_leq: "' + end + '" }) { count sum { visits } dimensions { date requestHost } } } } }';
-  const payload = await fetchJson("https://api.cloudflare.com/client/v4/graphql", {
-    Authorization: "Bearer " + env.CF_ANALYTICS_API_TOKEN,
-    "Content-Type": "application/json"
-  });
-  // This line is intentionally replaced below by the POST request.
-  return payload;
-}
 async function getCloudflare(env) {
   const start = new Date(Date.now() - 29 * 86400000).toISOString().slice(0, 10);
   const end = new Date().toISOString().slice(0, 10);
