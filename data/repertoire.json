@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T01:19:07+01:00",
+  "generated_at": "2026-11-10T01:31:53+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -9776,10 +9776,360 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Följande av Wen Tai",
+      "aliases": [],
+      "composer": "Erik Fritiof Fordell",
+      "work": "/lieder/get_settings.html?ComposerId=13456",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "sv",
+      "text": "Långt i fjärran syns horisonten\ni avfärdens stund.\nDrivande skyar och rinnande vatten\nföljer dig självmant.\nHela sitt liv är människan gäst.\nVarför måste vi skiljas idag?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=110688",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Erik Fritiof Fordell",
+          "title": "/lieder/get_settings.html?ComposerId=13456",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "A l’hora de mitjanit quan ploren les...",
+      "aliases": [],
+      "composer": "Hubert Bath",
+      "work": "/lieder/get_settings.html?ComposerId=3324",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "A l’hora de mitjanit quan ploren les estrelles, jo volo\nvers la vall solitària que havíem estimat, quan la vida brillava càlida als teus ulls;\ni penso sovint que si els esperits es poden escapar de les regions de l’aire\nper tornar a visitar antigues escenes de delícia, tu vindràs a veure’m allà,\ni em diràs que el nostre amor és recordat fins i tot al cel.\n\nLlavors cantaré la cançó salvatge que abans t’embadalia\nquan les nostres veus a l’uníson eren com una de sola a les orelles;\ni mentre l’Eco al lluny escampa la meva trista oració a través de la vall,\njo penso, oh amor meu! Que és la teva veu que arriba del Regne de les Ànimes\nresponent imperceptiblement encara les notes que abans ens eren tan estimades.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=244456",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "Hubert Bath",
+          "title": "/lieder/get_settings.html?ComposerId=3324",
+          "instrumentation": "reciter, piano, organ, 2 violins, and 2 cellos"
+        },
+        {
+          "composer": "Maurice Blower",
+          "title": "/lieder/get_settings.html?ComposerId=3460",
+          "instrumentation": "SSA chorus and piano"
+        },
+        {
+          "composer": "Herman Brearly",
+          "title": "/lieder/get_settings.html?ComposerId=7422",
+          "instrumentation": "TTBB chorus a cappella"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Lemady",
+      "aliases": [],
+      "composer": "(Edward) Benjamin Britten",
+      "work": "/lieder/get_settings.html?ComposerId=3567",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "One midsummer's morn as I were a-walking\nThe fields and the meadows were covered with green,\nThe birds a-sweetly singing so pleasant and so charming,\nSo early in the morning by the break of the day.\n\nArise, arise, go pluck your love a posy\nof the prettiest flowers that grows in yonder green.\nO yes I'll arise and pluck lilies, pinks and roses\nAll for my dearest Lemady, the girl I adore.\n\nO Lemady, O Lemady what a lovely lass thou art\nThou art the fairest creature that ever my eye did see!\nI'll play you a tune all on the pipes of ivory\nSo early in the morning by the break of the day.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=16698",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "from Volkslieder",
+      "settings": [
+        {
+          "composer": "(Edward) Benjamin Britten",
+          "title": "/lieder/get_settings.html?ComposerId=3567",
+          "instrumentation": "voice and harp"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Meine Wünsche",
+      "aliases": [],
+      "composer": "Johann Abraham Peter Schulz",
+      "work": "/lieder/get_settings.html?ComposerId=5681",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "An Kaiser Josephs Platz zu seyn,\nDas fällt mir wahrlich nimmer ein!\n  Der Kaiser soll, und nicht zum Schein,\n  Geschmückt mit Kron' und Zepter seyn,\n  Sich ganz dem Staat' und Kriegsheer weihn,\n  Und kann sich nie von Herzen freun,\nDoch um mich einmal zu zerstreun.\nEin Jahe lang Herr von seinem Wein,\nVon Kremnitz und Tokai zu seyn,\nDas fällt mir schon so manchmal ein!\n\nDer heil'ge Vater Pabst zu seyn,\nDas fällt mir noch viel wen'ger ein!\n  Der alte Herr schläft stets allein,\n  Und kann und darf sich nicht mehr freun.\n  Muß beten, singen, sich kastein,\n  Und jede Lust als Sünde scheun.\n  Ey prost die Mahlzeit! Pabst zu seyn!\nDoch streicht er seine Gelder ein.\nDann möcht' ich auf drey Stündelein\nSein Better oder Bruder seyn:\nUnd das fällt mir nicht selten ein!\n\nDer Türken Großsultan zu seyn,\nDas fällt mir selbst im Traum nicht ein!\n  Er sitzt im Harem, wie im Schrein,\n  Der Türk', und trinkt kein Tröpfchen Wein,\n  Und kann sich nur an Henkerspein\n  Und aufgesteckten Köpfen freun.\n  Da mag der Henker Sultan seyn!\nDoch wär sein Gold und Edelstein,\nSein Chier- und sein Cyperwein,\nUnd sein Georgien doch mein!\nDas fällt mir oft, auch wachend, ein!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=72334",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "sometimes misattributed to Johann Wilhelm Ludwig Gleim",
+      "settings": [
+        {
+          "composer": "Johann Abraham Peter Schulz",
+          "title": "/lieder/get_settings.html?ComposerId=5681",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Comment se peut‑il faire ainsi",
+      "aliases": [],
+      "composer": "Reynaldo Hahn",
+      "work": "/lieder/get_settings.html?ComposerId=4309",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Comment se peut-il faire ainsi,\nEn une seule créature\nQue tant ait de biens de nature,\nDont chascun en est esbahy ?\n\nOncques tel chief-d'euvre ne vy\nMieulx acomply oultre mesure ;\nComment se peut-il faire ainsi\nEn une seule créature ?\n\nMes yeulx cuiday qu'eussent manty\nQuant apportèrent sa figure\nDevers mon cueur en pourtraiture :\nMais vray fut, et plus que ne dy ;\nComment se peut-il faire ainsi ?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=130405",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Charles, Duc d'Orléans",
+      "settings": [
+        {
+          "composer": "Reynaldo Hahn",
+          "title": "/lieder/get_settings.html?ComposerId=4309",
+          "instrumentation": "vocal trio for soprano, contralto and tenor with piano ad libitum"
+        },
+        {
+          "composer": "Raoul Laparra",
+          "title": "/lieder/get_settings.html?ComposerId=24421",
+          "instrumentation": "high voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Der Wanderer und das Blumenmädchen",
+      "aliases": [],
+      "composer": "Karl Weigl",
+      "work": "/lieder/get_settings.html?ComposerId=6141",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "\"Kauft Rosen, Herr, kauft Rosen!\"\n\"Was sollen mir die Rosen?\"\n\"Ei, die sollt Ihr Eurer Liebsten schenken.\"\n\"Ich habe keine!\"\n\n\"Und wenn Ihr keine Liebste habt,\nWann die Rosen blühn,\nWenn die Herzen glüh'n,\nDann lägt' Ihr besser im tiefen Grab!\nWenn Euch kein Liebmädel herzen mag.\"\n\n[\"Um die Rosenzeit, um die Rosenzeit.\"]1",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=51451",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Emil Alfred Herrmann",
+      "settings": [
+        {
+          "composer": "Karl Weigl",
+          "title": "/lieder/get_settings.html?ComposerId=6141",
+          "instrumentation": "duet for soprano and baritone"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Północ",
+      "aliases": [],
+      "composer": "Albert Hermann Dietrich",
+      "work": "/lieder/get_settings.html?ComposerId=8849",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "pl",
+      "text": "Pośrodku nocy\nZbudziłem  się\nKierując wzrok ku niebu;\nNi jedna spośród roju gwiazd\nNie słała mi uśmiechu\nPośrodku nocy.\n\nPośrodku nocy\nWznosiłem myśli\nDo granic ciemnej głębi;\nLecz ani jedna jasna myśl\nNie chciała przynieść ulgi\nPośrodku nocy.\n\nPośrodku nocy\nNasłuchiwałem\nUderzeń mego serca;\nLecz jeden tylko - nierówny rytm\nRozpalał moje wnętrze\nPośrodku nocy.\n\nPośrodku nocy\nStoczyłem walkę\nCzłowieku! Z  twym cierpieniem;\nLecz by zmagania te rozstrzygnąć\nSam nie dość silny jestem\nPośrodku nocy.\n\nPośrodku nocy\nOddałem się\nPod Twoje panowanie!\nTy, Panie  nad  życiem i śmiercią\nNa wieki pełnisz  wartę\nPośrodku nocy!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=95689",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Alicja Istigniejew",
+      "settings": [
+        {
+          "composer": "Albert Hermann Dietrich",
+          "title": "/lieder/get_settings.html?ComposerId=8849",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Felix (August Bernhard) Draeseke",
+          "title": "/lieder/get_settings.html?ComposerId=3908",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Hans Fleischer",
+          "title": "/lieder/get_settings.html?ComposerId=10436",
+          "instrumentation": "men's chorus a cappella"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Pagen høit paa Taarnet sad",
+      "aliases": [],
+      "composer": "Johan Backer-Lunde",
+      "work": "/lieder/get_settings.html?ComposerId=3265",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "da",
+      "text": "Pagen høit paa Taarnet sad,\nStirred ud så vide,\nDigtet på et Elskovskvad\nOm sin Elskovskvide,\nKunde ikke få det samlet,\nSad og famled'\nNu med Stjerner, nu med Roser --\nIntet rimed' sig på Roser --\nSatte fortvivlet så Hornet for Mund,\nKnugede vredt sit Vaerge,\nBlaeste så sin Elskov ud\nOver alle Bjaerge.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=21295",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Jens Peter Jacobsen",
+      "settings": [
+        {
+          "composer": "Johan Backer-Lunde",
+          "title": "/lieder/get_settings.html?ComposerId=3265",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Matti Borg",
+          "title": "/lieder/get_settings.html?ComposerId=33182",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Frederick Delius",
+          "title": "/lieder/get_settings.html?ComposerId=669",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Chœur",
+      "aliases": [],
+      "composer": "Wolfgang Amadeus Mozart",
+      "work": "/lieder/get_settings.html?ComposerId=1945",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "J'ai élevé ma faible voix vers le Seigneur,\noppressé que je suis par le malheur.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=128086",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "Wolfgang Amadeus Mozart",
+          "title": "/lieder/get_settings.html?ComposerId=1945",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Frühlingsmorgen",
+      "aliases": [],
+      "composer": "Robert von Hornstein",
+      "work": "/lieder/get_settings.html?ComposerId=10308",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Tief im Winter hör' ich's gerne,\neh' die Sonn' hervorgewallt,\nwie durchs Dunkel aus der Ferne\neine Morgenglocke schallt.\n\nIm August, wenn Donner rollen,\nfreut mich's, wie die Windfahn' ächzt,\nund im Herbst, wenn auf den Schollen\nabends spät ein Rabe krächzt.\n\nDoch was kann mein Herz erweitern\nwie der erste Finkenschlag,\nwie der Lerche Lied am heiter'n\nwundervollen Frühlingstag?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=50302",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Hermann von Lingg",
+      "settings": [
+        {
+          "composer": "Robert von Hornstein",
+          "title": "/lieder/get_settings.html?ComposerId=10308",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Si tu pouvais venir avec le matin frais",
+      "aliases": [],
+      "composer": "Cécile Chaminade",
+      "work": "/lieder/get_settings.html?ComposerId=3705",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Si tu pouvais venir avec le matin frais,\n[Par]1 les prés nébuleux et sur les fleurs paisibles,\nO toi que je poursuis de baisers invisibles,\nJe m'enfuirais, peut-être, ou je sangloterais !\n\nSi tu pouvais venir avec le matin frais,\nJe sentirais, à voir le ciel humide et pâle,\n[Que mon cœur a perdu]2 sa pudeur virginale :\nCes bras [tendus déjà]3, je les refermerais.\n\nSi tu pouvais venir avec le matin frais,\nM’offrant ton baiser pur comme l’eau du baptême,4\nJe te chérirais trop pour [te dire]5 : « Je t’aime »,\nEt c'est sur des yeux morts que tu me baiserais,\nAmour de ma jeunesse, ô fleur du matin frais !",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=31925",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Charles Fuster",
+      "settings": [
+        {
+          "composer": "Cécile Chaminade",
+          "title": "/lieder/get_settings.html?ComposerId=3705",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Manuel M. Ponce",
+          "title": "/lieder/get_settings.html?ComposerId=5368",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "L'amant desesperat",
+      "aliases": [],
+      "composer": "Robert Fuchs",
+      "work": "/lieder/get_settings.html?ComposerId=18105",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "ca",
+      "text": "Estudiar no serveix per a res,\nla meva jaqueta és plena de costures,\nla meva cítara ja no sona,\nla meva noia ja no m'estima.\n\nJo voldria que la dona més bella\npassegés pel camp\ni jo fos un drac i me l'emportés\nlluny per l'atzur.\n\nJo voldria anar de cacera armat\ni brandant la llança,\nfer fora tots els filisteus\nd'aquest meravellós món.\n\nJo voldria ara poder jeure\nsota un cel vast i serè\ni demanar de tota aquesta embrolla\ntan sols la meva satisfacció.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=102642",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "Robert Fuchs",
+          "title": "/lieder/get_settings.html?ComposerId=18105",
+          "instrumentation": "vocal quartet of male voices a cappella"
+        },
+        {
+          "composer": "Heinrich von Herzogenberg",
+          "title": "/lieder/get_settings.html?ComposerId=4407",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Hugo Wolf",
+          "title": "/lieder/get_settings.html?ComposerId=6218",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 1248,
+  "lieder_position": 1296,
   "aria_opera": 0,
   "aria_scene": 8
 }
