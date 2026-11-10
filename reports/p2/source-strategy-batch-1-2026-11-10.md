@@ -1,0 +1,114 @@
+# P2/P4 source and extraction pilot
+
+- Generated: 2026-11-10T18:27:06+01:00 (Europe/Rome)
+- Pages captured: 5/5
+- Advertised feeds checked: 2
+- Feeds with vocal/audition entries: 0
+- Production strategy changes: none
+- Parser comparisons use identical HTML bytes.
+- Metrics are coverage proxies, not accuracy scores; raw HTML is uploaded as a 30-day artifact.
+
+## Teatro alla Scala
+
+- URL: https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html
+- Fetch: ok; HTTP 200
+- Snapshot: 29603 bytes; SHA-256 2fc7d8f8b32f4934e7c1c3f588dbe884ab70dc3d94e7a708b696c11e13be2f59
+- robots.txt: ok HTTP 200
+- Sitemap: https://www.teatroallascala.org/sitemap.xml — ok HTTP 200; type=sitemapindex; index entries=2; child maps checked=2; page URLs=2000; vocal/audition URLs=23
+  - Child sitemap: https://www.teatroallascala.org/it/sitemap.html — ok HTTP 200; page URLs=2615; vocal/audition URLs=81
+  - Child sitemap: https://www.teatroallascala.org/en/sitemap.html — ok HTTP 200; page URLs=1926; vocal/audition URLs=19
+- DOM: 92 links; 20 relevant labels; 77 list items; 7 headings; 0 tables
+- scrapling: 3454 chars; signals=4/6; relevant labels retained=7/7; href targets in plain text=0/17; runtime=0.0007s
+- lxml_full_text: 4757 chars; signals=4/6; relevant labels retained=7/7; href targets in plain text=0/17; runtime=0.0005s
+- trafilatura_plain: 1818 chars; signals=4/6; relevant labels retained=3/7; href targets in plain text=1/17; runtime=0.0082s
+- trafilatura_markdown: 1855 chars; links=1; relevant links=1; exact relevant hrefs retained=1/17; runtime=0.0056s
+- Recommendation: manual_review_required
+
+## Concorso Francesco Morlacchi
+
+- URL: https://www.concorsomorlacchi.it/
+- Fetch: ok; HTTP 200
+- Snapshot: 34805 bytes; SHA-256 c954dd570d97dc8a9a3b90c9420f91dc02046373c233aa1edf1e5ada4497037b
+- robots.txt: http_error HTTP 404
+- Sitemap: https://www.concorsomorlacchi.it/sitemap.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
+- Sitemap: https://www.concorsomorlacchi.it/wp-sitemap.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
+- Sitemap: https://www.concorsomorlacchi.it/sitemap_index.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
+- DOM: 28 links; 28 relevant labels; 61 list items; 34 headings; 0 tables
+- scrapling: 17733 chars; signals=6/6; relevant labels retained=25/26; href targets in plain text=0/20; runtime=0.0011s
+- lxml_full_text: 17658 chars; signals=6/6; relevant labels retained=25/26; href targets in plain text=0/20; runtime=0.0007s
+- trafilatura_plain: 12162 chars; signals=6/6; relevant labels retained=3/26; href targets in plain text=0/20; runtime=0.008s
+- trafilatura_markdown: 12253 chars; links=0; relevant links=0; exact relevant hrefs retained=0/20; runtime=0.0086s
+- Recommendation: manual_review_required
+
+## Teatro Carlo Felice
+
+- URL: https://carlofelice.it/audizioni-e-concorsi/
+- Fetch: ok; HTTP 200
+- Snapshot: 398561 bytes; SHA-256 02139de7051135810f1c265d0aa20ac536e89569f6390924ec9e81eaad5e3f79
+- robots.txt: ok HTTP 200
+- Sitemap: https://www.carlofelice.it/sitemap.xml — ok HTTP 200; type=sitemapindex; index entries=7; child maps checked=5; page URLs=1181; vocal/audition URLs=95
+  - Child sitemap: https://www.carlofelice.it/sitemap-home.xml — ok HTTP 200; page URLs=2; vocal/audition URLs=0
+  - Child sitemap: https://www.carlofelice.it/sitemap-pages.xml — ok HTTP 200; page URLs=88; vocal/audition URLs=3
+  - Child sitemap: https://www.carlofelice.it/sitemap-show-1.xml — ok HTTP 200; page URLs=1294; vocal/audition URLs=11
+  - Child sitemap: https://www.carlofelice.it/sitemap-auditions_and_contes-1.xml — ok HTTP 200; page URLs=85; vocal/audition URLs=85
+  - Child sitemap: https://www.carlofelice.it/sitemap-accessible-show-1.xml — ok HTTP 200; page URLs=6; vocal/audition URLs=0
+- Feed: https://www.carlofelice.it/comments/feed/ — ok HTTP 200; entries=0; relevant entries=0
+- Feed: https://www.carlofelice.it/feed/ — ok HTTP 200; entries=0; relevant entries=0
+- Explicit public API links: https://www.carlofelice.it/wp-json/
+- Public API check: https://www.carlofelice.it/wp-json/ — ok HTTP 200; JSON valid=True; namespaces=25; routes=402
+- DOM: 465 links; 387 relevant labels; 173 list items; 1 headings; 0 tables
+- scrapling: 52378 chars; signals=6/6; relevant labels retained=119/119; href targets in plain text=0/332; runtime=0.0086s
+- lxml_full_text: 68502 chars; signals=6/6; relevant labels retained=119/119; href targets in plain text=0/332; runtime=0.007s
+- trafilatura_plain: 58971 chars; signals=6/6; relevant labels retained=72/119; href targets in plain text=182/332; runtime=0.1398s
+- trafilatura_markdown: 60954 chars; links=187; relevant links=187; exact relevant hrefs retained=180/332; runtime=0.1513s
+- Recommendation: manual_review_required
+
+## Teatro Massimo
+
+- URL: https://www.teatromassimo.it/audizioni/
+- Fetch: ok; HTTP 200
+- Snapshot: 135749 bytes; SHA-256 576e8eb4e393d3a24e4e0a41a059ad0e846a76408d71c42a4103e3ffc2486731
+- robots.txt: ok HTTP 200
+- Sitemap: https://www.teatromassimo.it/sitemap_index.xml — ok HTTP 200; type=sitemapindex; index entries=25; child maps checked=5; page URLs=3146; vocal/audition URLs=96
+  - Child sitemap: https://www.teatromassimo.it/post-sitemap.xml — ok HTTP 200; page URLs=1010; vocal/audition URLs=67
+  - Child sitemap: https://www.teatromassimo.it/page-sitemap.xml — ok HTTP 200; page URLs=1013; vocal/audition URLs=8
+  - Child sitemap: https://www.teatromassimo.it/product-sitemap.xml — ok HTTP 200; page URLs=144; vocal/audition URLs=0
+  - Child sitemap: https://www.teatromassimo.it/awsm_job_openings-sitemap.xml — ok HTTP 200; page URLs=2; vocal/audition URLs=2
+  - Child sitemap: https://www.teatromassimo.it/event-sitemap.xml — ok HTTP 200; page URLs=2304; vocal/audition URLs=54
+- DOM: 121 links; 30 relevant labels; 85 list items; 10 headings; 0 tables
+- scrapling: 3728 chars; signals=4/6; relevant labels retained=15/19; href targets in plain text=0/15; runtime=0.0017s
+- lxml_full_text: 31754 chars; signals=4/6; relevant labels retained=15/19; href targets in plain text=0/15; runtime=0.0012s
+- trafilatura_plain: 906 chars; signals=4/6; relevant labels retained=1/19; href targets in plain text=2/15; runtime=0.0137s
+- trafilatura_markdown: 911 chars; links=1; relevant links=1; exact relevant hrefs retained=1/15; runtime=0.0133s
+- Recommendation: manual_review_required
+
+## AsLiCo
+
+- URL: https://aslico.org/edizione-in-corso/
+- Fetch: ok; HTTP 200
+- Snapshot: 376149 bytes; SHA-256 887e530634bdd3ed62b5cee4ed5d65dd67a2155955607b054325239ea72d1045
+- robots.txt: ok HTTP 200
+- Sitemap: https://aslico.org/sitemap_index.xml — ok HTTP 200; type=sitemapindex; index entries=13; child maps checked=5; page URLs=831; vocal/audition URLs=93
+  - Child sitemap: https://aslico.org/post-sitemap.xml — ok HTTP 200; page URLs=166; vocal/audition URLs=77
+  - Child sitemap: https://aslico.org/page-sitemap.xml — ok HTTP 200; page URLs=298; vocal/audition URLs=13
+  - Child sitemap: https://aslico.org/project-sitemap.xml — ok HTTP 200; page URLs=343; vocal/audition URLs=3
+  - Child sitemap: https://aslico.org/profile-sitemap.xml — ok HTTP 200; page URLs=23; vocal/audition URLs=0
+  - Child sitemap: https://aslico.org/tribe_venue-sitemap.xml — ok HTTP 200; page URLs=1; vocal/audition URLs=0
+- Explicit public API links: https://aslico.org/wp-json/
+- Public API check: https://aslico.org/wp-json/ — ok HTTP 200; JSON valid=True; namespaces=27; routes=483
+- DOM: 167 links; 11 relevant labels; 185 list items; 20 headings; 1 tables
+- scrapling: 27005 chars; signals=6/6; relevant labels retained=10/10; href targets in plain text=0/7; runtime=0.0126s
+- lxml_full_text: 168655 chars; signals=6/6; relevant labels retained=10/10; href targets in plain text=0/7; runtime=0.0039s
+- trafilatura_plain: 5421 chars; signals=6/6; relevant labels retained=1/10; href targets in plain text=0/7; runtime=0.0264s
+- trafilatura_markdown: 5617 chars; links=0; relevant links=0; exact relevant hrefs retained=0/7; runtime=0.0272s
+- Recommendation: manual_review_required
+
+## Limitations
+
+- robots.txt/sitemap availability does not prove relevant notices are present.
+- Only page-advertised RSS/Atom and explicit public API links are inspected; no guessed API endpoint is queried.
+- 403/429, login restrictions and unreadable robots policies are recorded and not bypassed.
+- Parser counts and keyword signals are coverage proxies, not ground-truth accuracy.
+- All parsers receive identical captured HTML bytes; no production policy is promoted automatically.
+- Sitemap indexes are followed for at most five child maps per index; deeper nesting is not traversed.
+- Only explicitly advertised public API roots are fetched; route endpoints are not guessed or queried.

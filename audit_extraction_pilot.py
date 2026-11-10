@@ -13,7 +13,8 @@ ROOT=Path(__file__).resolve().parent
 AUDIT=ROOT/".github"/"audits"
 SAMPLES=ROOT/"artifacts"/"p2-p4-html-samples"
 ROME=ZoneInfo("Europe/Rome")
-PILOT_IDS={"source-1","source-2","source-3","source-9","source-15"}
+PILOT_IDS={"source-4","source-5","source-6","source-16","source-17"}
+PILOT_BATCH="batch-2-2026-11-10"
 MAX_BYTES,DELAY=1_500_000,1.2
 UA="ItaliaAuditionsResearchBot/1.0 (+https://github.com/wl19971007-lgtm/leo)"
 SIGNALS={
@@ -309,7 +310,8 @@ def main():
     policies=json.loads((ROOT/"data/source_fetch_policies.json").read_text(encoding="utf-8"))
     sources={x["source_id"]:x for x in policies["entries"]}
     AUDIT.mkdir(parents=True,exist_ok=True); SAMPLES.mkdir(parents=True,exist_ok=True)
-    report={"generated_at":now_iso(),"scope":"Five high-value first-party vocal sources.",
+    report={"generated_at":now_iso(),"batch":PILOT_BATCH,
+        "scope":"Second batch of five high-value official vocal-source pages.",
         "pilot_source_ids":sorted(PILOT_IDS),"production_changes":False,"strategy_status":"evaluation_only","items":[],
         "limitations":["robots.txt/sitemap availability does not prove relevant notices are present.",
             "Only page-advertised RSS/Atom and explicit public API links are inspected; no guessed API endpoint is queried.",
