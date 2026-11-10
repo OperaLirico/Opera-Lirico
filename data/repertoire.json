@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T07:19:02+01:00",
+ "generated_at": "2026-11-10T07:56:36+01:00",
  "catalogue_source": "LiederNet Archive originals + curated starter works",
  "items": [
   {
@@ -12636,10 +12636,405 @@
     }
    ],
    "autoImported": true
+  },
+  {
+   "title": "Els dos ulls blaus del meu amor",
+   "aliases": [],
+   "composer": "Gustav Mahler",
+   "work": "",
+   "voice": "待分类",
+   "kind": "咏叹调/歌剧选段",
+   "language": "ca",
+   "text": "Els dos ulls blaus del meu amor,\nm'han enviat a voltar per tot el món.\nVaig haver de dir adéu a aquest lloc estimat!\nOh, ulls blaus, perquè  em vàreu sotjar?\nAra tinc eterna pena i tristor.\n\nHe sortit a caminar en la tranquil·la nit\npel bell mig del fosc pradell,\nNingú no m'ha dit adéu.\nAdéu! Els meus companys són només amor i sofriment!\n\nEn el carrer hi ha un til·ler,\ni allà, per primera vegada, vaig reposar dormint!\nSota el til·ler,\nles seves flors queien damunt meu, com neu,\nno sabia encara que la vida segueix,\ni tot, tot tornava a estar bé!\nTot, tot, l'amor i el sofriment\ni el món i els somnis!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=57608",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Salvador Pila",
+   "settings": [
+    {
+     "composer": "Gustav Mahler",
+     "title": "/lieder/get_settings.html?ComposerId=1742",
+     "instrumentation": "low voice and orchestra"
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Längst schon flog zu Nest der Vogel",
+   "aliases": [],
+   "composer": "Franz Wilhelm Abt",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Längst schon flog zu Nest der Vogel,\nZwitschert leis im Traume fort;\nIn den abgebroch'nen Tönen\nKlingt ein wunderliebes Wort:\nDaheim.\n\nHeerden ziehn an mir vorüber,\nSuchen ihren Ruheort;\nIn dem trauten Klang der Glocken\nRuft ein wunderliebes Wort:\nDaheim.\n\nVor mir in dem stillen Grunde\nZieht ein blauer Rauch sich fort,\nMahnt zur Eil'. Im blauen Dufte\nLockt ein wunderliebes Wort:\nDaheim.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=25117",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Matthias Jacob Schleiden",
+   "settings": [
+    {
+     "composer": "Franz Wilhelm Abt",
+     "title": "/lieder/get_settings.html?ComposerId=3121",
+     "instrumentation": "soprano or tenor and piano"
+    },
+    {
+     "composer": "Franz Behr",
+     "title": "/lieder/get_settings.html?ComposerId=10647",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Carl Heinrich Döring",
+     "title": "/lieder/get_settings.html?ComposerId=9343",
+     "instrumentation": "men's chorus"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Teures Mädchen, wenn ein andrer Himmel",
+   "aliases": [],
+   "composer": "Johann Christian Baldewein",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Teures Mädchen, wenn ein andrer Himmel,\nDoch kein schön'rer einstens [um dich wallt]1;\nWenn der Stadt zerstreuendes Getümmel\nLauter itzt, itzt dumpfer um dich schallt;\nWenn die bunten Gecken um dich gaukeln,\nKräuseln gleich, sich um dich drehn und schaukeln,\nEkeln Weihrauch deiner Schönheit streun,\nDann, Geliebte, denke mein!\n\nWenn du satt des [seelelosen]2 Lärmens\nAbends in dein einsam Zimmer eilst;\nIn der Wonne dann des süßen Schwärmens\nNoch ein stilles Stündchen staunend weilst;\nDann dem Genius der Ruhe winkest,\nDann dem Schlummer in die Arme sinkest,\nDer dich wiegt in holde Träumerein,\nEdle Seele, denke mein!\n\nWenn, dieweil die müde Schöpfung feiert,\nUnd die Dämmerung die Welt verhüllt,\nSanfte Schwermut deinen Geist umschleiert,\nUnd von Ahndungen dein Busen schwillt,\nZarte Sorgen dann dein Herz beklemmen,\nTränen deine Wimper überschwemmen,\nSüße Tränen, die die Neugier scheu'n -\nEdle, so gedenke mein!\n\nIch [gedenk']3 an dich in meiner Wildniß,\nIn der Einsamkeit vertrautem Arm.\nDurch das tiefe Dunkel glänzt dein Bildniß,\nTäuscht mit holdem Lächeln meinem Harm.\nWenn das Spätrot mein Gemach durchschimmert,\nHeßperus in meine Fenster flimmert,\nFrüh mich weckt Aurorens roter Schein -\nImmer, Edle, denk' ich dein!\n\nWenn ich lese, funkelt mir aus jeder\nZeile deines Namens teurer Zug.\nWenn ich schreibe, zeichnet meine Feder\nUnwillkührlich den geliebten Zug.\nWenn ich lieg' und träume, horch! so schwimmen\nUm mich ferne leise süße Stimmen.\nAch, die Stimmen nennen dich allein.\nImmer, Edle, denk' ich dein.\n\nWenn ich einst das helle Land erfliege,\nDraus die Wahrheit und die Freiheit stammt,\nSelig mich in jenen Räumen wiege,\nWo Orion und die Lyra flammt,\nÖfter schweb' ich aus der hohen Ferne\nDann herab zum blassen Erdensterne,\nWiege dich in süßes Staunen ein -\nEwig, Edle, denk' ich dein!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=9593",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Ludwig Gotthard Theobul Kosegarten",
+   "settings": [
+    {
+     "composer": "Johann Christian Baldewein",
+     "title": "/lieder/get_settings.html?ComposerId=23025",
+     "instrumentation": "soprano and piano"
+    },
+    {
+     "composer": "Johann Rudolf Zumsteeg",
+     "title": "/lieder/get_settings.html?ComposerId=6290",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Die Sterne",
+   "aliases": [],
+   "composer": "Johann Christian Baldewein",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Wie wohl ist mir im Dunkeln!\nWie weht die laue Nacht!\nDie Sterne Gottes funkeln\nIn feyerlicher Pracht!\nKomm, [Ida]1, komm ins Freye,\nUnd laß in jene Bläue\nUnd laß zu jenen Höhn\nUns staunend aufwärts sehn.\n\nSieh, wie die Leyer schimmert!\nSieh, wie der Adler glüht!\nSieh, wie die Krone flimmert,\nUnd Gemma Funken sprüht!\nDie hellen Wächter winken,\nDie goldnen Wagen blinken,\nUnd stolz durchschwimmt der Schwan\nDen blauen Ocean.\n\nO Sterne Gottes, Zeugen\nUnd Boten beßrer Welt,\nIhr heißt den Aufruhr schweigen,\nDer [unsern]2 Busen schwellt.\nIch seh' hinauf, ihr Hehren,\nZu euren lichten Sphären,\nUnd [Ahnung beßrer]3 Lust\nStillt die empörte Brust.\n\nO Ida, wenn die Schwermuth\nDein sanftes Auge hüllt,\nWenn dir die Welt mit Wermuth\nDen Lebensbecher füllt;\nSo geh hinaus im Dunkeln,\nUnd sieh die Sterne funkeln,\nUnd leiser wird dein Schmerz,\nUnd freyer schlägt dein Herz.\n\n[Und wenn im öden Staube\nDer irre Geist erkrankt;\nWenn tief in dir der Glaube\nAn Gott und Zukunft schwankt;]4\nSchau auf zu jenen Fernen\nZu jenen ew'gen Sternen!\nSchau auf und glaub an Gott,\nUnd segne Grab und Tod.\n\nO Ida, wenn die Strenge\nDes Schicksals einst uns trennt,\nUnd wenn das Weltgedränge\nNicht Blick noch Kuß [uns gönnt]5;\nSo schau hinauf ins Freye,\nIn jene weite Bläue!\nIn jenen lichten Höhn,\nDort, dort ist Wiedersehn!\n\nUnd wenn ich einst, o Theure,\nVon allem Kampf und Krieg\nIm stillen Grabe feyre,\nSo schau empor und sprich:\n»In jenen hohen Fernen,\nAuf jenen goldnen Sternen,\nDort, wo's am hellsten blitzt,\nWallt mein Verlorner itzt.«\n\nO Sterne Gottes, Boten\nUnd Bürger beßrer Welt,\nDie ihr die Nacht der Todten\nZu milder Dämmrung hellt!\nUmschimmert sanft die Stätte,\nWo ich aus stillem Bette\nUnd süßem Schlaf erwach\nZu Edens schönerm Tag!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=9586",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Ludwig Gotthard Theobul Kosegarten",
+   "settings": [
+    {
+     "composer": "Johann Christian Baldewein",
+     "title": "/lieder/get_settings.html?ComposerId=23025",
+     "instrumentation": "soprano and piano"
+    },
+    {
+     "composer": "(Carl) Ludwig (Heinrich) Berger",
+     "title": "/lieder/get_settings.html?ComposerId=3391",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Johann Friedrich Hugo, Freiherr von Dalberg",
+     "title": "/lieder/get_settings.html?ComposerId=7147",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Die Rosenblüte hab' ich mir erkoren",
+   "aliases": [],
+   "composer": "Ferdinand von Hiller",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Die Rosenblüte hab' ich mir erkoren.\nDas ist das Schicksal aller holden Dinge:\nErkauft mit Thränen und mit Schmerz verloren!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=83969",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation by Paul Heyse",
+   "settings": [
+    {
+     "composer": "Ferdinand von Hiller",
+     "title": "/lieder/get_settings.html?ComposerId=4422",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "French (Français)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "L’estel del capvespre",
+   "aliases": [],
+   "composer": "Franz Peter Schubert",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "ca",
+   "text": "Per què restes tot sol al cel,\ntu formós estel? I ets tan afable;\nper què el garbuix centellejant dels teus germans\nes manté lluny de la teva imatge?\n“Jo sóc, de l’amor, el fidel estel\ni ells són lluny de l’amor.”\n\nAixí doncs, hauries d’anar amb ells,\nsi tu ets l’amor, no dubtis pas!\nQui podria llavors resistir-se a tu?\nTu dolça i obstinada llum.\n“Jo sembro, però no veig cap brot\ni resto al meu lloc, planyent-me en silenci.”",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=120355",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Salvador Pila",
+   "settings": [
+    {
+     "composer": "Franz Peter Schubert",
+     "title": "/lieder/get_settings.html?ComposerId=2520",
+     "instrumentation": "voice, piano"
+    },
+    {
+     "composer": "Alexander Zemlinsky",
+     "title": "/lieder/get_settings.html?ComposerId=6269",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "O saw ye bonnie Lesley",
+   "aliases": [],
+   "composer": "William Beaton Moonie",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "sco",
+   "text": "O saw ye bonnie Lesley,\n  As she gaed o'er the Border?\nShe 's gane, like Alexander,\n  To spread her conquests farther.\n\nTo see her is to love her,\n  And love but her for ever,\nFor Nature made her what she is\n  And never made anither.\n\nThou art a queen, fair Lesley,\n  Thy subjects we, before thee:\nThou art divine, fair Lesley,\n  The hearts o' men adore thee.\n\nThe deil he could na scaith thee,\n  Or aught that wad belang thee:\nHe'd look into thy bonnie face,\n  And say, `I canna wrang thee!'\n\nThe Powers aboon will tent thee,\n  Misfortune sha' na steer thee;\nThou 'rt like themsels sae lovely,\n  That ill they'll ne'er let near thee.\n\nReturn again, fair Lesley,\n  Return to Caledonie!\nThat we may brag, we hae a lass\n  There 's nane again sae bonnie.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=3340",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Robert Burns",
+   "settings": [
+    {
+     "composer": "William Beaton Moonie",
+     "title": "/lieder/get_settings.html?ComposerId=5092",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Humphrey Procter-Gregg",
+     "title": "/lieder/get_settings.html?ComposerId=9958",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Maude Valérie White",
+     "title": "/lieder/get_settings.html?ComposerId=6178",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Gleich einer versunkenen Melodie",
+   "aliases": [],
+   "composer": "Robert Kahn",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Gleich einer versunkenen Melodie\nhör ich vergangene Tage\nmich umklingen.\nHeiß von Thränen\nwird mir die Wange,\nund von [wehmütigen]1 Seufzern\nschluchzt mir die Brust,\nan der du -\nach Du!\neinst dein blondes,\nerglühendes Köpfchen bargst,\no Geliebte!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=11565",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Christian Morgenstern",
+   "settings": [
+    {
+     "composer": "Robert Kahn",
+     "title": "/lieder/get_settings.html?ComposerId=4574",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Hugo Wilhelm Ludwig Kaun",
+     "title": "/lieder/get_settings.html?ComposerId=4598",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Yrjö Henrik Kilpinen",
+     "title": "/lieder/get_settings.html?ComposerId=4636",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "When I heard at the close of the day",
+   "aliases": [],
+   "composer": "Clint Borzoni",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "When I heard at the close of the day how my name had been receiv'd\n  with plaudits in the capitol, still it was not a happy night for me that follow'd,\nAnd else when I carous'd, or when my plans were accomplish'd, stil I was not happy,\nBut the day when I rose at dawn from the bed of perfect health, refresh'd, singing,\n   inhaling the ripe breath of autumn,\nWhen I saw the full moon in the west grow pale and disappear in the morning light,\nWhen I wander'd alone over the beach, and undressing bathed,\n  laughing with the cool waters, and saw the sun rise,\nAnd when I thought how my dear friend my lover was on his way coming,\n  O then I was happy,\nO then each breath tasted sweeter, and all that day my food nourish'd me more,\n  and the beautiful day pass'd well,\nAnd the next came with equal joy, and with the next at evening came my friend,\nAnd that night while all was still I heard the waters roll slowly\n  continually up the shores,\nI heard the hissing rustle of the liquid and sands as directed to me\n  whispering to congratulate me,\nFor the one I love most lay sleeping by me under the same cover in the cool night,\nIn the stillness in the autumn moonbeams his face was inclined toward me,\nAnd his arm lay lightly around my breast -- and that night I was happy.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=94669",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Walt Whitman",
+   "settings": [
+    {
+     "composer": "Clint Borzoni",
+     "title": "/lieder/get_settings.html?ComposerId=26303",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Russell Platt",
+     "title": "/lieder/get_settings.html?ComposerId=31880",
+     "instrumentation": "baritone and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "... smarrita la misura",
+   "aliases": [],
+   "composer": "Salvatore Sciarrino",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "it",
+   "text": "... smarrita la misura\ndelle fi gure più grande, ché\nda quelle nasse tutto l‘ordine\ndell’opera",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=607664",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Lorenzo Lotto",
+   "settings": [
+    {
+     "composer": "Salvatore Sciarrino",
+     "title": "/lieder/get_settings.html?ComposerId=9196",
+     "instrumentation": "voice, flute, clarinet, piano, marimba (and bass drum), violin, viola, violoncello and double bass"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Der Trost",
+   "aliases": [],
+   "composer": "Antonín Dvořák",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Wäldchen, wer hütet Dich?\nDer dich gehegt bisher, tot liegt der Jägersmann.\nDa ist kein Hüter mehr.\nKann nicht dein Schützer sein,\no du mein Waldrevier,\nkann nicht dein Schützer sein,\no du mein Waldrevier. Herzliebes Mägdelein,\nherzliebes Mägdelein, nimmer komm ich zu dir.\n\nAch, Du mein grüner Wald,\nwer wird dein Hüter sein?\n0, du mein Mägdelein,\nwer wird um Dich nun frei'n?\nNoch ist so mancher Bursch,\nder mich beschützt und heg',\nMancher Geselle noch findet zu uns den Weg.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=37237",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation by Josef Srb-Debrnov",
+   "settings": [
+    {
+     "composer": "Antonín Dvořák",
+     "title": "/lieder/get_settings.html?ComposerId=3933",
+     "instrumentation": "duet for soprano and alto with piano"
+    },
+    {
+     "composer": "Leoš Janáček",
+     "title": "/lieder/get_settings.html?ComposerId=4529",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Fils de teranyina",
+   "aliases": [],
+   "composer": "Johannes Brahms",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "ca",
+   "text": "De tant en tant, fils de teranyina,\nvoleiant, davallen del cel;\nsón quimeres dels homes,\nesquinçalls de daurats somnis d’amor,\nals matolls, als arbres,\nes queden enxarxats;\nambiciosos beneficis\nd’allà dalt hi veiem penjar.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=375408",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Salvador Pila",
+   "settings": [
+    {
+     "composer": "Johannes Brahms",
+     "title": "/lieder/get_settings.html?ComposerId=3535",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Dutch (Nederlands)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
   }
  ],
  "scan_cursor": 144,
- "lieder_position": 1632,
+ "lieder_position": 1680,
  "aria_opera": 0,
  "aria_scene": 8
 }
