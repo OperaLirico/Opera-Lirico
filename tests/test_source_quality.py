@@ -90,6 +90,16 @@ class PreserveLastGoodTests(unittest.TestCase):
             "no_vocal_or_opera_signal",
         )
 
+    def test_review_labels_survive_successful_refresh(self):
+        previous = {
+            "review_status": "legacy_unreviewed",
+            "publisher_status": "unverified",
+        }
+        fresh = {"status": "ok", "title": "Updated page"}
+        result = grow_sources.carry_review_metadata(fresh, previous)
+        self.assertEqual(result["review_status"], "legacy_unreviewed")
+        self.assertEqual(result["publisher_status"], "unverified")
+
     def test_generic_actor_casting_is_rejected(self):
         probe = {
             "status": "ok",
