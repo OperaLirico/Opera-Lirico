@@ -17,7 +17,7 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
 
     def test_daily_scrape_checks_out_latest_main_not_stale_push_sha(self):
         workflow = (ROOT / ".github" / "workflows" / "daily-scrape-and-publish.yml").read_text(encoding="utf-8")
-        self.assertIn("      - name: Get project files\\n        uses: actions/checkout@v4\\n        with:\\n          ref: main", workflow)
+        self.assertRegex(workflow, r"uses: actions/checkout@v4\\s+with:\\s+ref: main")
 
     def test_coverage_has_own_code_trigger_and_waits_for_daily_run(self):
         workflow = (ROOT / ".github" / "workflows" / "weekly-source-coverage.yml").read_text(encoding="utf-8")
