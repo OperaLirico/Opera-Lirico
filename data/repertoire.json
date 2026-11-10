@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T00:36:03+01:00",
+  "generated_at": "2026-11-10T01:02:11+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -8991,10 +8991,405 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Verbleibst ihm dennoch hold gewogen",
+      "aliases": [],
+      "composer": "Hans Guido, Freiherr von Bülow",
+      "work": "/lieder/get_settings.html?ComposerId=10033",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Verbleibst ihm dennoch hold gewogen,\nmein Herz, das in der Jugend bricht!\nEr hat ja nimmer dich belogen,\nDu hast ja gern dich selbst betrogen,\nWas du gejubelt, weis er nicht.\n\nDein wonnig Lied, dein scheues Beben,\ndu hast es ihm ja nie geklagt;\nHast keiner Seele preisgegeben\nDein wundervolles Liebeleben,\nDir's selbst in Räthseln nur gesagt.\n\nKein Gott hat hin mit dir verbündet,\nDoch deine Sendung ist bestellt;\nNie hat die Ahnung ihm verkündet,\nWo deines Lebens Quelle mündet.\nDu bleibst ihm fremd in dieser Welt!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=25360",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Karl Isidor Beck",
+      "settings": [
+        {
+          "composer": "Hans Guido, Freiherr von Bülow",
+          "title": "/lieder/get_settings.html?ComposerId=10033",
+          "instrumentation": "mezzo-soprano and piano"
+        },
+        {
+          "composer": "Franz von Holstein",
+          "title": "/lieder/get_settings.html?ComposerId=4449",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Dans la pénombre",
+      "aliases": [],
+      "composer": "Gabriel Fauré",
+      "work": "/lieder/get_settings.html?ComposerId=4004",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "À quoi, dans ce matin d'avril,\nSi douce et d'ombre enveloppée,\nLa chère enfant au cœur subtil\nEst-elle ainsi tout occupée ?\n\nLa trace blonde de ses pas\nSe perd parmi les grilles closes ;\nJe ne sais pas, je ne sais pas.\nCe sont d'impénétrables choses.\n\nPensivement, d'un geste lent,\nEn longue robe, en robe a queue,\nSur le soleil au rouet blanc\nA filer la laine bleue.\n\nA sourire à son rêve encor,\nAvec ses yeux de fiancée,\nA tresser des feuillages d'or\nParmi les lys de sa pensée.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=10093",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Charles van Lerberghe",
+      "settings": [
+        {
+          "composer": "Gabriel Fauré",
+          "title": "/lieder/get_settings.html?ComposerId=4004",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Dutch (Nederlands)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Zwei Mäuschen",
+      "aliases": [],
+      "composer": "Max Reger",
+      "work": "/lieder/get_settings.html?ComposerId=5461",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Es waren mal zwei Mäuschen\nganz allein zu Haus,\nda krochen sie auf's Fensterbrett\nund lugten fein hinaus.\n\nUnd als sie lang genug gelugt,\nhüpften sie herab\nund liefen um den Tisch herum,\ntripp, trapp, tripp, trapp, tripp, trapp.\n\nUnd als sie müd' vom Laufen war'n,\nsprangen sie auf's Bett\nund tänzelten und schwänzelten\nein zierlich Menuett.\n\nUnd wißt ihr, wer mir das erzählt?\nDas Kätzchen Griesegrau.\nDas hat von draußen zugeschaut,\nmiau, miau, miau!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=21337",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Martin Boelitz",
+      "settings": [
+        {
+          "composer": "Max Reger",
+          "title": "/lieder/get_settings.html?ComposerId=5461",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Wenn alle untreu werden",
+      "aliases": [],
+      "composer": "Wilhelm Baumgartner",
+      "work": "/lieder/get_settings.html?ComposerId=3331",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Wenn alle untreu werden,\nSo bleib' ich dir [doch]1 treu;\nDaß Dankbarkeit auf Erden\nNicht ausgestorben sey.\nFür mich umfing dich Leiden,\nVergingst für mich in Schmerz;\nDrum geb' ich dir mit Freuden\nAuf ewig dieses Herz.\n\nOft muß ich bitter weinen,\nDaß du gestorben bist,\nUnd mancher von den Deinen\nDich lebenslang vergißt.\nVon Liebe nur durchdrungen\nHast du so viel gethan,\nUnd doch bist du verklungen,\nUnd keiner denkt daran.\n\nDu stehst voll treuer Liebe\nNoch immer jedem bey;\nUnd wenn dir keiner bliebe,\nSo bleibst du dennoch treu;\nDie treuste Liebe sieget,\nAm Ende fühlt man sie,\nWeint bitterlich und schmieget\nSich kindlich an dein Knie.\n\nIch habe dich empfunden,\nO! lasse nicht von mir;\nLaß innig mich verbunden\nAuf ewig seyn mit dir.\nEinst schauen meine Brüder\nAuch wieder himmelwärts,\nUnd sinken liebend nieder,\nUnd fallen dir ans Herz.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=12170",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Friedrich von Hardenberg",
+      "settings": [
+        {
+          "composer": "Wilhelm Baumgartner",
+          "title": "/lieder/get_settings.html?ComposerId=3331",
+          "instrumentation": "sopranos and altos"
+        },
+        {
+          "composer": "Felix (August Bernhard) Draeseke",
+          "title": "/lieder/get_settings.html?ComposerId=3908",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Gustav Flügel",
+          "title": "/lieder/get_settings.html?ComposerId=4055",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Suchst du den Frieden?",
+      "aliases": [],
+      "composer": "F. F. Franz",
+      "work": "/lieder/get_settings.html?ComposerId=21410",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Suchst du den Frieden?\nDie Erde hat ihn nicht;\nBlumen hat sie, die vergehen,\nDüfte hat sie, die verwehen,\nNächte hat sie ohne Licht.\nSuchst du Frieden?\nDie Erde hat ihn nicht.\n\nSchau' zum Himmel,\nDa glänzt ein schöner Stern!\nMagst du ihm dein Sehnen wenden,\nDenn er wird dir Tröstung senden,\nSei der Hoffnung noch so fern!\nSchau' zum Himmel,\nDa glänzt ein schöner Stern.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=70405",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Aloys Wilhelm Schreiber",
+      "settings": [
+        {
+          "composer": "F. F. Franz",
+          "title": "/lieder/get_settings.html?ComposerId=21410",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Karl Gottlieb Reissiger",
+          "title": "/lieder/get_settings.html?ComposerId=5477",
+          "instrumentation": "soprano or mezzo-soprano and piano"
+        },
+        {
+          "composer": "Simon Anton Zimmermann",
+          "title": "/lieder/get_settings.html?ComposerId=13325",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Il ne sait pas chanter, celui qui...",
+      "aliases": [],
+      "composer": "Jaufre Rudel, Prince of Blaye",
+      "work": "/lieder/get_settings.html?ComposerId=16674",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Il ne sait pas chanter, celui qui n'exécute pas de mélodie,\nni trouver de « vers » celui qui ne fait pas de couplets\net il ne sait ce que c'est qu'une poésie\ns'il n'en comprend pas le sens en lui-même.\nAinsi commence mon chant :\nplus vous l'entendrez, plus il vous plaira, a, a.\n\nQue nul ne s'étonne à mon sujet\nsi j'aime ce qui jamais ne me verra,\ncar mon cœur n'a joie d'aucun amour,\nsinon de celle que jamais je ne vis ;\naucune autre joie ne le réjouit autant,\net je ne sais quel bien m'en viendra, a, a.\n\nUn coup de joie me frappe, qui me tue,\net piqûre d'amour qui dessèche ma chair\net fait maigrir mon corps ;\njamais nul autre ne me frappa si rudement ;\njamais pour nul autre coup je ne languis de la sorte,\ncar cela ne convient ni ne peut se produire, a, a.\n\nJamais je ne m'endormis si doucement\nque mon esprit ne fût vite là-bas,\nni jamais je n'éprouvai ici tant de tristesse que\nmon cœur aussitôt n'y fût ;\net quand je me réveille, au matin,\ntoute cette douceur m'échappe, a, a.\n\nJe sais bien que jamais d'elle je n'ai joui,\nque jamais de moi elle ne jouira,\nni ne me tiendra pour son ami,\nni ne me fera, à son propre sujet, aucune promesse ;\njamais elle ne me dit ni vérité ni mensonge\net je ne sais si jamais elle le fera, a, a.\n\nBon est ce « vers », car jamais je n'échouai :\ntout ce qui s'y trouve y est à sa place ;\nque celui qui de moi l'apprendra\nse garde bien de le briser et de le mettre en pièces :\ntel l'auront en Quercy\nsire Bertrand et le comte dans le pays de Toulouse, a, a.\n\nBon est ce « vers », et ils y feront\nquelque chose dont on chantera a, a.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=71541",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Alfred Jeanroy",
+      "settings": [
+        {
+          "composer": "Jaufre Rudel, Prince of Blaye",
+          "title": "/lieder/get_settings.html?ComposerId=16674",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Go to the text.",
+          "title": "/lieder/get_text.html?TextId=71174",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Tänzerin: O du Verlegung",
+      "aliases": [],
+      "composer": "Michael Berkeley",
+      "work": "/lieder/get_settings.html?ComposerId=13259",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Tänzerin: O du Verlegung\nalles Vergehens in Gang: [wie brachtest du's dar.]1\nUnd der Wirbel am Schluss, dieser Baum aus Bewegung,\nnahm er nicht ganz in Besitz das erschwungene Jahr?\n\nBlÜhte nicht, dass ihn dein Schwingen von vorhin umschwärme,\nplötzlich sein Wipfel von Stille? Und über ihr,\nwar sie nicht Sonne, war sie nicht Sommer, die Wärme,\ndiese unzählige Wärme aus dir?\n\nAber er trug auch, er trug, dein Baum der Ekstase.\nSind sie nicht seine ruhigen Früchte: der Krug,\nreifend gestreift, und die gereiftere Vase?\n\nUnd in den Bildern: ist nicht die Zeichnung geblieben,\ndie deiner Braue dunkler Zug\nrasch an die Wandung der eigenen Wendung geschrieben?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=541120",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Rainer Maria Rilke",
+      "settings": [
+        {
+          "composer": "Michael Berkeley",
+          "title": "/lieder/get_settings.html?ComposerId=13259",
+          "instrumentation": "voice and cello"
+        },
+        {
+          "composer": "Harrison Birtwistle, Sir",
+          "title": "/lieder/get_settings.html?ComposerId=3437",
+          "instrumentation": "oboe, harp and countertenor"
+        },
+        {
+          "composer": "Willy Kehrer",
+          "title": "/lieder/get_settings.html?ComposerId=42297",
+          "instrumentation": "soprano, baritone, women's chorus, string quartet and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "When Jesus Christ was four years old",
+      "aliases": [],
+      "composer": "(Edward) Benjamin Britten",
+      "work": "/lieder/get_settings.html?ComposerId=3567",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "When Jesus Christ was four years old,\nThe angels brought Him toys of gold,\nWhich no man ever had bought or sold.\n\nAnd yet with these He would not play.\nHe made Him small fowl out of clay,\nAnd blessed them till they flew away.\n\nTu creasti, Domine.1\nJesus Christ, Thou child so wise,\nBless mine hands and fill mine eyes,\nAnd bring my soul to Paradise.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=2366",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "",
+      "settings": [
+        {
+          "composer": "(Edward) Benjamin Britten",
+          "title": "/lieder/get_settings.html?ComposerId=3567",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Vera (Winifred) Buck",
+          "title": "/lieder/get_settings.html?ComposerId=12633",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Walter Joseph Buczynski",
+          "title": "/lieder/get_settings.html?ComposerId=3601",
+          "instrumentation": "high voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Verlacht mich auch neckisch der...",
+      "aliases": [],
+      "composer": "Tobias Rank",
+      "work": "/lieder/get_settings.html?ComposerId=38448",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Verlacht mich auch neckisch der Wirbelwind,\n– Mein Kind, das ist ein Himmelskind\nMit Locken, wie Sonnenscheinen.\n\nIch sitze weinend unter dem Dach,\nBin in den Nächten fieberwach\nUnd nähe Hemdchen aus Leinen.\n\nMeiner Mutter Wiegenfest ist heut,\nGestorben sind Vater und Mutter beid’\nUnd sahen nicht mehr den Kleinen.\n\nMeine Mutter träumte einmal schwer,\nSie sah mich nicht an ohne Seufzer mehr\nUnd ohne heimliches Weinen. –",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=147607",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Else Lasker-Schüler",
+      "settings": [
+        {
+          "composer": "Tobias Rank",
+          "title": "/lieder/get_settings.html?ComposerId=38448",
+          "instrumentation": "voice, violin, trombone, piano"
+        },
+        {
+          "composer": "Sybil Westendorp",
+          "title": "/lieder/get_settings.html?ComposerId=38331",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Occupation de génie",
+      "aliases": [],
+      "composer": "Gary Bachlund",
+      "work": "/lieder/get_settings.html?ComposerId=8142",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Ainsi je roule sans arrêt\nComme saint Diogène mon tonneau.\nTantôt c'est sérieusement, tantôt c'est en plaisantant ;\nTantôt c'est l'amour, tantôt c'est la haine ;\nTantôt c'est ceci, tantôt c'est cela ;\nC'est un rien, et c'est quelque chose.\nAinsi je roule sans arrêt\nComme saint Diogène mon tonneau.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=107434",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Guy Laffaille",
+      "settings": [
+        {
+          "composer": "Gary Bachlund",
+          "title": "/lieder/get_settings.html?ComposerId=8142",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Hugo Wolf",
+          "title": "/lieder/get_settings.html?ComposerId=6218",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ah! spiegarti, oh Dio",
+      "aliases": [],
+      "composer": "Wolfgang Amadeus Mozart",
+      "work": "/lieder/get_settings.html?ComposerId=1945",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "Ah! spiegarti, oh Dio, vorrei\nQuel desìo, che il cor m'affana;\nMa la sorte mi condanna\nA tacer e sospirar.\nNol consente il crudo amore,\nCh'io mi strugga ad altra face;\nDel suo barbaro rigore,\nConte mio, non ti lagnar.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=23237",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Wolfgang Amadeus Mozart",
+          "title": "/lieder/get_settings.html?ComposerId=1945",
+          "instrumentation": "soprano, piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "He has in his eyes a charm",
+      "aliases": [],
+      "composer": "Gaetano Donizetti",
+      "work": "/lieder/get_settings.html?ComposerId=3898",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "He has in his eyes a charm\nsuch as is truly new to my soul,\nand which I dare not explain\nwhen I find myself right beside him.\n\nHe asks; I don't respond.\nI blush and I am lost for words.\nI believe myself to be speaking,\nand I then realize\nthat I am beginning to sigh.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=126258",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Andrew Schneider",
+      "settings": [
+        {
+          "composer": "Gaetano Donizetti",
+          "title": "/lieder/get_settings.html?ComposerId=3898",
+          "instrumentation": "duet"
+        },
+        {
+          "composer": "Giovanni Adolfo Hasse",
+          "title": "/lieder/get_settings.html?ComposerId=4356",
+          "instrumentation": "strings, alto voice, and continuo"
+        },
+        {
+          "composer": "Antonio Salieri",
+          "title": "/lieder/get_settings.html?ComposerId=7849",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 1152,
+  "lieder_position": 1200,
   "aria_opera": 0,
   "aria_scene": 8
 }
