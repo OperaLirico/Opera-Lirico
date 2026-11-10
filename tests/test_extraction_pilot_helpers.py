@@ -69,7 +69,7 @@ Allow: /private/open$
         }
         final = {
             "status": "ok", "http_status": 200,
-            "body": b"User-agent: *\\nDisallow: /private",
+            "body": b"User-agent: *\nDisallow: /private",
             "final_url": "https://www.example.org/robots.txt",
         }
         with patch.object(pilot, "request_bytes", side_effect=[redirect, final]) as request:
