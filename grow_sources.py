@@ -23,10 +23,11 @@ import scrape_sources as core
 
 DATA = Path(__file__).resolve().parent / "data"
 REGISTRY = DATA / "sources_extra.json"
+CANDIDATES = DATA / "source_candidates.json"
 PAGE = DATA / "sources.json"
 
 BATCH = 12           # discovered pages refreshed per run
-MAX_NEW = 8          # new sources accepted per run
+MAX_NEW = 8          # new candidates queued for human review per run
 MAX_CANDIDATES = 18  # outbound links inspected per run
 TIMEOUT = 30
 
@@ -61,6 +62,70 @@ AUDITIONISH_RE = re.compile(
     re.IGNORECASE,
 )
 MIN_LINES = 3
+VOICE_RE = re.compile(
+    r"canto|cantant|soprano|mezzosoprano|contralto|tenore|baritono|basso|"
+    r"voce|vocal|young artist|chorus|coro|corale",
+    re.IGNORECASE,
+)
+NON_VOCAL_ROLE_RE = re.compile(
+    r"oboe|flauto|flautist|violino|violin|violoncello|cello|viola|clarinetto|"
+    r"tromba|trumpet|corno|horn|fagotto|bassoon|percussioni|percussion|"
+    r"attori|attrici|attore|attrice|ballerini|ballerine|danzator|danzatrice|"
+    r"maschere|biglietteria|ufficio stampa|amministrativ",
+    re.IGNORECASE,
+)
+
+
+def carry_review_metadata(fresh: dict, previous: dict) -> dict:
+    """Do not lose human-review labels when an existing source is refreshed."""
+    fresh["review_status"] = previous.get("review_status", "legacy_unreviewed")
+    fresh["publisher_status"] = previous.get("publisher_status", "unverified")
+    return fresh
+
+
+def candidate_rejection_reason(probe: dict, target: str) -> str | None:
+    """Conservative vocal-relevance screen; passing never means source approval."""
+    if probe.get("status") != "ok":
+        return "page_fetch_failed"
+    lines = probe.get("relevant_lines", [])
+    if len(lines) < MIN_LINES:
+        return "insufficient_relevant_text"
+    # Do not let URL slugs or unrelated page chrome create a false vocal match.
+    blob = " ".join([probe.get("source", ""), probe.get("title", "")] + lines)
+    has_voice_role = bool(VOICE_RE.search(blob))
+    if NON_VOCAL_ROLE_RE.search(blob) and not has_voice_role:
+        return "non_vocal_role_only"
+    if not AUDITIONISH_RE.search(blob):
+        return "no_audition_signal"
+    if OFFTOPIC_RE.search(blob) and not has_voice_role:
+        return "off_topic_artistic_call"
+    if not has_voice_role:
+        return "no_vocal_role_signal"
+    if CHROME_RE.search(probe.get("title", "")):
+        return "page_chrome"
+    if STAFF_RE.search(blob):
+        return "non_artistic_staff_call"
+    if PORTAL_RE.search(target):
+        return "generic_transparency_portal"
+    return None
+
+
+def legacy_relevance_status(item: dict) -> tuple[str, str]:
+    """Label legacy entries without deleting them or claiming publisher verification."""
+    blob = " ".join(
+        [item.get("source", ""), item.get("title", "")]
+        + item.get("relevant_lines", [])
+    )
+    if item.get("status") != "ok":
+        return "unavailable_temporary", "latest_fetch_not_successful"
+    has_voice_role = bool(VOICE_RE.search(blob))
+    if NON_VOCAL_ROLE_RE.search(blob) and not has_voice_role:
+        return "irrelevant_candidate", "non_vocal_role_only"
+    if OFFTOPIC_RE.search(blob) and not has_voice_role:
+        return "irrelevant_candidate", "off_topic_artistic_call"
+    if has_voice_role:
+        return "needs_review", "vocal_signal_found_but_publisher_not_verified"
+    return "needs_review", "insufficient_vocal_evidence"
 
 
 def now_iso() -> str:
@@ -170,23 +235,15 @@ def main(discover: bool = False) -> None:
         if item.get("number") in core_numbers
     ]
 
-    # Drop anything that slipped through earlier rules (share links, files,
-    # jobs for ushers and box office, transparency portals, dance and writing
-    # competitions).
-    cleaned = [
-        item for item in registry
-        if not SKIP_HOST_RE.search(item.get("url", ""))
-        and not SKIP_EXT_RE.search(item.get("url", ""))
-        and not CHROME_RE.search(" ".join([item.get("source", ""), item.get("title", "")]))
-        and not STAFF_RE.search(" ".join([item.get("source", ""), item.get("title", ""), item.get("url", "")]))
-        and not PORTAL_RE.search(item.get("url", ""))
-        and not OFFTOPIC_RE.search(" ".join([item.get("source", ""), item.get("title", "")]))
-    ]
-    if len(cleaned) != len(registry):
-        print(f"[extra] removed {len(registry) - len(cleaned)} non-source link(s)", flush=True)
-    registry = cleaned
+    # Legacy entries are retained for auditability. Heuristics may label them,
+    # but must never silently delete or disable an existing source.
     for item in registry:
         item.pop("_response", None)
+        item.setdefault("review_status", "legacy_unreviewed")
+        auto_status, auto_reason = legacy_relevance_status(item)
+        item["auto_review_status"] = auto_status
+        item["auto_review_reason"] = auto_reason
+        item["auto_review_checked_at"] = now_iso()
 
     # 1. Refresh a rotating slice of the discovered list.
     batch: list[dict] = []
@@ -199,6 +256,7 @@ def main(discover: bool = False) -> None:
         fresh.pop("_response", None)
         if fresh["status"] == "ok":
             fresh["discovered_at"] = item.get("discovered_at", fresh["checked_at"])
+            fresh = carry_review_metadata(fresh, item)
             refreshed.append(fresh)
             print(f"[extra] ok {fresh['http_status']} {fresh['source'][:40]}", flush=True)
         else:
@@ -244,45 +302,51 @@ def main(discover: bool = False) -> None:
             time.sleep(1.2)
 
         candidates.sort(key=hub_rank)
-        next_number = max([item["number"] for item in registry + core_items] + [28]) + 1
+        candidate_payload = load(CANDIDATES, {})
+        candidate_items = candidate_payload.get("items", [])
+        candidate_urls = {item.get("url") for item in candidate_items}
+        next_candidate_id = max(
+            [int(item.get("candidate_id", 0)) for item in candidate_items] + [0]
+        ) + 1
         for label, target, origin in candidates:
             if added >= MAX_NEW:
                 break
-            probe = scrape_entry(target, label or target, next_number, origin)
+            if target in candidate_urls:
+                continue
+            probe = scrape_entry(target, label or target, next_candidate_id, origin)
             probe.pop("_response", None)
-            blob = " ".join([probe.get("source", ""), probe.get("title", "")] + probe["relevant_lines"])
-            if (
-                probe["status"] != "ok"
-                or len(probe["relevant_lines"]) < MIN_LINES
-                or not AUDITIONISH_RE.search(blob)
-                or CHROME_RE.search(probe.get("title", ""))
-                or STAFF_RE.search(blob)
-                or PORTAL_RE.search(target)
-                or OFFTOPIC_RE.search(blob)
-            ):
-                print(f"[extra] skip {probe['status']} {target[:70]}", flush=True)
+            rejection = candidate_rejection_reason(probe, target)
+            if rejection:
+                print(f"[candidate] skip {rejection} {target[:70]}", flush=True)
                 continue
             if len(label) < 12 or GENERIC_LABEL.fullmatch(label.strip() or "x"):
                 host = urlparse(target).netloc.removeprefix("www.")
                 probe["source"] = (probe["title"] or host)[:70]
-            probe["discovered_at"] = probe["checked_at"]
-            by_number[next_number] = probe
-            next_number += 1
+            probe.update({
+                "candidate_id": next_candidate_id,
+                "discovered_at": probe["checked_at"],
+                "review_status": "pending_manual_review",
+                "screening_status": "heuristic_passed",
+                "publisher_status": "unverified",
+                "review_notes": "",
+            })
+            candidate_items.append(probe)
+            candidate_urls.add(target)
+            next_candidate_id += 1
             added += 1
-            print(f"[extra] new {probe['http_status']} {probe['source'][:50]} — {target[:60]}", flush=True)
+            print(f"[candidate] queued for review {probe['source'][:50]} — {target[:60]}", flush=True)
             time.sleep(1.2)
+        candidate_payload.update({"updated_at": now_iso(), "items": candidate_items})
+        CANDIDATES.write_text(
+            json.dumps(candidate_payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
     else:
         print("Discovery skipped; refreshing the existing registry only.", flush=True)
 
-    # A discovered notice page eventually expires; stop carrying dead links.
-    keep = [
-        item for item in by_number.values()
-        if item.get("status") == "ok" or int(item.get("misses", 0)) < 4
-    ]
-    dropped = len(by_number) - len(keep)
-    if dropped:
-        print(f"[extra] dropped {dropped} expired source(s)", flush=True)
-    registry_out = sorted(keep, key=lambda item: item["number"])
+    # Repeated failures are evidence for review, not permission to delete.
+    # Keep the record and last-known snapshot until a deliberate retirement step.
+    registry_out = sorted(by_number.values(), key=lambda item: item["number"])
 
     REGISTRY.write_text(
         json.dumps({"updated_at": now_iso(), "cursor": cursor, "items": registry_out},
@@ -293,7 +357,7 @@ def main(discover: bool = False) -> None:
     # 4. Publish the merged list the site renders.
     merged = list(core_items) + registry_out
     PAGE.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"registry={len(registry_out)} new={added} merged={len(merged)} next_cursor={cursor}")
+    print(f"registry={len(registry_out)} candidates_queued={added} merged={len(merged)} next_cursor={cursor}")
 
 
 if __name__ == "__main__":

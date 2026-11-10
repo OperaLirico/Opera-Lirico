@@ -81,10 +81,58 @@ def rank_relevant_lines(lines: list[str]) -> list[str]:
     return [line for _, _, line in sorted(ranked)[:15]]
 
 
+def preserve_last_good(previous: dict | None, current: dict, attempted_at: str) -> dict:
+    """Keep the last successful extract when a refresh fails.
+
+    status describes the stored snapshot; last_attempt_status describes the
+    latest network attempt. Transient failures therefore cannot erase data.
+    """
+    if current.get("status") == "ok":
+        current["checked_at"] = attempted_at
+        current["last_success_at"] = attempted_at
+        current["last_attempt_at"] = attempted_at
+        current["last_attempt_status"] = "ok"
+        current["last_attempt_http_status"] = current.get("http_status")
+        current["last_attempt_error"] = None
+        current["consecutive_failures"] = 0
+        current["stale"] = False
+        return current
+
+    if previous and previous.get("status") == "ok":
+        kept = dict(previous)
+        kept.update({
+            "number": current.get("number", previous.get("number")),
+            "source": current.get("source", previous.get("source")),
+            "url": current.get("url", previous.get("url")),
+            "last_attempt_at": attempted_at,
+            "last_attempt_status": current.get("status", "error"),
+            "last_attempt_http_status": current.get("http_status"),
+            "last_attempt_error": current.get("error"),
+            "consecutive_failures": int(previous.get("consecutive_failures", 0)) + 1,
+            "stale": True,
+        })
+        return kept
+
+    current["checked_at"] = attempted_at
+    current["last_attempt_at"] = attempted_at
+    current["last_attempt_status"] = current.get("status", "error")
+    current["last_attempt_http_status"] = current.get("http_status")
+    current["last_attempt_error"] = current.get("error")
+    current["consecutive_failures"] = int((previous or {}).get("consecutive_failures", 0)) + 1
+    current["stale"] = True
+    return current
+
+
 def main() -> None:
     out_dir = Path(__file__).resolve().parent / "data"
     out_dir.mkdir(parents=True, exist_ok=True)
     checked_at = datetime.now(ZoneInfo("Europe/Rome")).isoformat(timespec="seconds")
+    previous_path = out_dir / "sources.json"
+    try:
+        previous_items = json.loads(previous_path.read_text(encoding="utf-8"))
+    except (FileNotFoundError, json.JSONDecodeError):
+        previous_items = []
+    previous_by_number = {item.get("number"): item for item in previous_items}
     results: list[dict] = []
 
     for number, name, url in SOURCES:
@@ -109,10 +157,20 @@ def main() -> None:
             lines = [clean_line(line) for line in text.splitlines()]
             lines = [line for line in lines if line]
             item["relevant_lines"] = rank_relevant_lines(lines)
+            if not item["title"] and not lines:
+                item["status"] = "extraction_error"
+                item["error"] = "The page returned no readable title or text."
         except Exception as exc:  # Keep going so one inaccessible site does not stop the batch.
             item["error"] = f"{type(exc).__name__}: {exc}"
+        item = preserve_last_good(previous_by_number.get(number), item, checked_at)
         results.append(item)
-        print(f"[{number:02d}/{len(SOURCES):02d}] {item['status']} {item['http_status']} {name} — {item['title'][:100]}", flush=True)
+        print(
+            f"[{number:02d}/{len(SOURCES):02d}] snapshot={item['status']} "
+            f"attempt={item.get('last_attempt_status', item['status'])} "
+            f"http={item.get('last_attempt_http_status', item['http_status'])} "
+            f"stale={item.get('stale', False)} {name} — {item['title'][:100]}",
+            flush=True,
+        )
         time.sleep(1.2)
 
     json_path = out_dir / "sources.json"
@@ -125,7 +183,16 @@ def main() -> None:
         for item in results:
             report.write(f"## {item['number']}. {item['source']}\n\n")
             report.write(f"- 页面：[{item['url']}]({item['url']})\n")
-            report.write(f"- 抓取状态：{item['status']}；HTTP：{item['http_status']}\n")
+            report.write(
+                f"- 快照状态：{item['status']}；HTTP：{item['http_status']}；"
+                f"是否沿用旧快照：{'是' if item.get('stale') else '否'}\n"
+            )
+            if item.get("last_attempt_status") and item.get("stale"):
+                report.write(
+                    f"- 最近一次尝试：{item.get('last_attempt_status')}；"
+                    f"时间：{item.get('last_attempt_at', '未知')}；"
+                    f"连续失败：{item.get('consecutive_failures', 0)} 次\n"
+                )
             report.write(f"- 页面标题：{item['title'] or '未读取到'}\n")
             if item["error"]:
                 report.write(f"- 错误：`{item['error']}`\n")
