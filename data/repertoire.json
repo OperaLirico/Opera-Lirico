@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T07:56:36+01:00",
+ "generated_at": "2026-11-10T08:31:29+01:00",
  "catalogue_source": "LiederNet Archive originals + curated starter works",
  "items": [
   {
@@ -13031,10 +13031,385 @@
     }
    ],
    "autoImported": true
+  },
+  {
+   "title": "Return his glance",
+   "aliases": [],
+   "composer": "Wolfgang Amadeus Mozart",
+   "work": "",
+   "voice": "待分类",
+   "kind": "咏叹调/歌剧选段",
+   "language": "en",
+   "text": "GUGLIELMO:\nReturn his glance\nand you'll see how it is:\nIt says everything: I freeze, I burn\nMy idol, have pity, pity\nI burn, I freeze, I burn\nMy idol, have pity, pity\n\nAnd you, beloved, for just a moment\ncast your lovely eye on me\nAnd in me you will find\nthat which the lip doesn't know how to say.\nSome love-struck Orlando\nIs nothing compared to me;\nA Medoro with wounded breast\nIs as nothing next to me:\nMy sighs are fire\nHis lust is bronze\nSo if we speak of merit\nI am sure and he is sure\nYou cannot find equals\nFrom Vienna to Canada.\n\nThe two of us are rich as Croesus\nHandsome as Narcissus\nIn love, Marc Anthonys\nwould seem like clowns in comparison\nWe are stronger than a Cyclops\nWriters on par with Aesop.\n\nIf we dance, Pichne bows to\nour refined narrow feet\nSinging, a single trill\nputs nightingales to shame\nAnd we have other strengths\nThat you still don't know.\n\nBeauty, beauty, hold fast:\nIf they go, I rejoice\nHeroines of constancy\nare mirrors of faithfulness.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=103842",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Christian Anderson",
+   "settings": [
+    {
+     "composer": "Wolfgang Amadeus Mozart",
+     "title": "/lieder/get_settings.html?ComposerId=1945",
+     "instrumentation": "baritone and orchestra"
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "French (Français)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Le rossignol",
+   "aliases": [],
+   "composer": "Karol Maciej Szymanowski",
+   "work": "",
+   "voice": "待分类",
+   "kind": "咏叹调/歌剧选段",
+   "language": "fr",
+   "text": "Dieu n'a pas mis un coeur dans mon sein jeune\nmais il y mit un rossignol bien sa.\nIl se tait le jour et la nuit venue\nappelle l'amour de sa voix radieuse.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=25187",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation Singable translation by Zofia Szymanowska",
+   "settings": [
+    {
+     "composer": "Karol Maciej Szymanowski",
+     "title": "/lieder/get_settings.html?ComposerId=5907",
+     "instrumentation": "soprano and orchestra"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Sentivo un funerale, nella mente",
+   "aliases": [],
+   "composer": "Ernst Bacon",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "it",
+   "text": "Sentivo un funerale, nella mente,\ne i dolenti si aggiravano intorno,\ne ancora si aggiravano, fino a che\nogni senso sembrò venisse meno.\n\nPoi quando tutti si furono seduti,\nuna cerimonia che, simile a un tamburo,\nbatteva e ribatteva - al punto che pensai\nche mi si stesse annebbiando la mente.\n\nPoi li sentii sollevare una bara,\ne penetrarmi, scricchiolando, l'anima\nancora, e ancora, con stivali di piombo,\npoi lo spazio iniziò a rintoccare\n\ncome se si fossero fatti campana tutti i cieli\ne la creazione nient'altro che un orecchio,\nEd io, e il silenzio, una razza straniera\nqui naufragata in solitario esilio.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=81351",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Ferdinando Albeggiani",
+   "settings": [
+    {
+     "composer": "Ernst Bacon",
+     "title": "/lieder/get_settings.html?ComposerId=3266",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Alison Bauld",
+     "title": "/lieder/get_settings.html?ComposerId=17800",
+     "instrumentation": "soprano and piano"
+    },
+    {
+     "composer": "Aaron Copland",
+     "title": "/lieder/get_settings.html?ComposerId=3763",
+     "instrumentation": "mezzo-soprano, piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Il faut mourir",
+   "aliases": [],
+   "composer": "Stefano Landi",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Oh, comme tu te trompes\nsi tu penses que ton temps\nn'a pas de fin,\nil faut mourir.\n\nLa vie est un songe\nqui est si agréable,\net brièvement plaisant,\nil faut mourir.\nIl n'y a pas de remède,\nla liqueur n'est pas utile,\nelle ne peut guérir,\nil faut mourir.\n\nIl ne sert à rien de crier,\nde menacer, de braver\npour raidir le courage\nil faut mourir.\nIl n'y a aucune doctrine,\naucune parole,\npour apaiser nos peurs.\nil faut mourir.\n\nIl n'y a pas moyen\nde défaire ce nœud,\nil est inutile de fuir,\nil faut mourir.\nC'est notre sort commun,\naucun stratagème rusé\nne peut le repousser,\nil faut mourir.\n\nLa mort cruelle\nnous trahit tous,\ntout le monde en a honte,\nil faut mourir.\nC'est de la folie\nou une grande frénésie\nde dire des mensonges,\nil faut mourir.\n\nOn meurt en chantant,\non meurt en jouant\nde la cithare, ou de\nil faut mourir.\nOn meurt en dansant,\nen buvant et en mangeant ;\navec cette charogne,\nil faut mourir.\n\nLes jeunes et les enfants\net toute l'humanité\nest réduite en cendres,\nil faut mourir.\nLes bien portants, les malades,\nles braves, les faibles,\ntous doivent en finir,\nil faut mourir.\n\nEt quand tu y penses\nle moins, dans ton sein\ntu arrives à ta fin,\nil faut mourir.\nSi tu n'y penses pas\ntu as perdu ton esprit,\net tu es mort et peux dire :\nil faut mourir.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=193205",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Guy Laffaille",
+   "settings": [
+    {
+     "composer": "Stefano Landi",
+     "title": "/lieder/get_settings.html?ComposerId=4766",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Sieh! wie hell der Himmel quillt!",
+   "aliases": [],
+   "composer": "Conrad (Eduard Reinhold) Ansorge",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Sieh! wie hell der Himmel quillt!\nGöttin Fruchtbarkeit ist aufgewacht.\nWie die Welt in deinem Lichte schwillt,\nmütterliche Sternennacht!\nBlüten stäuben, Käfer surren, Vögel locken,\nMenschensehnsucht wird zum Liebeslaut ...\nSommernächte voll von Hochzeitsglocken,\naller Welt gewalt'ge Pulse stocken,\nvon der ew'gen Kraft betaut.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=99490",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Franz Evers",
+   "settings": [
+    {
+     "composer": "Conrad (Eduard Reinhold) Ansorge",
+     "title": "/lieder/get_settings.html?ComposerId=3203",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Assenza",
+   "aliases": [],
+   "composer": "Georges Albert Baudoüin",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "it",
+   "text": "Ritorna, ritorna, o mia amata,\ncome un fiore lontano dal sole,\nil fiore della mia vita è chiuso,\nlontano dal tuo sorriso vermiglio.\n\nTra i nostri cuori c'è tanta distanza;\ntanto spazio tra i nostri baci!\nO sorte amara! O spietata assenza!\nO grandi desideri inappagati!\n\nDa qui a laggiù quante campagne,\nquante città e piccoli villaggi,\nquante valle e montagne,\nche stancano il piede dei cavalli!\n\nNel paese che trattiene la mia bella,\nahimè! se io potessi andare;\ne se il mio corpo avesse un'ala\ncome la mia anima per volare!\n\nSopra le nostre colline verdi,\nle montagne dall'azzurra fronte,\ni campi arati e le rogge,\nio andrei con volo rapido e sicuro.\n\nIl corpo non segue il pensiero;\nper me, la mia anima, vola diritta,\nma come una colomba ferita,\nsi abbatte sul bordo del tetto.\n\nVola al suo seno divino,\na lei, bionda e fiera come l'oro,\nmorbida come un manto d'ermellino,\nil suo seno, il mio tesoro reale;\n\nE dì, anima mia, alla mia bella:\n\"Tu sai che sta contando i giorni!\"\nO mia colomba! a volo d'ala,\ntorna al nido dei nostri amori.\"",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=32063",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Enrico Magnani",
+   "settings": [
+    {
+     "composer": "Georges Albert Baudoüin",
+     "title": "/lieder/get_settings.html?ComposerId=26487",
+     "instrumentation": "high voice and piano"
+    },
+    {
+     "composer": "Hector Berlioz",
+     "title": "/lieder/get_settings.html?ComposerId=3401",
+     "instrumentation": "voice and orchestra or piano"
+    },
+    {
+     "composer": "Georges Bizet",
+     "title": "/lieder/get_settings.html?ComposerId=3441",
+     "instrumentation": "soprano and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Laat mij, ook als ik stil verkwijn",
+   "aliases": [],
+   "composer": "August Ferdinand Häser",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "nl",
+   "text": "Laat mij, ook als ik stil verkwijn,\nLaat mij maar zachtjes gaan;\nHaar zie ik, wat voor uur 't mag zijn,\nVoor eeuwig vóór mij staan.\n\nWat vraag je mij toch kalm te zijn?\nMijn rust ontnam zij mij;\nEn waar zij is, daar moet ik heen;\nHier, daar, waar het ook zij.\n\nTot dit arm hart niet boos gepreekt;\nHet heeft slechts één gebrek;\nTrouw moet het slaan totdat het breekt,\nEn 't gaat nooit met verstek.\n\nLaat mij, ik denk alleen aan haar;\nBij haar slechts is mijn geest;\nJa, zonder haar kwam ik nooit daar,\nBij 't eeuwig eng'lenfeest.\n\nBij leven dus en in de dood,\nIn de hemel, hier en daar,\nIn groot geluk en scheidingsnood\nBehoor ik enkel haar.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=49758",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Lau Kanen",
+   "settings": [
+    {
+     "composer": "August Ferdinand Häser",
+     "title": "/lieder/get_settings.html?ComposerId=7674",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Karl Gottlieb Reissiger",
+     "title": "/lieder/get_settings.html?ComposerId=5477",
+     "instrumentation": "bass and piano"
+    },
+    {
+     "composer": "Franz Peter Schubert",
+     "title": "/lieder/get_settings.html?ComposerId=2520",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Berceuse de Jocelyn",
+   "aliases": [],
+   "composer": "Benjamin Louis Paul Godard",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Cachés dans cet asile où Dieu nous a conduits,\nUnis par le malheur, durant les longues nuits\nNous reposons tous deux endormis sous les voiles\nOu prions aux regards de tremblantes étoiles.\n\nOh ne t'éveille pas encor\nPour qu'un bel ange de ton rêve\nEn déroulant son long fil d'or,\nEnfant, permette qu'il s'achève.\nDors, dors, le jour à peine a lui.\nVierge Sainte, veillez sur lui.\n\nSous l'aile du Seigneur loin du bruit de la foule\nEt comme un flot sacré qui doucement s'écoule\nNous avons vu les jours passer après les jours\nSans jamais nous lasser d'implorer son secours.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=20843",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Victor Capoul",
+   "settings": [
+    {
+     "composer": "Benjamin Louis Paul Godard",
+     "title": "/lieder/get_settings.html?ComposerId=989",
+     "instrumentation": ""
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Ich weiß ein Mägdlein, rein wie Gold",
+   "aliases": [],
+   "composer": "(Carl) Otto Ehrenfried Nicolai",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "[Ich]1 weiß ein Mägdlein, rein wie Gold,\nEin Mägdlein sonder gleichen:\nDem König blühet keins so hold\nIn seinen weiten Reichen.\n\nAch, hätt' ich selbst ein Königreich\nEs um mein Lieb zu geben!\nIch gäbe, was ich hätte, gleich,\nMein Land, mein Herz, mein Leben!\n\nIhr Aug' ein Himmel klar und rein,\nDen lichte Engel hüten;\nIhr Herz ein reicher Wunderschrein\nVoll Lieb' und Lenzesblüten!\n\nIhr Mund ein Quell der Lust, ihr Haar\nEin Goldnetz, ausgehangen,\nUm Greis und Jüngling wunderbar\nZu fesseln und zu fangen.\n\nSie ist so reich, so arm bin ich\nUnd habe nichts zu spenden!\nHat Erde keinen Trost für mich,\nWird's einst der Himmel wenden.\n\nDoch bis zum lezten Schlag, mein Herz,\nOb alle Sterne schwinden,\nHalt' aus und laß in Lieb und Schmerz\nDich stark und treu erfinden!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=685",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Karl August Förster",
+   "settings": [
+    {
+     "composer": "(Carl) Otto Ehrenfried Nicolai",
+     "title": "/lieder/get_settings.html?ComposerId=11784",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Carl Maria (Friedrich Ernst) von Weber",
+     "title": "/lieder/get_settings.html?ComposerId=6134",
+     "instrumentation": "baritone, violin, cello, flute, and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Das Heldengrab am Pruth",
+   "aliases": [],
+   "composer": "Erich Wolfgang Korngold",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Ich hab ein kleines Gärtchen im Buchenland am Pruth,\nbetaut von Perlentropfen, umstrahlt von Sonnenglut.\nUnd bin in meinem Gärtchen im Traume wie bei Tag\nund trink den Duft der Blumen und lausch dem Vogelschlag.\n\nWenn auch der Tau erstarret, der Herbst die Blümlein bricht,\ndie Nachtigall enteilet, der Lenz entflieht mir nicht.\nEs schmückt mein kleines Gärtchen im Buchenland am Pruth,\nmit welkem Laub die Liebe dem Helden, dem Helden der drinn ruht.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=9372",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Heinrich Kipper",
+   "settings": [
+    {
+     "composer": "Erich Wolfgang Korngold",
+     "title": "/lieder/get_settings.html?ComposerId=4699",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Sprofondato",
+   "aliases": [],
+   "composer": "Franz Peter Schubert",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "it",
+   "text": "Una testolina così tonda, crespa di riccioli!\n E se posso, in questa ricca chioma,\n a piene mani viaggiare avanti e indietro,\n allora mi sento bene dal fondo del cuore.\n E se bacio fronte, ciglia, occhi e bocca,\n allora son sano, e sempre ancora affranto.\n E il pettine dai cinque denti, dove dovrà fermarsi?\n Ecco che torna ancora sui ricci,\n l'orecchio non si sottrae al gioco,\n così tenero allo scherzo, così amoroso,\n ma massaggiando il tuo piccolo capo\n vien da muoversi, in questa ricca chioma,\n su e giù per sempre\n per la testolina così tonda, crespa di riccioli.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=6349",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Paolo Pupillo, Claretta Manara",
+   "settings": [
+    {
+     "composer": "Franz Peter Schubert",
+     "title": "/lieder/get_settings.html?ComposerId=2520",
+     "instrumentation": "voice, piano"
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Dutch (Nederlands)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Le nuvole",
+   "aliases": [],
+   "composer": "Dorothea Hofmann",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "it",
+   "text": "Avanzano rapide come frecce.\nAh! Se potessi conoscere dove e quanto lontano!\nAllora volentieri ti leveresti da qui,\nleggero come un uccello nell'aria spaziosa,\nper raggiungere in volo il bordo delle nuvole\ne conquistare la luce e la vita!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=81668",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Ferdinando Albeggiani",
+   "settings": [
+    {
+     "composer": "Dorothea Hofmann",
+     "title": "/lieder/get_settings.html?ComposerId=38532",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Josephine Lang",
+     "title": "/lieder/get_settings.html?ComposerId=4770",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
   }
  ],
  "scan_cursor": 144,
- "lieder_position": 1680,
+ "lieder_position": 1728,
  "aria_opera": 0,
  "aria_scene": 8
 }
