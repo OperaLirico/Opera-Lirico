@@ -37,6 +37,16 @@ def inspect_pdf(path: Path) -> dict:
     }
 
 
+def expected_filename(url: str, number) -> str:
+    import re
+    import urllib.parse
+    raw = urllib.parse.unquote((url.split("/")[-1] or "").split("?")[0])
+    stem = re.sub(r"[^A-Za-z0-9._-]+", "-", raw).strip("-").lower() or "bando"
+    if not stem.endswith(".pdf"):
+        stem += ".pdf"
+    return f"{number}-{stem[:80]}"
+
+
 def main() -> None:
     payload = json.loads((DATA / "conservatori.json").read_text(encoding="utf-8"))
     entries = []
@@ -50,10 +60,12 @@ def main() -> None:
             path = ROOT / relative
             referenced.add(path.resolve())
             integrity = inspect_pdf(path)
+            original_url = next((url for url in item.get("documents", []) if expected_filename(url, item.get("number")) == path.name), None)
             entries.append({
                 "institution": item.get("name") or item.get("institution") or item.get("number"),
                 "source_record_number": item.get("number"),
                 "local_path": relative,
+                "source_url": original_url,
                 **integrity,
                 "publisher_signature_status": "not_verified",
                 "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified.",
