@@ -1,0 +1,71 @@
+name: P2 P4 extraction pilot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "audit_extraction_pilot.py"
+      - "data/source_fetch_policies.json"
+      - "reports/source-audit-baseline-2026-11-10.json"
+      - ".github/workflows/p2-p4-extraction-pilot.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: p2-p4-extraction-pilot
+  cancel-in-progress: false
+
+jobs:
+  pilot:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+      - name: Install current production scraper
+        run: python -m pip install -r requirements.txt
+      - name: Install Trafilatura for evaluation only
+        run: python -m pip install trafilatura
+      - name: Run unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Capture and compare five official source pages
+        run: python audit_extraction_pilot.py
+      - name: Upload raw HTML snapshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: p2-p4-raw-html-samples
+          path: artifacts/p2-p4-html-samples/
+          if-no-files-found: warn
+          retention-days: 30
+      - name: Upload pilot report
+        uses: actions/upload-artifact@v4
+        with:
+          name: p2-p4-extraction-report
+          path: |
+            .github/audits/extraction-pilot-latest.json
+            .github/audits/extraction-pilot-latest.md
+          if-no-files-found: error
+          retention-days: 90
+      - name: Commit evaluation report
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .github/audits/extraction-pilot-latest.json .github/audits/extraction-pilot-latest.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record P2 P4 source extraction pilot results'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi

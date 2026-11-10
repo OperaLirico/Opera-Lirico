@@ -21,14 +21,14 @@
     "classifications": {
       "auto_approved_official": 26,
       "auto_approved_third_party": 4,
-      "needs_review": 2,
-      "irrelevant_candidate": 12
+      "needs_review": 1,
+      "irrelevant_candidate": 13
     },
     "exact_duplicate_extra_records": 15,
     "manual_review_priorities": [
       "source-121"
     ],
-    "note": "Official means first-party for the publisher's own institution/event, not a claim of government endorsement or external accreditation. Follow-up verification on 2026-11-10 confirmed Teatro Verdi Trieste and Teatro Lirico di Cagliari as official and relevant vocal sources using direct first-party chorus recruitment notices. Musical.it was classified out of scope for this classical-vocal registry because its inspected audition board focuses on musical-theatre performers and related training. Provinispettacolo remains needs_review: its domain carries useful opera-singer discovery notices, but the registered Robin Hood permalink is cross-genre and is not a primary organizer notice. Other follow-up evidence confirmed Maggio Musicale Fiorentino, Teatro Lirico Sperimentale di Spoleto, Fondazione Renata Tebaldi, and AsLiCo as official relevant vocal sources; Winterwerft was classified out of scope."
+    "note": "Corrected by recomputing classification totals directly from all 44 audited items: 26 auto-approved official, 4 auto-approved third-party, 1 needs review, and 13 irrelevant. Source-121 is the only needs_review item. Official means first-party for the publisher's own institution/event, not a claim of government endorsement or external accreditation. Follow-up verification on 2026-11-10 confirmed Teatro Verdi Trieste and Teatro Lirico di Cagliari as official and relevant vocal sources using direct first-party chorus recruitment notices. Musical.it was classified out of scope for this classical-vocal registry because its inspected audition board focuses on musical-theatre performers and related training. Provinispettacolo remains needs_review because the registered Robin Hood permalink is cross-genre; its separate opera-audition category page may be registered after a dedicated review."
   },
   "items": [
     {

@@ -25,6 +25,7 @@ DATA = ROOT / "data"
 AUDIT = ROOT / ".github" / "audits"
 CHECKPOINT = AUDIT / "source-coverage-checkpoint.json"
 REPORT = AUDIT / "source-coverage-latest.md"
+SOURCE_AUDIT = ROOT / "reports" / "source-audit-baseline-2026-11-10.json"
 VOCAL_RE = re.compile(
     r"canto|cantant|soprano|mezzosoprano|contralto|tenore|baritono|basso|"
     r"vocal|voce|young artist|artisti del coro|coro|corale",
@@ -55,8 +56,11 @@ def canonical_url(url: str) -> str:
 
 
 def source_inventory() -> list[dict]:
-    """Use sources.json as the merged registry; do not double-count sources_extra."""
+    """Use sources.json as the merged registry; join the source audit baseline."""
     inventory: list[dict] = []
+    audit_payload = read_json(SOURCE_AUDIT, {})
+    audit_by_id = {x.get("source_id"): x for x in audit_payload.get("items", []) if x.get("source_id")}
+    audit_by_number = {x.get("legacy_number"): x for x in audit_payload.get("items", []) if x.get("legacy_number") is not None}
     seen_urls: set[str] = set()
     sources = read_json(DATA / "sources.json", [])
     if isinstance(sources, list):
@@ -70,13 +74,18 @@ def source_inventory() -> list[dict]:
             seen_urls.add(canonical)
             number = item.get("number")
             source_id = str(item.get("source_id") or f"source-{number if number is not None else canonical}")
+            audit = audit_by_id.get(source_id) or audit_by_number.get(number) or {}
             inventory.append({
                 "source_id": source_id,
                 "name": item.get("source") or item.get("name") or source_id,
                 "url": url,
                 "kind": "registered",
-                "review_status": item.get("review_status", "legacy_unreviewed"),
-                "publisher_status": item.get("publisher_status", "unverified"),
+                "review_status": audit.get("auto_review_status") or item.get("review_status") or "classification_missing",
+                "publisher_status": audit.get("publisher_status") or item.get("publisher_status") or "unverified",
+                "relevance_status": audit.get("relevance_status", "unknown"),
+                "audit_confidence": audit.get("confidence", "none"),
+                "audit_evidence_url": audit.get("evidence_url"),
+                "audit_date": audit.get("audit_date"),
             })
 
     candidates_payload = read_json(DATA / "source_candidates.json", {})
@@ -98,6 +107,10 @@ def source_inventory() -> list[dict]:
             "kind": "pending_candidate",
             "review_status": item.get("review_status", "pending_manual_review"),
             "publisher_status": item.get("publisher_status", "unverified"),
+            "relevance_status": item.get("relevance_status", "unknown"),
+            "audit_confidence": item.get("confidence", "none"),
+            "audit_evidence_url": item.get("evidence_url"),
+            "audit_date": item.get("audit_date"),
         })
     return sorted(inventory, key=lambda item: (item["kind"], item["source_id"]))
 
@@ -119,6 +132,10 @@ def scan_one(source: dict, previous: dict | None, checked_at: str) -> dict:
         "kind": source["kind"],
         "review_status": source["review_status"],
         "publisher_status": source["publisher_status"],
+        "relevance_status": source.get("relevance_status", "unknown"),
+        "audit_confidence": source.get("audit_confidence", "none"),
+        "audit_evidence_url": source.get("audit_evidence_url"),
+        "audit_date": source.get("audit_date"),
         "checked_at": checked_at,
         "status": "error",
         "http_status": None,
@@ -186,6 +203,12 @@ def render_report(state: dict) -> str:
     changed = sum(bool(item.get("content_changed")) for item in results)
     anomalies = [item for item in results if item.get("anomalies")]
     baseline_available = bool(state.get("previous_cycle_complete"))
+    classifications = {}
+    for item in results:
+        label = item.get("review_status") or "classification_missing"
+        classifications[label] = classifications.get(label, 0) + 1
+    registered = [item for item in results if item.get("kind") == "registered"]
+    candidates = [item for item in results if item.get("kind") == "pending_candidate"]
     lines = [
         "# Weekly source coverage audit",
         "",
@@ -197,9 +220,15 @@ def render_report(state: dict) -> str:
         f"- Failed/restricted/extraction errors: {failed} (restricted: {restricted})",
         (f"- Changed normalized text hashes: {changed}" if baseline_available else "- Change comparison: first baseline; no previous complete weekly scan exists yet"),
         f"- Sources with anomalies: {len(anomalies)}",
+        f"- Registered sources: {len(registered)}; pending candidates: {len(candidates)}",
+        "- Source review classifications: " + ", ".join(f"{key}={value}" for key, value in sorted(classifications.items())),
+        f"- Official + relevant: {sum(item.get('review_status') == 'auto_approved_official' and item.get('relevance_status') == 'relevant' for item in registered)}",
+        f"- Third-party + relevant: {sum(item.get('review_status') == 'auto_approved_third_party' and item.get('relevance_status') == 'relevant' for item in registered)}",
+        f"- Needs review / irrelevant / unclassified: {sum(item.get('review_status') in ('needs_review', 'irrelevant_candidate', 'classification_missing') for item in registered)}",
         f"- Inventory SHA-256: {state.get('inventory_sha256')} (inventory identity only)",
         "",
         "This scan checks page access and normalized text changes. A successful HTTP response is not proof of official identity, opportunity validity, or complete announcement capture. Text hashes are not publisher signatures.",
+        "Keyword/vocal signals are discovery clues only. Source identity and relevance are reported separately from HTTP reachability; source-level approval does not approve every notice on a mixed-purpose page.",
         "",
         "## Exceptions and changes",
         "",
@@ -226,6 +255,7 @@ def render_report(state: dict) -> str:
         "- Pending candidates are monitored separately and are not promoted to approved sources by this scan.",
         "- 403/429, login walls, CAPTCHA and unavailable pages are recorded as monitoring blind spots; no bypass is attempted.",
         "- A page with no vocal keyword signal is an anomaly clue, not proof that the institution has no current opportunity.",
+        "- A vocal keyword signal does not establish that a page or individual notice is relevant to classical singers.",
         "",
     ])
     return "\n".join(lines)
@@ -260,6 +290,13 @@ def main() -> None:
         }
 
     state.setdefault("previous_cycle_complete", False)
+    inventory_by_id = {item["source_id"]: item for item in inventory}
+    for source_id, result in state.get("results", {}).items():
+        source = inventory_by_id.get(source_id)
+        if source:
+            for field in ("review_status", "publisher_status", "relevance_status",
+                          "audit_confidence", "audit_evidence_url", "audit_date"):
+                result[field] = source.get(field)
     completed = set(state.get("completed_source_ids", []))
     pending = [item for item in inventory if item["source_id"] not in completed]
     batch = pending[:args.batch_size]

@@ -18,6 +18,37 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                 self.assertEqual(entry["strategy_status"], "baseline_only")
                 self.assertFalse(entry["alternatives_assessed"])
 
+    def test_coverage_inventory_joins_source_review_classification(self):
+        from audit_source_coverage import source_inventory
+        inventory = [item for item in source_inventory() if item["kind"] == "registered"]
+        counts = {}
+        for item in inventory:
+            counts[item["review_status"]] = counts.get(item["review_status"], 0) + 1
+        self.assertEqual(len(inventory), 44)
+        self.assertEqual(counts.get("auto_approved_official"), 26)
+        self.assertEqual(counts.get("auto_approved_third_party"), 4)
+        self.assertEqual(counts.get("needs_review"), 1)
+        self.assertEqual(counts.get("irrelevant_candidate"), 13)
+        self.assertNotIn("legacy_unreviewed", counts)
+
+    def test_source_audit_summary_matches_item_classifications(self):
+        audit = json.loads((ROOT / "reports" / "source-audit-baseline-2026-11-10.json").read_text(encoding="utf-8"))
+        actual = {}
+        for item in audit["items"]:
+            label = item["auto_review_status"]
+            actual[label] = actual.get(label, 0) + 1
+        self.assertEqual(audit["summary"]["classifications"], actual)
+
+    def test_trafilatura_remains_evaluation_only(self):
+        requirements = (ROOT / "requirements.txt").read_text(encoding="utf-8")
+        pilot_workflow = (ROOT / ".github" / "workflows" / "p2-p4-extraction-pilot.yml").read_text(encoding="utf-8")
+        pilot_script = (ROOT / "audit_extraction_pilot.py").read_text(encoding="utf-8")
+        self.assertNotIn("trafilatura", requirements.lower())
+        self.assertIn("pip install trafilatura", pilot_workflow)
+        self.assertIn("Selector(content=html_bytes", pilot_script)
+        self.assertIn("trafilatura.extract", pilot_script)
+        self.assertIn("production_changes", pilot_script)
+
     def test_candidate_queue_stays_separate_and_pending(self):
         candidates_path = ROOT / "data" / "source_candidates.json"
         candidates = json.loads(candidates_path.read_text(encoding="utf-8"))
