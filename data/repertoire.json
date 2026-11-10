@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T06:14:59+01:00",
+ "generated_at": "2026-11-10T06:26:37+01:00",
  "catalogue_source": "LiederNet Archive originals + curated starter works",
  "items": [
   {
@@ -11231,10 +11231,330 @@
     }
    ],
    "autoImported": true
+  },
+  {
+   "title": "The sea",
+   "aliases": [],
+   "composer": "Alexis de Castillon",
+   "work": "",
+   "voice": "待分类",
+   "kind": "咏叹调/歌剧选段",
+   "language": "en",
+   "text": "Oh Sea, sinister sea that the north wind of autumn\nShakes and flaps just like a useless shred of cloth:\nOh Sea, joyful Sea, magnificent coat\nWhich the sun clasps around Latone's nude flanks;\n\nOh Sea, sinister sea, whose groans\nTrouble the nocturnal spirit lingering on the strand;\nOh Sea, joyful sea who, in order to cradle dreams,\nPossesses the noises of kisses and of quivering;\n\nOh Sea, sinister Sea, full of funerals!\nOh Sea, joyful Sea, who populates a living wave!\nLife and death often seem, in you,\nTo unite to inseminate your profound depths.\n\n[...]\n\n[...]\n\nSince, without tiring, the fierce work of the wind\nSwallows up the carnal sowing of your slopes ,\nOh Sea, sinister Sea, full of funerals!\nOh Sea, joyful Sea, who populates a living wave!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=123235",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Laura Stanfield Prichard",
+   "settings": [
+    {
+     "composer": "Alexis de Castillon",
+     "title": "/lieder/get_settings.html?ComposerId=3691",
+     "instrumentation": "low voice and piano or orchestra"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Complainte de Notre‑Dame",
+   "aliases": [],
+   "composer": "Maurice Emmanuel",
+   "work": "",
+   "voice": "待分类",
+   "kind": "咏叹调/歌剧选段",
+   "language": "und",
+   "text": "Messieurs, Mesdames,\nplaise à vous d'écouter\nUne complaint' pieuse à vous conter\nDe Notre-Dame, qui eut l'cœur dolent,\nQuand elle sçut que fut pris son Enfant.\n\nO toi, faux juif,\nqu'avait donc mon Fils fait ?\nJamais en lui n'y eut aucun méfait !\nVous l'avez mis à mort cruellement ;\nVous en serez punis amèrement.\n\nTraître Judas, qui fus bien inhumain\nD'avoir trahi l'précieux sang divin !\nPour trentre et un deniers tu l'as vendu !\nTu en seras puni et confondu.\n\nO faux Pilat', toi qui l'as tant battu,\nTant flagellé, tant, qu'il était rompu...\nHélas ! pourquoi n'en n'avais-tu pitié ?\nC'était Celui plein de toute amitié !\n\nO laboureurs, ô gens de tous métiers,\nAccourez tous, venez de tous côtés,\nVenez pleurer avec compassion\nLa mort du Fils,\naussi sa passion !\n\nO fill's et femmes qui gardez la maison,\nDonnez des œufs à ces petits garçons !\nNous vous dirons chacun : De profundis !\nAmen ! Amen ! Miserere nobis !",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=46123",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "",
+   "settings": [
+    {
+     "composer": "Maurice Emmanuel",
+     "title": "/lieder/get_settings.html?ComposerId=3971",
+     "instrumentation": "voice and orchestra"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "An kleine Mädchen",
+   "aliases": [],
+   "composer": "Karol Maciej Szymanowski",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Ich weiß ihr liebt das Dunkel nicht,\nin meiner Stub' ist wenig Licht\nund wenig Glück zu finden;\ndrum wandert mir zur Stadt hinaus,\nich bleibe unterdes zu Haus,\nwir seh'n uns unter Linden.\n\nBevor die Sonne schlafen geht,\nhab' ich mein Lied hinweggeweht,\nkann wieder Märchen sinnen.\nSchließt um die Linden einen Kranz,\ndie Füßchen hebt zum Ringeltanz,\ndünkt euch wie Königinnen.\n\nIm Tanz verrinnt ein Stündchen schnell,\neh' ihr es merkt, bin ich zur Stell'\nund klatsche in die Hände.\nIhr jubelt auf, setzt euch im Kreis,\nweil ich so viele Märchen weiß,\nund Märchen ohne Ende.\n\nEin Prinz, ein Fisch, ein blonder Hirt,\nein Nixlein, das im Walde irrt,\nund was die Frösche munkeln,\nein dummer Bär, ich werd' nicht müd,\nbis euch die Wangen hell erglüht,\nbis euch die Augen funkeln.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=20900",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Emil Faktor",
+   "settings": [
+    {
+     "composer": "Karol Maciej Szymanowski",
+     "title": "/lieder/get_settings.html?ComposerId=5907",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Juomalaulu maailman surkeudelle",
+   "aliases": [],
+   "composer": "Gustav Mahler",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fi",
+   "text": "Viini on jo odottamassa kultaisessa pikarissa,\nmutta älä juo vielä - ensin tahdon laulaa sinulle laulun!\nKärsimyksen laulu soikoon\nnaurusuin sielussasi. Kun murhe lähenee,\nsielujen puutarhat tulevat autioitumaan\nkuihtuen; ilo ja laulu saavat kuolla.\nSynkkää on elämä, synkkää on kuolema.\n[Kellarisi on täynnä kultaista viiniä!]\n\nTämän talon herra!\nKellarisi on täynnä kultaista viiniä!\nTätä luuttua kutsun omakseni!\nLuuttua soittaen ja tyhjentäen juomalaseja -\nnämä ovat ne asiat jotka sopivat yhteen.\nTäysi lasillinen viiniä oikealla hetkellä\non arvokkaampi kuin maailman rikkaudet yhteensä!\nSynkkää on elämä, synkkää on kuolema.\n\nTaivas on ikuisesti sininen ja maankamara\ntulee kestämään vahvana pitkään ja keväänä kukkimaan.\nMutta sinä, ihminen, kuinka kauan itse sitten elät?\nEi sataa vuotta sinulle ole annettu nauttia\nkaikessa tämän maailman surkeassa turhuudessa!\n[\n\n]\n\nKatso tuonne!\nKuun valossa, hautojen päällä kököttää\nvilli, kummitusmainen hahmo - se on apina!\nKuule kuinka sen ulvonta kaikuu\nelämän suloisessa tuoksussa!\nNyt, ota viini! Nyt on aika - nauti!\nTyhjennä kultainen pikari pohjaan asti!\nSynkkää on elämä, synkkää on kuolema!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=37956",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Milla Valkeasuo",
+   "settings": [
+    {
+     "composer": "Gustav Mahler",
+     "title": "/lieder/get_settings.html?ComposerId=1742",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Monika Trotz",
+     "title": "/lieder/get_settings.html?ComposerId=44874",
+     "instrumentation": "voice and instrumental ensemble"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Der Geliebten",
+   "aliases": [],
+   "composer": "Anton Meyer",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Ein heit'rer, blauer Frühlingsmorgen\nverklärte rings Gebirg' und Tal,\nund in der Ferne tief verborgen\nerglühte sanft ein [gold'ner]1 Strahl.\n\nUnd wie er höher, höher glühte,\nda ward es in der Brust so hell,\nund wie die erste Blume blühte,\nda sprang hervor der Zauberquell.\n\nWo ist das Auge, das ihn schaute?\nWo ist die Brust, die ihn empfand?\nIn deinem Aug' der Morgen blaute,\naus deiner Brust der Quell sich wand.\n\nDer Strahl hat meinen Blick getroffen,\nder Quell goss sich in meine Brust;\nder Glaube kam, es kam das Hoffen,\nes kam der Liebe heil'ge Lust!\n\nUnd sieh! Es sprangen tausend Lieder\nhervor auf ihren Zauberschlag!\nNimm, o Geliebte, nimm sie wieder,\nsie tönen alle dir nur nach!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=160541",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Wilhelm Stens, Dr.",
+   "settings": [
+    {
+     "composer": "Anton Meyer",
+     "title": "/lieder/get_settings.html?ComposerId=10364",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Bienheureux celui qui a un dieu",
+   "aliases": [],
+   "composer": "Ture Rangström",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Bienheureux celui qui a un dieu,\nBienheureux celui qui a un dieu :\nIl a une maison.\nConsolation et quiètude\nLui sont tout simplement offertes.\n\nConsacre-toi au combat\nauprès de l'autel.\nTon âme sera sauvée\nau moment de la prière.\n\nLe repos t'attends\nSimplement au combat\nC'est d'abord parmi les boucliers\nQue tu obtiendras la paix.\n\nForcé aux armes brillantes,\npar le péril et la foi,\nune maison sera pour toi,\noù tu pourras habiter.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=631056",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Pierre Mathé",
+   "settings": [
+    {
+     "composer": "Ture Rangström",
+     "title": "/lieder/get_settings.html?ComposerId=5434",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "French (Français)",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "German (Deutsch)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "John of Tours",
+   "aliases": [],
+   "composer": "Benjamin Burrows",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "John of Tours is back with peace,\nBut he comes home ill at ease.\n\n‘Good-morrow, mother.’ ‘Good-morrow, son;\nYour wife has borne you a little one.’\n\n‘Go now, mother, go before,\nMake me a bed upon the floor;\n\n‘Very low your foot must fall,\nThat my wife hear not at all.’\n\nAs it neared the midnight toll,\nJohn of Tours gave up his soul.\n\n‘Tell me now, my mother my dear,\nWhat's the crying that I hear?’\n\n‘Daughter, it's the children wake\nCrying with their teeth that ache.’\n\n‘Tell me though, my mother my dear,\nWhat's the knocking that I hear?’\n\n‘Daughter, it's the carpenter\nMending planks upon the stair.’\n\n‘Tell me too, my mother my dear,\nWhat's the singing that I hear?’\n\n‘Daughter, it's the priests in rows\nGoing round about our house.’\n\n‘Tell me then, my mother my dear,\nWhat's the dress that I should wear?’\n\n‘Daughter, any reds or blues,\nBut the black is most in use.’\n\n‘Nay, but say, my mother my dear,\nWhy do you fall weeping here?’\n\n‘Oh! the truth must be said,—\nIt's that John of Tours is dead.’\n\n‘Mother, let the sexton know\nThat the grave must be for two;\n\n‘Aye, and still have room to spare,\nFor you must shut the baby there.’",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=144621",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation by Dante Gabriel Rossetti",
+   "settings": [
+    {
+     "composer": "Benjamin Burrows",
+     "title": "/lieder/get_settings.html?ComposerId=6722",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Your questioning eyes are sad",
+   "aliases": [],
+   "composer": "Raymond Hanson",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Your questioning eyes are sad.\nThey seek to know my meaning\nas the moon would fathom the sea.\nI have bared my life before your eyes from end to end,\nwith nothing hidden or held back.\nThat is why you know me not.\nIf it were only a gem I could break it\ninto a hundred pieces and string them\ninto a chain to put on your neck.\nIf it were only a flower, round and small and sweet,\nI could pluck it from its stem to set it in your hair.\nBut it is a heart, my beloved.\nWhere are its shores and its bottom?\nYou know not the limits of this kingdom,\nstill you are its queen.\nIf it were only a moment of pleasure\nit would flower in an easy smile,\nand you could see it and read it in a moment.\nIf it were merely a pain it would melt in limpid tears,\nreflecting its inmost secret without a word.\nBut it is love, my beloved.\nIts pleasure and pain are boundless,\nand endless its wants and wealth.\nIt is as near to you as your life,\nbut you can never wholly know it.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=71229",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation by Rabindranath Tagore",
+   "settings": [
+    {
+     "composer": "Raymond Hanson",
+     "title": "/lieder/get_settings.html?ComposerId=8916",
+     "instrumentation": "tenor and piano"
+    },
+    {
+     "composer": "German (Deutsch)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "My sword for the King",
+   "aliases": [],
+   "composer": "Michael (Dewar) Head",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Farewell to the feasting,\nThe masque and the play, trumpet is sounding,\nTo horse and away,\nTo horse and away!\n\nFarewell, ye sweet moments\nOf dance and delight,\nSoft silk for love's dalliance,\nHard steel for the fight!\n\nOne cup at Love's parting,\nOne last song to sing,\nMy heart for my lady,\nMy sword for the King!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=15638",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Helen Taylor",
+   "settings": [
+    {
+     "composer": "Michael (Dewar) Head",
+     "title": "/lieder/get_settings.html?ComposerId=4367",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Nächtigschwarze Wälder, lichtet euch!",
+   "aliases": [],
+   "composer": "Vasily Andreyevich Zolotaryov",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Nächtigschwarze Wälder, lichtet euch!\nPfeilgeschwinde Ströme, tretet aus!\nWirble Staubgewölk, du breiter Weg!\nGib' mir Kunde, du mein Vögelein!\n\nWill als Strom entlang dem Ufer ziehn,\nFlieg' als Wind den Wolkenschaaren nach\nIn die Fremde, in die weite Welt  --\nSuchen will ich meinen Seelenfreund . . .\n\nUnd ich find' ihn, wo er immer sei,\nUnd ich sag' ihm:  \"Schmach und Schande dir,\nDaß verlassen Vater du und Heim,\nDaß du unstät lebst wie Wirbelwind!\"\n\nSieh, da schüttelt er den Lockenkopf,\nSiehe, den Kaftan von Sammet zieht er an,\nSieh, er schnürt den Seidengurt sich um,\nSieh, er küßt mich und spricht liebevoll:\n\n\"Nein, mein Herzenslieb  --  du irrtest dich  --\nUnstät war mein Leben nicht wie Wind:\nStand im Tagelohn, hab' Geld gespart,\nHab' im fremden Land mein Glück versucht.\n\n\"Und vom Glück gesegnet ist mein Loos:\nSieh, zwei Häuser schon erwarb ich dir,\nFuchsfell, Seidenstoff und Goldesschatz  --\nHeisa, wie Bojaren leben wir!\"\n\nAch, ihr Freundinnen, Gespielinnen!\nNicht vor Kummer wein' ich  --  nein, vor Glück,\nDas wie Feuer mir die Seele brennt!\nAch, das Herz ist voll  --  da schweigt der Mund!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=29785",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation by Friedrich Ludwig Konrad Fiedler",
+   "settings": [
+    {
+     "composer": "Vasily Andreyevich Zolotaryov",
+     "title": "/lieder/get_settings.html?ComposerId=6282",
+     "instrumentation": "vocal duet"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Now westlin winds",
+   "aliases": [],
+   "composer": "(Franz) Joseph Haydn",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Now westlin winds and slaught'rin' guns,\nBrings Autumn's pleasant weather;\nThe gorcock springs, on whirring wings\nAmang the blooming heather:\nNow waving grain, wide o'er the plain,\nDelights the weary farmer;\nThe moon shines bright as I rove by night\nTo muse upon my charmer.\n\nWe'll gently walk and sweetly talk,\nWhile the silent moon shines clearly;\nI'll clasp thy waist, and, fondly prest,\nSwear how I lo'e thee dearly;\nNot vernal showers to budding flowers,\nNot autumn to the farmer,\nSo dear can be as thou to me,\nMy fair, my lovely charmer.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=95024",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation",
+   "settings": [
+    {
+     "composer": "(Franz) Joseph Haydn",
+     "title": "/lieder/get_settings.html?ComposerId=4366",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "The sparrow",
+   "aliases": [],
+   "composer": "Eduard Toldrà Soler",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "A new song,\noh dear! will I sing to you,\nof the sparrow when was tucking himself up,\noh dear! in the orange tree,\noh dear!\nin the orange tree.\n\nHe fluttered from branch to branch,\noh dear! making noise,\nin order to be heard,\noh dear!\nby his loved one,\noh dear! by his loved one.\n\nHis loved one rests in the bedroom,\noh dear! hears nothing,\nbut the house servant,\nor the carter,\noh dear!\nor the carter.\n\nFrom the highest window,\noh dear! she said:\n-- It's past the eleventh hour,\nplease go to bed.\noh dear!\nplease go to bed.\n\nIt's not yet time to retire,\noh dear! I'm just on the way,\nI have made a promise,\noh dear! to Saint Maginus,\noh dear!\nto Saint Maginus.\n\nWhen I was at Saint Maginus,\noh dear! I implored,\nthat he let me return to my country,\noh dear! to court\noh dear!\nto court.\n\nThree loved ones,\noh dear! that little bird had,\nMariagna, Petronila,\noh dear! and Elisabet\noh dear!\nand Elisabet.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=58704",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Salvador Pila",
+   "settings": [
+    {
+     "composer": "Eduard Toldrà Soler",
+     "title": "/lieder/get_settings.html?ComposerId=5979",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
   }
  ],
  "scan_cursor": 144,
- "lieder_position": 1440,
+ "lieder_position": 1488,
  "aria_opera": 0,
  "aria_scene": 8
 }
