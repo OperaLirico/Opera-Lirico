@@ -138,12 +138,21 @@ def _api_request(method: str, url: str, api_key: str, payload: dict | None = Non
         url, data=data, method=method,
         headers={"Authorization": f"Token {api_key}", "Content-Type": "application/json"},
     )
-    with urllib.request.urlopen(request, timeout=30) as response:
-        return json.loads(response.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        # Include the HTTP method, endpoint path, and safe response body for diagnosis.
+        # Never include request headers, which contain the API key.
+        detail = exc.read().decode("utf-8", errors="replace")[:500]
+        path = urllib.parse.urlsplit(url).path
+        raise RuntimeError(
+            f"Buttondown {method} {path} returned HTTP {exc.code}: {detail}"
+        ) from exc
 
 
 def create_private_draft(slug: str, subject: str, body: str, api_key: str) -> str:
-    url = API_ROOT + "/emails/?status=draft"
+    url = API_ROOT + "/emails?status=draft"
     while url:
         page = _api_request("GET", url, api_key)
         for email in page.get("results", []):
@@ -185,7 +194,7 @@ def main() -> int:
     if key:
         try:
             print(create_private_draft(slug, f"Opera Lirico 每周简报｜{now.astimezone(ROME):%Y-%m-%d}", body, key))
-        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError) as exc:
+        except (urllib.error.URLError, urllib.error.HTTPError, TimeoutError, ValueError, RuntimeError) as exc:
             print(f"Draft API failed; preview retained. No send action was attempted: {exc}", file=sys.stderr)
             return 1
     else:
