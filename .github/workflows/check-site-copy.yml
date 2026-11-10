@@ -46,22 +46,20 @@ jobs:
           PY
       - name: Check page structure and data wiring
         run: |
+          python - <<'PY'
           import re
           from pathlib import Path
 
           html = Path("index.html").read_text(encoding="utf-8")
           app = Path("app.js").read_text(encoding="utf-8")
 
-          # The page is built on four entry tiles, each opening one panel. Wording
-          # of the titles may change; the wiring must not.
+          # The page is built on four entry tiles, each opening one panel.
+          # Wording may change; the structure and the wiring must not.
           panels = ["open-calls", "conservatori", "music-library", "pdfs"]
           missing = [p for p in panels if f'id="{p}"' not in html]
           if missing:
               raise SystemExit(f"Missing panel sections: {missing}")
 
-          tile_count = len(re.findall(r'class="tile-title"', html)) + len(
-              re.findall(r'class="tile"', html)
-          ) // 100
           if len(re.findall(r'<button class="tile"', html)) != 4:
               raise SystemExit("Expected exactly four entry tiles on the homepage")
 
@@ -73,12 +71,14 @@ jobs:
               if f'data-open="{panel}"' not in html:
                   raise SystemExit(f"No tile or nav entry points to panel {panel}")
 
-          # Placeholder summaries and raw scrape identifiers must never be rendered.
-          if "尚未人工翻译" in app or "尚未人工翻译" in html:
-              raise SystemExit("Placeholder summary text is rendered again")
+          # Placeholder summaries may stay in the data, but must never reach the page.
+          if "尚未人工翻译" in html:
+              raise SystemExit("Placeholder summary text is rendered on the page")
+          if "尚未人工翻译" not in app or "summaryOf" not in app:
+              raise SystemExit("app.js lost the placeholder filter (summaryOf)")
           if "cleanName" not in app:
               raise SystemExit("app.js lost cleanName(); scraped field noise may leak into the UI")
 
           print(f"Tiles: {tile_titles}")
           print("Page structure checks passed.")
-        shell: python
+          PY
