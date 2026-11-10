@@ -33,6 +33,8 @@ from zoneinfo import ZoneInfo
 
 from scrapling.fetchers import Fetcher
 
+from robots_policy import fetch_page_with_robots
+
 DATA_DIR = Path(__file__).resolve().parent / "data"
 EXTRA_PATH = DATA_DIR / "conservatori_extra.json"
 OUT_PATH = DATA_DIR / "conservatori.json"
@@ -142,13 +144,17 @@ def clean_line(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
-def fetch_page(url: str) -> tuple[int, str, list[str], object]:
-    response = Fetcher.get(url, timeout=35, retries=0)
+def fetch_page(url: str) -> tuple[int, str, list[str], object, dict]:
+    response, access = fetch_page_with_robots(
+        url, Fetcher.get, timeout=35, retries=0, delay=1.2
+    )
+    if response is None:
+        return 0, "", [], None, access
     status = getattr(response, "status", 0) or 0
     title = clean_line(response.css("title::text").get() or "")
-    text = response.get_all_text(separator="\n") or ""
+    text = response.get_all_text(separator="\\n") or ""
     lines = [clean_line(line) for line in text.splitlines()]
-    return status, title, [line for line in lines if line], response
+    return status, title, [line for line in lines if line], response, access
 
 
 def extract_deadlines(lines: list[str], limit: int = 6) -> list[str]:
@@ -324,9 +330,14 @@ def scrape_entry(entry: tuple[int, str, str, str]) -> dict:
     }
     time.sleep(0.4)
     try:
-        status, title, lines, response = fetch_page(url)
-        item["http_status"] = status
+        status, title, lines, response, access = fetch_page(url)
+        item["access_policy"] = access
+        item["http_status"] = status or access.get("http_status")
         item["title"] = title
+        if response is None:
+            item["status"] = access.get("status", "robots_policy_unavailable")
+            item["error"] = access.get("reason") or access.get("robots_url") or item["status"]
+            return item
         item["status"] = "ok" if status and status < 400 else "http_error"
         deadlines, dates, requirements = signals(lines)
         documents = collect_documents(response, url)
@@ -335,10 +346,10 @@ def scrape_entry(entry: tuple[int, str, str, str]) -> dict:
         if is_landing(url) or not (deadlines or dates or requirements):
             for candidate in collect_candidates(response, url):
                 try:
-                    sub_status, sub_title, sub_lines, sub_response = fetch_page(candidate)
+                    sub_status, sub_title, sub_lines, sub_response, sub_access = fetch_page(candidate)
                 except Exception:
                     continue
-                if not sub_status or sub_status >= 400:
+                if sub_response is None or not sub_status or sub_status >= 400:
                     continue
                 sub_deadlines, sub_dates, sub_requirements = signals(sub_lines)
                 gain = len(sub_deadlines) + len(sub_dates) + len(sub_requirements)
