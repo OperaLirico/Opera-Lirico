@@ -31,6 +31,8 @@ except Exception:  # pragma: no cover - optional dependency
 
 from scrapling.fetchers import Fetcher as RawFetcher
 
+from robots_policy import USER_AGENT, fetch_bytes_with_robots
+
 import scrape_conservatori as core
 
 # Announcements that reach the admission page but are not admission deadlines:
@@ -85,7 +87,11 @@ POOL = ThreadPoolExecutor(max_workers=core.WORKERS)
 def _attempt(url: str):
     # ``core.Fetcher`` is replaced by RetryingFetcher below; submitting *that* would
     # re-enter this pool and deadlock, so the raw client is captured once here.
-    return POOL.submit(RawFetcher.get, url, timeout=TIMEOUT, retries=0)
+    return POOL.submit(
+        RawFetcher.get, url, timeout=TIMEOUT, retries=0,
+        follow_redirects=False, stealthy_headers=False,
+        headers={"User-Agent": USER_AGENT},
+    )
 
 
 class RetryingFetcher:
@@ -215,11 +221,12 @@ def pdf_read(url: str) -> list[str]:
     if PdfReader is None:
         return []
     try:
-        request = urllib.request.Request(url, headers={"User-Agent": "leo-conservatori-bot/1.0"})
-        with urllib.request.urlopen(request, timeout=TIMEOUT) as response:
-            data = response.read(MAX_PDF_BYTES + 1)
-        if len(data) > MAX_PDF_BYTES:
+        fetched = fetch_bytes_with_robots(
+            url, max_bytes=MAX_PDF_BYTES, timeout=TIMEOUT, user_agent=USER_AGENT, delay=1.2
+        )
+        if fetched.get("status") != "ok" or fetched.get("truncated"):
             return []
+        data = fetched["body"]
         text = "\n".join((page.extract_text() or "") for page in PdfReader(io.BytesIO(data)).pages[:MAX_PDF_PAGES])
     except Exception:
         return []
