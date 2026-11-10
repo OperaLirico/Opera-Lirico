@@ -13,6 +13,7 @@ class PreserveLastGoodTests(unittest.TestCase):
             "status": "ok",
             "checked_at": "2026-11-09T10:00:00+01:00",
             "relevant_lines": ["Audizioni per cantanti lirici"],
+            "relevant_links": [{"text": "Bando ufficiale", "url": "https://example.org/bando.pdf"}],
             "consecutive_failures": 0,
         }
         failed = {
@@ -23,6 +24,7 @@ class PreserveLastGoodTests(unittest.TestCase):
             "http_status": 403,
             "title": "",
             "relevant_lines": [],
+            "relevant_links": [],
             "error": "HTTP 403",
         }
         result = scrape_sources.preserve_last_good(
@@ -30,10 +32,38 @@ class PreserveLastGoodTests(unittest.TestCase):
         )
         self.assertEqual(result["status"], "ok")
         self.assertEqual(result["relevant_lines"], previous["relevant_lines"])
+        self.assertEqual(result["relevant_links"], previous["relevant_links"])
         self.assertTrue(result["stale"])
         self.assertEqual(result["last_attempt_http_status"], 403)
         self.assertEqual(result["consecutive_failures"], 1)
         self.assertEqual(result["checked_at"], previous["checked_at"])
+
+    def test_extract_relevant_links_preserves_absolute_targets_and_excludes_noise(self):
+        html = b"""<html><body>
+          <a href="/uploads/2026/bando.pdf">Bando di selezione</a>
+          <a href="https://example.org/application">Modulo domanda online</a>
+          <a href="/privacy.pdf">Informativa privacy</a>
+          <a href="javascript:void(0)">Audizioni</a>
+          <a href="/uploads/2026/bando.pdf">Bando di selezione</a>
+        </body></html>"""
+        links, total, truncated = scrape_sources.extract_relevant_links(
+            html, "https://example.org/audizioni/"
+        )
+        self.assertEqual(total, 2)
+        self.assertFalse(truncated)
+        self.assertEqual(
+            {item["url"] for item in links},
+            {"https://example.org/uploads/2026/bando.pdf", "https://example.org/application"},
+        )
+
+    def test_extract_relevant_links_reports_truncation_instead_of_silently_dropping(self):
+        html = ("<html><body>" + "".join(
+            f'<a href="/bando-{i}.pdf">Bando {i}</a>' for i in range(260)
+        ) + "</body></html>").encode()
+        links, total, truncated = scrape_sources.extract_relevant_links(html, "https://example.org/")
+        self.assertEqual(total, 260)
+        self.assertEqual(len(links), scrape_sources.MAX_RELEVANT_LINKS)
+        self.assertTrue(truncated)
 
     def test_successful_refresh_replaces_snapshot_and_resets_failures(self):
         previous = {"status": "ok", "consecutive_failures": 3}
