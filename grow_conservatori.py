@@ -249,10 +249,10 @@ def title_school(title: str) -> str:
 def probe(host_url: str) -> dict | None:
     """Accept a site only when its admission page really carries the calendar."""
     try:
-        status, title, lines, response = core.fetch_page(host_url)
+        status, title, lines, response, access = core.fetch_page(host_url)
     except Exception:
         return None
-    if not status or status >= 400:
+    if response is None or not status or status >= 400:
         return None
     body = core.clean_line(" ".join(lines[:400]))
     if not re.search(r"conservator", f"{title} {body}", re.IGNORECASE):
@@ -262,10 +262,10 @@ def probe(host_url: str) -> dict | None:
     documents = core.collect_documents(response, host_url)
     for candidate in core.collect_candidates(response, host_url):
         try:
-            sub_status, sub_title, sub_lines, sub_response = core.fetch_page(candidate)
+            sub_status, sub_title, sub_lines, sub_response, sub_access = core.fetch_page(candidate)
         except Exception:
             continue
-        if not sub_status or sub_status >= 400:
+        if sub_response is None or not sub_status or sub_status >= 400:
             continue
         sub = core.signals(sub_lines)
         if len(sub[0]) + len(sub[1]) + len(sub[2]) > len(deadlines) + len(dates) + len(requirements):
