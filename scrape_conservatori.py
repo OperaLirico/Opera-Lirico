@@ -146,7 +146,7 @@ def clean_line(value: str) -> str:
 
 def fetch_page(url: str) -> tuple[int, str, list[str], object, dict]:
     response, access = fetch_page_with_robots(
-        url, Fetcher.get, timeout=35, retries=0, delay=0.8
+        url, Fetcher.get, timeout=35, retries=0, delay=1.2
     )
     if response is None:
         return 0, "", [], None, access
@@ -328,7 +328,6 @@ def scrape_entry(entry: tuple[int, str, str, str]) -> dict:
         "error": None,
         "discovered": False,
     }
-    time.sleep(0.4)
     try:
         status, title, lines, response, access = fetch_page(url)
         item["access_policy"] = access
