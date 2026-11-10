@@ -70,7 +70,10 @@
   },
   "allOf": [
     {
-      "if": {"properties": {"publication_status": {"const": "published"}}},
+      "if": {
+        "required": ["publication_status"],
+        "properties": {"publication_status": {"const": "published"}}
+      },
       "then": {
         "properties": {
           "review_status": {"const": "verified"},
