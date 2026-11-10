@@ -49,14 +49,14 @@ Limitations: per-domain timeout/retry tuning and structured link quality review 
 
 **Status: first two source-specific assessment batches completed (10/44); 34 sources remain baseline_only.**
 
-The first batch assessed:
-- Teatro alla Scala: Scrapling retained as production fetch method; sitemap is useful secondary discovery.
-- Teatro Carlo Felice: Scrapling retained; sitemap and public WordPress API root inspected. The API root is not treated as permission to guess/query arbitrary routes.
-- Teatro Massimo: Scrapling retained; its dedicated job-opening sitemap directly exposed the two-Contralto recruitment.
-- AsLiCo: Scrapling retained; sitemap is useful secondary discovery. Public WordPress API root was inspected, but no guessed route was queried.
-- Morlacchi: Scrapling retained; common sitemap endpoints returned 404, so direct HTML links remain the discovery path.
+Batch 1 assessed Teatro alla Scala, Teatro Carlo Felice, Teatro Massimo, AsLiCo and Morlacchi. Batch 2 assessed:
+- Teatro Regio Torino: Scrapling retained; sitemap yielded 48 vocal/audition keyword-match URLs.
+- Teatro dell'Opera di Roma Fabbrica: Scrapling retained; sitemap children yielded no page URLs; public API root inspected without querying guessed routes. The checked page was a closed/historical call, not an open opportunity.
+- Teatro Verdi Trieste: Scrapling retained; sitemap XML was invalid and feeds had no relevant entries.
+- Teatro La Fenice: Scrapling retained; sitemap yielded 27 keyword-match URLs; public API root returned HTTP 403 and was not bypassed.
+- Teatro Lirico di Cagliari: Scrapling retained; sitemap yielded nine keyword-match URLs; public API root was inspected without querying guessed routes; feeds had no relevant entries.
 
-Measured parser results and decisions are stored in data/source_fetch_policies.json and .github/audits/extraction-pilot-latest.md. For these five sources, Trafilatura is not promoted as the default. lxml full-text often includes much more boilerplate; Scrapling retained comparable relevant anchor labels. Structured href targets are evaluated separately from flattened text.
+Across both batches, Scrapling remains the production fetch method. Sitemap is secondary discovery where useful; no production engine was automatically switched. Seven advertised feeds in batch 2 had zero vocal/audition entries. Measured results and decisions are stored in data/source_fetch_policies.json and archived under reports/p2/source-strategy-batch-1-2026-11-10.* and source-strategy-batch-2-2026-11-10.*. The .github/audits/extraction-pilot-latest.md file represents only the latest batch and is not the permanent archive. For these five sources, Trafilatura is not promoted as the default. lxml full-text often includes much more boilerplate; Scrapling retained comparable relevant anchor labels. Structured href targets are evaluated separately from flattened text.
 
 Acceptance:
 - Each source has an evidence-based preferred method and fallback.
