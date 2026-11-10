@@ -87,7 +87,7 @@ class PreserveLastGoodTests(unittest.TestCase):
         }
         self.assertEqual(
             grow_sources.candidate_rejection_reason(probe, "https://example.org/oboe"),
-            "no_vocal_or_opera_signal",
+            "non_vocal_role_only",
         )
 
     def test_actor_only_casting_is_rejected_even_on_an_opera_page(self):
