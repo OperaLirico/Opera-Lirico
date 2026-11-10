@@ -37,9 +37,9 @@ Allow: /private/open$
 
     def test_cross_host_redirect_checks_destination_robots_before_fetch(self):
         source_policy = {"status": "ok", "http_status": 200,
-                         "body": b"User-agent: *\\nAllow: /"}
+                         "body": b"User-agent: *\nAllow: /"}
         target_policy = {"status": "ok", "http_status": 200,
-                         "body": b"User-agent: *\\nDisallow: /private"}
+                         "body": b"User-agent: *\nDisallow: /private"}
         redirect = {"status": "cross_host_redirect", "http_status": 302,
                     "redirect_url": "https://cdn.example.org/private/page",
                     "body": b""}
@@ -53,7 +53,7 @@ Allow: /private/open$
         self.assertEqual(request.call_count, 1)
 
     def test_cross_host_redirect_stops_when_destination_robots_unavailable(self):
-        source_policy = {"status": "ok", "http_status": 200, "body": b"User-agent: *\\nAllow: /"}
+        source_policy = {"status": "ok", "http_status": 200, "body": b"User-agent: *\nAllow: /"}
         redirect = {"status": "cross_host_redirect", "http_status": 301,
                     "redirect_url": "https://other.example.org/page", "body": b""}
         unavailable = {"status": "http_error", "http_status": 503, "body": b""}
