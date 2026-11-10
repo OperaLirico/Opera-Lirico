@@ -30,7 +30,7 @@ Limitations: the current main collector still uses a fixed Scrapling source list
 
 ## P2 — Per-source multi-engine strategy
 
-**Status: baseline inventory added; first five-source pilot implemented, results pending.**
+**Status: five-source evaluation pilot implemented; live results pending.**
 
 The source policy registry records the current Scrapling path for every registered URL and explicitly marks alternatives as unassessed. The first five-source pilot checks robots.txt, advertised feeds and sitemaps, and compares Scrapling, lxml and Trafilatura on identical raw HTML. It remains evaluation-only pending review of the measured results.
 
