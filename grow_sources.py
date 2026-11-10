@@ -235,6 +235,8 @@ def main(discover: bool = False) -> None:
         fresh.pop("_response", None)
         if fresh["status"] == "ok":
             fresh["discovered_at"] = item.get("discovered_at", fresh["checked_at"])
+            fresh["review_status"] = item.get("review_status", "legacy_unreviewed")
+            fresh["publisher_status"] = item.get("publisher_status", "unverified")
             refreshed.append(fresh)
             print(f"[extra] ok {fresh['http_status']} {fresh['source'][:40]}", flush=True)
         else:
