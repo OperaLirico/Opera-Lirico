@@ -44,3 +44,10 @@ The P2/P4 evaluation uses a same-host redirect handler. A cross-host redirect is
 ## Structured link preservation
 
 The production Scrapling collector also stores a bounded list of relevant first-party anchor targets separately from page text. Each record keeps the visible label and absolute URL. When more than 250 relevant links exist, it records the total and an explicit truncation flag instead of implying full coverage. Privacy, social, shop and other navigation noise is filtered. The last-good snapshot behavior preserves these links on a failed refresh.
+
+
+## Production enforcement
+
+All production page and PDF collectors now use the shared `robots_policy.py` helper. It checks the destination path before each request, disables automatic redirects, and checks the destination host before following a cross-host redirect. HTTP 404 for `robots.txt` means no published rules; 403/429, server errors, malformed/unavailable policies and cross-host redirects from the robots file fail closed. The collector records the policy outcome and preserves the last known-good snapshot rather than deleting or replacing data when a fetch is blocked.
+
+Scrapling is used with `stealthy_headers=False`, `follow_redirects=False`, and an explicit project user agent. Retry and pacing behavior remains bounded; 403/429 are not retried to evade restrictions. PDF mirrors and weekly coverage checks use the same policy helper. The P2/P4 pilot uses equivalent fail-closed checks for sitemap children, RSS/Atom and explicitly advertised public API roots.
