@@ -1590,12 +1590,12 @@
       "http_status": 200,
       "title": "L'Accademia | Teatro Carlo Felice",
       "deadline_lines": [
-        "La domanda di ammissione dovrà essere compilata e inviata entro e non oltre le ore 23.59 di giovedì 10 dicembre 2026. Per tutte le informazioni"
+        "La domanda per l’Accademia 2027 dovrà essere inviata entro e non oltre le ore 23:59 di giovedì 10 dicembre 2026."
       ],
       "exam_dates": [],
       "requirements": [],
       "fallback_lines": [
-        "2026 年本轮报名已于 2026 年 1 月 12 日 23:59 截止，新一轮招生信息尚未公布。",
+        "2027 年歌剧学院招生已开放，申请截止日期为 2026 年 12 月 10 日 23:59；课程免费。现场选拔安排在 2027 年 1 月 10 日至 11 日。另有合唱团男高音（11 月 23 日截止）及男低音、男中音（12 月 7 日截止）独立招募，已分别列入近期机会。",
         "La domanda di ammissione dovrà essere compilata e inviata entro e non oltre le ore 23.59 di giovedì 10 dicembre 2026. Per tutte le informazioni",
         "Le date di scadenza di presentazione delle domande, i requisiti e le informazioni utili sono indicate all’interno del bando."
       ],
@@ -1605,9 +1605,9 @@
       "error": null,
       "discovered": false,
       "manual": true,
-      "manual_status": "closed",
+      "manual_status": "open",
       "manual_source": "https://www.carlofelice.it/accademia/",
-      "manual_checked_at": "2026-11-09T23:20:00+01:00",
+      "manual_checked_at": "2026-11-10T16:56:21+01:00",
       "pdf_local": "data/pdfs/307-bando-accademia-tcf_261110.pdf"
     },
     {
