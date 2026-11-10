@@ -1,0 +1,8 @@
+name = "opera-lirico-ops"
+main = "worker.js"
+compatibility_date = "2026-11-10"
+workers_dev = true
+
+[vars]
+CF_WEB_ANALYTICS_SITE_TAG = "42879f330b824eb4843baa5bd13ba002"
+CF_WEB_ANALYTICS_HOST = "operalirico.github.io"
