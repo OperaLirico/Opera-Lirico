@@ -158,9 +158,9 @@ def scan_one(source: dict, previous: dict | None, checked_at: str) -> dict:
             http_status = getattr(response, "status", None)
             result["http_status"] = http_status
             title = core.clean_line(response.css("title::text").get() or "")
-            text = response.get_all_text(separator="\\n") or ""
-            normalized = "\\n".join(core.clean_line(line) for line in text.splitlines() if core.clean_line(line))
-            combined = f"{title}\\n{normalized}".strip()
+            text = response.get_all_text(separator="\n") or ""
+            normalized = "\n".join(core.clean_line(line) for line in text.splitlines() if core.clean_line(line))
+            combined = f"{title}\n{normalized}".strip()
             result["title"] = title
             result["text_characters"] = len(normalized)
             result["normalized_text_sha256"] = hashlib.sha256(combined.encode("utf-8")).hexdigest() if combined else None
