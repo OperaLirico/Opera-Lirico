@@ -1,6 +1,11 @@
 name: Weekly source coverage
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "audit_source_coverage.py"
+      - ".github/workflows/weekly-source-coverage.yml"
   schedule:
     - cron: "30 6 * * 1"
   workflow_dispatch:
