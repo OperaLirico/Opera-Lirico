@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T07:08:49+01:00",
+ "generated_at": "2026-11-10T07:19:02+01:00",
  "catalogue_source": "LiederNet Archive originals + curated starter works",
  "items": [
   {
@@ -12271,10 +12271,375 @@
     }
    ],
    "autoImported": true
+  },
+  {
+   "title": "Regarde ici, homme enjôlé",
+   "aliases": [],
+   "composer": "(Franz) Joseph Haydn",
+   "work": "",
+   "voice": "待分类",
+   "kind": "咏叹调/歌剧选段",
+   "language": "fr",
+   "text": "Air : Simon\n Regarde ici, homme enjôlé,\n Regarde l'image de ta vie.\n Ton bref printemps est fané,\n La force de ton été est épuisée,\n Déjà ton automne se flétrit vers la vieillesse ;\n Déjà l'hiver blême approche\n Et te montre la tombe ouverte.\n Où sont-ils maintenant, les grands plans,\n Les espoirs de bonheur,\n La recherche de la gloire futile,\n Le poids pesant des soucis ?\n Où sont-ils, les jours de bonheur\n Dissipés dans la luxure,\n Et où sont-elles, les nuits joyeuses\n Parties dans l'ivresse ?\n Ils ont disparu comme dans un rêve,\n Seule la vertu reste.\n\nRécitatif\n Elle reste seule\n Et nous guide constamment\n À travers le temps et les saisons\n À travers la détresse ou la joie\n Jusqu'au but le plus haut.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=85913",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Guy Laffaille",
+   "settings": [
+    {
+     "composer": "(Franz) Joseph Haydn",
+     "title": "/lieder/get_settings.html?ComposerId=4366",
+     "instrumentation": "bass and orchestra"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "",
+   "aliases": [],
+   "composer": "John Theodore Livingston Raynor",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Heim nicht mehr Heim zu mir, wohin muss ich wandern?\nHunger mein Treiber ich geh' hin, wo ich muss.\nKalt bliest der Winter-Wind über Berg und Heide;\nDicht treibt der Sturm und mein Dach liegt unterm Staub.\nWohlgefallen war das Bild meines Hausdachs\nDas treu' Wort des Grußes gesprochen vor der Tür --\nLieb war der Tag, mit dem Antlitz in dem Feuerschein,\nMein Freundeskreis, Ihr kehrt nicht mehr zurück.\n\nHeim war Heimat, mein Schatz, Haus den netten Mienen,\nHeim war Heimat, mein Schatz, fröhlich für das Kind.\nHerd und die Fenster hell glitztern auf dem Moorland;\nLied, melodie war der Palast in dem Wind.\nJetzt als der Tag bricht, auf der Stirn übers Moorland,\nFrei steht das Haus, und der Schornsteinkopf ist kalt.\nSteh einsam dort jetzt! Die Freunde sind gegangen.\nDie Netten, die Treuen, sie haben es geliebt.\n\nFrühling kommt, wiederkommt. Rufen dann die Vögel;\nFrühling bringt den Sonnenschein, bringt die Blumen Bienen;\nRot wird die Heide blüh'n, über Berg und Täler,\nSanft fliess der Bach durch die Stunden immerfort;\nKlar der Tag schein, wie er auf meiner Kindheit --\nKlar schein der Tag, auf dem Haus mit off'ner Tür;\nDort schreien Vögel, und zwitschern in dem Schornstein --\nDoch ich geh' für immer, und kehre nicht zurück.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=72070",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by David Paley",
+   "settings": [
+    {
+     "composer": "John Theodore Livingston Raynor",
+     "title": "/lieder/get_settings.html?ComposerId=2287",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Ralph Vaughan Williams",
+     "title": "/lieder/get_settings.html?ComposerId=6050",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Heading for freedom",
+   "aliases": [],
+   "composer": "Karl Jürgens",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "I feel so trapped!\nMy heart pulses with a noisy beat,\nAnd what it beats out, are songs!\nAway from the fearful ring of somber walls\nI fly into the distance happy and nimble:\nThere I can breathe freely!\n\nThen flutters out of [my] open heart\nA longing for long lost pleasures\nAnd hoped for delights:\nThe wind carries them heavenwards,\nThe blades of grass pray for intercession,\nBending toward the sun.\n\nI'm feel so trapped!\nMy heart pulses with a noisy beat,\nAnd what it beats out, are songs!\nAway from the fearful ring of somber walls\nI fly into the distance happy and nimble:\nThere I can breathe freely!\nThere I can breathe freely!\nMy heart pulses with a noisy beat,\nAnd what it beats out, are songs!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=919337",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Laura Stanfield Prichard",
+   "settings": [
+    {
+     "composer": "Karl Jürgens",
+     "title": "/lieder/get_settings.html?ComposerId=16097",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Robert Schumann",
+     "title": "/lieder/get_settings.html?ComposerId=5685",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Vine al mundo",
+   "aliases": [],
+   "composer": "Luis Sandi",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "es",
+   "text": "Vine al mundo, como el agua que corre ciegamente, sin saber porqué ni de donde;\ny habré de abandonarlo como el viento que sopla en el desierto,\nsin saber adónde ni porqué.\n¿Quién, sin yo pedirlo, me trajo aquí de lo ignorado?\n¿Quién, sin yo quererlo, me arrojará después a lo desconocido?\n¡Ah, bebamos copas y más copas, hasta olvidar tamaña necedad!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=68451",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "",
+   "settings": [
+    {
+     "composer": "Luis Sandi",
+     "title": "/lieder/get_settings.html?ComposerId=5620",
+     "instrumentation": "medium voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Le désert",
+   "aliases": [],
+   "composer": "George Enescu",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Je rêve le front lourd et les yeux las, devant\nLes ondulations de ces dunes stériles,\nMer fauve, mer ardente aux vagues immobiles,\nSur qui tombe le poids d'un soleil étouffant;\n\nEt je me sens si loin de tout être vivant,\nEt du bruit fraternel des hommes et des villes,\nSi loin des ruisseaux clairs, des champs, des fleurs fragiles,\nEt des feuillages frais où murmure le vent,\n\nQue je me crois perdu dans une autre planète\nOù, sans que rien se meuve et sans que rien végète,\nSeul flambe tristement le monde minéral;\n\nEt que cet infini de lumière et de sable,\nCette absence de vie à la mienne semblable,\nCette immensité jaune et morte me fait mal.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=56579",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "François Élie Jules Lemaître",
+   "settings": [
+    {
+     "composer": "George Enescu",
+     "title": "/lieder/get_settings.html?ComposerId=3974",
+     "instrumentation": "medium voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Ti lascio, anima mia",
+   "aliases": [],
+   "composer": "Giovanni Valentini",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "it",
+   "text": "Ti lascio anima mia, giunta è quell'ora\nL'ora, oimè, che mi chiama a la partita!\nIo parto, io parto, oimè, convien ch'io mora\nPercha convien nartir da te, mia vita.\n\nAh, pur troppo e 'l dolor ch'entro m'accora.\nNon mi dar col tuo duol nova ferita.\nDeh! non languir cor mio, ch'al mio partire\nMi duol il tuo dolor più che'l morire.\n\nDeh! perché tante lagrime, o mio core\nDa que' begl'occhi tuoi piover vegg'io?\nDeh! frena il pianto, oime, frena il dolore,\nChe spargi nel tuo pianto il sangue mio.\nTemi forse cor mio che novo ardore\nIl tuo amore, il mio ardor ponga in oblio?\nAh no, no! sarà spento in ogni loco\nDa quest'onda di pianto ogn'altro foco.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=70274",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "",
+   "settings": [
+    {
+     "composer": "Giovanni Valentini",
+     "title": "/lieder/get_settings.html?ComposerId=21401",
+     "instrumentation": "vocal duet"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Je brûle, je flamboie, je me consume ! Accourez",
+   "aliases": [],
+   "composer": "Claudio Monteverdi",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Je brûle, je flamboie, je me consume !  Accourez\nAmis, voisins, vers le lieu enflammé !\nAu voleur, au voleur ! Au traître ! Au feu !\nPrenez des échelles, des haches, des marteaux, de l'eau !\n\nEt vous, tours sacrées, vous vous taisez encore ?\nAllez, allez, bronzes, j'ai la voix rauque de crier,\nDites aux autres le péril ni léger ni mince,\nEt prenez pitié de mes incendies !\n\nLe voleur, ce sont deux beaux yeux, et avec eux l'amour\nEst l'incendiaire qui a jeté des feux injustes\nÀ l'intérieur de la forteresse de mon cœur.\n\n« Maintenant les remèdes sont vains et fallacieux »\nMe dit chacun, « pour une si belle ardeur :\nLaisse le cœur se consumer et tais-toi ».",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=123498",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Guy Laffaille",
+   "settings": [
+    {
+     "composer": "Claudio Monteverdi",
+     "title": "/lieder/get_settings.html?ComposerId=5090",
+     "instrumentation": "8 voices and violin"
+    },
+    {
+     "composer": "French (Français)",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Guy Laffaille",
+     "title": "./get_texts.html?ContribId=393",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "In der Dorfschenke",
+   "aliases": [],
+   "composer": "Maria Herz",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Eine Geige weint und schluchzt\nund daneben juchajuchzt\neine tolle Flöte.\n\nDaß die Geige schluchzen kann,\nmacht, weil mit dem Flötenmann\ngeht die braune Grete.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=105876",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Margarete Beutler",
+   "settings": [
+    {
+     "composer": "Maria Herz",
+     "title": "/lieder/get_settings.html?ComposerId=18143",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Othmar Schoeck",
+     "title": "/lieder/get_settings.html?ComposerId=5665",
+     "instrumentation": "voice, flute, violin, violoncello, piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Come and close my aching eyelids",
+   "aliases": [],
+   "composer": "Hans Altmann",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Come and close my aching eyelids\nWith thy gentle hands again.\nCharm away, with thy soft fingers,\nAll my suff'ring, all my pain!\nThen, as my dark cares depart\nOne by one, like wavelets lying\nOn the shore, when day is dying,\nThy sweet presence fills my heart.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=89246",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation Singable translation by Florence Z. Marshall",
+   "settings": [
+    {
+     "composer": "Hans Altmann",
+     "title": "/lieder/get_settings.html?ComposerId=15493",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Heinrich, Freiherr von Bach",
+     "title": "/lieder/get_settings.html?ComposerId=10923",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Moritz Bauer",
+     "title": "/lieder/get_settings.html?ComposerId=3330",
+     "instrumentation": "medium voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "What the Scarecrow Said",
+   "aliases": [],
+   "composer": "Jake Heggie",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "The dim-winged spirits of the night\nDo fear and serve me well.\nThey creep from out the hedges of\nThe garden where I dwell.\n\nI wave my arms across the walk.\nThe troops obey the sign,\nAnd bring me shimmering shadow-robes\nAnd cups of cowslip-wine.\n\nThen dig a treasure called the moon,\nA very precious thing,\nAnd keep it in the air for me\nBecause I am a King.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=123903",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Vachel Lindsay",
+   "settings": [
+    {
+     "composer": "Jake Heggie",
+     "title": "/lieder/get_settings.html?ComposerId=4370",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Es schwört der Steuermann, dass der See",
+   "aliases": [],
+   "composer": "Ludwig van Beethoven",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Es schwört der Steuermann, dass der See\ner keineswegs mehr traut -\ndoch wenn er sie wieder friedlich schaut,\nsticht er aufs Neu in See.\n\nNicht mehr zu rühr’n an Waffen,\ndas schwört im Augenblick der Krieger -\ndoch hört er die Trompete wieder,\nzieht er aufs Neu ins Feld.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=131038",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Bertram Kottmann",
+   "settings": [
+    {
+     "composer": "Ludwig van Beethoven",
+     "title": "/lieder/get_settings.html?ComposerId=3351",
+     "instrumentation": "SATB quartet with piano"
+    },
+    {
+     "composer": "Ludwig van Beethoven",
+     "title": "/lieder/get_settings.html?ComposerId=3351",
+     "instrumentation": "vocal trio for soprano, alto, and bass with piano"
+    },
+    {
+     "composer": "Baldassare Galuppi",
+     "title": "/lieder/get_settings.html?ComposerId=17671",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Restes en cendres, tombe avare",
+   "aliases": [],
+   "composer": "Claudio Monteverdi",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Restes en cendres, tombe avare\nDe mon beau soleil, de mon ciel terrestre,\nHélas, pauvre de moi ! Je viens pour vous déposer dans la terre.\nAvec vous mon cœur est enfermé dans le marbre dans mon sein,\nEt jour et nuit en feu, en larmes,\nDans la douleur, dans la colère vit Glauco plein de tourments.\n\nDites-le, ô fleuves et vous qui écoutez Glauco\nRemplir l'air de cris sur la tombe,\nCampagnes désertes - les nymphes et le ciel le savent :\nLa douleur est ma nourriture, les larmes ma boisson,\nLe lit, ô heureux rocher, ton beau sein,\nCar la terre gelée a recouvert ma bien aimée.\n\nLe soleil éclairera la terre pendant la nuit,\nLa lune brillera le jour, avant que Glauco\nCesse de baiser, d'honorer ce sein\nQui fut le nid de l'amour, que la dure tombe\nÉcrase ; seulement de profonds soupirs et des pleurs\nLui seront accordés par les sphères et le ciel !\n\nMais sois reçue, ô nymphe,\nJe te cherche car la terre est veuve,\nLes bois sont déserts, et les larmes coulent comme des fleuves.\nDu triste Glauco les dryades et les napées\nRépètent les lamentations, et sur la tombe\nChantent les louanges du sein aimé.\n\nÔ chevelure d'or, ô délicate neige du sein,\nÔ lys blancs de la main, que le ciel envieux\nA volés, quand enfermés dans cette tombe aveugle,\nQui vous cache ? Hélas ! Pauvre terre,\nLa fleur de toute beauté, le soleil de Glauco\nTu les caches ? Ah ! Muses ! Ici versez vos larmes !\n\nDonc, restes bien aimés, une mer de larmes\nNe doit-elle pas être versée par ces yeux sur le noble sein\nDe ce froid rocher ? Ici Glauco, l'affligé,\nFait résonner « Corinne » : la mer et le ciel,\nLe vent et la terre disent en même temps\n« Ah, Corinne ! Ah, mort ! Ah, tombe ! »\n\nQue les mots cèdent\nAux larmes ! Sein aimé,\nQue le ciel te donne la paix,\nPaix à toi, Glauco,\nPrie sur la tombe honorée\nEt la terre sacrée.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=1285682",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Guy Laffaille",
+   "settings": [
+    {
+     "composer": "Claudio Monteverdi",
+     "title": "/lieder/get_settings.html?ComposerId=5090",
+     "instrumentation": ""
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "French (Français)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
   }
  ],
  "scan_cursor": 144,
- "lieder_position": 1584,
+ "lieder_position": 1632,
  "aria_opera": 0,
  "aria_scene": 8
 }
