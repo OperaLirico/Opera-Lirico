@@ -1,15 +1,15 @@
 # Daily opportunity data quality
 
-- Generated: 2026-11-10T17:44:57+01:00 (Europe/Rome)
+- Generated: 2026-11-10T17:53:44+01:00 (Europe/Rome)
 - Records in file: 6
 - Published records in file: 6
 - Currently open and publication-eligible: 6
 - Deadline within 7 days: 0
 - Deadline within 30 days: 5
 - Expired but still present as published: 0
-- Missing application URL: 2
-- Missing official PDF: 2
-- Missing both application URL and PDF: 2
+- Missing application URL: 0
+- Missing official PDF: 0
+- Missing both application URL and PDF: 0
 - Missing deadline: 0
 - Pending/non-official: 0
 - Verification older than 7 days: 0
@@ -36,8 +36,7 @@ No issues.
 
 ## Records missing both application URL and PDF
 
-- 78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027 — 2026-11-25T18:00:00+01:00
-- Concorso Internazionale di Canto lirico Francesco Morlacchi 2026 — 2026-11-30T23:59:00+01:00
+No issues.
 
 ## Invalid dates
 
