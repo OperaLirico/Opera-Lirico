@@ -64,6 +64,7 @@ $("loginForm").addEventListener("submit",async e=>{
  catch(err){$("loginError").textContent=err.message;}
 });
 $("logout").addEventListener("click",async()=>{await fetch("/api/logout",{method:"POST"});showLogin();});
+$("refresh").addEventListener("click",loadData);
 function drawChart(days){
  const root=$("chart");root.replaceChildren();
  const max=Math.max(1,...days.map(x=>x.pageviews||0));
