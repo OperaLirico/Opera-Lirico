@@ -17,7 +17,6 @@ on:
       - "tests/**"
       - "data/opportunity.schema.json"
       - "data/source_fetch_policies.json"
-      - "data/source_fetch_policies.json"
       - ".github/workflows/source-quality-tests.yml"
   pull_request:
     branches: [main]
