@@ -39,6 +39,8 @@ jobs:
           git add data/conservatori_extra.json data/sources_extra.json data/source_candidates.json data/source_fetch_policies.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update source discovery data and pending candidates'
+            git fetch origin main
+            git rebase origin/main
             git push origin HEAD:main
           else
             echo "No source discovery data changes."

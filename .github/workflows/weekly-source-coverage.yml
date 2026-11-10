@@ -7,14 +7,14 @@ on:
       - "audit_source_coverage.py"
       - ".github/workflows/weekly-source-coverage.yml"
   schedule:
-    - cron: "30 6 * * 1"
+    - cron: "30 8 * * 1"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: auditions-data-and-pages
+  group: source-coverage-audit
   cancel-in-progress: false
 
 jobs:
@@ -47,6 +47,8 @@ jobs:
             git add .github/audits/source-coverage-checkpoint.json .github/audits/source-coverage-latest.md
             if ! git diff --cached --quiet; then
               git commit -m 'Record weekly source coverage checkpoint'
+              git fetch origin main
+              git rebase origin/main
               git push origin HEAD:main
               git fetch origin main
               git reset --hard origin/main
