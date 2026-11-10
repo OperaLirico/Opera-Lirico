@@ -43,4 +43,4 @@ The P2/P4 evaluation uses a same-host redirect handler. A cross-host redirect is
 
 ## Structured link preservation
 
-The production Scrapling collector also stores a bounded list of relevant first-party anchor targets separately from page text. Each record keeps the visible label and absolute URL. When more than 250 relevant links exist, it records the total and an explicit truncation flag instead of implying full coverage. Privacy, social, shop and other navigation noise is filtered. The last-good snapshot behavior preserves these links on a failed refresh.
+The production Scrapling collector also stores a bounded list of relevant first-party anchor targets separately from page text. Each record keeps the visible label and absolute URL. When more than 1,000 relevant links exist, it records the total and an explicit truncation flag instead of implying full coverage. Privacy, social, shop and other navigation noise is filtered. The last-good snapshot behavior preserves these links on a failed refresh.
