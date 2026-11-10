@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T06:26:37+01:00",
+ "generated_at": "2026-11-10T06:40:08+01:00",
  "catalogue_source": "LiederNet Archive originals + curated starter works",
  "items": [
   {
@@ -11551,10 +11551,360 @@
     }
    ],
    "autoImported": true
+  },
+  {
+   "title": "Wunsch",
+   "aliases": [],
+   "composer": "Heinrich Kaspar Schmid",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Zwei Augen wünsche ich mir,\nzwei Augen, die meine Sterne sind\nund zu allem Guten mich führen,\nwenn meine Wünsche irr und wild\nsich auf trüben Wegen verlieren.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=80931",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Albert Sergel",
+   "settings": [
+    {
+     "composer": "Heinrich Kaspar Schmid",
+     "title": "/lieder/get_settings.html?ComposerId=17091",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Homage",
+   "aliases": [],
+   "composer": "Paul Breisach",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "The pearls of my soul\nAre of no other use, you sweet one,\nBut that I strew them\nBefore your little, capricious feet.\nAs long as my pulse beats,\nI belong to you.\n\nWhen someday I am buried,\nI shall swirl hither as dust from the grave\nAnd shall kiss the hem of your garment,\nFull of love.\n\nYou think you are saying insulting things to me.\nYou are wrong.\nYour bitter words pass over lips\nThat are so sweet, that everything\nThat reaches my ears\nIs only loving adulation.\n\nWe shall never be united\nYou and I,\nWhat I do for love of you,\nYou spurn.\nGrief that you cause me,\nI shrug off.\n\nIf I adorn you with every treasure,\nYou are angry with me.\nAnd your words of wrath\nI smilingly accept\nLike a greeting of grace.\n\nFrom your hair I would like\nTo weave an endless braid,\nIn order to swing myself\nFrom star to star,\nTo joyfully proclaim your beauty\nTo all the orbiting worlds.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=105337",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Sharon Krebs",
+   "settings": [
+    {
+     "composer": "Paul Breisach",
+     "title": "/lieder/get_settings.html?ComposerId=15936",
+     "instrumentation": "medium voice and piano"
+    },
+    {
+     "composer": "Richard Georg Strauss",
+     "title": "/lieder/get_settings.html?ComposerId=5869",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Polka",
+   "aliases": [],
+   "composer": "William Walton",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "\"Tra la la la la la la la\nLa!\n\nSee me dance the polka\",\nSaid Mr Wagg like a bear,\n\"with my top hat\nAnd my whiskers that -\n(Tra la la) trap the Fair.\"\nWhere the waves\nseem chiming haycocks\nI dance the polka; there\nStand Venus' children in their gay frocks, -\nMaroon and marine, - and stare\nTo see me fire my pistol\nThrough the distance blue as my coat;\nLike Wellington, Byron, the\nMarquis of Bristol,\nBusbied great trees float.\n\nWhile the wheezing hurdy-gurdy\nOf the marine wind blows me\nTo the tune of Annie Rooney, sturdy,\nOver the sheafs of the sea;\n\nAnd bright as a seedsman's packet\nWith zinnias, candytufts chill,\nIs Mrs. Marigold's Jacket\nAs she gapes at the inn door still,\n\nWhere at dawn in the box of the sailor,\nBlue as the decks of the sea,\nNelson awoke crowed like the cocks,\nThen back to the dust sank he.\n\nAnd Robinson Crusoe\nRues so\nThe bright and foxy beer, -\nBut he finds fresh isles\nin a negress' smiles, -\nThe poxy doxy dear,\n\nAs they, watch me dance the polka\",\nSaid MrWagg like a bear,\n\"In my top hat and my whiskers that, -\nTra la la, trap the Fair,\nTra la la la la la -\nTra la la la la la -\nTra la la la la la la la\n    La     La     La!\"",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=15109",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Edith Sitwell",
+   "settings": [
+    {
+     "composer": "William Walton",
+     "title": "/lieder/get_settings.html?ComposerId=6118",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Wie wenn im frost'gen Luftzug tödtlich",
+   "aliases": [],
+   "composer": "Johannes Brahms",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Wie wenn [im frost'gen Luftzug]1 tödtlich\nDes Sommers letzte Blüthe krankt,\nUnd hier und da nur, [gelb]2 und röthlich,\nEin [einzles]3 Blatt im [Windhauch]4 schwankt:\n\nSo schauert über mein Leben\nEin nächtig trüber, kalter Tag;\nWarum noch vor dem Tode beben,\nO Herz, mit deinem [ew'gen]5 Schlag?\n\nSieh rings entblättert das Gestäude!\nWas spielst du, wie der Wind [am]6 Strauch,\nNoch mit der letzten, welken Freude?\nGib dich zur Ruh! [Bald]7 stirbt sie auch.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=14346",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Adolf Friedrich, Graf von Schack",
+   "settings": [
+    {
+     "composer": "Johannes Brahms",
+     "title": "/lieder/get_settings.html?ComposerId=3535",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Heinrich Esser",
+     "title": "/lieder/get_settings.html?ComposerId=3986",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Joseph (Gabriel) Rheinberger",
+     "title": "/lieder/get_settings.html?ComposerId=5491",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "The shepherd's son",
+   "aliases": [],
+   "composer": "(Franz) Joseph Haydn",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "There was a shepherd's son\nKept sheep upon a hill;\nHe laid his pipe and crook aside,\nAnd there he slept his fill.\nSing fal de ral, &c.\n\nHe looked east, he looked west,\nThen gave an under look,\nAnd there he spied a lady fair\nSwimming in a brook.\nSing fal de ral, &c.\n\nHe raised his head frae his green bed,\nAnd then approached the maid:\n\"Put on your claes, my dear,\" he says,\n\"And be ye not afraid.\nSing fal de ral, &c.\n\n\"'Tis fitter for a lady fair\n\"To sew a silken seam,\n\"Than get up in a May morning\n\"And strive against the stream.\n\" Sing fal de ral, &c.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=90750",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "from Volkslieder",
+   "settings": [
+    {
+     "composer": "(Franz) Joseph Haydn",
+     "title": "/lieder/get_settings.html?ComposerId=4366",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Je flirte gentiment avec telle ou telle",
+   "aliases": [],
+   "composer": "Johannes Brahms",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Je flirte gentiment avec telle ou telle\nEt je deviens malade et silencieux,\nCar éternellement, éternellement, mes pensées\nÔ Nonna,  reviennent vers toi !",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=92244",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Pierre Mathé",
+   "settings": [
+    {
+     "composer": "Johannes Brahms",
+     "title": "/lieder/get_settings.html?ComposerId=3535",
+     "instrumentation": "vocal quartet and piano four-hands or instrumental ensemble"
+    },
+    {
+     "composer": "Afrikaans",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Avskedet på Flottsund",
+   "aliases": [],
+   "composer": "Gunnar Wennerberg",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "sv",
+   "text": "Glunten:\n Farväl, magister! – Denna gången\n är tyst i salen på Flottsund.\n På trappan jublar icke sången\n av vännerna från Odinslund.\n Vid Knäppingen, där Vasaborgen\n sist skönjdes mellan parkens träd,\n jag tvang dem lämna mig och sorgen\n och vända om. – Men du for med.\n Farväl!\n\nMagistern:\n Har du så bråttom, min käraste du?\n Kan du ej stanna en stund till ännu?\n\nGlunten:\n Bed mig ej längre! Jag får ingen ro,\n förr än jag väl är förbi Löfstabro.\n\nMagistern:\n Nå så i Guds namn farväl, din barbar!\n\nGlunten:\n Halva mitt liv, om jag finge bli kvar!\n\nBoth:\n Ack, den som kunde få bygga och bo\n där bort på stranden vid Vårdsätra! – Ptro! –\n Räck mig din hand och lova, innan du (jag)\n begynner färden,\n att du mig skriver till, varhelst du är.\n Farväl!\n Gud vet, när vi härnäst få se varandra här i\n världen!\n Ack, våra banor skiljas åt just här.\n Farväl!\n\nMagistern:\n Nej håll!\n Jag far väl med till Alsike.\n\nGlunten:\n Hedersmagister, vad är det jag hör?\n Ah, om du visste vad detta mig rör!\n\nBoth:\n Ptro! Ptro! – Se så, kör!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=108096",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Gunnar Wennerberg",
+   "settings": [
+    {
+     "composer": "Gunnar Wennerberg",
+     "title": "/lieder/get_settings.html?ComposerId=28880",
+     "instrumentation": "vocal duet for baritone and bass with piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Orchil",
+   "aliases": [],
+   "composer": "John Herbert Foulds",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "I dreamed of Orchil, the dim goddess who is under the brown earth,\nin a vast cavern, where she weaves at two looms.\nWith one hand she weaves life upward through the grass;\nwith the other she weaves death downward through the mould;\nand the sound of the weaving is Eternity,\nand the name of it in the green world is Time.\nAnd, through all, Orchil weaves the weft of Eternal Beauty,\nthat passeth not, though its soul is Change.\nThis is my comfort, O Beauty that art of Time,\nwho am faint and hopeless in the strong sound\nof that other weaving, where Orchil, the dim goddess,\nsits dreaming at her loom under the brown earth.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=41499",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "William Sharp",
+   "settings": [
+    {
+     "composer": "John Herbert Foulds",
+     "title": "/lieder/get_settings.html?ComposerId=4079",
+     "instrumentation": "contralto and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "So wahr die Sonne scheinet",
+   "aliases": [],
+   "composer": "Reinhold Becker",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "So wahr die Sonne scheinet,\n[So wahr die Wolke weinet,\nSo wahr die Flamme sprüht]1,\nSo wahr der Frühling blüht;\nSo wahr hab' ich empfunden,\nWie ich dich halt' umwunden:\nDu liebst mich, wie ich dich,\nDich lieb' ich, wie du mich.\n\nDie Sonne mag verscheinen,\nDie Wolke nicht mehr weinen,\nDie Flamme mag versprühn,\nDer Frühling nicht mehr blühn!\nWir wollen uns umwinden\nUnd immer so empfinden;\nDu liebst mich, wie ich dich,\nDich lieb' ich, wie du mich.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=14128",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Friedrich Rückert",
+   "settings": [
+    {
+     "composer": "Reinhold Becker",
+     "title": "/lieder/get_settings.html?ComposerId=3344",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "(Gustav) Adolf Brandt",
+     "title": "/lieder/get_settings.html?ComposerId=25320",
+     "instrumentation": "mixed chorus"
+    },
+    {
+     "composer": "Camillo Horn",
+     "title": "/lieder/get_settings.html?ComposerId=22711",
+     "instrumentation": "vocal duet for soprano and tenor with piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "A lively and graceful air",
+   "aliases": [],
+   "composer": "Jean Philippe Rameau",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Charming Love, under your power\nSooner or later one experiences your favors,\nFrequently during the greatest misfortunes\nThey transcend hope.\n\nCharming Love, under your power, etc.\n\nYou do not realize your own strictness\nIn testing constancy,\nWherein only perseverence\nCan merit your comforts.\n\nCharming Love, under your power, etc.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=21632",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Emily Ezust",
+   "settings": [
+    {
+     "composer": "Jean Philippe Rameau",
+     "title": "/lieder/get_settings.html?ComposerId=5430",
+     "instrumentation": "soprano, string quartet, continuo"
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Emily Ezust",
+     "title": "./get_texts.html?ContribId=1",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Song",
+   "aliases": [],
+   "composer": "Josef Tal",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Vergebens siehst du mich nach Bildern schweifen,\nUnd siehst mich mit Geflihl und Reimen ringen,-\nUnd ach! du lachelst gar ob meiner Qual!\n\nIst der holde Lenz erschienen?\nHat die Erde sich verjungt?\n\nOhl die Sprache is so durftig,\nund das Wort ein plumpes Ding;\nWird es ausgesprochen, flattert\nFort der schone Schmetterling.\n\nJüngstens traumte mir: spazieren\nin dem Himmelreiche ging ich,\nIch mit dir - denn ohne dich\nWar der Himmel eine Holle\n\nTief unter uns da wimmelt\ndas narrische Menschengeschlecht;\nS.ie schreien und wüten und schelten,\nUnd haben alle Recht.\n\nDoch weiter, weiter, sonder Rast,\nDu darfst nicht stille stehen;\nWas du so sehr geliebet hast,\nSollst du nicht wiedersehen.\n\nZuweilen dunkt es mich, als trube\nGeheime Sehnsucht deinen Blick -\n\nNieder filhren tausend Steige,\nKeiner fuhrt zum Tag Zurück.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=551379",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Heinrich Heine",
+   "settings": [
+    {
+     "composer": "Josef Tal",
+     "title": "/lieder/get_settings.html?ComposerId=38483",
+     "instrumentation": "baritone or alto, flute, horn, 2 tom-toms, and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Nächtliche Fahrt",
+   "aliases": [],
+   "composer": "Johanna Kinkel",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Wenn über Wellen und Land\nSich giesset der Sternenschein,\nDann möcht’ ich fliehen zum Strand\nMit Dir, o Geliebter mein.\nWir fänden den Nachen dort,\nWir stiegen vertrauend hinein;\nEr schaukelt uns fort und fort\nHinunter den kühlen Rhein;\nVerhallt der menschliche Laut,\nUnd über uns milde Ruh’;\nAn deinem Herzen traut,\nDa schlöss’ ich die Augen zu.\n\nBis endlich ich staunend erwacht\nIm funkelnden Morgenlicht;\nVorüber schon manche Nacht,\nViel Tages, ich merkt’ es nicht.\nAuf blauer Meeresbahn,\nVorüber manch’ schimmerndem Land,\nUns trägt der verzauberte Kahn\nZum fernsten Juwelstrand.\nDa steht ein Purpurgezelt,\nZwei Harfen, zwei Becher Wein,\nVerschollen die ganze Welt,\nVerschollen auch wir und allein.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=50611",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Johanna Kinkel",
+   "settings": [
+    {
+     "composer": "Johanna Kinkel",
+     "title": "/lieder/get_settings.html?ComposerId=4643",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
   }
  ],
  "scan_cursor": 144,
- "lieder_position": 1488,
+ "lieder_position": 1536,
  "aria_opera": 0,
  "aria_scene": 8
 }
