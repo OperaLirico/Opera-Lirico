@@ -156,7 +156,7 @@ function formatDate(iso){return new Intl.DateTimeFormat('zh-CN',{timeZone:'Europ
 /* 把英文日期、冗余前缀改成人话再上屏 */
 function humanText(value){
   let text=String(value||'').trim();
-  text=text.replace(/^(报名|考试|要求|报名时间|考试时间|声乐入学考试)：/,'');
+  text=text.replace(/^(报名申请|报名截止日期|报名截止|报名时间|注册申请截止日期|注册报名截止日期|入学考试|声乐入学考试|考试日期|考试时间|报名|考试|要求)：/,'');
   text=text.replace(/(20\d{2})-(\d{2})-(\d{2})/g,(m,y,mo,d)=>`${y} 年 ${Number(mo)} 月 ${Number(d)} 日`);
   text=text.replace(/（已截止）/g,'，已过');
   return text;
