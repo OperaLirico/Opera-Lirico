@@ -1,0 +1,1098 @@
+{
+  "generated_at": "2026-11-10T18:50:45+01:00",
+  "batch": "batch-3-2026-11-10",
+  "scope": "Third batch of five high-value official vocal-source and competition pages.",
+  "pilot_source_ids": [
+    "source-10",
+    "source-18",
+    "source-20",
+    "source-7",
+    "source-8"
+  ],
+  "production_changes": false,
+  "strategy_status": "evaluation_only",
+  "items": [
+    {
+      "source_id": "source-10",
+      "source_name": "Teatro Lirico Sperimentale di Spoleto",
+      "url": "https://www.tls-belli.it/bandi_e_avvisi/",
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.tls-belli.it/bandi_e_avvisi/",
+      "content_type": "text/html; charset=utf-8",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-10.html",
+        "bytes": 46172,
+        "sha256": "49fe20ac08209f2aa8d2519e76edf0f9d9347066b0ffece32ea78212533f8576",
+        "captured_at": "2026-11-10T18:50:50+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.tls-belli.it/sitemap_index.xml",
+            "status": "ok",
+            "http_status": 200,
+            "sitemap_kind": "sitemapindex",
+            "loc_count": 14,
+            "child_sitemaps_checked": 5,
+            "child_sitemaps": [
+              {
+                "url": "https://www.tls-belli.it/post-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 740,
+                "audition_or_vocal_url_count": 129,
+                "url_examples": [
+                  "https://www.tls-belli.it/2019/06/21/audizioni-figuranti-per-la-stagione-lirica-sperimentale-2019/",
+                  "https://www.tls-belli.it/2019/06/08/il-ritorno-del-grande-baritono-renato-bruson-allo-sperimentale/",
+                  "https://www.tls-belli.it/2019/06/19/il-mezzosoprano-marina-comparato-docente-al-corso-di-avviamento-al-debutto/",
+                  "https://www.tls-belli.it/2019/05/19/continuano-le-masterclass-del-corso-di-avviamento-al-debutto-con-il-soprano-edda-moser-2/",
+                  "https://www.tls-belli.it/2019/05/23/il-soprano-edda-moser-docente-nella-masterclass-di-interpretazione-vocale/",
+                  "https://www.tls-belli.it/2019/03/06/comunicazione-concorso/",
+                  "https://www.tls-belli.it/2019/03/09/decretati-gli-otto-vincitori-del-concorso-di-canto/",
+                  "https://www.tls-belli.it/2019/03/19/comunicato-stampa-mahagonny-songspiel-cantanti-del-tls-a-prato/",
+                  "https://www.tls-belli.it/2019/01/02/libere-audizioni/",
+                  "https://www.tls-belli.it/2019/01/28/al-via-anche-il-piccolo-coro-di-scheggino-vallo-di-nera/",
+                  "https://www.tls-belli.it/2019/02/01/giuria-del-73mo-concorso-comunita-europea-per-giovani-cantanti-lirici/",
+                  "https://www.tls-belli.it/2019/02/15/solo-6-giorni-per-iscriversi-al-concorso/"
+                ]
+              },
+              {
+                "url": "https://www.tls-belli.it/page-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 148,
+                "audition_or_vocal_url_count": 11,
+                "url_examples": [
+                  "https://www.tls-belli.it/docenti-del-corso-di-canto/",
+                  "https://www.tls-belli.it/concorso-orpheus/",
+                  "https://www.tls-belli.it/vincitori-del-concorso-dal-1947/",
+                  "https://www.tls-belli.it/concorso-di-canto/",
+                  "https://www.tls-belli.it/libere-audizioni/",
+                  "https://www.tls-belli.it/iscrizione-80-concorso-internazionale-di-can/",
+                  "https://www.tls-belli.it/wp-content/uploads/2025/11/Banner_concorso_canto.jpg",
+                  "https://www.tls-belli.it/iscrizione-libere-audizioni/",
+                  "https://www.tls-belli.it/wp-content/uploads/2025/11/Banner_concorso_canto.jpg",
+                  "https://www.tls-belli.it/libere-audizioni-2026/",
+                  "https://www.tls-belli.it/concorso-di-canto-2026/"
+                ]
+              },
+              {
+                "url": "https://www.tls-belli.it/offer-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 24,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.tls-belli.it/portfolio-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 82,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.tls-belli.it/slide-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 2,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              }
+            ],
+            "page_url_count": 996,
+            "audition_or_vocal_url_count": 140,
+            "url_examples": [
+              "https://www.tls-belli.it/2019/06/21/audizioni-figuranti-per-la-stagione-lirica-sperimentale-2019/",
+              "https://www.tls-belli.it/2019/06/08/il-ritorno-del-grande-baritono-renato-bruson-allo-sperimentale/",
+              "https://www.tls-belli.it/2019/06/19/il-mezzosoprano-marina-comparato-docente-al-corso-di-avviamento-al-debutto/",
+              "https://www.tls-belli.it/2019/05/19/continuano-le-masterclass-del-corso-di-avviamento-al-debutto-con-il-soprano-edda-moser-2/",
+              "https://www.tls-belli.it/2019/05/23/il-soprano-edda-moser-docente-nella-masterclass-di-interpretazione-vocale/",
+              "https://www.tls-belli.it/2019/03/06/comunicazione-concorso/",
+              "https://www.tls-belli.it/2019/03/09/decretati-gli-otto-vincitori-del-concorso-di-canto/",
+              "https://www.tls-belli.it/2019/03/19/comunicato-stampa-mahagonny-songspiel-cantanti-del-tls-a-prato/",
+              "https://www.tls-belli.it/2019/01/02/libere-audizioni/",
+              "https://www.tls-belli.it/2019/01/28/al-via-anche-il-piccolo-coro-di-scheggino-vallo-di-nera/",
+              "https://www.tls-belli.it/2019/02/01/giuria-del-73mo-concorso-comunita-europea-per-giovani-cantanti-lirici/",
+              "https://www.tls-belli.it/2019/02/15/solo-6-giorni-per-iscriversi-al-concorso/"
+            ]
+          }
+        ],
+        "advertised_feeds": [
+          {
+            "url": "https://www.tls-belli.it/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 10,
+            "relevant_entry_count": 3,
+            "relevant_titles": [
+              "Un dittico di Marcello Panni",
+              "“Dido and Æneas” a Todi",
+              "Liederabend"
+            ]
+          }
+        ],
+        "advertised_public_api_links": [
+          "https://www.tls-belli.it/wp-json/"
+        ],
+        "public_api_checks": [
+          {
+            "url": "https://www.tls-belli.it/wp-json/",
+            "status": "ok",
+            "http_status": 200,
+            "json_valid": true,
+            "namespace_count": 21,
+            "route_count": 678,
+            "namespace_examples": [
+              "oembed/1.0",
+              "wpe_sign_on_plugin/v1",
+              "contact-form-7/v1",
+              "easy-mcp-ai/v1",
+              "easy-mcp-ai-admin/v1",
+              "fluentform/v1",
+              "foogallery/v1",
+              "mrm/v1",
+              "mint-mail/v1",
+              "wordfence-login-security/v1",
+              "wordfence/v1",
+              "yoast/v1"
+            ],
+            "route_examples": [
+              "/mail-mint/v1/abandoned-cart/update-checkout",
+              "/mail-mint/v1/abandoned-cart/skip-track",
+              "/mrm/v1/settings/abandoned-cart",
+              "/mrm/v1/abandoned-cart/recoverable",
+              "/mrm/v1/abandoned-cart/recoverable/delete",
+              "/mrm/v1/abandoned-cart/recovered",
+              "/mrm/v1/abandoned-cart/recovered/delete",
+              "/mrm/v1/abandoned-cart/lost",
+              "/mrm/v1/abandoned-cart/lost/delete",
+              "/mrm/v1/abandoned-cart/(?P<abandoned_id>[\\d]+)/delete",
+              "/mrm/v1/abandoned-cart/automation/(?P<abandoned_id>[\\d]+)",
+              "/mrm/v1/abandoned-cart/analytics"
+            ]
+          }
+        ]
+      },
+      "parsers": {
+        "title": "Bandi e avvisi",
+        "dom_structure": {
+          "anchor_count": 37,
+          "relevant_anchor_count": 10,
+          "relevant_anchor_examples": [
+            {
+              "text": "CONCORSO DI CANTO",
+              "url": "https://www.tls-belli.it/concorso-di-canto-2026/"
+            },
+            {
+              "text": "LIBERE AUDIZIONI",
+              "url": "https://www.tls-belli.it/libere-audizioni-2026/"
+            },
+            {
+              "text": "BANDO",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/11/Bando-Concorso-Monini-2026.pdf"
+            },
+            {
+              "text": "BANDO",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/03/Avviso-di-selezione-_-promozione-e-fundraising_31.03.25-1.pdf"
+            },
+            {
+              "text": "BANDO",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/02/Avviso-selezione.pdf"
+            },
+            {
+              "text": "CONVOCAZIONI",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/03/Convocazioni.pdf"
+            },
+            {
+              "text": "RISULTATI SELEZIONE",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/03/Graduatoria-finale-degli-idonei.pdf"
+            },
+            {
+              "text": "Certificazione Qualità ISO 9001:2015",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2024/03/ISO-aggiornata.pdf"
+            },
+            {
+              "text": "Privacy Policy",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/01/SS.24.09.11-TLS-Web-Privacy-Policy.pdf"
+            },
+            {
+              "text": "Cookie Policy",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/01/SS.24.09.11-TLS-Cookies-Policy.pdf"
+            }
+          ],
+          "list_item_count": 26,
+          "heading_count": 0,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0006,
+          "characters": 1773,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 8,
+          "relevant_dom_link_labels_retained_in_text": 8,
+          "relevant_link_targets_available": 10,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0004,
+          "characters": 5475,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 8,
+          "relevant_dom_link_labels_retained_in_text": 8,
+          "relevant_link_targets_available": 10,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.1181,
+          "characters": 1086,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 8,
+          "relevant_dom_link_labels_retained_in_text": 5,
+          "relevant_link_targets_available": 10,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.012,
+          "characters": 1086,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 10,
+          "relevant_dom_link_targets_retained": 0
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-18",
+      "source_name": "Accademia d'Arte Lirica di Osimo",
+      "url": "https://www.accademialiricaosimo.com/",
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.accademialiricaosimo.com/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-18.html",
+        "bytes": 61504,
+        "sha256": "a9187ed024a580a5a7bd12746edcae2432d31f48947f10dbe9e28823619bec6c",
+        "captured_at": "2026-11-10T18:51:18+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.accademialiricaosimo.com/sitemap.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "https://www.accademialiricaosimo.com/wp-sitemap.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "https://www.accademialiricaosimo.com/sitemap_index.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          }
+        ],
+        "advertised_feeds": [
+          {
+            "url": "https://www.accademialiricaosimo.com/comments/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          },
+          {
+            "url": "https://www.accademialiricaosimo.com/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 10,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          }
+        ],
+        "advertised_public_api_links": [
+          "https://www.accademialiricaosimo.com/wp-json/"
+        ],
+        "public_api_checks": [
+          {
+            "url": "https://www.accademialiricaosimo.com/wp-json/",
+            "status": "ok",
+            "http_status": 200,
+            "json_valid": true,
+            "namespace_count": 3,
+            "route_count": 69,
+            "namespace_examples": [
+              "oembed/1.0",
+              "metaslider/v1",
+              "wp/v2"
+            ],
+            "route_examples": []
+          }
+        ]
+      },
+      "parsers": {
+        "title": "Accademia Lirica Osimo – Accademia Lirica Osimo",
+        "dom_structure": {
+          "anchor_count": 70,
+          "relevant_anchor_count": 3,
+          "relevant_anchor_examples": [
+            {
+              "text": "Regolamento",
+              "url": "https://www.accademialiricaosimo.com/regolamento-2/"
+            },
+            {
+              "text": "Modulo d’iscrizione",
+              "url": "https://www.accademialiricaosimo.com/wp-content/uploads/2026/05/modulo_iscrizione-2026-2027.doc"
+            },
+            {
+              "text": "Regolamento",
+              "url": "https://www.accademialiricaosimo.com/adotta-una-voce/"
+            }
+          ],
+          "list_item_count": 84,
+          "heading_count": 2,
+          "table_count": 1
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0011,
+          "characters": 2478,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 3,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0007,
+          "characters": 3957,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 3,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0187,
+          "characters": 1726,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 3,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0184,
+          "characters": 1726,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 3,
+          "relevant_dom_link_targets_retained": 0
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-20",
+      "source_name": "Valsesia Musica - 声乐比赛",
+      "url": "https://www.valsesiamusica.com/sezione_canto_lirico.htm",
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.valsesiamusica.com/sezione_canto_lirico.htm",
+      "content_type": "text/html",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-20.html",
+        "bytes": 51048,
+        "sha256": "d59c753c9c6e71af6fc396c3bfb706321d34c197803e31b2eaff15ea026ec7d3",
+        "captured_at": "2026-11-10T18:51:36+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "https://valsesiamusica.com/sitemap.xml",
+            "status": "ok",
+            "http_status": 200,
+            "sitemap_kind": "urlset",
+            "loc_count": 87,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 87,
+            "audition_or_vocal_url_count": 4,
+            "url_examples": [
+              "https://valsesiamusica.com/comitato_amici_del_concorso.htm",
+              "https://valsesiamusica.com/amici_del_concorso_committee.htm",
+              "https://valsesiamusica.com/sezione_canto_lirico.htm",
+              "https://valsesiamusica.com/premiati_canto_it_2024.htm"
+            ]
+          }
+        ],
+        "advertised_feeds": [],
+        "advertised_public_api_links": [],
+        "public_api_checks": []
+      },
+      "parsers": {
+        "title": "Sezione Canto Lirico",
+        "dom_structure": {
+          "anchor_count": 75,
+          "relevant_anchor_count": 13,
+          "relevant_anchor_examples": [
+            {
+              "text": "",
+              "url": "https://www.valsesiamusica.com/regolamento.htm"
+            },
+            {
+              "text": "",
+              "url": "https://www.valsesiamusica.com/regolamento.htm"
+            },
+            {
+              "text": "Comitato \"Amici del Concorso\"",
+              "url": "https://www.valsesiamusica.com/comitato_amici_del_concorso.htm"
+            },
+            {
+              "text": "Regolamento",
+              "url": "https://www.valsesiamusica.com/regolamento.htm"
+            },
+            {
+              "text": "Download scheda di iscrizione",
+              "url": "https://www.valsesiamusica.com/index_htm_files/scheda_isc_canto_2026.docx"
+            },
+            {
+              "text": "Download scheda di iscrizione",
+              "url": "https://www.valsesiamusica.com/index_htm_files/scheda_isc_vl_2025.docx"
+            },
+            {
+              "text": "Download scheda di iscrizione",
+              "url": "https://www.valsesiamusica.com/index_htm_files/scheda_isc_pf_2025.docx"
+            },
+            {
+              "text": "Regolamento",
+              "url": "https://www.valsesiamusica.com/regolamento_juniores.htm"
+            },
+            {
+              "text": "Download scheda di iscrizione",
+              "url": "https://www.valsesiamusica.com/index_htm_files/scheda_isc_kawai_2024.docx"
+            },
+            {
+              "text": "Concorso Juniores 2024",
+              "url": "https://www.valsesiamusica.com/premiati_juniores_it_2024.htm"
+            },
+            {
+              "text": "Risultati - Sezione Pianoforte 2025",
+              "url": "https://www.valsesiamusica.com/index_htm_files/risultati_pianoforte_2025.pdf"
+            },
+            {
+              "text": "Risultati - Sezione Violino e Orchestra 2025",
+              "url": "https://www.valsesiamusica.com/index_htm_files/risultati_violino_ed_orchestra_2025.pdf"
+            },
+            {
+              "text": "Risultati - Sezione Canto lirico 2024",
+              "url": "https://www.valsesiamusica.com/index_htm_files/risultati_canto_lirico_2024.pdf"
+            }
+          ],
+          "list_item_count": 43,
+          "heading_count": 3,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0012,
+          "characters": 2585,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 7,
+          "relevant_link_targets_available": 11,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0007,
+          "characters": 3194,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 7,
+          "relevant_link_targets_available": 11,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0185,
+          "characters": 1440,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": false
+          },
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 0,
+          "relevant_link_targets_available": 11,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0181,
+          "characters": 1440,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 11,
+          "relevant_dom_link_targets_retained": 0
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-7",
+      "source_name": "Teatro Comunale di Bologna",
+      "url": "https://www.tcbo.it/amministrazione-trasparente/",
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.tcbo.it/amministrazione-trasparente/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-7.html",
+        "bytes": 318913,
+        "sha256": "0012441386f7ef9f00611990e9624c23e1234ca18696245e814fb3c001140a99",
+        "captured_at": "2026-11-10T18:51:44+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.tcbo.it/sitemap_index.xml",
+            "status": "ok",
+            "http_status": 200,
+            "sitemap_kind": "sitemapindex",
+            "loc_count": 24,
+            "child_sitemaps_checked": 5,
+            "child_sitemaps": [
+              {
+                "url": "https://www.tcbo.it/page-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 58,
+                "audition_or_vocal_url_count": 1,
+                "url_examples": [
+                  "https://www.tcbo.it/orchestra-e-coro/"
+                ]
+              },
+              {
+                "url": "https://www.tcbo.it/tcbo_ev_opera-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 158,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.tcbo.it/tcbo_ev_concerto-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 342,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.tcbo.it/tcbo_ev_danza-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 82,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.tcbo.it/tcbo_ev_speciale-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 14,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              }
+            ],
+            "page_url_count": 654,
+            "audition_or_vocal_url_count": 1,
+            "url_examples": [
+              "https://www.tcbo.it/orchestra-e-coro/"
+            ]
+          }
+        ],
+        "advertised_feeds": [],
+        "advertised_public_api_links": [],
+        "public_api_checks": []
+      },
+      "parsers": {
+        "title": "Amministrazione trasparente - Teatro Comunale di Bologna",
+        "dom_structure": {
+          "anchor_count": 659,
+          "relevant_anchor_count": 494,
+          "relevant_anchor_examples": [
+            {
+              "text": "Piano 2025-2027",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/ptpc-ptti-tcbo-2025.pdf"
+            },
+            {
+              "text": "Piano 2024-2026",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/ptpc-ptti-tcbo-2024.pdf"
+            },
+            {
+              "text": "Piano 2023-2025",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/ptpc-ptti-tcbo-2023_2025.pdf"
+            },
+            {
+              "text": "Statuto",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/statuto_2014_agentrate-1.pdf"
+            },
+            {
+              "text": "D.M. del 23 dicembre 2014",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/150113-mibact_394_dm_23dic14_approvaznuovostatuto.pdf"
+            },
+            {
+              "text": "GU Serie Generale n.22 del 28-01-2015",
+              "url": "https://www.gazzettaufficiale.it/eli/gu/2015/01/28/22/sg/pdf"
+            },
+            {
+              "text": "Modello di Organizzazione Gestione e controllo ai sensi dell’art.6 del D.Lgs.231/01",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/modello-di-organizzazione-gestione-e-controllo-rev-giugno-2023-tcbo-161023-parte-generale.pdf"
+            },
+            {
+              "text": "Codice etico e comportamentale",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/codice-etico-tcbo-2016-rev-2023-161023.pdf"
+            },
+            {
+              "text": "Protocollo d’Intesa Avvocatura dello Stato",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/protocollo-dintesa-avvocatura-generale-dello-stato-e-fondazione-teatro-comunale-di-bologna-19lug19.pdf"
+            },
+            {
+              "text": "DM n. 302/2022 Approvazione nuova Dotazione Organica FTCB",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/20220909-0007973-dm-approvazione-dofondazione-teatro-comunale-di-bologna-1-2.pdf"
+            },
+            {
+              "text": "Organigramma",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/tcbo_organigramma_311025.pdf"
+            },
+            {
+              "text": "Proclamazione elezione Sindaco Matteo Lepore anno 2021",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/procalmazione-sindaco-pg-453111-2021.pdf"
+            },
+            {
+              "text": "Atto di nomina Sovrintendente Elisabetta Riva (23/04/2025)",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/riva-decreto-di-nomina.pdf"
+            },
+            {
+              "text": "Atto di nomina Consigliere Marco Checchi",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/nomina-checchi.pdf"
+            },
+            {
+              "text": "Atto di nomina Consigliere Marzia Zambelli",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot191-2025_lettera-designazione-ministro.pdf"
+            },
+            {
+              "text": "Atto di nomina Consigliere Raffaela Bruni",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot231-2025_comunicazione-nominaconsbruni-tcbo.pdf"
+            },
+            {
+              "text": "Atto di nomina Consigliere Rita Ghedini",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/comunicazione_a_tcbo_cons_indirizzo.pdf"
+            },
+            {
+              "text": "Atto di nomina Consigliere Gianluigi Magri",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot223-2025_carisbo_teatro-comunale-designazione-consigliere.pdf"
+            },
+            {
+              "text": "Accettazione incarico Sovrintendente Elisabetta Riva (19/05/2025)",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/riva_dich-accettazione-inc-sovrintendente_190525.pdf"
+            },
+            {
+              "text": "Accettazione incarico Consigliere Marco Checchi",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot259-2025_accettazione-checchi.pdf"
+            },
+            {
+              "text": "Accettazione incarico Consigliere Marzia Zambelli",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot255-2025_accettazione-zambelli.pdf"
+            },
+            {
+              "text": "Accettazione incarico Consigliere Raffaela Bruni",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot258-2025_accettazione-bruni.pdf"
+            },
+            {
+              "text": "Accettazione incarico Consigliere Rita Ghedini",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot256-2025_accettazione-ghedini.pdf"
+            },
+            {
+              "text": "Accettazione incarico Consigliere Gianluigi Magri",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot257-2025_accettazione-magri.pdf"
+            },
+            {
+              "text": "Marco Checchi",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/curricula-marco-checchi.pdf"
+            },
+            {
+              "text": "Elisabetta Riva",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/cv-elisabetta-riva.pdf"
+            },
+            {
+              "text": "Marzia Zambelli",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/cv_marzia_zambelli.pdf"
+            },
+            {
+              "text": "Raffaela Bruni",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/cv-sintetico-bruni-2021.pdf"
+            },
+            {
+              "text": "Rita Ghedini",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/cv-rita-ghedini.pdf"
+            },
+            {
+              "text": "Gianluigi Magri",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/magri_cv-1.pdf"
+            }
+          ],
+          "list_item_count": 530,
+          "heading_count": 63,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0054,
+          "characters": 49025,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 350,
+          "relevant_dom_link_labels_retained_in_text": 350,
+          "relevant_link_targets_available": 441,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0043,
+          "characters": 52660,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 350,
+          "relevant_dom_link_labels_retained_in_text": 350,
+          "relevant_link_targets_available": 441,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0911,
+          "characters": 44520,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": false,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 350,
+          "relevant_dom_link_labels_retained_in_text": 114,
+          "relevant_link_targets_available": 441,
+          "relevant_link_targets_retained_in_text": 135
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0912,
+          "characters": 45135,
+          "markdown_link_count": 163,
+          "markdown_relevant_link_count": 140,
+          "relevant_dom_link_targets_available": 441,
+          "relevant_dom_link_targets_retained": 135
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-8",
+      "source_name": "Maggio Musicale Fiorentino",
+      "url": "https://www.maggiofiorentino.com/bandi/",
+      "robots_status": "http_error",
+      "robots_http_status": 404,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.maggiofiorentino.com/bandi/",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-8.html",
+        "bytes": 192642,
+        "sha256": "56158ed7ebe065f6fb61a368d5eea3a6088a1295e484703b00e84e1738524a19",
+        "captured_at": "2026-11-10T18:52:01+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "http_error",
+          "http_status": 404
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.maggiofiorentino.com/sitemap.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "https://www.maggiofiorentino.com/wp-sitemap.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "https://www.maggiofiorentino.com/sitemap_index.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          }
+        ],
+        "advertised_feeds": [],
+        "advertised_public_api_links": [],
+        "public_api_checks": []
+      },
+      "parsers": {
+        "title": "Bandi - Maggio Musicale Fiorentino",
+        "dom_structure": {
+          "anchor_count": 25,
+          "relevant_anchor_count": 2,
+          "relevant_anchor_examples": [
+            {
+              "text": "SCOPRI DI PIÙ",
+              "url": "https://www.maggiofiorentino.com/bandi/bando-ensemble-corale"
+            },
+            {
+              "text": "Lavora con noi",
+              "url": "https://maggiofiorentino.portaletrasparenza.net/it/trasparenza/bandi-di-concorso/bandi-e-avvisi-di-selezione-per-i-quali-e-possibile-presentare-domanda-di-partecipazione.html"
+            }
+          ],
+          "list_item_count": 6,
+          "heading_count": 5,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0007,
+          "characters": 721,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": false,
+            "dates": true,
+            "application": false,
+            "pdf": false
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 2,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0006,
+          "characters": 2469,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": false,
+            "dates": true,
+            "application": false,
+            "pdf": false
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 2,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0139,
+          "characters": 136,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": false,
+            "dates": false,
+            "application": false,
+            "pdf": false
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 0,
+          "relevant_link_targets_available": 2,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0136,
+          "characters": 150,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 2,
+          "relevant_dom_link_targets_retained": 0
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    }
+  ],
+  "limitations": [
+    "robots.txt/sitemap availability does not prove relevant notices are present.",
+    "Only page-advertised RSS/Atom and explicit public API links are inspected; no guessed API endpoint is queried.",
+    "403/429, login restrictions and unreadable robots policies are recorded and not bypassed.",
+    "Parser counts and keyword signals are coverage proxies, not ground-truth accuracy.",
+    "All parsers receive identical captured HTML bytes; no production policy is promoted automatically.",
+    "Sitemap indexes are followed for at most five child maps per index; deeper nesting is not traversed.",
+    "Only explicitly advertised public API roots are fetched; route endpoints are not guessed or queried."
+  ]
+}
