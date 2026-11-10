@@ -39,7 +39,7 @@ Acceptance:
 Current evidence:
 - Production snapshots now include page_text, relevant_links, relevant_links_total and relevant_links_truncated.
 - Each relevant link stores an absolute URL and visible label; aria-label/title are retained for icon-only controls.
-- At most 250 links are stored per page. If the total exceeds the cap, an explicit truncation flag is set.
+- At most 1,000 links are stored per page. If the total exceeds the cap, an explicit truncation flag is set. The 10 November production refresh verified 29/29 active sources had page_text and relevant_links metadata, with truncated=false for all 29; the 15 legacy_unreviewed records are not counted as active coverage.
 - Last-good snapshot preservation includes structured links.
 - The first full daily production refresh after this change is being used to verify actual per-source link coverage and truncation.
 
