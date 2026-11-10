@@ -1,0 +1,148 @@
+{
+  "generated_at": "2026-11-10T18:55:39+01:00",
+  "tool": "Poppler pdfsig",
+  "manifest_path": ".github/audits/pdf-integrity-manifest.json",
+  "manifest_sha256": "c80c4ef2f881145abd098621fdf8b13e9dd43271b0937da7351ec3cdf99657d1",
+  "file_count": 8,
+  "inspection_error_count": 7,
+  "signature_present_file_count": 2,
+  "no_signature_detected_file_count": 6,
+  "cryptographically_valid_signature_count": 2,
+  "trusted_certificate_count": 0,
+  "publisher_identity_verified_count": 0,
+  "important_limitation": "Signature presence, cryptographic integrity and certificate trust are separate. No certificate subject is mapped to an official institution; publisher identity remains not_verified.",
+  "files": [
+    {
+      "local_path": "data/pdfs/4-bando-di-ammissione-a.a.-2026-2027.pdf",
+      "source_url": "https://consbo.it/wp-content/uploads/2026/03/Bando-di-ammissione-a.a.-2026-2027.pdf",
+      "manifest_sha256": "99f2b3c65f714cfd7c28b2e16f44414e680b8ba1314a03d88b9286f1f9df7b0d",
+      "manifest_integrity_status": "valid_pdf_bytes",
+      "publisher_identity_status": "not_verified",
+      "inspection_status": "tool_error",
+      "return_code": 2,
+      "signature_presence": "not_detected",
+      "signatures": []
+    },
+    {
+      "local_path": "data/pdfs/11-allegato-a-bando-afam030.pdf",
+      "source_url": "https://www.consme.it/images/bandi_e_graduatorie/2026_2027/ALLEGATO%20A%20BANDO%20AFAM030.pdf",
+      "manifest_sha256": "291c23409e1a450e8210ce2d0d9deb57581744ba3048921ff0a26f51cd47f98a",
+      "manifest_integrity_status": "valid_pdf_bytes",
+      "publisher_identity_status": "not_verified",
+      "inspection_status": "tool_error",
+      "return_code": 2,
+      "signature_presence": "not_detected",
+      "signatures": []
+    },
+    {
+      "local_path": "data/pdfs/37-riapertura-termini-bando-ammissione-corso-propedeutico-2026-2027.pdf",
+      "source_url": "https://conservatoriopalermo.it/wp-content/uploads/2026/09/Riapertura-termini-Bando-ammissione-Corso-propedeutico-2026-2027.pdf",
+      "manifest_sha256": "e4d2a7e36155e6fbd7190ad96b03a87de494f9eb80e915d6262a6d3d12719fe7",
+      "manifest_integrity_status": "valid_pdf_bytes",
+      "publisher_identity_status": "not_verified",
+      "inspection_status": "tool_error",
+      "return_code": 1,
+      "signature_presence": "present",
+      "signatures": [
+        {
+          "signature_number": 1,
+          "field_name": "SignatureField #1",
+          "signer_common_name": "MAURO VISCONTI",
+          "signer_distinguished_name": "C=IT,serialNumber=TINIT-VSCMRA73S12G273M,SN=VISCONTI,givenName=MAURO,CN=MAURO VISCONTI,dnQualifier=a5bbc491-ab63-4ff7-83cd-ffae97a017bb",
+          "signing_time": "Sep 22 2026 16:51:48",
+          "hash_algorithm": "SHA-256",
+          "signature_type": "ETSI.CAdES.detached",
+          "signature_integrity_status": "inconclusive",
+          "signature_validation_text": "Digest Mismatch.",
+          "certificate_trust_status": "not_reported",
+          "certificate_validation_text": null,
+          "publisher_identity_status": "not_verified"
+        }
+      ]
+    },
+    {
+      "local_path": "data/pdfs/52-061126-121739-bando200oreaa20262027signed.pdf",
+      "source_url": "https://consvi.it/public/061126-121739-bando200oreaa20262027signed.pdf",
+      "manifest_sha256": "83a423a72c1a506ee14f6b6fb2e25d451dca6c06dbe4e110ec6b1ef6637911cc",
+      "manifest_integrity_status": "valid_pdf_bytes",
+      "publisher_identity_status": "not_verified",
+      "inspection_status": "success",
+      "return_code": 0,
+      "signature_presence": "present",
+      "signatures": [
+        {
+          "signature_number": 1,
+          "field_name": "Signature1",
+          "signer_common_name": "Stefano Lorenzetti",
+          "signer_distinguished_name": "dnQualifier=WSREF-78947754410846,CN=Stefano Lorenzetti,serialNumber=TINIT-LRNSFN60E12D612J,givenName=Stefano,SN=Lorenzetti,C=IT",
+          "signing_time": "Nov 06 2026 09:49:13",
+          "hash_algorithm": "SHA-256",
+          "signature_type": "ETSI.CAdES.detached",
+          "signature_integrity_status": "valid",
+          "signature_validation_text": "Signature is Valid.",
+          "certificate_trust_status": "untrusted_or_unknown",
+          "certificate_validation_text": "Certificate issuer is unknown.",
+          "publisher_identity_status": "not_verified"
+        },
+        {
+          "signature_number": 2,
+          "field_name": "Signature2",
+          "signer_common_name": "Conservatorio di Musica Arrigo Pedrollo di Vicenza",
+          "signer_distinguished_name": "dnQualifier=WSREF-76884142356384,CN=Conservatorio di Musica Arrigo Pedrollo di Vicenza,OU=CONTA' SAN DOMENICO 33,OU=36100 - VICENZA,OID.2.5.4.97=VATIT-95002760247,O=Conservatorio di Musica Arrigo Pedrollo di Vicenza,C=IT",
+          "signing_time": "Nov 06 2026 11:00:28",
+          "hash_algorithm": "SHA-256",
+          "signature_type": "ETSI.CAdES.detached",
+          "signature_integrity_status": "valid",
+          "signature_validation_text": "Signature is Valid.",
+          "certificate_trust_status": "untrusted_or_unknown",
+          "certificate_validation_text": "Certificate issuer is unknown.",
+          "publisher_identity_status": "not_verified"
+        }
+      ]
+    },
+    {
+      "local_path": "data/pdfs/305-bando-accademia-2025-2027-bozza-corretta_email.pdf",
+      "source_url": "https://www.teatrosancarlo.it/wp-content/uploads/2025/02/BANDO-ACCADEMIA-2025-2027-Bozza-corretta_email.pdf",
+      "manifest_sha256": "ec2c4857ef7a89e74fa95195182dd4212db2cf8c0a892e38161c3f011ba67e14",
+      "manifest_integrity_status": "valid_pdf_bytes",
+      "publisher_identity_status": "not_verified",
+      "inspection_status": "tool_error",
+      "return_code": 2,
+      "signature_presence": "not_detected",
+      "signatures": []
+    },
+    {
+      "local_path": "data/pdfs/305-avviso-di-proroga-termine-di-scadenza-bando-accademia.pdf",
+      "source_url": "https://www.teatrosancarlo.it/wp-content/uploads/2025/05/Avviso-di-proroga-termine-di-scadenza-Bando-Accademia.pdf",
+      "manifest_sha256": "72260a80177944e5ea6c90d3cbd400213e7d727f2b242241f17b444ccc106227",
+      "manifest_integrity_status": "valid_pdf_bytes",
+      "publisher_identity_status": "not_verified",
+      "inspection_status": "tool_error",
+      "return_code": 2,
+      "signature_presence": "not_detected",
+      "signatures": []
+    },
+    {
+      "local_path": "data/pdfs/306-bandoaccademialirica_2026_tm.pdf",
+      "source_url": "https://www.teatromassimo.it/wp-content/uploads/2026/07/BandoAccademiaLirica_2026_TM.pdf",
+      "manifest_sha256": "9f870ed77638acfd275cc3249c78045c7268a49a9eb0eff8d81ddb9fafa3052e",
+      "manifest_integrity_status": "valid_pdf_bytes",
+      "publisher_identity_status": "not_verified",
+      "inspection_status": "tool_error",
+      "return_code": 2,
+      "signature_presence": "not_detected",
+      "signatures": []
+    },
+    {
+      "local_path": "data/pdfs/307-bando-accademia-tcf_261110.pdf",
+      "source_url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Bando-Accademia-TCF_261110.pdf",
+      "manifest_sha256": "aae2fb779482f59e0458a02e0d59638a2d9d393e85281bdb78e87af6e131bbe9",
+      "manifest_integrity_status": "valid_pdf_bytes",
+      "publisher_identity_status": "not_verified",
+      "inspection_status": "tool_error",
+      "return_code": 2,
+      "signature_presence": "not_detected",
+      "signatures": []
+    }
+  ]
+}
