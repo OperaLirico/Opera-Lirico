@@ -1,0 +1,263 @@
+{
+  "updated_at": "2026-11-10T16:56:21+01:00",
+  "items": [
+    {
+      "id": "aslico-2027-78th-young-singers",
+      "title": "78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027",
+      "opportunity_type": "vocal_competition",
+      "voice_types": [
+        "soprano",
+        "mezzo_soprano",
+        "tenor",
+        "baritone",
+        "bass"
+      ],
+      "location": "科莫及意大利、欧洲多地预选",
+      "source_name": "AsLiCo",
+      "source_url": "https://aslico.org/edizione-in-corso/",
+      "announcement_url": "https://aslico.org/edizione-in-corso/",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "application_open_at": "2026-10-16T00:00:00+02:00",
+      "application_deadline_at": "2026-11-25T18:00:00+01:00",
+      "audition_start_at": "2026-12-05T00:00:00+01:00",
+      "audition_end_at": "2027-01-06T23:59:00+01:00",
+      "fee_eur": 70,
+      "eligibility_summary": "分为歌剧角色赛与新秀歌手赛，报名时须选择其中一个组别；不同预选场次有名额限制，具体资格、曲目和出生日期要求请查看官方章程。",
+      "checked_at": "2026-11-10T16:56:21+01:00",
+      "last_verified_at": "2026-11-10T16:56:21+01:00",
+      "evidence": [
+        {
+          "url": "https://aslico.org/edizione-in-corso/",
+          "excerpt": "Le iscrizioni del Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027 saranno aperte dal 16 ottobre fino al 25 novembre 2026 (ore 18.00).",
+          "checked_at": "2026-11-10T16:56:21+01:00"
+        },
+        {
+          "url": "https://aslico.org/edizione-in-corso/",
+          "excerpt": "L’importo della tassa d’iscrizione è di 70 euro.",
+          "checked_at": "2026-11-10T16:56:21+01:00"
+        }
+      ],
+      "notes": "官方页面列出 2027/28 歌剧制作角色和多地预选安排；报名人数达到各场次上限后可能调整预选地点。"
+    },
+    {
+      "id": "morlacchi-2026-international-vocal-competition",
+      "title": "Concorso Internazionale di Canto lirico Francesco Morlacchi 2026",
+      "opportunity_type": "vocal_competition",
+      "voice_types": [
+        "soprano",
+        "mezzo_soprano",
+        "contralto",
+        "countertenor",
+        "tenor",
+        "baritone",
+        "bass"
+      ],
+      "location": "佩鲁贾 · Sala dei Notari",
+      "source_name": "Concorso Internazionale di Canto lirico Francesco Morlacchi",
+      "source_url": "https://www.concorsomorlacchi.it/",
+      "announcement_url": "https://www.concorsomorlacchi.it/",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "application_deadline_at": "2026-11-30T23:59:00+01:00",
+      "audition_start_at": "2026-12-14T09:30:00+01:00",
+      "audition_end_at": "2026-12-15T23:59:00+01:00",
+      "age_min": 18,
+      "age_max": 35,
+      "fee_eur": 80,
+      "eligibility_summary": "面向18至35岁的各国歌剧歌手。需提交四首曲目（至少三首歌剧咏叹调）、两段视频、四份PDF乐谱及个人简历；视频预选后进入佩鲁贾现场半决赛和决赛。",
+      "checked_at": "2026-11-10T16:56:21+01:00",
+      "last_verified_at": "2026-11-10T16:56:21+01:00",
+      "evidence": [
+        {
+          "url": "https://www.concorsomorlacchi.it/",
+          "excerpt": "La domanda di iscrizione ... dovranno essere inviati entro e non oltre le ore 23:59 del 30 novembre 2026.",
+          "checked_at": "2026-11-10T16:56:21+01:00"
+        },
+        {
+          "url": "https://www.concorsomorlacchi.it/",
+          "excerpt": "Possono partecipare cantanti lirici di qualsiasi nazionalità che ... abbiano compiuto 18 anni e non abbiano superato i 35 anni di età.",
+          "checked_at": "2026-11-10T16:56:21+01:00"
+        },
+        {
+          "url": "https://www.concorsomorlacchi.it/",
+          "excerpt": "La quota di iscrizione è fissata in euro 80 e non è rimborsabile.",
+          "checked_at": "2026-11-10T16:56:21+01:00"
+        }
+      ],
+      "notes": "比赛日期为2026年12月14日至15日；具体提交材料和汇款方式以官网章程为准。"
+    },
+    {
+      "id": "carlofelice-academy-2027",
+      "title": "Accademia di alto perfezionamento per cantanti lirici e pianisti accompagnatori 2027",
+      "opportunity_type": "young_artist",
+      "voice_types": [
+        "soprano",
+        "tenor",
+        "baritone",
+        "bass"
+      ],
+      "location": "热那亚 · Teatro Carlo Felice",
+      "source_name": "Fondazione Teatro Carlo Felice",
+      "source_url": "https://www.carlofelice.it/accademia/",
+      "announcement_url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+      "application_url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-accademia-alto-perfezionamento-per-cantanti-lirici-e-pianisti-accompagnatori-2027/",
+      "official_pdf_url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Bando-Accademia-TCF_261110.pdf",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "application_deadline_at": "2026-12-10T23:59:00+01:00",
+      "audition_start_at": "2027-01-10T00:00:00+01:00",
+      "audition_end_at": "2027-01-11T23:59:00+01:00",
+      "fee_eur": 0,
+      "eligibility_summary": "面向出生于1997年1月1日及以后的歌手与钢琴合作人员；非欧盟申请人须符合公告所列有效居留或学习许可要求。歌手现场试唱须背谱，具体角色及材料见官方简章。",
+      "checked_at": "2026-11-10T16:56:21+01:00",
+      "last_verified_at": "2026-11-10T16:56:21+01:00",
+      "evidence": [
+        {
+          "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+          "excerpt": "Sono aperte le iscrizioni alla selezione per l’ammissione all’Accademia ... 2027. L’iscrizione e la frequenza sono gratuite. Aggiornamento 09 novembre 2026.",
+          "checked_at": "2026-11-10T16:56:21+01:00"
+        },
+        {
+          "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Bando-Accademia-TCF_261110.pdf",
+          "excerpt": "Il modulo ... dovrà essere ... compilato entro e non oltre le ore 23.59 giovedì 10 dicembre 2026.",
+          "checked_at": "2026-11-10T16:56:21+01:00",
+          "pdf_page": 2
+        }
+      ],
+      "notes": "现场选拔安排在2027年1月10日至11日；官方 PDF 第1页列出歌手角色，第2页列出截止日期及现场选拔信息。"
+    },
+    {
+      "id": "carlofelice-choir-tenors-2026",
+      "title": "Audizione per Artisti del Coro – Tenori",
+      "opportunity_type": "choir",
+      "voice_types": [
+        "tenor"
+      ],
+      "location": "热那亚 · Fondazione Teatro Carlo Felice",
+      "source_name": "Fondazione Teatro Carlo Felice",
+      "source_url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+      "announcement_url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+      "application_url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-tenori-5/",
+      "official_pdf_url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-AUDIZIONI-TCF-CORO-TN-11.26-B.pdf",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "application_deadline_at": "2026-11-23T23:59:00+01:00",
+      "audition_start_at": "2026-11-28T14:00:00+01:00",
+      "age_min": 18,
+      "eligibility_summary": "面向18岁及以上男高音。选拔用于建立合唱团候选名单，可能用于2026/27乐季的定期或临时用工；申请材料和居留要求见官方简章。",
+      "checked_at": "2026-11-10T16:56:21+01:00",
+      "last_verified_at": "2026-11-10T16:56:21+01:00",
+      "evidence": [
+        {
+          "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+          "excerpt": "Audizione per Artisti del Coro – TENORI. Domanda entro e non oltre le ore 23:59 del 23 novembre 2026. Aggiornamento 10 novembre 2026.",
+          "checked_at": "2026-11-10T16:56:21+01:00"
+        },
+        {
+          "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-AUDIZIONI-TCF-CORO-TN-11.26-B.pdf",
+          "excerpt": "La richiesta ... dovrà essere trasmessa entro e non oltre le ore 23:59 di lunedì 23 novembre 2026.",
+          "checked_at": "2026-11-10T16:56:21+01:00",
+          "pdf_page": 1
+        },
+        {
+          "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-AUDIZIONI-TCF-CORO-TN-11.26-B.pdf",
+          "excerpt": "Le prove d’esame ... sabato 28 novembre 2026 alle ore 14:00.",
+          "checked_at": "2026-11-10T16:56:21+01:00",
+          "pdf_page": 2
+        }
+      ],
+      "notes": "请在申请前再次检查剧院公告是否有时间或程序变更。"
+    },
+    {
+      "id": "carlofelice-choir-basses-2026",
+      "title": "Concorso per Artisti del Coro – Bassi",
+      "opportunity_type": "choir",
+      "voice_types": [
+        "bass"
+      ],
+      "location": "热那亚 · Fondazione Teatro Carlo Felice",
+      "source_name": "Fondazione Teatro Carlo Felice",
+      "source_url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+      "announcement_url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+      "application_url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-bassi-e-baritoni/",
+      "official_pdf_url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-CORO-concorso-26.11-BR-BS-b.pdf",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "application_deadline_at": "2026-12-07T23:59:00+01:00",
+      "audition_start_at": "2026-12-15T09:00:00+01:00",
+      "age_min": 18,
+      "eligibility_summary": "面向男低音合唱团岗位，最低年龄18岁；岗位为合唱团正式岗位选拔，具体劳动及居留资格要求见官方简章。",
+      "checked_at": "2026-11-10T16:56:21+01:00",
+      "last_verified_at": "2026-11-10T16:56:21+01:00",
+      "evidence": [
+        {
+          "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+          "excerpt": "Concorso Internazionale per Artisti del Coro – BASSI e BARITONI. Domanda entro e non oltre le ore 23:59 del 07 dicembre 2026.",
+          "checked_at": "2026-11-10T16:56:21+01:00"
+        },
+        {
+          "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-CORO-concorso-26.11-BR-BS-b.pdf",
+          "excerpt": "La richiesta ... dovrà essere trasmessa entro e non oltre le ore 23:59 di martedì 7 dicembre 2026.",
+          "checked_at": "2026-11-10T16:56:21+01:00",
+          "pdf_page": 2
+        },
+        {
+          "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-CORO-concorso-26.11-BR-BS-b.pdf",
+          "excerpt": "BASSI: martedì 15 dicembre 2026 alle ore 9:00 precise.",
+          "checked_at": "2026-11-10T16:56:21+01:00",
+          "pdf_page": 3
+        }
+      ],
+      "notes": "官方公告把男低音和男中音放在同一份简章中；此处按不同声部拆分，以准确显示试唱日期。"
+    },
+    {
+      "id": "carlofelice-choir-baritones-2026",
+      "title": "Concorso per Artisti del Coro – Baritoni",
+      "opportunity_type": "choir",
+      "voice_types": [
+        "baritone"
+      ],
+      "location": "热那亚 · Fondazione Teatro Carlo Felice",
+      "source_name": "Fondazione Teatro Carlo Felice",
+      "source_url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+      "announcement_url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+      "application_url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-bassi-e-baritoni/",
+      "official_pdf_url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-CORO-concorso-26.11-BR-BS-b.pdf",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "application_deadline_at": "2026-12-07T23:59:00+01:00",
+      "audition_start_at": "2026-12-16T14:00:00+01:00",
+      "age_min": 18,
+      "eligibility_summary": "面向男中音合唱团岗位，最低年龄18岁；岗位为合唱团正式岗位选拔，具体劳动及居留资格要求见官方简章。",
+      "checked_at": "2026-11-10T16:56:21+01:00",
+      "last_verified_at": "2026-11-10T16:56:21+01:00",
+      "evidence": [
+        {
+          "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+          "excerpt": "Concorso Internazionale per Artisti del Coro – BASSI e BARITONI. Domanda entro e non oltre le ore 23:59 del 07 dicembre 2026.",
+          "checked_at": "2026-11-10T16:56:21+01:00"
+        },
+        {
+          "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-CORO-concorso-26.11-BR-BS-b.pdf",
+          "excerpt": "La richiesta ... dovrà essere trasmessa entro e non oltre le ore 23:59 di martedì 7 dicembre 2026.",
+          "checked_at": "2026-11-10T16:56:21+01:00",
+          "pdf_page": 2
+        },
+        {
+          "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-CORO-concorso-26.11-BR-BS-b.pdf",
+          "excerpt": "BARITONI: mercoledì 16 dicembre 2026 alle ore 14:00 precise.",
+          "checked_at": "2026-11-10T16:56:21+01:00",
+          "pdf_page": 3
+        }
+      ],
+      "notes": "官方公告把男低音和男中音放在同一份简章中；此处按不同声部拆分，以准确显示试唱日期。"
+    }
+  ]
+}
