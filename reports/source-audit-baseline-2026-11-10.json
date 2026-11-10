@@ -19,24 +19,19 @@
   "summary": {
     "audited_unique_sources": 44,
     "classifications": {
-      "auto_approved_official": 20,
-      "needs_review": 9,
+      "auto_approved_official": 23,
+      "needs_review": 5,
       "auto_approved_third_party": 4,
-      "irrelevant_candidate": 11
+      "irrelevant_candidate": 12
     },
     "exact_duplicate_extra_records": 15,
     "manual_review_priorities": [
-      "source-6",
-      "source-8",
       "source-9",
-      "source-10",
       "source-17",
-      "source-26",
-      "source-97",
       "source-101",
       "source-121"
     ],
-    "note": "Official means first-party for the publisher's own institution/event, not a claim of government endorsement or external accreditation. For first-party institutions with no clearly evidenced voice-specific page in this pass, publisher identity may be official while source-level relevance remains needs_review."
+    "note": "Official means first-party for the publisher's own institution/event, not a claim of government endorsement or external accreditation. For first-party institutions with no clearly evidenced voice-specific page in this pass, publisher identity may be official while source-level relevance remains needs_review. Follow-up verification on 2026-11-10 upgraded Maggio Musicale Fiorentino, Teatro Lirico Sperimentale di Spoleto, and Fondazione Renata Tebaldi using direct first-party vocal-program evidence; Winterwerft was classified out of scope for this classical-vocal registry."
   },
   "items": [
     {
@@ -181,12 +176,12 @@
       "fetch_status": "ok",
       "http_status": 200,
       "last_checked_at": "2026-11-10T15:43:13+01:00",
-      "auto_review_status": "needs_review",
-      "publisher_status": "unverified",
-      "relevance_status": "uncertain",
-      "confidence": "low",
-      "evidence_url": null,
-      "evidence_note": "抓取页面标题显示为 Maggio Musicale Fiorentino 的 bandi 页面；本轮未取得足够页面正文或导航证据确认其声乐相关栏目与更新维护价值。",
+      "auto_review_status": "auto_approved_official",
+      "publisher_status": "official",
+      "relevance_status": "relevant",
+      "confidence": "high",
+      "evidence_url": "https://www.maggiofiorentino.com/bandi/",
+      "evidence_note": "Fondazione Teatro del Maggio Musicale Fiorentino 官方 Bandi 入口列出 Ensemble Corale、Cantoria 等声乐项目；其官方 Ensemble Corale 2026/27 公告明确招募 bassi、baritoni、tenori，要求歌剧演唱训练，并安排歌剧曲目 audition。来源身份与声乐相关性均有直接一手证据。",
       "duplicate_candidate_in_sources_extra": false,
       "destructive_action_taken": false,
       "audit_date": "2026-11-10"
@@ -219,12 +214,12 @@
       "fetch_status": "ok",
       "http_status": 200,
       "last_checked_at": "2026-11-10T15:43:13+01:00",
-      "auto_review_status": "needs_review",
-      "publisher_status": "unverified",
-      "relevance_status": "uncertain",
-      "confidence": "low",
-      "evidence_url": null,
-      "evidence_note": "TLS Belli 的 Bandi e avvisi 页面本轮未取得可交叉核验的正文证据；需确认机构关系及声乐项目是否持续更新。",
+      "auto_review_status": "auto_approved_official",
+      "publisher_status": "official",
+      "relevance_status": "relevant",
+      "confidence": "high",
+      "evidence_url": "https://www.tls-belli.it/storia/",
+      "evidence_note": "TLS-Belli 官方历史页说明该机构自 1947 年起培养青年歌剧歌手并举办 canto competition；官方 2026 Libere Audizioni 页面明确为歌剧歌手选拔。页面是机构一手来源，具体历史公告需逐条检查有效期。",
       "duplicate_candidate_in_sources_extra": false,
       "destructive_action_taken": false,
       "audit_date": "2026-11-10"
@@ -523,12 +518,12 @@
       "fetch_status": "ok",
       "http_status": 200,
       "last_checked_at": "2026-11-10T15:43:13+01:00",
-      "auto_review_status": "needs_review",
-      "publisher_status": "unverified",
-      "relevance_status": "uncertain",
-      "confidence": "low",
-      "evidence_url": null,
-      "evidence_note": "Fondazione Renata Tebaldi 网站身份与当前抓取页标题可见，但本轮未取得该具体页面与声乐比赛/招募的直接关联证据。",
+      "auto_review_status": "auto_approved_official",
+      "publisher_status": "official",
+      "relevance_status": "relevant",
+      "confidence": "high",
+      "evidence_url": "https://www.fondazionerenatatebaldi.org/bando-2026-2/",
+      "evidence_note": "Fondazione Renata Tebaldi 官方基金会介绍明确以国际歌唱比赛和音乐会为主要活动；官方 2026 Opera Section 竞赛公告面向所有声部和国籍的歌剧歌手，明确赛程及年龄规则。",
       "duplicate_candidate_in_sources_extra": false,
       "destructive_action_taken": false,
       "audit_date": "2026-11-10"
@@ -618,12 +613,12 @@
       "fetch_status": "ok",
       "http_status": 200,
       "last_checked_at": "2026-11-10T15:45:08+01:00",
-      "auto_review_status": "needs_review",
-      "publisher_status": "unverified",
-      "relevance_status": "uncertain",
-      "confidence": "low",
-      "evidence_url": null,
-      "evidence_note": "Winterwerft Open Call Artists 本轮未取得具体征集对象和是否包含歌手的直接证据；先保留待核实，不按名称判相关。",
+      "auto_review_status": "irrelevant_candidate",
+      "publisher_status": "third_party",
+      "relevance_status": "irrelevant",
+      "confidence": "high",
+      "evidence_url": "https://webzine.theatronduepuntozero.it/winterwerft-open-call-per-artisti-sul-tema-stories-of-power/",
+      "evidence_note": "本次 Open Call 面向多领域艺术家/团体，音乐部分特别欢迎 FLINTA 音乐团体，未明确提供古典声乐、歌剧歌手或个人声部 audition；申请截止 2026-11-08，已过期。作为当前平台声乐机会来源相关性不足。",
       "duplicate_candidate_in_sources_extra": true,
       "destructive_action_taken": false,
       "audit_date": "2026-11-10"
@@ -875,5 +870,48 @@
       "destructive_action_taken": false,
       "audit_date": "2026-11-10"
     }
-  ]
+  ],
+  "follow_up_audit": {
+    "audited_at": "2026-11-10",
+    "updates": [
+      {
+        "source_id": "source-8",
+        "result": "auto_approved_official",
+        "evidence": [
+          "https://www.maggiofiorentino.com/bandi/",
+          "https://www.maggiofiorentino.com/bandi/bando-ensemble-corale"
+        ]
+      },
+      {
+        "source_id": "source-10",
+        "result": "auto_approved_official",
+        "evidence": [
+          "https://www.tls-belli.it/storia/",
+          "https://www.tls-belli.it/2026/03/06/libere-audizioni-2026/",
+          "https://www.tls-belli.it/libere-audizioni/"
+        ]
+      },
+      {
+        "source_id": "source-26",
+        "result": "auto_approved_official",
+        "evidence": [
+          "https://www.fondazionerenatatebaldi.org/",
+          "https://www.fondazionerenatatebaldi.org/bando-2026-2/"
+        ]
+      },
+      {
+        "source_id": "source-97",
+        "result": "irrelevant_candidate",
+        "evidence": [
+          "https://webzine.theatronduepuntozero.it/winterwerft-open-call-per-artisti-sul-tema-stories-of-power/"
+        ]
+      }
+    ],
+    "unresolved": [
+      "source-9 AsLiCo",
+      "source-17 Teatro Lirico di Cagliari",
+      "source-101 Musical.it",
+      "source-121 Provinispettacolo"
+    ]
+  }
 }
