@@ -357,7 +357,7 @@ function renderCalls(){
   const pill=$('#opportunityCount');
   if(pill)pill.textContent=`${current.length} 项开放报名`;
   const box=$('#opportunities');
-  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">报名截止：${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a>${o.applicationUrl?`<a class="card-link" href="${esc(o.applicationUrl)}" target="_blank" rel="noopener">在线申请 <span>↗</span></a>`:''}</article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
+  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">报名截止：${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a>${o.applicationUrl?`<a class="card-link" href="${esc(o.applicationUrl)}" target="_blank" rel="noopener">在线申请 <span>↗</span></a>`:'' }${o.officialPdfUrl?`<a class="card-link" href="${esc(o.officialPdfUrl)}" target="_blank" rel="noopener">下载官方简章 PDF <span>↗</span></a>`:''}</article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
   renderTiles();
 }
 
