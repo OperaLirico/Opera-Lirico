@@ -110,8 +110,8 @@ class OpportunityDataTests(unittest.TestCase):
         self.assertEqual(record["publication_status"], "published")
         self.assertEqual(record["review_status"], "verified")
         self.assertNotIn("audition_start_at", record)
-        self.assertIn("19 dicembre 2026", record["notes"])
-        self.assertIn("20 dicembre 2026", record["notes"])
+        self.assertIn("12月19日", record["notes"])
+        self.assertIn("12月20日", record["notes"])
         self.assertTrue(record["official_pdf_url"].endswith("BandoSelezione_2Contralti_TM_2026.pdf"))
 
     def test_published_records_have_an_application_or_official_pdf_link(self):
