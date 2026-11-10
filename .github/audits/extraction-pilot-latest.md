@@ -1,112 +1,102 @@
 # P2/P4 source and extraction pilot
 
-- Generated: 2026-11-10T18:48:07+01:00 (Europe/Rome)
+- Generated: 2026-11-10T18:50:45+01:00 (Europe/Rome)
 - Pages captured: 5/5
-- Advertised feeds checked: 7
-- Feeds with vocal/audition entries: 0
+- Advertised feeds checked: 3
+- Feeds with vocal/audition entries: 1
 - Production strategy changes: none
 - Parser comparisons use identical HTML bytes.
 - Metrics are coverage proxies, not accuracy scores; raw HTML is uploaded as a 30-day artifact.
 
-## Teatro La Fenice - 招募与选拔
+## Teatro Lirico Sperimentale di Spoleto
 
-- URL: https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/
+- URL: https://www.tls-belli.it/bandi_e_avvisi/
 - Fetch: ok; HTTP 200
-- Snapshot: 80724 bytes; SHA-256 4c63b8a5947f981f4d8ff948cdff903304df36d809298c6ae0269c65d383ca22
+- Snapshot: 46172 bytes; SHA-256 49fe20ac08209f2aa8d2519e76edf0f9d9347066b0ffece32ea78212533f8576
 - robots.txt: ok HTTP 200
-- Sitemap: https://www.teatrolafenice.it/sitemap.xml — ok HTTP 200; type=sitemapindex; index entries=12; child maps checked=5; page URLs=2809; vocal/audition URLs=27
-- Sitemap: https://www.teatrolafenice.it/wp-sitemap.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
-- Sitemap: https://www.teatrolafenice.it/sitemap_index.xml — ok HTTP 200; type=sitemapindex; index entries=12; child maps checked=5; page URLs=2809; vocal/audition URLs=27
-  - Child sitemap: https://www.teatrolafenice.it/post-sitemap.xml — ok HTTP 200; page URLs=400; vocal/audition URLs=5
-  - Child sitemap: https://www.teatrolafenice.it/page-sitemap.xml — ok HTTP 200; page URLs=302; vocal/audition URLs=4
-  - Child sitemap: https://www.teatrolafenice.it/event-sitemap1.xml — ok HTTP 200; page URLs=2434; vocal/audition URLs=10
-  - Child sitemap: https://www.teatrolafenice.it/event-sitemap2.xml — ok HTTP 200; page URLs=2433; vocal/audition URLs=21
-  - Child sitemap: https://www.teatrolafenice.it/event-sitemap3.xml — ok HTTP 200; page URLs=107; vocal/audition URLs=0
-- Explicit public API links: https://www.teatrolafenice.it/wp-json/
-- Public API check: https://www.teatrolafenice.it/wp-json/ — restricted HTTP 403; JSON valid=None; namespaces=None; routes=None
-- DOM: 140 links; 36 relevant labels; 87 list items; 4 headings; 0 tables
-- scrapling: 6039 chars; signals=4/6; relevant labels retained=36/36; href targets in plain text=0/36; runtime=0.0023s
-- lxml_full_text: 5919 chars; signals=4/6; relevant labels retained=36/36; href targets in plain text=0/36; runtime=0.0016s
-- trafilatura_plain: 259 chars; signals=2/6; relevant labels retained=0/36; href targets in plain text=0/36; runtime=0.0324s
-- trafilatura_markdown: 263 chars; links=0; relevant links=0; exact relevant hrefs retained=0/36; runtime=0.029s
+- Sitemap: https://www.tls-belli.it/sitemap_index.xml — ok HTTP 200; type=sitemapindex; index entries=14; child maps checked=5; page URLs=996; vocal/audition URLs=140
+  - Child sitemap: https://www.tls-belli.it/post-sitemap.xml — ok HTTP 200; page URLs=740; vocal/audition URLs=129
+  - Child sitemap: https://www.tls-belli.it/page-sitemap.xml — ok HTTP 200; page URLs=148; vocal/audition URLs=11
+  - Child sitemap: https://www.tls-belli.it/offer-sitemap.xml — ok HTTP 200; page URLs=24; vocal/audition URLs=0
+  - Child sitemap: https://www.tls-belli.it/portfolio-sitemap.xml — ok HTTP 200; page URLs=82; vocal/audition URLs=0
+  - Child sitemap: https://www.tls-belli.it/slide-sitemap.xml — ok HTTP 200; page URLs=2; vocal/audition URLs=0
+- Feed: https://www.tls-belli.it/feed/ — ok HTTP 200; entries=10; relevant entries=3
+- Explicit public API links: https://www.tls-belli.it/wp-json/
+- Public API check: https://www.tls-belli.it/wp-json/ — ok HTTP 200; JSON valid=True; namespaces=21; routes=678
+- DOM: 37 links; 10 relevant labels; 26 list items; 0 headings; 0 tables
+- scrapling: 1773 chars; signals=5/6; relevant labels retained=8/8; href targets in plain text=0/10; runtime=0.0006s
+- lxml_full_text: 5475 chars; signals=5/6; relevant labels retained=8/8; href targets in plain text=0/10; runtime=0.0004s
+- trafilatura_plain: 1086 chars; signals=5/6; relevant labels retained=5/8; href targets in plain text=0/10; runtime=0.1181s
+- trafilatura_markdown: 1086 chars; links=0; relevant links=0; exact relevant hrefs retained=0/10; runtime=0.012s
 - Recommendation: manual_review_required
 
-## Teatro Lirico di Cagliari - 招募与选拔
+## Accademia d'Arte Lirica di Osimo
 
-- URL: https://www.liricocagliari.it/trasparenza/
+- URL: https://www.accademialiricaosimo.com/
 - Fetch: ok; HTTP 200
-- Snapshot: 337525 bytes; SHA-256 b69264332aadaa7ad4688a972453f93c4a98c1dc270131623a87e937fa0825d5
+- Snapshot: 61504 bytes; SHA-256 a9187ed024a580a5a7bd12746edcae2432d31f48947f10dbe9e28823619bec6c
 - robots.txt: ok HTTP 200
-- Sitemap: https://www.liricocagliari.it/sitemap_index.xml — ok HTTP 200; type=sitemapindex; index entries=12; child maps checked=5; page URLs=292; vocal/audition URLs=9
-  - Child sitemap: https://www.liricocagliari.it/post-sitemap.xml — ok HTTP 200; page URLs=99; vocal/audition URLs=5
-  - Child sitemap: https://www.liricocagliari.it/page-sitemap.xml — ok HTTP 200; page URLs=81; vocal/audition URLs=0
-  - Child sitemap: https://www.liricocagliari.it/trasparenza-sitemap.xml — ok HTTP 200; page URLs=71; vocal/audition URLs=1
-  - Child sitemap: https://www.liricocagliari.it/area-stampa-sitemap.xml — ok HTTP 200; page URLs=6; vocal/audition URLs=0
-  - Child sitemap: https://www.liricocagliari.it/bandi-e-gare-sitemap.xml — ok HTTP 200; page URLs=35; vocal/audition URLs=3
-- Feed: https://www.liricocagliari.it/comments/feed/ — ok HTTP 200; entries=1; relevant entries=0
-- Feed: https://www.liricocagliari.it/feed/ — ok HTTP 200; entries=10; relevant entries=0
-- Feed: https://www.liricocagliari.it/trasparenza/?feed=rss2 — http_error HTTP 404; entries=0; relevant entries=0
-- Explicit public API links: https://www.liricocagliari.it/wp-json/
-- Public API check: https://www.liricocagliari.it/wp-json/ — ok HTTP 200; JSON valid=True; namespaces=22; routes=395
-- DOM: 262 links; 24 relevant labels; 140 list items; 138 headings; 0 tables
-- scrapling: 11584 chars; signals=3/6; relevant labels retained=9/9; href targets in plain text=0/8; runtime=0.0049s
-- lxml_full_text: 41282 chars; signals=3/6; relevant labels retained=9/9; href targets in plain text=0/8; runtime=0.0031s
-- trafilatura_plain: 7937 chars; signals=3/6; relevant labels retained=7/9; href targets in plain text=6/8; runtime=0.0239s
-- trafilatura_markdown: 7994 chars; links=55; relevant links=7; exact relevant hrefs retained=6/8; runtime=0.0226s
+- Sitemap: https://www.accademialiricaosimo.com/sitemap.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
+- Sitemap: https://www.accademialiricaosimo.com/wp-sitemap.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
+- Sitemap: https://www.accademialiricaosimo.com/sitemap_index.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
+- Feed: https://www.accademialiricaosimo.com/comments/feed/ — ok HTTP 200; entries=0; relevant entries=0
+- Feed: https://www.accademialiricaosimo.com/feed/ — ok HTTP 200; entries=10; relevant entries=0
+- Explicit public API links: https://www.accademialiricaosimo.com/wp-json/
+- Public API check: https://www.accademialiricaosimo.com/wp-json/ — ok HTTP 200; JSON valid=True; namespaces=3; routes=69
+- DOM: 70 links; 3 relevant labels; 84 list items; 2 headings; 1 tables
+- scrapling: 2478 chars; signals=4/6; relevant labels retained=2/2; href targets in plain text=0/3; runtime=0.0011s
+- lxml_full_text: 3957 chars; signals=4/6; relevant labels retained=2/2; href targets in plain text=0/3; runtime=0.0007s
+- trafilatura_plain: 1726 chars; signals=4/6; relevant labels retained=2/2; href targets in plain text=0/3; runtime=0.0187s
+- trafilatura_markdown: 1726 chars; links=0; relevant links=0; exact relevant hrefs retained=0/3; runtime=0.0184s
 - Recommendation: manual_review_required
 
-## Teatro Regio Torino
+## Valsesia Musica - 声乐比赛
 
-- URL: https://www.teatroregio.torino.it/selezione-personale
+- URL: https://www.valsesiamusica.com/sezione_canto_lirico.htm
 - Fetch: ok; HTTP 200
-- Snapshot: 322335 bytes; SHA-256 08edfaade67ede074ba0c94ef2f8c9a2daf8a95af4cd9acfc9a322d114f4a389
+- Snapshot: 51048 bytes; SHA-256 d59c753c9c6e71af6fc396c3bfb706321d34c197803e31b2eaff15ea026ec7d3
 - robots.txt: ok HTTP 200
-- Sitemap: https://www.teatroregio.torino.it/sitemap.xml — ok HTTP 200; type=sitemapindex; index entries=2; child maps checked=2; page URLs=1243; vocal/audition URLs=48
-- Sitemap: https://www.teatroregio.torino.it/wp-sitemap.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
-- Sitemap: https://www.teatroregio.torino.it/sitemap_index.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
-- DOM: 1133 links; 927 relevant labels; 190 list items; 15 headings; 1 tables
-- scrapling: 53979 chars; signals=6/6; relevant labels retained=196/196; href targets in plain text=0/883; runtime=0.0084s
-- lxml_full_text: 54449 chars; signals=6/6; relevant labels retained=196/196; href targets in plain text=0/883; runtime=0.0072s
-- trafilatura_plain: 100208 chars; signals=6/6; relevant labels retained=174/196; href targets in plain text=71/883; runtime=0.1219s
-- trafilatura_markdown: 86341 chars; links=53; relevant links=44; exact relevant hrefs retained=42/883; runtime=0.1531s
+- Sitemap: https://valsesiamusica.com/sitemap.xml — ok HTTP 200; type=urlset; index entries=87; child maps checked=0; page URLs=87; vocal/audition URLs=4
+- DOM: 75 links; 13 relevant labels; 43 list items; 3 headings; 0 tables
+- scrapling: 2585 chars; signals=5/6; relevant labels retained=7/7; href targets in plain text=0/11; runtime=0.0012s
+- lxml_full_text: 3194 chars; signals=5/6; relevant labels retained=7/7; href targets in plain text=0/11; runtime=0.0007s
+- trafilatura_plain: 1440 chars; signals=4/6; relevant labels retained=0/7; href targets in plain text=0/11; runtime=0.0185s
+- trafilatura_markdown: 1440 chars; links=0; relevant links=0; exact relevant hrefs retained=0/11; runtime=0.0181s
 - Recommendation: manual_review_required
 
-## Teatro dell'Opera di Roma - Fabbrica
+## Teatro Comunale di Bologna
 
-- URL: https://www.operaroma.it/bandi-e-concorsi/bandi-fabbrica-young-artist-program-2027-2028/
+- URL: https://www.tcbo.it/amministrazione-trasparente/
 - Fetch: ok; HTTP 200
-- Snapshot: 50060 bytes; SHA-256 41fca6448837e921ef3c42bb60e94c052a7ddcc698fe9d9b340c6b64bb554e47
+- Snapshot: 318913 bytes; SHA-256 0012441386f7ef9f00611990e9624c23e1234ca18696245e814fb3c001140a99
+- robots.txt: ok HTTP 200
+- Sitemap: https://www.tcbo.it/sitemap_index.xml — ok HTTP 200; type=sitemapindex; index entries=24; child maps checked=5; page URLs=654; vocal/audition URLs=1
+  - Child sitemap: https://www.tcbo.it/page-sitemap.xml — ok HTTP 200; page URLs=58; vocal/audition URLs=1
+  - Child sitemap: https://www.tcbo.it/tcbo_ev_opera-sitemap.xml — ok HTTP 200; page URLs=158; vocal/audition URLs=0
+  - Child sitemap: https://www.tcbo.it/tcbo_ev_concerto-sitemap.xml — ok HTTP 200; page URLs=342; vocal/audition URLs=0
+  - Child sitemap: https://www.tcbo.it/tcbo_ev_danza-sitemap.xml — ok HTTP 200; page URLs=82; vocal/audition URLs=0
+  - Child sitemap: https://www.tcbo.it/tcbo_ev_speciale-sitemap.xml — ok HTTP 200; page URLs=14; vocal/audition URLs=0
+- DOM: 659 links; 494 relevant labels; 530 list items; 63 headings; 0 tables
+- scrapling: 49025 chars; signals=6/6; relevant labels retained=350/350; href targets in plain text=0/441; runtime=0.0054s
+- lxml_full_text: 52660 chars; signals=6/6; relevant labels retained=350/350; href targets in plain text=0/441; runtime=0.0043s
+- trafilatura_plain: 44520 chars; signals=5/6; relevant labels retained=114/350; href targets in plain text=135/441; runtime=0.0911s
+- trafilatura_markdown: 45135 chars; links=163; relevant links=140; exact relevant hrefs retained=135/441; runtime=0.0912s
+- Recommendation: manual_review_required
+
+## Maggio Musicale Fiorentino
+
+- URL: https://www.maggiofiorentino.com/bandi/
+- Fetch: ok; HTTP 200
+- Snapshot: 192642 bytes; SHA-256 56158ed7ebe065f6fb61a368d5eea3a6088a1295e484703b00e84e1738524a19
 - robots.txt: http_error HTTP 404
-- Sitemap: https://www.operaroma.it/sitemap.xml — ok HTTP 200; type=sitemapindex; index entries=7; child maps checked=5; page URLs=0; vocal/audition URLs=0
-- Sitemap: https://www.operaroma.it/wp-sitemap.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
-- Sitemap: https://www.operaroma.it/sitemap_index.xml — ok HTTP 200; type=urlset; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
-- Feed: https://www.operaroma.it/comments/feed/ — ok HTTP 200; entries=0; relevant entries=0
-- Feed: https://www.operaroma.it/feed/ — restricted HTTP 403; entries=0; relevant entries=0
-- Explicit public API links: https://www.operaroma.it/wp-json/
-- Public API check: https://www.operaroma.it/wp-json/ — ok HTTP 200; JSON valid=True; namespaces=9; routes=272
-- DOM: 108 links; 5 relevant labels; 93 list items; 2 headings; 0 tables
-- scrapling: 2124 chars; signals=4/6; relevant labels retained=5/5; href targets in plain text=0/5; runtime=0.001s
-- lxml_full_text: 4003 chars; signals=4/6; relevant labels retained=5/5; href targets in plain text=0/5; runtime=0.0007s
-- trafilatura_plain: 739 chars; signals=4/6; relevant labels retained=2/5; href targets in plain text=2/5; runtime=0.0075s
-- trafilatura_markdown: 742 chars; links=2; relevant links=2; exact relevant hrefs retained=2/5; runtime=0.0074s
-- Recommendation: manual_review_required
-
-## Teatro Verdi Trieste
-
-- URL: https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/
-- Fetch: ok; HTTP 200
-- Snapshot: 131138 bytes; SHA-256 5a2db9966fa9c46fa51d28c81de4a8b1731ed0cdc7abfaaea216cd35cf21c5e1
-- robots.txt: ok HTTP 200
-- Sitemap: https://www.teatroverdi-trieste.com/sitemap_index.xml — ok HTTP 200; type=invalid_xml; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
-- Feed: https://www.teatroverdi-trieste.com/it/comments/feed/ — http_error HTTP 404; entries=0; relevant entries=0
-- Feed: https://www.teatroverdi-trieste.com/it/feed/ — ok HTTP 200; entries=0; relevant entries=0
-- Explicit public API links: https://www.teatroverdi-trieste.com/wp-json/
-- Public API check: https://www.teatroverdi-trieste.com/wp-json/ — ok HTTP 200; JSON valid=True; namespaces=11; routes=229
-- DOM: 155 links; 131 relevant labels; 153 list items; 43 headings; 3 tables
-- scrapling: 26769 chars; signals=5/6; relevant labels retained=106/106; href targets in plain text=105/107; runtime=0.0022s
-- lxml_full_text: 23760 chars; signals=5/6; relevant labels retained=106/106; href targets in plain text=105/107; runtime=0.0015s
-- trafilatura_plain: 7706 chars; signals=3/6; relevant labels retained=0/106; href targets in plain text=0/107; runtime=0.0171s
-- trafilatura_markdown: 7960 chars; links=0; relevant links=0; exact relevant hrefs retained=0/107; runtime=0.0196s
+- Sitemap: https://www.maggiofiorentino.com/sitemap.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
+- Sitemap: https://www.maggiofiorentino.com/wp-sitemap.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
+- Sitemap: https://www.maggiofiorentino.com/sitemap_index.xml — http_error HTTP 404; type=unavailable; index entries=0; child maps checked=0; page URLs=0; vocal/audition URLs=0
+- DOM: 25 links; 2 relevant labels; 6 list items; 5 headings; 0 tables
+- scrapling: 721 chars; signals=1/6; relevant labels retained=2/2; href targets in plain text=0/2; runtime=0.0007s
+- lxml_full_text: 2469 chars; signals=1/6; relevant labels retained=2/2; href targets in plain text=0/2; runtime=0.0006s
+- trafilatura_plain: 136 chars; signals=0/6; relevant labels retained=0/2; href targets in plain text=0/2; runtime=0.0139s
+- trafilatura_markdown: 150 chars; links=0; relevant links=0; exact relevant hrefs retained=0/2; runtime=0.0136s
 - Recommendation: manual_review_required
 
 ## Limitations

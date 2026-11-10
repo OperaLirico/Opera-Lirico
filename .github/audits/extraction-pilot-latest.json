@@ -1,34 +1,34 @@
 {
-  "generated_at": "2026-11-10T18:48:07+01:00",
-  "batch": "batch-2-2026-11-10",
-  "scope": "Second batch of five high-value official vocal-source pages.",
+  "generated_at": "2026-11-10T18:50:45+01:00",
+  "batch": "batch-3-2026-11-10",
+  "scope": "Third batch of five high-value official vocal-source and competition pages.",
   "pilot_source_ids": [
-    "source-16",
-    "source-17",
-    "source-4",
-    "source-5",
-    "source-6"
+    "source-10",
+    "source-18",
+    "source-20",
+    "source-7",
+    "source-8"
   ],
   "production_changes": false,
   "strategy_status": "evaluation_only",
   "items": [
     {
-      "source_id": "source-16",
-      "source_name": "Teatro La Fenice - 招募与选拔",
-      "url": "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/",
+      "source_id": "source-10",
+      "source_name": "Teatro Lirico Sperimentale di Spoleto",
+      "url": "https://www.tls-belli.it/bandi_e_avvisi/",
       "robots_status": "ok",
       "robots_http_status": 200,
       "fetch_status": "ok",
       "http_status": 200,
-      "final_url": "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/",
-      "content_type": "text/html; charset=UTF-8",
+      "final_url": "https://www.tls-belli.it/bandi_e_avvisi/",
+      "content_type": "text/html; charset=utf-8",
       "truncated": false,
       "error": null,
       "raw_snapshot": {
-        "artifact_path": "artifacts/p2-p4-html-samples/source-16.html",
-        "bytes": 80724,
-        "sha256": "4c63b8a5947f981f4d8ff948cdff903304df36d809298c6ae0269c65d383ca22",
-        "captured_at": "2026-11-10T18:48:12+01:00"
+        "artifact_path": "artifacts/p2-p4-html-samples/source-10.html",
+        "bytes": 46172,
+        "sha256": "49fe20ac08209f2aa8d2519e76edf0f9d9347066b0ffece32ea78212533f8576",
+        "captured_at": "2026-11-10T18:50:50+01:00"
       },
       "discovery": {
         "robots": {
@@ -37,428 +37,265 @@
         },
         "sitemaps": [
           {
-            "url": "https://www.teatrolafenice.it/sitemap.xml",
+            "url": "https://www.tls-belli.it/sitemap_index.xml",
             "status": "ok",
             "http_status": 200,
             "sitemap_kind": "sitemapindex",
-            "loc_count": 12,
+            "loc_count": 14,
             "child_sitemaps_checked": 5,
             "child_sitemaps": [
               {
-                "url": "https://www.teatrolafenice.it/post-sitemap.xml",
+                "url": "https://www.tls-belli.it/post-sitemap.xml",
                 "status": "ok",
                 "http_status": 200,
                 "sitemap_kind": "urlset",
-                "loc_count": 400,
-                "audition_or_vocal_url_count": 5,
+                "loc_count": 740,
+                "audition_or_vocal_url_count": 129,
                 "url_examples": [
-                  "https://www.teatrolafenice.it/monteverdi-450-rivedi-gratuitamente-lorfeo-il-ritorno-dulisse-in-patria-e-lincoronazione-di-poppea-su-culture-box/",
-                  "https://www.teatrolafenice.it/la-fenice-e-il-suo-coro-finalisti-agli-opera-awards-londra-9-aprile-2018/",
-                  "https://www.teatrolafenice.it/en/coronavirus/",
-                  "https://www.teatrolafenice.it/il-concerto-di-capodanno-in-fenice-in-diretta-televisiva-su-rai1-fabio-luisi-dirige-orchestra-e-coro-del-teatro-la-fenice-solisti-il-soprano-pretty-yende-e-il-tenore-brian-jagde/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2024/11/Orchestra-e-Coro-scaled.png"
+                  "https://www.tls-belli.it/2019/06/21/audizioni-figuranti-per-la-stagione-lirica-sperimentale-2019/",
+                  "https://www.tls-belli.it/2019/06/08/il-ritorno-del-grande-baritono-renato-bruson-allo-sperimentale/",
+                  "https://www.tls-belli.it/2019/06/19/il-mezzosoprano-marina-comparato-docente-al-corso-di-avviamento-al-debutto/",
+                  "https://www.tls-belli.it/2019/05/19/continuano-le-masterclass-del-corso-di-avviamento-al-debutto-con-il-soprano-edda-moser-2/",
+                  "https://www.tls-belli.it/2019/05/23/il-soprano-edda-moser-docente-nella-masterclass-di-interpretazione-vocale/",
+                  "https://www.tls-belli.it/2019/03/06/comunicazione-concorso/",
+                  "https://www.tls-belli.it/2019/03/09/decretati-gli-otto-vincitori-del-concorso-di-canto/",
+                  "https://www.tls-belli.it/2019/03/19/comunicato-stampa-mahagonny-songspiel-cantanti-del-tls-a-prato/",
+                  "https://www.tls-belli.it/2019/01/02/libere-audizioni/",
+                  "https://www.tls-belli.it/2019/01/28/al-via-anche-il-piccolo-coro-di-scheggino-vallo-di-nera/",
+                  "https://www.tls-belli.it/2019/02/01/giuria-del-73mo-concorso-comunita-europea-per-giovani-cantanti-lirici/",
+                  "https://www.tls-belli.it/2019/02/15/solo-6-giorni-per-iscriversi-al-concorso/"
                 ]
               },
               {
-                "url": "https://www.teatrolafenice.it/page-sitemap.xml",
+                "url": "https://www.tls-belli.it/page-sitemap.xml",
                 "status": "ok",
                 "http_status": 200,
                 "sitemap_kind": "urlset",
-                "loc_count": 302,
-                "audition_or_vocal_url_count": 4,
+                "loc_count": 148,
+                "audition_or_vocal_url_count": 11,
                 "url_examples": [
-                  "https://www.teatrolafenice.it/amministrazione-trasparente/organizzazione/coro/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2019/01/CoroOrchestra-1920x720.jpg",
-                  "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/storia-coro-e-orchestra/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2019/01/CoroOrchestra-1920x720.jpg"
+                  "https://www.tls-belli.it/docenti-del-corso-di-canto/",
+                  "https://www.tls-belli.it/concorso-orpheus/",
+                  "https://www.tls-belli.it/vincitori-del-concorso-dal-1947/",
+                  "https://www.tls-belli.it/concorso-di-canto/",
+                  "https://www.tls-belli.it/libere-audizioni/",
+                  "https://www.tls-belli.it/iscrizione-80-concorso-internazionale-di-can/",
+                  "https://www.tls-belli.it/wp-content/uploads/2025/11/Banner_concorso_canto.jpg",
+                  "https://www.tls-belli.it/iscrizione-libere-audizioni/",
+                  "https://www.tls-belli.it/wp-content/uploads/2025/11/Banner_concorso_canto.jpg",
+                  "https://www.tls-belli.it/libere-audizioni-2026/",
+                  "https://www.tls-belli.it/concorso-di-canto-2026/"
                 ]
               },
               {
-                "url": "https://www.teatrolafenice.it/event-sitemap1.xml",
+                "url": "https://www.tls-belli.it/offer-sitemap.xml",
                 "status": "ok",
                 "http_status": 200,
                 "sitemap_kind": "urlset",
-                "loc_count": 2434,
-                "audition_or_vocal_url_count": 10,
-                "url_examples": [
-                  "https://www.teatrolafenice.it/en/event/bando-premio-venezia-2019/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2019/01/2coro.jpg",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2019/01/2coro.jpg",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2019/01/2coro.jpg",
-                  "https://www.teatrolafenice.it/event/lincoronazione-di-poppea-monteverdi-450/",
-                  "https://www.teatrolafenice.it/en/event/lincoronazione-di-poppea-monteverdi-450/",
-                  "https://www.teatrolafenice.it/en/event/ottoni-e-coro-del-teatro-la-fenice/",
-                  "https://www.teatrolafenice.it/event/coro-e-orchestra-del-teatro-la-fenice/",
-                  "https://www.teatrolafenice.it/event/coro-teatro-la-fenice-requiem-schnittke/",
-                  "https://www.teatrolafenice.it/event/concerto-del-coro-teatro-la-fenice/"
-                ]
+                "loc_count": 24,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
               },
               {
-                "url": "https://www.teatrolafenice.it/event-sitemap2.xml",
+                "url": "https://www.tls-belli.it/portfolio-sitemap.xml",
                 "status": "ok",
                 "http_status": 200,
                 "sitemap_kind": "urlset",
-                "loc_count": 2433,
-                "audition_or_vocal_url_count": 21,
-                "url_examples": [
-                  "https://www.teatrolafenice.it/wp-content/uploads/2023/06/Coro_Taras-Shevchenko.jpg",
-                  "https://www.teatrolafenice.it/event/il-canto-lezione-concerto/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2023/09/CANTO.jpeg",
-                  "https://www.teatrolafenice.it/event/bando-premio-venezia-2023/",
-                  "https://www.teatrolafenice.it/event/maria-luisa-carnio-la-vita-lamore-il-canto/",
-                  "https://www.teatrolafenice.it/event/il-coro-del-teatro-la-fenice-al-teatro-toniolo/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2023/06/Coro_Concerto_Donato_Renzetti-1446-e1713961713625.png",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2024/04/Coro-Teatro-La-Fenice-Peltrolchimico-Maggio-2018.jpg",
-                  "https://www.teatrolafenice.it/event/fisarmonica-e-bandoneon-sono-cugini-lezione-concerto/",
-                  "https://www.teatrolafenice.it/event/bando-premio-venezia-2024/",
-                  "https://www.teatrolafenice.it/event/50-anni-di-canto-e-di-ricordi-concerto-dei-cantori-e-dei-piccoli-cantori-veneziani/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2024/11/Cantori_Veneziani_logo.png"
-                ]
+                "loc_count": 82,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
               },
               {
-                "url": "https://www.teatrolafenice.it/event-sitemap3.xml",
+                "url": "https://www.tls-belli.it/slide-sitemap.xml",
                 "status": "ok",
                 "http_status": 200,
                 "sitemap_kind": "urlset",
-                "loc_count": 107,
+                "loc_count": 2,
                 "audition_or_vocal_url_count": 0,
                 "url_examples": []
               }
             ],
-            "page_url_count": 2809,
-            "audition_or_vocal_url_count": 27,
+            "page_url_count": 996,
+            "audition_or_vocal_url_count": 140,
             "url_examples": [
-              "https://www.teatrolafenice.it/monteverdi-450-rivedi-gratuitamente-lorfeo-il-ritorno-dulisse-in-patria-e-lincoronazione-di-poppea-su-culture-box/",
-              "https://www.teatrolafenice.it/la-fenice-e-il-suo-coro-finalisti-agli-opera-awards-londra-9-aprile-2018/",
-              "https://www.teatrolafenice.it/en/coronavirus/",
-              "https://www.teatrolafenice.it/il-concerto-di-capodanno-in-fenice-in-diretta-televisiva-su-rai1-fabio-luisi-dirige-orchestra-e-coro-del-teatro-la-fenice-solisti-il-soprano-pretty-yende-e-il-tenore-brian-jagde/",
-              "https://www.teatrolafenice.it/wp-content/uploads/2024/11/Orchestra-e-Coro-scaled.png",
-              "https://www.teatrolafenice.it/amministrazione-trasparente/organizzazione/coro/",
-              "https://www.teatrolafenice.it/wp-content/uploads/2019/01/CoroOrchestra-1920x720.jpg",
-              "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/storia-coro-e-orchestra/",
-              "https://www.teatrolafenice.it/wp-content/uploads/2019/01/CoroOrchestra-1920x720.jpg",
-              "https://www.teatrolafenice.it/en/event/bando-premio-venezia-2019/",
-              "https://www.teatrolafenice.it/wp-content/uploads/2019/01/2coro.jpg",
-              "https://www.teatrolafenice.it/wp-content/uploads/2019/01/2coro.jpg"
-            ]
-          },
-          {
-            "url": "https://www.teatrolafenice.it/wp-sitemap.xml",
-            "status": "http_error",
-            "http_status": 404,
-            "sitemap_kind": "unavailable",
-            "loc_count": 0,
-            "child_sitemaps_checked": 0,
-            "child_sitemaps": [],
-            "page_url_count": 0,
-            "audition_or_vocal_url_count": 0,
-            "url_examples": []
-          },
-          {
-            "url": "https://www.teatrolafenice.it/sitemap_index.xml",
-            "status": "ok",
-            "http_status": 200,
-            "sitemap_kind": "sitemapindex",
-            "loc_count": 12,
-            "child_sitemaps_checked": 5,
-            "child_sitemaps": [
-              {
-                "url": "https://www.teatrolafenice.it/post-sitemap.xml",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 400,
-                "audition_or_vocal_url_count": 5,
-                "url_examples": [
-                  "https://www.teatrolafenice.it/monteverdi-450-rivedi-gratuitamente-lorfeo-il-ritorno-dulisse-in-patria-e-lincoronazione-di-poppea-su-culture-box/",
-                  "https://www.teatrolafenice.it/la-fenice-e-il-suo-coro-finalisti-agli-opera-awards-londra-9-aprile-2018/",
-                  "https://www.teatrolafenice.it/en/coronavirus/",
-                  "https://www.teatrolafenice.it/il-concerto-di-capodanno-in-fenice-in-diretta-televisiva-su-rai1-fabio-luisi-dirige-orchestra-e-coro-del-teatro-la-fenice-solisti-il-soprano-pretty-yende-e-il-tenore-brian-jagde/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2024/11/Orchestra-e-Coro-scaled.png"
-                ]
-              },
-              {
-                "url": "https://www.teatrolafenice.it/page-sitemap.xml",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 302,
-                "audition_or_vocal_url_count": 4,
-                "url_examples": [
-                  "https://www.teatrolafenice.it/amministrazione-trasparente/organizzazione/coro/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2019/01/CoroOrchestra-1920x720.jpg",
-                  "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/storia-coro-e-orchestra/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2019/01/CoroOrchestra-1920x720.jpg"
-                ]
-              },
-              {
-                "url": "https://www.teatrolafenice.it/event-sitemap1.xml",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 2434,
-                "audition_or_vocal_url_count": 10,
-                "url_examples": [
-                  "https://www.teatrolafenice.it/en/event/bando-premio-venezia-2019/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2019/01/2coro.jpg",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2019/01/2coro.jpg",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2019/01/2coro.jpg",
-                  "https://www.teatrolafenice.it/event/lincoronazione-di-poppea-monteverdi-450/",
-                  "https://www.teatrolafenice.it/en/event/lincoronazione-di-poppea-monteverdi-450/",
-                  "https://www.teatrolafenice.it/en/event/ottoni-e-coro-del-teatro-la-fenice/",
-                  "https://www.teatrolafenice.it/event/coro-e-orchestra-del-teatro-la-fenice/",
-                  "https://www.teatrolafenice.it/event/coro-teatro-la-fenice-requiem-schnittke/",
-                  "https://www.teatrolafenice.it/event/concerto-del-coro-teatro-la-fenice/"
-                ]
-              },
-              {
-                "url": "https://www.teatrolafenice.it/event-sitemap2.xml",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 2433,
-                "audition_or_vocal_url_count": 21,
-                "url_examples": [
-                  "https://www.teatrolafenice.it/wp-content/uploads/2023/06/Coro_Taras-Shevchenko.jpg",
-                  "https://www.teatrolafenice.it/event/il-canto-lezione-concerto/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2023/09/CANTO.jpeg",
-                  "https://www.teatrolafenice.it/event/bando-premio-venezia-2023/",
-                  "https://www.teatrolafenice.it/event/maria-luisa-carnio-la-vita-lamore-il-canto/",
-                  "https://www.teatrolafenice.it/event/il-coro-del-teatro-la-fenice-al-teatro-toniolo/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2023/06/Coro_Concerto_Donato_Renzetti-1446-e1713961713625.png",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2024/04/Coro-Teatro-La-Fenice-Peltrolchimico-Maggio-2018.jpg",
-                  "https://www.teatrolafenice.it/event/fisarmonica-e-bandoneon-sono-cugini-lezione-concerto/",
-                  "https://www.teatrolafenice.it/event/bando-premio-venezia-2024/",
-                  "https://www.teatrolafenice.it/event/50-anni-di-canto-e-di-ricordi-concerto-dei-cantori-e-dei-piccoli-cantori-veneziani/",
-                  "https://www.teatrolafenice.it/wp-content/uploads/2024/11/Cantori_Veneziani_logo.png"
-                ]
-              },
-              {
-                "url": "https://www.teatrolafenice.it/event-sitemap3.xml",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 107,
-                "audition_or_vocal_url_count": 0,
-                "url_examples": []
-              }
-            ],
-            "page_url_count": 2809,
-            "audition_or_vocal_url_count": 27,
-            "url_examples": [
-              "https://www.teatrolafenice.it/monteverdi-450-rivedi-gratuitamente-lorfeo-il-ritorno-dulisse-in-patria-e-lincoronazione-di-poppea-su-culture-box/",
-              "https://www.teatrolafenice.it/la-fenice-e-il-suo-coro-finalisti-agli-opera-awards-londra-9-aprile-2018/",
-              "https://www.teatrolafenice.it/en/coronavirus/",
-              "https://www.teatrolafenice.it/il-concerto-di-capodanno-in-fenice-in-diretta-televisiva-su-rai1-fabio-luisi-dirige-orchestra-e-coro-del-teatro-la-fenice-solisti-il-soprano-pretty-yende-e-il-tenore-brian-jagde/",
-              "https://www.teatrolafenice.it/wp-content/uploads/2024/11/Orchestra-e-Coro-scaled.png",
-              "https://www.teatrolafenice.it/amministrazione-trasparente/organizzazione/coro/",
-              "https://www.teatrolafenice.it/wp-content/uploads/2019/01/CoroOrchestra-1920x720.jpg",
-              "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/storia-coro-e-orchestra/",
-              "https://www.teatrolafenice.it/wp-content/uploads/2019/01/CoroOrchestra-1920x720.jpg",
-              "https://www.teatrolafenice.it/en/event/bando-premio-venezia-2019/",
-              "https://www.teatrolafenice.it/wp-content/uploads/2019/01/2coro.jpg",
-              "https://www.teatrolafenice.it/wp-content/uploads/2019/01/2coro.jpg"
+              "https://www.tls-belli.it/2019/06/21/audizioni-figuranti-per-la-stagione-lirica-sperimentale-2019/",
+              "https://www.tls-belli.it/2019/06/08/il-ritorno-del-grande-baritono-renato-bruson-allo-sperimentale/",
+              "https://www.tls-belli.it/2019/06/19/il-mezzosoprano-marina-comparato-docente-al-corso-di-avviamento-al-debutto/",
+              "https://www.tls-belli.it/2019/05/19/continuano-le-masterclass-del-corso-di-avviamento-al-debutto-con-il-soprano-edda-moser-2/",
+              "https://www.tls-belli.it/2019/05/23/il-soprano-edda-moser-docente-nella-masterclass-di-interpretazione-vocale/",
+              "https://www.tls-belli.it/2019/03/06/comunicazione-concorso/",
+              "https://www.tls-belli.it/2019/03/09/decretati-gli-otto-vincitori-del-concorso-di-canto/",
+              "https://www.tls-belli.it/2019/03/19/comunicato-stampa-mahagonny-songspiel-cantanti-del-tls-a-prato/",
+              "https://www.tls-belli.it/2019/01/02/libere-audizioni/",
+              "https://www.tls-belli.it/2019/01/28/al-via-anche-il-piccolo-coro-di-scheggino-vallo-di-nera/",
+              "https://www.tls-belli.it/2019/02/01/giuria-del-73mo-concorso-comunita-europea-per-giovani-cantanti-lirici/",
+              "https://www.tls-belli.it/2019/02/15/solo-6-giorni-per-iscriversi-al-concorso/"
             ]
           }
         ],
-        "advertised_feeds": [],
+        "advertised_feeds": [
+          {
+            "url": "https://www.tls-belli.it/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 10,
+            "relevant_entry_count": 3,
+            "relevant_titles": [
+              "Un dittico di Marcello Panni",
+              "“Dido and Æneas” a Todi",
+              "Liederabend"
+            ]
+          }
+        ],
         "advertised_public_api_links": [
-          "https://www.teatrolafenice.it/wp-json/"
+          "https://www.tls-belli.it/wp-json/"
         ],
         "public_api_checks": [
           {
-            "url": "https://www.teatrolafenice.it/wp-json/",
-            "status": "restricted",
-            "http_status": 403
+            "url": "https://www.tls-belli.it/wp-json/",
+            "status": "ok",
+            "http_status": 200,
+            "json_valid": true,
+            "namespace_count": 21,
+            "route_count": 678,
+            "namespace_examples": [
+              "oembed/1.0",
+              "wpe_sign_on_plugin/v1",
+              "contact-form-7/v1",
+              "easy-mcp-ai/v1",
+              "easy-mcp-ai-admin/v1",
+              "fluentform/v1",
+              "foogallery/v1",
+              "mrm/v1",
+              "mint-mail/v1",
+              "wordfence-login-security/v1",
+              "wordfence/v1",
+              "yoast/v1"
+            ],
+            "route_examples": [
+              "/mail-mint/v1/abandoned-cart/update-checkout",
+              "/mail-mint/v1/abandoned-cart/skip-track",
+              "/mrm/v1/settings/abandoned-cart",
+              "/mrm/v1/abandoned-cart/recoverable",
+              "/mrm/v1/abandoned-cart/recoverable/delete",
+              "/mrm/v1/abandoned-cart/recovered",
+              "/mrm/v1/abandoned-cart/recovered/delete",
+              "/mrm/v1/abandoned-cart/lost",
+              "/mrm/v1/abandoned-cart/lost/delete",
+              "/mrm/v1/abandoned-cart/(?P<abandoned_id>[\\d]+)/delete",
+              "/mrm/v1/abandoned-cart/automation/(?P<abandoned_id>[\\d]+)",
+              "/mrm/v1/abandoned-cart/analytics"
+            ]
           }
         ]
       },
       "parsers": {
-        "title": "Lavora con noi (bandi, concorsi, graduatorie per entrare a far parte della nostra Impresa Culturale) - Teatro La Fenice",
+        "title": "Bandi e avvisi",
         "dom_structure": {
-          "anchor_count": 140,
-          "relevant_anchor_count": 36,
+          "anchor_count": 37,
+          "relevant_anchor_count": 10,
           "relevant_anchor_examples": [
             {
-              "text": "06.11.2026 Procedura selettiva pubblica per esami per n.1 Primo Violino dei Primi (Spalla) Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/11/261106RisultatiSPALLA.pdf"
+              "text": "CONCORSO DI CANTO",
+              "url": "https://www.tls-belli.it/concorso-di-canto-2026/"
             },
             {
-              "text": "30.10.2026 Procedura selettiva pubblica per esami per n.1 Impiegato Tecnico-Amministrativo Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/10/261030IMP.pdf"
+              "text": "LIBERE AUDIZIONI",
+              "url": "https://www.tls-belli.it/libere-audizioni-2026/"
             },
             {
-              "text": "07.10.2026 Procedura selettiva pubblica per esami per n.1 Primo Clarinetto Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/10/261007RisultatiCL1.pdf"
+              "text": "BANDO",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/11/Bando-Concorso-Monini-2026.pdf"
             },
             {
-              "text": "05.10.2026 Manifestazione d’Interesse per n.5 posti di Personale di Sala Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/10/261005SALA.pdf"
+              "text": "BANDO",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/03/Avviso-di-selezione-_-promozione-e-fundraising_31.03.25-1.pdf"
             },
             {
-              "text": "28.09.2026 Procedura selettiva pubblica per esami per n.1 Primo Clarinetto Elenco Candidati ammessi alla Prova Finale Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260928FinalistiCL1.pdf"
+              "text": "BANDO",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/02/Avviso-selezione.pdf"
             },
             {
-              "text": "22.09.2026 Procedura selettiva pubblica per esami per n.1 Conducente Motobarca/Furgone Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260922RisultatiBARC-1.pdf"
+              "text": "CONVOCAZIONI",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/03/Convocazioni.pdf"
             },
             {
-              "text": "22.09.2026 Procedura selettiva pubblica per esami per n.1 Primo Flauto Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260922RisultatiFL1.pdf"
+              "text": "RISULTATI SELEZIONE",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/03/Graduatoria-finale-degli-idonei.pdf"
             },
             {
-              "text": "18.09.2026 Procedura selettiva pubblica per esami per n.1 Conducente Motobarca/Furgone Modifica Orario di Convocazione Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260918CambioOrarioBARC.pdf"
+              "text": "Certificazione Qualità ISO 9001:2015",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2024/03/ISO-aggiornata.pdf"
             },
             {
-              "text": "14.09.2026 Procedura selettiva pubblica per esami per n.1 Primo Flauto Elenco Candidati ammessi alla Prova Finale Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260914FinalistiFL1.pdf"
+              "text": "Privacy Policy",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/01/SS.24.09.11-TLS-Web-Privacy-Policy.pdf"
             },
             {
-              "text": "09.09.2026 Audizioni per Artisti del Coro (Tenori) Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260909AudTEN.pdf"
-            },
-            {
-              "text": "09.09.2026 Audizioni per Artisti del Coro (Alti Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260909AudALTI.pdf"
-            },
-            {
-              "text": "09.09.2026 Audizioni per Artisti del Coro (Baritoni) Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260909AudBAR.pdf"
-            },
-            {
-              "text": "09.09.2026 Audizioni per Artisti del Coro (Bassi) Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260909Aud.BAS_.pdf"
-            },
-            {
-              "text": "09.09.2026 Audizioni per Artisti del Coro (Soprani) Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260909AudSOPR.pdf"
-            },
-            {
-              "text": "09.09.2026 Procedura selettiva pubblica per esami per Artisti del Coro (n.5 Tenori) Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260909ConcTEN.pdf"
-            },
-            {
-              "text": "09.09.2026 Procedura selettiva pubblica per esami per Artisti del Coro (n.1 Baritono) Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260909ConcBAR.pdf"
-            },
-            {
-              "text": "09.09.2026 Procedura selettiva pubblica per esami per Artisti del Coro (n.3 Bassi) Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260909ConcBAS.pdf"
-            },
-            {
-              "text": "09.09.2026 Procedura selettiva pubblica per esami per Artisti del Coro (n.2 Soprani) Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260909ConcSOPR.pdf"
-            },
-            {
-              "text": "01.09.2026 Procedura selettiva pubblica per esami per n.1 Conducente Motobarca/Furgone Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/09/260901Conducente.pdf"
-            },
-            {
-              "text": "10.07.2026 Procedura selettiva pubblica per esami per n.1 Prima Tromba Pubblicazione Passi Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/07/PassiTR12026.pdf"
-            },
-            {
-              "text": "10.07.2026 Procedura selettiva pubblica per esami per n.1 Primo Violino dei Primi (Spalla) Pubblicazione Passi Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/07/SpallaPassi-1.pdf"
-            },
-            {
-              "text": "10.07.2026 Procedura selettiva pubblica per esami per n.1 Primo Clarinetto Pubblicazione Passi Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/07/PassiCL1.pdf"
-            },
-            {
-              "text": "10.07.2026 Procedura selettiva pubblica per esami per n.1 Primo Flauto Pubblicazione Passi Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/07/FL1Passi.pdf"
-            },
-            {
-              "text": "10.07.2026 Procedura selettiva pubblica per esami per n.1 Primo Flauto, n.1 Primo Clarinetto, n.1 Primo Violino dei Primi (Spalla) e n.1 Prima Tromba Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/07/260710ORCH.pdf"
-            },
-            {
-              "text": "23.06.2026 Procedura selettiva pubblica per esami per n.1 Concertino dei Primi Violini Pubblicazione Risultati Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/260623ConcVL1Risultati.pdf"
-            },
-            {
-              "text": "19.06.2026 Audizioni per Artisti del Coro (Alti) Pubblicazione Passi Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/PassiCOROAUD.pdf"
-            },
-            {
-              "text": "19.06.2026 Audizioni per Artisti del Coro (Alti) Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/260619AudCOR.pdf"
-            },
-            {
-              "text": "19.06.2026 Procedura selettiva pubblica per esami per Artisti del Coro (n.2 Soprani, n.5 Tenori, n.1 Baritono e n.3 Bassi) Pubblicazione Passi Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/PassiCOROCONC.pdf"
-            },
-            {
-              "text": "19.06.2026 Procedura selettiva pubblica per esami per Artisti del Coro (n.2 Soprani, n.5 Tenori, n.1 Baritono e n.3 Bassi) Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/260619COR-1.pdf"
-            },
-            {
-              "text": "15.06.2026 Procedura selettiva pubblica per esami per n.1 Concertino dei Primi Violini Elenco Candidati ammessi alla Prova Finale Scarica PDF",
-              "url": "https://www.teatrolafenice.it/wp-content/uploads/2026/06/260615FinalistiConcVL1.pdf"
+              "text": "Cookie Policy",
+              "url": "https://www.tls-belli.it/wp-content/uploads/2025/01/SS.24.09.11-TLS-Cookies-Policy.pdf"
             }
           ],
-          "list_item_count": 87,
-          "heading_count": 4,
+          "list_item_count": 26,
+          "heading_count": 0,
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0023,
-          "characters": 6039,
+          "runtime_seconds": 0.0006,
+          "characters": 1773,
           "signals": {
-            "vocal_roles": true,
-            "deadline": false,
+            "vocal_roles": false,
+            "deadline": true,
             "audition": true,
             "dates": true,
-            "application": false,
+            "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 36,
-          "relevant_dom_link_labels_retained_in_text": 36,
-          "relevant_link_targets_available": 36,
+          "relevant_dom_link_labels_available": 8,
+          "relevant_dom_link_labels_retained_in_text": 8,
+          "relevant_link_targets_available": 10,
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0016,
-          "characters": 5919,
+          "runtime_seconds": 0.0004,
+          "characters": 5475,
           "signals": {
-            "vocal_roles": true,
-            "deadline": false,
+            "vocal_roles": false,
+            "deadline": true,
             "audition": true,
             "dates": true,
-            "application": false,
+            "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 36,
-          "relevant_dom_link_labels_retained_in_text": 36,
-          "relevant_link_targets_available": 36,
+          "relevant_dom_link_labels_available": 8,
+          "relevant_dom_link_labels_retained_in_text": 8,
+          "relevant_link_targets_available": 10,
           "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0324,
-          "characters": 259,
+          "runtime_seconds": 0.1181,
+          "characters": 1086,
           "signals": {
             "vocal_roles": false,
-            "deadline": false,
+            "deadline": true,
             "audition": true,
             "dates": true,
-            "application": false,
-            "pdf": false
+            "application": true,
+            "pdf": true
           },
-          "relevant_dom_link_labels_available": 36,
-          "relevant_dom_link_labels_retained_in_text": 0,
-          "relevant_link_targets_available": 36,
+          "relevant_dom_link_labels_available": 8,
+          "relevant_dom_link_labels_retained_in_text": 5,
+          "relevant_link_targets_available": 10,
           "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.029,
-          "characters": 263,
+          "runtime_seconds": 0.012,
+          "characters": 1086,
           "markdown_link_count": 0,
           "markdown_relevant_link_count": 0,
-          "relevant_dom_link_targets_available": 36,
+          "relevant_dom_link_targets_available": 10,
           "relevant_dom_link_targets_retained": 0
         },
         "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
@@ -466,22 +303,22 @@
       "strategy_recommendation": "manual_review_required"
     },
     {
-      "source_id": "source-17",
-      "source_name": "Teatro Lirico di Cagliari - 招募与选拔",
-      "url": "https://www.liricocagliari.it/trasparenza/",
+      "source_id": "source-18",
+      "source_name": "Accademia d'Arte Lirica di Osimo",
+      "url": "https://www.accademialiricaosimo.com/",
       "robots_status": "ok",
       "robots_http_status": 200,
       "fetch_status": "ok",
       "http_status": 200,
-      "final_url": "https://www.liricocagliari.it/trasparenza/",
+      "final_url": "https://www.accademialiricaosimo.com/",
       "content_type": "text/html; charset=UTF-8",
       "truncated": false,
       "error": null,
       "raw_snapshot": {
-        "artifact_path": "artifacts/p2-p4-html-samples/source-17.html",
-        "bytes": 337525,
-        "sha256": "b69264332aadaa7ad4688a972453f93c4a98c1dc270131623a87e937fa0825d5",
-        "captured_at": "2026-11-10T18:48:47+01:00"
+        "artifact_path": "artifacts/p2-p4-html-samples/source-18.html",
+        "bytes": 61504,
+        "sha256": "a9187ed024a580a5a7bd12746edcae2432d31f48947f10dbe9e28823619bec6c",
+        "captured_at": "2026-11-10T18:51:18+01:00"
       },
       "discovery": {
         "robots": {
@@ -490,404 +327,7 @@
         },
         "sitemaps": [
           {
-            "url": "https://www.liricocagliari.it/sitemap_index.xml",
-            "status": "ok",
-            "http_status": 200,
-            "sitemap_kind": "sitemapindex",
-            "loc_count": 12,
-            "child_sitemaps_checked": 5,
-            "child_sitemaps": [
-              {
-                "url": "https://www.liricocagliari.it/post-sitemap.xml",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 99,
-                "audition_or_vocal_url_count": 5,
-                "url_examples": [
-                  "https://www.liricocagliari.it/un-vero-in-canto-the-kings-singers-a-cagliari/",
-                  "https://www.liricocagliari.it/diamo-il-benvenuto-al-nuovo-maestro-del-coro-massimo-fiocchi-malaspina/",
-                  "https://www.liricocagliari.it/banditi-concorsi-e-audizioni-per-lorchestra-e-il-coro/",
-                  "https://www.liricocagliari.it/il-coro-in-concerto-chorus-live-a-quartu-santelena/",
-                  "https://www.liricocagliari.it/in-canto-per-la-comunita/"
-                ]
-              },
-              {
-                "url": "https://www.liricocagliari.it/page-sitemap.xml",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 81,
-                "audition_or_vocal_url_count": 0,
-                "url_examples": []
-              },
-              {
-                "url": "https://www.liricocagliari.it/trasparenza-sitemap.xml",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 71,
-                "audition_or_vocal_url_count": 1,
-                "url_examples": [
-                  "https://www.liricocagliari.it/trasparenza/bandi-di-concorso/"
-                ]
-              },
-              {
-                "url": "https://www.liricocagliari.it/area-stampa-sitemap.xml",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 6,
-                "audition_or_vocal_url_count": 0,
-                "url_examples": []
-              },
-              {
-                "url": "https://www.liricocagliari.it/bandi-e-gare-sitemap.xml",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 35,
-                "audition_or_vocal_url_count": 3,
-                "url_examples": [
-                  "https://www.liricocagliari.it/bandi-e-gare/bando-di-gara-europea-a-procedura-aperta-per-lappalto-di-fornitura-e-posa-in-opera-di-n-788-poltrone-per-la-platea-del-teatro-lirico-di-cagliari-inclusa-la-rimozione-e-lo-smaltimento-di-quel/",
-                  "https://www.liricocagliari.it/bandi-e-gare/indizione-procedure-selettive-ad-evidenza-pubblica-per-titoli-ed-esami-per-leventuale-assunzione-a-tempo-indeterminato-di-n-12-risorse-e-contestuale-audizione-per-i-medesimi-ruoli-e-livelli/",
-                  "https://www.liricocagliari.it/wp-content/uploads/2026/11/corolirico.jpg"
-                ]
-              }
-            ],
-            "page_url_count": 292,
-            "audition_or_vocal_url_count": 9,
-            "url_examples": [
-              "https://www.liricocagliari.it/un-vero-in-canto-the-kings-singers-a-cagliari/",
-              "https://www.liricocagliari.it/diamo-il-benvenuto-al-nuovo-maestro-del-coro-massimo-fiocchi-malaspina/",
-              "https://www.liricocagliari.it/banditi-concorsi-e-audizioni-per-lorchestra-e-il-coro/",
-              "https://www.liricocagliari.it/il-coro-in-concerto-chorus-live-a-quartu-santelena/",
-              "https://www.liricocagliari.it/in-canto-per-la-comunita/",
-              "https://www.liricocagliari.it/trasparenza/bandi-di-concorso/",
-              "https://www.liricocagliari.it/bandi-e-gare/bando-di-gara-europea-a-procedura-aperta-per-lappalto-di-fornitura-e-posa-in-opera-di-n-788-poltrone-per-la-platea-del-teatro-lirico-di-cagliari-inclusa-la-rimozione-e-lo-smaltimento-di-quel/",
-              "https://www.liricocagliari.it/bandi-e-gare/indizione-procedure-selettive-ad-evidenza-pubblica-per-titoli-ed-esami-per-leventuale-assunzione-a-tempo-indeterminato-di-n-12-risorse-e-contestuale-audizione-per-i-medesimi-ruoli-e-livelli/",
-              "https://www.liricocagliari.it/wp-content/uploads/2026/11/corolirico.jpg"
-            ]
-          }
-        ],
-        "advertised_feeds": [
-          {
-            "url": "https://www.liricocagliari.it/comments/feed/",
-            "status": "ok",
-            "http_status": 200,
-            "kind": "rss",
-            "entry_count": 1,
-            "relevant_entry_count": 0,
-            "relevant_titles": []
-          },
-          {
-            "url": "https://www.liricocagliari.it/feed/",
-            "status": "ok",
-            "http_status": 200,
-            "kind": "rss",
-            "entry_count": 10,
-            "relevant_entry_count": 0,
-            "relevant_titles": []
-          },
-          {
-            "url": "https://www.liricocagliari.it/trasparenza/?feed=rss2",
-            "status": "http_error",
-            "http_status": 404,
-            "kind": "unavailable",
-            "entry_count": 0,
-            "relevant_entry_count": 0,
-            "relevant_titles": []
-          }
-        ],
-        "advertised_public_api_links": [
-          "https://www.liricocagliari.it/wp-json/"
-        ],
-        "public_api_checks": [
-          {
-            "url": "https://www.liricocagliari.it/wp-json/",
-            "status": "ok",
-            "http_status": 200,
-            "json_valid": true,
-            "namespace_count": 22,
-            "route_count": 395,
-            "namespace_examples": [
-              "oembed/1.0",
-              "fluent-smtp",
-              "simple-history/v1",
-              "aioseoTableOfContents/v1",
-              "wordfence-login-security/v1",
-              "wordfence/v1",
-              "yoast/v1",
-              "elementor-mcp-composer/v1.0.19",
-              "elementor-one/v1",
-              "complianz/v1",
-              "ai1wm/v1",
-              "elementor/v1"
-            ],
-            "route_examples": []
-          }
-        ]
-      },
-      "parsers": {
-        "title": "Archivi Amministrazione trasparente - Teatro Lirico di Cagliari",
-        "dom_structure": {
-          "anchor_count": 262,
-          "relevant_anchor_count": 24,
-          "relevant_anchor_examples": [
-            {
-              "text": "Bandi di Concorso e Audizioni",
-              "url": "https://www.liricocagliari.it/trasparenza/bandi-di-concorso/"
-            },
-            {
-              "text": "Regolamento della disciplina del lavoro agile",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-della-disciplina-del-lavoro-agile/"
-            },
-            {
-              "text": "Bandi di Concorso e Audizioni",
-              "url": "https://www.liricocagliari.it/trasparenza/bandi-di-concorso/"
-            },
-            {
-              "text": "Regolamento in materia di accesso documentale, accesso civico e accesso generalizzato",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-in-materia-di-accesso-documentale-accesso-civico-e-accesso-generalizzato/"
-            },
-            {
-              "text": "Regolamento sulla disciplina del contenzioso",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-sulla-disciplina-del-contenzioso/"
-            },
-            {
-              "text": "Regolamento per la costituzione e la ripartizione del Fondo per gli incentivi di cui all’art.45 del Decreto Legislativo n.36 del 31.03.2023",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-per-la-costituzione-e-la-ripartizione-del-fondo-per-gli-incentivi-di-cui-allart-45-del-decreto-legislativo-n-36-del-31-03-2023/"
-            },
-            {
-              "text": "Regolamento in materia dei costi di riproduzione per il rilascio di copie e diritti di ricerca",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-in-materia-dei-costi-di-riproduzione-per-il-rilascio-di-copie-e-diritti-di-ricerca/"
-            },
-            {
-              "text": "Bandi di gara, Concorsi e Audizioni",
-              "url": "https://www.liricocagliari.it/trasparenza/#tr-bandi_di_gara_concorsi_e_audizioni"
-            },
-            {
-              "text": "Bandi di Concorso e Audizioni",
-              "url": "https://www.liricocagliari.it/trasparenza/bandi-di-concorso/"
-            },
-            {
-              "text": "Regolamento della disciplina del lavoro agile",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-della-disciplina-del-lavoro-agile/"
-            },
-            {
-              "text": "Bandi di Concorso e Audizioni",
-              "url": "https://www.liricocagliari.it/trasparenza/bandi-di-concorso/"
-            },
-            {
-              "text": "Regolamento in materia di accesso documentale, accesso civico e accesso generalizzato",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-in-materia-di-accesso-documentale-accesso-civico-e-accesso-generalizzato/"
-            },
-            {
-              "text": "Regolamento sulla disciplina del contenzioso",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-sulla-disciplina-del-contenzioso/"
-            },
-            {
-              "text": "Regolamento per la costituzione e la ripartizione del Fondo per gli incentivi di cui all’art.45 del Decreto Legislativo n.36 del 31.03.2023",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-per-la-costituzione-e-la-ripartizione-del-fondo-per-gli-incentivi-di-cui-allart-45-del-decreto-legislativo-n-36-del-31-03-2023/"
-            },
-            {
-              "text": "Regolamento in materia dei costi di riproduzione per il rilascio di copie e diritti di ricerca",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-in-materia-dei-costi-di-riproduzione-per-il-rilascio-di-copie-e-diritti-di-ricerca/"
-            },
-            {
-              "text": "Regolamento in materia di accesso documentale, accesso civico e accesso generalizzato",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-in-materia-di-accesso-documentale-accesso-civico-e-accesso-generalizzato/"
-            },
-            {
-              "text": "Vai alla pagina",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-in-materia-di-accesso-documentale-accesso-civico-e-accesso-generalizzato/"
-            },
-            {
-              "text": "Regolamento sulla disciplina del contenzioso",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-sulla-disciplina-del-contenzioso/"
-            },
-            {
-              "text": "Vai alla pagina",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-sulla-disciplina-del-contenzioso/"
-            },
-            {
-              "text": "Regolamento per la costituzione e la ripartizione del Fondo per gli incentivi di cui all’art.45 del Decreto Legislativo n.36 del 31.03.2023",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-per-la-costituzione-e-la-ripartizione-del-fondo-per-gli-incentivi-di-cui-allart-45-del-decreto-legislativo-n-36-del-31-03-2023/"
-            },
-            {
-              "text": "Vai alla pagina",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-per-la-costituzione-e-la-ripartizione-del-fondo-per-gli-incentivi-di-cui-allart-45-del-decreto-legislativo-n-36-del-31-03-2023/"
-            },
-            {
-              "text": "Regolamento in materia dei costi di riproduzione per il rilascio di copie e diritti di ricerca",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-in-materia-dei-costi-di-riproduzione-per-il-rilascio-di-copie-e-diritti-di-ricerca/"
-            },
-            {
-              "text": "Vai alla pagina",
-              "url": "https://www.liricocagliari.it/trasparenza/regolamento-in-materia-dei-costi-di-riproduzione-per-il-rilascio-di-copie-e-diritti-di-ricerca/"
-            },
-            {
-              "text": "Regolamento di sala",
-              "url": "https://www.liricocagliari.it/wp-content/uploads/2026/03/regolamento_di_sala_del_teatro_lirico_di_cagliari.pdf"
-            }
-          ],
-          "list_item_count": 140,
-          "heading_count": 138,
-          "table_count": 0
-        },
-        "scrapling": {
-          "runtime_seconds": 0.0049,
-          "characters": 11584,
-          "signals": {
-            "vocal_roles": false,
-            "deadline": false,
-            "audition": true,
-            "dates": true,
-            "application": false,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 9,
-          "relevant_dom_link_labels_retained_in_text": 9,
-          "relevant_link_targets_available": 8,
-          "relevant_link_targets_retained_in_text": 0
-        },
-        "lxml_full_text": {
-          "runtime_seconds": 0.0031,
-          "characters": 41282,
-          "signals": {
-            "vocal_roles": false,
-            "deadline": false,
-            "audition": true,
-            "dates": true,
-            "application": false,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 9,
-          "relevant_dom_link_labels_retained_in_text": 9,
-          "relevant_link_targets_available": 8,
-          "relevant_link_targets_retained_in_text": 0
-        },
-        "trafilatura_plain": {
-          "status": "ok",
-          "runtime_seconds": 0.0239,
-          "characters": 7937,
-          "signals": {
-            "vocal_roles": false,
-            "deadline": false,
-            "audition": true,
-            "dates": true,
-            "application": false,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 9,
-          "relevant_dom_link_labels_retained_in_text": 7,
-          "relevant_link_targets_available": 8,
-          "relevant_link_targets_retained_in_text": 6
-        },
-        "trafilatura_markdown": {
-          "runtime_seconds": 0.0226,
-          "characters": 7994,
-          "markdown_link_count": 55,
-          "markdown_relevant_link_count": 7,
-          "relevant_dom_link_targets_available": 8,
-          "relevant_dom_link_targets_retained": 6
-        },
-        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
-      },
-      "strategy_recommendation": "manual_review_required"
-    },
-    {
-      "source_id": "source-4",
-      "source_name": "Teatro Regio Torino",
-      "url": "https://www.teatroregio.torino.it/selezione-personale",
-      "robots_status": "ok",
-      "robots_http_status": 200,
-      "fetch_status": "ok",
-      "http_status": 200,
-      "final_url": "https://www.teatroregio.torino.it/selezione-personale",
-      "content_type": "text/html; charset=UTF-8",
-      "truncated": false,
-      "error": null,
-      "raw_snapshot": {
-        "artifact_path": "artifacts/p2-p4-html-samples/source-4.html",
-        "bytes": 322335,
-        "sha256": "08edfaade67ede074ba0c94ef2f8c9a2daf8a95af4cd9acfc9a322d114f4a389",
-        "captured_at": "2026-11-10T18:49:22+01:00"
-      },
-      "discovery": {
-        "robots": {
-          "status": "ok",
-          "http_status": 200
-        },
-        "sitemaps": [
-          {
-            "url": "https://www.teatroregio.torino.it/sitemap.xml",
-            "status": "ok",
-            "http_status": 200,
-            "sitemap_kind": "sitemapindex",
-            "loc_count": 2,
-            "child_sitemaps_checked": 2,
-            "child_sitemaps": [
-              {
-                "url": "https://www.teatroregio.torino.it/sitemap.xml?page=1",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 2000,
-                "audition_or_vocal_url_count": 75,
-                "url_examples": [
-                  "https://www.teatroregio.torino.it/attivita-2018-2019/lezione-di-coro",
-                  "https://www.teatroregio.torino.it/percorsi-2018-2019/il-canto-magico-di-orfeo",
-                  "https://www.teatroregio.torino.it/concerti-extra-2018-2019/concerto-coro-di-voci-bianche",
-                  "https://www.teatroregio.torino.it/concerti-extra-2018-2019/coro-di-voci-bianche-e-chigiana-childrens-choir",
-                  "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concerto-coro-di-voci-bianche",
-                  "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concorso-internazionale-di-violoncello-benedetto-mazzacurati",
-                  "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concerto-coro-di-voci-bianche-0",
-                  "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concerto-coro-di-voci-bianche-1",
-                  "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concerto-coro-di-voci-bianche-2",
-                  "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concerto-coro-di-voci-bianche-3",
-                  "https://www.teatroregio.torino.it/estate-con-il-regio-2019-2020/coro-teatro-regio-torino",
-                  "https://www.teatroregio.torino.it/estate-con-il-regio-2019-2020/coro-teatro-regio-torino-0"
-                ]
-              },
-              {
-                "url": "https://www.teatroregio.torino.it/sitemap.xml?page=2",
-                "status": "ok",
-                "http_status": 200,
-                "sitemap_kind": "urlset",
-                "loc_count": 243,
-                "audition_or_vocal_url_count": 8,
-                "url_examples": [
-                  "https://www.teatroregio.torino.it/area-stampa/comunicato-stampa/open-day-del-coro-di-voci-bianche-del-teatro-regio",
-                  "https://www.teatroregio.torino.it/area-stampa/comunicato-stampa/il-regio-vince-bando-wikimedia-e-organizza-editathon-foyer",
-                  "https://www.teatroregio.torino.it/area-stampa/comunicato-stampa/sulle-onde-di-bernstein-e-britten-con-wayne-marshall-orchestra-e-coro",
-                  "https://www.teatroregio.torino.it/area-stampa/comunicato-stampa/gea-garatti-ansini-nuovo-maestro-del-coro-del-teatro-regio",
-                  "https://www.teatroregio.torino.it/bookshop/dischi/diana-damrau-fiamma-del-belcanto",
-                  "https://www.teatroregio.torino.it/en/bookshop/dischi/diana-damrau-fiamma-del-belcanto",
-                  "https://www.teatroregio.torino.it/bookshop/dischi/lincoronazione-di-dario",
-                  "https://www.teatroregio.torino.it/en/bookshop/dischi/lincoronazione-di-dario"
-                ]
-              }
-            ],
-            "page_url_count": 1243,
-            "audition_or_vocal_url_count": 48,
-            "url_examples": [
-              "https://www.teatroregio.torino.it/attivita-2018-2019/lezione-di-coro",
-              "https://www.teatroregio.torino.it/percorsi-2018-2019/il-canto-magico-di-orfeo",
-              "https://www.teatroregio.torino.it/concerti-extra-2018-2019/concerto-coro-di-voci-bianche",
-              "https://www.teatroregio.torino.it/concerti-extra-2018-2019/coro-di-voci-bianche-e-chigiana-childrens-choir",
-              "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concerto-coro-di-voci-bianche",
-              "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concorso-internazionale-di-violoncello-benedetto-mazzacurati",
-              "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concerto-coro-di-voci-bianche-0",
-              "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concerto-coro-di-voci-bianche-1",
-              "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concerto-coro-di-voci-bianche-2",
-              "https://www.teatroregio.torino.it/concerti-extra-2019-2020/concerto-coro-di-voci-bianche-3",
-              "https://www.teatroregio.torino.it/estate-con-il-regio-2019-2020/coro-teatro-regio-torino",
-              "https://www.teatroregio.torino.it/estate-con-il-regio-2019-2020/coro-teatro-regio-torino-0"
-            ]
-          },
-          {
-            "url": "https://www.teatroregio.torino.it/wp-sitemap.xml",
+            "url": "https://www.accademialiricaosimo.com/sitemap.xml",
             "status": "http_error",
             "http_status": 404,
             "sitemap_kind": "unavailable",
@@ -899,7 +339,657 @@
             "url_examples": []
           },
           {
-            "url": "https://www.teatroregio.torino.it/sitemap_index.xml",
+            "url": "https://www.accademialiricaosimo.com/wp-sitemap.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "https://www.accademialiricaosimo.com/sitemap_index.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          }
+        ],
+        "advertised_feeds": [
+          {
+            "url": "https://www.accademialiricaosimo.com/comments/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          },
+          {
+            "url": "https://www.accademialiricaosimo.com/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 10,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          }
+        ],
+        "advertised_public_api_links": [
+          "https://www.accademialiricaosimo.com/wp-json/"
+        ],
+        "public_api_checks": [
+          {
+            "url": "https://www.accademialiricaosimo.com/wp-json/",
+            "status": "ok",
+            "http_status": 200,
+            "json_valid": true,
+            "namespace_count": 3,
+            "route_count": 69,
+            "namespace_examples": [
+              "oembed/1.0",
+              "metaslider/v1",
+              "wp/v2"
+            ],
+            "route_examples": []
+          }
+        ]
+      },
+      "parsers": {
+        "title": "Accademia Lirica Osimo – Accademia Lirica Osimo",
+        "dom_structure": {
+          "anchor_count": 70,
+          "relevant_anchor_count": 3,
+          "relevant_anchor_examples": [
+            {
+              "text": "Regolamento",
+              "url": "https://www.accademialiricaosimo.com/regolamento-2/"
+            },
+            {
+              "text": "Modulo d’iscrizione",
+              "url": "https://www.accademialiricaosimo.com/wp-content/uploads/2026/05/modulo_iscrizione-2026-2027.doc"
+            },
+            {
+              "text": "Regolamento",
+              "url": "https://www.accademialiricaosimo.com/adotta-una-voce/"
+            }
+          ],
+          "list_item_count": 84,
+          "heading_count": 2,
+          "table_count": 1
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0011,
+          "characters": 2478,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 3,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0007,
+          "characters": 3957,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 3,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0187,
+          "characters": 1726,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 3,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0184,
+          "characters": 1726,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 3,
+          "relevant_dom_link_targets_retained": 0
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-20",
+      "source_name": "Valsesia Musica - 声乐比赛",
+      "url": "https://www.valsesiamusica.com/sezione_canto_lirico.htm",
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.valsesiamusica.com/sezione_canto_lirico.htm",
+      "content_type": "text/html",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-20.html",
+        "bytes": 51048,
+        "sha256": "d59c753c9c6e71af6fc396c3bfb706321d34c197803e31b2eaff15ea026ec7d3",
+        "captured_at": "2026-11-10T18:51:36+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "https://valsesiamusica.com/sitemap.xml",
+            "status": "ok",
+            "http_status": 200,
+            "sitemap_kind": "urlset",
+            "loc_count": 87,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 87,
+            "audition_or_vocal_url_count": 4,
+            "url_examples": [
+              "https://valsesiamusica.com/comitato_amici_del_concorso.htm",
+              "https://valsesiamusica.com/amici_del_concorso_committee.htm",
+              "https://valsesiamusica.com/sezione_canto_lirico.htm",
+              "https://valsesiamusica.com/premiati_canto_it_2024.htm"
+            ]
+          }
+        ],
+        "advertised_feeds": [],
+        "advertised_public_api_links": [],
+        "public_api_checks": []
+      },
+      "parsers": {
+        "title": "Sezione Canto Lirico",
+        "dom_structure": {
+          "anchor_count": 75,
+          "relevant_anchor_count": 13,
+          "relevant_anchor_examples": [
+            {
+              "text": "",
+              "url": "https://www.valsesiamusica.com/regolamento.htm"
+            },
+            {
+              "text": "",
+              "url": "https://www.valsesiamusica.com/regolamento.htm"
+            },
+            {
+              "text": "Comitato \"Amici del Concorso\"",
+              "url": "https://www.valsesiamusica.com/comitato_amici_del_concorso.htm"
+            },
+            {
+              "text": "Regolamento",
+              "url": "https://www.valsesiamusica.com/regolamento.htm"
+            },
+            {
+              "text": "Download scheda di iscrizione",
+              "url": "https://www.valsesiamusica.com/index_htm_files/scheda_isc_canto_2026.docx"
+            },
+            {
+              "text": "Download scheda di iscrizione",
+              "url": "https://www.valsesiamusica.com/index_htm_files/scheda_isc_vl_2025.docx"
+            },
+            {
+              "text": "Download scheda di iscrizione",
+              "url": "https://www.valsesiamusica.com/index_htm_files/scheda_isc_pf_2025.docx"
+            },
+            {
+              "text": "Regolamento",
+              "url": "https://www.valsesiamusica.com/regolamento_juniores.htm"
+            },
+            {
+              "text": "Download scheda di iscrizione",
+              "url": "https://www.valsesiamusica.com/index_htm_files/scheda_isc_kawai_2024.docx"
+            },
+            {
+              "text": "Concorso Juniores 2024",
+              "url": "https://www.valsesiamusica.com/premiati_juniores_it_2024.htm"
+            },
+            {
+              "text": "Risultati - Sezione Pianoforte 2025",
+              "url": "https://www.valsesiamusica.com/index_htm_files/risultati_pianoforte_2025.pdf"
+            },
+            {
+              "text": "Risultati - Sezione Violino e Orchestra 2025",
+              "url": "https://www.valsesiamusica.com/index_htm_files/risultati_violino_ed_orchestra_2025.pdf"
+            },
+            {
+              "text": "Risultati - Sezione Canto lirico 2024",
+              "url": "https://www.valsesiamusica.com/index_htm_files/risultati_canto_lirico_2024.pdf"
+            }
+          ],
+          "list_item_count": 43,
+          "heading_count": 3,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0012,
+          "characters": 2585,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 7,
+          "relevant_link_targets_available": 11,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0007,
+          "characters": 3194,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 7,
+          "relevant_link_targets_available": 11,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0185,
+          "characters": 1440,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": false
+          },
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 0,
+          "relevant_link_targets_available": 11,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0181,
+          "characters": 1440,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 11,
+          "relevant_dom_link_targets_retained": 0
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-7",
+      "source_name": "Teatro Comunale di Bologna",
+      "url": "https://www.tcbo.it/amministrazione-trasparente/",
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.tcbo.it/amministrazione-trasparente/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-7.html",
+        "bytes": 318913,
+        "sha256": "0012441386f7ef9f00611990e9624c23e1234ca18696245e814fb3c001140a99",
+        "captured_at": "2026-11-10T18:51:44+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.tcbo.it/sitemap_index.xml",
+            "status": "ok",
+            "http_status": 200,
+            "sitemap_kind": "sitemapindex",
+            "loc_count": 24,
+            "child_sitemaps_checked": 5,
+            "child_sitemaps": [
+              {
+                "url": "https://www.tcbo.it/page-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 58,
+                "audition_or_vocal_url_count": 1,
+                "url_examples": [
+                  "https://www.tcbo.it/orchestra-e-coro/"
+                ]
+              },
+              {
+                "url": "https://www.tcbo.it/tcbo_ev_opera-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 158,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.tcbo.it/tcbo_ev_concerto-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 342,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.tcbo.it/tcbo_ev_danza-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 82,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.tcbo.it/tcbo_ev_speciale-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 14,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              }
+            ],
+            "page_url_count": 654,
+            "audition_or_vocal_url_count": 1,
+            "url_examples": [
+              "https://www.tcbo.it/orchestra-e-coro/"
+            ]
+          }
+        ],
+        "advertised_feeds": [],
+        "advertised_public_api_links": [],
+        "public_api_checks": []
+      },
+      "parsers": {
+        "title": "Amministrazione trasparente - Teatro Comunale di Bologna",
+        "dom_structure": {
+          "anchor_count": 659,
+          "relevant_anchor_count": 494,
+          "relevant_anchor_examples": [
+            {
+              "text": "Piano 2025-2027",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/ptpc-ptti-tcbo-2025.pdf"
+            },
+            {
+              "text": "Piano 2024-2026",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/ptpc-ptti-tcbo-2024.pdf"
+            },
+            {
+              "text": "Piano 2023-2025",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/ptpc-ptti-tcbo-2023_2025.pdf"
+            },
+            {
+              "text": "Statuto",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/statuto_2014_agentrate-1.pdf"
+            },
+            {
+              "text": "D.M. del 23 dicembre 2014",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/150113-mibact_394_dm_23dic14_approvaznuovostatuto.pdf"
+            },
+            {
+              "text": "GU Serie Generale n.22 del 28-01-2015",
+              "url": "https://www.gazzettaufficiale.it/eli/gu/2015/01/28/22/sg/pdf"
+            },
+            {
+              "text": "Modello di Organizzazione Gestione e controllo ai sensi dell’art.6 del D.Lgs.231/01",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/modello-di-organizzazione-gestione-e-controllo-rev-giugno-2023-tcbo-161023-parte-generale.pdf"
+            },
+            {
+              "text": "Codice etico e comportamentale",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/codice-etico-tcbo-2016-rev-2023-161023.pdf"
+            },
+            {
+              "text": "Protocollo d’Intesa Avvocatura dello Stato",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/protocollo-dintesa-avvocatura-generale-dello-stato-e-fondazione-teatro-comunale-di-bologna-19lug19.pdf"
+            },
+            {
+              "text": "DM n. 302/2022 Approvazione nuova Dotazione Organica FTCB",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/20220909-0007973-dm-approvazione-dofondazione-teatro-comunale-di-bologna-1-2.pdf"
+            },
+            {
+              "text": "Organigramma",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/tcbo_organigramma_311025.pdf"
+            },
+            {
+              "text": "Proclamazione elezione Sindaco Matteo Lepore anno 2021",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/procalmazione-sindaco-pg-453111-2021.pdf"
+            },
+            {
+              "text": "Atto di nomina Sovrintendente Elisabetta Riva (23/04/2025)",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/riva-decreto-di-nomina.pdf"
+            },
+            {
+              "text": "Atto di nomina Consigliere Marco Checchi",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/nomina-checchi.pdf"
+            },
+            {
+              "text": "Atto di nomina Consigliere Marzia Zambelli",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot191-2025_lettera-designazione-ministro.pdf"
+            },
+            {
+              "text": "Atto di nomina Consigliere Raffaela Bruni",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot231-2025_comunicazione-nominaconsbruni-tcbo.pdf"
+            },
+            {
+              "text": "Atto di nomina Consigliere Rita Ghedini",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/comunicazione_a_tcbo_cons_indirizzo.pdf"
+            },
+            {
+              "text": "Atto di nomina Consigliere Gianluigi Magri",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot223-2025_carisbo_teatro-comunale-designazione-consigliere.pdf"
+            },
+            {
+              "text": "Accettazione incarico Sovrintendente Elisabetta Riva (19/05/2025)",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/riva_dich-accettazione-inc-sovrintendente_190525.pdf"
+            },
+            {
+              "text": "Accettazione incarico Consigliere Marco Checchi",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot259-2025_accettazione-checchi.pdf"
+            },
+            {
+              "text": "Accettazione incarico Consigliere Marzia Zambelli",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot255-2025_accettazione-zambelli.pdf"
+            },
+            {
+              "text": "Accettazione incarico Consigliere Raffaela Bruni",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot258-2025_accettazione-bruni.pdf"
+            },
+            {
+              "text": "Accettazione incarico Consigliere Rita Ghedini",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot256-2025_accettazione-ghedini.pdf"
+            },
+            {
+              "text": "Accettazione incarico Consigliere Gianluigi Magri",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/prot257-2025_accettazione-magri.pdf"
+            },
+            {
+              "text": "Marco Checchi",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/curricula-marco-checchi.pdf"
+            },
+            {
+              "text": "Elisabetta Riva",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/cv-elisabetta-riva.pdf"
+            },
+            {
+              "text": "Marzia Zambelli",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/cv_marzia_zambelli.pdf"
+            },
+            {
+              "text": "Raffaela Bruni",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/cv-sintetico-bruni-2021.pdf"
+            },
+            {
+              "text": "Rita Ghedini",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/cv-rita-ghedini.pdf"
+            },
+            {
+              "text": "Gianluigi Magri",
+              "url": "https://www.tcbo.it/wp-content/uploads/2026/09/magri_cv-1.pdf"
+            }
+          ],
+          "list_item_count": 530,
+          "heading_count": 63,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0054,
+          "characters": 49025,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 350,
+          "relevant_dom_link_labels_retained_in_text": 350,
+          "relevant_link_targets_available": 441,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0043,
+          "characters": 52660,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 350,
+          "relevant_dom_link_labels_retained_in_text": 350,
+          "relevant_link_targets_available": 441,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0911,
+          "characters": 44520,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": false,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 350,
+          "relevant_dom_link_labels_retained_in_text": 114,
+          "relevant_link_targets_available": 441,
+          "relevant_link_targets_retained_in_text": 135
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0912,
+          "characters": 45135,
+          "markdown_link_count": 163,
+          "markdown_relevant_link_count": 140,
+          "relevant_dom_link_targets_available": 441,
+          "relevant_dom_link_targets_retained": 135
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-8",
+      "source_name": "Maggio Musicale Fiorentino",
+      "url": "https://www.maggiofiorentino.com/bandi/",
+      "robots_status": "http_error",
+      "robots_http_status": 404,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.maggiofiorentino.com/bandi/",
+      "content_type": "text/html;charset=utf-8",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-8.html",
+        "bytes": 192642,
+        "sha256": "56158ed7ebe065f6fb61a368d5eea3a6088a1295e484703b00e84e1738524a19",
+        "captured_at": "2026-11-10T18:52:01+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "http_error",
+          "http_status": 404
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.maggiofiorentino.com/sitemap.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "https://www.maggiofiorentino.com/wp-sitemap.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "https://www.maggiofiorentino.com/sitemap_index.xml",
             "status": "http_error",
             "http_status": 404,
             "sitemap_kind": "unavailable",
@@ -916,718 +1006,79 @@
         "public_api_checks": []
       },
       "parsers": {
-        "title": "Selezione del personale | Teatro Regio Torino",
+        "title": "Bandi - Maggio Musicale Fiorentino",
         "dom_structure": {
-          "anchor_count": 1133,
-          "relevant_anchor_count": 927,
+          "anchor_count": 25,
+          "relevant_anchor_count": 2,
           "relevant_anchor_examples": [
             {
-              "text": "Bando",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/bando%20add%20dir%20tecn%203b.pdf"
+              "text": "SCOPRI DI PIÙ",
+              "url": "https://www.maggiofiorentino.com/bandi/bando-ensemble-corale"
             },
             {
-              "text": "Informativa privacy",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/Informativa%20bandi%20selezione%20personale_66.pdf"
-            },
-            {
-              "text": "Modulo di iscrizione",
-              "url": "https://www.teatroregio.torino.it/concorso-la-selezione-di-un-addettoa-alla-direzione-tecnica-0"
-            },
-            {
-              "text": "Atto notorio",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/DICHIARAZIONE%20SOSTITUTIVA%20add.dir_.tecnica%20%28002%29.pdf"
-            },
-            {
-              "text": "Manifestazione d'interesse",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/18%2006%202026%20Manifestazione%20d%27interesse%20ODV.pdf"
-            },
-            {
-              "text": "Informativa privacy",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/Informativa%20bandi%20selezione%20personale_63.pdf"
-            },
-            {
-              "text": "Bando",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/18%2005%202026%20Bando%20Dir%20Risorse%20Umane%20Amm%20Aff%20Legali.pdf"
-            },
-            {
-              "text": "Informativa privacy",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/Informativa%20bandi%20selezione%20personale_61.pdf"
-            },
-            {
-              "text": "Modulo di iscrizione",
-              "url": "https://www.teatroregio.torino.it/procedura-selettiva-pubblica-direttore-risorse-umane-affari-amministrativi-e-legali"
-            },
-            {
-              "text": "Determina nomina commissione",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/determina%20104%20nomina%20commissione%20DirPersAffAmmLeg_1.pdf"
-            },
-            {
-              "text": "Elenco candidati ammessi",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/elenco%20candidati%20ammessi_2.pdf"
-            },
-            {
-              "text": "Determina graduatoria",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/determina%20120%20graduatoria%20DirPersAffAmmLeg.pdf"
-            },
-            {
-              "text": "Avviso",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/18%2005%202026%20Manifestazione%20d%27interesse%20DirezioneComunicazioneMarketing_0.pdf"
-            },
-            {
-              "text": "Informativa privacy",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/Informativa%20bandi%20selezione%20personale_62.pdf"
-            },
-            {
-              "text": "Determina nomina commissione",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/determina%20100%20nomina%20commissione%20manifestazione%20d%27interesse%20Direttore%20Marketing.pdf"
-            },
-            {
-              "text": "Avviso",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/bando%20manifestazione%20RSPP.pdf"
-            },
-            {
-              "text": "Informativa privacy",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/Informativa%20bandi%20selezione%20personale_55.pdf"
-            },
-            {
-              "text": "Atto notorio",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/DICHIARAZIONE%20SOSTITUTIVA%20RSPP.pdf"
-            },
-            {
-              "text": "Determina nomina commissione",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/determina%2066%20nomina%20commissione%20manifestazione%20d%27interesse%20per%20RSPP.pdf"
-            },
-            {
-              "text": "Elenco candidati ammessi",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/elenco%20candidati%20ammessi%20manifestazioneRSPP.pdf"
-            },
-            {
-              "text": "Determina di idoneità",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/determina%2098%20idoneit%C3%A0%20RSPP.pdf"
-            },
-            {
-              "text": "Bando",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/AvvisodiSelezionePubblica.pdf"
-            },
-            {
-              "text": "Dichiarazione sostitutiva",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/DICHIARAZIONE%20SOSTITUTIVA%20impiegatoTecnicoDirAll%20%28002%29.pdf"
-            },
-            {
-              "text": "Informativa privacy",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/Informativa%20bandi%20selezione%20personale%20%28002%29.pdf"
-            },
-            {
-              "text": "Modulo di iscrizione",
-              "url": "https://www.teatroregio.torino.it/avviso-di-selezione-pubblica-impiegato-tecnico"
-            },
-            {
-              "text": "Determina nomina commissione",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/determina39%20nomina%20commissione%20.pdf"
-            },
-            {
-              "text": "Elenco candidati ammessi",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/elenco%20candidati%20ammessi%20selezione%20IMPIEGATO%20TECNICO%20CON%20FUNZIONE%20DI%20SUPPORTO%20ALLA%20REALIZZAZIONE%20DEGLI%20ALLESTIMENTI.pdf"
-            },
-            {
-              "text": "Determina di idoneità",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/determina%2045%20idoneita%20ImpDirAll.pdf"
-            },
-            {
-              "text": "Bando",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/bando%20elettricisti.pdf"
-            },
-            {
-              "text": "Dichiarazione sostitutiva",
-              "url": "https://www.teatroregio.torino.it/sites/default/files/uploads/inline-files/DICHIARAZIONE%20SOSTITUTIVA%20PER%20I%20CANDIDATI%20ELETTR.CONPERIODI.pdf"
+              "text": "Lavora con noi",
+              "url": "https://maggiofiorentino.portaletrasparenza.net/it/trasparenza/bandi-di-concorso/bandi-e-avvisi-di-selezione-per-i-quali-e-possibile-presentare-domanda-di-partecipazione.html"
             }
           ],
-          "list_item_count": 190,
-          "heading_count": 15,
-          "table_count": 1
-        },
-        "scrapling": {
-          "runtime_seconds": 0.0084,
-          "characters": 53979,
-          "signals": {
-            "vocal_roles": true,
-            "deadline": true,
-            "audition": true,
-            "dates": true,
-            "application": true,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 196,
-          "relevant_dom_link_labels_retained_in_text": 196,
-          "relevant_link_targets_available": 883,
-          "relevant_link_targets_retained_in_text": 0
-        },
-        "lxml_full_text": {
-          "runtime_seconds": 0.0072,
-          "characters": 54449,
-          "signals": {
-            "vocal_roles": true,
-            "deadline": true,
-            "audition": true,
-            "dates": true,
-            "application": true,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 196,
-          "relevant_dom_link_labels_retained_in_text": 196,
-          "relevant_link_targets_available": 883,
-          "relevant_link_targets_retained_in_text": 0
-        },
-        "trafilatura_plain": {
-          "status": "ok",
-          "runtime_seconds": 0.1219,
-          "characters": 100208,
-          "signals": {
-            "vocal_roles": true,
-            "deadline": true,
-            "audition": true,
-            "dates": true,
-            "application": true,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 196,
-          "relevant_dom_link_labels_retained_in_text": 174,
-          "relevant_link_targets_available": 883,
-          "relevant_link_targets_retained_in_text": 71
-        },
-        "trafilatura_markdown": {
-          "runtime_seconds": 0.1531,
-          "characters": 86341,
-          "markdown_link_count": 53,
-          "markdown_relevant_link_count": 44,
-          "relevant_dom_link_targets_available": 883,
-          "relevant_dom_link_targets_retained": 42
-        },
-        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
-      },
-      "strategy_recommendation": "manual_review_required"
-    },
-    {
-      "source_id": "source-5",
-      "source_name": "Teatro dell'Opera di Roma - Fabbrica",
-      "url": "https://www.operaroma.it/bandi-e-concorsi/bandi-fabbrica-young-artist-program-2027-2028/",
-      "robots_status": "http_error",
-      "robots_http_status": 404,
-      "fetch_status": "ok",
-      "http_status": 200,
-      "final_url": "https://www.operaroma.it/bandi-e-concorsi/bandi-fabbrica-young-artist-program-2027-2028/",
-      "content_type": "text/html",
-      "truncated": false,
-      "error": null,
-      "raw_snapshot": {
-        "artifact_path": "artifacts/p2-p4-html-samples/source-5.html",
-        "bytes": 50060,
-        "sha256": "41fca6448837e921ef3c42bb60e94c052a7ddcc698fe9d9b340c6b64bb554e47",
-        "captured_at": "2026-11-10T18:49:43+01:00"
-      },
-      "discovery": {
-        "robots": {
-          "status": "http_error",
-          "http_status": 404
-        },
-        "sitemaps": [
-          {
-            "url": "https://www.operaroma.it/sitemap.xml",
-            "status": "ok",
-            "http_status": 200,
-            "sitemap_kind": "sitemapindex",
-            "loc_count": 7,
-            "child_sitemaps_checked": 5,
-            "child_sitemaps": [
-              {
-                "url": "https://www.operaroma.it/sitemap_addl.xml.gz",
-                "status": "error",
-                "http_status": null,
-                "sitemap_kind": "unavailable",
-                "loc_count": 0,
-                "audition_or_vocal_url_count": 0,
-                "url_examples": []
-              },
-              {
-                "url": "https://www.operaroma.it/sitemap_post.xml.gz",
-                "status": "error",
-                "http_status": null,
-                "sitemap_kind": "unavailable",
-                "loc_count": 0,
-                "audition_or_vocal_url_count": 0,
-                "url_examples": []
-              },
-              {
-                "url": "https://www.operaroma.it/sitemap_page.xml.gz",
-                "status": "error",
-                "http_status": null,
-                "sitemap_kind": "unavailable",
-                "loc_count": 0,
-                "audition_or_vocal_url_count": 0,
-                "url_examples": []
-              },
-              {
-                "url": "https://www.operaroma.it/sitemap_product.xml.gz",
-                "status": "error",
-                "http_status": null,
-                "sitemap_kind": "unavailable",
-                "loc_count": 0,
-                "audition_or_vocal_url_count": 0,
-                "url_examples": []
-              },
-              {
-                "url": "https://www.operaroma.it/sitemap_shows_1.xml.gz",
-                "status": "error",
-                "http_status": null,
-                "sitemap_kind": "unavailable",
-                "loc_count": 0,
-                "audition_or_vocal_url_count": 0,
-                "url_examples": []
-              }
-            ],
-            "page_url_count": 0,
-            "audition_or_vocal_url_count": 0,
-            "url_examples": []
-          },
-          {
-            "url": "https://www.operaroma.it/wp-sitemap.xml",
-            "status": "http_error",
-            "http_status": 404,
-            "sitemap_kind": "unavailable",
-            "loc_count": 0,
-            "child_sitemaps_checked": 0,
-            "child_sitemaps": [],
-            "page_url_count": 0,
-            "audition_or_vocal_url_count": 0,
-            "url_examples": []
-          },
-          {
-            "url": "https://www.operaroma.it/sitemap_index.xml",
-            "status": "ok",
-            "http_status": 200,
-            "sitemap_kind": "urlset",
-            "loc_count": 0,
-            "child_sitemaps_checked": 0,
-            "child_sitemaps": [],
-            "page_url_count": 0,
-            "audition_or_vocal_url_count": 0,
-            "url_examples": []
-          }
-        ],
-        "advertised_feeds": [
-          {
-            "url": "https://www.operaroma.it/comments/feed/",
-            "status": "ok",
-            "http_status": 200,
-            "kind": "rss",
-            "entry_count": 0,
-            "relevant_entry_count": 0,
-            "relevant_titles": []
-          },
-          {
-            "url": "https://www.operaroma.it/feed/",
-            "status": "restricted",
-            "http_status": 403,
-            "kind": "unavailable",
-            "entry_count": 0,
-            "relevant_entry_count": 0,
-            "relevant_titles": []
-          }
-        ],
-        "advertised_public_api_links": [
-          "https://www.operaroma.it/wp-json/"
-        ],
-        "public_api_checks": [
-          {
-            "url": "https://www.operaroma.it/wp-json/",
-            "status": "ok",
-            "http_status": 200,
-            "json_valid": true,
-            "namespace_count": 9,
-            "route_count": 272,
-            "namespace_examples": [
-              "oembed/1.0",
-              "contact-form-7/v1",
-              "redirection/v1",
-              "wc/v1",
-              "wc/v2",
-              "wc/v3",
-              "wc-blocks/v1",
-              "gravityforms/v2",
-              "wp/v2"
-            ],
-            "route_examples": [
-              "/wp/v2/bando",
-              "/wp/v2/bando/(?P<id>[\\d]+)",
-              "/wp/v2/archive_bando",
-              "/wp/v2/archive_bando/(?P<id>[\\d]+)"
-            ]
-          }
-        ]
-      },
-      "parsers": {
-        "title": "Bandi “Fabbrica” Young Artist Program 2027/2028 |",
-        "dom_structure": {
-          "anchor_count": 108,
-          "relevant_anchor_count": 5,
-          "relevant_anchor_examples": [
-            {
-              "text": "Regolamento Biglietteria",
-              "url": "https://www.operaroma.it/biglietteria/informazioni/regolamento-biglietteria/"
-            },
-            {
-              "text": "Audizioni e concorsi",
-              "url": "https://www.operaroma.it/opera-giovani/scuola-di-danza/didattica-danza-audizioni/"
-            },
-            {
-              "text": "Docenti",
-              "url": "https://www.operaroma.it/opera-giovani/scuola-di-canto-corale/didattica-canto-corale-iscrizioni/"
-            },
-            {
-              "text": "1. Bando di audizione per cantanti e maestri collaboratori",
-              "url": "https://operaroma.b-cdn.net/wp-content/uploads/2026/03/FABBRICA-YOUNG-ARTIST-BANDO-SELEZIONE.pdf"
-            },
-            {
-              "text": "2. Bandi di selezione per Team Creativo",
-              "url": "https://operaroma.b-cdn.net/wp-content/uploads/2026/03/FABBRICA-YOUNG-ARTIST-BANDO-TEAM-CREATIVO.pdf"
-            }
-          ],
-          "list_item_count": 93,
-          "heading_count": 2,
+          "list_item_count": 6,
+          "heading_count": 5,
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.001,
-          "characters": 2124,
-          "signals": {
-            "vocal_roles": false,
-            "deadline": false,
-            "audition": true,
-            "dates": true,
-            "application": true,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 5,
-          "relevant_dom_link_labels_retained_in_text": 5,
-          "relevant_link_targets_available": 5,
-          "relevant_link_targets_retained_in_text": 0
-        },
-        "lxml_full_text": {
           "runtime_seconds": 0.0007,
-          "characters": 4003,
+          "characters": 721,
           "signals": {
             "vocal_roles": false,
             "deadline": false,
-            "audition": true,
-            "dates": true,
-            "application": true,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 5,
-          "relevant_dom_link_labels_retained_in_text": 5,
-          "relevant_link_targets_available": 5,
-          "relevant_link_targets_retained_in_text": 0
-        },
-        "trafilatura_plain": {
-          "status": "ok",
-          "runtime_seconds": 0.0075,
-          "characters": 739,
-          "signals": {
-            "vocal_roles": false,
-            "deadline": false,
-            "audition": true,
-            "dates": true,
-            "application": true,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 5,
-          "relevant_dom_link_labels_retained_in_text": 2,
-          "relevant_link_targets_available": 5,
-          "relevant_link_targets_retained_in_text": 2
-        },
-        "trafilatura_markdown": {
-          "runtime_seconds": 0.0074,
-          "characters": 742,
-          "markdown_link_count": 2,
-          "markdown_relevant_link_count": 2,
-          "relevant_dom_link_targets_available": 5,
-          "relevant_dom_link_targets_retained": 2
-        },
-        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
-      },
-      "strategy_recommendation": "manual_review_required"
-    },
-    {
-      "source_id": "source-6",
-      "source_name": "Teatro Verdi Trieste",
-      "url": "https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/",
-      "robots_status": "ok",
-      "robots_http_status": 200,
-      "fetch_status": "ok",
-      "http_status": 200,
-      "final_url": "https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/",
-      "content_type": "text/html; charset=utf-8",
-      "truncated": false,
-      "error": null,
-      "raw_snapshot": {
-        "artifact_path": "artifacts/p2-p4-html-samples/source-6.html",
-        "bytes": 131138,
-        "sha256": "5a2db9966fa9c46fa51d28c81de4a8b1731ed0cdc7abfaaea216cd35cf21c5e1",
-        "captured_at": "2026-11-10T18:50:11+01:00"
-      },
-      "discovery": {
-        "robots": {
-          "status": "ok",
-          "http_status": 200
-        },
-        "sitemaps": [
-          {
-            "url": "https://www.teatroverdi-trieste.com/sitemap_index.xml",
-            "status": "ok",
-            "http_status": 200,
-            "sitemap_kind": "invalid_xml",
-            "loc_count": 0,
-            "child_sitemaps_checked": 0,
-            "child_sitemaps": [],
-            "page_url_count": 0,
-            "audition_or_vocal_url_count": 0,
-            "url_examples": []
-          }
-        ],
-        "advertised_feeds": [
-          {
-            "url": "https://www.teatroverdi-trieste.com/it/comments/feed/",
-            "status": "http_error",
-            "http_status": 404,
-            "kind": "unavailable",
-            "entry_count": 0,
-            "relevant_entry_count": 0,
-            "relevant_titles": []
-          },
-          {
-            "url": "https://www.teatroverdi-trieste.com/it/feed/",
-            "status": "ok",
-            "http_status": 200,
-            "kind": "invalid_xml",
-            "entry_count": 0,
-            "relevant_entry_count": 0,
-            "relevant_titles": []
-          }
-        ],
-        "advertised_public_api_links": [
-          "https://www.teatroverdi-trieste.com/wp-json/"
-        ],
-        "public_api_checks": [
-          {
-            "url": "https://www.teatroverdi-trieste.com/wp-json/",
-            "status": "ok",
-            "http_status": 200,
-            "json_valid": true,
-            "namespace_count": 11,
-            "route_count": 229,
-            "namespace_examples": [
-              "oembed/1.0",
-              "aiarc/v1",
-              "yoast/v1",
-              "pll/v1",
-              "block-visibility/v1",
-              "cptui/v1",
-              "objectcache/v1",
-              "wp/v2",
-              "wp-site-health/v1",
-              "wp-block-editor/v1",
-              "wp-abilities/v1"
-            ],
-            "route_examples": []
-          }
-        ]
-      },
-      "parsers": {
-        "title": "Bandi di Concorso 2026 - Teatro Verdi Trieste",
-        "dom_structure": {
-          "anchor_count": 155,
-          "relevant_anchor_count": 131,
-          "relevant_anchor_examples": [
-            {
-              "text": "",
-              "url": "https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/#pll_switcher"
-            },
-            {
-              "text": "Biglietti",
-              "url": "https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/09/2026.09.18-MAN-INTERESSE_MIMI_lohengrin.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/09/2026.09.18-MAN-INTERESSE_MIMI_lohengrin.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/09/2026.09.18-DOMANDA-PARTECIPAZIONE-MANIFESTAZ-INTERESSE_MIMI_lohengrin.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/09/2026.09.18-DOMANDA-PARTECIPAZIONE-MANIFESTAZ-INTERESSE_MIMI_lohengrin.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2023/12/INFORMATIVA-PRIVACY_all-B.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2023/12/INFORMATIVA-PRIVACY_all-B.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/04/Avviso-Audizioni-Verdi-Trieste.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/04/Avviso-Audizioni-Verdi-Trieste.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2023/12/INFORMATIVA-PRIVACY_all-B.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2023/12/INFORMATIVA-PRIVACY_all-B.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/03/2026.03.13-CALL-FOR-ARTITS-INVITO-A-PRESENTARE-CANDIDATURE-LA-STORIA-DELLA-TRAVIATA.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/03/2026.03.13-CALL-FOR-ARTITS-INVITO-A-PRESENTARE-CANDIDATURE-LA-STORIA-DELLA-TRAVIATA.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2023/12/INFORMATIVA-PRIVACY_all-B.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2023/12/INFORMATIVA-PRIVACY_all-B.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/2026.12.21-BANDO-SELEZ_AREA-ART_VIOLA-DI-FILA-CON-OBBL-DELLA-PRIMA_signed.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/2026.12.21-BANDO-SELEZ_AREA-ART_VIOLA-DI-FILA-CON-OBBL-DELLA-PRIMA_signed.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/2026.12.14-DOMANDA-PARTECIPAZIONE-CONCORSO_VIOLA-DI-FILA-CON-OBBL-DELLA-PRIMA_all-A.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/2026.12.14-DOMANDA-PARTECIPAZIONE-CONCORSO_VIOLA-DI-FILA-CON-OBBL-DELLA-PRIMA_all-A.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2025/02/INFORMATIVA-PRIVACY_all-B.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2025/02/INFORMATIVA-PRIVACY_all-B.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/PASSI_VIOLA-DI-FILA-CON-OBBL-DELLA-PRIMA.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/PASSI_VIOLA-DI-FILA-CON-OBBL-DELLA-PRIMA.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/2026.12.14-BANDO-SELEZ_AREA-ART_VIOLINO-DI-FILA_signed.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/2026.12.14-BANDO-SELEZ_AREA-ART_VIOLINO-DI-FILA_signed.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/2026.12.14-DOMANDA-PARTECIPAZIONE-CONCORSO_VIOLINO-DI-FILA_all-A.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/2026.12.14-DOMANDA-PARTECIPAZIONE-CONCORSO_VIOLINO-DI-FILA_all-A.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2025/02/INFORMATIVA-PRIVACY_all-B.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2025/02/INFORMATIVA-PRIVACY_all-B.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/PASSI_VIOLINO-DI-FILA.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/PASSI_VIOLINO-DI-FILA.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/07/2026.09.28-BANDO-SELEZ_AREA-ART_PRIMO-VIOLONCELLO-CON-OBBL-DELLA-FILA.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/07/2026.09.28-BANDO-SELEZ_AREA-ART_PRIMO-VIOLONCELLO-CON-OBBL-DELLA-FILA.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/07/2026.09.28-DOMANDA-PARTECIPAZIONE-CONCORSO_AREA-ART_PRIMO-VIOLONCELLO-CON-OBBL-DELLA-FILA_all-A.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/07/2026.09.28-DOMANDA-PARTECIPAZIONE-CONCORSO_AREA-ART_PRIMO-VIOLONCELLO-CON-OBBL-DELLA-FILA_all-A.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/07/PASSI_PRIMO-VIOLONCELLO-CON-OBBLIGO-DELLA-FILA.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/07/PASSI_PRIMO-VIOLONCELLO-CON-OBBLIGO-DELLA-FILA.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2025/02/INFORMATIVA-PRIVACY_all-B.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2025/02/INFORMATIVA-PRIVACY_all-B.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/09/Ammessi-concorso-primo-violoncello.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/09/Ammessi-concorso-primo-violoncello.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/Graduatoria-idonei-primo-violoncello.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/Graduatoria-idonei-primo-violoncello.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/06/2026.07.14-BANDO-SELEZ_AREA-ART_PRIMO-TIMPANO-CON-OBBLIGO-DELLA-BATTERIA.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/06/2026.07.14-BANDO-SELEZ_AREA-ART_PRIMO-TIMPANO-CON-OBBLIGO-DELLA-BATTERIA.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/05/2026.07.14-DOMANDA-PARTECIPAZIONE-CONCORSO_AREA-ART_PRIMO-TIMPANO-CON-OBBL-DELLA-BATTERIA_all-A.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/05/2026.07.14-DOMANDA-PARTECIPAZIONE-CONCORSO_AREA-ART_PRIMO-TIMPANO-CON-OBBL-DELLA-BATTERIA_all-A.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/05/PASSI_PRIMO-TIMPANO-CON-OBBLIGO-DELLA-BATTERIA.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/05/PASSI_PRIMO-TIMPANO-CON-OBBLIGO-DELLA-BATTERIA.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2025/02/INFORMATIVA-PRIVACY_all-B.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2025/02/INFORMATIVA-PRIVACY_all-B.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/07/Ammessi-concorso-1°-timpano.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/07/Ammessi-concorso-1°-timpano.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/07/Graduatoria-finale-1°-timpano.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/07/Graduatoria-finale-1°-timpano.pdf"
-            },
-            {
-              "text": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/05/2026.07.13-BANDO-SELEZ_AREA-ART_SEC-CORNO-CON-OBBL-DEL-TERZO-DEL-QUARTO-E-DEI-SEGUENTI.pdf",
-              "url": "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/05/2026.07.13-BANDO-SELEZ_AREA-ART_SEC-CORNO-CON-OBBL-DEL-TERZO-DEL-QUARTO-E-DEI-SEGUENTI.pdf"
-            }
-          ],
-          "list_item_count": 153,
-          "heading_count": 43,
-          "table_count": 3
-        },
-        "scrapling": {
-          "runtime_seconds": 0.0022,
-          "characters": 26769,
-          "signals": {
-            "vocal_roles": true,
-            "deadline": false,
-            "audition": true,
-            "dates": true,
-            "application": true,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 106,
-          "relevant_dom_link_labels_retained_in_text": 106,
-          "relevant_link_targets_available": 107,
-          "relevant_link_targets_retained_in_text": 105
-        },
-        "lxml_full_text": {
-          "runtime_seconds": 0.0015,
-          "characters": 23760,
-          "signals": {
-            "vocal_roles": true,
-            "deadline": false,
-            "audition": true,
-            "dates": true,
-            "application": true,
-            "pdf": true
-          },
-          "relevant_dom_link_labels_available": 106,
-          "relevant_dom_link_labels_retained_in_text": 106,
-          "relevant_link_targets_available": 107,
-          "relevant_link_targets_retained_in_text": 105
-        },
-        "trafilatura_plain": {
-          "status": "ok",
-          "runtime_seconds": 0.0171,
-          "characters": 7706,
-          "signals": {
-            "vocal_roles": true,
-            "deadline": false,
-            "audition": true,
+            "audition": false,
             "dates": true,
             "application": false,
             "pdf": false
           },
-          "relevant_dom_link_labels_available": 106,
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 2,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0006,
+          "characters": 2469,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": false,
+            "dates": true,
+            "application": false,
+            "pdf": false
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 2,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0139,
+          "characters": 136,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": false,
+            "dates": false,
+            "application": false,
+            "pdf": false
+          },
+          "relevant_dom_link_labels_available": 2,
           "relevant_dom_link_labels_retained_in_text": 0,
-          "relevant_link_targets_available": 107,
+          "relevant_link_targets_available": 2,
           "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0196,
-          "characters": 7960,
+          "runtime_seconds": 0.0136,
+          "characters": 150,
           "markdown_link_count": 0,
           "markdown_relevant_link_count": 0,
-          "relevant_dom_link_targets_available": 107,
+          "relevant_dom_link_targets_available": 2,
           "relevant_dom_link_targets_retained": 0
         },
         "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
