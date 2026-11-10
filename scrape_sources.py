@@ -8,8 +8,10 @@ import re
 import time
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
+from lxml import html as lxml_html
 from scrapling.fetchers import Fetcher
 
 
@@ -55,10 +57,50 @@ DEADLINE_RE = re.compile(r"scadenz|entro|termine|iscrizion|apert[oa]|chius[oa]|d
 ANNOUNCEMENT_RE = re.compile(r"audizion|concor|bando|selezion|candidat|casting", re.IGNORECASE)
 DATE_RE = re.compile(r"\b(?:\d{1,2}[./-]\d{1,2}[./-]20\d{2}|\d{1,2}\s+[a-zà-ÿ]+\s+20\d{2}|20\d{2})\b", re.IGNORECASE)
 GENERIC_LINES = {"coro", "concorso", "audizioni", "audizione", "bando", "news", "home", "privacy", "cookie"}
+LINK_RELEVANCE = re.compile(
+    r"audizion|concor|bando|selezion|candidat|cantant|coro|canto|soprano|"
+    r"mezzosoprano|contralto|tenore|baritono|basso|domanda|modulo|iscrizion|"
+    r"application|young.artist|call|deadline|\\.pdf",
+    re.IGNORECASE,
+)
+LINK_NOISE = re.compile(
+    r"privacy|cookie|newsletter|accessibil|facebook|instagram|linkedin|youtube|"
+    r"twitter|shop|carrello|terms|policy",
+    re.IGNORECASE,
+)
+MAX_RELEVANT_LINKS = 250
+MAX_PAGE_TEXT_CHARS = 60000
 
 
 def clean_line(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
+
+
+def extract_relevant_links(html_bytes: bytes, page_url: str) -> tuple[list[dict], int, bool]:
+    """Preserve first-party page links as structured evidence, not flattened text."""
+    try:
+        dom = lxml_html.fromstring(html_bytes, base_url=page_url)
+    except (ValueError, TypeError):
+        return [], 0, False
+    links: list[dict] = []
+    seen: set[str] = set()
+    total = 0
+    for node in dom.xpath("//a[@href]"):
+        raw_href = (node.get("href") or "").strip()
+        href = urljoin(page_url, raw_href)
+        if not href.startswith(("http://", "https://")):
+            continue
+        label = clean_line(" ".join(node.itertext()))
+        combined = f"{label} {href}"
+        if not LINK_RELEVANCE.search(combined) or LINK_NOISE.search(combined):
+            continue
+        if href in seen:
+            continue
+        seen.add(href)
+        total += 1
+        if len(links) < MAX_RELEVANT_LINKS:
+            links.append({"text": label[:240], "url": href})
+    return links, total, total > MAX_RELEVANT_LINKS
 
 
 def rank_relevant_lines(lines: list[str]) -> list[str]:
@@ -156,7 +198,12 @@ def main() -> None:
             text = response.get_all_text(separator="\n") or ""
             lines = [clean_line(line) for line in text.splitlines()]
             lines = [line for line in lines if line]
+            item["page_text"] = "\n".join(lines)[:MAX_PAGE_TEXT_CHARS]
             item["relevant_lines"] = rank_relevant_lines(lines)
+            links, link_total, links_truncated = extract_relevant_links(response.body, url)
+            item["relevant_links"] = links
+            item["relevant_links_total"] = link_total
+            item["relevant_links_truncated"] = links_truncated
             if not item["title"] and not lines:
                 item["status"] = "extraction_error"
                 item["error"] = "The page returned no readable title or text."
@@ -196,6 +243,10 @@ def main() -> None:
             report.write(f"- 页面标题：{item['title'] or '未读取到'}\n")
             if item["error"]:
                 report.write(f"- 错误：`{item['error']}`\n")
+            report.write(f"- 相关链接：{len(item.get('relevant_links', []))}/{item.get('relevant_links_total', 0)}"
+                         f"{'（已截断）' if item.get('relevant_links_truncated') else ''}\n")
+            for link in item.get("relevant_links", [])[:40]:
+                report.write(f"  - [{link['text'] or link['url']}]({link['url']})\n")
             if item["relevant_lines"]:
                 report.write("- 公告相关原文片段：\n")
                 for line in item["relevant_lines"][:35]:
