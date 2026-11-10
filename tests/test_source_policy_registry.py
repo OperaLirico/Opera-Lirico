@@ -28,7 +28,7 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                     self.assertTrue(report_path.startswith("reports/p2/"))
                     self.assertTrue((ROOT / report_path).exists())
 
-    def test_first_two_pilot_batches_have_evidence_backed_strategy_assessments(self):
+    def test_first_three_pilot_batches_have_evidence_backed_strategy_assessments(self):
         policy = json.loads((ROOT / "data" / "source_fetch_policies.json").read_text(encoding="utf-8"))
         assessed = {item["source_id"]: item for item in policy["entries"]
                     if item["strategy_status"] != "baseline_only"}
@@ -46,9 +46,6 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                 self.assertIn("2026-11-10", item["assessment_note"])
                 self.assertIn(item.get("assessment_batch"), {"batch-1-2026-11-10", "batch-2-2026-11-10", "batch-3-2026-11-10"})
                 self.assertTrue((ROOT / item["evidence_report"]).exists())
-                self.assertIn(item.get("assessment_batch"), {
-                    "batch-1-2026-11-10", "batch-2-2026-11-10"
-                })
                 self.assertTrue(item["evidence_report"].startswith("reports/p2/"))
 
         for batch in (1, 2, 3):
