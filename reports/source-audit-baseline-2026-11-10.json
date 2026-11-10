@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "audit_id": "source-registry-baseline-2026-11-10",
-  "audited_at": "2026-11-10T16:49:00+01:00",
+  "audited_at": "2026-11-10T17:05:00+01:00",
   "baseline": {
     "branch": "main",
     "commit": "42ba2a354c90a3bc5bae994a4db2593f263c7eac",
@@ -19,18 +19,16 @@
   "summary": {
     "audited_unique_sources": 44,
     "classifications": {
-      "auto_approved_official": 24,
-      "needs_review": 4,
+      "auto_approved_official": 26,
       "auto_approved_third_party": 4,
+      "needs_review": 2,
       "irrelevant_candidate": 12
     },
     "exact_duplicate_extra_records": 15,
     "manual_review_priorities": [
-      "source-17",
-      "source-101",
       "source-121"
     ],
-    "note": "Official means first-party for the publisher's own institution/event, not a claim of government endorsement or external accreditation. For first-party institutions with no clearly evidenced voice-specific page in this pass, publisher identity may be official while source-level relevance remains needs_review. Follow-up verification on 2026-11-10 upgraded Maggio Musicale Fiorentino, Teatro Lirico Sperimentale di Spoleto, and Fondazione Renata Tebaldi using direct first-party vocal-program evidence; Winterwerft was classified out of scope for this classical-vocal registry. AsLiCo has also been confirmed as an official and relevant vocal source using its own association profile and current competition information."
+    "note": "Official means first-party for the publisher's own institution/event, not a claim of government endorsement or external accreditation. Follow-up verification on 2026-11-10 confirmed Teatro Verdi Trieste and Teatro Lirico di Cagliari as official and relevant vocal sources using direct first-party chorus recruitment notices. Musical.it was classified out of scope for this classical-vocal registry because its inspected audition board focuses on musical-theatre performers and related training. Provinispettacolo remains needs_review: its domain carries useful opera-singer discovery notices, but the registered Robin Hood permalink is cross-genre and is not a primary organizer notice. Other follow-up evidence confirmed Maggio Musicale Fiorentino, Teatro Lirico Sperimentale di Spoleto, Fondazione Renata Tebaldi, and AsLiCo as official relevant vocal sources; Winterwerft was classified out of scope."
   },
   "items": [
     {
@@ -137,12 +135,12 @@
       "fetch_status": "ok",
       "http_status": 200,
       "last_checked_at": "2026-11-10T15:43:13+01:00",
-      "auto_review_status": "needs_review",
+      "auto_review_status": "auto_approved_official",
       "publisher_status": "official",
-      "relevance_status": "uncertain",
-      "confidence": "medium",
+      "relevance_status": "relevant",
+      "confidence": "high",
       "evidence_url": "https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/",
-      "evidence_note": "Teatro Verdi Trieste 官方公告页可确认发布方，但当前检索到的开放条目主要为 mimi、乐团岗位；历史 cast audition 需逐条核验是否包含歌手。",
+      "evidence_note": "Teatro Verdi 官方 2026 Bandi 页面明确列出 CORO 招聘：mezzosoprano/contralto 3 席，以及 tenore/baritono 各 1 席，页面附官方公告、申请表、声部曲目及结果文件；另有 closed cast audition。该页同时包含器乐岗位，必须按具体公告筛选；当前声乐招聘条目已标记 CHIUSI。",
       "duplicate_candidate_in_sources_extra": false,
       "destructive_action_taken": false,
       "audit_date": "2026-11-10"
@@ -346,12 +344,12 @@
       "fetch_status": "ok",
       "http_status": 200,
       "last_checked_at": "2026-11-10T15:43:13+01:00",
-      "auto_review_status": "needs_review",
+      "auto_review_status": "auto_approved_official",
       "publisher_status": "official",
-      "relevance_status": "uncertain",
-      "confidence": "medium",
-      "evidence_url": "https://www.liricocagliari.it/trasparenza/",
-      "evidence_note": "Teatro Lirico di Cagliari 官方透明管理入口可确认机构归属，但本轮未证明该入口持续发布声乐招募；需检查子页面和公告分类。",
+      "relevance_status": "relevant",
+      "confidence": "high",
+      "evidence_url": "https://www.liricocagliari.it/bandi-e-gare/approvazione-avviso-pubblico-e-indizione-selezione-internazionale-per-esami-volta-alla-costituzione-di-una-graduatoria-di-idonei-valevole-in-aggiunta-alle-vigenti-graduatorie-dei-titolari-di-diritt/",
+      "evidence_note": "Teatro Lirico di Cagliari 官方 Bandi e gare 页面于 2026-11-06 发布 2027 年 Artisti del Coro 国际选拔，提供正式公告、申请表、考试日程及合唱曲谱；来源身份和声乐相关性均有直接一手证据。",
       "duplicate_candidate_in_sources_extra": false,
       "destructive_action_taken": false,
       "audit_date": "2026-11-10"
@@ -688,12 +686,12 @@
       "fetch_status": "ok",
       "http_status": 200,
       "last_checked_at": "2026-11-10T10:06:55+01:00",
-      "auto_review_status": "needs_review",
+      "auto_review_status": "irrelevant_candidate",
       "publisher_status": "third_party",
-      "relevance_status": "uncertain",
-      "confidence": "medium",
+      "relevance_status": "irrelevant",
+      "confidence": "high",
       "evidence_url": "https://www.musical.it/audizioni",
-      "evidence_note": "Musical.it 是音乐剧演出 audition 聚合页，包含 performer/歌手混合项目，与古典声乐/歌剧机会边界不清；建议单独标为音乐剧类别后再决定是否纳入。",
+      "evidence_note": "该栏目明确面向音乐剧公司和学校发布 casting/audizioni，当前条目以 musical performer、ballerini、acrobat、musical workshop 为主；与本项目当前聚焦的古典声乐、歌剧、声乐比赛及青年歌唱家项目不符。作为音乐剧专门目录可另行建立独立分类，但不纳入当前古典声乐来源集。",
       "duplicate_candidate_in_sources_extra": true,
       "destructive_action_taken": false,
       "audit_date": "2026-11-10"
@@ -825,11 +823,14 @@
       "publisher_status": "third_party",
       "relevance_status": "uncertain",
       "confidence": "medium",
-      "evidence_url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
-      "evidence_note": "Provinispettacolo 第三方条目含 tenor、soprano、baritone、bass 等角色，但属于综合戏剧/音乐剧制作，非明确歌剧或古典声乐项目；建议设为跨界表演类别待复核。",
+      "evidence_url": "https://www.provinispettacolo.it/",
+      "evidence_note": "该站为综合 casting/演艺资讯第三方聚合站，确实发布过明确的歌剧歌手招募（如 2026-10-08 Opera e Lirica 招募 soprano、mezzosoprano、tenore、baritono、basso），说明域名具有线索发现价值；但当前登记的具体 Robin Hood permalink 是跨界戏剧/音乐剧 casting，并非该歌剧公告，也不是主办方原始公告。保留 needs_review；后续应将稳定的分类/聚合入口与单条机会 permalink 分开登记，单条机会必须回链主办方核验。",
       "duplicate_candidate_in_sources_extra": true,
       "destructive_action_taken": false,
-      "audit_date": "2026-11-10"
+      "audit_date": "2026-11-10",
+      "supporting_evidence_urls": [
+        "https://www.provinispettacolo.it/audizioni-opera-lirica-roma-cantanti-professori-orchestra/"
+      ]
     },
     {
       "source_id": "source-123",
