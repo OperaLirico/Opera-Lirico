@@ -1,0 +1,43 @@
+import unittest
+
+from audit_extraction_pilot import feed_summary, metrics, parse_sitemap, robots_allows
+
+
+class ExtractionPilotHelperTests(unittest.TestCase):
+    def test_robots_wildcards_and_specific_allow_precedence(self):
+        robots = """User-agent: *
+Disallow: /private*
+Allow: /private/open$
+"""
+        self.assertFalse(robots_allows("https://example.org/private/secret", robots))
+        self.assertTrue(robots_allows("https://example.org/private/open", robots))
+        self.assertTrue(robots_allows("https://example.org/public", robots))
+
+    def test_sitemap_index_returns_type_and_locations(self):
+        xml = b"""<?xml version="1.0"?>
+        <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          <sitemap><loc>https://example.org/auditions-sitemap.xml</loc></sitemap>
+        </sitemapindex>"""
+        result = parse_sitemap(xml)
+        self.assertEqual(result["kind"], "sitemapindex")
+        self.assertEqual(result["locs"], ["https://example.org/auditions-sitemap.xml"])
+
+    def test_feed_summary_counts_vocal_entries_not_all_entries(self):
+        xml = b"""<rss version="2.0"><channel>
+          <item><title>Audizioni per tenore</title><description>Concorso lirico</description></item>
+          <item><title>Nuovo calendario concerti</title><description>Stagione sinfonica</description></item>
+        </channel></rss>"""
+        result = feed_summary(xml)
+        self.assertEqual(result["entry_count"], 2)
+        self.assertEqual(result["relevant_entry_count"], 1)
+        self.assertEqual(result["relevant_titles"], ["Audizioni per tenore"])
+
+    def test_metrics_measures_actual_link_label_retention(self):
+        labels = ["Scarica il bando", "Domanda di iscrizione"]
+        result = metrics("Scarica il bando. Il termine è il 30 novembre.", labels)
+        self.assertEqual(result["relevant_dom_link_labels_available"], 2)
+        self.assertEqual(result["relevant_dom_link_labels_retained_in_text"], 1)
+
+
+if __name__ == "__main__":
+    unittest.main()
