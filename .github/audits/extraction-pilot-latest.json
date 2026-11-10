@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T18:20:13+01:00",
+  "generated_at": "2026-11-10T18:22:16+01:00",
   "scope": "Five high-value first-party vocal sources.",
   "pilot_source_ids": [
     "source-1",
@@ -26,8 +26,8 @@
       "raw_snapshot": {
         "artifact_path": "artifacts/p2-p4-html-samples/source-1.html",
         "bytes": 29603,
-        "sha256": "a811ade4681b5d639a4e86623600b63fee92875c10aa8562fe04985e3fe13390",
-        "captured_at": "2026-11-10T18:20:18+01:00"
+        "sha256": "47d71b683516f88c02a95b70218bcda50455da753d5b1a42a2f7d966f69d670e",
+        "captured_at": "2026-11-10T18:22:20+01:00"
       },
       "discovery": {
         "robots": {
@@ -202,7 +202,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0007,
+          "runtime_seconds": 0.0006,
           "characters": 3454,
           "signals": {
             "vocal_roles": false,
@@ -218,7 +218,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0005,
+          "runtime_seconds": 0.0004,
           "characters": 4757,
           "signals": {
             "vocal_roles": false,
@@ -235,7 +235,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0089,
+          "runtime_seconds": 0.006,
           "characters": 1818,
           "signals": {
             "vocal_roles": false,
@@ -251,7 +251,7 @@
           "relevant_link_targets_retained_in_text": 1
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.006,
+          "runtime_seconds": 0.0041,
           "characters": 1855,
           "markdown_link_count": 1,
           "markdown_relevant_link_count": 1,
@@ -278,7 +278,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-15.html",
         "bytes": 34805,
         "sha256": "c954dd570d97dc8a9a3b90c9420f91dc02046373c233aa1edf1e5ada4497037b",
-        "captured_at": "2026-11-10T18:20:41+01:00"
+        "captured_at": "2026-11-10T18:22:41+01:00"
       },
       "discovery": {
         "robots": {
@@ -451,7 +451,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0011,
+          "runtime_seconds": 0.0009,
           "characters": 17733,
           "signals": {
             "vocal_roles": true,
@@ -467,7 +467,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0007,
+          "runtime_seconds": 0.0006,
           "characters": 17658,
           "signals": {
             "vocal_roles": true,
@@ -484,7 +484,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0078,
+          "runtime_seconds": 0.006,
           "characters": 12162,
           "signals": {
             "vocal_roles": true,
@@ -500,7 +500,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0084,
+          "runtime_seconds": 0.0063,
           "characters": 12253,
           "markdown_link_count": 0,
           "markdown_relevant_link_count": 0,
@@ -515,10 +515,367 @@
       "source_id": "source-2",
       "source_name": "Teatro Carlo Felice",
       "url": "https://carlofelice.it/audizioni-e-concorsi/",
-      "robots_status": "robots_redirect_requires_review",
-      "robots_http_status": 301,
-      "fetch_status": "robots_disallowed_or_unavailable",
-      "strategy_recommendation": "skip_page_fetch_and_review_robots_policy"
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-2.html",
+        "bytes": 398561,
+        "sha256": "f2491b3e9cc3a9394b6d46daab360f47951642d34227aef7ca688f1364a5cc8c",
+        "captured_at": "2026-11-10T18:23:00+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.carlofelice.it/sitemap.xml",
+            "status": "ok",
+            "http_status": 200,
+            "sitemap_kind": "sitemapindex",
+            "loc_count": 7,
+            "child_sitemaps_checked": 5,
+            "child_sitemaps": [
+              {
+                "url": "https://www.carlofelice.it/sitemap-home.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 2,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.carlofelice.it/sitemap-pages.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 88,
+                "audition_or_vocal_url_count": 3,
+                "url_examples": [
+                  "https://www.carlofelice.it/coro-di-voci-bianche/",
+                  "https://www.carlofelice.it/coro/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/"
+                ]
+              },
+              {
+                "url": "https://www.carlofelice.it/sitemap-show-1.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 1294,
+                "audition_or_vocal_url_count": 11,
+                "url_examples": [
+                  "https://www.carlofelice.it/spettacolo/tutta-qui-la-cantoria/",
+                  "https://www.carlofelice.it/en/show/tutta-qui-la-cantoria/",
+                  "https://www.carlofelice.it/spettacolo/il-canto-che-non-tace/",
+                  "https://www.carlofelice.it/en/show/il-canto-che-non-tace/",
+                  "https://www.carlofelice.it/spettacolo/il-coro-di-voci-bianche-a-yachtgarden/",
+                  "https://www.carlofelice.it/spettacolo/il-coro-di-voci-bianche-ad-acqui-terme/",
+                  "https://www.carlofelice.it/spettacolo/coro-accademico-nazionale-veryovka/",
+                  "https://www.carlofelice.it/spettacolo/concorso-viotti/",
+                  "https://www.carlofelice.it/spettacolo/concerto-del-coro-di-voci-bianche/",
+                  "https://www.carlofelice.it/spettacolo/8-concorso-lirico-internazionale-e-festival-di-portofino/",
+                  "https://www.carlofelice.it/en/show/8-concorso-lirico-internazionale-e-festival-di-portofino/"
+                ]
+              },
+              {
+                "url": "https://www.carlofelice.it/sitemap-auditions_and_contes-1.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 85,
+                "audition_or_vocal_url_count": 85,
+                "url_examples": [
+                  "https://www.carlofelice.it/audizioni-e-concorsi/selezione-figuranti/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-violoncello-di-fila/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-viola-di-fila-con-obbligo-della-seconda-viola/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-violino-di-fila-con-obbligo-del-secondo-violino-dei-secondi-violini/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-secondo-violoncello-con-obbligo-della-fila/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-secondo-oboe-con-obbligo-del-terzo-e-seguenti-e-del-corno-inglese-e-del-palcoscenico/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-prima-viola-e-violino-di-fila/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-prima-tromba/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-prima-arpa-e-prima-viola/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-percussioni/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-tenori/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-tenori-2/"
+                ]
+              },
+              {
+                "url": "https://www.carlofelice.it/sitemap-accessible-show-1.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 6,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              }
+            ],
+            "page_url_count": 1181,
+            "audition_or_vocal_url_count": 95,
+            "url_examples": [
+              "https://www.carlofelice.it/coro-di-voci-bianche/",
+              "https://www.carlofelice.it/coro/",
+              "https://www.carlofelice.it/audizioni-e-concorsi/",
+              "https://www.carlofelice.it/spettacolo/tutta-qui-la-cantoria/",
+              "https://www.carlofelice.it/en/show/tutta-qui-la-cantoria/",
+              "https://www.carlofelice.it/spettacolo/il-canto-che-non-tace/",
+              "https://www.carlofelice.it/en/show/il-canto-che-non-tace/",
+              "https://www.carlofelice.it/spettacolo/il-coro-di-voci-bianche-a-yachtgarden/",
+              "https://www.carlofelice.it/spettacolo/il-coro-di-voci-bianche-ad-acqui-terme/",
+              "https://www.carlofelice.it/spettacolo/coro-accademico-nazionale-veryovka/",
+              "https://www.carlofelice.it/audizioni-e-concorsi/selezione-figuranti/",
+              "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-violoncello-di-fila/"
+            ]
+          }
+        ],
+        "advertised_feeds": [
+          {
+            "url": "https://www.carlofelice.it/comments/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          },
+          {
+            "url": "https://www.carlofelice.it/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          }
+        ],
+        "advertised_public_api_links": [
+          "https://www.carlofelice.it/wp-json/"
+        ],
+        "public_api_checks": [
+          {
+            "url": "https://www.carlofelice.it/wp-json/",
+            "status": "ok",
+            "http_status": 200,
+            "json_valid": true,
+            "namespace_count": 25,
+            "route_count": 402,
+            "namespace_examples": [
+              "oembed/1.0",
+              "wpml/v1",
+              "members/v1",
+              "wpml/st/v1",
+              "elementor-mcp-composer/v1.0.19",
+              "elementor-one/v1",
+              "wpml/tm/v1",
+              "wpml/ate/v1",
+              "nl4wp/v1",
+              "complianz/v1",
+              "cptui/v1",
+              "elementor/v1"
+            ],
+            "route_examples": []
+          }
+        ]
+      },
+      "parsers": {
+        "title": "Audizioni e Concorsi | Teatro Carlo Felice",
+        "dom_structure": {
+          "anchor_count": 465,
+          "relevant_anchor_count": 387,
+          "relevant_anchor_examples": [
+            {
+              "text": "Salta al contenuto",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/#content"
+            },
+            {
+              "text": "Teatro",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/"
+            },
+            {
+              "text": "Audizioni e concorsi",
+              "url": "https://www.carlofelice.it/audizioni-e-concorsi/"
+            },
+            {
+              "text": "Stagione",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/"
+            },
+            {
+              "text": "Accessibilità",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/"
+            },
+            {
+              "text": "",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6NDU0OTksInRvZ2dsZSI6ZmFsc2V9"
+            },
+            {
+              "text": "",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6NDU0OTksInRvZ2dsZSI6ZmFsc2V9"
+            },
+            {
+              "text": "",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6NDU3ODEsInRvZ2dsZSI6ZmFsc2V9"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Bando-Accademia-TCF_261110.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-accademia-alto-perfezionamento-per-cantanti-lirici-e-pianisti-accompagnatori-2027/"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/ALLEGATO-A-Avviso-selezione-Addetto-Ufficio-del-Personale.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/ALEGATO-B-Avviso-selezione-Addetto-allUfficio-del-Personale.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/FIRMATO-Avviso-selezione-addetto-allufficio-del-personale.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-tenori-5/"
+            },
+            {
+              "text": "Verdi, Nabucco, Gli arredi festivi",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Verdi-Nabucco-Gli-arredi-festivi.pdf"
+            },
+            {
+              "text": "Verdi, Messa da Requiem, n° 7 ‘Libera me’",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/4.-Verdi-Messa-da-Requiem-n°-7-Libera-me.pdf"
+            },
+            {
+              "text": "Puccini, Turandot",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Puccini-Turandot.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-AUDIZIONI-TCF-CORO-TN-11.26-B.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Procedura-selettiva-Macchinista-Teatrale-di-scena-e-di-laboratorio.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-tecnici-macchinista-teatrale-di-scena-e-di-laboratorio/"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-bassi-e-baritoni/"
+            },
+            {
+              "text": "Rossini, Stabat Mater, Quando Corpus",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/1.-Rossini-Stabat-Mater-Quando-Corpus.pdf"
+            },
+            {
+              "text": "Mozart, Requiem, Kyrie",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/2.-Mozart-Requiem-Kyrie.pdf"
+            },
+            {
+              "text": "Verdi, Nabucco, Gli arredi festivi",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Verdi-Nabucco-Gli-arredi-festivi.pdf"
+            },
+            {
+              "text": "Verdi, Messa da Requiem, n° 7 ‘Libera me’",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/4.-Verdi-Messa-da-Requiem-n°-7-Libera-me.pdf"
+            },
+            {
+              "text": "Verdi, Otello, Fuoco di gioia",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/5.-Verdi-Otello-Fuoco-di-gioia.pdf"
+            },
+            {
+              "text": "Verdi, Ave Maria su scala enigmatica",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/6.-Verdi-Ave-Maria-su-scala-enigmatica.pdf"
+            },
+            {
+              "text": "Puccini, Turandot",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Puccini-Turandot.pdf"
+            },
+            {
+              "text": "Brahms, Ein deutsches Requiem, n° 4",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/8.-Brahms-Ein-deutsches-Requiem-n°-4.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-CORO-concorso-26.11-BR-BS-b.pdf"
+            }
+          ],
+          "list_item_count": 173,
+          "heading_count": 1,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0069,
+          "characters": 52378,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 119,
+          "relevant_dom_link_labels_retained_in_text": 119,
+          "relevant_link_targets_available": 332,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0056,
+          "characters": 68502,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 119,
+          "relevant_dom_link_labels_retained_in_text": 119,
+          "relevant_link_targets_available": 332,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.1093,
+          "characters": 58971,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 119,
+          "relevant_dom_link_labels_retained_in_text": 72,
+          "relevant_link_targets_available": 332,
+          "relevant_link_targets_retained_in_text": 182
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.1188,
+          "characters": 60954,
+          "markdown_link_count": 187,
+          "markdown_relevant_link_count": 187,
+          "relevant_dom_link_targets_available": 332,
+          "relevant_dom_link_targets_retained": 180
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
     },
     {
       "source_id": "source-3",
@@ -536,7 +893,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-3.html",
         "bytes": 135749,
         "sha256": "576e8eb4e393d3a24e4e0a41a059ad0e846a76408d71c42a4103e3ffc2486731",
-        "captured_at": "2026-11-10T18:20:55+01:00"
+        "captured_at": "2026-11-10T18:23:49+01:00"
       },
       "discovery": {
         "robots": {
@@ -790,7 +1147,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0017,
+          "runtime_seconds": 0.0014,
           "characters": 3728,
           "signals": {
             "vocal_roles": true,
@@ -806,7 +1163,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0011,
+          "runtime_seconds": 0.0009,
           "characters": 31754,
           "signals": {
             "vocal_roles": true,
@@ -823,7 +1180,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0136,
+          "runtime_seconds": 0.0101,
           "characters": 906,
           "signals": {
             "vocal_roles": true,
@@ -839,7 +1196,7 @@
           "relevant_link_targets_retained_in_text": 2
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0127,
+          "runtime_seconds": 0.0099,
           "characters": 911,
           "markdown_link_count": 1,
           "markdown_relevant_link_count": 1,
@@ -866,7 +1223,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-9.html",
         "bytes": 376149,
         "sha256": "887e530634bdd3ed62b5cee4ed5d65dd67a2155955607b054325239ea72d1045",
-        "captured_at": "2026-11-10T18:21:24+01:00"
+        "captured_at": "2026-11-10T18:24:22+01:00"
       },
       "discovery": {
         "robots": {
@@ -1062,7 +1419,7 @@
           "table_count": 1
         },
         "scrapling": {
-          "runtime_seconds": 0.0045,
+          "runtime_seconds": 0.0123,
           "characters": 27005,
           "signals": {
             "vocal_roles": true,
@@ -1078,7 +1435,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.004,
+          "runtime_seconds": 0.003,
           "characters": 168655,
           "signals": {
             "vocal_roles": true,
@@ -1095,7 +1452,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0278,
+          "runtime_seconds": 0.02,
           "characters": 5421,
           "signals": {
             "vocal_roles": true,
@@ -1111,7 +1468,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0264,
+          "runtime_seconds": 0.0205,
           "characters": 5617,
           "markdown_link_count": 0,
           "markdown_relevant_link_count": 0,
