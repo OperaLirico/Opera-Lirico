@@ -90,6 +90,61 @@ class PreserveLastGoodTests(unittest.TestCase):
             "no_vocal_or_opera_signal",
         )
 
+    def test_actor_only_casting_is_rejected_even_on_an_opera_page(self):
+        probe = {
+            "status": "ok",
+            "source": "Opera theatre",
+            "title": "Audizioni per attori e attrici",
+            "relevant_lines": [
+                "Audizioni per attori e attrici per una nuova produzione",
+                "Selezione per ruoli teatrali",
+                "La produzione è realizzata da un teatro d'opera",
+            ],
+        }
+        self.assertEqual(
+            grow_sources.candidate_rejection_reason(probe, "https://example.org/auditions"),
+            "non_vocal_role_only",
+        )
+
+    def test_instrument_notice_is_rejected_even_with_generic_opera_context(self):
+        probe = {
+            "status": "ok",
+            "source": "Orchestra",
+            "title": "Concorso per primo oboe",
+            "relevant_lines": [
+                "Audizione per primo oboe nell'orchestra del teatro d'opera",
+                "La produzione operistica prevede prove orchestrali",
+                "Domanda di partecipazione al concorso strumentale",
+            ],
+        }
+        self.assertEqual(
+            grow_sources.candidate_rejection_reason(probe, "https://example.org/oboe"),
+            "non_vocal_role_only",
+        )
+
+    def test_legacy_irrelevant_sources_are_flagged_not_removed(self):
+        item = {
+            "source": "Orchestra competition",
+            "title": "Concorso Primo Oboe",
+            "status": "ok",
+            "relevant_lines": ["Audizione per oboe", "Concorso strumentale"],
+        }
+        status, reason = grow_sources.legacy_relevance_status(item)
+        self.assertEqual(status, "irrelevant_candidate")
+        self.assertEqual(reason, "non_vocal_role_only")
+        self.assertEqual(item["source"], "Orchestra competition")
+
+    def test_legacy_vocal_source_still_requires_publisher_review(self):
+        item = {
+            "source": "Opera competition",
+            "title": "Concorso internazionale di canto",
+            "status": "ok",
+            "relevant_lines": ["Audizioni per soprano e tenore"],
+        }
+        status, reason = grow_sources.legacy_relevance_status(item)
+        self.assertEqual(status, "needs_review")
+        self.assertEqual(reason, "vocal_signal_found_but_publisher_not_verified")
+
     def test_review_labels_survive_successful_refresh(self):
         previous = {
             "review_status": "legacy_unreviewed",
