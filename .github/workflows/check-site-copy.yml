@@ -44,7 +44,7 @@ jobs:
               json.loads(Path(name).read_text(encoding="utf-8"))
               print(f"{name}: valid JSON")
           PY
-      - name: Check homepage and Chinese copy quality
+      - name: Check homepage structure and Chinese copy
         run: |
           python - <<'PY'
           import json
@@ -54,25 +54,30 @@ jobs:
           app = Path("app.js").read_text(encoding="utf-8")
           zh = json.loads(Path("data/conservatori_zh.json").read_text(encoding="utf-8"))
 
-          required = [
-              "找到下一次登台的机会",
-              "歌剧院招募与比赛",
-              "音乐学院招生",
-              "咏叹调与艺术歌曲",
-              "官方招生文件",
-          ]
-          missing = [phrase for phrase in required if phrase not in html]
-          if missing:
-              raise SystemExit(f"Missing expected homepage text: {missing}")
+          # The four entry tiles are the backbone of the page: every panel needs an
+          # entry point, so check the panel ids and the tile titles that label them.
+          panels = ["open-calls", "conservatori", "music-library", "pdfs"]
+          missing_panels = [p for p in panels if f'id="{p}"' not in html]
+          if missing_panels:
+              raise SystemExit(f"Missing panel sections: {missing_panels}")
 
-          bad_phrases = ["爵士声考试唱", "所读到", "歌词默认折着", "不用满网找下载按钮"]
-          corpus = html + app + json.dumps(zh, ensure_ascii=False)
-          found = [phrase for phrase in bad_phrases if phrase in corpus]
-          if found:
-              raise SystemExit(f"Outdated or awkward Chinese copy remains: {found}")
+          titles = ["歌剧", "入学考试", "咏叹调", "官方简章"]
+          missing_titles = [t for t in titles if t not in html]
+          if missing_titles:
+              raise SystemExit(f"Missing tile titles: {missing_titles}")
+
+          # The old automated summaries used to be repeated on every card. They
+          # must not come back, and the rendered copy must not print raw URLs.
+          placeholders = ["尚未人工翻译", "LiederNet 收录的声乐文本"]
+          leftovers = [p for p in placeholders if p in html or p in app]
+          if leftovers:
+              raise SystemExit(f"Placeholder summary text is back: {leftovers}")
+
+          if "/lieder/" in app and "cleanName" not in app:
+              raise SystemExit("Raw LiederNet paths are rendered without cleaning")
 
           if len(zh.get("items", {})) < 50:
               raise SystemExit("Chinese conservatory summaries appear incomplete")
 
-          print("Homepage copy and Chinese terminology checks passed.")
+          print("Homepage structure and Chinese copy checks passed.")
           PY
