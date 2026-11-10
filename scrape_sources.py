@@ -172,7 +172,7 @@ def preserve_last_good(previous: dict | None, current: dict, attempted_at: str) 
     current["last_attempt_http_status"] = current.get("http_status")
     current["last_attempt_error"] = current.get("error")
     current["last_attempt_access_policy"] = current.get("access_policy")
-    current["consecutive_failures" = int((previous or {}).get("consecutive_failures", 0)) + 1
+    current["consecutive_failures"] = int((previous or {}).get("consecutive_failures", 0)) + 1
     current["stale"] = True
     return current
 
@@ -256,6 +256,12 @@ def main() -> None:
                 f"- 快照状态：{item['status']}；HTTP：{item['http_status']}；"
                 f"是否沿用旧快照：{'是' if item.get('stale') else '否'}\n"
             )
+            access = item.get("last_attempt_access_policy") or item.get("access_policy")
+            if access:
+                report.write(
+                    f"- robots：{access.get('status')}；robots 文件：{access.get('robots_url', '未知')}；"
+                    f"重定向跳数：{len(access.get('redirect_chain', []))}\n"
+                )
             if item.get("last_attempt_status") and item.get("stale"):
                 report.write(
                     f"- 最近一次尝试：{item.get('last_attempt_status')}；"
