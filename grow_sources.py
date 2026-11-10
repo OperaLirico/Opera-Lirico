@@ -68,6 +68,13 @@ VOICE_RE = re.compile(
     re.IGNORECASE,
 )
 OPERA_CONTEXT_RE = re.compile(r"opera|liric", re.IGNORECASE)
+NON_VOCAL_ROLE_RE = re.compile(
+    r"oboe|flauto|flautist|violino|violin|violoncello|cello|viola|clarinetto|"
+    r"tromba|trumpet|corno|horn|fagotto|bassoon|percussioni|percussion|"
+    r"attori|attrici|attore|attrice|ballerini|ballerine|danzator|danzatrice|"
+    r"maschere|biglietteria|ufficio stampa|amministrativ",
+    re.IGNORECASE,
+)
 
 
 def carry_review_metadata(fresh: dict, previous: dict) -> dict:
@@ -78,20 +85,21 @@ def carry_review_metadata(fresh: dict, previous: dict) -> dict:
 
 
 def candidate_rejection_reason(probe: dict, target: str) -> str | None:
-    """Coarse relevance screen only; passing never means a source is approved."""
+    """Conservative vocal-relevance screen; passing never means source approval."""
     if probe.get("status") != "ok":
         return "page_fetch_failed"
-    if len(probe.get("relevant_lines", [])) < MIN_LINES:
+    lines = probe.get("relevant_lines", [])
+    if len(lines) < MIN_LINES:
         return "insufficient_relevant_text"
-    blob = " ".join(
-        [probe.get("source", ""), probe.get("title", ""), target]
-        + probe.get("relevant_lines", [])
-    )
+    # Do not let URL slugs or unrelated page chrome create a false vocal match.
+    blob = " ".join([probe.get("source", ""), probe.get("title", "")] + lines)
+    has_voice_role = bool(VOICE_RE.search(blob))
+    if NON_VOCAL_ROLE_RE.search(blob) and not has_voice_role:
+        return "non_vocal_role_only"
     if not AUDITIONISH_RE.search(blob):
         return "no_audition_signal"
-    has_voice_role = bool(VOICE_RE.search(blob))
-    if not has_voice_role and not OPERA_CONTEXT_RE.search(blob):
-        return "no_vocal_or_opera_signal"
+    if not has_voice_role:
+        return "no_vocal_role_signal"
     if OFFTOPIC_RE.search(blob) and not has_voice_role:
         return "off_topic_artistic_call"
     if CHROME_RE.search(probe.get("title", "")):
@@ -101,6 +109,24 @@ def candidate_rejection_reason(probe: dict, target: str) -> str | None:
     if PORTAL_RE.search(target):
         return "generic_transparency_portal"
     return None
+
+
+def legacy_relevance_status(item: dict) -> tuple[str, str]:
+    """Label legacy entries without deleting them or claiming publisher verification."""
+    blob = " ".join(
+        [item.get("source", ""), item.get("title", "")]
+        + item.get("relevant_lines", [])
+    )
+    if item.get("status") != "ok":
+        return "unavailable_temporary", "latest_fetch_not_successful"
+    has_voice_role = bool(VOICE_RE.search(blob))
+    if NON_VOCAL_ROLE_RE.search(blob) and not has_voice_role:
+        return "irrelevant_candidate", "non_vocal_role_only"
+    if OFFTOPIC_RE.search(blob) and not has_voice_role:
+        return "irrelevant_candidate", "off_topic_artistic_call"
+    if has_voice_role:
+        return "needs_review", "vocal_signal_found_but_publisher_not_verified"
+    return "needs_review", "insufficient_vocal_evidence"
 
 
 def now_iso() -> str:
@@ -210,26 +236,14 @@ def main(discover: bool = False) -> None:
         if item.get("number") in core_numbers
     ]
 
-    # Drop anything that slipped through earlier rules (share links, files,
-    # jobs for ushers and box office, transparency portals, dance and writing
-    # competitions).
-    cleaned = [
-        item for item in registry
-        if not SKIP_HOST_RE.search(item.get("url", ""))
-        and not SKIP_EXT_RE.search(item.get("url", ""))
-        and not CHROME_RE.search(" ".join([item.get("source", ""), item.get("title", "")]))
-        and not STAFF_RE.search(" ".join([item.get("source", ""), item.get("title", ""), item.get("url", "")]))
-        and not PORTAL_RE.search(item.get("url", ""))
-        and not OFFTOPIC_RE.search(" ".join([item.get("source", ""), item.get("title", "")]))
-    ]
-    if len(cleaned) != len(registry):
-        print(f"[extra] removed {len(registry) - len(cleaned)} non-source link(s)", flush=True)
-    registry = cleaned
+    # Legacy entries are retained for auditability. Heuristics may label them,
+    # but must never silently delete or disable an existing source.
     for item in registry:
         item.pop("_response", None)
-        # Historical entries passed keyword heuristics only; preserve them,
-        # but do not misrepresent them as manually verified.
         item.setdefault("review_status", "legacy_unreviewed")
+        auto_status, auto_reason = legacy_relevance_status(item)
+        item.setdefault("auto_review_status", auto_status)
+        item.setdefault("auto_review_reason", auto_reason)
 
     # 1. Refresh a rotating slice of the discovered list.
     batch: list[dict] = []
@@ -330,15 +344,9 @@ def main(discover: bool = False) -> None:
     else:
         print("Discovery skipped; refreshing the existing registry only.", flush=True)
 
-    # A discovered notice page eventually expires; stop carrying dead links.
-    keep = [
-        item for item in by_number.values()
-        if item.get("status") == "ok" or int(item.get("misses", 0)) < 4
-    ]
-    dropped = len(by_number) - len(keep)
-    if dropped:
-        print(f"[extra] dropped {dropped} expired source(s)", flush=True)
-    registry_out = sorted(keep, key=lambda item: item["number"])
+    # Repeated failures are evidence for review, not permission to delete.
+    # Keep the record and last-known snapshot until a deliberate retirement step.
+    registry_out = sorted(by_number.values(), key=lambda item: item["number"])
 
     REGISTRY.write_text(
         json.dumps({"updated_at": now_iso(), "cursor": cursor, "items": registry_out},
