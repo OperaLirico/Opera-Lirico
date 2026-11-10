@@ -159,19 +159,26 @@ def main() -> None:
             "page_text": "",
             "relevant_lines": [],
             "error": None,
+            "access_policy": None,
         }
         try:
-            response = Fetcher.get(url, timeout=30, retries=0)
-            item["http_status"] = getattr(response, "status", None)
-            item["status"] = "ok" if item["http_status"] and item["http_status"] < 400 else "http_error"
-            item["title"] = clean_line(response.css("title::text").get() or "")
-            text = response.get_all_text(separator="\n") or ""
-            lines = [clean_line(line) for line in text.splitlines()]
-            lines = [line for line in lines if line]
-            item["relevant_lines"] = rank_relevant_lines(lines)
-            if not item["title"] and not lines:
-                item["status"] = "extraction_error"
-                item["error"] = "The page returned no readable title or text."
+            response, access = fetch_public_page(url, timeout=30)
+            item["access_policy"] = access
+            if response is None:
+                item["status"] = access.get("status", "robots_policy_unavailable")
+                item["http_status"] = access.get("http_status")
+                item["error"] = access.get("reason") or access.get("robots_url") or item["status"]
+            else:
+                item["http_status"] = getattr(response, "status", None)
+                item["status"] = "ok" if item["http_status"] and item["http_status"] < 400 else "http_error"
+                item["title"] = clean_line(response.css("title::text").get() or "")
+                text = response.get_all_text(separator="\n") or ""
+                lines = [clean_line(line) for line in text.splitlines()]
+                lines = [line for line in lines if line]
+                item["relevant_lines"] = rank_relevant_lines(lines)
+                if not item["title"] and not lines:
+                    item["status"] = "extraction_error"
+                    item["error"] = "The page returned no readable title or text."
         except Exception as exc:  # Keep going so one inaccessible site does not stop the batch.
             item["error"] = f"{type(exc).__name__}: {exc}"
         item = preserve_last_good(previous_by_number.get(number), item, checked_at)
