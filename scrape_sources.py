@@ -66,7 +66,7 @@ def clean_line(value: str) -> str:
 def fetch_public_page(url: str, timeout: int = 30):
     """Fetch a public page only after robots checks for every redirect hop."""
     return fetch_page_with_robots(
-        url, Fetcher.get, timeout=timeout, retries=0, delay=1.2
+        url, Fetcher.get, timeout=timeout, retries=0, delay=0
     )
 
 
