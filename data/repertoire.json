@@ -25,6 +25,28 @@
       "priority": 1
     },
     {
+      "title": "La donna è mobile",
+      "aliases": [
+        "女人善变",
+        "Rigoletto",
+        "弄臣",
+        "Duca di Mantova"
+      ],
+      "composer": "Giuseppe Verdi · 词：Francesco Maria Piave",
+      "work": "Rigoletto · 第三幕",
+      "voice": "男高音",
+      "kind": "歌剧咏叹调",
+      "section": "歌剧咏叹调",
+      "priority": 2,
+      "text": "La donna è mobile\nQual piuma al vento,\nMuta d'accento\nE di pensiero.\n\nSempre un amabile\nLeggiadro viso,\nIn pianto o in riso\nÈ menzognero.\n\nÈ sempre misero\nChi a lei s'affida,\nChi le confida\nMal cauto il core!\n\nPur mai non sentesi\nFelice appieno\nChi su quel seno\nNon liba amore!",
+      "summary": "曼图亚公爵唱出这首轻快的咏叹调，表面赞叹女性善变，实际也揭示了他轻浮、玩世不恭的性格。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=522591",
+      "textSourceName": "LiederNet 原文与作品归属记录",
+      "scoreUrl": "https://imslp.org/wiki/Rigoletto_(Verdi,_Giuseppe)",
+      "downloadUrl": null,
+      "language": "it"
+    },
+    {
       "title": "Casta Diva",
       "aliases": [
         "圣洁的女神",
@@ -44,7 +66,7 @@
       "downloadUrl": null,
       "language": "it",
       "section": "歌剧咏叹调",
-      "priority": 2
+      "priority": 3
     },
     {
       "title": "Libiamo ne’ lieti calici",
@@ -67,7 +89,7 @@
       "downloadUrl": null,
       "language": "it",
       "section": "歌剧咏叹调",
-      "priority": 3
+      "priority": 4
     },
     {
       "title": "Voi che sapete",
@@ -89,7 +111,7 @@
       "downloadUrl": null,
       "language": "it",
       "section": "歌剧咏叹调",
-      "priority": 4
+      "priority": 5
     },
     {
       "title": "Amarilli, mia bella",
