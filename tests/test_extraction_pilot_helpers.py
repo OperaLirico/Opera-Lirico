@@ -46,7 +46,7 @@ Allow: /private/open$
             "body": b"User-agent: *\nDisallow: /private",
         }
         redirect = {
-            "status": "cross_host_redirect", "http_status": 302,
+            "status": "redirect_requires_policy_check", "http_status": 302,
             "redirect_url": "https://cdn.example.org/private/page", "body": b"",
         }
         with (
@@ -65,7 +65,7 @@ Allow: /private/open$
             "body": b"User-agent: *\nAllow: /",
         }
         redirect = {
-            "status": "cross_host_redirect", "http_status": 301,
+            "status": "redirect_requires_policy_check", "http_status": 301,
             "redirect_url": "https://other.example.org/page", "body": b"",
         }
         unavailable = {"status": "http_error", "http_status": 503, "body": b""}
@@ -78,6 +78,42 @@ Allow: /private/open$
             )
         self.assertEqual(result["status"], "robots_unavailable")
         self.assertEqual(request.call_count, 1)
+
+    def test_same_host_redirect_rechecks_destination_path_robots(self):
+        source_policy = {
+            "status": "ok", "http_status": 200,
+            "body": b"User-agent: *\\nAllow: /public\\nDisallow: /private",
+        }
+        redirect = {
+            "status": "redirect_requires_policy_check", "http_status": 302,
+            "redirect_url": "https://example.org/private/page", "body": b"",
+        }
+        with patch.object(pilot, "request_bytes", return_value=redirect) as request:
+            result = permitted_fetch(
+                "https://example.org/public/page", "https://example.org/public/page", source_policy
+            )
+        self.assertEqual(result["status"], "robots_disallowed")
+        self.assertEqual(request.call_count, 1)
+
+    def test_same_host_redirect_follows_after_destination_path_is_allowed(self):
+        source_policy = {
+            "status": "ok", "http_status": 200,
+            "body": b"User-agent: *\\nAllow: /",
+        }
+        redirect = {
+            "status": "redirect_requires_policy_check", "http_status": 301,
+            "redirect_url": "https://example.org/canonical/page", "body": b"",
+        }
+        final = {
+            "status": "ok", "http_status": 200, "body": b"ok",
+            "final_url": "https://example.org/canonical/page",
+        }
+        with patch.object(pilot, "request_bytes", side_effect=[redirect, final]) as request:
+            result = permitted_fetch(
+                "https://example.org/page", "https://example.org/page", source_policy
+            )
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(request.call_count, 2)
 
     def test_metrics_separates_link_label_from_href_retention(self):
         anchors = [
