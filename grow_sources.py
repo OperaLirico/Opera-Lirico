@@ -23,10 +23,11 @@ import scrape_sources as core
 
 DATA = Path(__file__).resolve().parent / "data"
 REGISTRY = DATA / "sources_extra.json"
+CANDIDATES = DATA / "source_candidates.json"
 PAGE = DATA / "sources.json"
 
 BATCH = 12           # discovered pages refreshed per run
-MAX_NEW = 8          # new sources accepted per run
+MAX_NEW = 8          # new candidates queued for human review per run
 MAX_CANDIDATES = 18  # outbound links inspected per run
 TIMEOUT = 30
 
@@ -61,6 +62,34 @@ AUDITIONISH_RE = re.compile(
     re.IGNORECASE,
 )
 MIN_LINES = 3
+VOICE_RE = re.compile(
+    r"canto|cantant|soprano|mezzosoprano|contralto|tenore|baritono|basso|"
+    r"voce|vocal|liric|opera|young artist|chorus|coro|corale",
+    re.IGNORECASE,
+)
+
+
+def candidate_rejection_reason(probe: dict, target: str) -> str | None:
+    """Coarse relevance screen only; passing never means a source is approved."""
+    if probe.get("status") != "ok":
+        return "page_fetch_failed"
+    if len(probe.get("relevant_lines", [])) < MIN_LINES:
+        return "insufficient_relevant_text"
+    blob = " ".join(
+        [probe.get("source", ""), probe.get("title", ""), target]
+        + probe.get("relevant_lines", [])
+    )
+    if not AUDITIONISH_RE.search(blob):
+        return "no_audition_signal"
+    if not VOICE_RE.search(blob):
+        return "no_vocal_or_opera_signal"
+    if CHROME_RE.search(probe.get("title", "")):
+        return "page_chrome"
+    if STAFF_RE.search(blob):
+        return "non_artistic_staff_call"
+    if PORTAL_RE.search(target):
+        return "generic_transparency_portal"
+    return None
 
 
 def now_iso() -> str:
@@ -187,6 +216,9 @@ def main(discover: bool = False) -> None:
     registry = cleaned
     for item in registry:
         item.pop("_response", None)
+        # Historical entries passed keyword heuristics only; preserve them,
+        # but do not misrepresent them as manually verified.
+        item.setdefault("review_status", "legacy_unreviewed")
 
     # 1. Refresh a rotating slice of the discovered list.
     batch: list[dict] = []
@@ -244,33 +276,45 @@ def main(discover: bool = False) -> None:
             time.sleep(1.2)
 
         candidates.sort(key=hub_rank)
-        next_number = max([item["number"] for item in registry + core_items] + [28]) + 1
+        candidate_payload = load(CANDIDATES, {})
+        candidate_items = candidate_payload.get("items", [])
+        candidate_urls = {item.get("url") for item in candidate_items}
+        next_candidate_id = max(
+            [int(item.get("candidate_id", 0)) for item in candidate_items] + [0]
+        ) + 1
         for label, target, origin in candidates:
             if added >= MAX_NEW:
                 break
-            probe = scrape_entry(target, label or target, next_number, origin)
+            if target in candidate_urls:
+                continue
+            probe = scrape_entry(target, label or target, next_candidate_id, origin)
             probe.pop("_response", None)
-            blob = " ".join([probe.get("source", ""), probe.get("title", "")] + probe["relevant_lines"])
-            if (
-                probe["status"] != "ok"
-                or len(probe["relevant_lines"]) < MIN_LINES
-                or not AUDITIONISH_RE.search(blob)
-                or CHROME_RE.search(probe.get("title", ""))
-                or STAFF_RE.search(blob)
-                or PORTAL_RE.search(target)
-                or OFFTOPIC_RE.search(blob)
-            ):
-                print(f"[extra] skip {probe['status']} {target[:70]}", flush=True)
+            rejection = candidate_rejection_reason(probe, target)
+            if rejection:
+                print(f"[candidate] skip {rejection} {target[:70]}", flush=True)
                 continue
             if len(label) < 12 or GENERIC_LABEL.fullmatch(label.strip() or "x"):
                 host = urlparse(target).netloc.removeprefix("www.")
                 probe["source"] = (probe["title"] or host)[:70]
-            probe["discovered_at"] = probe["checked_at"]
-            by_number[next_number] = probe
-            next_number += 1
+            probe.update({
+                "candidate_id": next_candidate_id,
+                "discovered_at": probe["checked_at"],
+                "review_status": "pending_manual_review",
+                "screening_status": "heuristic_passed",
+                "publisher_status": "unverified",
+                "review_notes": "",
+            })
+            candidate_items.append(probe)
+            candidate_urls.add(target)
+            next_candidate_id += 1
             added += 1
-            print(f"[extra] new {probe['http_status']} {probe['source'][:50]} — {target[:60]}", flush=True)
+            print(f"[candidate] queued for review {probe['source'][:50]} — {target[:60]}", flush=True)
             time.sleep(1.2)
+        candidate_payload.update({"updated_at": now_iso(), "items": candidate_items})
+        CANDIDATES.write_text(
+            json.dumps(candidate_payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
     else:
         print("Discovery skipped; refreshing the existing registry only.", flush=True)
 
@@ -293,7 +337,7 @@ def main(discover: bool = False) -> None:
     # 4. Publish the merged list the site renders.
     merged = list(core_items) + registry_out
     PAGE.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"registry={len(registry_out)} new={added} merged={len(merged)} next_cursor={cursor}")
+    print(f"registry={len(registry_out)} candidates_queued={added} merged={len(merged)} next_cursor={cursor}")
 
 
 if __name__ == "__main__":
