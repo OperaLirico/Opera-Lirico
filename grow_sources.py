@@ -25,6 +25,7 @@ import scrape_sources as core
 DATA = Path(__file__).resolve().parent / "data"
 REGISTRY = DATA / "sources_extra.json"
 CANDIDATES = DATA / "source_candidates.json"
+POLICIES = DATA / "source_fetch_policies.json"
 PAGE = DATA / "sources.json"
 
 BATCH = 12           # discovered pages refreshed per run
@@ -225,6 +226,44 @@ def hub_rank(candidate: tuple[str, str, str]) -> tuple[int, int]:
     return (1 if re.search(r"\d{4,}", last) else 0, url.count("/"))
 
 
+
+def sync_fetch_policies(merged_sources: list[dict]) -> int:
+    """Add baseline-only policy rows for newly registered source URLs."""
+    payload = load(POLICIES, {"schema_version": 1, "entries": []})
+    entries = payload.get("entries", [])
+    known_urls = {item.get("url") for item in entries}
+    added = 0
+    for source in merged_sources:
+        url = source.get("url", "")
+        if not url.startswith("http") or url in known_urls:
+            continue
+        number = source.get("number")
+        source_id = source.get("source_id") or f"source-{number if number is not None else url}"
+        entries.append({
+            "source_id": str(source_id),
+            "source_name": source.get("source") or source.get("name") or str(source_id),
+            "url": url,
+            "current_fetch_method": "scrapling",
+            "strategy_status": "baseline_only",
+            "alternatives_assessed": False,
+            "alternative_candidates": [
+                "official_api", "rss_atom", "sitemap", "public_json_xhr", "httpx_lxml"
+            ],
+            "fallback_method": "stop_and_review",
+            "timeout_seconds": TIMEOUT,
+            "minimum_delay_seconds": 1.2,
+            "last_assessed_at": None,
+            "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet.",
+        })
+        known_urls.add(url)
+        added += 1
+    if added:
+        payload["schema_version"] = 1
+        payload["generated_at"] = now_iso()
+        payload["entries"] = sorted(entries, key=lambda item: item["source_id"])
+        POLICIES.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    return added
+
 def main(discover: bool = False) -> None:
     payload = load(REGISTRY, {})
     registry: list[dict] = payload.get("items", [])
@@ -358,7 +397,8 @@ def main(discover: bool = False) -> None:
     # 4. Refresh the merged source snapshot; this is not opportunity publication.
     merged = list(core_items) + registry_out
     PAGE.write_text(json.dumps(merged, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"registry={len(registry_out)} candidates_queued={added} merged={len(merged)} next_cursor={cursor}")
+    policies_added = sync_fetch_policies(merged)
+    print(f"registry={len(registry_out)} candidates_queued={added} merged={len(merged)} policy_rows_added={policies_added} next_cursor={cursor}")
 
 
 if __name__ == "__main__":
