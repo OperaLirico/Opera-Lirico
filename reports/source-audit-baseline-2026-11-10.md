@@ -14,9 +14,9 @@ The duplicate finding is a data-quality flag only. No records were deleted, merg
 
 | Classification | Count | Meaning |
 |---|---:|---|
-| `auto_approved_official` | 23 | First-party source for its own institution or event, with relevant vocal content evidenced |
+| `auto_approved_official` | 24 | First-party source for its own institution or event, with relevant vocal content evidenced |
 | `auto_approved_third_party` | 4 | Useful third-party aggregator; individual notices must be traced back to organizers |
-| `needs_review` | 5 | Publisher may be identifiable, but relevance, maintenance value, or identity evidence is incomplete |
+| `needs_review` | 4 | Publisher may be identifiable, but relevance, maintenance value, or identity evidence is incomplete |
 | `irrelevant_candidate` | 12 | The inspected notice is actor-only, instrument-only, generic project submission, or unrelated hiring |
 
 ## Main findings
@@ -25,7 +25,7 @@ The duplicate finding is a data-quality flag only. No records were deleted, merg
 2. The registry contains several clearly out-of-scope items: actor-only auditions, instrument-only orchestra jobs, generic theatre project calls, and non-artistic vacancies.
 3. Some official institution pages are mixed-purpose. Their publisher identity can be trusted while individual notices still need vocal-role filtering.
 4. Third-party aggregators such as Sportello Spettacolo, Opera Mundus, and Liricamente can provide discovery value, but should never replace the original organizer notice as the final evidence for dates, eligibility, fees, or application links.
-5. The review queue prioritizes uncertain source relevance or identity, remaining priorities include AsLiCo, Teatro Lirico di Cagliari, Musical.it, and cross-genre casting notices. Follow-up evidence has now confirmed Maggio Musicale Fiorentino, Teatro Lirico Sperimentale di Spoleto, and Fondazione Renata Tebaldi as official vocal sources; Winterwerft is out of scope for the classical-vocal registry.
+5. The review queue prioritizes uncertain source relevance or identity, remaining priorities include Teatro Lirico di Cagliari, Musical.it, and cross-genre casting notices. AsLiCo has since been confirmed as an official source. Follow-up evidence has now confirmed Maggio Musicale Fiorentino, Teatro Lirico Sperimentale di Spoleto, and Fondazione Renata Tebaldi as official vocal sources; Winterwerft is out of scope for the classical-vocal registry.
 
 ## Important limitations
 
@@ -48,3 +48,6 @@ The duplicate finding is a data-quality flag only. No records were deleted, merg
 - **Fondazione Renata Tebaldi**: confirmed official and relevant. Its foundation profile and 2026 competition notice establish a biennial international voice competition for opera singers. See [foundation](https://www.fondazionerenatatebaldi.org/) and [2026 competition notice](https://www.fondazionerenatatebaldi.org/bando-2026-2/).
 - **Winterwerft**: marked irrelevant for this registry. The open call sought multidisciplinary theatre/performance projects and music groups, not individual classical singers; its deadline was 8 November 2026.
 - **AsLiCo**: remains `needs_review` until a direct official programme page and current voice-specific admissions evidence can be confirmed.
+
+
+- **AsLiCo**: confirmed official and relevant. Its own site describes its mission to select young opera singers and provide training and stage-debut opportunities; its current competition pages include the 78th Young Opera Singers competition. See [AsLiCo](https://aslico.org/), [Who we are](https://aslico.org/aslico/), and [current edition](https://aslico.org/edizione-in-corso/).
