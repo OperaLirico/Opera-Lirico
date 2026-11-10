@@ -217,3 +217,13 @@ footer a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(
   .music-search button[type=submit]:hover,.reading-link:hover{background:#a7d6c5}
   .ghost-toggle[aria-pressed="true"]{background:#8fc7b5;border-color:#8fc7b5;color:#0f1b17}
 }
+
+
+/* Curated repertoire landing groups */
+.music-feature-group{margin:22px 0 28px;padding-top:14px;border-top:1px solid var(--line,#e7e2d8)}
+.music-feature-group h3{margin:0 0 12px;font-size:1.05rem;color:var(--ink,#20332e)}
+.music-feature-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px}
+.music-feature-item{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:12px 14px;border:1px solid var(--line,#e7e2d8);border-radius:12px;background:var(--surface,#fff);color:inherit;text-align:left;cursor:pointer}
+.music-feature-item:hover{border-color:var(--accent,#547c6c);transform:translateY(-1px)}
+.music-feature-item strong{font-size:.94rem}
+.music-feature-item span{font-size:.8rem;color:var(--muted,#68746e)}
