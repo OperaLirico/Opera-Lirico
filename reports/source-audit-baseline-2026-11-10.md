@@ -16,8 +16,8 @@ The duplicate finding is a data-quality flag only. No records were deleted, merg
 |---|---:|---|
 | `auto_approved_official` | 26 | First-party source for its own institution or event, with relevant vocal content evidenced |
 | `auto_approved_third_party` | 4 | Useful third-party aggregator; individual notices must be traced back to organizers |
-| `needs_review` | 2 | Publisher may be identifiable, but relevance, maintenance value, or identity evidence is incomplete |
-| `irrelevant_candidate` | 12 | The inspected notice is actor-only, instrument-only, generic project submission, or unrelated hiring |
+| `needs_review` | 1 | Publisher may be identifiable, but relevance, maintenance value, or identity evidence is incomplete |
+| `irrelevant_candidate` | 13 | The inspected notice is actor-only, instrument-only, generic project submission, or unrelated hiring |
 
 ## Main findings
 
@@ -55,4 +55,4 @@ The duplicate finding is a data-quality flag only. No records were deleted, merg
 - **Musical.it**: classified `irrelevant_candidate` for this registry's current scope. Its audition board is oriented toward musical-theatre performers, dancers, acrobats and musical-theatre training. It may be useful only if a separate musical-theatre category is introduced. [Audition board](https://www.musical.it/audizioni).
 - **Provinispettacolo**: retained as `needs_review`, not auto-approved. The site has published an Opera e Lirica call for classical voice types, but the registered Robin Hood permalink is a cross-genre casting notice. Future handling should register a stable category/listing page separately from individual notices and trace each opportunity to its organizer. [Opera e Lirica listing](https://www.provinispettacolo.it/audizioni-opera-lirica-roma-cantanti-professori-orchestra/) and [site homepage](https://www.provinispettacolo.it/).
 
-Current follow-up classification totals: **26 official, 4 third-party, 2 needs review, 12 irrelevant** (44 unique sources). No source registry or production activation flag was modified.
+Corrected item-level classification totals: **26 official, 4 third-party, 1 needs review, 13 irrelevant** (44 unique sources). The earlier summary count of 2 needs-review and 12 irrelevant was a reporting arithmetic error; the per-item labels themselves were unchanged. No source registry or production activation flag was modified.
