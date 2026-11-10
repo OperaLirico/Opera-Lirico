@@ -227,3 +227,14 @@ footer a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(
 .music-feature-item:hover{border-color:var(--accent,#547c6c);transform:translateY(-1px)}
 .music-feature-item strong{font-size:.94rem}
 .music-feature-item span{font-size:.8rem;color:var(--muted,#68746e)}
+
+
+/* newsletter */
+.newsletter-panel{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:28px;margin-bottom:28px;padding-top:26px;padding-bottom:26px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2);box-shadow:var(--shadow)}
+.newsletter-copy{max-width:62ch}
+.newsletter-copy .eyebrow{margin-bottom:8px}
+.newsletter-copy h2{font-size:clamp(21px,3vw,28px)}
+.newsletter-copy p{margin-top:8px;color:var(--ink-soft);font-size:13px}
+.newsletter-link{display:inline-flex;align-items:center;gap:10px;flex:0 0 auto;padding:11px 18px;border-radius:999px;background:var(--brand);color:#f4ecdb;text-decoration:none;font-size:13px}
+.newsletter-link:hover{background:var(--brand-2);color:#fff}
+@media(max-width:620px){.newsletter-panel{align-items:flex-start;flex-direction:column}.newsletter-link{width:100%;justify-content:center}}
