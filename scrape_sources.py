@@ -14,6 +14,8 @@ from zoneinfo import ZoneInfo
 from lxml import html as lxml_html
 from scrapling.fetchers import Fetcher
 
+from robots_policy import fetch_page_with_robots
+
 
 SOURCES = [
     (1, "Teatro alla Scala", "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html"),
@@ -76,6 +78,13 @@ def clean_line(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def fetch_public_page(url: str, timeout: int = 30):
+    """Fetch a public page only after robots checks for every redirect hop."""
+    return fetch_page_with_robots(
+        url, Fetcher.get, timeout=timeout, retries=0, delay=0
+    )
+
+
 def extract_relevant_links(html_bytes: bytes, page_url: str) -> tuple[list[dict], int, bool]:
     """Preserve first-party page links as structured evidence, not flattened text."""
     try:
@@ -136,6 +145,7 @@ def preserve_last_good(previous: dict | None, current: dict, attempted_at: str) 
         current["last_attempt_status"] = "ok"
         current["last_attempt_http_status"] = current.get("http_status")
         current["last_attempt_error"] = None
+        current["last_attempt_access_policy"] = current.get("access_policy")
         current["consecutive_failures"] = 0
         current["stale"] = False
         return current
@@ -150,6 +160,7 @@ def preserve_last_good(previous: dict | None, current: dict, attempted_at: str) 
             "last_attempt_status": current.get("status", "error"),
             "last_attempt_http_status": current.get("http_status"),
             "last_attempt_error": current.get("error"),
+            "last_attempt_access_policy": current.get("access_policy"),
             "consecutive_failures": int(previous.get("consecutive_failures", 0)) + 1,
             "stale": True,
         })
@@ -160,7 +171,8 @@ def preserve_last_good(previous: dict | None, current: dict, attempted_at: str) 
     current["last_attempt_status"] = current.get("status", "error")
     current["last_attempt_http_status"] = current.get("http_status")
     current["last_attempt_error"] = current.get("error")
-    current["consecutive_failures"] = int((previous or {}).get("consecutive_failures", 0)) + 1
+    current["last_attempt_access_policy"] = current.get("access_policy")
+    current["consecutive_failures" = int((previous or {}).get("consecutive_failures", 0)) + 1
     current["stale"] = True
     return current
 
@@ -192,24 +204,31 @@ def main() -> None:
             "relevant_links_total": 0,
             "relevant_links_truncated": False,
             "error": None,
+            "access_policy": None,
         }
         try:
-            response = Fetcher.get(url, timeout=30, retries=0)
-            item["http_status"] = getattr(response, "status", None)
-            item["status"] = "ok" if item["http_status"] and item["http_status"] < 400 else "http_error"
-            item["title"] = clean_line(response.css("title::text").get() or "")
-            text = response.get_all_text(separator="\n") or ""
-            lines = [clean_line(line) for line in text.splitlines()]
-            lines = [line for line in lines if line]
-            item["page_text"] = "\n".join(lines)[:MAX_PAGE_TEXT_CHARS]
-            item["relevant_lines"] = rank_relevant_lines(lines)
-            links, link_total, links_truncated = extract_relevant_links(response.body, url)
-            item["relevant_links"] = links
-            item["relevant_links_total"] = link_total
-            item["relevant_links_truncated"] = links_truncated
-            if not item["title"] and not lines:
-                item["status"] = "extraction_error"
-                item["error"] = "The page returned no readable title or text."
+            response, access = fetch_public_page(url, timeout=30)
+            item["access_policy"] = access
+            if response is None:
+                item["status"] = access.get("status", "robots_policy_unavailable")
+                item["http_status"] = access.get("http_status")
+                item["error"] = access.get("reason") or access.get("robots_url") or item["status"]
+            else:
+                item["http_status"] = getattr(response, "status", None)
+                item["status"] = "ok" if item["http_status"] and item["http_status"] < 400 else "http_error"
+                item["title"] = clean_line(response.css("title::text").get() or "")
+                text = response.get_all_text(separator="\n") or ""
+                lines = [clean_line(line) for line in text.splitlines()]
+                lines = [line for line in lines if line]
+                item["page_text"] = "\n".join(lines)[:MAX_PAGE_TEXT_CHARS]
+                item["relevant_lines"] = rank_relevant_lines(lines)
+                links, link_total, links_truncated = extract_relevant_links(response.body, url)
+                item["relevant_links"] = links
+                item["relevant_links_total"] = link_total
+                item["relevant_links_truncated"] = links_truncated
+                if not item["title"] and not lines:
+                    item["status"] = "extraction_error"
+                    item["error"] = "The page returned no readable title or text."
         except Exception as exc:  # Keep going so one inaccessible site does not stop the batch.
             item["error"] = f"{type(exc).__name__}: {exc}"
         item = preserve_last_good(previous_by_number.get(number), item, checked_at)
