@@ -173,7 +173,16 @@ def main() -> None:
         for item in results:
             report.write(f"## {item['number']}. {item['source']}\n\n")
             report.write(f"- 页面：[{item['url']}]({item['url']})\n")
-            report.write(f"- 抓取状态：{item['status']}；HTTP：{item['http_status']}\n")
+            report.write(
+                f"- 快照状态：{item['status']}；HTTP：{item['http_status']}；"
+                f"是否沿用旧快照：{'是' if item.get('stale') else '否'}\n"
+            )
+            if item.get("last_attempt_status") and item.get("stale"):
+                report.write(
+                    f"- 最近一次尝试：{item.get('last_attempt_status')}；"
+                    f"时间：{item.get('last_attempt_at', '未知')}；"
+                    f"连续失败：{item.get('consecutive_failures', 0)} 次\n"
+                )
             report.write(f"- 页面标题：{item['title'] or '未读取到'}\n")
             if item["error"]:
                 report.write(f"- 错误：`{item['error']}`\n")
