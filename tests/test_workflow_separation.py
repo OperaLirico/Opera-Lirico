@@ -13,8 +13,9 @@ class WorkflowSeparationTests(unittest.TestCase):
         self.assertIn('"scrape_sources.py"', workflow)
         self.assertNotIn('"app.js"', workflow)
         self.assertNotIn('"data/**"', workflow)
-        self.assertNotIn("pages: write", workflow)
-        self.assertNotIn("upload-pages-artifact", workflow)
+        self.assertIn("pages: write", workflow)
+        self.assertIn("upload-pages-artifact", workflow)
+        self.assertIn("group: github-pages-deploy", workflow)
 
     def test_pages_deploy_handles_site_content_without_running_scrapers(self):
         workflow = (ROOT / ".github/workflows/pages-deploy.yml").read_text(encoding="utf-8")
