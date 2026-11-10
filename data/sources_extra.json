@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-10T18:30:02+01:00",
-  "cursor": 1,
+  "updated_at": "2026-11-10T18:39:01+01:00",
+  "cursor": 13,
   "items": [
     {
       "number": 96,
@@ -24,13 +24,16 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T06:14:32+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified"
+      "publisher_status": "unverified",
+      "auto_review_status": "needs_review",
+      "auto_review_reason": "insufficient_vocal_evidence",
+      "auto_review_checked_at": "2026-11-10T18:38:26+01:00"
     },
     {
       "number": 97,
       "source": "OPEN CALL Artists - Winterwerft",
       "url": "https://winterwerft.de/opencall/",
-      "checked_at": "2026-11-10T18:25:21+01:00",
+      "checked_at": "2026-11-10T18:38:26+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "OPEN CALL Artists - Winterwerft",
@@ -47,16 +50,13 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T06:14:34+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-10T18:29:27+01:00"
+      "publisher_status": "unverified"
     },
     {
       "number": 98,
       "source": "Partecipa al Festival – Fondazione Campania dei Festival",
       "url": "https://contact.fondazionecampaniadeifestival.it/partecipa-al-festival/",
-      "checked_at": "2026-11-10T18:25:23+01:00",
+      "checked_at": "2026-11-10T18:38:28+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Partecipa al Festival – Fondazione Campania dei Festival",
@@ -71,16 +71,13 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T06:14:37+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-10T18:29:27+01:00"
+      "publisher_status": "unverified"
     },
     {
       "number": 99,
       "source": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia ",
       "url": "https://www.teatrotrianon.org/audizioni-per-la-produzione-pulcinella-ovvero-una-cosa-che-somiglia-al-mondo/",
-      "checked_at": "2026-11-10T18:25:27+01:00",
+      "checked_at": "2026-11-10T18:38:31+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia al mondo\" - teatro Trianon Viviani",
@@ -104,16 +101,13 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T06:26:06+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-10T18:29:27+01:00"
+      "publisher_status": "unverified"
     },
     {
       "number": 100,
       "source": "Lavora con noi - Elfo Puccini",
       "url": "https://www.elfo.org/chi-siamo/lavora-con-noi.htm",
-      "checked_at": "2026-11-10T18:29:27+01:00",
+      "checked_at": "2026-11-10T18:38:37+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi - Elfo Puccini",
@@ -132,7 +126,7 @@
       "number": 101,
       "source": "Audizioni - MusicalMusical",
       "url": "https://www.musical.it/audizioni/",
-      "checked_at": "2026-11-10T18:29:32+01:00",
+      "checked_at": "2026-11-10T18:38:41+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni - MusicalMusical",
@@ -159,7 +153,7 @@
       "number": 102,
       "source": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e L",
       "url": "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
-      "checked_at": "2026-11-10T18:29:35+01:00",
+      "checked_at": "2026-11-10T18:38:44+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma - www.castingeprovini.com",
@@ -190,7 +184,7 @@
       "number": 114,
       "source": "CollettivO CineticO | Energia Cinetica",
       "url": "https://www.collettivocinetico.it/energia-cinetica",
-      "checked_at": "2026-11-10T18:29:37+01:00",
+      "checked_at": "2026-11-10T18:38:46+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "CollettivO CineticO | Energia Cinetica",
@@ -210,7 +204,7 @@
       "number": 115,
       "source": "Lavora con noi - Fondazione Aida",
       "url": "https://www.fondazioneaida.it/lavora-con-noi/",
-      "checked_at": "2026-11-10T18:29:39+01:00",
+      "checked_at": "2026-11-10T18:38:48+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi - Fondazione Aida",
@@ -232,7 +226,7 @@
       "number": 117,
       "source": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
       "url": "https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/",
-      "checked_at": "2026-11-10T18:29:42+01:00",
+      "checked_at": "2026-11-10T18:38:50+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
@@ -263,7 +257,7 @@
       "number": 118,
       "source": "Lavora con noi • Teatro Franco Parenti • Milano",
       "url": "https://teatrofrancoparenti.it/lavora-con-noi/",
-      "checked_at": "2026-11-10T18:29:46+01:00",
+      "checked_at": "2026-11-10T18:38:55+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi • Teatro Franco Parenti • Milano",
@@ -285,7 +279,7 @@
       "number": 120,
       "source": "Concorsi 2026 / Primo Oboe - Orchestra della Toscana",
       "url": "https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/",
-      "checked_at": "2026-11-10T18:29:48+01:00",
+      "checked_at": "2026-11-10T18:38:56+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Concorsi 2026 / Primo Oboe - Orchestra della Toscana",
@@ -316,7 +310,7 @@
       "number": 121,
       "source": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacol",
       "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
-      "checked_at": "2026-11-10T18:29:51+01:00",
+      "checked_at": "2026-11-10T18:38:59+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacolo teatrale - Piemonte - Provinispettacolo",
@@ -372,7 +366,10 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T10:08:02+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified"
+      "publisher_status": "unverified",
+      "auto_review_status": "needs_review",
+      "auto_review_reason": "insufficient_vocal_evidence",
+      "auto_review_checked_at": "2026-11-10T18:38:26+01:00"
     },
     {
       "number": 124,
@@ -396,7 +393,10 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T10:08:04+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified"
+      "publisher_status": "unverified",
+      "auto_review_status": "needs_review",
+      "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
+      "auto_review_checked_at": "2026-11-10T18:38:26+01:00"
     }
   ]
 }
