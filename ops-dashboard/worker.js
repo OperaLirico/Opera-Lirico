@@ -2,7 +2,7 @@ const SESSION_COOKIE = "__Host-opera_ops";
 const SESSION_TTL_SECONDS = 8 * 60 * 60;
 const loginAttempts = new Map();
 
-const PAGE = String.raw\`<!doctype html>
+const PAGE = String.raw`<!doctype html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -95,7 +95,7 @@ async function loadData(){
  }catch(err){$("status").textContent=err.message;}
 }
 (async()=>{try{const r=await fetch("/api/session");if(r.ok){showApp();loadData();}else showLogin();}catch(e){showLogin();}})();
-</script></body></html>\`;
+</script></body></html>`;
 
 function response(body, status = 200, extra = {}) {
   return new Response(body, { status, headers: {
