@@ -5,9 +5,7 @@ on:
     branches: [main]
     paths:
       - "audit_extraction_pilot.py"
-      - "data/source_fetch_policies.json"
-      - "reports/source-audit-baseline-2026-11-10.json"
-      - ".github/workflows/p2-p4-extraction-pilot.yml"
+      - "requirements.txt"
   workflow_dispatch:
 
 permissions:
