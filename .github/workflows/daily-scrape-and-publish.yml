@@ -49,6 +49,7 @@ jobs:
           git checkout origin/main -- data/repertoire.json
           python prune_repertoire.py
           python update_repertoire.py
+          python tidy_repertoire.py
           git add data/repertoire.json data/conservatori.json data/conservatori_extra.json data/sources_extra.json
           git add data/pdfs 2>/dev/null || true
           if ! git diff --cached --quiet; then
