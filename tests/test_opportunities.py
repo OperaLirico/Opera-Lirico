@@ -1,5 +1,7 @@
 import json
 import unittest
+
+# Official application and PDF entry points were rechecked against publisher pages on 2026-11-10.
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
