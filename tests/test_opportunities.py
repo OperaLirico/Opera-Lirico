@@ -104,6 +104,16 @@ class OpportunityDataTests(unittest.TestCase):
         self.assertIn("record.publisher_status!=='official'", APP)
         self.assertIn("Date.parse(deadline)<Date.now()", APP)
 
+    def test_teatro_massimo_basso_and_contralto_are_separate_roles(self):
+        items = {item["id"]: item for item in DATA["items"]}
+        basso = items["teatro-massimo-1-basso-2026"]
+        contralto = items["teatro-massimo-2-contralti-2026"]
+        self.assertEqual(basso["voice_types"], ["bass"])
+        self.assertEqual(contralto["voice_types"], ["contralto"])
+        self.assertEqual(basso["application_deadline_at"], contralto["application_deadline_at"])
+        self.assertEqual(basso["audition_start_at"], "2026-12-19T10:00:00+01:00")
+        self.assertNotIn("audition_start_at", contralto)
+
     def test_teatro_massimo_contralto_exam_date_conflict_is_not_silently_published(self):
         record = next(item for item in DATA["items"]
                       if item["id"] == "teatro-massimo-2-contralti-2026")
