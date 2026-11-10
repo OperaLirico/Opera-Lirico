@@ -239,7 +239,12 @@ function renderMusicSearch(rawQuery){
   const target=$('#musicSearchResults');
   const query=rawQuery.trim();
   if(!query){
-    target.innerHTML='<div class="music-empty">输入作品名称、作曲家或歌词片段，即可搜索曲目。点击作品卡片可展开完整文本。</div>';
+    const groups=[...new Set(repertoire.filter(item=>item.section).map(item=>item.section))];
+    const featured=groups.map(group=>{
+      const items=repertoire.filter(item=>item.section===group).sort((a,b)=>(a.priority||999)-(b.priority||999));
+      return items.length?'<section class="music-feature-group"><h3>'+esc(group)+'</h3><div class="music-feature-list">'+items.map(item=>'<button type="button" class="music-feature-item" data-suggest="'+esc(item.title)+'"><strong>'+esc(item.title)+'</strong><span>'+esc(cleanName(item.composer||''))+'</span></button>').join('')+'</div></section>':'';
+    }).join('');
+    target.innerHTML='<p class="result-meta">先浏览常见、经典的声乐曲目；输入作品名或作曲家可搜索。冷门自动导入记录已从主曲库分离。</p>'+featured;
     return;
   }
   if(!repertoireLoaded){
@@ -249,7 +254,7 @@ function renderMusicSearch(rawQuery){
   const terms=query.split(/[\/,，、;；|]+/).map(normalizeSearch).filter(Boolean);
   const evaluated=repertoire.map(item=>matchItem(item,terms)).filter(Boolean);
   const main=evaluated.filter(entry=>entry.nameScore>0)
-    .sort((a,b)=>b.nameScore-a.nameScore||a.item.title.localeCompare(b.item.title));
+    .sort((a,b)=>b.nameScore-a.nameScore||(a.item.priority||9999)-(b.item.priority||9999)||a.item.title.localeCompare(b.item.title));
   const extra=evaluated.filter(entry=>!entry.nameScore)
     .sort((a,b)=>((b.text&&b.text.count)||0)-((a.text&&a.text.count)||0)||a.item.title.localeCompare(b.item.title));
   if(!evaluated.length){
@@ -270,18 +275,18 @@ function renderMusicSearch(rawQuery){
     const plain=(item.text||'').replace(/\s+/g,' ').trim();
     const preview=plain.slice(0,110);
     const hasMore=(item.text||'').trim().length>110;
-    const readLink=googleReadUrl(item);
+    const readLink=plain?googleReadUrl(item):'';
     const summary=summaryOf(item);
     const tags=[item.kind,item.voice].filter(value=>value&&value!=='待分类');
     return `<article class="music-result">
    ${tags.length?`<div class="music-result-top">${tags.map(value=>`<span class="music-kind">${esc(value)}</span>`).join('')}</div>`:''}
    <h3>${esc(item.title)}</h3>
    <p class="music-byline">${esc(bylineOf(item))}</p>
-   <div class="music-text"><div class="music-text-label">作品原文 · ${esc(languageLabel(item.language))}</div><p class="lyrics lyrics-preview">${esc(preview)}${hasMore?'…':''}</p>${hasMore?`<div class="lyrics-full" hidden><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div><button type="button" class="lyrics-toggle" data-open="0" >展开完整文本 ↓</button>`:''}</div>
-   <div class="music-reading"><div><span class="music-text-label">原文发音</span><p>打开 Google 翻译后，点击扬声器即可收听原文发音。</p></div>${readLink?'<a class="reading-link" href="'+esc(readLink)+'" target="_blank" rel="noopener noreferrer" >收听原文发音 ↗</a>':'<span class="score-unavailable">文本较长，无法直接生成朗读</span>'}</div>
+   <div class="music-text"><div class="music-text-label">作品原文 · ${esc(languageLabel(item.language))}</div><p class="lyrics lyrics-preview">${plain?esc(preview)+(hasMore?'…':''):'原文暂未收录，先查看作品信息与来源说明。'}</p>${hasMore?`<div class="lyrics-full" hidden><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div><button type="button" class="lyrics-toggle" data-open="0" >展开完整文本 ↓</button>`:''}</div>
+   <div class="music-reading"><div><span class="music-text-label">原文发音</span><p>打开 Google 翻译后，点击扬声器即可收听原文发音。</p></div>${readLink?'<a class="reading-link" href="'+esc(readLink)+'" target="_blank" rel="noopener noreferrer" >收听原文发音 ↗</a>':'<span class="score-unavailable">'+(plain?'文本较长，无法直接生成朗读':'原文未收录，暂不提供朗读')+'</span>'}</div>
    ${summary?`<p class="music-meaning"><strong>大意：</strong>${esc(summary)}</p>`:''}
    <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'此版本已核对，可下载。':'本站暂未提供乐谱文件。可前往 IMSLP 查看相关版本，并留意作品及版本的版权信息。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':item.scoreUrl?'<a class="score-imslp" href="'+esc(item.scoreUrl)+'" target="_blank" rel="noopener noreferrer">IMSLP 查看乐谱 ↗</a>':'<span class="score-unavailable" >暂未收录乐谱链接</span>'}</div>
-   <div class="music-source"><span>${esc(sourceNoteOf(item))}</span></div>
+   <div class="music-source"><span>${esc(sourceNoteOf(item))}</span>${item.attributionNote?`<p class="music-match-line">${esc(item.attributionNote)}</p>`:''}</div>
  </article>`;
   }).join('');
   const extraBlock=extra.length?`<details class="music-extra"><summary>歌词中也有匹配：${extra.length} 首（展开查看对应句子）</summary><div class="music-extra-body">${extra.slice(0,12).map(entry=>{const item=entry.item;const line=entry.text?entry.text.line:'';return `<div class="music-extra-row"><strong>${esc(item.title)}</strong><span class="music-byline">${esc(bylineOf(item))}</span><p class="music-match-line">${esc(line)}</p><button type="button" class="search-chip" data-suggest="${esc(item.title)}" >查看完整文本</button></div>`;}).join('')}${extra.length>12?`<p class="music-match-line">另有 ${extra.length-12} 首未显示。可增加关键词缩小范围。</p>`:''}</div></details>`:'';
