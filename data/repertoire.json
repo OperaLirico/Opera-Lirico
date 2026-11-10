@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T08:31:29+01:00",
+ "generated_at": "2026-11-10T09:52:43+01:00",
  "catalogue_source": "LiederNet Archive originals + curated starter works",
  "items": [
   {
@@ -13406,10 +13406,340 @@
     }
    ],
    "autoImported": true
+  },
+  {
+   "title": "Dolori",
+   "aliases": [],
+   "composer": "Richard Wagner",
+   "work": "",
+   "voice": "待分类",
+   "kind": "咏叹调/歌剧选段",
+   "language": "it",
+   "text": "Piange il sole ad ogni sera\nE s'asconde in mezzo al mar,\nPerchè il vol di sua carriera\nNella notte ha da tornar:\n\nPoi sorride ad ogni albore\nCiconfuso di splendore,\nE risale alto e fedel\nL'ampie zone del suo ciel.\n\nIo così men vo' piangendo,\nNella notte del mio duol,\nIo così men vo' ridendo\nCome piange e ride il sol.\n\nSe codensto è il Fato santo,\nSe il sorriso  vien dal pianto,\nBenedici o mesto cuor\nColla gioia anche il dolor.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=99192",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation by Arrigo Enrico Boito",
+   "settings": [
+    {
+     "composer": "Richard Wagner",
+     "title": "/lieder/get_settings.html?ComposerId=2951",
+     "instrumentation": "female voice and piano or orchestra"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Pfade zur Welt",
+   "aliases": [],
+   "composer": "Maria Herz",
+   "work": "",
+   "voice": "待分类",
+   "kind": "咏叹调/歌剧选段",
+   "language": "de",
+   "text": "Wir leben fremd den lauten Dingen,\nDie um die Menge fiebernd kreisen,\nWir wandern in den stilleren Geleisen\nUnd lauschen dem Verborgnen, dem Geringen.\n\nWir sind dem letzten Regentropfen hingegeben.\nDen Farbentupfen rundgeschliffner Kieselsteine,\nEin guter Blick des Wächters auslöscht das Gemeine,\nWir fühlen noch im rohen Worte brüderliches Leben.\n\nEin Grashalm offenbart des Kosmos reiche Fülle,\nDie welke Blume rührt uns wie ein krankes Kind,\nDer bunte Kot der Vögel ist nur eine Hülle.\n\nDes namenlosen Alls, dem wir verwoben sind.\nEin Wind weht menschlich Lachen aus der Ferne,\nUnd uns berauscht die hymnische Musik der Sterne.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=152835",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Ernst Toller",
+   "settings": [
+    {
+     "composer": "Maria Herz",
+     "title": "/lieder/get_settings.html?ComposerId=18143",
+     "instrumentation": "baritone and orchestra"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "From the Bering Strait",
+   "aliases": [],
+   "composer": "Corliss Kimmel",
+   "work": "",
+   "voice": "待分类",
+   "kind": "咏叹调/歌剧选段",
+   "language": "en",
+   "text": "The songs, that amidst pain and joy,\nFlowed forth freely from my youthful breast,\nThey echoed on, I feel it,\nIn the hearts of those to whom they were dedicated;\nBe still, my heart, and bear the loss,\nThey rang out, they died away in time;\nMy loving and my life have died away\nWith my songs; around me it is cold.\n\nLife has, death has robbed me,\nFriends leave me, [or] they die,\nAlready my head droops low and lower,\nDreamily I set my staff upon my onward journey,\nAnd totter, more tired than people would believe,\nToward my goal, my grave.\nThere is little wheat, [but] much chaff:\nI picked flowers, [but] gathered only hay.\n\nThat which was my wont to do, I do it still today,\nI pick flowers and I gather hay;\nPeople call it the pursuit of botany,\nAnd I am loath to call it anything else;\nThus roves a human [searching] for dry booty\nThrough life and through the world,\nRue catches up with him, and as he looks back,\nEvening is falling, his hair is already grey.\n\nThus, brother, I shudder on my mad pathway\nWhen gloomy fogs rest on the murky ocean;\nI call lovingly to ice-covered rocks,\nThe cold masses echo back emptily;\nIn language and in life I am the man\nWho weighs every syllable if it be false or heavy;\nI return home as I departed,\nA child, already ensnared by old age.\n\nWhen once again the fluttering crown of the palm tree\nRests in the deep blue, borne aloft by a slender trunk,\n[When] from the bright heights the mighty sun gazes\nDown upon the joyful earth in a pure blaze,\nThen shall my stiff limbs, warmed-through, become supple\nAnd my blood shall flow to my heart less sluggishly,\nThen perhaps shall the darksome dreams pass away\nAnd I shall be able to give you my hand without lamenting.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=74762",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Sharon Krebs",
+   "settings": [
+    {
+     "composer": "Corliss Kimmel",
+     "title": "/lieder/get_settings.html?ComposerId=11838",
+     "instrumentation": "voice, piano, and french horn (or voice and chamber orchestra)"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Durant les meves nits",
+   "aliases": [],
+   "composer": "Alban Maria Johannes Berg",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "ca",
+   "text": "Durant les meves nits\nsomnio un so lleuger, daurat;\ntímids murmuris en la palla,\nfoscos remors de llunyanes palmeres,\ncants d'amor mig esborrats.\n\nDurant les meves nits\nresplendeixen i brillen grans estrelles;\nassolellats des d'un blau profund,\nels teus ulls, bella dona,\nem saluden des d'una gran llunyania...\n\nDurant les meves nits\nplora una pena inoblidable:\nque la teva puresa de lliri,\nl'esplendor i la finesa dels teus rínxols\nmai més els tornaré a veure.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=160106",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Manuel Capdevila i Font",
+   "settings": [
+    {
+     "composer": "Alban Maria Johannes Berg",
+     "title": "/lieder/get_settings.html?ComposerId=3386",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "That which men name Pain",
+   "aliases": [],
+   "composer": "Fritz Bennicke Hart",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "That which men name Pain\nIs no true pain:\n\nThat which men name Bliss\nIs no true bliss:\n\nPain is forgetting God,\nA mind stayed firm on God,\nThis is Bliss.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=145019",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation by Mohandas Karamchand Gandhi",
+   "settings": [
+    {
+     "composer": "Fritz Bennicke Hart",
+     "title": "/lieder/get_settings.html?ComposerId=4343",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Und du warst schön. In deinem Auge...",
+   "aliases": [],
+   "composer": "Siegfried Fournes",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Und du warst schön. In deinem Auge schien\nsich Nacht und Sonne sieghaft zu versöhnen.\nUnd Hoheit hüllte wie ein Hermelin\ndich ein: So kam dich meine Liebe krönen.\nUnd meine nächteblasse Sehnsucht stand,\nweißbindig wie der Vesta Priesterin,\nan deines Seelentempels Säulenrand\nund streute lächelnd weiße Blüten hin.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=406188",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Rainer Maria Rilke",
+   "settings": [
+    {
+     "composer": "Siegfried Fournes",
+     "title": "/lieder/get_settings.html?ComposerId=42041",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Willy Kehrer",
+     "title": "/lieder/get_settings.html?ComposerId=42297",
+     "instrumentation": "soprano and mezzo-soprano (ad libitum) and piano"
+    },
+    {
+     "composer": "Sven-David Sandström",
+     "title": "/lieder/get_settings.html?ComposerId=22053",
+     "instrumentation": "mixed chorus"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Queen Anne",
+   "aliases": [],
+   "composer": "Peter Warlock",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "I am Queen Anne, of whom 'tis said,\nI'm chiefly fam'd for being dead.\nQueen Anne, Queen Anne, she sits in the sun,\nAs fair as a lily, as brown as a bun.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=122079",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "",
+   "settings": [
+    {
+     "composer": "Peter Warlock",
+     "title": "/lieder/get_settings.html?ComposerId=6123",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Stormy morning",
+   "aliases": [],
+   "composer": "Reiner Bredemeyer",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "How has the storm fragmented\nThe heaven's dismal dress!\nThe cloudy remnants flutt'ring\nAbout in weary stress.\n\nAnd red of fiery flames there\nBetwixt and in between.\nThat's what I call a morning\nJust right to match my mood!\n\nMy heart looks at the heavens\nAnd paints its picture too --\nIt's nothing but the winter\nThe winter cold and wild.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=83639",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by David Paley",
+   "settings": [
+    {
+     "composer": "Reiner Bredemeyer",
+     "title": "/lieder/get_settings.html?ComposerId=3549",
+     "instrumentation": "baritone, horn, and piano"
+    },
+    {
+     "composer": "Franz Peter Schubert",
+     "title": "/lieder/get_settings.html?ComposerId=2520",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Johannes (Hans) Wolfgang Zender",
+     "title": "/lieder/get_settings.html?ComposerId=26305",
+     "instrumentation": "tenor and small orchestra"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Galla water",
+   "aliases": [],
+   "composer": "(Franz) Joseph Haydn",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Braw, braw lads of Galla water;\nOh! braw lads o' Galla water;\nI'll kilt my coats aboon my knee,\nAnd follow my love through the water.\n\nSae fair her hair, sae brent her brow,\nSae bonny blue her een, my dearie;\nSae white her teeth, sae sweet her mou',\nThe mair I kiss, she's ay my dearie.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=91976",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "",
+   "settings": [
+    {
+     "composer": "(Franz) Joseph Haydn",
+     "title": "/lieder/get_settings.html?ComposerId=4366",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "You ask me whether I adore you",
+   "aliases": [],
+   "composer": "Gaetano Donizetti",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "You ask me whether I adore you,\nWhether I am still faithful,\nIf every day, at every hour\nYou are the arbiter of my heart?\nYes, my dear, I’m faithful to you,\nI think of you every moment.\nYou are [my] angel, [my] guide,\nMy joy, my sorrow.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=114978",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Laura Stanfield Prichard",
+   "settings": [
+    {
+     "composer": "Gaetano Donizetti",
+     "title": "/lieder/get_settings.html?ComposerId=3898",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Der Vogelfänger",
+   "aliases": [],
+   "composer": "Jacob Ehrhart",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Hab ein Vögele gefangen\nIm Federbett,\nHabs in Arm  'nein g'nommen,\nHabs lieb gehät!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=132402",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "from Volkslieder",
+   "settings": [
+    {
+     "composer": "Jacob Ehrhart",
+     "title": "/lieder/get_settings.html?ComposerId=33618",
+     "instrumentation": "mezzo-soprano and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Source",
+   "aliases": [],
+   "composer": "Jean Hans August Daetwyler",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Parle, ô source, toi qui n'es pas humaine,\nchante, ô source, tes pleurs ;\nrien ne console autant de la trop indigène peine\nqu'une peine d'ailleurs.\n\nEst-ce de la peine, ton chant ? Ô dis-moi, est-ce\nquelque état inconnu ?\nEn dehors de ce qui nous aide et de ce qui nous blesse\npeut-on être ému ?",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=392231",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Rainer Maria Rilke",
+   "settings": [
+    {
+     "composer": "Jean Hans August Daetwyler",
+     "title": "/lieder/get_settings.html?ComposerId=41198",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
   }
  ],
  "scan_cursor": 144,
- "lieder_position": 1728,
+ "lieder_position": 1776,
  "aria_opera": 0,
  "aria_scene": 8
 }
