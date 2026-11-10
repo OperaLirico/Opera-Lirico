@@ -19,22 +19,24 @@
   "summary": {
     "audited_unique_sources": 44,
     "classifications": {
-      "auto_approved_official": 22,
-      "needs_review": 7,
+      "auto_approved_official": 20,
+      "needs_review": 9,
       "auto_approved_third_party": 4,
       "irrelevant_candidate": 11
     },
     "exact_duplicate_extra_records": 15,
     "manual_review_priorities": [
+      "source-6",
       "source-8",
       "source-9",
       "source-10",
+      "source-17",
       "source-26",
       "source-97",
       "source-101",
       "source-121"
     ],
-    "note": "Official means first-party for the publisher's own institution/event, not a claim of government endorsement or external accreditation."
+    "note": "Official means first-party for the publisher's own institution/event, not a claim of government endorsement or external accreditation. For first-party institutions with no clearly evidenced voice-specific page in this pass, publisher identity may be official while source-level relevance remains needs_review."
   },
   "items": [
     {
@@ -141,9 +143,9 @@
       "fetch_status": "ok",
       "http_status": 200,
       "last_checked_at": "2026-11-10T15:43:13+01:00",
-      "auto_review_status": "auto_approved_official",
+      "auto_review_status": "needs_review",
       "publisher_status": "official",
-      "relevance_status": "relevant",
+      "relevance_status": "uncertain",
       "confidence": "medium",
       "evidence_url": "https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/",
       "evidence_note": "Teatro Verdi Trieste 官方公告页可确认发布方，但当前检索到的开放条目主要为 mimi、乐团岗位；历史 cast audition 需逐条核验是否包含歌手。",
@@ -350,9 +352,9 @@
       "fetch_status": "ok",
       "http_status": 200,
       "last_checked_at": "2026-11-10T15:43:13+01:00",
-      "auto_review_status": "auto_approved_official",
+      "auto_review_status": "needs_review",
       "publisher_status": "official",
-      "relevance_status": "relevant",
+      "relevance_status": "uncertain",
       "confidence": "medium",
       "evidence_url": "https://www.liricocagliari.it/trasparenza/",
       "evidence_note": "Teatro Lirico di Cagliari 官方透明管理入口可确认机构归属，但本轮未证明该入口持续发布声乐招募；需检查子页面和公告分类。",
