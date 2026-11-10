@@ -29,7 +29,7 @@ let consDateOnly = false;
 let installPrompt = null;
 
 const opportunities = [
-  {title:'78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027',category:'歌剧角色招募',place:'科莫 · 多地预选',deadline:'2026-11-25T18:00:00+01:00',summary:'给 2027/28 乐季挑演员，还有青年组。《拉美莫尔的露琪亚》等角色都在招，报名费 70 欧。',url:'https://aslico.org/edizione-in-corso/',source:'AsLiCo'},
+  {title:'78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027',category:'歌剧角色招募',place:'科莫 · 多地预选',deadline:'2026-11-25T18:00:00+01:00',summary:'为 2027/28 乐季招募歌剧演员，并设有青年组别。招募剧目包括《拉美莫尔的露琪亚》等；报名费为 70 欧元。',url:'https://aslico.org/edizione-in-corso/',source:'AsLiCo'},
   {title:'Concorso Internazionale di Canto lirico Francesco Morlacchi 2026',category:'国际声乐比赛',place:'佩鲁贾',deadline:'2026-11-30T23:59:00+01:00',summary:'12 月 14、15 两天比，18 到 35 岁。报名费 80 欧，要交曲目单、简历、身份证件和一段演唱视频。',url:'https://www.concorsomorlacchi.it/',source:'Morlacchi 声乐比赛'}
 ];
 
@@ -62,7 +62,7 @@ function bylineOf(item){
 function sourceNoteOf(item){
   const name=cleanName(item.textSourceName||'').replace(/原文$/,'').trim();
   if(/IMSLP|imslp/i.test(name))return '乐谱链接指向 IMSLP 作品页。';
-  return `原文来自 ${name||'公开文本来源'}，已经存在站内，搜索和阅读都不用跳出去。`;
+  return `文本来源：${name||'公开文本来源'}。`;
 }
 const languageNames={it:"意大利语",fr:"法语",en:"英语",de:"德语",es:"西班牙语",pt:"葡萄牙语",ru:"俄语",da:"丹麦语",sv:"瑞典语",no:"挪威语",nl:"荷兰语",pl:"波兰语",cs:"捷克语",hu:"匈牙利语",fi:"芬兰语",el:"希腊语",la:"拉丁语",is:"冰岛语",cy:"威尔士语",ga:"爱尔兰语",sco:"苏格兰语",gd:"苏格兰盖尔语",ca:"加泰罗尼亚语",ro:"罗马尼亚语",hr:"克罗地亚语",sr:"塞尔维亚语",bg:"保加利亚语",uk:"乌克兰语",sl:"斯洛文尼亚语",sk:"斯洛伐克语",et:"爱沙尼亚语",lv:"拉脱维亚语",lt:"立陶宛语",ka:"格鲁吉亚语",hy:"亚美尼亚语",eo:"世界语",he:"希伯来语",yi:"意第绪语",ar:"阿拉伯语",tr:"土耳其语",fa:"波斯语",hi:"印地语",ja:"日语",ko:"韩语",zh:"中文",id:"印尼语",ms:"马来语",tl:"他加禄语",vi:"越南语",th:"泰语",scn:"西西里语",nap:"那不勒斯语",vec:"威尼斯语",lmo:"伦巴第语",oc:"奥克语",eu:"巴斯克语",gl:"加利西亚语",rm:"罗曼什语",af:"南非荷兰语",und:"原文语言"};
 function languageLabel(code="it"){const key=String(code).toLowerCase().split("-")[0];return languageNames[key]||"原文语言";}
@@ -264,9 +264,9 @@ function renderMusicSearch(rawQuery){
   const shown=main.slice(0,12);
   const chips=[...new Set(shown.flatMap(entry=>[cleanName(entry.item.composer),cleanName(entry.item.work)]).filter(value=>value&&value.length<=38))].slice(0,4);
   const bits=[];
-  bits.push(main.length?`歌名和作品里命中 ${main.length} 首`:'未匹配到作品名称或别名');
+  bits.push(main.length?`作品名称或别名匹配 ${main.length} 首`:'未匹配到作品名称或别名');
   if(main.length>shown.length)bits.push(`先看前 ${shown.length} 首`);
-  if(extra.length)bits.push(`歌词里还有 ${extra.length} 首`);
+  if(extra.length)bits.push(`另有 ${extra.length} 首在歌词中匹配`);
   const head=`<p class="result-meta">${bits.join(' · ')}${chips.length&&shown.length?' · 接着搜：':''}${shown.length?chips.map(value=>`<button type="button" class="search-chip" data-suggest="${esc(value)}">${esc(value)}</button>`).join(' '):''}</p>`;
   const cards=shown.map(entry=>{
     const item=entry.item;
@@ -342,7 +342,7 @@ function renderCalls(){
   const merged=[...derived,...opportunities].sort((a,b)=>new Date(a.deadline)-new Date(b.deadline));
   const current=merged.filter(o=>new Date(o.deadline).getTime()>=now);
   const pill=$('#opportunityCount');
-  if(pill)pill.textContent=`${current.length} 个在招`;
+  if(pill)pill.textContent=`${current.length} 项开放报名`;
   const box=$('#opportunities');
   if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">截止 ${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a></article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
   renderTiles();
