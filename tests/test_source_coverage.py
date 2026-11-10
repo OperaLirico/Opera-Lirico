@@ -21,6 +21,27 @@ class SourceCoverageTests(unittest.TestCase):
             "https://example.org/a?x=1",
         )
 
+    def test_initial_baseline_does_not_claim_change_detection(self):
+        state = {
+            "cycle": "2026-W46", "started_at": "now", "updated_at": "now",
+            "scan_status": "completed", "inventory_count": 1,
+            "completed_source_ids": ["source-1"], "results": {},
+            "inventory_sha256": "abc", "previous_cycle_complete": False,
+        }
+        report = audit.render_report(state)
+        self.assertIn("first baseline", report)
+        self.assertIn("cannot be compared until a later complete weekly scan", report)
+
+    def test_complete_prior_cycle_enables_change_comparison(self):
+        state = {
+            "cycle": "2026-W47", "started_at": "now", "updated_at": "now",
+            "scan_status": "completed", "inventory_count": 1,
+            "completed_source_ids": ["source-1"], "results": {},
+            "inventory_sha256": "abc", "previous_cycle_complete": True,
+        }
+        report = audit.render_report(state)
+        self.assertIn("Changed normalized text hashes: 0", report)
+
     def test_inventory_is_unique_and_does_not_double_count_extra_registry(self):
         inventory = audit.source_inventory()
         ids = [item["source_id"] for item in inventory]
