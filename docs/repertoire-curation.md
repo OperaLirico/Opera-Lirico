@@ -32,7 +32,7 @@
 
 - 歌剧咏叹调：Puccini、Verdi、Mozart、Donizetti、Rossini、Bizet、Gounod、Handel 等常见曲目。首批已加入 Nessun dorma、La donna è mobile、Casta Diva、Libiamo、Voi che sapete。
 - 古典咏叹调：以常见的 24/26 首意大利歌曲与咏叹调曲集为核心，再补充同类经典作品。首批已加入 Amarilli, mia bella 与 Nina；Nina 的传统作曲者归属存在争议，页面明确提示。
-- 德奥艺术歌曲：Schubert、Schumann、Brahms、Wolf、Strauss、Mahler。
-- 法国艺术歌曲：Fauré、Debussy、Duparc、Ravel、Hahn、Poulenc。
+- 德奥艺术歌曲：Schubert、Schumann、Brahms、Wolf、Strauss、Mahler。首批已加入 Schubert《Ständchen》《An die Musik》及 Brahms《Wiegenlied》。
+- 法国艺术歌曲：Fauré、Debussy、Duparc、Ravel、Hahn、Poulenc。首批已加入 Duparc《L'invitation au voyage》。
 
 扩充时按作品逐条核验，不为追求数量而批量填充未经确认的条目。
