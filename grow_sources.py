@@ -67,7 +67,6 @@ VOICE_RE = re.compile(
     r"voce|vocal|young artist|chorus|coro|corale",
     re.IGNORECASE,
 )
-OPERA_CONTEXT_RE = re.compile(r"opera|liric", re.IGNORECASE)
 NON_VOCAL_ROLE_RE = re.compile(
     r"oboe|flauto|flautist|violino|violin|violoncello|cello|viola|clarinetto|"
     r"tromba|trumpet|corno|horn|fagotto|bassoon|percussioni|percussion|"
@@ -98,10 +97,10 @@ def candidate_rejection_reason(probe: dict, target: str) -> str | None:
         return "non_vocal_role_only"
     if not AUDITIONISH_RE.search(blob):
         return "no_audition_signal"
-    if not has_voice_role:
-        return "no_vocal_role_signal"
     if OFFTOPIC_RE.search(blob) and not has_voice_role:
         return "off_topic_artistic_call"
+    if not has_voice_role:
+        return "no_vocal_role_signal"
     if CHROME_RE.search(probe.get("title", "")):
         return "page_chrome"
     if STAFF_RE.search(blob):
@@ -242,8 +241,9 @@ def main(discover: bool = False) -> None:
         item.pop("_response", None)
         item.setdefault("review_status", "legacy_unreviewed")
         auto_status, auto_reason = legacy_relevance_status(item)
-        item.setdefault("auto_review_status", auto_status)
-        item.setdefault("auto_review_reason", auto_reason)
+        item["auto_review_status"] = auto_status
+        item["auto_review_reason"] = auto_reason
+        item["auto_review_checked_at"] = now_iso()
 
     # 1. Refresh a rotating slice of the discovered list.
     batch: list[dict] = []
