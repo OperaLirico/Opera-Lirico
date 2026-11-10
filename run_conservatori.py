@@ -225,6 +225,7 @@ def pdf_read(url: str) -> list[str]:
             url, max_bytes=MAX_PDF_BYTES, timeout=TIMEOUT, user_agent=USER_AGENT, delay=1.2
         )
         if fetched.get("status") != "ok" or fetched.get("truncated"):
+            print(f"[PDF] skipped by robots/HTTP policy: {fetched.get('status')} — {url}", flush=True)
             return []
         data = fetched["body"]
         text = "\n".join((page.extract_text() or "") for page in PdfReader(io.BytesIO(data)).pages[:MAX_PDF_PAGES])
