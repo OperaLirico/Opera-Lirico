@@ -15,7 +15,7 @@ import json
 import re
 import time
 import urllib.parse
-import urllib.request
+from robots_policy import fetch_bytes_with_robots
 from datetime import datetime
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
@@ -125,8 +125,14 @@ NAME_CITY = {
 
 
 def get_json(url: str) -> dict:
-    request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    return json.load(urllib.request.urlopen(request, timeout=30))
+    result = fetch_bytes_with_robots(
+        url, max_bytes=1_000_000, timeout=30, user_agent=USER_AGENT, delay=0
+    )
+    if result.get("status") != "ok" or result.get("truncated"):
+        raise RuntimeError(
+            f"Robots/HTTP policy prevented public Wikidata API request: {result.get('status')}"
+        )
+    return json.loads(result["body"].decode("utf-8"))
 
 
 def wikidata_candidates(term: str) -> list[str]:
