@@ -1,0 +1,111 @@
+{
+  "generated_at": "2026-11-10T17:44:57+01:00",
+  "source_file": "data/opportunities.json",
+  "total_records": 6,
+  "published_records_in_file": 6,
+  "currently_open_public_records": 6,
+  "deadlines_within_7_days": [],
+  "deadlines_within_30_days": [
+    {
+      "id": "aslico-2027-78th-young-singers",
+      "title": "78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027",
+      "deadline": "2026-11-25T18:00:00+01:00",
+      "application_url_missing": true,
+      "official_pdf_missing": true,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    },
+    {
+      "id": "morlacchi-2026-international-vocal-competition",
+      "title": "Concorso Internazionale di Canto lirico Francesco Morlacchi 2026",
+      "deadline": "2026-11-30T23:59:00+01:00",
+      "application_url_missing": true,
+      "official_pdf_missing": true,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    },
+    {
+      "id": "carlofelice-choir-tenors-2026",
+      "title": "Audizione per Artisti del Coro – Tenori",
+      "deadline": "2026-11-23T23:59:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    },
+    {
+      "id": "carlofelice-choir-basses-2026",
+      "title": "Concorso per Artisti del Coro – Bassi",
+      "deadline": "2026-12-07T23:59:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    },
+    {
+      "id": "carlofelice-choir-baritones-2026",
+      "title": "Concorso per Artisti del Coro – Baritoni",
+      "deadline": "2026-12-07T23:59:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    }
+  ],
+  "expired_but_still_published_in_file": [],
+  "published_missing_application_url": [
+    {
+      "id": "aslico-2027-78th-young-singers",
+      "title": "78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027",
+      "deadline": "2026-11-25T18:00:00+01:00",
+      "application_url_missing": true,
+      "official_pdf_missing": true,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    },
+    {
+      "id": "morlacchi-2026-international-vocal-competition",
+      "title": "Concorso Internazionale di Canto lirico Francesco Morlacchi 2026",
+      "deadline": "2026-11-30T23:59:00+01:00",
+      "application_url_missing": true,
+      "official_pdf_missing": true,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    }
+  ],
+  "published_missing_official_pdf_url": [
+    {
+      "id": "aslico-2027-78th-young-singers",
+      "title": "78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027",
+      "deadline": "2026-11-25T18:00:00+01:00",
+      "application_url_missing": true,
+      "official_pdf_missing": true,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    },
+    {
+      "id": "morlacchi-2026-international-vocal-competition",
+      "title": "Concorso Internazionale di Canto lirico Francesco Morlacchi 2026",
+      "deadline": "2026-11-30T23:59:00+01:00",
+      "application_url_missing": true,
+      "official_pdf_missing": true,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    }
+  ],
+  "published_missing_both_application_and_pdf": [
+    {
+      "id": "aslico-2027-78th-young-singers",
+      "title": "78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027",
+      "deadline": "2026-11-25T18:00:00+01:00",
+      "application_url_missing": true,
+      "official_pdf_missing": true,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    },
+    {
+      "id": "morlacchi-2026-international-vocal-competition",
+      "title": "Concorso Internazionale di Canto lirico Francesco Morlacchi 2026",
+      "deadline": "2026-11-30T23:59:00+01:00",
+      "application_url_missing": true,
+      "official_pdf_missing": true,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
+    }
+  ],
+  "published_missing_deadline": [],
+  "pending_or_non_official_records": [],
+  "stale_verification_over_7_days": [],
+  "invalid_or_non_rome_timezone_dates": [],
+  "duplicate_ids": [],
+  "frontend_publication_gate_violations": []
+}

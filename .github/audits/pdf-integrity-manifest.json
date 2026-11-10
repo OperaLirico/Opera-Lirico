@@ -1,0 +1,101 @@
+{
+  "generated_at": "2026-11-10T17:44:57+01:00",
+  "algorithm": "SHA-256",
+  "purpose": "Local byte-integrity manifest for mirrored PDF files",
+  "publisher_signature_verification": "not_implemented",
+  "referenced_pdf_count": 8,
+  "valid_pdf_count": 8,
+  "invalid_or_missing_pdf_count": 0,
+  "unreferenced_pdf_count": 0,
+  "files": [
+    {
+      "institution": 4,
+      "source_record_number": 4,
+      "local_path": "data/pdfs/4-bando-di-ammissione-a.a.-2026-2027.pdf",
+      "source_url": "https://consbo.it/wp-content/uploads/2026/03/Bando-di-ammissione-a.a.-2026-2027.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 428126,
+      "sha256": "99f2b3c65f714cfd7c28b2e16f44414e680b8ba1314a03d88b9286f1f9df7b0d",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
+    },
+    {
+      "institution": 11,
+      "source_record_number": 11,
+      "local_path": "data/pdfs/11-allegato-a-bando-afam030.pdf",
+      "source_url": "https://www.consme.it/images/bandi_e_graduatorie/2026_2027/ALLEGATO%20A%20BANDO%20AFAM030.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 1648886,
+      "sha256": "291c23409e1a450e8210ce2d0d9deb57581744ba3048921ff0a26f51cd47f98a",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
+    },
+    {
+      "institution": 37,
+      "source_record_number": 37,
+      "local_path": "data/pdfs/37-riapertura-termini-bando-ammissione-corso-propedeutico-2026-2027.pdf",
+      "source_url": "https://conservatoriopalermo.it/wp-content/uploads/2026/09/Riapertura-termini-Bando-ammissione-Corso-propedeutico-2026-2027.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 2865012,
+      "sha256": "e4d2a7e36155e6fbd7190ad96b03a87de494f9eb80e915d6262a6d3d12719fe7",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
+    },
+    {
+      "institution": 52,
+      "source_record_number": 52,
+      "local_path": "data/pdfs/52-061126-121739-bando200oreaa20262027signed.pdf",
+      "source_url": "https://consvi.it/public/061126-121739-bando200oreaa20262027signed.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 397353,
+      "sha256": "83a423a72c1a506ee14f6b6fb2e25d451dca6c06dbe4e110ec6b1ef6637911cc",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
+    },
+    {
+      "institution": 305,
+      "source_record_number": 305,
+      "local_path": "data/pdfs/305-bando-accademia-2025-2027-bozza-corretta_email.pdf",
+      "source_url": "https://www.teatrosancarlo.it/wp-content/uploads/2025/02/BANDO-ACCADEMIA-2025-2027-Bozza-corretta_email.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 262478,
+      "sha256": "ec2c4857ef7a89e74fa95195182dd4212db2cf8c0a892e38161c3f011ba67e14",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
+    },
+    {
+      "institution": 305,
+      "source_record_number": 305,
+      "local_path": "data/pdfs/305-avviso-di-proroga-termine-di-scadenza-bando-accademia.pdf",
+      "source_url": "https://www.teatrosancarlo.it/wp-content/uploads/2025/05/Avviso-di-proroga-termine-di-scadenza-Bando-Accademia.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 169080,
+      "sha256": "72260a80177944e5ea6c90d3cbd400213e7d727f2b242241f17b444ccc106227",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
+    },
+    {
+      "institution": 306,
+      "source_record_number": 306,
+      "local_path": "data/pdfs/306-bandoaccademialirica_2026_tm.pdf",
+      "source_url": "https://www.teatromassimo.it/wp-content/uploads/2026/07/BandoAccademiaLirica_2026_TM.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 188075,
+      "sha256": "9f870ed77638acfd275cc3249c78045c7268a49a9eb0eff8d81ddb9fafa3052e",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
+    },
+    {
+      "institution": 307,
+      "source_record_number": 307,
+      "local_path": "data/pdfs/307-bando-accademia-tcf_261110.pdf",
+      "source_url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Bando-Accademia-TCF_261110.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 242576,
+      "sha256": "aae2fb779482f59e0458a02e0d59638a2d9d393e85281bdb78e87af6e131bbe9",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
+    }
+  ],
+  "unreferenced_files": []
+}
