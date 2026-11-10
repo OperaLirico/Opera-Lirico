@@ -41,7 +41,7 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 <div id="status" class="status">正在读取数据…</div>
 <div class="grid">
 <div class="card"><div class="kicker">PAGE VIEWS · 30 DAYS</div><div class="value" id="pageviews">—</div><div class="hint">过去 30 天页面浏览量</div></div>
-<div class="card"><div class="kicker">VISITS · 30 DAYS</div><div class="value" id="visits">—</div><div class="hint">过去 30 天访问次数（Cloudflare 口径）</div></div>
+<div class="card"><div class="kicker">REFERRAL VIEWS · 30 DAYS</div><div class="value" id="referralViews">—</div><div class="hint">过去 30 天来自其他网站链接的页面浏览</div></div>
 <div class="card"><div class="kicker">ACTIVE SUBSCRIBERS</div><div class="value" id="subscribers">—</div><div class="hint">当前有效订阅者</div></div>
 <div class="card"><div class="kicker">NEW · 7 DAYS</div><div class="value" id="newSubscribers">—</div><div class="hint">过去 7 天新增有效订阅</div></div>
 </div>
@@ -86,7 +86,7 @@ async function loadData(){
  try{
   const r=await fetch("/api/data",{cache:"no-store"});if(r.status===401){showLogin();return;}if(!r.ok)throw new Error("数据读取失败");
   const d=await r.json();
-  if(d.cloudflare&&d.cloudflare.ok){$("pageviews").textContent=fmt(d.cloudflare.pageviews);$("visits").textContent=fmt(d.cloudflare.visits);drawChart(d.cloudflare.days||[]);}
+  if(d.cloudflare&&d.cloudflare.ok){$("pageviews").textContent=fmt(d.cloudflare.pageviews);$("referralViews").textContent=fmt(d.cloudflare.visits);drawChart(d.cloudflare.days||[]);}
   else{$("pageviews").textContent="—";$("visits").textContent="—";}
   if(d.buttondown&&d.buttondown.ok){$("subscribers").textContent=fmt(d.buttondown.active_subscribers);$("newSubscribers").textContent=fmt(d.buttondown.new_subscribers_7d);$("draftCount").textContent=fmt(d.buttondown.draft_count);renderDrafts(d.buttondown.drafts||[]);}
   else{$("subscribers").textContent="—";$("newSubscribers").textContent="—";$("draftCount").textContent="—";$("drafts").textContent="Buttondown 数据暂时不可用。";}
@@ -178,9 +178,9 @@ async function getCloudflare(env) {
     if (row.dimensions?.requestHost !== env.CF_WEB_ANALYTICS_HOST) continue;
     const date = row.dimensions?.date;
     if (!date) continue;
-    const item = map.get(date) || { date, pageviews: 0, visits: 0 };
+    const item = map.get(date) || { date, pageviews: 0, referral_views: 0 };
     item.pageviews += Number(row.count || 0);
-    item.visits += Number(row.sum?.visits || 0);
+    item.referral_views += Number(row.sum?.visits || 0);
     map.set(date, item);
   }
   const days = [];
@@ -188,10 +188,10 @@ async function getCloudflare(env) {
   const last = new Date(end + "T12:00:00Z");
   while (cursor <= last) {
     const date = cursor.toISOString().slice(0, 10);
-    days.push(map.get(date) || { date, pageviews: 0, visits: 0 });
+    days.push(map.get(date) || { date, pageviews: 0, referral_views: 0 });
     cursor.setUTCDate(cursor.getUTCDate() + 1);
   }
-  return { pageviews: days.reduce((s, x) => s + x.pageviews, 0), visits: days.reduce((s, x) => s + x.visits, 0), days };
+  return { pageviews: days.reduce((s, x) => s + x.pageviews, 0), referral_views: days.reduce((s, x) => s + x.referral_views, 0), days };
 }
 async function getButtondown(env) {
   const headers = { Authorization: "Token " + env.BUTTONDOWN_API_KEY };
