@@ -71,11 +71,11 @@ class PreserveLastGoodTests(unittest.TestCase):
 
     def test_extract_relevant_links_reports_truncation_instead_of_silently_dropping(self):
         html = ("<html><body>" + "".join(
-            f'<a href="/bando-{i}.pdf">Bando {i}</a>' for i in range(260)
+            f'<a href="/bando-{i}.pdf">Bando {i}</a>' for i in range(1010)
         ) + "</body></html>").encode()
         links, total, truncated = scrape_sources.extract_relevant_links(html, "https://example.org/")
-        self.assertEqual(total, 260)
-        self.assertEqual(len(links), scrape_sources.MAX_RELEVANT_LINKS)
+        self.assertEqual(total, 1010)
+        self.assertEqual(len(links), 1000)
         self.assertTrue(truncated)
 
     def test_successful_refresh_replaces_snapshot_and_resets_failures(self):
