@@ -39,3 +39,8 @@ The policy registry is a coverage baseline only. P2 is not complete until each h
 ## Redirect safety in the discovery pilot
 
 The P2/P4 evaluation uses a same-host redirect handler. A cross-host redirect is not followed automatically: the destination host's robots.txt is checked first. If the destination robots policy is unavailable (except HTTP 404) or disallows the target path, the request stops and is recorded. A robots.txt redirect is followed only when the target remains a robots.txt path. The target policy file is fetched directly; redirects to non-robots paths, loops, or chains beyond the small cap require manual review. This is conservative and may create a review item for legitimate CDN or canonical-host redirects; it must not be weakened by silently following redirects.
+
+
+## Structured link preservation
+
+The production Scrapling collector also stores a bounded list of relevant first-party anchor targets separately from page text. Each record keeps the visible label and absolute URL. When more than 250 relevant links exist, it records the total and an explicit truncation flag instead of implying full coverage. Privacy, social, shop and other navigation noise is filtered. The last-good snapshot behavior preserves these links on a failed refresh.
