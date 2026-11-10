@@ -18,6 +18,14 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                 self.assertEqual(entry["strategy_status"], "baseline_only")
                 self.assertFalse(entry["alternatives_assessed"])
 
+    def test_candidate_queue_stays_separate_and_pending(self):
+        candidates_path = ROOT / "data" / "source_candidates.json"
+        candidates = json.loads(candidates_path.read_text(encoding="utf-8"))
+        for item in candidates.get("items", []):
+            with self.subTest(candidate=item.get("candidate_id")):
+                self.assertEqual(item.get("review_status"), "pending_manual_review")
+                self.assertNotEqual(item.get("publisher_status"), "official")
+
 
 if __name__ == "__main__":
     unittest.main()
