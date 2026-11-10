@@ -45,8 +45,8 @@ jobs:
               exit 1
             fi
           done
-          if [ "${#OPS_DASHBOARD_PASSWORD}" -lt 24 ]; then
-            echo "::error::OPS_DASHBOARD_PASSWORD must be at least 24 characters."
+          if [ "${#OPS_DASHBOARD_PASSWORD}" -lt 32 ]; then
+            echo "::error::OPS_DASHBOARD_PASSWORD must be at least 32 characters."
             exit 1
           fi
       - name: Deploy dashboard
