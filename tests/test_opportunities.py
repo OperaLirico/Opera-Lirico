@@ -104,6 +104,16 @@ class OpportunityDataTests(unittest.TestCase):
         self.assertIn("record.publisher_status!=='official'", APP)
         self.assertIn("Date.parse(deadline)<Date.now()", APP)
 
+    def test_teatro_massimo_contralto_exam_date_conflict_is_not_silently_published(self):
+        record = next(item for item in DATA["items"]
+                      if item["id"] == "teatro-massimo-2-contralti-2026")
+        self.assertEqual(record["publication_status"], "published")
+        self.assertEqual(record["review_status"], "verified")
+        self.assertNotIn("audition_start_at", record)
+        self.assertIn("19 dicembre 2026", record["notes"])
+        self.assertIn("20 dicembre 2026", record["notes"])
+        self.assertTrue(record["official_pdf_url"].endswith("BandoSelezione_2Contralti_TM_2026.pdf"))
+
     def test_published_records_have_an_application_or_official_pdf_link(self):
         for item in DATA.get("items", []):
             if item.get("publication_status") == "published":
