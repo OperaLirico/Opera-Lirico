@@ -56,6 +56,19 @@ class PreserveLastGoodTests(unittest.TestCase):
             {"https://example.org/uploads/2026/bando.pdf", "https://example.org/application"},
         )
 
+    def test_extract_relevant_links_uses_accessible_labels_for_icon_only_links(self):
+        html = b"""<html><body>
+          <a href="/apply/123" aria-label="Download audition application form" title="Official application"></a>
+        </body></html>"""
+        links, total, truncated = scrape_sources.extract_relevant_links(
+            html, "https://example.org/audizioni/"
+        )
+        self.assertEqual(total, 1)
+        self.assertFalse(truncated)
+        self.assertEqual(links[0]["url"], "https://example.org/apply/123")
+        self.assertEqual(links[0]["aria_label"], "Download audition application form")
+        self.assertEqual(links[0]["title"], "Official application")
+
     def test_extract_relevant_links_reports_truncation_instead_of_silently_dropping(self):
         html = ("<html><body>" + "".join(
             f'<a href="/bando-{i}.pdf">Bando {i}</a>' for i in range(260)
