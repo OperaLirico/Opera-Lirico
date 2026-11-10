@@ -332,8 +332,8 @@ function publishedOpportunity(record){
   if(!deadline||!Number.isFinite(Date.parse(deadline))||Date.parse(deadline)<Date.now())return null;
   const categories={opera_role:'歌剧角色招募',choir:'合唱团招募',vocal_competition:'国际声乐比赛',young_artist:'青年艺术家项目',conservatory_admission:'音乐学院招生',other_vocal:'声乐机会'};
   const voices=(record.voice_types||[]).map(v=>({soprano:'女高音',mezzo_soprano:'女中音',contralto:'女低音',countertenor:'假声男高音',tenor:'男高音',baritone:'男中音',bass:'男低音',all_voices:'不限声部',unspecified:'声部未注明'}[v]||v));
-  const details=[record.eligibility_summary,voices.length?`声部：${voices.join('、')}`: '',record.fee_eur!=null?(record.fee_eur===0?'报名费：免费':`报名费：€${record.fee_eur}`):'',record.audition_start_at?`试唱/比赛：${formatDate(record.audition_start_at)}${record.audition_end_at&&record.audition_end_at.slice(0,10)!==record.audition_start_at.slice(0,10)?' 至 '+formatDate(record.audition_end_at):''}`: ''].filter(Boolean);
-  return {title:record.title,category:categories[record.opportunity_type]||'声乐机会',place:record.location||'地点以公告为准',deadline,summary:details.join('；')||'详情请以主办方公告为准。',url:record.announcement_url,applicationUrl:record.application_url,source:record.source_name};
+  const details=[record.eligibility_summary,voices.length?`声部：${voices.join('、')}`: '',record.fee_eur!=null?(record.fee_eur===0?'报名费：免费':`报名费：€${record.fee_eur}`):'',record.audition_start_at?`试唱/比赛：${formatDate(record.audition_start_at)}${record.audition_end_at&&record.audition_end_at.slice(0,10)!==record.audition_start_at.slice(0,10)?' 至 '+formatDate(record.audition_end_at):''}`: '',record.notes?`说明：${record.notes}`: ''].filter(Boolean);
+  return {title:record.title,category:categories[record.opportunity_type]||'声乐机会',place:record.location||'地点以公告为准',deadline,summary:details.join('；')||'详情请以主办方公告为准。',url:record.announcement_url,applicationUrl:record.application_url,officialPdfUrl:record.official_pdf_url,source:record.source_name};
 }
 function renderCalls(){
   const now=Date.now();
@@ -357,7 +357,7 @@ function renderCalls(){
   const pill=$('#opportunityCount');
   if(pill)pill.textContent=`${current.length} 项开放报名`;
   const box=$('#opportunities');
-  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">报名截止：${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a>${o.applicationUrl?`<a class="card-link" href="${esc(o.applicationUrl)}" target="_blank" rel="noopener">在线申请 <span>↗</span></a>`:''}</article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
+  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">报名截止：${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a>${o.applicationUrl?`<a class="card-link" href="${esc(o.applicationUrl)}" target="_blank" rel="noopener">在线申请 <span>↗</span></a>`:'' }${o.officialPdfUrl?`<a class="card-link" href="${esc(o.officialPdfUrl)}" target="_blank" rel="noopener">下载官方简章 PDF <span>↗</span></a>`:''}</article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
   renderTiles();
 }
 
