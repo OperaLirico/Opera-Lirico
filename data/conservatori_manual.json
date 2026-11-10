@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T06:47:00+01:00",
+  "updated_at": "2026-11-10T16:56:21+01:00",
   "about": "人工核对的歌剧院学院招生信息。每条记录保留官方来源、核对时间及意大利语公告摘录；中文说明用于帮助理解，申请前仍须以最新官方公告为准。",
   "items": [
     {
@@ -93,12 +93,15 @@
     {
       "number": 307,
       "city": "热那亚",
-      "status": "closed",
+      "status": "open",
       "notes": [
-        "2026 年本轮报名已于 2026 年 1 月 12 日 23:59 截止，新一轮招生信息尚未公布。"
+        "2027 年歌剧学院招生已开放，申请截止日期为 2026 年 12 月 10 日 23:59；课程免费。现场选拔安排在 2027 年 1 月 10 日至 11 日。另有合唱团男高音（11 月 23 日截止）及男低音、男中音（12 月 7 日截止）独立招募，已分别列入近期机会。"
       ],
       "source_url": "https://www.carlofelice.it/accademia/",
-      "checked_at": "2026-11-09T23:20:00+01:00"
+      "checked_at": "2026-11-10T16:56:21+01:00",
+      "deadline_lines": [
+        "La domanda per l’Accademia 2027 dovrà essere inviata entro e non oltre le ore 23:59 di giovedì 10 dicembre 2026."
+      ]
     },
     {
       "number": 308,
