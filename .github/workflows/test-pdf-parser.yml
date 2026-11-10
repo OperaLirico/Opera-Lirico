@@ -1,0 +1,57 @@
+name: Test PDF parser (Docling)
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/repo-foundation
+    paths:
+      - "tools/pdf_parser/**"
+      - ".github/workflows/test-pdf-parser.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pdf-parser-test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Install Docling and run parser tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out the development branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: tools/pdf_parser/requirements.txt
+
+      - name: Install isolated PDF parser dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r tools/pdf_parser/requirements.txt
+
+      - name: Run candidate extraction unit tests
+        working-directory: tools/pdf_parser
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m unittest -v 2>&1 | tee ../../pdf-parser-test-report.txt
+
+      - name: Check parser command-line entry point
+        run: python tools/pdf_parser/parse_pdf.py --help
+
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-parser-test-report
+          path: pdf-parser-test-report.txt
+          if-no-files-found: warn
+          retention-days: 14
