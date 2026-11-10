@@ -188,7 +188,6 @@ def main():
   if item.get("discovery"):
    d=item["discovery"]; lines.append(f"- robots.txt: {d['robots']['status']} HTTP {d['robots']['http_status']}")
    for sm in d["sitemaps"]: lines.append(f"- Sitemap: {sm['url']} — {sm['status']} HTTP {sm['http_status']}, {sm['loc_count']} loc")
-  for feed in d.get("advertised_feeds",[]): lines.append(f"- Feed: {feed['url']} — {feed['status']} HTTP {feed['http_status']}")
    for feed in d["advertised_feeds"]: lines.append(f"- Feed: {feed['url']} — {feed['status']} HTTP {feed['http_status']}")
   if item.get("parsers"):
    for name in ("scrapling","lxml_full_text","trafilatura"):
