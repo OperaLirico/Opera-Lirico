@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-10T18:39:01+01:00",
-  "cursor": 13,
+  "updated_at": "2026-11-10T18:45:03+01:00",
+  "cursor": 10,
   "items": [
     {
       "number": 96,
       "source": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antic",
       "url": "https://www.indafondazione.org/bando-audizioni-per-filottete/",
-      "checked_at": "2026-11-10T18:30:00+01:00",
+      "checked_at": "2026-11-10T18:44:35+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico | Fondazione ONLUS | Siracusa",
@@ -24,16 +24,13 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T06:14:32+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-10T18:38:26+01:00"
+      "publisher_status": "unverified"
     },
     {
       "number": 97,
       "source": "OPEN CALL Artists - Winterwerft",
       "url": "https://winterwerft.de/opencall/",
-      "checked_at": "2026-11-10T18:38:26+01:00",
+      "checked_at": "2026-11-10T18:44:37+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "OPEN CALL Artists - Winterwerft",
@@ -56,7 +53,7 @@
       "number": 98,
       "source": "Partecipa al Festival – Fondazione Campania dei Festival",
       "url": "https://contact.fondazionecampaniadeifestival.it/partecipa-al-festival/",
-      "checked_at": "2026-11-10T18:38:28+01:00",
+      "checked_at": "2026-11-10T18:44:39+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Partecipa al Festival – Fondazione Campania dei Festival",
@@ -77,7 +74,7 @@
       "number": 99,
       "source": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia ",
       "url": "https://www.teatrotrianon.org/audizioni-per-la-produzione-pulcinella-ovvero-una-cosa-che-somiglia-al-mondo/",
-      "checked_at": "2026-11-10T18:38:31+01:00",
+      "checked_at": "2026-11-10T18:44:42+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia al mondo\" - teatro Trianon Viviani",
@@ -107,7 +104,7 @@
       "number": 100,
       "source": "Lavora con noi - Elfo Puccini",
       "url": "https://www.elfo.org/chi-siamo/lavora-con-noi.htm",
-      "checked_at": "2026-11-10T18:38:37+01:00",
+      "checked_at": "2026-11-10T18:44:45+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi - Elfo Puccini",
@@ -126,7 +123,7 @@
       "number": 101,
       "source": "Audizioni - MusicalMusical",
       "url": "https://www.musical.it/audizioni/",
-      "checked_at": "2026-11-10T18:38:41+01:00",
+      "checked_at": "2026-11-10T18:44:50+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni - MusicalMusical",
@@ -153,7 +150,7 @@
       "number": 102,
       "source": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e L",
       "url": "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
-      "checked_at": "2026-11-10T18:38:44+01:00",
+      "checked_at": "2026-11-10T18:44:53+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma - www.castingeprovini.com",
@@ -184,7 +181,7 @@
       "number": 114,
       "source": "CollettivO CineticO | Energia Cinetica",
       "url": "https://www.collettivocinetico.it/energia-cinetica",
-      "checked_at": "2026-11-10T18:38:46+01:00",
+      "checked_at": "2026-11-10T18:44:55+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "CollettivO CineticO | Energia Cinetica",
@@ -204,7 +201,7 @@
       "number": 115,
       "source": "Lavora con noi - Fondazione Aida",
       "url": "https://www.fondazioneaida.it/lavora-con-noi/",
-      "checked_at": "2026-11-10T18:38:48+01:00",
+      "checked_at": "2026-11-10T18:44:57+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi - Fondazione Aida",
@@ -226,7 +223,7 @@
       "number": 117,
       "source": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
       "url": "https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/",
-      "checked_at": "2026-11-10T18:38:50+01:00",
+      "checked_at": "2026-11-10T18:44:59+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
@@ -273,7 +270,10 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T09:52:17+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified"
+      "publisher_status": "unverified",
+      "auto_review_status": "needs_review",
+      "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
+      "auto_review_checked_at": "2026-11-10T18:44:28+01:00"
     },
     {
       "number": 120,
@@ -304,7 +304,10 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T09:52:36+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified"
+      "publisher_status": "unverified",
+      "auto_review_status": "irrelevant_candidate",
+      "auto_review_reason": "non_vocal_role_only",
+      "auto_review_checked_at": "2026-11-10T18:44:28+01:00"
     },
     {
       "number": 121,
@@ -335,13 +338,16 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T10:07:41+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified"
+      "publisher_status": "unverified",
+      "auto_review_status": "needs_review",
+      "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
+      "auto_review_checked_at": "2026-11-10T18:44:28+01:00"
     },
     {
       "number": 123,
       "source": "Fringe in Progress 2027 | Un’azione per progetti in crescita – Torino ",
       "url": "https://www.tofringe.it/partecipa/fringe-in-progress-selezione-per-progetti-in-crescita-torino-fringe-festival-2027/",
-      "checked_at": "2026-11-10T18:29:53+01:00",
+      "checked_at": "2026-11-10T18:44:28+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Fringe in Progress 2027 | Un’azione per progetti in crescita – Torino Fringe Festival",
@@ -366,16 +372,13 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T10:08:02+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-10T18:38:26+01:00"
+      "publisher_status": "unverified"
     },
     {
       "number": 124,
       "source": "Selezione per Strumentisti | Accademia Nazionale di Santa Cecilia",
       "url": "https://santacecilia.it/bandi/selezione-per-strumentisti-2027/",
-      "checked_at": "2026-11-10T18:29:55+01:00",
+      "checked_at": "2026-11-10T18:44:30+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Selezione per Strumentisti | Accademia Nazionale di Santa Cecilia",
@@ -393,10 +396,7 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T10:08:04+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
-      "auto_review_checked_at": "2026-11-10T18:38:26+01:00"
+      "publisher_status": "unverified"
     }
   ]
 }
