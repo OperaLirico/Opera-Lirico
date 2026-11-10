@@ -154,6 +154,7 @@ def fetch_page_with_robots(url: str, fetcher, timeout: float = 30,
         response = fetcher(
             current, timeout=timeout, retries=retries,
             follow_redirects=False, stealthy_headers=False,
+            headers={"User-Agent": USER_AGENT},
         )
         status = int(getattr(response, "status", 0) or 0)
         if status in REDIRECT_CODES:
