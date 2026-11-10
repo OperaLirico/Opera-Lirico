@@ -114,6 +114,70 @@
       "priority": 5
     },
     {
+      "title": "Una furtiva lagrima",
+      "aliases": [
+        "一滴隐秘的泪",
+        "L'elisir d'amore",
+        "爱的甘醇"
+      ],
+      "composer": "Gaetano Donizetti · 词：Felice Romani",
+      "work": "L'elisir d'amore · 第二幕",
+      "voice": "男高音",
+      "kind": "歌剧咏叹调",
+      "section": "歌剧咏叹调",
+      "priority": 6,
+      "language": "it",
+      "text": "Una furtiva lagrima\nNegli occhi suoi spuntò:\nQuelle festose giovani\nInvidiar sembrò.\nChe più cercando io vò?\nM'ama! Sì, m'ama, lo vedo.\nUn solo istante i palpiti\nDel suo bel cor sentir!\nI miei sospir, confondere\nPer poco a' suoi sospir!\nI palpiti, i palpiti sentir\nConfondere i miei co' suoi sospir!\nCielo! Si può morir!\nDi più non chiedo, non chiedo.\nAh, cielo! Si può morir d'amor.",
+      "summary": "内莫里诺看见阿迪娜眼中的泪水，终于相信她也爱着自己，唱出欣喜与感动。",
+      "textSource": "https://www.accordispartiticlassica.it/brano/una-furtiva-lagrima",
+      "textSourceName": "Accordi & Spartiti Classica · 歌剧唱段与文本",
+      "scoreUrl": "https://imslp.org/wiki/L%27elisir_d%27amore_(Donizetti,_Gaetano)",
+      "downloadUrl": null
+    },
+    {
+      "title": "Lascia ch'io pianga",
+      "aliases": [
+        "让我哭泣",
+        "让我哀伤",
+        "Rinaldo"
+      ],
+      "composer": "Georg Friedrich Händel · 词：Giacomo Rossi",
+      "work": "Rinaldo · 第二幕",
+      "voice": "女高音（常见）",
+      "kind": "歌剧咏叹调",
+      "section": "歌剧咏叹调",
+      "priority": 7,
+      "language": "it",
+      "text": "Lascia ch'io pianga\nMia cruda sorte,\nE che sospiri la libertà!\n\nIl duol infranga queste ritorte\nDe' miei martiri\nSol per pietà.",
+      "summary": "阿尔米雷娜哀叹命运的残酷，祈求自由与怜悯。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?SettingId=27077&TextId=25612",
+      "textSourceName": "LiederNet · Händel《Rinaldo》唱段文本",
+      "scoreUrl": "https://imslp.org/wiki/Rinaldo,_HWV_7a_(Handel,_George_Frideric)",
+      "downloadUrl": null
+    },
+    {
+      "title": "O mio babbino caro",
+      "aliases": [
+        "啊，我亲爱的爸爸",
+        "亲爱的爸爸",
+        "Gianni Schicchi"
+      ],
+      "composer": "Giacomo Puccini · 词：Giovacchino Forzano",
+      "work": "Gianni Schicchi",
+      "voice": "女高音",
+      "kind": "歌剧咏叹调",
+      "section": "歌剧咏叹调",
+      "priority": 8,
+      "language": "it",
+      "text": "",
+      "summary": "劳蕾塔向父亲恳求，希望父亲成全她与恋人的婚事。这是普契尼最广为人知的女高音咏叹调之一。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?SettingId=53557&TextId=43643",
+      "textSourceName": "LiederNet · 原文与作曲者记录",
+      "scoreUrl": "https://imslp.org/wiki/Gianni_Schicchi_(Puccini,_Giacomo)",
+      "downloadUrl": null,
+      "attributionNote": "歌词由 Giovacchino Forzano 创作，仍受版权保护；本站不复制全文，请前往来源页查看。"
+    },
+    {
       "title": "Amarilli, mia bella",
       "aliases": [
         "Amarilli",
