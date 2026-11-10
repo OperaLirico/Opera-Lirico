@@ -216,7 +216,9 @@ def compare(html_bytes,url):
             **metrics(traf_plain,relevant_anchors)},
         "trafilatura_markdown":{"runtime_seconds":round(md_seconds,4) if md_seconds is not None else None,
             "characters":len(normalize(traf_md)),"markdown_link_count":len(markdown_links),
-            "markdown_relevant_link_count":sum(bool(RELEVANT_TEXT.search(label) or RELEVANT_URL.search(link)) for label,link in markdown_links)},
+            "markdown_relevant_link_count":len(markdown_relevant_links),
+            "relevant_dom_link_targets_available":len(relevant_targets),
+            "relevant_dom_link_targets_retained":len(markdown_retained_targets)},
     }
 
 def sitemap_result(url,source_url,robots):
