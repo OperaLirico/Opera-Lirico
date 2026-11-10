@@ -25,6 +25,12 @@ Before changing a candidate to an approved source, verify:
 
 Rejected candidates remain auditable; do not silently erase them.
 
+## Non-destructive automated screening
+
+Automated relevance checks are triage labels, not deletion rules. Existing source records must remain in the registry and retain their last-known evidence even when they appear unrelated, duplicated, or repeatedly unavailable. Record a status such as `irrelevant_candidate`, `duplicate_candidate`, `needs_review`, or `unavailable_temporary` with a reason and timestamp. Do not remove a source, clear its snapshot, or disable its production fetch solely because of a heuristic or a run of failed requests.
+
+A candidate must contain an explicit vocal signal (for example, a singer voice type, canto/cantanti, vocal, or coro) to pass the discovery relevance screen. Generic opera context alone is insufficient: actor-only, dancer-only, and instrument-only calls are not vocal opportunities. A mixed call may pass only when the page contains a concrete vocal role signal. Passing this screen does not verify publisher identity.
+
 ## Opportunity records
 
 Use `data/opportunity.schema.json` for structured opportunity records. Keep these dates separate:
