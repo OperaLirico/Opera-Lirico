@@ -59,28 +59,41 @@ def metrics(text, links):
   "relevant_link_labels":sum(bool(re.search(r"bando|domanda|iscrizion|audizion|concorso|pdf|regolamento",x["text"],re.I)) for x in links)}
 
 def compare(html_bytes, url):
+ started = time.perf_counter()
  sel = Selector(content=html_bytes, url=url)
  scrap_text = sel.get_all_text(separator="\n") or ""
+ scrap_seconds = time.perf_counter() - started
+ started = time.perf_counter()
  dom = lxml_html.fromstring(html_bytes, base_url=url)
  lxml_text = "\n".join(x.strip() for x in dom.xpath("//body//text()[normalize-space()]") if x.strip())
+ lxml_seconds = time.perf_counter() - started
  links = []
  for node in dom.xpath("//a[@href]"):
   href = urllib.parse.urljoin(url,node.get("href"))
   label = " ".join(" ".join(node.itertext()).split())
   if href.startswith(("http://","https://")): links.append({"text":label[:240],"url":href})
  try:
-  traf_text = trafilatura.extract(html_bytes,include_links=True,include_tables=True,favor_recall=True) or ""
+  started = time.perf_counter()
+  decoded_html = lxml_html.tostring(dom, encoding="unicode")
+  traf_text = trafilatura.extract(decoded_html,include_links=True,include_tables=True,favor_recall=True) or ""
+  traf_seconds = time.perf_counter() - started
   traf_status = "ok" if traf_text else "empty"
  except Exception as exc:
-  traf_text,traf_status = "",f"error:{type(exc).__name__}"
+  traf_text,traf_status,traf_seconds = "",f"error:{type(exc).__name__}",None
  relevant = [x for x in links if re.search(r"bando|domanda|iscrizion|audizion|concorso|pdf|regolamento",x["text"]+" "+x["url"],re.I)]
- return {"scrapling":metrics(scrap_text,links),"lxml_full_text":metrics(lxml_text,links),
-  "trafilatura":{"status":traf_status,**metrics(traf_text,links)},
+ return {"scrapling":{"runtime_seconds":round(scrap_seconds,4),**metrics(scrap_text,links)},
+  "lxml_full_text":{"runtime_seconds":round(lxml_seconds,4),**metrics(lxml_text,links)},
+  "trafilatura":{"status":traf_status,"runtime_seconds":round(traf_seconds,4) if traf_seconds is not None else None,**metrics(traf_text,links)},
   "dom_link_count":len(links),"relevant_links":relevant[:40],
   "comparison_note":"Coverage proxies only, not precision/recall ground truth; manually review actual notice facts."}
 
 def discovery(url, html_bytes):
  parts=urllib.parse.urlsplit(url); origin=f"{parts.scheme}://{parts.netloc}"
+ root=lxml_html.fromstring(html_bytes,base_url=url)
+ feeds=[]
+ for node in root.xpath("//link[@href]"):
+  rel=" ".join(node.get("rel","").lower().split()); typ=(node.get("type") or "").lower()
+  if "alternate" in rel and ("rss" in typ or "atom" in typ): feeds.append(urllib.parse.urljoin(url,node.get("href")))
  time.sleep(DELAY); robots=request_bytes(origin+"/robots.txt")
  candidates=[]
  if robots["status"]=="ok":
@@ -147,6 +160,7 @@ def main():
   if item.get("discovery"):
    d=item["discovery"]; lines.append(f"- robots.txt: {d['robots']['status']} HTTP {d['robots']['http_status']}")
    for sm in d["sitemaps"]: lines.append(f"- Sitemap: {sm['url']} — {sm['status']} HTTP {sm['http_status']}, {sm['loc_count']} loc")
+  for feed in d.get("advertised_feeds",[]): lines.append(f"- Feed: {feed['url']} — {feed['status']} HTTP {feed['http_status']}")
    for feed in d["advertised_feeds"]: lines.append(f"- Feed: {feed['url']} — {feed['status']} HTTP {feed['http_status']}")
   if item.get("parsers"):
    for name in ("scrapling","lxml_full_text","trafilatura"):
