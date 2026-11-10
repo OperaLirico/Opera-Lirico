@@ -36,6 +36,6 @@ Keep the current method unless a repeatable test shows a clear improvement. Do n
 The policy registry is a coverage baseline only. P2 is not complete until each high-value source has an evidence-backed strategy assessment. Update the source policy entry with exact evidence URL, test date, chosen method and reason when that assessment is done.
 
 
-## Redirect safety in the discovery pilot
+## Redirect and endpoint robots safety
 
-The P2/P4 evaluation uses a same-host redirect handler. A cross-host redirect is not followed automatically: the destination host's robots.txt is checked first. If the destination robots policy is unavailable (except HTTP 404) or disallows the target path, the request stops and is recorded. A robots.txt file that itself redirects across hosts is treated as requiring manual review rather than followed blindly. This is conservative and may create a review item for legitimate CDN or canonical-host redirects; it must not be weakened by silently following redirects.
+The P2/P4 evaluation uses a same-host redirect handler. A cross-host redirect is not followed automatically: the destination host's robots.txt is checked first. Sitemap children, advertised RSS/Atom feeds and explicit public API roots are also checked against the applicable host policy before fetching. If the destination robots policy is unavailable (except HTTP 404) or disallows the target path, the request stops and is recorded. A robots.txt file that redirects across hosts is fetched only as a policy document; a further redirect chain fails closed. This is conservative and may create review items for legitimate CDN or canonical-host redirects; it must not be weakened by silently following redirects.
