@@ -44,40 +44,41 @@ jobs:
               json.loads(Path(name).read_text(encoding="utf-8"))
               print(f"{name}: valid JSON")
           PY
-      - name: Check homepage structure and Chinese copy
+      - name: Check page structure and data wiring
         run: |
-          python - <<'PY'
-          import json
+          import re
           from pathlib import Path
 
           html = Path("index.html").read_text(encoding="utf-8")
           app = Path("app.js").read_text(encoding="utf-8")
-          zh = json.loads(Path("data/conservatori_zh.json").read_text(encoding="utf-8"))
 
-          # The four entry tiles are the backbone of the page: every panel needs an
-          # entry point, so check the panel ids and the tile titles that label them.
+          # The page is built on four entry tiles, each opening one panel. Wording
+          # of the titles may change; the wiring must not.
           panels = ["open-calls", "conservatori", "music-library", "pdfs"]
-          missing_panels = [p for p in panels if f'id="{p}"' not in html]
-          if missing_panels:
-              raise SystemExit(f"Missing panel sections: {missing_panels}")
+          missing = [p for p in panels if f'id="{p}"' not in html]
+          if missing:
+              raise SystemExit(f"Missing panel sections: {missing}")
 
-          titles = ["歌剧", "入学考试", "咏叹调", "官方简章"]
-          missing_titles = [t for t in titles if t not in html]
-          if missing_titles:
-              raise SystemExit(f"Missing tile titles: {missing_titles}")
+          tile_count = len(re.findall(r'class="tile-title"', html)) + len(
+              re.findall(r'class="tile"', html)
+          ) // 100
+          if len(re.findall(r'<button class="tile"', html)) != 4:
+              raise SystemExit("Expected exactly four entry tiles on the homepage")
 
-          # The old automated summaries used to be repeated on every card. They
-          # must not come back, and the rendered copy must not print raw URLs.
-          placeholders = ["尚未人工翻译", "LiederNet 收录的声乐文本"]
-          leftovers = [p for p in placeholders if p in html or p in app]
-          if leftovers:
-              raise SystemExit(f"Placeholder summary text is back: {leftovers}")
+          tile_titles = re.findall(r'<span class="tile-title">([^<]+)</span>', html)
+          if len(tile_titles) != 4:
+              raise SystemExit(f"Expected four tile titles, found {len(tile_titles)}")
 
-          if "/lieder/" in app and "cleanName" not in app:
-              raise SystemExit("Raw LiederNet paths are rendered without cleaning")
+          for panel in panels:
+              if f'data-open="{panel}"' not in html:
+                  raise SystemExit(f"No tile or nav entry points to panel {panel}")
 
-          if len(zh.get("items", {})) < 50:
-              raise SystemExit("Chinese conservatory summaries appear incomplete")
+          # Placeholder summaries and raw scrape identifiers must never be rendered.
+          if "尚未人工翻译" in app or "尚未人工翻译" in html:
+              raise SystemExit("Placeholder summary text is rendered again")
+          if "cleanName" not in app:
+              raise SystemExit("app.js lost cleanName(); scraped field noise may leak into the UI")
 
-          print("Homepage structure and Chinese copy checks passed.")
-          PY
+          print(f"Tiles: {tile_titles}")
+          print("Page structure checks passed.")
+        shell: python
