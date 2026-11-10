@@ -238,3 +238,70 @@ footer a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(
 .newsletter-link{display:inline-flex;align-items:center;gap:10px;flex:0 0 auto;padding:11px 18px;border-radius:999px;background:var(--brand);color:#f4ecdb;text-decoration:none;font-size:13px}
 .newsletter-link:hover{background:var(--brand-2);color:#fff}
 @media(max-width:620px){.newsletter-panel{align-items:flex-start;flex-direction:column}.newsletter-link{width:100%;justify-content:center}}
+
+
+/* Mobile layout refinement: prevent the header and content grids from being squeezed. */
+@media (max-width: 620px) {
+  .topbar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 6px;
+    padding-top: 8px;
+  }
+  .brand { min-width: 0; }
+  .brand-text { font-size: 14px; }
+  .brand-text small { font-size: 9px; letter-spacing: .12em; }
+  .nav {
+    order: 3;
+    display: flex;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 4px;
+    padding: 0 0 9px;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 8px 11px;
+    font-size: 13px;
+  }
+  .install-button { flex: 0 0 auto; }
+  .hero { padding: 34px 18px 24px; }
+  .hero h1 {
+    max-width: none;
+    font-size: clamp(28px, 8vw, 38px);
+    line-height: 1.28;
+    letter-spacing: 0;
+    overflow-wrap: anywhere;
+  }
+  .lede { font-size: 15px; line-height: 1.75; }
+  .hero-status { flex-wrap: wrap; align-items: flex-start; }
+  .tile { padding: 19px 18px 17px; }
+  .tile-desc { min-height: 0; font-size: 14px; line-height: 1.7; }
+  .opportunity-list,
+  .pdf-list { grid-template-columns: minmax(0, 1fr); }
+  .opportunity-card,
+  .pdf-card,
+  .music-result { min-width: 0; }
+  .section-head p,
+  .newsletter-copy p { font-size: 14px; line-height: 1.75; }
+  .cons-zh p,
+  .cons-line { overflow-wrap: anywhere; }
+  .doc-link { white-space: normal; overflow-wrap: anywhere; }
+  .newsletter-panel { padding: 22px 18px; }
+}
+
+@media (max-width: 380px) {
+  .shell { padding-left: 15px; padding-right: 15px; }
+  .hero { padding-left: 15px; padding-right: 15px; }
+  .brand-text small { letter-spacing: .08em; }
+  .tile-title { font-size: 20px; }
+  .count-pill { white-space: normal; }
+}
