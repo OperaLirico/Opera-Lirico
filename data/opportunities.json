@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T16:56:21+01:00",
+  "updated_at": "2026-11-10T18:20:00+01:00",
   "items": [
     {
       "id": "aslico-2027-78th-young-singers",
@@ -277,6 +277,59 @@
         }
       ],
       "notes": "官方公告把男低音和男中音放在同一份简章中；此处按不同声部拆分，以准确显示试唱日期。"
+    },
+    {
+      "id": "teatro-massimo-2-contralti-2026",
+      "title": "Selezione pubblica per 2 Contralti – Teatro Massimo 2026",
+      "opportunity_type": "choir",
+      "voice_types": [
+        "contralto"
+      ],
+      "location": "巴勒莫 · Teatro Massimo",
+      "source_name": "Fondazione Teatro Massimo di Palermo",
+      "source_url": "https://www.teatromassimo.it/audizioni/",
+      "announcement_url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "application_deadline_at": "2026-12-04T12:00:00+01:00",
+      "age_min": 18,
+      "eligibility_summary": "年满18岁；意大利或欧盟公民，或持有允许在意大利从事全职无固定期限工作的有效居留许可；须具备意大利语能力、高中学历、护照及 PEC 电子邮箱，并符合公告列出的其他法定资格。申请需通过官网在线表格提交。",
+      "checked_at": "2026-11-10T18:20:00+01:00",
+      "last_verified_at": "2026-11-10T18:20:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/",
+          "excerpt": "4 Novembre 2026. La Fondazione Teatro Massimo di Palermo indice una procedura selettiva pubblica ... per l’assunzione a tempo pieno e indeterminato di n. 2 Artiste del coro nel ruolo di Contralto.",
+          "checked_at": "2026-11-10T18:20:00+01:00"
+        },
+        {
+          "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/",
+          "excerpt": "Le domande ... entro le ore 12:00 del giorno venerdì 4 dicembre 2026. La pagina indica le prove d’esame dal 19 dicembre 2026 alle ore 10:00.",
+          "checked_at": "2026-11-10T18:20:00+01:00"
+        },
+        {
+          "url": "https://www.teatromassimo.it/wp-content/uploads/2026/11/BandoSelezione_2Contralti_TM_2026.pdf",
+          "excerpt": "Art. 1: aver compiuto 18 anni; cittadinanza italiana o UE, oppure permesso di soggiorno che consenta lavoro dipendente a tempo pieno e indeterminato in Italia; adeguata conoscenza della lingua italiana; diploma di scuola secondaria superiore; indirizzo PEC.",
+          "checked_at": "2026-11-10T18:20:00+01:00",
+          "pdf_page": 1
+        },
+        {
+          "url": "https://www.teatromassimo.it/wp-content/uploads/2026/11/BandoSelezione_2Contralti_TM_2026.pdf",
+          "excerpt": "Art. 2: le domande devono pervenire entro le ore 12:00 del 4 dicembre 2026; la domanda si presenta tramite il form online e deve includere il modulo firmato, documento d’identità e curriculum.",
+          "checked_at": "2026-11-10T18:20:00+01:00",
+          "pdf_page": 2
+        },
+        {
+          "url": "https://www.teatromassimo.it/wp-content/uploads/2026/11/BandoSelezione_2Contralti_TM_2026.pdf",
+          "excerpt": "Art. 6: le prove d’esame si terranno con inizio il giorno domenica 20 dicembre 2026 alle ore 10:00; il programma prevede vocalizzi, lettura a prima vista e tre arie d’opera di autori diversi, almeno una in italiano.",
+          "checked_at": "2026-11-10T18:20:00+01:00",
+          "pdf_page": 5
+        }
+      ],
+      "notes": "全职、无固定期限的合唱团岗位，招聘2名Contralto。考试日期存在官方来源冲突：招聘网页写2026年12月19日10:00，官方简章PDF第6页（PDF第5页索引）写2026年12月20日10:00。为避免误导，暂不填写结构化考试日期；出行前应向剧院确认。官网简章列出第一轮需背谱演唱三首不同作曲家的歌剧咏叹调（至少一首意大利语），另有视唱练耳/声乐练习及合唱曲目。公告未明确列出报名费，本记录不将其推定为免费。",
+      "application_url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/",
+      "official_pdf_url": "https://www.teatromassimo.it/wp-content/uploads/2026/11/BandoSelezione_2Contralti_TM_2026.pdf"
     }
   ]
 }
