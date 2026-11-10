@@ -19,19 +19,18 @@
   "summary": {
     "audited_unique_sources": 44,
     "classifications": {
-      "auto_approved_official": 23,
-      "needs_review": 5,
+      "auto_approved_official": 24,
+      "needs_review": 4,
       "auto_approved_third_party": 4,
       "irrelevant_candidate": 12
     },
     "exact_duplicate_extra_records": 15,
     "manual_review_priorities": [
-      "source-9",
       "source-17",
       "source-101",
       "source-121"
     ],
-    "note": "Official means first-party for the publisher's own institution/event, not a claim of government endorsement or external accreditation. For first-party institutions with no clearly evidenced voice-specific page in this pass, publisher identity may be official while source-level relevance remains needs_review. Follow-up verification on 2026-11-10 upgraded Maggio Musicale Fiorentino, Teatro Lirico Sperimentale di Spoleto, and Fondazione Renata Tebaldi using direct first-party vocal-program evidence; Winterwerft was classified out of scope for this classical-vocal registry."
+    "note": "Official means first-party for the publisher's own institution/event, not a claim of government endorsement or external accreditation. For first-party institutions with no clearly evidenced voice-specific page in this pass, publisher identity may be official while source-level relevance remains needs_review. Follow-up verification on 2026-11-10 upgraded Maggio Musicale Fiorentino, Teatro Lirico Sperimentale di Spoleto, and Fondazione Renata Tebaldi using direct first-party vocal-program evidence; Winterwerft was classified out of scope for this classical-vocal registry. AsLiCo has also been confirmed as an official and relevant vocal source using its own association profile and current competition information."
   },
   "items": [
     {
@@ -195,12 +194,12 @@
       "fetch_status": "ok",
       "http_status": 200,
       "last_checked_at": "2026-11-10T15:43:13+01:00",
-      "auto_review_status": "needs_review",
-      "publisher_status": "unverified",
-      "relevance_status": "uncertain",
-      "confidence": "medium",
-      "evidence_url": null,
-      "evidence_note": "AsLiCo 品牌及 edizione 2027 页面需进一步核验具体项目内容、组织方与报名入口；当前抓取标题不足以确认页面持续声乐招募价值。",
+      "auto_review_status": "auto_approved_official",
+      "publisher_status": "official",
+      "relevance_status": "relevant",
+      "confidence": "high",
+      "evidence_url": "https://aslico.org/",
+      "evidence_note": "AsLiCo 官方网站说明协会自 1949 年以来每年选拔青年歌剧歌手，提供高水平培训及在意大利剧院 debut 的机会；官方 2027/第 78 届竞赛信息由协会网站及其官方新闻更新，包含歌剧角色比赛和 emerging voices 两个声乐方向。可作为官方声乐比赛/青年歌手来源。",
       "duplicate_candidate_in_sources_extra": false,
       "destructive_action_taken": false,
       "audit_date": "2026-11-10"
@@ -905,10 +904,18 @@
         "evidence": [
           "https://webzine.theatronduepuntozero.it/winterwerft-open-call-per-artisti-sul-tema-stories-of-power/"
         ]
+      },
+      {
+        "source_id": "source-9",
+        "result": "auto_approved_official",
+        "evidence": [
+          "https://aslico.org/",
+          "https://aslico.org/aslico/",
+          "https://aslico.org/edizione-in-corso/"
+        ]
       }
     ],
     "unresolved": [
-      "source-9 AsLiCo",
       "source-17 Teatro Lirico di Cagliari",
       "source-101 Musical.it",
       "source-121 Provinispettacolo"
