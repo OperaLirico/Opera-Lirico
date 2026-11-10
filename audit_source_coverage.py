@@ -16,8 +16,6 @@ from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
 from zoneinfo import ZoneInfo
 
-from scrapling.fetchers import Fetcher
-
 import scrape_sources as core
 
 ROOT = Path(__file__).resolve().parent
@@ -147,28 +145,35 @@ def scan_one(source: dict, previous: dict | None, checked_at: str) -> dict:
         "content_changed": False,
         "anomalies": [],
         "error": None,
+        "access_policy": None,
     }
     try:
-        response = Fetcher.get(source["url"], timeout=25, retries=0)
-        http_status = getattr(response, "status", None)
-        result["http_status"] = http_status
-        title = core.clean_line(response.css("title::text").get() or "")
-        text = response.get_all_text(separator="\n") or ""
-        normalized = "\n".join(core.clean_line(line) for line in text.splitlines() if core.clean_line(line))
-        combined = f"{title}\n{normalized}".strip()
-        result["title"] = title
-        result["text_characters"] = len(normalized)
-        result["normalized_text_sha256"] = hashlib.sha256(combined.encode("utf-8")).hexdigest() if combined else None
-        result["relevant_line_count"] = len(core.rank_relevant_lines(normalized.splitlines()))
-        result["vocal_signal"] = bool(VOCAL_RE.search(combined))
-        if http_status in (403, 429):
-            result["status"] = "restricted"
-        elif http_status is not None and http_status >= 400:
-            result["status"] = "http_error"
-        elif not combined:
-            result["status"] = "extraction_error"
+        response, access = core.fetch_public_page(source["url"], timeout=25)
+        result["access_policy"] = access
+        if response is None:
+            result["status"] = access.get("status", "robots_policy_unavailable")
+            result["http_status"] = access.get("http_status")
+            result["error"] = access.get("reason") or access.get("robots_url") or result["status"]
         else:
-            result["status"] = "ok"
+            http_status = getattr(response, "status", None)
+            result["http_status"] = http_status
+            title = core.clean_line(response.css("title::text").get() or "")
+            text = response.get_all_text(separator="\\n") or ""
+            normalized = "\\n".join(core.clean_line(line) for line in text.splitlines() if core.clean_line(line))
+            combined = f"{title}\\n{normalized}".strip()
+            result["title"] = title
+            result["text_characters"] = len(normalized)
+            result["normalized_text_sha256"] = hashlib.sha256(combined.encode("utf-8")).hexdigest() if combined else None
+            result["relevant_line_count"] = len(core.rank_relevant_lines(normalized.splitlines()))
+            result["vocal_signal"] = bool(VOCAL_RE.search(combined))
+            if http_status in (403, 429):
+                result["status"] = "restricted"
+            elif http_status is not None and http_status >= 400:
+                result["status"] = "http_error"
+            elif not combined:
+                result["status"] = "extraction_error"
+            else:
+                result["status"] = "ok"
     except Exception as exc:
         result["error"] = f"{type(exc).__name__}: {str(exc)[:240]}"
 
@@ -200,6 +205,8 @@ def render_report(state: dict) -> str:
     remaining = max(total - checked, 0)
     failed = sum(item.get("status") != "ok" for item in results)
     restricted = sum(item.get("status") == "restricted" for item in results)
+    robots_blocked = sum(item.get("status") == "robots_disallowed" for item in results)
+    robots_unavailable = sum(item.get("status") == "robots_policy_unavailable" for item in results)
     changed = sum(bool(item.get("content_changed")) for item in results)
     anomalies = [item for item in results if item.get("anomalies")]
     baseline_available = bool(state.get("previous_cycle_complete"))
@@ -217,7 +224,7 @@ def render_report(state: dict) -> str:
         f"- Last updated: {state.get('updated_at')}",
         f"- Status: **{state.get('scan_status')}**",
         f"- Coverage: **{checked}/{total}** checked; {remaining} remaining",
-        f"- Failed/restricted/extraction errors: {failed} (restricted: {restricted})",
+        f"- Failed/restricted/extraction errors: {failed} (HTTP restricted: {restricted}; robots disallowed: {robots_blocked}; robots unavailable: {robots_unavailable})",
         (f"- Changed normalized text hashes: {changed}" if baseline_available else "- Change comparison: first baseline; no previous complete weekly scan exists yet"),
         f"- Sources with anomalies: {len(anomalies)}",
         f"- Registered sources: {len(registered)}; pending candidates: {len(candidates)}",
