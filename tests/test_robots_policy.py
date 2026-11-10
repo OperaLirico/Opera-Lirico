@@ -1,6 +1,6 @@
 import unittest
 from types import SimpleNamespace
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 import robots_policy
 
@@ -27,7 +27,7 @@ Allow: /private/open$
 
     def test_disallowed_path_is_not_requested(self):
         response = SimpleNamespace(status=200, headers={})
-        fetcher = unittest.mock.Mock(return_value=response)
+        fetcher = Mock(return_value=response)
         with patch.object(robots_policy, "check_url", return_value={
             "allowed": False, "status": "robots_disallowed"
         }):
