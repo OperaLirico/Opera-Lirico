@@ -13,6 +13,8 @@ on:
       - "service-worker.js"
       - "data/**"
       - "scrape_sources.py"
+      - "robots_policy.py"
+      - "scrape_conservatori.py"
       - "grow_sources.py"
       - "run_conservatori.py"
       - "mirror_pdfs.py"
