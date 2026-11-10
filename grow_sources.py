@@ -70,6 +70,13 @@ VOICE_RE = re.compile(
 OPERA_CONTEXT_RE = re.compile(r"opera|liric", re.IGNORECASE)
 
 
+def carry_review_metadata(fresh: dict, previous: dict) -> dict:
+    """Do not lose human-review labels when an existing source is refreshed."""
+    fresh["review_status"] = previous.get("review_status", "legacy_unreviewed")
+    fresh["publisher_status"] = previous.get("publisher_status", "unverified")
+    return fresh
+
+
 def candidate_rejection_reason(probe: dict, target: str) -> str | None:
     """Coarse relevance screen only; passing never means a source is approved."""
     if probe.get("status") != "ok":
@@ -235,8 +242,7 @@ def main(discover: bool = False) -> None:
         fresh.pop("_response", None)
         if fresh["status"] == "ok":
             fresh["discovered_at"] = item.get("discovered_at", fresh["checked_at"])
-            fresh["review_status"] = item.get("review_status", "legacy_unreviewed")
-            fresh["publisher_status"] = item.get("publisher_status", "unverified")
+            fresh = carry_review_metadata(fresh, item)
             refreshed.append(fresh)
             print(f"[extra] ok {fresh['http_status']} {fresh['source'][:40]}", flush=True)
         else:
