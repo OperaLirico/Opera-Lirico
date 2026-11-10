@@ -70,3 +70,14 @@ byte-integrity manifest under .github/audits/. These files are hidden from the
 published Pages site. Opportunity records are not silently rewritten by the
 report. PDF SHA-256 values establish byte consistency only; publisher
 signatures remain unverified unless cryptographic validation is actually done.
+
+
+## Narrow push triggers
+
+The daily scrape-and-publish workflow is intentionally limited to site assets,
+data files and the specific production collection/audit scripts it executes.
+It does not run a full scrape for every root-level Python edit, test-only
+change, documentation edit or source-coverage-only change. The weekly coverage
+workflow has its own trigger for changes to its scanner/workflow and runs after
+a successful push-triggered daily workflow, so its full-source scan does not
+compete with the daily collector.
