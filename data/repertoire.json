@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T02:01:08+01:00",
+ "generated_at": "2026-11-10T06:14:59+01:00",
  "catalogue_source": "LiederNet Archive originals + curated starter works",
  "items": [
   {
@@ -10866,10 +10866,375 @@
     }
    ],
    "autoImported": true
+  },
+  {
+   "title": "Hast du nicht Liebe zugemessen",
+   "aliases": [],
+   "composer": "Carl Christian Agthe",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Hast du nicht Liebe zugemessen\nDem Leben jeder Kreatur?\nWarum bin ich allein vergessen,\nAuch meine Mutter du! du Natur?\n\nWo lebte wohl in Forst und Hürde,\nUnd wo in Luft und Meer, ein Tier,\nDas nimmermehr geliebet würde? --\nGeliebt wird alles außer mir!\n\nWenn gleich [in Hain und Wiesenmatten]1\nSich Baum und Staude, Moos und Kraut\nDurch Lieb' und Gegenliebe gatten;\nVermählt sich mir doch keine Braut.\n\nMir wächst vom süßesten der Triebe\nNie Honigfrucht zur Lust heran.\nDenn ach! mir mangelt Gegenliebe,\n[Die Eine nur]2 gewähren kann.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=3310",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Gottfried August Bürger",
+   "settings": [
+    {
+     "composer": "Carl Christian Agthe",
+     "title": "/lieder/get_settings.html?ComposerId=3140",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Ludwig van Beethoven",
+     "title": "/lieder/get_settings.html?ComposerId=3351",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Wilhelm Ferdinand Halter",
+     "title": "/lieder/get_settings.html?ComposerId=7678",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Marienblume",
+   "aliases": [],
+   "composer": "Ludwig Rochlitzer",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Wer singt ein Lied zu deinem Preis,\nDu Ringelröschen roth und weiß\nMit goldnem Herzen?\nDoch weil dein Herz so rein wie Gold,\nBin ich dir hold,\nDu Blume der Freuden und Schmerzen\n\nMarienblume nennt man dich,\nAls lieb Maßliebchen kennt man dich\nUnd Tausendschönchen.\nWie lächelst du so wonnesam\nIn holder Scham\nUnd neigst dein silbernes Krönchen!\n\nDu ärmstes Kräutlein auf der Au,\nDu bist geweiht der heil'gen Frau:\nWeißt du, weswegen?\nDu bist wie sie so rein und mild,\nDer Demuth Bild\nUnd reich an heimlichem Segen.\n\nVon Kaiserkron' und Rittersporn\nVon Eisenhut und Sauerdorn\nHältst du dich ferne;\nDoch schimmern durch den stillen Hain\nAn Weg und Rain\nMaßliebchens freundliche Sterne.\n\nDie Ros' ist Manchem lieb und werth,\nAuch Tulp' und Nelke hochgeehrt,\nAls Frau'n von Stande:\nDoch du, im schlicht bescheidnen Kleid\nDer Dürftigkeit,\nDu bist ein Mädchen vom Lande.\n\nSobald die Sonne geht zur Ruh',\nMachst du die klaren Aeuglein zu,\nUm früh zu wachen:\nDie Hirtin und die Schnittermaid\nSind so gescheidt,\nMaßliebchen es nachzumachen.\n\nDen Schwestern thut der Winter weh:\nDu grünst im Eis, du blühst im Schnee,\nGleichwie im Maien:\nIm Stübchen klagt das Stadtfräulein\nUnd mummt sich ein;\nDas Dorfkind jubelt im Freien. --\n\nViel wüßt' ich noch zu deinem Preis,\nDu kleine Blume roth und weiß,\nDoch muß ich schweigen.\nEin artig Wort zu viel gesagt,\nVerletzt die Magd:\nSie ist so schüchtern und eigen.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=35804",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Friedrich Wilhelm Weber",
+   "settings": [
+    {
+     "composer": "Ludwig Rochlitzer",
+     "title": "/lieder/get_settings.html?ComposerId=10943",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Jetzt ist die Zeit, die um die grünen...",
+   "aliases": [],
+   "composer": "Alexander Zemlinsky",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Jetzt ist die Zeit, die um die grünen Ränder\nDer Teiche bunte Blumen sprießen läßt,\nDie blassen jungen Mädchen, schön wie Monde,\nGehn unter Blüten in den Mangohainen.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=18542",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation by Hans Bethge",
+   "settings": [
+    {
+     "composer": "Alexander Zemlinsky",
+     "title": "/lieder/get_settings.html?ComposerId=6269",
+     "instrumentation": "soprano and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Tanzt dem schönen May entgegen",
+   "aliases": [],
+   "composer": "Oskar Bolck",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Tanzt dem schönen May entgegen,\n  Der des Waldes Haar verneut,\nRoth und weiße Farbenbögen\n  Auf des Fruchtbaums Wipfel streut,\nMit dem goldverbrämten Schleier,\n  Wartende Gefilde deckt!\nSingt ihm Hymnen in die Leyer,\n  Der den Schlaf der Freude weckt!\n\nTanzt daher, am Arm der Schöne,\n  Der ein treuer Busen fröhnt,\nMenget Lieder ins Getöne,\n  Das die Morgenglocke tönt,\nIns Geschwirr der Espenblätter,\n  Und erweckt den Wiederklang!\nEr, der Freund der Liebesgötter,\n  Heischet Opfer und Gesang.\n\nBringet ihm in grünen Schatten,\n  Eure Frühlingsopfer dar,\nJunge neuvermählte Gatten,\n  Auf der Liebe Festaltar:\nKüße, wenn des Hahns Drommete\n  Das umbüschte Dörfchen weckt,\nKüße, wenn die Abendröthe\n  Jeden Baum mit Purpur deckt.\n\nFlieht, ihr schönen Städterinnen,\n  Eurer Städte goldne Kluft,\nEurer Kerker hohe Zinnen,\n  Trinket frische Mayenluft!\nIrrt, mit eurem Sonnenhütgen,\n  Auf die Frühlingsflur hinaus!\nSingt ein frölich Mayenliedgen,\n  Pflücket einen Busenstraus!\n\nSchmückt mit Kirschenblüthenzweigen\n  Euren grünen Sonnenhut,\nSchürzt das Röckchen, tanzet Reigen,\n  Wie die Schäferjugend thut!\nGaukelt in der Kirschenblüthe,\n  Zephyrn, eure Flügel matt,\nHaucht auf ihre Sonnenhüte\n  Manches weiße Blüthenblatt.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=72259",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Ludwig Heinrich Christoph Hölty",
+   "settings": [
+    {
+     "composer": "Oskar Bolck",
+     "title": "/lieder/get_settings.html?ComposerId=11287",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Reinhold Finsterbusch",
+     "title": "/lieder/get_settings.html?ComposerId=27167",
+     "instrumentation": "mixed chorus"
+    },
+    {
+     "composer": "Johann Christian Rötsch",
+     "title": "/lieder/get_settings.html?ComposerId=21727",
+     "instrumentation": "voice and guitar"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Mein Herz ist wie die Eiche",
+   "aliases": [],
+   "composer": "A. L. Boh",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Mein Herz ist wie die Eiche,\nDie nicht im Sturme wankt,\nDie nimmerwelk der Epheu\nMit treuem Arm umrankt.\n\nDer Mutter fromme Liebe,\nIhr treuer Epheu ist;\nMein Lieb, im grünen Wipfel\nIhr weißes Täubchen bist!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=82326",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Oscar von Redwitz-Schmölz",
+   "settings": [
+    {
+     "composer": "A. L. Boh",
+     "title": "/lieder/get_settings.html?ComposerId=23035",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Lilla crudele ad onta d'amore",
+   "aliases": [],
+   "composer": "Barbara Strozzi",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "it",
+   "text": "Lascia sì la benda e l'ali,\ncieco fanciul di Venere!\nDell'arco e degli strali\nfa' pur, fanne pur cenere,\nspegni, spegni la face\nmentre accender, Amore,\nnon puoi di Lilla il core:\ntroppo l'esser crudel, troppo le piace!\n\nTaci si, bamboccio dio!\nNon trattar più d'uccidere,\nche dei tuoi strali anch'io\nvo' pur burlarmi e ridere,\nfrena, frena l'ardire.\nTu ti vanti, insolente,\ndi stral onnipotente\ne una femmina vil, non puoi ferire!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=120914",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "",
+   "settings": [
+    {
+     "composer": "Barbara Strozzi",
+     "title": "/lieder/get_settings.html?ComposerId=15040",
+     "instrumentation": "soprano, continuo"
+    },
+    {
+     "composer": "French (Français)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Ce cavalier qui court vers la montagne",
+   "aliases": [],
+   "composer": "François Emmanuel Joseph Bazin",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Ce cavalier qui court vers la montagne,\n   Inquiet, pâle au moindre bruit,\nC'est Boabdil, roi des Mores d'Espagne,\n   Qui pouvait mourir, et qui fuit!\n\nAux Espagnols Grenade s'est rendue;\n   La croix remplace le croissant,\nEt Boabdil pour sa ville perdue\n   N'a que des pleurs et pas de sang...\n\nSur un rocher nommé Soupir-du-More,\n   Avant d'entrer dans la Sierra,\nLe fugitif s'assit, pour voir encore\n   De loin Grenade et l'Alhambra:\n\n  \"Hier, dit-il, j'étais calife;\n  Comme un dieu vivant adoré,\n  Je passais du Généralife\n  A l'Alhambra peint et doré!\n  J'avais, loin des regards profanes,\n  Des bassins aux flots diaphanes\n  Où se baignaient trois cents sultanes;\n  Mon nom partout jetait l'effroi!\n  Hélas! ma puissance est détruite;\n  Ma vaillante armée est en fuite,\n  Et je m'en vais sans autre suite\n  Que mon ombre derrière moi!\n\n  \"Fondez, mes yeux, fondez en larmes!\n  Soupirs profonds venus du coeur,\n  Soulevez l'acier de mes armes:\n  Le Dieu des chrétiens est vainqueur!\n  Je pars, adieu, beau ciel d'Espagne,\n  Darro, Jénil, verte campagne,\n  Neige rose de la montagne;\n  Adieu, Grenade, mes amours!\n  Riant Alhambra, tours vermeilles,\n  Frais jardins remplis de merveilles,\n  Dans mes rêves et dans mes veilles,\n  Absent, je vous verrai toujours!\"",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=52765",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Pierre-Jules-Théophile Gautier",
+   "settings": [
+    {
+     "composer": "François Emmanuel Joseph Bazin",
+     "title": "/lieder/get_settings.html?ComposerId=16642",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Martial Caillebotte",
+     "title": "/lieder/get_settings.html?ComposerId=26363",
+     "instrumentation": "high voice and piano"
+    },
+    {
+     "composer": "Georges Pantillon",
+     "title": "/lieder/get_settings.html?ComposerId=26325",
+     "instrumentation": "high voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Forget‑me‑not",
+   "aliases": [],
+   "composer": "Rebecca Clarke",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Forget-me-nots in an arsenal --\nwhat are they doing here?\nShould peace secretly dwell\nbehind the building at the brook?\n\n[Loudly ring]1 the hammers in a hard rhythm:\nFall to, fall to,\nthe work must be completed!\nAnd the iron glows, and the water hisses;\nand when the smoke stirs up the flame,\nthe black hands [of the workers] shine.\n\nBut sometimes a sooty face gazes\nquietly toward the heavenly blue, blooming bouquet.\nThen it seems as if a voice is singing behind the building:\nforget me not!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=109688",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Sharon Krebs",
+   "settings": [
+    {
+     "composer": "Rebecca Clarke",
+     "title": "/lieder/get_settings.html?ComposerId=3731",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Hans Hermann",
+     "title": "/lieder/get_settings.html?ComposerId=4397",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Paul von Klenau",
+     "title": "/lieder/get_settings.html?ComposerId=4659",
+     "instrumentation": "medium voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "A Lauretta la sua cioccolata",
+   "aliases": [],
+   "composer": "Baldassare Galuppi",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "it",
+   "text": "A Lauretta la sua cioccolata,\na madama un tazzin di ristoro,\nil risolito a quegli altri, e i caffè.\nPoi farai una torta sfogliata.\n(Zitto... ascolta) Farai un pasticcio.\n(Zitto, dico. Non dir non ve n'è.\nGià lo so tutto quel che vuoi dire\nnon v'è roba, non v'è più denaro.\nNon importa, sta cheto, l'ho caro;\ntai pensieri non toccan a te.)",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=125178",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Carlo Goldoni",
+   "settings": [
+    {
+     "composer": "Baldassare Galuppi",
+     "title": "/lieder/get_settings.html?ComposerId=17671",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Cançó del bosc",
+   "aliases": [],
+   "composer": "Wenzel Theodor Bradsky",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "ca",
+   "text": "Camino pel bosc de bon humor,\nno tinc por dels bandolers;\nl’únic bé que tinc és un cor estimat\ni això no ho cerquen els malvats.\n\nQuè fa brogit i fressa entre els matolls?\nUn assassí que m’amenaça?\nLa meva estimada arriba saltant, upa!\ni m’abraça fins quasi ofegar-me.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=108441",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Salvador Pila",
+   "settings": [
+    {
+     "composer": "Wenzel Theodor Bradsky",
+     "title": "/lieder/get_settings.html?ComposerId=3531",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "(Karl) Friedrich Curschmann",
+     "title": "/lieder/get_settings.html?ComposerId=3798",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Hans Kretzschmer",
+     "title": "/lieder/get_settings.html?ComposerId=10352",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Ich drücke dein liebe Hand...",
+   "aliases": [],
+   "composer": "Franz Lehár",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Du siehst die leichten Schwalben wohl,\nden grauen Turm umkreisen?\nS' weiß keine, wie es werden soll,\ndas wird die Zukunft weisen.\n\nEin leichter Windhauch zieht durch's Land,\nund mahnt auch mich ans Gehen,\nich drücke deine liebe Hand,\nleb' wohl auf Wiedersehn!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=35266",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Felix Falzari",
+   "settings": [
+    {
+     "composer": "Franz Lehár",
+     "title": "/lieder/get_settings.html?ComposerId=4809",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Immortality",
+   "aliases": [],
+   "composer": "Erich Wolfgang Korngold",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Your noble, white hands\nLay my soul to rest;\nWhen they bless the crown of my head,\nI close my eyes\nAnd only say quietly: You!\n\nAnd worlds sink into nothing,\nThe seas surge dully and distantly;\nYour noble, white hands\nAre my immortality.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=356692",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Sharon Krebs",
+   "settings": [
+    {
+     "composer": "Erich Wolfgang Korngold",
+     "title": "/lieder/get_settings.html?ComposerId=4699",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Erich Wolfgang Korngold",
+     "title": "/lieder/get_settings.html?ComposerId=4699",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
   }
  ],
  "scan_cursor": 144,
- "lieder_position": 1392,
+ "lieder_position": 1440,
  "aria_opera": 0,
  "aria_scene": 8
 }
