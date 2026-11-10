@@ -27,9 +27,17 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
         self.assertEqual(len(inventory), 44)
         self.assertEqual(counts.get("auto_approved_official"), 26)
         self.assertEqual(counts.get("auto_approved_third_party"), 4)
-        self.assertEqual(counts.get("needs_review"), 2)
-        self.assertEqual(counts.get("irrelevant_candidate"), 12)
+        self.assertEqual(counts.get("needs_review"), 1)
+        self.assertEqual(counts.get("irrelevant_candidate"), 13)
         self.assertNotIn("legacy_unreviewed", counts)
+
+    def test_source_audit_summary_matches_item_classifications(self):
+        audit = json.loads((ROOT / "reports" / "source-audit-baseline-2026-11-10.json").read_text(encoding="utf-8"))
+        actual = {}
+        for item in audit["items"]:
+            label = item["auto_review_status"]
+            actual[label] = actual.get(label, 0) + 1
+        self.assertEqual(audit["summary"]["classifications"], actual)
 
     def test_candidate_queue_stays_separate_and_pending(self):
         candidates_path = ROOT / "data" / "source_candidates.json"
