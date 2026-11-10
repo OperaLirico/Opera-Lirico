@@ -251,6 +251,9 @@ def render_report(state: dict) -> str:
             lines.append(f"### {item.get('name')} ({item.get('source_id')})")
             lines.append(f"- URL: {item.get('url')}")
             lines.append(f"- Status: {item.get('status')} / HTTP {item.get('http_status')}")
+            access = item.get("access_policy") or {}
+            if access:
+                lines.append(f"- Robots policy: {access.get('status')} / {access.get('robots_url', 'unknown')}; redirects={len(access.get('redirect_chain', []))}")
             lines.append(f"- Last success: {item.get('last_success_at') or 'not yet successful'}")
             lines.append(f"- Anomalies: {', '.join(item.get('anomalies') or []) or 'none'}")
             if item.get("error"):
