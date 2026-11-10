@@ -332,8 +332,8 @@ function publishedOpportunity(record){
   if(!deadline||!Number.isFinite(Date.parse(deadline))||Date.parse(deadline)<Date.now())return null;
   const categories={opera_role:'歌剧角色招募',choir:'合唱团招募',vocal_competition:'国际声乐比赛',young_artist:'青年艺术家项目',conservatory_admission:'音乐学院招生',other_vocal:'声乐机会'};
   const voices=(record.voice_types||[]).map(v=>({soprano:'女高音',mezzo_soprano:'女中音',contralto:'女低音',countertenor:'假声男高音',tenor:'男高音',baritone:'男中音',bass:'男低音',all_voices:'不限声部',unspecified:'声部未注明'}[v]||v));
-  const details=[record.eligibility_summary,voices.length?`声部：${voices.join('、')}`: '',record.fee_eur!=null?(record.fee_eur===0?'报名费：免费':`报名费：€${record.fee_eur}`):'',record.audition_start_at?`试唱/比赛：${formatDate(record.audition_start_at)}${record.audition_end_at&&record.audition_end_at.slice(0,10)!==record.audition_start_at.slice(0,10)?' 至 '+formatDate(record.audition_end_at):''}`: ''].filter(Boolean);
-  return {title:record.title,category:categories[record.opportunity_type]||'声乐机会',place:record.location||'地点以公告为准',deadline,summary:details.join('；')||'详情请以主办方公告为准。',url:record.announcement_url,applicationUrl:record.application_url,source:record.source_name};
+  const details=[record.eligibility_summary,voices.length?`声部：${voices.join('、')}`: '',record.fee_eur!=null?(record.fee_eur===0?'报名费：免费':`报名费：€${record.fee_eur}`):'',record.audition_start_at?`试唱/比赛：${formatDate(record.audition_start_at)}${record.audition_end_at&&record.audition_end_at.slice(0,10)!==record.audition_start_at.slice(0,10)?' 至 '+formatDate(record.audition_end_at):''}`: '',record.notes?`说明：${record.notes}`: ''].filter(Boolean);
+  return {title:record.title,category:categories[record.opportunity_type]||'声乐机会',place:record.location||'地点以公告为准',deadline,summary:details.join('；')||'详情请以主办方公告为准。',url:record.announcement_url,applicationUrl:record.application_url,officialPdfUrl:record.official_pdf_url,source:record.source_name};
 }
 function renderCalls(){
   const now=Date.now();
