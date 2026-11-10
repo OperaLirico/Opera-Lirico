@@ -152,7 +152,7 @@ def fetch_page(url: str) -> tuple[int, str, list[str], object, dict]:
         return 0, "", [], None, access
     status = getattr(response, "status", 0) or 0
     title = clean_line(response.css("title::text").get() or "")
-    text = response.get_all_text(separator="\\n") or ""
+    text = response.get_all_text(separator="\n") or ""
     lines = [clean_line(line) for line in text.splitlines()]
     return status, title, [line for line in lines if line], response, access
 
