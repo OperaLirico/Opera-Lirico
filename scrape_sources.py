@@ -12,6 +12,8 @@ from zoneinfo import ZoneInfo
 
 from scrapling.fetchers import Fetcher
 
+from robots_policy import fetch_page_with_robots
+
 
 SOURCES = [
     (1, "Teatro alla Scala", "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html"),
@@ -61,6 +63,13 @@ def clean_line(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def fetch_public_page(url: str, timeout: int = 30):
+    """Fetch a public page only after robots checks for every redirect hop."""
+    return fetch_page_with_robots(
+        url, Fetcher.get, timeout=timeout, retries=0, delay=1.2
+    )
+
+
 def rank_relevant_lines(lines: list[str]) -> list[str]:
     ranked: list[tuple[int, int, str]] = []
     for index, line in enumerate(lines):
@@ -94,6 +103,7 @@ def preserve_last_good(previous: dict | None, current: dict, attempted_at: str) 
         current["last_attempt_status"] = "ok"
         current["last_attempt_http_status"] = current.get("http_status")
         current["last_attempt_error"] = None
+        current["last_attempt_access_policy"] = current.get("access_policy")
         current["consecutive_failures"] = 0
         current["stale"] = False
         return current
@@ -108,6 +118,7 @@ def preserve_last_good(previous: dict | None, current: dict, attempted_at: str) 
             "last_attempt_status": current.get("status", "error"),
             "last_attempt_http_status": current.get("http_status"),
             "last_attempt_error": current.get("error"),
+            "last_attempt_access_policy": current.get("access_policy"),
             "consecutive_failures": int(previous.get("consecutive_failures", 0)) + 1,
             "stale": True,
         })
@@ -118,6 +129,7 @@ def preserve_last_good(previous: dict | None, current: dict, attempted_at: str) 
     current["last_attempt_status"] = current.get("status", "error")
     current["last_attempt_http_status"] = current.get("http_status")
     current["last_attempt_error"] = current.get("error")
+    current["last_attempt_access_policy"] = current.get("access_policy")
     current["consecutive_failures"] = int((previous or {}).get("consecutive_failures", 0)) + 1
     current["stale"] = True
     return current
