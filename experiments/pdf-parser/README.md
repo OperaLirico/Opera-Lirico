@@ -32,3 +32,15 @@ Low-text pages are review flags only. They do not prove that a page is scanned. 
 - No OCR result is automatically published.
 - No signature status is inferred from SHA-256, filename, domain, or a successful HTTP response.
 - No proxy, stealth, login session, paid parser service or access-control bypass is used.
+
+
+## First real-sample result (10 November 2026)
+
+Docling 2.148.0 converted all 5 selected local PDFs successfully. All 5 SHA-256 values matched the existing integrity manifest. The sample set covered 61 pages in total; all 61 pages had text provenance, no page was flagged as low-text, and 5 tables were detected in one document. Runtime was approximately 210 seconds for the five conversions.
+
+This is a parser execution result, not an accuracy certification:
+- The sample set includes non-vocal controls and historical/administrative documents, not five current vocal opportunities.
+- A keyword hit such as “basso” can refer to an instrument (for example “basso tuba”), not a singer voice. The report therefore calls these “voice term candidates” and separately reports vocal and instrument context; it never assigns voice types automatically.
+- No scanned/image-only sample has yet been confirmed, so OCR recall on genuinely scanned pages remains untested.
+- No publisher digital signature was verified.
+- Extracted evidence is not written to opportunities.json and is never publication-eligible without human review.
