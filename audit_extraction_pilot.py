@@ -30,16 +30,34 @@ VOCAL_URL=re.compile(r"canto|cantant|soprano|tenore|baritono|basso|coro|audizion
 def now_iso():
     return datetime.now(ROME).isoformat(timespec="seconds")
 
+REDIRECT_CODES=(301,302,303,307,308)
+
+class SameHostRedirectHandler(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self,req,fp,code,msg,headers,newurl):
+        old=urllib.parse.urlsplit(req.full_url).netloc.lower()
+        new=urllib.parse.urlsplit(newurl).netloc.lower()
+        if old!=new:
+            raise urllib.error.HTTPError(req.full_url,code,
+                "Cross-host redirect requires a fresh robots.txt check",headers,fp)
+        return super().redirect_request(req,fp,code,msg,headers,newurl)
+
+OPENER=urllib.request.build_opener(SameHostRedirectHandler())
+
 def request_bytes(url):
+    time.sleep(DELAY)
     req=urllib.request.Request(url,headers={"User-Agent":UA})
     try:
-        with urllib.request.urlopen(req,timeout=15) as res:
+        with OPENER.open(req,timeout=12) as res:
             body=res.read(MAX_BYTES+1)
             truncated=len(body)>MAX_BYTES
             return {"status":"too_large" if truncated else "ok","http_status":res.status,
                     "final_url":res.geturl(),"content_type":res.headers.get("Content-Type"),
                     "body":body[:MAX_BYTES],"truncated":truncated}
     except urllib.error.HTTPError as exc:
+        if exc.code in REDIRECT_CODES and exc.headers and exc.headers.get("Location"):
+            return {"status":"cross_host_redirect","http_status":exc.code,
+                "redirect_url":urllib.parse.urljoin(exc.geturl(),exc.headers.get("Location")),
+                "final_url":exc.geturl(),"content_type":None,"body":b"","truncated":False}
         return {"status":"restricted" if exc.code in (403,429) else "http_error",
                 "http_status":exc.code,"final_url":exc.geturl(),
                 "content_type":exc.headers.get("Content-Type") if exc.headers else None,
@@ -79,6 +97,37 @@ def robots_allows(url, text):
     if not matches: return True
     longest=max(size for size,_ in matches)
     return any(kind=="allow" for size,kind in matches if size==longest)
+
+def fetch_robots(origin):
+    response=request_bytes(origin.rstrip("/")+"/robots.txt")
+    if response["status"]=="cross_host_redirect":
+        return {"status":"robots_redirect_requires_review","http_status":response["http_status"],
+            "final_url":response.get("redirect_url"),"body":b"","error":"robots.txt redirected across hosts"}
+    return response
+
+def permitted_fetch(url,source_url,source_robots,max_redirects=2):
+    current=url
+    source_host=urllib.parse.urlsplit(source_url).netloc.lower()
+    for _ in range(max_redirects+1):
+        target=urllib.parse.urlsplit(current)
+        target_origin=f"{target.scheme}://{target.netloc}"
+        policy=source_robots if target.netloc.lower()==source_host else fetch_robots(target_origin)
+        if policy["status"]!="ok" and policy.get("http_status")!=404:
+            return {"status":"robots_unavailable","http_status":policy.get("http_status"),
+                "final_url":current,"body":b"","robots_status":policy["status"]}
+        if policy["status"]=="ok":
+            rules=policy["body"].decode("utf-8","replace")
+            if not robots_allows(current,rules):
+                return {"status":"robots_disallowed","http_status":None,
+                    "final_url":current,"body":b"","robots_status":"ok"}
+        response=request_bytes(current)
+        if response["status"]=="cross_host_redirect":
+            current=response["redirect_url"]
+            continue
+        response["robots_status"]=policy["status"]
+        return response
+    return {"status":"redirect_limit","http_status":None,"final_url":current,"body":b"",
+        "robots_status":"checked"}
 
 def parse_sitemap(data):
     try: root=ElementTree.fromstring(data)
@@ -195,14 +244,14 @@ def discovery(url,html_bytes,robots):
     sitemap_results=[]
     for sitemap_url in candidates[:3]:
         absolute=urllib.parse.urljoin(origin+"/",sitemap_url)
-        time.sleep(DELAY); response=request_bytes(absolute)
+        response=permitted_fetch(absolute,url,robots)
         parsed=parse_sitemap(response["body"]) if response["status"]=="ok" else {"kind":"unavailable","locs":[]}
         locs=parsed["locs"]
         page_urls=list(locs) if parsed["kind"]=="urlset" else []
         child_results=[]
         if parsed["kind"]=="sitemapindex":
             for child_url in locs[:5]:
-                time.sleep(DELAY); child_response=request_bytes(child_url)
+                child_response=permitted_fetch(child_url,url,robots)
                 child_parsed=parse_sitemap(child_response["body"]) if child_response["status"]=="ok" else {"kind":"unavailable","locs":[]}
                 child_pages=child_parsed["locs"] if child_parsed["kind"]=="urlset" else []
                 page_urls.extend(child_pages[:1000])
@@ -219,13 +268,13 @@ def discovery(url,html_bytes,robots):
             "url_examples":relevant_pages[:12]})
     feed_results=[]
     for feed_url in sorted(set(feeds))[:3]:
-        time.sleep(DELAY); response=request_bytes(feed_url)
+        response=permitted_fetch(feed_url,url,robots)
         summary=feed_summary(response["body"]) if response["status"]=="ok" else {
             "kind":"unavailable","entry_count":0,"relevant_entry_count":0,"relevant_titles":[]}
         feed_results.append({"url":feed_url,"status":response["status"],"http_status":response["http_status"],**summary})
     api_results=[]
     for api_url in sorted(set(api_links))[:2]:
-        time.sleep(DELAY); response=request_bytes(api_url)
+        response=permitted_fetch(api_url,url,robots)
         api_summary={"url":api_url,"status":response["status"],"http_status":response["http_status"]}
         if response["status"]=="ok":
             try:
@@ -259,7 +308,7 @@ def main():
         src=sources.get(sid)
         if not src: report["items"].append({"source_id":sid,"status":"missing_policy"}); continue
         parts=urllib.parse.urlsplit(src["url"]); origin=f"{parts.scheme}://{parts.netloc}"
-        robots=request_bytes(origin+"/robots.txt")
+        robots=fetch_robots(origin)
         robots_text=robots["body"].decode("utf-8","replace") if robots["status"]=="ok" else ""
         robots_unavailable=robots["status"]!="ok" and robots["http_status"]!=404
         blocked=robots_unavailable or (robots["status"]=="ok" and not robots_allows(src["url"],robots_text))
@@ -269,7 +318,7 @@ def main():
             item["fetch_status"]="robots_disallowed_or_unavailable"
             item["strategy_recommendation"]="skip_page_fetch_and_review_robots_policy"
             report["items"].append(item); time.sleep(DELAY); continue
-        time.sleep(DELAY); fetched=request_bytes(src["url"])
+        fetched=permitted_fetch(src["url"],src["url"],robots)
         item.update({"fetch_status":fetched["status"],"http_status":fetched["http_status"],
             "final_url":fetched["final_url"],"content_type":fetched["content_type"],
             "truncated":fetched["truncated"],"error":fetched.get("error")})
