@@ -68,7 +68,7 @@ LINK_NOISE = re.compile(
     r"twitter|shop|carrello|terms|policy",
     re.IGNORECASE,
 )
-MAX_RELEVANT_LINKS = 250
+MAX_RELEVANT_LINKS = 1000
 MAX_PAGE_TEXT_CHARS = 60000
 
 
