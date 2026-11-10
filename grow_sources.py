@@ -144,7 +144,17 @@ def load(path: Path, default):
 
 
 def fetch(url: str):
-    response = core.Fetcher.get(url, timeout=TIMEOUT, retries=0)
+    response, access = core.fetch_public_page(url, timeout=TIMEOUT)
+    if response is None:
+        return {
+            "status": access.get("status", "robots_policy_unavailable"),
+            "http_status": access.get("http_status"),
+            "title": "",
+            "relevant_lines": [],
+            "response": None,
+            "error": access.get("reason") or access.get("robots_url") or access.get("status"),
+            "access_policy": access,
+        }
     status = getattr(response, "status", None) or 0
     title = core.clean_line(response.css("title::text").get() or "")
     text = response.get_all_text(separator="\n") or ""
@@ -156,6 +166,7 @@ def fetch(url: str):
         "title": title,
         "relevant_lines": core.rank_relevant_lines(lines),
         "response": response,
+        "access_policy": access,
     }
 
 
@@ -170,6 +181,7 @@ def scrape_entry(url: str, name: str, number: int, discovered_from: str = "") ->
         "title": "",
         "relevant_lines": [],
         "error": None,
+        "access_policy": None,
     }
     if discovered_from:
         item["discovered_from"] = discovered_from
@@ -179,6 +191,8 @@ def scrape_entry(url: str, name: str, number: int, discovered_from: str = "") ->
         item["status"] = page["status"]
         item["title"] = page["title"]
         item["relevant_lines"] = page["relevant_lines"]
+        item["access_policy"] = page.get("access_policy")
+        item["error"] = page.get("error")
         item["_response"] = page["response"]
     except Exception as exc:
         item["error"] = f"{type(exc).__name__}: {exc}"
