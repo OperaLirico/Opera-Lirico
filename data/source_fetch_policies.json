@@ -185,8 +185,8 @@
       "source_name": "Teatro Comunale di Bologna",
       "url": "https://www.tcbo.it/amministrazione-trasparente/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_with_sitemap_discovery",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -197,16 +197,23 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-10T18:50:45+01:00",
+      "assessment_note": "2026-11-10 batch 3: official page HTTP 200; first five of 24 sitemap child maps yielded one vocal/audition keyword-match URL. DOM contained 659 links, 494 relevant labels and 441 relevant href targets. Scrapling retained 350 relevant labels; Trafilatura Markdown retained 135/441 exact relevant hrefs. Keep Scrapling and sitemap; maintain structured href capture and review historical/non-vocal matches.",
+      "assessment_batch": "batch-3-2026-11-10",
+      "discovery_methods": [
+        "html",
+        "sitemap"
+      ],
+      "parser_decision": "keep_scrapling; sitemap is useful secondary discovery; Trafilatura Markdown is not sufficiently complete to replace structured link capture",
+      "evidence_report": "reports/p2/source-strategy-batch-3-2026-11-10.md"
     },
     {
       "source_id": "source-8",
       "source_name": "Maggio Musicale Fiorentino",
       "url": "https://www.maggiofiorentino.com/bandi/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_html_only",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -217,8 +224,15 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-10T18:50:45+01:00",
+      "assessment_note": "2026-11-10 batch 3: official page HTTP 200; checked robots and common sitemap endpoints, which returned 404 (404 is not an access-control rule). Scrapling retained 2/2 relevant labels; Trafilatura retained 0/2. Keep direct HTML and official page links.",
+      "assessment_batch": "batch-3-2026-11-10",
+      "discovery_methods": [
+        "html",
+        "sitemap_checked"
+      ],
+      "parser_decision": "keep_scrapling and direct HTML links; no sitemap route proved useful",
+      "evidence_report": "reports/p2/source-strategy-batch-3-2026-11-10.md"
     },
     {
       "source_id": "source-9",
@@ -253,8 +267,8 @@
       "source_name": "Teatro Lirico Sperimentale di Spoleto",
       "url": "https://www.tls-belli.it/bandi_e_avvisi/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_with_sitemap_discovery",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -265,8 +279,17 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-10T18:50:45+01:00",
+      "assessment_note": "2026-11-10 batch 3: official page HTTP 200; first five of 24 sitemap child maps yielded 140 vocal/audition keyword-match URLs. Three advertised feed entries were relevant; public WordPress API root returned JSON with 678 routes, but no route endpoint was queried. Scrapling retained 8/8 relevant labels; Trafilatura Markdown retained 0/10 exact relevant hrefs. Keep Scrapling with sitemap/feed discovery; review candidate URLs before any opportunity promotion.",
+      "assessment_batch": "batch-3-2026-11-10",
+      "discovery_methods": [
+        "html",
+        "sitemap",
+        "rss_atom",
+        "public_api_root_inspected"
+      ],
+      "parser_decision": "keep_scrapling; sitemap and the advertised RSS feed are useful secondary discovery channels; do not query guessed API routes",
+      "evidence_report": "reports/p2/source-strategy-batch-3-2026-11-10.md"
     },
     {
       "source_id": "source-11",
@@ -436,8 +459,8 @@
       "source_name": "Accademia d'Arte Lirica di Osimo",
       "url": "https://www.accademialiricaosimo.com/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_html_only",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -448,8 +471,17 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-10T18:50:45+01:00",
+      "assessment_note": "2026-11-10 batch 3: official page HTTP 200; checked sitemap endpoints returned 404 and advertised feeds had zero relevant entries. Public WordPress API root returned JSON with 69 routes; no route endpoint was queried. Scrapling and Trafilatura each retained 2/2 relevant labels. Keep direct HTML; no useful secondary discovery route was demonstrated.",
+      "assessment_batch": "batch-3-2026-11-10",
+      "discovery_methods": [
+        "html",
+        "sitemap_checked",
+        "rss_atom_checked",
+        "public_api_root_inspected"
+      ],
+      "parser_decision": "keep_scrapling and direct HTML; alternative parsers showed no material advantage",
+      "evidence_report": "reports/p2/source-strategy-batch-3-2026-11-10.md"
     },
     {
       "source_id": "source-19",
@@ -476,8 +508,8 @@
       "source_name": "Valsesia Musica - 声乐比赛",
       "url": "https://www.valsesiamusica.com/sezione_canto_lirico.htm",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_with_sitemap_discovery",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -488,8 +520,15 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-10T18:50:45+01:00",
+      "assessment_note": "2026-11-10 batch 3: official page HTTP 200; sitemap yielded four vocal/audition keyword-match URLs. Scrapling retained 7/7 relevant labels; Trafilatura retained 0/7. Keep Scrapling and sitemap as secondary discovery; verify each candidate against the official notice.",
+      "assessment_batch": "batch-3-2026-11-10",
+      "discovery_methods": [
+        "html",
+        "sitemap"
+      ],
+      "parser_decision": "keep_scrapling; sitemap is useful secondary discovery; Trafilatura is not suitable for this page",
+      "evidence_report": "reports/p2/source-strategy-batch-3-2026-11-10.md"
     },
     {
       "source_id": "source-21",

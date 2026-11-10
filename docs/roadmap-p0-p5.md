@@ -47,7 +47,7 @@ Limitations: per-domain timeout/retry tuning and structured link quality review 
 
 ## P2 — Per-source multi-engine strategy
 
-**Status: first two source-specific assessment batches completed (10/44); 34 sources remain baseline_only.**
+**Status: first three source-specific assessment batches completed (15/44); 29 sources remain baseline_only.**
 
 Batch 1 assessed Teatro alla Scala, Teatro Carlo Felice, Teatro Massimo, AsLiCo and Morlacchi. Batch 2 assessed:
 - Teatro Regio Torino: Scrapling retained; sitemap yielded 48 vocal/audition keyword-match URLs.
@@ -56,7 +56,14 @@ Batch 1 assessed Teatro alla Scala, Teatro Carlo Felice, Teatro Massimo, AsLiCo 
 - Teatro La Fenice: Scrapling retained; sitemap yielded 27 keyword-match URLs; public API root returned HTTP 403 and was not bypassed.
 - Teatro Lirico di Cagliari: Scrapling retained; sitemap yielded nine keyword-match URLs; public API root was inspected without querying guessed routes; feeds had no relevant entries.
 
-Across both batches, Scrapling remains the production fetch method. Sitemap is secondary discovery where useful; no production engine was automatically switched. Seven advertised feeds in batch 2 had zero vocal/audition entries. Measured results and decisions are stored in data/source_fetch_policies.json and archived under reports/p2/source-strategy-batch-1-2026-11-10.* and source-strategy-batch-2-2026-11-10.*. The .github/audits/extraction-pilot-latest.md file represents only the latest batch and is not the permanent archive. For these five sources, Trafilatura is not promoted as the default. lxml full-text often includes much more boilerplate; Scrapling retained comparable relevant anchor labels. Structured href targets are evaluated separately from flattened text.
+Batch 3 assessed:
+- Teatro Comunale di Bologna: Scrapling retained; sitemap yielded one keyword-match URL among the first five child maps; Trafilatura preserved only 135/441 exact relevant href targets.
+- Maggio Musicale Fiorentino: direct HTML retained; common sitemap endpoints returned 404 (not an access-control rule).
+- Teatro Lirico Sperimentale di Spoleto: Scrapling retained; sitemap yielded 140 keyword-match URLs and an advertised feed had three relevant entries; API root inspected without querying guessed routes.
+- Accademia d'Arte Lirica Osimo: direct HTML retained; sitemap endpoints returned 404, feeds had no relevant entries, and the advertised API root was inspected without querying guessed routes.
+- Valsesia Musica: Scrapling retained; sitemap yielded four keyword-match URLs.
+
+Across all three batches, Scrapling remains the production fetch method. Sitemap and, for Spoleto, the advertised feed are secondary discovery channels where useful; no production engine was automatically switched. Measured results and decisions are stored in data/source_fetch_policies.json and archived under reports/p2/source-strategy-batch-1-2026-11-10.*, batch-2-2026-11-10.* and batch-3-2026-11-10.*. The .github/audits/extraction-pilot-latest.md file represents only the latest batch and is not the permanent archive. Across tested pages, Trafilatura is not promoted as the default. lxml full-text often includes substantial boilerplate; Scrapling retained more relevant anchor labels on most pages, while some Trafilatura Markdown outputs preserved a subset of exact href targets. Structured href targets are evaluated separately from flattened text.
 
 Acceptance:
 - Each source has an evidence-based preferred method and fallback.
@@ -87,7 +94,7 @@ The next complete weekly cycle should compare hashes against this baseline and b
 
 ## P4 — Main-text and link extraction quality
 
-**Status: two five-page comparisons completed (10 official source pages); structured link capture is now part of production collection.**
+**Status: three five-page comparisons completed (15 official source pages); structured link capture is now part of production collection.**
 
 A separate evaluation workflow compared Scrapling, lxml full text and Trafilatura on identical official HTML snapshots. The corrected report separates:
 - relevant anchor labels available in the DOM;
