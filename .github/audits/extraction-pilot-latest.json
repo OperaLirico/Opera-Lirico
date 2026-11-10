@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T18:11:22+01:00",
+  "generated_at": "2026-11-10T18:14:15+01:00",
   "scope": "Five high-value first-party vocal sources.",
   "pilot_source_ids": [
     "source-1",
@@ -26,8 +26,8 @@
       "raw_snapshot": {
         "artifact_path": "artifacts/p2-p4-html-samples/source-1.html",
         "bytes": 29603,
-        "sha256": "28793f609149db7ddfb7aec8cf738cda7cbe25ca85397c14cbae71255c41e59e",
-        "captured_at": "2026-11-10T18:11:24+01:00"
+        "sha256": "7b1d1dbd78359d98ce13035b6183585c89763efef9cfadb23f1a14e190967c41",
+        "captured_at": "2026-11-10T18:14:18+01:00"
       },
       "discovery": {
         "robots": {
@@ -41,12 +41,74 @@
             "http_status": 200,
             "sitemap_kind": "sitemapindex",
             "loc_count": 2,
-            "audition_or_vocal_url_count": 0,
-            "url_examples": []
+            "child_sitemaps_checked": 2,
+            "child_sitemaps": [
+              {
+                "url": "https://www.teatroallascala.org/it/sitemap.html",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 2615,
+                "audition_or_vocal_url_count": 81,
+                "url_examples": [
+                  "https://www.teatroallascala.org/it/il-teatro/coro/coro.html",
+                  "https://www.teatroallascala.org/it/area-personale/spc/gruppo-spc/associazione/richiesta-biglietti-per-gli-spettacoli/abbonamento-recital-di-canto-stagione-2026-2027.html",
+                  "https://www.teatroallascala.org/it/area-personale/spc/scuola-spc/accademia/richiesta-biglietti-per-gli-spettacoli/abbonamento-recital-di-canto-stagione-2026-2027.html",
+                  "https://www.teatroallascala.org/it/artisti/coro-del-teatro-alla-scala.html",
+                  "https://www.teatroallascala.org/it/artisti/coro-di-voci-bianche-dell-accademia-teatro-alla-scala.html",
+                  "https://www.teatroallascala.org/static/upload/cor/coro-voci-bianche-accademia-scala-678258badg-ph-brescia-e-amisano--teatro-alla-scala.jpg",
+                  "https://www.teatroallascala.org/static/upload/mar/maria-nazarova--soprano3--picture-by-liliya-namisnyk.png",
+                  "https://www.teatroallascala.org/static/upload/nat/natascha-petrinsky--mezzo-soprano01.jpg",
+                  "https://www.teatroallascala.org/static/upload/set/set-cantante-pier-luigi-d-aloia_greta-mianiti_30-05-2023_001.jpg",
+                  "https://www.teatroallascala.org/it/artisti/solisti-del-coro-2.html",
+                  "https://www.teatroallascala.org/it/artisti/solisti-del-coro.html",
+                  "https://www.teatroallascala.org/it/bando-concorso-un-opera-d-arte-completera-la-nuova-torre-di-via-verdi-cs.html"
+                ]
+              },
+              {
+                "url": "https://www.teatroallascala.org/en/sitemap.html",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 1926,
+                "audition_or_vocal_url_count": 19,
+                "url_examples": [
+                  "https://www.teatroallascala.org/static/upload/mar/maria-nazarova--soprano3--picture-by-liliya-namisnyk.png",
+                  "https://www.teatroallascala.org/static/upload/nat/natascha-petrinsky--mezzo-soprano01.jpg",
+                  "https://www.teatroallascala.org/static/upload/set/set-cantante-pier-luigi-d-aloia_greta-mianiti_30-05-2023_001.jpg",
+                  "https://www.teatroallascala.org/static/upload/cor/coro-voci-bianche-accademia-scala-678258badg-ph-brescia-e-amisano--teatro-alla-scala.jpg",
+                  "https://www.teatroallascala.org/static/upload/cha/chailly-coro-orchestra.jpg",
+                  "https://www.teatroallascala.org/static/upload/ric/riccardo-chailly-orchestra-e-coro-scala-649824badg-ph-brescia-e-amisano.jpg",
+                  "https://www.teatroallascala.org/static/upload/047/047_gn1a3087--ph-brescia-e-amisano--teatro-alla-scala-coro-donne.png",
+                  "https://www.teatroallascala.org/en/season/2023-2024/concerti/exceptional-concerts/orchestra-e-coro-del-teatro-alla-scala-beethoven-Symphony-No9-chailly.html",
+                  "https://www.teatroallascala.org/en/season/2023-2024/concerti/exceptional-concerts/orchestra-e-coro-del-teatro-alla-scala-puccini-homage-chailly-netrebko-kaufmann.html",
+                  "https://www.teatroallascala.org/en/season/2023-2024/concerti/exceptional-concerts/orchestra-e-coro-del-teatro-alla-scala-verdi-requiem-chailly-milano.html",
+                  "https://www.teatroallascala.org/en/season/2023-2024/concerti/symphony-concerts/concerto-orchestra-e-coro-del-teatro-alla-scala-riccardo-chailly.html",
+                  "https://www.teatroallascala.org/en/season/2023-2024/concerti/symphony-concerts/orchestra-e-coro-del-teatro-alla-scala-chor-des-bayerischen-rundfunks.html"
+                ]
+              }
+            ],
+            "page_url_count": 2000,
+            "audition_or_vocal_url_count": 23,
+            "url_examples": [
+              "https://www.teatroallascala.org/it/il-teatro/coro/coro.html",
+              "https://www.teatroallascala.org/it/area-personale/spc/gruppo-spc/associazione/richiesta-biglietti-per-gli-spettacoli/abbonamento-recital-di-canto-stagione-2026-2027.html",
+              "https://www.teatroallascala.org/it/area-personale/spc/scuola-spc/accademia/richiesta-biglietti-per-gli-spettacoli/abbonamento-recital-di-canto-stagione-2026-2027.html",
+              "https://www.teatroallascala.org/it/artisti/coro-del-teatro-alla-scala.html",
+              "https://www.teatroallascala.org/it/artisti/coro-di-voci-bianche-dell-accademia-teatro-alla-scala.html",
+              "https://www.teatroallascala.org/static/upload/cor/coro-voci-bianche-accademia-scala-678258badg-ph-brescia-e-amisano--teatro-alla-scala.jpg",
+              "https://www.teatroallascala.org/static/upload/mar/maria-nazarova--soprano3--picture-by-liliya-namisnyk.png",
+              "https://www.teatroallascala.org/static/upload/nat/natascha-petrinsky--mezzo-soprano01.jpg",
+              "https://www.teatroallascala.org/static/upload/set/set-cantante-pier-luigi-d-aloia_greta-mianiti_30-05-2023_001.jpg",
+              "https://www.teatroallascala.org/it/artisti/solisti-del-coro-2.html",
+              "https://www.teatroallascala.org/it/artisti/solisti-del-coro.html",
+              "https://www.teatroallascala.org/it/bando-concorso-un-opera-d-arte-completera-la-nuova-torre-di-via-verdi-cs.html"
+            ]
           }
         ],
         "advertised_feeds": [],
-        "advertised_public_api_links": []
+        "advertised_public_api_links": [],
+        "public_api_checks": []
       },
       "parsers": {
         "title": "Concorsi e Audizioni Coro - Teatro alla Scala",
@@ -140,7 +202,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0009,
+          "runtime_seconds": 0.0007,
           "characters": 3454,
           "signals": {
             "vocal_roles": false,
@@ -150,11 +212,13 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 3,
-          "relevant_dom_link_labels_retained_in_text": 3
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 7,
+          "relevant_link_targets_available": 17,
+          "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0008,
+          "runtime_seconds": 0.0004,
           "characters": 4757,
           "signals": {
             "vocal_roles": false,
@@ -164,12 +228,14 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 3,
-          "relevant_dom_link_labels_retained_in_text": 3
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 7,
+          "relevant_link_targets_available": 17,
+          "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0094,
+          "runtime_seconds": 0.0063,
           "characters": 1818,
           "signals": {
             "vocal_roles": false,
@@ -179,16 +245,20 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 3,
-          "relevant_dom_link_labels_retained_in_text": 2
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 3,
+          "relevant_link_targets_available": 17,
+          "relevant_link_targets_retained_in_text": 1
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0069,
+          "runtime_seconds": 0.0043,
           "characters": 1855,
           "markdown_link_count": 1,
-          "markdown_relevant_link_count": 1
+          "markdown_relevant_link_count": 1,
+          "relevant_dom_link_targets_available": 17,
+          "relevant_dom_link_targets_retained": 1
         },
-        "comparison_note": "Coverage proxies, not ground-truth accuracy. Relevant anchor-label retention is measured against labels in the same DOM; manually review notice facts and source links."
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
       },
       "strategy_recommendation": "manual_review_required"
     },
@@ -208,7 +278,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-15.html",
         "bytes": 34805,
         "sha256": "c954dd570d97dc8a9a3b90c9420f91dc02046373c233aa1edf1e5ada4497037b",
-        "captured_at": "2026-11-10T18:11:30+01:00"
+        "captured_at": "2026-11-10T18:14:37+01:00"
       },
       "discovery": {
         "robots": {
@@ -222,6 +292,9 @@
             "http_status": 404,
             "sitemap_kind": "unavailable",
             "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
             "audition_or_vocal_url_count": 0,
             "url_examples": []
           },
@@ -231,6 +304,9 @@
             "http_status": 404,
             "sitemap_kind": "unavailable",
             "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
             "audition_or_vocal_url_count": 0,
             "url_examples": []
           },
@@ -240,12 +316,16 @@
             "http_status": 404,
             "sitemap_kind": "unavailable",
             "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
             "audition_or_vocal_url_count": 0,
             "url_examples": []
           }
         ],
         "advertised_feeds": [],
-        "advertised_public_api_links": []
+        "advertised_public_api_links": [],
+        "public_api_checks": []
       },
       "parsers": {
         "title": "Concorso Internazionale di Canto lirico Francesco Morlacchi · Perugia 2026",
@@ -371,7 +451,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0013,
+          "runtime_seconds": 0.0009,
           "characters": 17733,
           "signals": {
             "vocal_roles": true,
@@ -381,11 +461,13 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 8,
-          "relevant_dom_link_labels_retained_in_text": 8
+          "relevant_dom_link_labels_available": 26,
+          "relevant_dom_link_labels_retained_in_text": 25,
+          "relevant_link_targets_available": 20,
+          "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0009,
+          "runtime_seconds": 0.0006,
           "characters": 17658,
           "signals": {
             "vocal_roles": true,
@@ -395,12 +477,14 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 8,
-          "relevant_dom_link_labels_retained_in_text": 8
+          "relevant_dom_link_labels_available": 26,
+          "relevant_dom_link_labels_retained_in_text": 25,
+          "relevant_link_targets_available": 20,
+          "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0094,
+          "runtime_seconds": 0.0061,
           "characters": 12162,
           "signals": {
             "vocal_roles": true,
@@ -410,16 +494,20 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 8,
-          "relevant_dom_link_labels_retained_in_text": 0
+          "relevant_dom_link_labels_available": 26,
+          "relevant_dom_link_labels_retained_in_text": 3,
+          "relevant_link_targets_available": 20,
+          "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0101,
+          "runtime_seconds": 0.0063,
           "characters": 12253,
           "markdown_link_count": 0,
-          "markdown_relevant_link_count": 0
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 20,
+          "relevant_dom_link_targets_retained": 0
         },
-        "comparison_note": "Coverage proxies, not ground-truth accuracy. Relevant anchor-label retention is measured against labels in the same DOM; manually review notice facts and source links."
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
       },
       "strategy_recommendation": "manual_review_required"
     },
@@ -438,8 +526,8 @@
       "raw_snapshot": {
         "artifact_path": "artifacts/p2-p4-html-samples/source-2.html",
         "bytes": 398561,
-        "sha256": "eec660fb26e701dbe308caab213be95f3af58650d23533743137b16d649b25a3",
-        "captured_at": "2026-11-10T18:11:42+01:00"
+        "sha256": "f15312952daeaba8f9813d66467901c0cd3b12eee9365f531a9ad998800311cb",
+        "captured_at": "2026-11-10T18:14:50+01:00"
       },
       "discovery": {
         "robots": {
@@ -453,8 +541,99 @@
             "http_status": 200,
             "sitemap_kind": "sitemapindex",
             "loc_count": 7,
-            "audition_or_vocal_url_count": 0,
-            "url_examples": []
+            "child_sitemaps_checked": 5,
+            "child_sitemaps": [
+              {
+                "url": "https://www.carlofelice.it/sitemap-home.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 2,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.carlofelice.it/sitemap-pages.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 88,
+                "audition_or_vocal_url_count": 3,
+                "url_examples": [
+                  "https://www.carlofelice.it/coro-di-voci-bianche/",
+                  "https://www.carlofelice.it/coro/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/"
+                ]
+              },
+              {
+                "url": "https://www.carlofelice.it/sitemap-show-1.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 1294,
+                "audition_or_vocal_url_count": 11,
+                "url_examples": [
+                  "https://www.carlofelice.it/spettacolo/tutta-qui-la-cantoria/",
+                  "https://www.carlofelice.it/en/show/tutta-qui-la-cantoria/",
+                  "https://www.carlofelice.it/spettacolo/il-canto-che-non-tace/",
+                  "https://www.carlofelice.it/en/show/il-canto-che-non-tace/",
+                  "https://www.carlofelice.it/spettacolo/il-coro-di-voci-bianche-a-yachtgarden/",
+                  "https://www.carlofelice.it/spettacolo/il-coro-di-voci-bianche-ad-acqui-terme/",
+                  "https://www.carlofelice.it/spettacolo/coro-accademico-nazionale-veryovka/",
+                  "https://www.carlofelice.it/spettacolo/concorso-viotti/",
+                  "https://www.carlofelice.it/spettacolo/concerto-del-coro-di-voci-bianche/",
+                  "https://www.carlofelice.it/spettacolo/8-concorso-lirico-internazionale-e-festival-di-portofino/",
+                  "https://www.carlofelice.it/en/show/8-concorso-lirico-internazionale-e-festival-di-portofino/"
+                ]
+              },
+              {
+                "url": "https://www.carlofelice.it/sitemap-auditions_and_contes-1.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 85,
+                "audition_or_vocal_url_count": 85,
+                "url_examples": [
+                  "https://www.carlofelice.it/audizioni-e-concorsi/selezione-figuranti/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-violoncello-di-fila/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-viola-di-fila-con-obbligo-della-seconda-viola/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-violino-di-fila-con-obbligo-del-secondo-violino-dei-secondi-violini/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-secondo-violoncello-con-obbligo-della-fila/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-secondo-oboe-con-obbligo-del-terzo-e-seguenti-e-del-corno-inglese-e-del-palcoscenico/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-prima-viola-e-violino-di-fila/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-prima-tromba/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-prima-arpa-e-prima-viola/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-percussioni/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-tenori/",
+                  "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-tenori-2/"
+                ]
+              },
+              {
+                "url": "https://www.carlofelice.it/sitemap-accessible-show-1.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 6,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              }
+            ],
+            "page_url_count": 1181,
+            "audition_or_vocal_url_count": 95,
+            "url_examples": [
+              "https://www.carlofelice.it/coro-di-voci-bianche/",
+              "https://www.carlofelice.it/coro/",
+              "https://www.carlofelice.it/audizioni-e-concorsi/",
+              "https://www.carlofelice.it/spettacolo/tutta-qui-la-cantoria/",
+              "https://www.carlofelice.it/en/show/tutta-qui-la-cantoria/",
+              "https://www.carlofelice.it/spettacolo/il-canto-che-non-tace/",
+              "https://www.carlofelice.it/en/show/il-canto-che-non-tace/",
+              "https://www.carlofelice.it/spettacolo/il-coro-di-voci-bianche-a-yachtgarden/",
+              "https://www.carlofelice.it/spettacolo/il-coro-di-voci-bianche-ad-acqui-terme/",
+              "https://www.carlofelice.it/spettacolo/coro-accademico-nazionale-veryovka/",
+              "https://www.carlofelice.it/audizioni-e-concorsi/selezione-figuranti/",
+              "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-violoncello-di-fila/"
+            ]
           }
         ],
         "advertised_feeds": [
@@ -479,6 +658,31 @@
         ],
         "advertised_public_api_links": [
           "https://www.carlofelice.it/wp-json/"
+        ],
+        "public_api_checks": [
+          {
+            "url": "https://www.carlofelice.it/wp-json/",
+            "status": "ok",
+            "http_status": 200,
+            "json_valid": true,
+            "namespace_count": 25,
+            "route_count": 402,
+            "namespace_examples": [
+              "oembed/1.0",
+              "wpml/v1",
+              "members/v1",
+              "wpml/st/v1",
+              "elementor-mcp-composer/v1.0.19",
+              "elementor-one/v1",
+              "wpml/tm/v1",
+              "wpml/ate/v1",
+              "nl4wp/v1",
+              "complianz/v1",
+              "cptui/v1",
+              "elementor/v1"
+            ],
+            "route_examples": []
+          }
         ]
       },
       "parsers": {
@@ -613,7 +817,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0118,
+          "runtime_seconds": 0.0067,
           "characters": 52378,
           "signals": {
             "vocal_roles": true,
@@ -623,11 +827,13 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 7,
-          "relevant_dom_link_labels_retained_in_text": 7
+          "relevant_dom_link_labels_available": 119,
+          "relevant_dom_link_labels_retained_in_text": 119,
+          "relevant_link_targets_available": 332,
+          "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0094,
+          "runtime_seconds": 0.0056,
           "characters": 68502,
           "signals": {
             "vocal_roles": true,
@@ -637,12 +843,14 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 7,
-          "relevant_dom_link_labels_retained_in_text": 7
+          "relevant_dom_link_labels_available": 119,
+          "relevant_dom_link_labels_retained_in_text": 119,
+          "relevant_link_targets_available": 332,
+          "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.1684,
+          "runtime_seconds": 0.1079,
           "characters": 58971,
           "signals": {
             "vocal_roles": true,
@@ -652,16 +860,20 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 7,
-          "relevant_dom_link_labels_retained_in_text": 1
+          "relevant_dom_link_labels_available": 119,
+          "relevant_dom_link_labels_retained_in_text": 72,
+          "relevant_link_targets_available": 332,
+          "relevant_link_targets_retained_in_text": 182
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.1844,
+          "runtime_seconds": 0.1156,
           "characters": 60954,
           "markdown_link_count": 187,
-          "markdown_relevant_link_count": 1
+          "markdown_relevant_link_count": 187,
+          "relevant_dom_link_targets_available": 332,
+          "relevant_dom_link_targets_retained": 180
         },
-        "comparison_note": "Coverage proxies, not ground-truth accuracy. Relevant anchor-label retention is measured against labels in the same DOM; manually review notice facts and source links."
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
       },
       "strategy_recommendation": "manual_review_required"
     },
@@ -681,7 +893,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-3.html",
         "bytes": 135749,
         "sha256": "576e8eb4e393d3a24e4e0a41a059ad0e846a76408d71c42a4103e3ffc2486731",
-        "captured_at": "2026-11-10T18:11:54+01:00"
+        "captured_at": "2026-11-10T18:15:19+01:00"
       },
       "discovery": {
         "robots": {
@@ -695,12 +907,113 @@
             "http_status": 200,
             "sitemap_kind": "sitemapindex",
             "loc_count": 25,
-            "audition_or_vocal_url_count": 0,
-            "url_examples": []
+            "child_sitemaps_checked": 5,
+            "child_sitemaps": [
+              {
+                "url": "https://www.teatromassimo.it/post-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 1010,
+                "audition_or_vocal_url_count": 67,
+                "url_examples": [
+                  "https://www.teatromassimo.it/selezioni/selezioni-per-il-coro-di-voci-bianche-e-la-cantoria-del-teatro-massimo/",
+                  "https://www.teatromassimo.it/wp-content/uploads/2022/10/CORO_palchi_%C2%A9-rosellina-garbo-2021-_MG_2773-1.jpg",
+                  "https://www.teatromassimo.it/selezioni/selezioni-coro-voci-bianche-cantoria-10ottobre/",
+                  "https://www.teatromassimo.it/selezioni/audizione-per-secondo-fagotto/",
+                  "https://www.teatromassimo.it/en/news/audizione-per-secondo-fagotto/",
+                  "https://www.teatromassimo.it/selezioni/audizione-per-artisti-del-coro-bassi/",
+                  "https://www.teatromassimo.it/selezioni/selezione-per-la-cantoria-del-teatro/",
+                  "https://www.teatromassimo.it/wp-content/uploads/2023/03/cantoria-header.jpg",
+                  "https://www.teatromassimo.it/wp-content/uploads/2023/04/Kids_Youth_Coro-di-Voci-bianche-e-Cantoria-scaled.jpg",
+                  "https://www.teatromassimo.it/wp-content/uploads/2023/04/Kids_Youth_Coro-di-Voci-bianche-e-Cantoria-scaled.jpg",
+                  "https://www.teatromassimo.it/wp-content/uploads/2023/04/Kids_Youth_Coro-di-Voci-bianche-e-Cantoria-scaled.jpg",
+                  "https://www.teatromassimo.it/wp-content/uploads/2023/04/Kids_Youth_Coro-di-Voci-bianche-e-Cantoria-scaled.jpg"
+                ]
+              },
+              {
+                "url": "https://www.teatromassimo.it/page-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 1013,
+                "audition_or_vocal_url_count": 8,
+                "url_examples": [
+                  "https://www.teatromassimo.it/wp-content/uploads/2022/10/CORO_palchi_%C2%A9-rosellina-garbo-2021-_MG_2773-1.jpg",
+                  "https://www.teatromassimo.it/wp-content/uploads/2022/10/CORO_palchi_%C2%A9-rosellina-garbo-2021-_MG_2773-1.jpg",
+                  "https://www.teatromassimo.it/biglietteria/giovani-e-scuole/concorso-internazionale-per-ottoni/",
+                  "https://www.teatromassimo.it/cantoria/",
+                  "https://www.teatromassimo.it/wp-content/uploads/2023/06/Cantoria-header2023.jpg",
+                  "https://www.teatromassimo.it/en/cantoria/",
+                  "https://www.teatromassimo.it/wp-content/uploads/2023/06/Cantoria-header2023.jpg",
+                  "https://www.teatromassimo.it/coro-di-voci-bianche/"
+                ]
+              },
+              {
+                "url": "https://www.teatromassimo.it/product-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 144,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.teatromassimo.it/awsm_job_openings-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 2,
+                "audition_or_vocal_url_count": 2,
+                "url_examples": [
+                  "https://www.teatromassimo.it/domande-audizioni-e-selezioni/bozza-coro/",
+                  "https://www.teatromassimo.it/domande-audizioni-e-selezioni/selezione-pubblica-2-contralti/"
+                ]
+              },
+              {
+                "url": "https://www.teatromassimo.it/event-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 2304,
+                "audition_or_vocal_url_count": 54,
+                "url_examples": [
+                  "https://www.teatromassimo.it/en/event/cantoria-del-teatro-massimo/",
+                  "https://www.teatromassimo.it/wp-content/uploads/2023/07/cantoria-header3.jpg",
+                  "https://www.teatromassimo.it/wp-content/uploads/2023/06/Cantoria-header2023-3.jpg",
+                  "https://www.teatromassimo.it/wp-content/uploads/2023/06/Cantoria-header2023-3.jpg",
+                  "https://www.teatromassimo.it/event/coro-in-foyer/",
+                  "https://www.teatromassimo.it/wp-content/uploads/2024/05/CoroFemminile-header.jpg",
+                  "https://www.teatromassimo.it/en/event/coro-in-foyer/",
+                  "https://www.teatromassimo.it/wp-content/uploads/2024/05/CoroFemminile-header.jpg",
+                  "https://www.teatromassimo.it/event/coro-in-foyer-2/",
+                  "https://www.teatromassimo.it/wp-content/uploads/2024/05/CoroFoyer-header2-IMG_5522.jpg",
+                  "https://www.teatromassimo.it/en/event/coro-in-foyer-2/",
+                  "https://www.teatromassimo.it/wp-content/uploads/2024/05/CoroFoyer-header2-IMG_5522.jpg"
+                ]
+              }
+            ],
+            "page_url_count": 3146,
+            "audition_or_vocal_url_count": 96,
+            "url_examples": [
+              "https://www.teatromassimo.it/selezioni/selezioni-per-il-coro-di-voci-bianche-e-la-cantoria-del-teatro-massimo/",
+              "https://www.teatromassimo.it/wp-content/uploads/2022/10/CORO_palchi_%C2%A9-rosellina-garbo-2021-_MG_2773-1.jpg",
+              "https://www.teatromassimo.it/selezioni/selezioni-coro-voci-bianche-cantoria-10ottobre/",
+              "https://www.teatromassimo.it/selezioni/audizione-per-secondo-fagotto/",
+              "https://www.teatromassimo.it/en/news/audizione-per-secondo-fagotto/",
+              "https://www.teatromassimo.it/selezioni/audizione-per-artisti-del-coro-bassi/",
+              "https://www.teatromassimo.it/selezioni/selezione-per-la-cantoria-del-teatro/",
+              "https://www.teatromassimo.it/wp-content/uploads/2023/03/cantoria-header.jpg",
+              "https://www.teatromassimo.it/wp-content/uploads/2023/04/Kids_Youth_Coro-di-Voci-bianche-e-Cantoria-scaled.jpg",
+              "https://www.teatromassimo.it/wp-content/uploads/2023/04/Kids_Youth_Coro-di-Voci-bianche-e-Cantoria-scaled.jpg",
+              "https://www.teatromassimo.it/wp-content/uploads/2023/04/Kids_Youth_Coro-di-Voci-bianche-e-Cantoria-scaled.jpg",
+              "https://www.teatromassimo.it/wp-content/uploads/2023/04/Kids_Youth_Coro-di-Voci-bianche-e-Cantoria-scaled.jpg"
+            ]
           }
         ],
         "advertised_feeds": [],
-        "advertised_public_api_links": []
+        "advertised_public_api_links": [],
+        "public_api_checks": []
       },
       "parsers": {
         "title": "Archivi Audizioni - Teatro Massimo - Fondazione Teatro Massimo",
@@ -834,7 +1147,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0022,
+          "runtime_seconds": 0.0015,
           "characters": 3728,
           "signals": {
             "vocal_roles": true,
@@ -844,11 +1157,13 @@
             "application": false,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 1,
-          "relevant_dom_link_labels_retained_in_text": 1
+          "relevant_dom_link_labels_available": 19,
+          "relevant_dom_link_labels_retained_in_text": 15,
+          "relevant_link_targets_available": 15,
+          "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0016,
+          "runtime_seconds": 0.0009,
           "characters": 31754,
           "signals": {
             "vocal_roles": true,
@@ -858,12 +1173,14 @@
             "application": false,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 1,
-          "relevant_dom_link_labels_retained_in_text": 1
+          "relevant_dom_link_labels_available": 19,
+          "relevant_dom_link_labels_retained_in_text": 15,
+          "relevant_link_targets_available": 15,
+          "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0165,
+          "runtime_seconds": 0.0106,
           "characters": 906,
           "signals": {
             "vocal_roles": true,
@@ -873,16 +1190,20 @@
             "application": false,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 1,
-          "relevant_dom_link_labels_retained_in_text": 0
+          "relevant_dom_link_labels_available": 19,
+          "relevant_dom_link_labels_retained_in_text": 1,
+          "relevant_link_targets_available": 15,
+          "relevant_link_targets_retained_in_text": 2
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0158,
+          "runtime_seconds": 0.0102,
           "characters": 911,
           "markdown_link_count": 1,
-          "markdown_relevant_link_count": 0
+          "markdown_relevant_link_count": 1,
+          "relevant_dom_link_targets_available": 15,
+          "relevant_dom_link_targets_retained": 1
         },
-        "comparison_note": "Coverage proxies, not ground-truth accuracy. Relevant anchor-label retention is measured against labels in the same DOM; manually review notice facts and source links."
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
       },
       "strategy_recommendation": "manual_review_required"
     },
@@ -902,7 +1223,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-9.html",
         "bytes": 376149,
         "sha256": "887e530634bdd3ed62b5cee4ed5d65dd67a2155955607b054325239ea72d1045",
-        "captured_at": "2026-11-10T18:12:04+01:00"
+        "captured_at": "2026-11-10T18:15:52+01:00"
       },
       "discovery": {
         "robots": {
@@ -916,13 +1237,130 @@
             "http_status": 200,
             "sitemap_kind": "sitemapindex",
             "loc_count": 13,
-            "audition_or_vocal_url_count": 0,
-            "url_examples": []
+            "child_sitemaps_checked": 5,
+            "child_sitemaps": [
+              {
+                "url": "https://aslico.org/post-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 166,
+                "audition_or_vocal_url_count": 77,
+                "url_examples": [
+                  "https://aslico.org/2021/05/02/i-vincitori-del-72-concorso-aslico-per-giovani-cantanti-lirici/",
+                  "https://aslico.org/2021/11/17/73-bando-concorso-aslico/",
+                  "https://aslico.org/wp-content/uploads/2021/11/backstage_concorso%C2%A9alessia_santambrogio-87.jpg",
+                  "https://aslico.org/2021/11/19/73-concorso-aslico-per-giovani-cantanti-lirici/",
+                  "https://aslico.org/wp-content/uploads/2021/11/backstage_concorso%C2%A9alessia_santambrogio-87.jpg",
+                  "https://aslico.org/2021/12/07/aperte-le-iscrizioni-del-73-concorso-aslico-per-giovani-cantanti-lirici/",
+                  "https://aslico.org/wp-content/uploads/2021/10/header_esibizioniconcorsoalessiasantambrogio-20.jpeg",
+                  "https://aslico.org/2021/11/22/la-traviata-bando-per-la-selezione-di-un-progetto-di-regia/",
+                  "https://aslico.org/wp-content/uploads/2021/11/CONCORSO-DI-REGIA.jpg",
+                  "https://aslico.org/wp-content/uploads/2021/10/header_esibizioniconcorsoalessiasantambrogio-20.jpeg",
+                  "https://aslico.org/wp-content/uploads/2021/10/header_esibizioniconcorsoalessiasantambrogio-20.jpeg",
+                  "https://aslico.org/2022/01/24/fase-di-preselezioni-a-como-73-concorso/"
+                ]
+              },
+              {
+                "url": "https://aslico.org/page-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 298,
+                "audition_or_vocal_url_count": 13,
+                "url_examples": [
+                  "https://aslico.org/test-form-concorso-per-ruoli-2021-eng/",
+                  "https://aslico.org/test-form-concorso-per-voci-emergenti-2021-ita/",
+                  "https://aslico.org/test-concorso-per-voci-emergenti-2021-eng/",
+                  "https://aslico.org/form-concorso-ita/",
+                  "https://aslico.org/test-form-concorso/",
+                  "https://aslico.org/test-nuovi-form-concorso/",
+                  "https://aslico.org/il-coro/",
+                  "https://aslico.org/2024-1-concorso-aslico-asia/?lang=en",
+                  "https://aslico.org/2025-2-concorso-aslico-asia/",
+                  "https://aslico.org/test-form-concorso-lirico-25-26/",
+                  "https://aslico.org/2026-3-concorso-aslico-asia/",
+                  "https://aslico.org/2026-3-concorso-aslico-asia/?lang=en"
+                ]
+              },
+              {
+                "url": "https://aslico.org/project-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 343,
+                "audition_or_vocal_url_count": 3,
+                "url_examples": [
+                  "https://aslico.org/wp-content/uploads/2022/02/coro-uomini-e-fantasmi-foto-raffaele-rastelli.jpg",
+                  "https://aslico.org/spettacoli/2023-lincoronazione-di-poppea/",
+                  "https://aslico.org/wp-content/uploads/2023/10/INCORONAZIONE_DI-_POPPEA_STAGIONE_NOTTE_TEATRO_SOCIALE_COMO_2.jpg"
+                ]
+              },
+              {
+                "url": "https://aslico.org/profile-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 23,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://aslico.org/tribe_venue-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 1,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              }
+            ],
+            "page_url_count": 831,
+            "audition_or_vocal_url_count": 93,
+            "url_examples": [
+              "https://aslico.org/2021/05/02/i-vincitori-del-72-concorso-aslico-per-giovani-cantanti-lirici/",
+              "https://aslico.org/2021/11/17/73-bando-concorso-aslico/",
+              "https://aslico.org/wp-content/uploads/2021/11/backstage_concorso%C2%A9alessia_santambrogio-87.jpg",
+              "https://aslico.org/2021/11/19/73-concorso-aslico-per-giovani-cantanti-lirici/",
+              "https://aslico.org/wp-content/uploads/2021/11/backstage_concorso%C2%A9alessia_santambrogio-87.jpg",
+              "https://aslico.org/2021/12/07/aperte-le-iscrizioni-del-73-concorso-aslico-per-giovani-cantanti-lirici/",
+              "https://aslico.org/wp-content/uploads/2021/10/header_esibizioniconcorsoalessiasantambrogio-20.jpeg",
+              "https://aslico.org/2021/11/22/la-traviata-bando-per-la-selezione-di-un-progetto-di-regia/",
+              "https://aslico.org/wp-content/uploads/2021/11/CONCORSO-DI-REGIA.jpg",
+              "https://aslico.org/wp-content/uploads/2021/10/header_esibizioniconcorsoalessiasantambrogio-20.jpeg",
+              "https://aslico.org/wp-content/uploads/2021/10/header_esibizioniconcorsoalessiasantambrogio-20.jpeg",
+              "https://aslico.org/2022/01/24/fase-di-preselezioni-a-como-73-concorso/"
+            ]
           }
         ],
         "advertised_feeds": [],
         "advertised_public_api_links": [
           "https://aslico.org/wp-json/"
+        ],
+        "public_api_checks": [
+          {
+            "url": "https://aslico.org/wp-json/",
+            "status": "ok",
+            "http_status": 200,
+            "json_valid": true,
+            "namespace_count": 27,
+            "route_count": 483,
+            "namespace_examples": [
+              "oembed/1.0",
+              "wpml/v1",
+              "cya11y/v1",
+              "code-snippets/v1",
+              "contact-form-7/v1",
+              "cookieyes/v1",
+              "cky/v1",
+              "file-manager-advanced/v1",
+              "redirection/v1",
+              "sliderrevolution",
+              "yoast/v1",
+              "wpml/tm/v1"
+            ],
+            "route_examples": []
+          }
         ]
       },
       "parsers": {
@@ -981,7 +1419,7 @@
           "table_count": 1
         },
         "scrapling": {
-          "runtime_seconds": 0.0062,
+          "runtime_seconds": 0.0118,
           "characters": 27005,
           "signals": {
             "vocal_roles": true,
@@ -991,11 +1429,13 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 9,
-          "relevant_dom_link_labels_retained_in_text": 9
+          "relevant_dom_link_labels_available": 10,
+          "relevant_dom_link_labels_retained_in_text": 10,
+          "relevant_link_targets_available": 7,
+          "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.005,
+          "runtime_seconds": 0.003,
           "characters": 168655,
           "signals": {
             "vocal_roles": true,
@@ -1005,12 +1445,14 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 9,
-          "relevant_dom_link_labels_retained_in_text": 9
+          "relevant_dom_link_labels_available": 10,
+          "relevant_dom_link_labels_retained_in_text": 10,
+          "relevant_link_targets_available": 7,
+          "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0319,
+          "runtime_seconds": 0.02,
           "characters": 5421,
           "signals": {
             "vocal_roles": true,
@@ -1020,16 +1462,20 @@
             "application": true,
             "pdf": true
           },
-          "relevant_dom_link_labels_available": 9,
-          "relevant_dom_link_labels_retained_in_text": 1
+          "relevant_dom_link_labels_available": 10,
+          "relevant_dom_link_labels_retained_in_text": 1,
+          "relevant_link_targets_available": 7,
+          "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0329,
+          "runtime_seconds": 0.0201,
           "characters": 5617,
           "markdown_link_count": 0,
-          "markdown_relevant_link_count": 0
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 7,
+          "relevant_dom_link_targets_retained": 0
         },
-        "comparison_note": "Coverage proxies, not ground-truth accuracy. Relevant anchor-label retention is measured against labels in the same DOM; manually review notice facts and source links."
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
       },
       "strategy_recommendation": "manual_review_required"
     }
@@ -1040,6 +1486,7 @@
     "403/429, login restrictions and unreadable robots policies are recorded and not bypassed.",
     "Parser counts and keyword signals are coverage proxies, not ground-truth accuracy.",
     "All parsers receive identical captured HTML bytes; no production policy is promoted automatically.",
-    "Sitemap indexes are counted but nested child sitemaps are not recursively crawled in this pilot."
+    "Sitemap indexes are followed for at most five child maps per index; deeper nesting is not traversed.",
+    "Only explicitly advertised public API roots are fetched; route endpoints are not guessed or queried."
   ]
 }
