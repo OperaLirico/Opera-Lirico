@@ -24,7 +24,7 @@
 
 请创建两个独立的 Custom API Token，均只授权当前 Cloudflare Account：
 
-1. `CF_WORKERS_DEPLOY_TOKEN`：Account → Workers Scripts → Edit。只用于部署。
+1. `CF_WORKERS_DEPLOY_TOKEN`：为已创建的 `opera-lirico-ops` Worker 授予 Workers Editor（旧权限界面可能显示为 Workers Scripts Edit）。只用于部署和更新该 Worker。
 2. `CF_ANALYTICS_API_TOKEN`：Account → Account Analytics → Read。只用于读取统计。
 
 首次部署前，请先在 Cloudflare Dashboard → Workers & Pages 中创建一个名为 `opera-lirico-ops` 的 Worker，并启用 workers.dev。然后创建部署 Token，给这个 Worker 授予 Workers Editor（旧权限界面可能显示为 Workers Scripts Edit）。这样部署凭证只需要管理这个 Worker，不必长期持有整个账户的 Admin 权限。
