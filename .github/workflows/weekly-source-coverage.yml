@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "audit_source_coverage.py"
+      - "robots_policy.py"
       - ".github/workflows/weekly-source-coverage.yml"
   workflow_run:
     workflows: ["Daily scrape and publish"]
