@@ -86,8 +86,8 @@ async function loadData(){
  try{
   const r=await fetch("/api/data",{cache:"no-store"});if(r.status===401){showLogin();return;}if(!r.ok)throw new Error("数据读取失败");
   const d=await r.json();
-  if(d.cloudflare&&d.cloudflare.ok){$("pageviews").textContent=fmt(d.cloudflare.pageviews);$("referralViews").textContent=fmt(d.cloudflare.visits);drawChart(d.cloudflare.days||[]);}
-  else{$("pageviews").textContent="—";$("visits").textContent="—";}
+  if(d.cloudflare&&d.cloudflare.ok){$("pageviews").textContent=fmt(d.cloudflare.pageviews);$("referralViews").textContent=fmt(d.cloudflare.referral_views);drawChart(d.cloudflare.days||[]);}
+  else{$("pageviews").textContent="—";$("referralViews").textContent="—";}
   if(d.buttondown&&d.buttondown.ok){$("subscribers").textContent=fmt(d.buttondown.active_subscribers);$("newSubscribers").textContent=fmt(d.buttondown.new_subscribers_7d);$("draftCount").textContent=fmt(d.buttondown.draft_count);renderDrafts(d.buttondown.drafts||[]);}
   else{$("subscribers").textContent="—";$("newSubscribers").textContent="—";$("draftCount").textContent="—";$("drafts").textContent="Buttondown 数据暂时不可用。";}
   const issues=[];if(!d.cloudflare?.ok)issues.push("Cloudflare："+(d.cloudflare?.error||"不可用"));if(!d.buttondown?.ok)issues.push("Buttondown："+(d.buttondown?.error||"不可用"));
