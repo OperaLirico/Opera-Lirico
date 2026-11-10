@@ -30,7 +30,10 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
         policy = json.loads((ROOT / "data" / "source_fetch_policies.json").read_text(encoding="utf-8"))
         assessed = {item["source_id"]: item for item in policy["entries"]
                     if item["strategy_status"] != "baseline_only"}
-        self.assertEqual(set(assessed), {"source-1", "source-2", "source-3", "source-9", "source-15"})
+        self.assertEqual(set(assessed), {
+            "source-1", "source-2", "source-3", "source-9", "source-15",
+            "source-4", "source-5", "source-6", "source-16", "source-17",
+        })
         for source_id, item in assessed.items():
             with self.subTest(source_id=source_id):
                 self.assertEqual(item["current_fetch_method"], "scrapling")
@@ -38,6 +41,10 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                 self.assertTrue(item["discovery_methods"])
                 self.assertIn("2026-11-10", item["last_assessed_at"])
                 self.assertIn("2026-11-10", item["assessment_note"])
+                self.assertIn(item.get("assessment_batch"), {
+                    "batch-1-2026-11-10", "batch-2-2026-11-10"
+                })
+                self.assertTrue(item["evidence_report"].startswith("reports/p2/"))
 
     def test_coverage_inventory_joins_source_review_classification(self):
         from audit_source_coverage import source_inventory
