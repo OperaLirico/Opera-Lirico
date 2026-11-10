@@ -1,5 +1,7 @@
 # Italia Audizioni engineering roadmap: P0–P5
 
+Last evidence-based status update: 10 November 2026.
+
 This roadmap separates implemented controls from work that still requires real-world validation. A passing workflow is not, by itself, proof that every source was checked or every parser is accurate.
 
 ## P0 — Source and opportunity trust
@@ -13,11 +15,18 @@ Acceptance:
 - Published opportunities require official publisher, verified review and published status, with first-party evidence.
 - Opportunity dates are separate and timezone-aware.
 
-Evidence: docs/source-review-policy.md, docs/opportunity-data-policy.md, data/opportunity.schema.json, tests/.
+Current evidence:
+- Structured opportunity registry contains 7 published, verified, official records.
+- A new Teatro Massimo public selection for two Contralto roles was discovered from its official job-opening sitemap and added with the official announcement and PDF.
+- The application deadline is 4 December 2026 at 12:00 Europe/Rome.
+- The official page says the audition begins 19 December; the official PDF says 20 December. The structured audition date is intentionally omitted and the conflict is shown in the public card notes.
+- Front-end cards display notes and a separate official PDF link.
+
+Evidence: docs/source-review-policy.md, docs/opportunity-data-policy.md, data/opportunity.schema.json, data/opportunities.json, tests/.
 
 ## P1 — Reliable collection and quality control
 
-**Status: baseline safeguards implemented; operational coverage audit added.**
+**Status: baseline safeguards and structured link capture implemented; first production refresh is validating the new link fields.**
 
 Acceptance:
 - HTTP, restriction and extraction failures are distinguishable.
@@ -25,14 +34,29 @@ Acceptance:
 - Daily opportunity quality report counts expiry, missing links, stale verification and invalid dates.
 - Automated tests cover data contracts and failure preservation.
 - Source scans record errors rather than silently treating them as zero new opportunities.
+- Source snapshots preserve full bounded page text and relevant first-party link evidence.
 
-Limitations: the current main collector still uses a fixed Scrapling source list plus a rotating discovered-source refresh. Per-domain fetch policy tuning and deeper retry/timeout metrics remain future improvements.
+Current evidence:
+- Production snapshots now include page_text, relevant_links, relevant_links_total and relevant_links_truncated.
+- Each relevant link stores an absolute URL and visible label; aria-label/title are retained for icon-only controls.
+- At most 250 links are stored per page. If the total exceeds the cap, an explicit truncation flag is set.
+- Last-good snapshot preservation includes structured links.
+- The first full daily production refresh after this change is being used to verify actual per-source link coverage and truncation.
+
+Limitations: per-domain timeout/retry tuning and structured link quality review across all sources remain ongoing.
 
 ## P2 — Per-source multi-engine strategy
 
-**Status: first five-source pilot completed; source-specific strategy decisions pending.**
+**Status: first source-specific assessment batch completed (5/44); 39 sources remain baseline_only.**
 
-The source policy registry records the current Scrapling path for every registered URL and explicitly marks alternatives as unassessed. The first five-source pilot checks robots.txt, advertised feeds and sitemaps, and compares Scrapling, lxml and Trafilatura on identical raw HTML. It remains evaluation-only pending review of the measured results.
+The first batch assessed:
+- Teatro alla Scala: Scrapling retained as production fetch method; sitemap is useful secondary discovery.
+- Teatro Carlo Felice: Scrapling retained; sitemap and public WordPress API root inspected. The API root is not treated as permission to guess/query arbitrary routes.
+- Teatro Massimo: Scrapling retained; its dedicated job-opening sitemap directly exposed the two-Contralto recruitment.
+- AsLiCo: Scrapling retained; sitemap is useful secondary discovery. Public WordPress API root was inspected, but no guessed route was queried.
+- Morlacchi: Scrapling retained; common sitemap endpoints returned 404, so direct HTML links remain the discovery path.
+
+Measured parser results and decisions are stored in data/source_fetch_policies.json and .github/audits/extraction-pilot-latest.md. For these five sources, Trafilatura is not promoted as the default. lxml full-text often includes much more boilerplate; Scrapling retained comparable relevant anchor labels. Structured href targets are evaluated separately from flattened text.
 
 Acceptance:
 - Each source has an evidence-based preferred method and fallback.
@@ -44,7 +68,13 @@ No blanket dependency expansion is permitted. Current production requirements re
 
 ## P3 — Change tracking and silent-miss detection
 
-**Status: first operational layer implemented; requires repeated weekly cycles to establish baselines.**
+**Status: first complete 44/44 weekly coverage scan succeeded; cross-week anomaly detection awaits another full cycle.**
+
+Current evidence:
+- The latest complete weekly scan checked all 44 registered sources, with 0 fetch failures and 0 remaining sources.
+- The first complete scan establishes a baseline; it does not prove that no historical changes were missed.
+- Source coverage now has a concurrency group independent from daily refresh and source discovery.
+- Pages deployment also has its own concurrency group, so site edits cannot replace a queued weekly coverage scan.
 
 Acceptance:
 - All registered sources and pending candidates are covered on a weekly cycle, in resumable batches.
@@ -53,32 +83,49 @@ Acceptance:
 - A previously accessible page becoming inaccessible, extraction becoming empty, or a previously visible vocal signal disappearing is flagged.
 - A successful scan never implies opportunity completeness or publisher authenticity.
 
-The first complete scan creates the baseline; trend-based anomaly detection becomes more meaningful after multiple completed cycles.
+The next complete weekly cycle should compare hashes against this baseline and begin reporting actual changes and silent-miss indicators.
 
-## P4 — Main-text extraction quality
+## P4 — Main-text and link extraction quality
 
-**Status: first offline snapshot comparison completed; corrected link-retention comparison in progress.**
+**Status: first five-page comparison completed; structured link capture is now part of production collection.**
+
+A separate evaluation workflow compared Scrapling, lxml full text and Trafilatura on identical official HTML snapshots. The corrected report separates:
+- relevant anchor labels available in the DOM;
+- labels retained in extracted text;
+- exact href targets retained in Markdown;
+- sitemap and feed discovery results.
+
+Results show that parser text length alone is not an accuracy metric. Scrapling retained comparable relevant labels on the tested sources; lxml often included substantial page boilerplate; Trafilatura was weak on several list-heavy pages and remains evaluation-only. Carlo Felice was an exception where Trafilatura Markdown preserved more href targets than plain text, but a structured-link comparison is still needed before any production switch.
+
+Production collection now preserves structured hrefs separately using lxml while keeping Scrapling for page fetching and text extraction. No discovered link is automatically promoted to an opportunity or application URL.
 
 Acceptance:
-- Compare the existing extraction with Trafilatura on the same offline HTML snapshots.
-- Test retention of title, dates, links, tables, role/voice type, eligibility, fees and application deadlines.
-- Keep Trafilatura only if it improves main-text completeness without losing structured details.
-
-A separate evaluation workflow captured five representative official pages as raw HTML artifacts and compared Scrapling, lxml full text and Trafilatura on identical bytes. First-pass character counts showed Trafilatura can be substantially shorter on list-heavy pages and longer on some content pages; this is not an accuracy verdict. The first report incorrectly repeated DOM link counts across parser rows, so a second pass now measures whether each parser's text actually retains relevant DOM anchor labels and separately counts Trafilatura Markdown links. Trafilatura remains evaluation-only and is not added to production requirements. Acceptance requires manual review of notice/date/role/eligibility/fee/link/table retention.
+- Compare title, dates, links, tables, role/voice type, eligibility, fees and application deadlines against manually reviewed evidence.
+- Use parser-specific methods only where they improve completeness without losing structured details.
+- Keep raw HTML snapshots and representative offline fixtures for repeatable tests.
 
 ## P5 — Evidence integrity and isolated PDF automation
 
-**Status: integrity baseline implemented; digital signatures and Docling extraction remain unverified.**
+**Status: PDF integrity baseline implemented; Docling pilot successful in isolation; signature verification and parser accuracy acceptance remain open.**
+
+Current evidence:
+- The isolated Docling 2.148.0 pilot converted 5/5 selected local PDF mirrors.
+- All 5 SHA-256 values matched the integrity manifest.
+- The sample covered 61 pages; all 61 pages had text provenance.
+- Five tables were detected in one sample; no page was flagged as low-text.
+- Combined conversion time was approximately 210 seconds.
+- The sample included non-vocal controls and historical/administrative notices. “Basso” can mean an instrument such as “basso tuba”; the evaluator now reports voice_term_candidates separately from vocal_context and instrument_context.
+- All extracted evidence remains pending_manual_review, is_verified=false and publication_eligible=false.
+- The Docling workflow is isolated under experiments/pdf-parser and does not write to production opportunity data.
+- No publisher digital signature has been verified.
 
 Acceptance:
 - Mirrored PDF files have a manifest with source record, local path, size, PDF-byte validation and SHA-256.
 - SHA-256 is described only as byte-integrity evidence.
 - Publisher signatures are marked verified only after cryptographic validation against a trusted publisher certificate/key.
-- PDF extraction is isolated, page-grounded and tested on representative official PDFs.
+- PDF extraction is isolated, page-grounded and tested against a manually annotated ground-truth set, including at least one confirmed scanned PDF and one current vocal recruitment PDF.
 - Machine extraction remains pending manual review and cannot publish records.
-
-The current implementation adds a PDF integrity manifest and an isolated Docling evaluation protocol. No publisher signature has been verified, and no Docling output is promoted into production.
 
 ## Completion policy
 
-P0–P5 are engineering workstreams, not a claim that the whole platform is finished. P2 and P4 require measured source-level evidence; P3 requires repeated weekly runs; P5 signature and parser acceptance require real signed PDFs and representative samples. Report these as pending until their evidence exists.
+P0–P5 are engineering workstreams, not a claim that the whole platform is finished. P2 remains partial until the remaining sources have evidence-based strategies; P3 needs repeated weekly runs; P4 needs manual field-level precision/recall checks; P5 signature and parser acceptance require trusted signatures and representative ground-truth samples. Report these as pending until their evidence exists.
