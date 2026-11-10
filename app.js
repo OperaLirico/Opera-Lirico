@@ -2,6 +2,23 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const sourceRoot = new URL('.', location.href);
 
+/* Styles for the extra "this word also appears in the lyrics" group. */
+(function searchExtraStyles(){
+  if(document.getElementById('search-extra-styles'))return;
+  const style=document.createElement('style');
+  style.id='search-extra-styles';
+  style.textContent='.music-extra{margin-top:18px;border:1px dashed var(--line);border-radius:12px;padding:0 16px;background:var(--paper-2)}'
+    +'.music-extra summary{cursor:pointer;padding:13px 0;font-size:12px;color:var(--ink-soft);list-style:none}'
+    +'.music-extra summary::-webkit-details-marker{display:none}'
+    +'.music-extra[open] summary{border-bottom:1px solid var(--line)}'
+    +'.music-extra-body{padding:12px 0 14px;display:flex;flex-direction:column;gap:14px}'
+    +'.music-extra-row{display:flex;flex-direction:column;gap:3px}'
+    +'.music-extra-row strong{font-family:var(--serif);font-size:15px;font-weight:600}'
+    +'.music-match-line{font-size:12px;color:var(--ink-soft);line-height:1.6}'
+    +'.music-extra-row .search-chip{align-self:flex-start;margin-top:2px}';
+  document.head.appendChild(style);
+})();
+
 let repertoire = [];
 let repertoireLoaded = false;
 let conservatoriData = [];
@@ -120,31 +137,61 @@ function itemNorm(item){
   }
   return item.__norm;
 }
-function scoreItem(item,terms){
-  const {title,aliases,work,composer,poet,text}=itemNorm(item);
-  let best=0,bestTerm='';
-  for(const term of terms){
-    if(!term)continue;
-    let s=0;
-    if(title===term)s=100;
-    else if(title.startsWith(term))s=80;
-    else if(title.split(' ').some(word=>word.startsWith(term)))s=70;
-    else if(title.includes(term))s=60;
-    else if(work.includes(term)||aliases.some(alias=>alias.includes(term)))s=45;
-    else if(composer.includes(term))s=35;
-    else if(poet.includes(term))s=25;
-    else if(text.includes(term))s=14;
-    else if(fuzzyFieldMatch(term,title)||aliases.some(alias=>fuzzyFieldMatch(term,alias)))s=8;
-    if(s>best){best=s;bestTerm=term;}
-  }
-  return {score:best,term:bestTerm};
+function hasWord(field,term){
+  if(!field||!term)return false;
+  if(/[\u3400-\u9fff]/.test(term))return field.includes(term);
+  const words=field.split(' ');
+  if(words.includes(term))return true;
+  if(term.length>=5&&words.some(word=>word.startsWith(term)))return true;
+  return false;
 }
-function keywordContext(item,term){
-  const text=(item.text||'').replace(/[ \t]+/g,' ');
-  for(const line of text.split('\n')){
-    if(normalizeSearch(line).includes(term))return line.trim().slice(0,96);
+function scoreName(item,term){
+  if(!term)return 0;
+  const n=itemNorm(item);
+  if(n.title===term)return 100;
+  if(n.aliases.some(alias=>alias===term))return 94;
+  if(n.title.startsWith(term))return 88;
+  if(n.aliases.some(alias=>alias&&alias.startsWith(term)))return 80;
+  if(term.length>=3&&n.title.split(' ').some(word=>word.startsWith(term)))return 74;
+  if(term.length>=4&&n.title.includes(term))return 68;
+  if(n.work&&hasWord(n.work,term))return 60;
+  if(n.aliases.some(alias=>alias&&alias.includes(term)))return 54;
+  if(n.composer&&hasWord(n.composer,term))return 44;
+  if(n.poet&&hasWord(n.poet,term))return 34;
+  if(fuzzyFieldMatch(term,n.title)||n.aliases.some(alias=>fuzzyFieldMatch(term,alias)))return 12;
+  return 0;
+}
+function textHit(item,term){
+  const normalized=itemNorm(item).text;
+  if(!normalized||!term)return null;
+  const words=normalized.split(' ');
+  let count=0;
+  if(words.includes(term))count=words.filter(word=>word===term).length;
+  else if(term.length>=5)count=words.filter(word=>word.startsWith(term)).length;
+  if(!count)return null;
+  const lines=(item.text||'').replace(/\t/g,' ').split('\n');
+  let line='';
+  for(const raw of lines){
+    const nl=normalizeSearch(raw);
+    if(!nl)continue;
+    const lw=nl.split(' ');
+    if(lw.includes(term)||(term.length>=5&&lw.some(word=>word.startsWith(term)))){line=raw.trim().slice(0,96);break;}
   }
-  return '';
+  return {count,line:line||(item.text||'').replace(/\s+/g,' ').slice(0,96)};
+}
+function matchItem(item,terms){
+  let nameScore=101, hitTerm='', firstText=null, matched=true;
+  for(const term of terms){
+    const ns=scoreName(item,term);
+    const th=textHit(item,term);
+    if(!ns&&!th){matched=false;break;}
+    if(term===terms[0])hitTerm=term;
+    if(ns){if(ns<nameScore){nameScore=ns;hitTerm=term;}}
+    else nameScore=0;
+    if(th&&!firstText)firstText=th;
+  }
+  if(!matched)return null;
+  return {item,nameScore:nameScore>=101?0:nameScore,term:hitTerm||terms[0],text:firstText};
 }
 function renderMusicSearch(rawQuery){
   const target=$('#musicSearchResults');
@@ -157,22 +204,27 @@ function renderMusicSearch(rawQuery){
     target.innerHTML='<div class="music-empty">曲目库正在更新，请稍候。</div>';
     return;
   }
-  const terms=query.split(/[\/,，、;；|]+/).map(x=>normalizeSearch(x)).filter(Boolean);
-  const scored=repertoire.map(item=>({item,hit:scoreItem(item,terms)}))
-    .filter(entry=>entry.hit.score>0)
-    .sort((a,b)=>b.hit.score-a.hit.score||a.item.title.localeCompare(b.item.title));
-  const total=scored.length;
-  const matches=scored.slice(0,12);
-  if(!matches.length){
+  const terms=query.split(/[\/,，、;；|]+/).map(normalizeSearch).filter(Boolean);
+  const evaluated=repertoire.map(item=>matchItem(item,terms)).filter(Boolean);
+  const main=evaluated.filter(entry=>entry.nameScore>0)
+    .sort((a,b)=>b.nameScore-a.nameScore||a.item.title.localeCompare(b.item.title));
+  const extra=evaluated.filter(entry=>!entry.nameScore)
+    .sort((a,b)=>((b.text&&b.text.count)||0)-((a.text&&a.text.count)||0)||a.item.title.localeCompare(b.item.title));
+  if(!evaluated.length){
     const near=repertoire.map(item=>({item,sim:editDistance(normalizeSearch(query),itemNorm(item).title,6)}))
       .filter(entry=>entry.sim<=6).sort((a,b)=>a.sim-b.sim).slice(0,5);
     target.innerHTML=`<div class="music-empty"><strong>暂未收录“${esc(query)}”</strong><p>曲目库里没有这个词。${near.length?'也许你想找：'+near.map(entry=>`<button type="button" class="search-chip" data-suggest="${esc(entry.item.title)}">${esc(entry.item.title)}</button>`).join(' '):'可以先试短一点的词，例如 nessun、libiamo、amore。'}</p></div>`;
     return;
   }
-  const expansions=[...new Set(matches.flatMap(entry=>[entry.item.composer,entry.item.work].filter(Boolean)))].slice(0,6);
-  const summary=`<p class="result-meta">共 ${total} 条相关，按匹配程度排序，先显示前 ${matches.length} 条。${expansions.length?'继续检索：':''}${expansions.map(value=>`<button type="button" class="search-chip" data-suggest="${esc(value)}">${esc(value)}</button>`).join(' ')}</p>`;
-  target.innerHTML=summary+matches.map(({item,hit})=>{
-    const context=hit.score>=14?keywordContext(item,hit.term):'';
+  const shown=main.slice(0,12);
+  const chips=[...new Set(shown.flatMap(entry=>[entry.item.composer,entry.item.work].filter(Boolean)))].slice(0,4);
+  const bits=[];
+  bits.push(main.length?`歌名 / 作品命中 ${main.length} 首`:'歌名没有命中');
+  if(main.length>shown.length)bits.push(`先显示前 ${shown.length} 首`);
+  if(extra.length)bits.push(`歌词里另有 ${extra.length} 首`);
+  const head=`<p class="result-meta">${bits.join(' · ')}${chips.length&&shown.length?' · 继续检索：':''}${shown.length?chips.map(value=>`<button type="button" class="search-chip" data-suggest="${esc(value)}">${esc(value)}</button>`).join(' '):''}</p>`;
+  const cards=shown.map(entry=>{
+    const item=entry.item;
     const plain=(item.text||'').replace(/\s+/g,' ').trim();
     const preview=plain.slice(0,110);
     const hasMore=(item.text||'').trim().length>110;
@@ -181,13 +233,15 @@ function renderMusicSearch(rawQuery){
    <div class="music-result-top"><span class="music-kind">${esc(item.kind)}</span><span class="music-voice">${esc(item.voice)}</span></div>
    <h3>${esc(item.title)}</h3>
    <p class="music-byline">${esc([item.composer,item.work?item.work:(item.poet?"词："+item.poet:"")].filter(Boolean).join(" · "))}</p>
-   ${context?`<p class="music-hit">“${esc(hit.term)}”出现在原文：${esc(context)}…</p>`:''}
    <div class="music-text"><div class="music-text-label">歌词原文 · ${esc(languageLabel(item.language))}</div><p class="lyrics lyrics-preview">${esc(preview)}${hasMore?'…':''}</p>${hasMore?`<div class="lyrics-full" hidden><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div><button type="button" class="lyrics-toggle" data-open="0">展开全文 ↓</button>`:''}</div>
    <div class="music-reading"><div><span class="music-text-label">原文朗读</span><p>在 Google 翻译里打开后点“听取原文”，会按这首作品的原文语言朗读。</p></div>${readLink?'<a class="reading-link" href="'+esc(readLink)+'" target="_blank" rel="noopener noreferrer">Google 翻译朗读 ↗</a>':'<span class="score-unavailable">文本超过 Google 翻译单次朗读长度</span>'}</div>
    <p class="music-meaning"><strong>大意：</strong>${esc(item.summary)}</p>
    <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'本站提供已核验的可下载版本。':'本站暂未托管乐谱 PDF。可以先查看 IMSLP 对应作品页；版本与地区版权请自行核对。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':item.scoreUrl?'<a class="score-imslp" href="'+esc(item.scoreUrl)+'" target="_blank" rel="noopener noreferrer">IMSLP 查看乐谱 ↗</a>':'<span class="score-unavailable">暂无乐谱链接</span>'}</div>
    <div class="music-source"><span>文本出处：${esc(item.textSourceName||'公开文本来源')} · 本文已收录在本站，搜索和阅读无需跳转。</span></div>
- </article>`;}).join('');
+ </article>`;
+  }).join('');
+  const extraBlock=extra.length?`<details class="music-extra"><summary>歌词里也出现这个词：${extra.length} 首（点开看命中句）</summary><div class="music-extra-body">${extra.slice(0,12).map(entry=>{const item=entry.item;const line=entry.text?entry.text.line:'';return `<div class="music-extra-row"><strong>${esc(item.title)}</strong><span class="music-byline">${esc([item.composer,item.work].filter(Boolean).join(' · '))}</span><p class="music-match-line">${esc(line)}</p><button type="button" class="search-chip" data-suggest="${esc(item.title)}">看这首歌全文</button></div>`;}).join('')}${extra.length>12?`<p class="music-match-line">另有 ${extra.length-12} 首未列出，建议加一个更具体的词（例如两句连写）。</p>`:''}</div></details>`:'';
+  target.innerHTML=head+cards+extraBlock;
 }
 async function loadRepertoire(){
   try{
@@ -476,7 +530,7 @@ if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!window.navigator.standalone){
 if('serviceWorker' in navigator && /^https?:$/.test(location.protocol))navigator.serviceWorker.register(new URL('service-worker.js',sourceRoot)).catch(()=>{});
 $('#musicSearchForm').addEventListener('submit',event=>{event.preventDefault();renderMusicSearch($('#musicSearchInput').value);});
 let musicSearchTimer=null;
-$('#musicSearchInput').addEventListener('input',event=>{const value=event.target.value;clearTimeout(musicSearchTimer);musicSearchTimer=setTimeout(()=>renderMusicSearch(value),140);});
+$('#musicSearchInput').addEventListener('input',event=>{const value=event.target.value;clearTimeout(musicSearchTimer);musicSearchTimer=setTimeout(()=>renderMusicSearch(value),160);});
 document.addEventListener('click',event=>{
   const suggest=event.target.closest('[data-suggest]');
   if(suggest){
@@ -499,7 +553,7 @@ document.addEventListener('click',event=>{
     toggle.textContent=open?'展开全文 ↓':'收起 ↑';
   }
 });
-$$('.search-chip').forEach(button=>button.addEventListener('click',()=>{const q=button.dataset.query;$('#musicSearchInput').value=q;renderMusicSearch(q);}));
+$$('.search-chip').forEach(button=>button.addEventListener('click',()=>{const q=button.dataset.query;if(!q)return;$('#musicSearchInput').value=q;renderMusicSearch(q);}));
 const sourcesLink=$('#sourcesLink');
 if(sourcesLink)sourcesLink.addEventListener('click',event=>{const note=$('#sources-note');if(note){event.preventDefault();note.scrollIntoView({behavior:'smooth',block:'nearest'});}});
 renderMusicSearch('');
