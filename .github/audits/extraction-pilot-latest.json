@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T18:07:18+01:00",
+  "generated_at": "2026-11-10T18:11:22+01:00",
   "scope": "Five high-value first-party vocal sources.",
   "pilot_source_ids": [
     "source-1",
@@ -26,8 +26,8 @@
       "raw_snapshot": {
         "artifact_path": "artifacts/p2-p4-html-samples/source-1.html",
         "bytes": 29603,
-        "sha256": "70ad179ce7e12e1964abcf0fe086e0b7cb467c025c809309162e6a6a7addf4fc",
-        "captured_at": "2026-11-10T18:07:20+01:00"
+        "sha256": "28793f609149db7ddfb7aec8cf738cda7cbe25ca85397c14cbae71255c41e59e",
+        "captured_at": "2026-11-10T18:11:24+01:00"
       },
       "discovery": {
         "robots": {
@@ -39,14 +39,108 @@
             "url": "https://www.teatroallascala.org/sitemap.xml",
             "status": "ok",
             "http_status": 200,
-            "loc_count": 2
+            "sitemap_kind": "sitemapindex",
+            "loc_count": 2,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
           }
         ],
-        "advertised_feeds": []
+        "advertised_feeds": [],
+        "advertised_public_api_links": []
       },
       "parsers": {
+        "title": "Concorsi e Audizioni Coro - Teatro alla Scala",
+        "dom_structure": {
+          "anchor_count": 92,
+          "relevant_anchor_count": 20,
+          "relevant_anchor_examples": [
+            {
+              "text": "Menù principale",
+              "url": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html#header"
+            },
+            {
+              "text": "Contenuto principale",
+              "url": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html#main"
+            },
+            {
+              "text": "Footer",
+              "url": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html#footer"
+            },
+            {
+              "text": "Regolamento di biglietteria",
+              "url": "https://www.teatroallascala.org/it/stagione/biglietteria/regolamento-di-biglietteria.html"
+            },
+            {
+              "text": "Clicca qui per scaricare il bando",
+              "url": "https://www.teatroallascala.org/static/upload/ban/bando-coro-ita1.pdf"
+            },
+            {
+              "text": "Clicca qui per compilare la domanda",
+              "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=178qPqh2GUHID&lingua=I"
+            },
+            {
+              "text": "Clicca qui per scaricare i passi",
+              "url": "https://www.teatroallascala.org/static/upload/aud/audizione_concorso-coro-2026-pubbl_ok.pdf"
+            },
+            {
+              "text": "Clicca qui per scaricare il bando",
+              "url": "https://www.teatroallascala.org/static/upload/ban/bando-coro-ita-aprile-2025.pdf"
+            },
+            {
+              "text": "Clicca qui per compilare la domanda",
+              "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=142Ut48weLpZr&lingua=I"
+            },
+            {
+              "text": "Clicca qui per scaricare i passi",
+              "url": "https://www.teatroallascala.org/static/upload/pas/passi-concorso-coro-2025-compresso.pdf"
+            },
+            {
+              "text": "Clicca qui per scaricare il bando",
+              "url": "https://www.teatroallascala.org/static/upload/ban/bando-coro-ita.pdf"
+            },
+            {
+              "text": "Clicca qui per compilare la domanda",
+              "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=114DqqfGFkFoa&lingua=I"
+            },
+            {
+              "text": "Clicca qui per scaricare i passi",
+              "url": "https://www.teatroallascala.org/static/upload/fas/fascicolo-concorso-coro-2024-pub.pdf"
+            },
+            {
+              "text": "Clicca qui per scaricare il bando",
+              "url": "https://www.teatroallascala.org/static/upload/ban/bando8.pdf"
+            },
+            {
+              "text": "Clicca qui per compilare la domanda",
+              "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=90lqdFRqwDYk&lingua=I&_gl=1*t649xl*_ga*NzU0NzM0MDc2LjE2NTIzNzAxMDc.*_ga_NJN806BJSJ*MTY4MTIwNzc4My45MC4xLjE2ODEyMDkzMTcuMC4wLjA."
+            },
+            {
+              "text": "Clicca qui per scaricare i passi",
+              "url": "https://www.teatroallascala.org/static/upload/_con/concorso-coro-2023-pubbl-passi.pdf"
+            },
+            {
+              "text": "Clicca qui per scaricare il bando",
+              "url": "https://www.teatroallascala.org/static/upload/ban/bando8.pdf"
+            },
+            {
+              "text": "Clicca qui per compilare la domanda",
+              "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=90lqdFRqwDYk&lingua=I&_gl=1*t649xl*_ga*NzU0NzM0MDc2LjE2NTIzNzAxMDc.*_ga_NJN806BJSJ*MTY4MTIwNzc4My45MC4xLjE2ODEyMDkzMTcuMC4wLjA."
+            },
+            {
+              "text": "Clicca qui per scaricare i passi",
+              "url": "https://www.teatroallascala.org/static/upload/_con/concorso-coro-2023-pubbl-passi.pdf"
+            },
+            {
+              "text": "",
+              "url": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html"
+            }
+          ],
+          "list_item_count": 77,
+          "heading_count": 7,
+          "table_count": 0
+        },
         "scrapling": {
-          "runtime_seconds": 0.0011,
+          "runtime_seconds": 0.0009,
           "characters": 3454,
           "signals": {
             "vocal_roles": false,
@@ -56,10 +150,11 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 11
+          "relevant_dom_link_labels_available": 3,
+          "relevant_dom_link_labels_retained_in_text": 3
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0006,
+          "runtime_seconds": 0.0008,
           "characters": 4757,
           "signals": {
             "vocal_roles": false,
@@ -69,11 +164,12 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 11
+          "relevant_dom_link_labels_available": 3,
+          "relevant_dom_link_labels_retained_in_text": 3
         },
-        "trafilatura": {
+        "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0112,
+          "runtime_seconds": 0.0094,
           "characters": 1818,
           "signals": {
             "vocal_roles": false,
@@ -83,92 +179,16 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 11
+          "relevant_dom_link_labels_available": 3,
+          "relevant_dom_link_labels_retained_in_text": 2
         },
-        "dom_link_count": 92,
-        "relevant_links": [
-          {
-            "text": "Menù principale",
-            "url": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html#header"
-          },
-          {
-            "text": "Contenuto principale",
-            "url": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html#main"
-          },
-          {
-            "text": "Footer",
-            "url": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html#footer"
-          },
-          {
-            "text": "Regolamento di biglietteria",
-            "url": "https://www.teatroallascala.org/it/stagione/biglietteria/regolamento-di-biglietteria.html"
-          },
-          {
-            "text": "Clicca qui per scaricare il bando",
-            "url": "https://www.teatroallascala.org/static/upload/ban/bando-coro-ita1.pdf"
-          },
-          {
-            "text": "Clicca qui per compilare la domanda",
-            "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=178qPqh2GUHID&lingua=I"
-          },
-          {
-            "text": "Clicca qui per scaricare i passi",
-            "url": "https://www.teatroallascala.org/static/upload/aud/audizione_concorso-coro-2026-pubbl_ok.pdf"
-          },
-          {
-            "text": "Clicca qui per scaricare il bando",
-            "url": "https://www.teatroallascala.org/static/upload/ban/bando-coro-ita-aprile-2025.pdf"
-          },
-          {
-            "text": "Clicca qui per compilare la domanda",
-            "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=142Ut48weLpZr&lingua=I"
-          },
-          {
-            "text": "Clicca qui per scaricare i passi",
-            "url": "https://www.teatroallascala.org/static/upload/pas/passi-concorso-coro-2025-compresso.pdf"
-          },
-          {
-            "text": "Clicca qui per scaricare il bando",
-            "url": "https://www.teatroallascala.org/static/upload/ban/bando-coro-ita.pdf"
-          },
-          {
-            "text": "Clicca qui per compilare la domanda",
-            "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=114DqqfGFkFoa&lingua=I"
-          },
-          {
-            "text": "Clicca qui per scaricare i passi",
-            "url": "https://www.teatroallascala.org/static/upload/fas/fascicolo-concorso-coro-2024-pub.pdf"
-          },
-          {
-            "text": "Clicca qui per scaricare il bando",
-            "url": "https://www.teatroallascala.org/static/upload/ban/bando8.pdf"
-          },
-          {
-            "text": "Clicca qui per compilare la domanda",
-            "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=90lqdFRqwDYk&lingua=I&_gl=1*t649xl*_ga*NzU0NzM0MDc2LjE2NTIzNzAxMDc.*_ga_NJN806BJSJ*MTY4MTIwNzc4My45MC4xLjE2ODEyMDkzMTcuMC4wLjA."
-          },
-          {
-            "text": "Clicca qui per scaricare i passi",
-            "url": "https://www.teatroallascala.org/static/upload/_con/concorso-coro-2023-pubbl-passi.pdf"
-          },
-          {
-            "text": "Clicca qui per scaricare il bando",
-            "url": "https://www.teatroallascala.org/static/upload/ban/bando8.pdf"
-          },
-          {
-            "text": "Clicca qui per compilare la domanda",
-            "url": "https://erp.teatroallascala.org/HR_RECRUITMENT/faces/candidatureCV.xhtml?bando=90lqdFRqwDYk&lingua=I&_gl=1*t649xl*_ga*NzU0NzM0MDc2LjE2NTIzNzAxMDc.*_ga_NJN806BJSJ*MTY4MTIwNzc4My45MC4xLjE2ODEyMDkzMTcuMC4wLjA."
-          },
-          {
-            "text": "Clicca qui per scaricare i passi",
-            "url": "https://www.teatroallascala.org/static/upload/_con/concorso-coro-2023-pubbl-passi.pdf"
-          },
-          {
-            "text": "",
-            "url": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html"
-          }
-        ],
-        "comparison_note": "Coverage proxies only, not precision/recall ground truth; manually review actual notice facts."
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0069,
+          "characters": 1855,
+          "markdown_link_count": 1,
+          "markdown_relevant_link_count": 1
+        },
+        "comparison_note": "Coverage proxies, not ground-truth accuracy. Relevant anchor-label retention is measured against labels in the same DOM; manually review notice facts and source links."
       },
       "strategy_recommendation": "manual_review_required"
     },
@@ -188,7 +208,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-15.html",
         "bytes": 34805,
         "sha256": "c954dd570d97dc8a9a3b90c9420f91dc02046373c233aa1edf1e5ada4497037b",
-        "captured_at": "2026-11-10T18:07:26+01:00"
+        "captured_at": "2026-11-10T18:11:30+01:00"
       },
       "discovery": {
         "robots": {
@@ -200,18 +220,156 @@
             "url": "https://www.concorsomorlacchi.it/sitemap.xml",
             "status": "http_error",
             "http_status": 404,
-            "loc_count": 0
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
           },
           {
             "url": "https://www.concorsomorlacchi.it/wp-sitemap.xml",
             "status": "http_error",
             "http_status": 404,
-            "loc_count": 0
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "https://www.concorsomorlacchi.it/sitemap_index.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
           }
         ],
-        "advertised_feeds": []
+        "advertised_feeds": [],
+        "advertised_public_api_links": []
       },
       "parsers": {
+        "title": "Concorso Internazionale di Canto lirico Francesco Morlacchi · Perugia 2026",
+        "dom_structure": {
+          "anchor_count": 28,
+          "relevant_anchor_count": 28,
+          "relevant_anchor_examples": [
+            {
+              "text": "Vai al regolamento",
+              "url": "https://www.concorsomorlacchi.it/#regolamento"
+            },
+            {
+              "text": "MORLACCHI PERUGIA · 2026",
+              "url": "https://www.concorsomorlacchi.it/#top"
+            },
+            {
+              "text": "Italiano",
+              "url": "https://www.concorsomorlacchi.it/#regolamento"
+            },
+            {
+              "text": "中文",
+              "url": "https://www.concorsomorlacchi.it/#zh-regolamento"
+            },
+            {
+              "text": "Modulo Word",
+              "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx"
+            },
+            {
+              "text": "Scarica il modulo di iscrizione Word",
+              "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx"
+            },
+            {
+              "text": "Versione PDF",
+              "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf"
+            },
+            {
+              "text": "Direzione artistica",
+              "url": "https://www.concorsomorlacchi.it/#it-direzione"
+            },
+            {
+              "text": "Giuria",
+              "url": "https://www.concorsomorlacchi.it/#it-giuria"
+            },
+            {
+              "text": "01 Iscrizione e documentazione",
+              "url": "https://www.concorsomorlacchi.it/#it-art-1"
+            },
+            {
+              "text": "02 Pagamento della quota di iscrizione",
+              "url": "https://www.concorsomorlacchi.it/#it-art-2"
+            },
+            {
+              "text": "03 Calendario del concorso",
+              "url": "https://www.concorsomorlacchi.it/#it-art-3"
+            },
+            {
+              "text": "04 Prove del concorso",
+              "url": "https://www.concorsomorlacchi.it/#it-art-4"
+            },
+            {
+              "text": "05 Spartiti e variazioni del programma",
+              "url": "https://www.concorsomorlacchi.it/#it-art-5"
+            },
+            {
+              "text": "06 Ammissione alla semifinale e ordine di esibizione",
+              "url": "https://www.concorsomorlacchi.it/#it-art-6"
+            },
+            {
+              "text": "07 Pianisti accompagnatori e prove",
+              "url": "https://www.concorsomorlacchi.it/#it-art-7"
+            },
+            {
+              "text": "08 Attestati e diplomi",
+              "url": "https://www.concorsomorlacchi.it/#it-art-8"
+            },
+            {
+              "text": "09 Premi",
+              "url": "https://www.concorsomorlacchi.it/#it-art-9"
+            },
+            {
+              "text": "10 Opportunità artistiche",
+              "url": "https://www.concorsomorlacchi.it/#it-art-10"
+            },
+            {
+              "text": "11 Giuria e valutazione",
+              "url": "https://www.concorsomorlacchi.it/#it-art-11"
+            },
+            {
+              "text": "12 Registrazioni e utilizzo dell’immagine",
+              "url": "https://www.concorsomorlacchi.it/#it-art-12"
+            },
+            {
+              "text": "13 Foro competente",
+              "url": "https://www.concorsomorlacchi.it/#it-art-13"
+            },
+            {
+              "text": "中文章程",
+              "url": "https://www.concorsomorlacchi.it/#zh-regolamento"
+            },
+            {
+              "text": "下载报名表 Word",
+              "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx"
+            },
+            {
+              "text": "PDF版本",
+              "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf"
+            },
+            {
+              "text": "Scarica il modulo di iscrizione Word",
+              "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx"
+            },
+            {
+              "text": "Versione PDF",
+              "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf"
+            },
+            {
+              "text": "Torna all’inizio / 返回顶部",
+              "url": "https://www.concorsomorlacchi.it/#top"
+            }
+          ],
+          "list_item_count": 61,
+          "heading_count": 34,
+          "table_count": 0
+        },
         "scrapling": {
           "runtime_seconds": 0.0013,
           "characters": 17733,
@@ -223,7 +381,8 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 10
+          "relevant_dom_link_labels_available": 8,
+          "relevant_dom_link_labels_retained_in_text": 8
         },
         "lxml_full_text": {
           "runtime_seconds": 0.0009,
@@ -236,11 +395,12 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 10
+          "relevant_dom_link_labels_available": 8,
+          "relevant_dom_link_labels_retained_in_text": 8
         },
-        "trafilatura": {
+        "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0107,
+          "runtime_seconds": 0.0094,
           "characters": 12162,
           "signals": {
             "vocal_roles": true,
@@ -250,124 +410,16 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 10
+          "relevant_dom_link_labels_available": 8,
+          "relevant_dom_link_labels_retained_in_text": 0
         },
-        "dom_link_count": 28,
-        "relevant_links": [
-          {
-            "text": "Vai al regolamento",
-            "url": "https://www.concorsomorlacchi.it/#regolamento"
-          },
-          {
-            "text": "MORLACCHI PERUGIA · 2026",
-            "url": "https://www.concorsomorlacchi.it/#top"
-          },
-          {
-            "text": "Italiano",
-            "url": "https://www.concorsomorlacchi.it/#regolamento"
-          },
-          {
-            "text": "中文",
-            "url": "https://www.concorsomorlacchi.it/#zh-regolamento"
-          },
-          {
-            "text": "Modulo Word",
-            "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx"
-          },
-          {
-            "text": "Scarica il modulo di iscrizione Word",
-            "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx"
-          },
-          {
-            "text": "Versione PDF",
-            "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf"
-          },
-          {
-            "text": "Direzione artistica",
-            "url": "https://www.concorsomorlacchi.it/#it-direzione"
-          },
-          {
-            "text": "Giuria",
-            "url": "https://www.concorsomorlacchi.it/#it-giuria"
-          },
-          {
-            "text": "01 Iscrizione e documentazione",
-            "url": "https://www.concorsomorlacchi.it/#it-art-1"
-          },
-          {
-            "text": "02 Pagamento della quota di iscrizione",
-            "url": "https://www.concorsomorlacchi.it/#it-art-2"
-          },
-          {
-            "text": "03 Calendario del concorso",
-            "url": "https://www.concorsomorlacchi.it/#it-art-3"
-          },
-          {
-            "text": "04 Prove del concorso",
-            "url": "https://www.concorsomorlacchi.it/#it-art-4"
-          },
-          {
-            "text": "05 Spartiti e variazioni del programma",
-            "url": "https://www.concorsomorlacchi.it/#it-art-5"
-          },
-          {
-            "text": "06 Ammissione alla semifinale e ordine di esibizione",
-            "url": "https://www.concorsomorlacchi.it/#it-art-6"
-          },
-          {
-            "text": "07 Pianisti accompagnatori e prove",
-            "url": "https://www.concorsomorlacchi.it/#it-art-7"
-          },
-          {
-            "text": "08 Attestati e diplomi",
-            "url": "https://www.concorsomorlacchi.it/#it-art-8"
-          },
-          {
-            "text": "09 Premi",
-            "url": "https://www.concorsomorlacchi.it/#it-art-9"
-          },
-          {
-            "text": "10 Opportunità artistiche",
-            "url": "https://www.concorsomorlacchi.it/#it-art-10"
-          },
-          {
-            "text": "11 Giuria e valutazione",
-            "url": "https://www.concorsomorlacchi.it/#it-art-11"
-          },
-          {
-            "text": "12 Registrazioni e utilizzo dell’immagine",
-            "url": "https://www.concorsomorlacchi.it/#it-art-12"
-          },
-          {
-            "text": "13 Foro competente",
-            "url": "https://www.concorsomorlacchi.it/#it-art-13"
-          },
-          {
-            "text": "中文章程",
-            "url": "https://www.concorsomorlacchi.it/#zh-regolamento"
-          },
-          {
-            "text": "下载报名表 Word",
-            "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx"
-          },
-          {
-            "text": "PDF版本",
-            "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf"
-          },
-          {
-            "text": "Scarica il modulo di iscrizione Word",
-            "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx"
-          },
-          {
-            "text": "Versione PDF",
-            "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf"
-          },
-          {
-            "text": "Torna all’inizio / 返回顶部",
-            "url": "https://www.concorsomorlacchi.it/#top"
-          }
-        ],
-        "comparison_note": "Coverage proxies only, not precision/recall ground truth; manually review actual notice facts."
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0101,
+          "characters": 12253,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0
+        },
+        "comparison_note": "Coverage proxies, not ground-truth accuracy. Relevant anchor-label retention is measured against labels in the same DOM; manually review notice facts and source links."
       },
       "strategy_recommendation": "manual_review_required"
     },
@@ -386,8 +438,8 @@
       "raw_snapshot": {
         "artifact_path": "artifacts/p2-p4-html-samples/source-2.html",
         "bytes": 398561,
-        "sha256": "28938772c864520bdb7bf660127a5796fe3778ebf9ee61632f9fcd368e76bf50",
-        "captured_at": "2026-11-10T18:07:36+01:00"
+        "sha256": "eec660fb26e701dbe308caab213be95f3af58650d23533743137b16d649b25a3",
+        "captured_at": "2026-11-10T18:11:42+01:00"
       },
       "discovery": {
         "robots": {
@@ -399,25 +451,169 @@
             "url": "https://www.carlofelice.it/sitemap.xml",
             "status": "ok",
             "http_status": 200,
-            "loc_count": 7
+            "sitemap_kind": "sitemapindex",
+            "loc_count": 7,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
           }
         ],
         "advertised_feeds": [
           {
             "url": "https://www.carlofelice.it/comments/feed/",
             "status": "ok",
-            "http_status": 200
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
           },
           {
             "url": "https://www.carlofelice.it/feed/",
             "status": "ok",
-            "http_status": 200
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
           }
+        ],
+        "advertised_public_api_links": [
+          "https://www.carlofelice.it/wp-json/"
         ]
       },
       "parsers": {
+        "title": "Audizioni e Concorsi | Teatro Carlo Felice",
+        "dom_structure": {
+          "anchor_count": 465,
+          "relevant_anchor_count": 387,
+          "relevant_anchor_examples": [
+            {
+              "text": "Salta al contenuto",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/#content"
+            },
+            {
+              "text": "Teatro",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/"
+            },
+            {
+              "text": "Audizioni e concorsi",
+              "url": "https://www.carlofelice.it/audizioni-e-concorsi/"
+            },
+            {
+              "text": "Stagione",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/"
+            },
+            {
+              "text": "Accessibilità",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/"
+            },
+            {
+              "text": "",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6NDU0OTksInRvZ2dsZSI6ZmFsc2V9"
+            },
+            {
+              "text": "",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6NDU0OTksInRvZ2dsZSI6ZmFsc2V9"
+            },
+            {
+              "text": "",
+              "url": "https://carlofelice.it/audizioni-e-concorsi/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6NDU3ODEsInRvZ2dsZSI6ZmFsc2V9"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Bando-Accademia-TCF_261110.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-accademia-alto-perfezionamento-per-cantanti-lirici-e-pianisti-accompagnatori-2027/"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/ALLEGATO-A-Avviso-selezione-Addetto-Ufficio-del-Personale.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/ALEGATO-B-Avviso-selezione-Addetto-allUfficio-del-Personale.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/FIRMATO-Avviso-selezione-addetto-allufficio-del-personale.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-tenori-5/"
+            },
+            {
+              "text": "Verdi, Nabucco, Gli arredi festivi",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Verdi-Nabucco-Gli-arredi-festivi.pdf"
+            },
+            {
+              "text": "Verdi, Messa da Requiem, n° 7 ‘Libera me’",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/4.-Verdi-Messa-da-Requiem-n°-7-Libera-me.pdf"
+            },
+            {
+              "text": "Puccini, Turandot",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Puccini-Turandot.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-AUDIZIONI-TCF-CORO-TN-11.26-B.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Procedura-selettiva-Macchinista-Teatrale-di-scena-e-di-laboratorio.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-tecnici-macchinista-teatrale-di-scena-e-di-laboratorio/"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-bassi-e-baritoni/"
+            },
+            {
+              "text": "Rossini, Stabat Mater, Quando Corpus",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/1.-Rossini-Stabat-Mater-Quando-Corpus.pdf"
+            },
+            {
+              "text": "Mozart, Requiem, Kyrie",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/2.-Mozart-Requiem-Kyrie.pdf"
+            },
+            {
+              "text": "Verdi, Nabucco, Gli arredi festivi",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Verdi-Nabucco-Gli-arredi-festivi.pdf"
+            },
+            {
+              "text": "Verdi, Messa da Requiem, n° 7 ‘Libera me’",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/4.-Verdi-Messa-da-Requiem-n°-7-Libera-me.pdf"
+            },
+            {
+              "text": "Verdi, Otello, Fuoco di gioia",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/5.-Verdi-Otello-Fuoco-di-gioia.pdf"
+            },
+            {
+              "text": "Verdi, Ave Maria su scala enigmatica",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/6.-Verdi-Ave-Maria-su-scala-enigmatica.pdf"
+            },
+            {
+              "text": "Puccini, Turandot",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Puccini-Turandot.pdf"
+            },
+            {
+              "text": "Brahms, Ein deutsches Requiem, n° 4",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/8.-Brahms-Ein-deutsches-Requiem-n°-4.pdf"
+            },
+            {
+              "text": "QUI",
+              "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-CORO-concorso-26.11-BR-BS-b.pdf"
+            }
+          ],
+          "list_item_count": 173,
+          "heading_count": 1,
+          "table_count": 0
+        },
         "scrapling": {
-          "runtime_seconds": 0.0114,
+          "runtime_seconds": 0.0118,
           "characters": 52378,
           "signals": {
             "vocal_roles": true,
@@ -427,10 +623,11 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 9
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 7
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0079,
+          "runtime_seconds": 0.0094,
           "characters": 68502,
           "signals": {
             "vocal_roles": true,
@@ -440,11 +637,12 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 9
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 7
         },
-        "trafilatura": {
+        "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.1875,
+          "runtime_seconds": 0.1684,
           "characters": 58971,
           "signals": {
             "vocal_roles": true,
@@ -454,172 +652,16 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 9
+          "relevant_dom_link_labels_available": 7,
+          "relevant_dom_link_labels_retained_in_text": 1
         },
-        "dom_link_count": 465,
-        "relevant_links": [
-          {
-            "text": "Salta al contenuto",
-            "url": "https://carlofelice.it/audizioni-e-concorsi/#content"
-          },
-          {
-            "text": "Teatro",
-            "url": "https://carlofelice.it/audizioni-e-concorsi/"
-          },
-          {
-            "text": "Audizioni e concorsi",
-            "url": "https://www.carlofelice.it/audizioni-e-concorsi/"
-          },
-          {
-            "text": "Stagione",
-            "url": "https://carlofelice.it/audizioni-e-concorsi/"
-          },
-          {
-            "text": "Accessibilità",
-            "url": "https://carlofelice.it/audizioni-e-concorsi/"
-          },
-          {
-            "text": "",
-            "url": "https://carlofelice.it/audizioni-e-concorsi/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6NDU0OTksInRvZ2dsZSI6ZmFsc2V9"
-          },
-          {
-            "text": "",
-            "url": "https://carlofelice.it/audizioni-e-concorsi/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6NDU0OTksInRvZ2dsZSI6ZmFsc2V9"
-          },
-          {
-            "text": "",
-            "url": "https://carlofelice.it/audizioni-e-concorsi/#elementor-action%3Aaction%3Dpopup%3Aopen%26settings%3DeyJpZCI6NDU3ODEsInRvZ2dsZSI6ZmFsc2V9"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Bando-Accademia-TCF_261110.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-accademia-alto-perfezionamento-per-cantanti-lirici-e-pianisti-accompagnatori-2027/"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/ALLEGATO-A-Avviso-selezione-Addetto-Ufficio-del-Personale.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/ALEGATO-B-Avviso-selezione-Addetto-allUfficio-del-Personale.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/FIRMATO-Avviso-selezione-addetto-allufficio-del-personale.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-tenori-5/"
-          },
-          {
-            "text": "Verdi, Nabucco, Gli arredi festivi",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Verdi-Nabucco-Gli-arredi-festivi.pdf"
-          },
-          {
-            "text": "Verdi, Messa da Requiem, n° 7 ‘Libera me’",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/4.-Verdi-Messa-da-Requiem-n°-7-Libera-me.pdf"
-          },
-          {
-            "text": "Puccini, Turandot",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Puccini-Turandot.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-AUDIZIONI-TCF-CORO-TN-11.26-B.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Procedura-selettiva-Macchinista-Teatrale-di-scena-e-di-laboratorio.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-tecnici-macchinista-teatrale-di-scena-e-di-laboratorio/"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-coro-bassi-e-baritoni/"
-          },
-          {
-            "text": "Rossini, Stabat Mater, Quando Corpus",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/1.-Rossini-Stabat-Mater-Quando-Corpus.pdf"
-          },
-          {
-            "text": "Mozart, Requiem, Kyrie",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/2.-Mozart-Requiem-Kyrie.pdf"
-          },
-          {
-            "text": "Verdi, Nabucco, Gli arredi festivi",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Verdi-Nabucco-Gli-arredi-festivi.pdf"
-          },
-          {
-            "text": "Verdi, Messa da Requiem, n° 7 ‘Libera me’",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/4.-Verdi-Messa-da-Requiem-n°-7-Libera-me.pdf"
-          },
-          {
-            "text": "Verdi, Otello, Fuoco di gioia",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/5.-Verdi-Otello-Fuoco-di-gioia.pdf"
-          },
-          {
-            "text": "Verdi, Ave Maria su scala enigmatica",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/6.-Verdi-Ave-Maria-su-scala-enigmatica.pdf"
-          },
-          {
-            "text": "Puccini, Turandot",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/3.-Puccini-Turandot.pdf"
-          },
-          {
-            "text": "Brahms, Ein deutsches Requiem, n° 4",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/06/8.-Brahms-Ein-deutsches-Requiem-n°-4.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/BANDO-CORO-concorso-26.11-BR-BS-b.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/audizioni-e-concorsi/selezione-figuranti/"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/10/ALLEGATO-A-Avviso-manifestazione-dinteresse-Direttore-Musicale-di-Palcoscenico.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/08/ALEGATO-B-Avviso-selezione-Addetto-Ufficio-Produzione-1.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/10/Avviso-di-Manifestazione-dinteresse-Direttore-Musicale-di-Palcoscenico-1.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-secondo-oboe/"
-          },
-          {
-            "text": "Secondo oboe con obbligo del terzo e seguenti, del corno inglese e del palcoscenico",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/08/Passi-secondo-oboe.pdf"
-          },
-          {
-            "text": "Prima viola con obbligo della fila",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/08/Passi-prima-viola.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/08/BANDO-ORCHESTRA-DOPPIA-VALENZA-08.26.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/wp-content/uploads/2026/11/Graduatoria-Prima-viola-con-obbligo-della-fila-9.11.2026.pdf"
-          },
-          {
-            "text": "QUI",
-            "url": "https://www.carlofelice.it/audizioni-e-concorsi/domanda-dammissione-orchestra-primo-violino-dei-secondi-violini-con-obbligo-della-fila/"
-          }
-        ],
-        "comparison_note": "Coverage proxies only, not precision/recall ground truth; manually review actual notice facts."
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.1844,
+          "characters": 60954,
+          "markdown_link_count": 187,
+          "markdown_relevant_link_count": 1
+        },
+        "comparison_note": "Coverage proxies, not ground-truth accuracy. Relevant anchor-label retention is measured against labels in the same DOM; manually review notice facts and source links."
       },
       "strategy_recommendation": "manual_review_required"
     },
@@ -637,9 +679,9 @@
       "error": null,
       "raw_snapshot": {
         "artifact_path": "artifacts/p2-p4-html-samples/source-3.html",
-        "bytes": 135774,
-        "sha256": "1b0084e6ef504dfac638b0c432fb7743f35f32e6a873be419490dd199a182e91",
-        "captured_at": "2026-11-10T18:07:48+01:00"
+        "bytes": 135749,
+        "sha256": "576e8eb4e393d3a24e4e0a41a059ad0e846a76408d71c42a4103e3ffc2486731",
+        "captured_at": "2026-11-10T18:11:54+01:00"
       },
       "discovery": {
         "robots": {
@@ -651,14 +693,148 @@
             "url": "https://www.teatromassimo.it/sitemap_index.xml",
             "status": "ok",
             "http_status": 200,
-            "loc_count": 25
+            "sitemap_kind": "sitemapindex",
+            "loc_count": 25,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
           }
         ],
-        "advertised_feeds": []
+        "advertised_feeds": [],
+        "advertised_public_api_links": []
       },
       "parsers": {
+        "title": "Archivi Audizioni - Teatro Massimo - Fondazione Teatro Massimo",
+        "dom_structure": {
+          "anchor_count": 121,
+          "relevant_anchor_count": 30,
+          "relevant_anchor_examples": [
+            {
+              "text": "Info e regolamento di vendita",
+              "url": "https://www.teatromassimo.it/biglietteria/informazioni-generali-e-regolamenti-di-vendita/"
+            },
+            {
+              "text": "ITA",
+              "url": "https://www.teatromassimo.it/audizioni/"
+            },
+            {
+              "text": "Info e regolamento di vendita",
+              "url": "https://www.teatromassimo.it/biglietteria/informazioni-generali-e-regolamenti-di-vendita/"
+            },
+            {
+              "text": "Statuto",
+              "url": "https://www.teatromassimo.it/wp-content/uploads/2022/09/StatutoTeatroMassimo.pdf"
+            },
+            {
+              "text": "Codice etico",
+              "url": "https://www.teatromassimo.it/wp-content/uploads/2022/09/CodiceEticoTeatroMassimo.pdf"
+            },
+            {
+              "text": "Lavora con noi",
+              "url": "https://www.teatromassimo.it/audizioni/"
+            },
+            {
+              "text": "ITA",
+              "url": "https://www.teatromassimo.it/audizioni/"
+            },
+            {
+              "text": "",
+              "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-basso-2/"
+            },
+            {
+              "text": "Selezione pubblica per Basso",
+              "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-basso-2/"
+            },
+            {
+              "text": "",
+              "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/"
+            },
+            {
+              "text": "Selezione pubblica per 2 Contralti",
+              "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/"
+            },
+            {
+              "text": "",
+              "url": "https://www.teatromassimo.it/audizioni/esito-selezione-per-prima-tromba-2/"
+            },
+            {
+              "text": "Esito selezione per Prima Tromba",
+              "url": "https://www.teatromassimo.it/audizioni/esito-selezione-per-prima-tromba-2/"
+            },
+            {
+              "text": "",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-stg/"
+            },
+            {
+              "text": "Avviso di scorrimento graduatoria - STG",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-stg/"
+            },
+            {
+              "text": "",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-pubblico-per-manifestazione-di-interesse-per-un-professionista-junior-a-supporto-dellufficio-ragioneria-della-fondazione-teatro-massimo-di-palermo/"
+            },
+            {
+              "text": "Avviso pubblico per manifestazione di interesse per un Professionista junior a supporto dell'Ufficio Ragioneria della Fondazione Teatro Massimo di Palermo",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-pubblico-per-manifestazione-di-interesse-per-un-professionista-junior-a-supporto-dellufficio-ragioneria-della-fondazione-teatro-massimo-di-palermo/"
+            },
+            {
+              "text": "",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-pubblico-per-manifestazione-di-interesse-per-un-professionista-junior-a-supporto-dellufficio-del-personale-della-fondazione-teatro-massimo-di-palermo/"
+            },
+            {
+              "text": "Avviso pubblico per manifestazione di interesse per un Professionista junior a supporto dell'Ufficio del Personale della Fondazione Teatro Massimo di Palermo",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-pubblico-per-manifestazione-di-interesse-per-un-professionista-junior-a-supporto-dellufficio-del-personale-della-fondazione-teatro-massimo-di-palermo/"
+            },
+            {
+              "text": "",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-amministrativo-3b/"
+            },
+            {
+              "text": "Avviso di scorrimento graduatoria - Amministrativo 3B",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-amministrativo-3b/"
+            },
+            {
+              "text": "",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-aiuto-sarto/"
+            },
+            {
+              "text": "Avviso di scorrimento graduatoria - Aiuto sarto",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-aiuto-sarto/"
+            },
+            {
+              "text": "",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-addetto-ai-servizi-tecnici-generali/"
+            },
+            {
+              "text": "Avviso di scorrimento graduatoria - Addetto ai servizi tecnici generali",
+              "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-addetto-ai-servizi-tecnici-generali/"
+            },
+            {
+              "text": "1",
+              "url": "https://www.teatromassimo.it/audizioni/"
+            },
+            {
+              "text": "2",
+              "url": "https://www.teatromassimo.it/audizioni/page/2/"
+            },
+            {
+              "text": "…",
+              "url": "https://www.teatromassimo.it/audizioni/"
+            },
+            {
+              "text": "»",
+              "url": "https://www.teatromassimo.it/audizioni/page/2/"
+            },
+            {
+              "text": "100",
+              "url": "https://www.teatromassimo.it/audizioni/page/100/"
+            }
+          ],
+          "list_item_count": 85,
+          "heading_count": 10,
+          "table_count": 0
+        },
         "scrapling": {
-          "runtime_seconds": 0.0021,
+          "runtime_seconds": 0.0022,
           "characters": 3728,
           "signals": {
             "vocal_roles": true,
@@ -668,11 +844,12 @@
             "application": false,
             "pdf": true
           },
-          "relevant_link_labels": 2
+          "relevant_dom_link_labels_available": 1,
+          "relevant_dom_link_labels_retained_in_text": 1
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0014,
-          "characters": 31778,
+          "runtime_seconds": 0.0016,
+          "characters": 31754,
           "signals": {
             "vocal_roles": true,
             "deadline": false,
@@ -681,11 +858,12 @@
             "application": false,
             "pdf": true
           },
-          "relevant_link_labels": 2
+          "relevant_dom_link_labels_available": 1,
+          "relevant_dom_link_labels_retained_in_text": 1
         },
-        "trafilatura": {
+        "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0182,
+          "runtime_seconds": 0.0165,
           "characters": 906,
           "signals": {
             "vocal_roles": true,
@@ -695,132 +873,16 @@
             "application": false,
             "pdf": true
           },
-          "relevant_link_labels": 2
+          "relevant_dom_link_labels_available": 1,
+          "relevant_dom_link_labels_retained_in_text": 0
         },
-        "dom_link_count": 121,
-        "relevant_links": [
-          {
-            "text": "Info e regolamento di vendita",
-            "url": "https://www.teatromassimo.it/biglietteria/informazioni-generali-e-regolamenti-di-vendita/"
-          },
-          {
-            "text": "ITA",
-            "url": "https://www.teatromassimo.it/audizioni/"
-          },
-          {
-            "text": "Info e regolamento di vendita",
-            "url": "https://www.teatromassimo.it/biglietteria/informazioni-generali-e-regolamenti-di-vendita/"
-          },
-          {
-            "text": "Statuto",
-            "url": "https://www.teatromassimo.it/wp-content/uploads/2022/09/StatutoTeatroMassimo.pdf"
-          },
-          {
-            "text": "Codice etico",
-            "url": "https://www.teatromassimo.it/wp-content/uploads/2022/09/CodiceEticoTeatroMassimo.pdf"
-          },
-          {
-            "text": "Lavora con noi",
-            "url": "https://www.teatromassimo.it/audizioni/"
-          },
-          {
-            "text": "ITA",
-            "url": "https://www.teatromassimo.it/audizioni/"
-          },
-          {
-            "text": "",
-            "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-basso-2/"
-          },
-          {
-            "text": "Selezione pubblica per Basso",
-            "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-basso-2/"
-          },
-          {
-            "text": "",
-            "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/"
-          },
-          {
-            "text": "Selezione pubblica per 2 Contralti",
-            "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/"
-          },
-          {
-            "text": "",
-            "url": "https://www.teatromassimo.it/audizioni/esito-selezione-per-prima-tromba-2/"
-          },
-          {
-            "text": "Esito selezione per Prima Tromba",
-            "url": "https://www.teatromassimo.it/audizioni/esito-selezione-per-prima-tromba-2/"
-          },
-          {
-            "text": "",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-stg/"
-          },
-          {
-            "text": "Avviso di scorrimento graduatoria - STG",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-stg/"
-          },
-          {
-            "text": "",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-pubblico-per-manifestazione-di-interesse-per-un-professionista-junior-a-supporto-dellufficio-ragioneria-della-fondazione-teatro-massimo-di-palermo/"
-          },
-          {
-            "text": "Avviso pubblico per manifestazione di interesse per un Professionista junior a supporto dell'Ufficio Ragioneria della Fondazione Teatro Massimo di Palermo",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-pubblico-per-manifestazione-di-interesse-per-un-professionista-junior-a-supporto-dellufficio-ragioneria-della-fondazione-teatro-massimo-di-palermo/"
-          },
-          {
-            "text": "",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-pubblico-per-manifestazione-di-interesse-per-un-professionista-junior-a-supporto-dellufficio-del-personale-della-fondazione-teatro-massimo-di-palermo/"
-          },
-          {
-            "text": "Avviso pubblico per manifestazione di interesse per un Professionista junior a supporto dell'Ufficio del Personale della Fondazione Teatro Massimo di Palermo",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-pubblico-per-manifestazione-di-interesse-per-un-professionista-junior-a-supporto-dellufficio-del-personale-della-fondazione-teatro-massimo-di-palermo/"
-          },
-          {
-            "text": "",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-amministrativo-3b/"
-          },
-          {
-            "text": "Avviso di scorrimento graduatoria - Amministrativo 3B",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-amministrativo-3b/"
-          },
-          {
-            "text": "",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-aiuto-sarto/"
-          },
-          {
-            "text": "Avviso di scorrimento graduatoria - Aiuto sarto",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-aiuto-sarto/"
-          },
-          {
-            "text": "",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-addetto-ai-servizi-tecnici-generali/"
-          },
-          {
-            "text": "Avviso di scorrimento graduatoria - Addetto ai servizi tecnici generali",
-            "url": "https://www.teatromassimo.it/audizioni/avviso-di-scorrimento-graduatoria-addetto-ai-servizi-tecnici-generali/"
-          },
-          {
-            "text": "1",
-            "url": "https://www.teatromassimo.it/audizioni/"
-          },
-          {
-            "text": "2",
-            "url": "https://www.teatromassimo.it/audizioni/page/2/"
-          },
-          {
-            "text": "…",
-            "url": "https://www.teatromassimo.it/audizioni/"
-          },
-          {
-            "text": "»",
-            "url": "https://www.teatromassimo.it/audizioni/page/2/"
-          },
-          {
-            "text": "100",
-            "url": "https://www.teatromassimo.it/audizioni/page/100/"
-          }
-        ],
-        "comparison_note": "Coverage proxies only, not precision/recall ground truth; manually review actual notice facts."
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0158,
+          "characters": 911,
+          "markdown_link_count": 1,
+          "markdown_relevant_link_count": 0
+        },
+        "comparison_note": "Coverage proxies, not ground-truth accuracy. Relevant anchor-label retention is measured against labels in the same DOM; manually review notice facts and source links."
       },
       "strategy_recommendation": "manual_review_required"
     },
@@ -840,7 +902,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-9.html",
         "bytes": 376149,
         "sha256": "887e530634bdd3ed62b5cee4ed5d65dd67a2155955607b054325239ea72d1045",
-        "captured_at": "2026-11-10T18:08:00+01:00"
+        "captured_at": "2026-11-10T18:12:04+01:00"
       },
       "discovery": {
         "robots": {
@@ -852,14 +914,74 @@
             "url": "https://aslico.org/sitemap_index.xml",
             "status": "ok",
             "http_status": 200,
-            "loc_count": 13
+            "sitemap_kind": "sitemapindex",
+            "loc_count": 13,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
           }
         ],
-        "advertised_feeds": []
+        "advertised_feeds": [],
+        "advertised_public_api_links": [
+          "https://aslico.org/wp-json/"
+        ]
       },
       "parsers": {
+        "title": "Edizione 2027 - ASLICO",
+        "dom_structure": {
+          "anchor_count": 167,
+          "relevant_anchor_count": 11,
+          "relevant_anchor_examples": [
+            {
+              "text": "Concorso",
+              "url": "https://aslico.org/edizione-in-corso/"
+            },
+            {
+              "text": "Edizione 2027 – 78° Concorso",
+              "url": "https://aslico.org/edizione-in-corso/"
+            },
+            {
+              "text": "2026 3° Concorso AsLiCo Asia",
+              "url": "https://aslico.org/2026-3-concorso-aslico-asia/"
+            },
+            {
+              "text": "SCARICA IL BANDO",
+              "url": "https://aslico.org/wp-content/uploads/2026/10/Bando-78-Concorso-Internazionale-AsLiCo-per-Giovani-Cantanti-Lirici-78-International-AsLiCo-Competition-for-Young-Opera-Singers-2027_agg.15.10.26_.pdf"
+            },
+            {
+              "text": "Candidati ammessi alla fase finale del 77 Concorso",
+              "url": "https://aslico.org/2026/01/05/i-finalisti-del-77-concorso-aslico-2026/"
+            },
+            {
+              "text": "SEZIONE A - ISCRIZIONE CONCORSO PER RUOLI",
+              "url": "https://aslico.org/edizione-in-corso/"
+            },
+            {
+              "text": "informativa privacy",
+              "url": "https://teatrosocialecomo.it/wp-content/uploads/2022/11/MOD.-06-WEB-informativa-per-CONCORSO-ASLICO-2.pdf"
+            },
+            {
+              "text": "SEZIONE B - ISCRIZIONE CONCORSO VOCI EMERGENTI",
+              "url": "https://aslico.org/edizione-in-corso/"
+            },
+            {
+              "text": "informativa privacy",
+              "url": "https://teatrosocialecomo.it/wp-content/uploads/2022/11/MOD.-06-WEB-informativa-per-CONCORSO-ASLICO-2.pdf"
+            },
+            {
+              "text": "download modulo di iscrizione",
+              "url": "https://aslico.org/wp-content/uploads/2026/10/MODULO-ISCRIZIONE_78-CONCORSO-ASLICO-APPLICATION-FORM-78-ASLICO-COMPETITION-2026.pdf"
+            },
+            {
+              "text": "Esiti audizione Artisti del Coro 2026",
+              "url": "https://aslico.org/2026/05/28/esiti-audizione-artisti-del-coro-2026/"
+            }
+          ],
+          "list_item_count": 185,
+          "heading_count": 20,
+          "table_count": 1
+        },
         "scrapling": {
-          "runtime_seconds": 0.0058,
+          "runtime_seconds": 0.0062,
           "characters": 27005,
           "signals": {
             "vocal_roles": true,
@@ -869,10 +991,11 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 9
+          "relevant_dom_link_labels_available": 9,
+          "relevant_dom_link_labels_retained_in_text": 9
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0048,
+          "runtime_seconds": 0.005,
           "characters": 168655,
           "signals": {
             "vocal_roles": true,
@@ -882,11 +1005,12 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 9
+          "relevant_dom_link_labels_available": 9,
+          "relevant_dom_link_labels_retained_in_text": 9
         },
-        "trafilatura": {
+        "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0362,
+          "runtime_seconds": 0.0319,
           "characters": 5421,
           "signals": {
             "vocal_roles": true,
@@ -896,65 +1020,26 @@
             "application": true,
             "pdf": true
           },
-          "relevant_link_labels": 9
+          "relevant_dom_link_labels_available": 9,
+          "relevant_dom_link_labels_retained_in_text": 1
         },
-        "dom_link_count": 167,
-        "relevant_links": [
-          {
-            "text": "Concorso",
-            "url": "https://aslico.org/edizione-in-corso/"
-          },
-          {
-            "text": "Edizione 2027 – 78° Concorso",
-            "url": "https://aslico.org/edizione-in-corso/"
-          },
-          {
-            "text": "2026 3° Concorso AsLiCo Asia",
-            "url": "https://aslico.org/2026-3-concorso-aslico-asia/"
-          },
-          {
-            "text": "SCARICA IL BANDO",
-            "url": "https://aslico.org/wp-content/uploads/2026/10/Bando-78-Concorso-Internazionale-AsLiCo-per-Giovani-Cantanti-Lirici-78-International-AsLiCo-Competition-for-Young-Opera-Singers-2027_agg.15.10.26_.pdf"
-          },
-          {
-            "text": "Candidati ammessi alla fase finale del 77 Concorso",
-            "url": "https://aslico.org/2026/01/05/i-finalisti-del-77-concorso-aslico-2026/"
-          },
-          {
-            "text": "SEZIONE A - ISCRIZIONE CONCORSO PER RUOLI",
-            "url": "https://aslico.org/edizione-in-corso/"
-          },
-          {
-            "text": "informativa privacy",
-            "url": "https://teatrosocialecomo.it/wp-content/uploads/2022/11/MOD.-06-WEB-informativa-per-CONCORSO-ASLICO-2.pdf"
-          },
-          {
-            "text": "SEZIONE B - ISCRIZIONE CONCORSO VOCI EMERGENTI",
-            "url": "https://aslico.org/edizione-in-corso/"
-          },
-          {
-            "text": "informativa privacy",
-            "url": "https://teatrosocialecomo.it/wp-content/uploads/2022/11/MOD.-06-WEB-informativa-per-CONCORSO-ASLICO-2.pdf"
-          },
-          {
-            "text": "download modulo di iscrizione",
-            "url": "https://aslico.org/wp-content/uploads/2026/10/MODULO-ISCRIZIONE_78-CONCORSO-ASLICO-APPLICATION-FORM-78-ASLICO-COMPETITION-2026.pdf"
-          },
-          {
-            "text": "Esiti audizione Artisti del Coro 2026",
-            "url": "https://aslico.org/2026/05/28/esiti-audizione-artisti-del-coro-2026/"
-          }
-        ],
-        "comparison_note": "Coverage proxies only, not precision/recall ground truth; manually review actual notice facts."
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0329,
+          "characters": 5617,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0
+        },
+        "comparison_note": "Coverage proxies, not ground-truth accuracy. Relevant anchor-label retention is measured against labels in the same DOM; manually review notice facts and source links."
       },
       "strategy_recommendation": "manual_review_required"
     }
   ],
   "limitations": [
     "robots.txt/sitemap availability does not prove relevant notices are present.",
-    "Only advertised RSS/Atom feeds are checked.",
-    "403/429 are recorded, never bypassed.",
-    "Parser counts and keyword signals are proxies, not ground-truth accuracy.",
-    "All parsers receive identical captured HTML bytes; no production policy is promoted automatically."
+    "Only page-advertised RSS/Atom and explicit public API links are inspected; no guessed API endpoint is queried.",
+    "403/429, login restrictions and unreadable robots policies are recorded and not bypassed.",
+    "Parser counts and keyword signals are coverage proxies, not ground-truth accuracy.",
+    "All parsers receive identical captured HTML bytes; no production policy is promoted automatically.",
+    "Sitemap indexes are counted but nested child sitemaps are not recursively crawled in this pilot."
   ]
 }
