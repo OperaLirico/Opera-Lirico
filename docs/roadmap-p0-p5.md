@@ -47,7 +47,7 @@ Limitations: per-domain timeout/retry tuning and structured link quality review 
 
 ## P2 — Per-source multi-engine strategy
 
-**Status: first source-specific assessment batch completed (5/44); 39 sources remain baseline_only.**
+**Status: first two source-specific assessment batches completed (10/44); 34 sources remain baseline_only.**
 
 The first batch assessed:
 - Teatro alla Scala: Scrapling retained as production fetch method; sitemap is useful secondary discovery.
@@ -87,7 +87,7 @@ The next complete weekly cycle should compare hashes against this baseline and b
 
 ## P4 — Main-text and link extraction quality
 
-**Status: first five-page comparison completed; structured link capture is now part of production collection.**
+**Status: two five-page comparisons completed (10 official source pages); structured link capture is now part of production collection.**
 
 A separate evaluation workflow compared Scrapling, lxml full text and Trafilatura on identical official HTML snapshots. The corrected report separates:
 - relevant anchor labels available in the DOM;
