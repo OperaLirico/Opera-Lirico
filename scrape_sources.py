@@ -60,7 +60,7 @@ GENERIC_LINES = {"coro", "concorso", "audizioni", "audizione", "bando", "news", 
 LINK_RELEVANCE = re.compile(
     r"audizion|concor|bando|selezion|candidat|cantant|coro|canto|soprano|"
     r"mezzosoprano|contralto|tenore|baritono|basso|domanda|modulo|iscrizion|"
-    r"application|young.artist|call|deadline|\.pdf",
+    r"audition|application|young.artist|call|deadline|download|\.pdf",
     re.IGNORECASE,
 )
 LINK_NOISE = re.compile(
@@ -90,8 +90,11 @@ def extract_relevant_links(html_bytes: bytes, page_url: str) -> tuple[list[dict]
         href = urljoin(page_url, raw_href)
         if not href.startswith(("http://", "https://")):
             continue
-        label = clean_line(" ".join(node.itertext()))
-        combined = f"{label} {href}"
+        visible_label = clean_line(" ".join(node.itertext()))
+        aria_label = clean_line(node.get("aria-label") or "")
+        title = clean_line(node.get("title") or "")
+        label = visible_label or aria_label or title
+        combined = f"{label} {aria_label} {title} {href}"
         if not LINK_RELEVANCE.search(combined) or LINK_NOISE.search(combined):
             continue
         if href in seen:
@@ -99,7 +102,12 @@ def extract_relevant_links(html_bytes: bytes, page_url: str) -> tuple[list[dict]
         seen.add(href)
         total += 1
         if len(links) < MAX_RELEVANT_LINKS:
-            links.append({"text": label[:240], "url": href})
+            link = {"text": label[:240], "url": href}
+            if aria_label:
+                link["aria_label"] = aria_label[:240]
+            if title:
+                link["title"] = title[:240]
+            links.append(link)
     return links, total, total > MAX_RELEVANT_LINKS
 
 
