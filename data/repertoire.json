@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-10T06:40:08+01:00",
+ "generated_at": "2026-11-10T07:08:49+01:00",
  "catalogue_source": "LiederNet Archive originals + curated starter works",
  "items": [
   {
@@ -11901,10 +11901,380 @@
     }
    ],
    "autoImported": true
+  },
+  {
+   "title": "Die Blume verblühet auf fließender Fluth",
+   "aliases": [],
+   "composer": "Hans Sommer",
+   "work": "",
+   "voice": "待分类",
+   "kind": "咏叹调/歌剧选段",
+   "language": "de",
+   "text": "Die Blume verblühet auf fließender Fluth,\nDer Ranke entrissen,\nSie fehlet dem Felsen, der Sonnengluth --\nWer wird sie vermissen?\n\nDie Jugend enteilet auf ziehender Zeit,\nDas Glück mit dem Winde,\nSie wehen und wandern und fliehen so weit --\nWer lebt, der sie binde?\n\nDie Lieder verhallen, die Liebe vergeht,\nVom Schicksal getragen,\nDie Welle wird Erz, eh' die Liebe besteht,\nDrum klinget mein Klagen.\n\nDoch endlich da ist auch die Klage verraucht,\nIn ewige Leere;\nDie Blume, die Seele zerbricht, verhaucht,\nVergessen im Meere.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=32866",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Elisabeth Pauline Ottilie Luise zu Wied, Prinzessin",
+   "settings": [
+    {
+     "composer": "Hans Sommer",
+     "title": "/lieder/get_settings.html?ComposerId=5800",
+     "instrumentation": "voice and piano or orchestra"
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "English",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Si j'étais jardinier",
+   "aliases": [],
+   "composer": "Cécile Chaminade",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Si j'étais jardinier des cieux\nJe te cueillerais des étoiles!\nQuels joyaux raviraient tes yeux\nSi j'étais jardinier des cieux!\n\nDans la nuit pâle sous ses voiles\nTon éclat serait radieux.\nSi j'étais jardinier des cieux,\nJe te cueillerais des étoiles!\n\nSi j'étais jardinier d'amour\nJe te cueillerais des caresses,\nJe te fêterais tout le jour\nSi j'étais jardinier d'amour!\n\nEn leurs inédites tendresses\nMes bouquets te feraient la cour.\nSi j'étais jardinier d'amour\nJe te cueillerais des caresses!\n\nMais mon jardin n'est que chansons,\nEt tu peux y cueillir toi-même,\nDieu pour les nids fit les buissons\nEt mon jardin n'est que chansons.\n\nViens-là rêver si ton coeur m'aime\nEt mon coeur aura des frissons.\nMais mon jardin n'est que chansons,\nEt tu peux y cueillir toi-même.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=11408",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Léon Roger-Milès",
+   "settings": [
+    {
+     "composer": "Cécile Chaminade",
+     "title": "/lieder/get_settings.html?ComposerId=3705",
+     "instrumentation": "high voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "O sad are they who know not love",
+   "aliases": [],
+   "composer": "George Whitefield Chadwick",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "O sad are they who know not love\nBut far from passions tears and smiles\nDrift down a moonless sea\nBeyond the silvery coasts of fairy Isles.\nAnd sadder they whose longing lips\nKiss empty air and never touch\nThe dear warm mouth of those they love\nWaiting, wasting, suffering much\nBut clear as amber, fine as musk\nIs life to those who pilgrim-wise\nMove hand in hand\nFrom dawn to dusk\nEach morning nearer Paradise.\nO not for them shall angels pray;\nThey stand in everlasting light -\nThey walk in Allah's smile by day\nAnd nestle in his heart by night.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=87",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Thomas Bailey Aldrich",
+   "settings": [
+    {
+     "composer": "George Whitefield Chadwick",
+     "title": "/lieder/get_settings.html?ComposerId=3701",
+     "instrumentation": "tenor and piano"
+    },
+    {
+     "composer": "William Arms Fisher",
+     "title": "/lieder/get_settings.html?ComposerId=4044",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Arthur Foote",
+     "title": "/lieder/get_settings.html?ComposerId=4064",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Schlaf, Kindlein, schlafe sanft und süß",
+   "aliases": [],
+   "composer": "Wilhelm Carl Mühldorfer",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Schlaf, Kindlein, schlafe sanft und süß\nIn diesem Maienparadies!\nSieh über dir der Wipfel Schnee,\nRund um dich her des Angers Klee!\n  Im Maien\n  Gedeihen,\nDie Kindelein weiß und rot.\n\nO schlummre still im Mutterschoß\n[Sei mild, wie Thau]1 am Frühlingssproß!\nHoch über dir der Vöglein Schar\n[Sieh' neben]2 dir das Bächlein klar!\n  Im Maien\n  Gedeihen\nDie Kindelein weiß und rot.\n\nNun schläfst du, kleiner Schäfer, nicht.\nDir schwirren Käfer ums Gesicht  --\nUnd in des Abends Purpurglanz\nSiehst du der Mücken Rundetanz!\n  O Kindchen,\n  Dein Mündchen,\nEs lacht, wie das Rös'lein roth!\n\nO schlaf an meinem Herzen ein!\nDann werden Englein um dich sein,\nSie tragen dir in sanfter Ruh\n[Wie Biene]3 Himmelsträume zu;\n  Die Schwingen\n  Erklingen,\nUnd kühlen die Wänglein dir.\n\nNun schlummerst du so sanft und süß,\nUnd um dich her ist Paradies!\nIch trage leise dich hinein\nIns still beschirmte Kämmerlein.\n  Im Maien\n  Gedeihen\nDie Kindelein weiß und roth!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=22014",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Friederike Brun",
+   "settings": [
+    {
+     "composer": "Wilhelm Carl Mühldorfer",
+     "title": "/lieder/get_settings.html?ComposerId=12895",
+     "instrumentation": "vocal trio for 2 sopranos and alto with piano"
+    },
+    {
+     "composer": "Johann Friedrich Reichardt",
+     "title": "/lieder/get_settings.html?ComposerId=5468",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Johann Abraham Peter Schulz",
+     "title": "/lieder/get_settings.html?ComposerId=5681",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "At the gates of the holy cloister",
+   "aliases": [],
+   "composer": "Irina Vladimirovna Arseyeva",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "At the gates of the holy cloister\nstood a beggar,\nexhausted, pale and destitute\nof hunger, thirst and suffering\n\nJust one piece of bread he asked,\nand his look reflected the torments of his life\nand someone had laid down a stone\nin his extended hand\n\nLikewise I begged your kindness\nwith bitter tears and melancholy heart\nLikewise my better feelings\nyou betrayed forever!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=10140",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Anton Bespalov, Rianne Stam",
+   "settings": [
+    {
+     "composer": "Irina Vladimirovna Arseyeva",
+     "title": "/lieder/get_settings.html?ComposerId=35025",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Mariya Vasilyevna Begicheva-Shilovskaya",
+     "title": "/lieder/get_settings.html?ComposerId=3352",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Feliks Mikhailovich Blumenfeld",
+     "title": "/lieder/get_settings.html?ComposerId=3462",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Quando il tuo dolce sguardo",
+   "aliases": [],
+   "composer": "Johannes Brahms",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "it",
+   "text": "Quando il tuo dolce sguardo\nvolgi a me con amore,\nogni tristezza scompare\nsvanisce ogni mio tormento.\n\nQuesta bella fiamma d'amore\nnon lasciarla svanire!\nNessuno, come me, ti sarà fedele\nné ti saprà, come me, amare.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=87834",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Ferdinando Albeggiani",
+   "settings": [
+    {
+     "composer": "Johannes Brahms",
+     "title": "/lieder/get_settings.html?ComposerId=3535",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Afrikaans",
+     "title": "tr",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Your Thoughts",
+   "aliases": [],
+   "composer": "Helen Rhodes",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Your thoughts are like the roses\nThat blossom in the sun,\nAnd when your mind uncloses\nI gather, one by one,\nThe sweetest little flow'rets\nThat ever lips let fall.\nYour thoughts are like the roses,\nWould I might have them all!\n\nYour heart is like a treasure,\nSafe guarded and secure,\nIn hours of pain and pleasure\nBy instincts fair and pure.\nIn loving eyes more precious\nThan sparkling gems or gold.\nAh! Would to God that treasure\nWere mine to have and hold!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=179453",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Pixie Leonard Wheeler",
+   "settings": [
+    {
+     "composer": "Helen Rhodes",
+     "title": "/lieder/get_settings.html?ComposerId=4334",
+     "instrumentation": "voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Aus des Abends weißen Wogen",
+   "aliases": [],
+   "composer": "Willy Burkhard",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "de",
+   "text": "Aus des Abends weißen Wogen\ntaucht ein Stern;\n[still]1 von fern\nkommt der [blasse]2 Mond gezogen.\n\n[Fern, ach fern]3\naus des Morgens grauen Wogen,\nlangt der [stille]4 blasse Bogen\nnach dem Stern.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=4396",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Richard Fedor Leopold Dehmel",
+   "settings": [
+    {
+     "composer": "Willy Burkhard",
+     "title": "/lieder/get_settings.html?ComposerId=3618",
+     "instrumentation": ""
+    },
+    {
+     "composer": "Siegmund von Hausegger",
+     "title": "/lieder/get_settings.html?ComposerId=4363",
+     "instrumentation": "medium voice and piano"
+    },
+    {
+     "composer": "Anton von Webern",
+     "title": "/lieder/get_settings.html?ComposerId=2979",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Secret invitation",
+   "aliases": [],
+   "composer": "Eugen (Francis Charles) d'Albert",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Up, raise the sparkling cup to your lips,\nAnd drink your heart's fill at the joyous feast.\nAnd when you raise it, so wink secretly at me,\nThen I'll smile and drink quietly, as you...\n\nAnd quietly as I, look around at the crowd\nOf drunken revelers -- don't think too ill of them.\nNo, lift the twinkling cup, filled with wine,\nAnd let them be happy at the noisy meal.\n\nBut when you've savored the meal, your thirst quenched,\nThen quit the loud gathering's joyful fest,\nAnd wander out into the garden, to the rosebush,\nThere shall I await you, as often of old.\n\nAnd ere you know it shall I sink upon your breast,\nAnd drink your kisses, as so often before,\nAnd twine the rose's splendour into your hair.\nOh, come, you wondrous, longed-for night!",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=10644",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "Translation © by Lawrence Snyder, Rebecca Plack",
+   "settings": [
+    {
+     "composer": "Eugen (Francis Charles) d'Albert",
+     "title": "/lieder/get_settings.html?ComposerId=3150",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Richard Georg Strauss",
+     "title": "/lieder/get_settings.html?ComposerId=5869",
+     "instrumentation": "voice and piano"
+    },
+    {
+     "composer": "Catalan (Català)",
+     "title": "tr",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "Chanson",
+   "aliases": [],
+   "composer": "Alfred Erik Leslie Satie",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "fr",
+   "text": "Bien courte, hélas! est l'espérance\nEt bien court aussi le plaisir\nEt jamais en nous leur présence,\nNe dura tant que le désir.\n\nBien courte hélas! est la jeunesse\nBien court est le temps de l'amour\nEt le serment d'une maîtresse\nNe dura jamais plus d'un jour.\n\nCelui qui met toute sa joie\nEt son espoir en la beauté,\nSouvent y laissant sa gaité.\nD'un dur souci devient la proie.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=3995",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "J. P.",
+   "settings": [
+    {
+     "composer": "Alfred Erik Leslie Satie",
+     "title": "/lieder/get_settings.html?ComposerId=2461",
+     "instrumentation": "high voice and piano"
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "What if I sped",
+   "aliases": [],
+   "composer": "Robert Jones",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "What if I sped where I least expected,\nwhat shall I saye? Shall I lye?\nWhat if I mist where most affected, what shall I do, shall I dye?\nNo, no one, Ile have at all,\nTis as my game doth fall,\nIf I keepe my meaning close,\nI may hit how ere it goes,\nFor time & I\nDo meane to try\nWhat hope doth lye in youth, falala.\nThe minds that doubt\nAre in & out,\n& women flout at truth: falala.\n\nShe whome above the skies I renowned, she whome I loved, shee,\nCan she leave all in leathe drowned, can she be coy to me?\nHer passions are but cold,\nShe stands and doth beholde,\nShe retaines her lookes estrangde,\nAs if in heaven and earth were changde.\nI speake, she heares,\nI touch, she feares,\nHerein appeares her wit, falala:\nI catch, she flies,\nI hold, she cries,\nAnd still denies, and yet falala.\n\nMay not a wanton looke like a woman, tell me the reason why?\nAnd if a blindE man chance of birdes nest, must bhe be pratling? Fye.\nWhat mortall strength can keepe,\nThat's got as in sleepe:\nThe felony is his\nTha brags of a stoln kis:\nFor when we met,\nBoth in a net,\nThat Vulcan set, were hid, falala:\nAnd so god wot\nWe did it not,\nOr else forgot we did. Falala.",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=44609",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "",
+   "settings": [
+    {
+     "composer": "Robert Jones",
+     "title": "/lieder/get_settings.html?ComposerId=4558",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
+  },
+  {
+   "title": "The waiting soul",
+   "aliases": [],
+   "composer": "Charles Edward Ives",
+   "work": "",
+   "voice": "待分类",
+   "kind": "艺术歌曲",
+   "language": "en",
+   "text": "Breathe from the gentle south, [O Lord,\nAnd]1 cheer me from the north;\nBlow on the treasures of Thy word,\n[And]1 call the spices forth!\n\n[I wish, Thou knowest, to be resign'd,\nAnd wait with patient hope;\nBut hope delay'd fatigues the mind,\nAnd drinks the spirits up.]1\n\nHelp me to reach the distant goal;\nConfirm my feeble knee;\nPity the sickness of a soul,\nThat faints for love of Thee!\n\nCold as I feel this heart of mine,\nYet, since I feel it so,\nIt yields some hope of life divine\n[Within, however low.]1\n\n[I seem forsaken and alone,\nI hear the lion roar;\nAnd every door is shut but one,\nAnd that is Mercy's door.]1\n\n[There,]1 till the dear Deliverer come,\nI'll wait with humble prayer;\n[And when He calls His exile home,\nThe Lord shall find him there.]1",
+   "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+   "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=4092",
+   "textSourceName": "LiederNet 原文",
+   "scoreUrl": null,
+   "downloadUrl": null,
+   "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+   "poet": "William Cowper",
+   "settings": [
+    {
+     "composer": "Charles Edward Ives",
+     "title": "/lieder/get_settings.html?ComposerId=1307",
+     "instrumentation": ""
+    }
+   ],
+   "autoImported": true
   }
  ],
  "scan_cursor": 144,
- "lieder_position": 1536,
+ "lieder_position": 1584,
  "aria_opera": 0,
  "aria_scene": 8
 }
