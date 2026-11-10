@@ -36,7 +36,7 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 <p id="loginError" class="error" role="alert"></p><p class="notice">仅授权人员可访问。此页面不会保存你的密码。</p>
 </div>
 <main id="appView" hidden>
-<div class="top"><div><div class="brand">Opera Lirico</div><div class="sub">PRIVATE OPERATIONS DASHBOARD</div></div><button id="logout">退出登录</button></div>
+<div class="top"><div><div class="brand">Opera Lirico</div><div class="sub">PRIVATE OPERATIONS DASHBOARD</div></div><div style="display:flex;gap:8px;align-items:center"><button id="refresh">刷新数据</button><button id="logout">退出登录</button></div></div>
 <h1>运营概览</h1><p class="intro">网站访问与邮件订阅 · 数据实时读取，不保存订阅者个人邮箱</p>
 <div id="status" class="status">正在读取数据…</div>
 <div class="grid">
@@ -135,6 +135,7 @@ async function signature(timestamp, secret) {
   return b64url(await crypto.subtle.sign("HMAC", key, new TextEncoder().encode("opera-ops:" + timestamp)));
 }
 async function validSession(request, secret) {
+  if (!secret || secret.length < 24) return false;
   const raw = request.headers.get("Cookie") || "";
   const found = raw.split(";").map(x => x.trim()).find(x => x.startsWith(SESSION_COOKIE + "="));
   if (!found) return false;
@@ -247,6 +248,7 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === "/" && request.method === "GET") return response(PAGE);
     if (url.pathname === "/api/login" && request.method === "POST") {
+      if (!env.OPS_DASHBOARD_PASSWORD || env.OPS_DASHBOARD_PASSWORD.length < 24) return json({ error: "login_not_configured" }, 503);
       if (!sameOrigin(request)) return json({ error: "forbidden" }, 403);
       const ip = request.headers.get("CF-Connecting-IP") || "unknown";
       const now = Date.now();
