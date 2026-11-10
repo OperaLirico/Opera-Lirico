@@ -45,7 +45,7 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 <div class="card"><div class="kicker">ACTIVE SUBSCRIBERS</div><div class="value" id="subscribers">—</div><div class="hint">当前有效订阅者</div></div>
 <div class="card"><div class="kicker">NEW · 7 DAYS</div><div class="value" id="newSubscribers">—</div><div class="hint">过去 7 天新增有效订阅</div></div>
 </div>
-<section class="section"><h2>网站访问趋势</h2><div class="panel"><div id="chart" class="bars"></div><div class="hint">按意大利当地日期汇总。访问数据来自 Cloudflare Web Analytics。</div></div></section>
+<section class="section"><h2>网站访问趋势</h2><div class="panel"><div id="chart" class="bars"></div><div class="hint">按 Cloudflare 日期维度汇总。访问数据来自 Cloudflare Web Analytics。</div></div></section>
 <section class="section"><h2>邮件草稿</h2><div class="panel"><div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:12px">
 <div><div class="kicker">DRAFTS</div><div class="value" id="draftCount">—</div><div class="hint">Buttondown 中尚未发送的草稿</div></div>
 <div><div class="kicker">NEWSLETTER</div><div class="value" style="font-size:20px;margin-top:13px">Opera Lirico Weekly</div><div class="hint"><a href="https://buttondown.com/wl19971007" target="_blank" rel="noopener noreferrer">打开 Buttondown ↗</a></div></div>
