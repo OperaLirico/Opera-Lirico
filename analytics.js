@@ -8,7 +8,7 @@
   if (document.querySelector('script[data-opera-lirico-analytics="cloudflare"]')) return;
 
   const script = document.createElement("script");
-  script.defer = true;
+  script.type = "module";
   script.src = "https://static.cloudflareinsights.com/beacon.min.js";
   script.dataset.operaLiricoAnalytics = "cloudflare";
   script.dataset.cfBeacon = JSON.stringify({ token });
