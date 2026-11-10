@@ -1,6 +1,18 @@
 name: Source quality tests
 
 on:
+  push:
+    branches: ["quality/**"]
+    paths:
+      - "app.js"
+      - "data/opportunities.json"
+      - "data/conservatori_manual.json"
+      - "data/conservatori.json"
+      - "scrape_sources.py"
+      - "grow_sources.py"
+      - "tests/**"
+      - "data/opportunity.schema.json"
+      - ".github/workflows/source-quality-tests.yml"
   pull_request:
     branches: [main]
     paths:
