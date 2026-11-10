@@ -3,8 +3,19 @@ name: Daily scrape and publish
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - data/repertoire.json
+    paths:
+      - "index.html"
+      - "app.js"
+      - "styles.css"
+      - "extra.css"
+      - "icon.svg"
+      - "manifest.webmanifest"
+      - "service-worker.js"
+      - "data/**"
+      - "!data/repertoire_archive.json"
+      - "*.py"
+      - "requirements.txt"
+      - ".github/workflows/daily-scrape-and-publish.yml"
   schedule:
     - cron: "15 6 * * *"
   workflow_dispatch:
@@ -15,8 +26,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: auditions-data-and-pages
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -28,32 +39,26 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
       - name: Install Scrapling
         run: python -m pip install -r requirements.txt
       - name: Scrape public source pages
         run: python scrape_sources.py
-      - name: Grow the conservatory list
-        run: python grow_conservatori.py
+      - name: Refresh discovered audition sources
+        run: python grow_sources.py
       - name: Scrape conservatory admission pages
         run: python run_conservatori.py
       - name: Mirror the official bando PDFs into the site
         run: python mirror_pdfs.py
-      - name: Grow the audition source list
-        run: python grow_sources.py
-      - name: Save expanded song catalogue
+      - name: Save refreshed source snapshots
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          # Start with the latest published catalogue and its scan cursor.
-          git fetch origin main
-          git checkout origin/main -- data/repertoire.json
-          python prune_repertoire.py
-          python update_repertoire.py
-          python tidy_repertoire.py
-          git add data/repertoire.json data/conservatori.json data/conservatori_extra.json data/sources_extra.json
+          git add data/sources.json data/sources_extra.json data/conservatori.json
           git add data/pdfs 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m 'Update song catalogue and scraped snapshots'
+            git commit -m 'Refresh official opportunity snapshots'
             git push origin HEAD:main
           fi
       - name: Prepare Pages artifact

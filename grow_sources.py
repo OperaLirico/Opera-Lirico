@@ -1,27 +1,16 @@
 #!/usr/bin/env python3
-"""Let the theatre / audition source list grow on its own.
+"""Refresh discovered audition sources daily; discover new ones only weekly.
 
-``scrape_sources.py`` holds a hand-checked list of 29 pages and scrapes them
-every day. That list is a snapshot, not a growing thing: new seasons, new
-competitions and new houses never appear unless someone edits the file.
+The daily run refreshes a rotating batch of already-approved sources. The
+weekly --discover run additionally harvests outbound links from known official
+hubs, verifies candidates, and appends qualifying sources. This avoids
+repeating candidate searches every day.
 
-This script adds two behaviours on top:
-
-1. **Rediscovery** — audition pages link to other institutions' audition pages.
-   Every run harvests outbound links that look like calls for singers, verifies
-   them by fetching (reachable + actually about auditions/competitions), and
-   appends the good ones to ``data/sources_extra.json`` (committed, so the list
-   survives between runs).
-2. **Rotating coverage** — the discovered list is re-scraped in batches of
-   ``BATCH`` per run, round-robin through a stored cursor, so daily runtime stays
-   bounded while every discovered page still gets refreshed regularly.
-
-Everything known (hand-checked + discovered) is merged into ``data/sources.json``,
-which is what the site renders.
-"""
+All known sources are merged into data/sources.json for the site."""
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import time
@@ -170,11 +159,16 @@ def hub_rank(candidate: tuple[str, str, str]) -> tuple[int, int]:
     return (1 if re.search(r"\d{4,}", last) else 0, url.count("/"))
 
 
-def main() -> None:
+def main(discover: bool = False) -> None:
     payload = load(REGISTRY, {})
     registry: list[dict] = payload.get("items", [])
     cursor: int = int(payload.get("cursor", 0))
-    core_items: list[dict] = load(PAGE, [])
+    # Candidate discovery is anchored to the curated core list, not every extra URL.
+    core_numbers = {source[0] for source in core.SOURCES}
+    core_items: list[dict] = [
+        item for item in load(PAGE, [])
+        if item.get("number") in core_numbers
+    ]
 
     # Drop anything that slipped through earlier rules (share links, files,
     # jobs for ushers and box office, transparency portals, dance and writing
@@ -218,67 +212,67 @@ def main() -> None:
         time.sleep(1.2)
     cursor = (cursor + len(batch)) % max(len(registry), 1)
 
-    by_number: dict[int, dict] = {item["number"]: item for item in refreshed}
+    # Preserve the full registry; only replace entries in the batch checked today.
+    by_number: dict[int, dict] = {item["number"]: item for item in registry}
+    by_number.update({item["number"]: item for item in refreshed})
+    added = 0
 
-    # 2. Harvest new candidates from the freshly read pages.
-    seen = known_hosts(core_items + registry)
-    candidates: list[tuple[str, str, str]] = []
-    for item in core_items:
-        if len(candidates) >= MAX_CANDIDATES:
-            break
-        if item.get("status") != "ok":
-            continue
-        # The core scraper discarded the DOM, so re-read only a few hub pages.
-        if not re.search(r"audizion|concor|bando|casting|bandi|selezion|lavora", item["url"], re.IGNORECASE):
-            continue
-        try:
-            page = fetch(item["url"])
-        except Exception:
-            continue
-        hosts = {urlparse(c[1]).netloc.lower().removeprefix("www.") for c in candidates}
-        for label, target in harvest_links(page["response"], item["url"]):
-            host = urlparse(target).netloc.lower().removeprefix("www.")
-            if host in seen or host in hosts:
-                continue
-            hosts.add(host)
-            candidates.append((label, target, item["url"]))
+    if discover:
+        # 2. Harvest new candidates from known official hubs (weekly only).
+        seen = known_hosts(core_items + registry)
+        candidates: list[tuple[str, str, str]] = []
+        for item in core_items:
             if len(candidates) >= MAX_CANDIDATES:
                 break
-        time.sleep(1.2)
+            if item.get("status") != "ok":
+                continue
+            if not re.search(r"audizion|concor|bando|casting|bandi|selezion|lavora", item["url"], re.IGNORECASE):
+                continue
+            try:
+                page = fetch(item["url"])
+            except Exception:
+                continue
+            hosts = {urlparse(c[1]).netloc.lower().removeprefix("www.") for c in candidates}
+            for label, target in harvest_links(page["response"], item["url"]):
+                host = urlparse(target).netloc.lower().removeprefix("www.")
+                if host in seen or host in hosts:
+                    continue
+                hosts.add(host)
+                candidates.append((label, target, item["url"]))
+                if len(candidates) >= MAX_CANDIDATES:
+                    break
+            time.sleep(1.2)
 
-    candidates.sort(key=hub_rank)
-
-    # 3. Verify the candidates before trusting them.
-    next_number = max([item["number"] for item in registry + core_items] + [28]) + 1
-    added = 0
-    for label, target, origin in candidates:
-        if added >= MAX_NEW:
-            break
-        probe = scrape_entry(target, label or target, next_number, origin)
-        probe.pop("_response", None)
-        blob = " ".join([probe.get("source", ""), probe.get("title", "")] + probe["relevant_lines"])
-        if (
-            probe["status"] != "ok"
-            or len(probe["relevant_lines"]) < MIN_LINES
-            or not AUDITIONISH_RE.search(blob)
-            or CHROME_RE.search(probe.get("title", ""))
-            or STAFF_RE.search(blob)
-            or PORTAL_RE.search(target)
-            or OFFTOPIC_RE.search(blob)
-        ):
-            print(f"[extra] skip {probe['status']} {target[:70]}", flush=True)
-            continue
-        # Anchor texts on aggregators are often "Apri il bando"; use the page
-        # title (or the host) so the source list reads like a list of names.
-        if len(label) < 12 or GENERIC_LABEL.fullmatch(label.strip() or "x"):
-            host = urlparse(target).netloc.removeprefix("www.")
-            probe["source"] = (probe["title"] or host)[:70]
-        probe["discovered_at"] = probe["checked_at"]
-        by_number[next_number] = probe
-        next_number += 1
-        added += 1
-        print(f"[extra] new {probe['http_status']} {probe['source'][:50]} — {target[:60]}", flush=True)
-        time.sleep(1.2)
+        candidates.sort(key=hub_rank)
+        next_number = max([item["number"] for item in registry + core_items] + [28]) + 1
+        for label, target, origin in candidates:
+            if added >= MAX_NEW:
+                break
+            probe = scrape_entry(target, label or target, next_number, origin)
+            probe.pop("_response", None)
+            blob = " ".join([probe.get("source", ""), probe.get("title", "")] + probe["relevant_lines"])
+            if (
+                probe["status"] != "ok"
+                or len(probe["relevant_lines"]) < MIN_LINES
+                or not AUDITIONISH_RE.search(blob)
+                or CHROME_RE.search(probe.get("title", ""))
+                or STAFF_RE.search(blob)
+                or PORTAL_RE.search(target)
+                or OFFTOPIC_RE.search(blob)
+            ):
+                print(f"[extra] skip {probe['status']} {target[:70]}", flush=True)
+                continue
+            if len(label) < 12 or GENERIC_LABEL.fullmatch(label.strip() or "x"):
+                host = urlparse(target).netloc.removeprefix("www.")
+                probe["source"] = (probe["title"] or host)[:70]
+            probe["discovered_at"] = probe["checked_at"]
+            by_number[next_number] = probe
+            next_number += 1
+            added += 1
+            print(f"[extra] new {probe['http_status']} {probe['source'][:50]} — {target[:60]}", flush=True)
+            time.sleep(1.2)
+    else:
+        print("Discovery skipped; refreshing the existing registry only.", flush=True)
 
     # A discovered notice page eventually expires; stop carrying dead links.
     keep = [
@@ -303,4 +297,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Refresh known sources; optionally discover new ones.")
+    parser.add_argument("--discover", action="store_true", help="harvest and verify new candidates (weekly workflow)")
+    args = parser.parse_args()
+    main(discover=args.discover)

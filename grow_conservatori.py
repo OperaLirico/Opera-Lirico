@@ -1,23 +1,13 @@
 #!/usr/bin/env python3
-"""Discover more Italian AFAM conservatories and register them for daily scraping.
+"""Discover additional Italian AFAM conservatories on a weekly cadence.
 
-``scrape_conservatori.py`` has a curated table, but AFAM has 60+ institutions
-and the tail of the list is exactly the part nobody types into a config file by
-hand. So the table grows itself:
+The existing curated list remains the daily monitoring baseline. This script
+uses Wikidata to find candidate institutions with official websites, probes
+their admission pages, and adds only candidates that expose relevant admission
+signals to data/conservatori_extra.json. The daily collector then includes the
+approved registry in subsequent admission checks.
 
-* ask Wikidata for institutions whose Italian label looks like a conservatory
-  and whose official website (P856) is recorded — that is authoritative and
-  needs no HTML parsing of a national directory;
-* keep only hosts we do not already scrape;
-* probe the home page, look for the admission sub-page, and accept the
-  institution only when that sub-page really yields deadlines, exam dates or
-  requirements — a wrong domain must not enter the registry;
-* append it to ``data/conservatori_extra.json``, which the collector merges into
-  its run list, so tomorrow's snapshot already contains the new school.
-
-Only ``MAX_NEW`` institutions are added per run so a bad batch can be spotted
-early, and the Wikidata query terms rotate through ``cursor``.
-"""
+Only MAX_NEW institutions are added per run so a new batch can be reviewed."""
 
 from __future__ import annotations
 
