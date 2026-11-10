@@ -3,7 +3,7 @@
     "number": 1,
     "source": "Teatro alla Scala",
     "url": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Concorsi e Audizioni Coro - Teatro alla Scala",
@@ -25,13 +25,20 @@
       "Clicca qui per scaricare il bando",
       "Clicca qui per scaricare il bando"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 2,
     "source": "Teatro Carlo Felice",
     "url": "https://carlofelice.it/audizioni-e-concorsi/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Audizioni e Concorsi | Teatro Carlo Felice",
@@ -53,13 +60,20 @@
       "Le date di scadenza di presentazione delle domande, le modalità e requisiti per la partecipazione sono indicate all’interno del bando.",
       "Le date di scadenza di presentazione delle domande, le modalità e requisiti per la partecipazione e le date di esame sono indicate all’interno del bando."
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 3,
     "source": "Teatro Massimo",
     "url": "https://www.teatromassimo.it/audizioni/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Archivi Audizioni - Teatro Massimo - Fondazione Teatro Massimo",
@@ -79,13 +93,20 @@
       "20 Ottobre 2026",
       "20 Ottobre 2026"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 4,
     "source": "Teatro Regio Torino",
     "url": "https://www.teatroregio.torino.it/selezione-personale",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Selezione del personale | Teatro Regio Torino",
@@ -107,13 +128,20 @@
       "Scadenza: 7/09/2025, ore 24",
       "Scadenza: 7/09/2025, ore 24"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 5,
     "source": "Teatro dell'Opera di Roma - Fabbrica",
     "url": "https://www.operaroma.it/bandi-e-concorsi/bandi-fabbrica-young-artist-program-2027-2028/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Bandi “Fabbrica” Young Artist Program 2027/2028 |",
@@ -128,13 +156,20 @@
       "© 2026",
       "“Fabbrica” è lo Young Artist Program del Teatro dell’Opera di Roma. Diamo l’opportunità a nuovi talenti italiani e stranieri, già formati presso conservatori e accademie, d’inserirsi nel mondo dello spettacolo."
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 6,
     "source": "Teatro Verdi Trieste",
     "url": "https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Bandi di Concorso 2026 - Teatro Verdi Trieste",
@@ -156,13 +191,20 @@
       "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/2026.12.14-DOMANDA-PARTECIPAZIONE-CONCORSO_VIOLA-DI-FILA-CON-OBBL-DELLA-PRIMA_all-A.pdf",
       "https://www.teatroverdi-trieste.com/wp-content/uploads/2026/10/2026.12.14-BANDO-SELEZ_AREA-ART_VIOLINO-DI-FILA_signed.pdf"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 7,
     "source": "Teatro Comunale di Bologna",
     "url": "https://www.tcbo.it/amministrazione-trasparente/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Amministrazione trasparente - Teatro Comunale di Bologna",
@@ -184,13 +226,20 @@
       "Comunicazione scritta, anche in forma anonima, in busta chiusa recante la dicitura",
       "Bandi di gara, concorsi, audizioni e selezioni"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 8,
     "source": "Maggio Musicale Fiorentino",
     "url": "https://www.maggiofiorentino.com/bandi/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Bandi - Maggio Musicale Fiorentino",
@@ -201,13 +250,20 @@
       "2026 — Fondazione Teatro del Maggio Musicale Fiorentino - Tutti i diritti riservati - P.IVA 00427750484",
       "Ammissione al coro dei Piccoli cantori e al Coro di voci bianche"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 9,
     "source": "AsLiCo",
     "url": "https://aslico.org/edizione-in-corso/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Edizione 2027 - ASLICO",
@@ -229,13 +285,20 @@
       "AsLiCo non terrà conto delle domande di iscrizione pervenute oltre il termine del",
       "Roma, Teatro dell’Opera di Roma – 5 dicembre 2026 (massimo 60 candidati)"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 10,
     "source": "Teatro Lirico Sperimentale di Spoleto",
     "url": "https://www.tls-belli.it/bandi_e_avvisi/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Bandi e avvisi",
@@ -247,13 +310,20 @@
       "Stagione Lirica 2026",
       "DEDICATO ALLA MEMORIA DEL MAESTRO GIANCARLO MENOTTI - PER NUOVE COMPOSIZIONI VOCALI DA CAMERA EDIZIONE 2026"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 11,
     "source": "Fondazione Luciano Pavarotti",
     "url": "https://www.lucianopavarottifoundation.com/c/news/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "News - Fondazione Luciano Pavarotti",
@@ -271,13 +341,20 @@
       "11 Feb 2026",
       "Luciano Pavarotti Foundation Opera Naples International Voice Competition 2026"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 12,
     "source": "Ente Lirico Italiano - Premio E.L.I.",
     "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Bando 2026 - \"Premio E.L.I.\" Concorso Lirico Internazionale",
@@ -299,13 +376,20 @@
       "Bando 2026 - \"Premio E.L.I.\" Concorso Lirico Internazionale",
       "Modulo Iscrizione Workshop"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 13,
     "source": "Tommaso Traetta Opera Festival",
     "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Concorso Internazionale di Canto Lirico “Tommaso Traetta” – TRAETTA OPERA FESTIVAL",
@@ -327,13 +411,20 @@
       "PROGRAMMA 2026",
       "PROGRAMMA 2026"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 14,
     "source": "CLIP Portofino",
     "url": "https://www.portofinoclip.it/clip-2026/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "CLIP 2026 | CLIP Portofino",
@@ -355,13 +446,20 @@
       "CLIP Portofino © 2026",
       "Primo Premio, Premio Basso Emergente"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 15,
     "source": "Concorso Francesco Morlacchi",
     "url": "https://www.concorsomorlacchi.it/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Concorso Internazionale di Canto lirico Francesco Morlacchi · Perugia 2026",
@@ -383,13 +481,20 @@
       "Iscrizione e documentazione",
       "Pagamento della quota di iscrizione"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 16,
     "source": "Teatro La Fenice - 招募与选拔",
     "url": "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Lavora con noi (bandi, concorsi, graduatorie per entrare a far parte della nostra Impresa Culturale) - Teatro La Fenice",
@@ -411,13 +516,20 @@
       "28.09.2026",
       "22.09.2026"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 17,
     "source": "Teatro Lirico di Cagliari - 招募与选拔",
     "url": "https://www.liricocagliari.it/trasparenza/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Archivi Amministrazione trasparente - Teatro Lirico di Cagliari",
@@ -439,13 +551,20 @@
       "20/07/2026",
       "20/07/2026"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 18,
     "source": "Accademia d'Arte Lirica di Osimo",
     "url": "https://www.accademialiricaosimo.com/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Accademia Lirica Osimo – Accademia Lirica Osimo",
@@ -467,13 +586,20 @@
       "5 November 2026",
       "6 November 2026"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 19,
     "source": "Sipario Lirico APS - 试唱",
     "url": "https://www.siparioliricoaps.it/audizioni/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Audizioni - Sipario Lirico Aps",
@@ -486,13 +612,20 @@
       "Stagione concertistica 2026 Associazione “",
       "© 2025-2026 Sipario Lirico Aps – Tutti i diritti riservati"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 20,
     "source": "Valsesia Musica - 声乐比赛",
     "url": "https://www.valsesiamusica.com/sezione_canto_lirico.htm",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Sezione Canto Lirico",
@@ -514,13 +647,20 @@
       "Sabato, 5 Dicembre 2026",
       "Domenica, 6 Dicembre 2026"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 21,
     "source": "Premio Fausto Ricci - 国际声乐比赛",
     "url": "https://www.xxisecolo.org/faustoricci/opera.html",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Opera · Premio Fausto Ricci",
@@ -541,13 +681,20 @@
       "Edizione 2026",
       "© 2026 Associazione XXI Secolo di Viterbo · Premio Fausto Ricci"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 22,
     "source": "Concorso Maria Malibran - 国际声乐比赛",
     "url": "https://www.mariamalibran.it/xi-edizione-2026.html",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "XI edizione 2026 - Nuovo Progetto",
@@ -569,13 +716,20 @@
       "Concorso Lirico Internazionale",
       "Concorso Lirico Internazionale"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 23,
     "source": "Agnesi Opera Competition",
     "url": "https://www.agnesioperacompetition.com/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "\"AGNESI\" International Opera Competition | International Opera Competition dedicated to Maria Teresa Agnesi",
@@ -591,13 +745,20 @@
       "29 November 2026",
       "2nd Edition 2026"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 24,
     "source": "Nicola Martinucci 国际歌剧比赛",
     "url": "https://nicolamartinucciprize.com/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "2nd Nicola Martinucci International Opera Competition | Rome 2026",
@@ -618,13 +779,20 @@
       "Nicola Martinucci Prize 2026",
       "opera talent worldwide. Rome, October 23-24, 2026."
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 25,
     "source": "Norma Fantini Opera Contest",
     "url": "https://www.normafantinioperacontest.it/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Home - Norma Fantini Opera Contest",
@@ -637,13 +805,20 @@
       "Galà Lirico 2026",
       "Copyright © 2025 - 2026 Associazione Culturale Territori - Corso Nizza 16, Cuneo - CF 96099230045"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 26,
     "source": "Renata Tebaldi 国际声乐比赛",
     "url": "https://www.fondazionerenatatebaldi.org/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Fondazione Renata Tebaldi",
@@ -665,13 +840,20 @@
       "Edizione 2026 – Sezione Opera",
       "Copyright © 2026 –"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 27,
     "source": "Sportello Spettacolo（演艺行业信息平台）",
     "url": "https://www.sportellospettacolo.it/bandi-call/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Bandi spettacolo e audizioni: teatro, danza, musica - Sportello Spettacolo",
@@ -693,13 +875,20 @@
       "Nessuna posizione aperta pubblicata. Le candidature spontanee sono accolte per future esigenze all'indirizzo info@teatro-bolzano.it.",
       "Teatro, danza, performance, musica e narrazione per i due weekend del festival (29-31 gennaio e 5-7 febbraio 2027). In domanda si indica il cachet richiesto; esiti entro il 20 dicembre 2026."
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 28,
     "source": "Opera Mundus（歌剧比赛信息平台）",
     "url": "https://www.operamundus.com/en/concorsi/",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Concorsi di canto lirico - Opera Mundus",
@@ -721,13 +910,20 @@
       "Opera Mundus – Vox Futuri | II Edizione – Concorso Internazionale di Canto Lirico",
       "Opera Mundus – Vox Futuri | II Edizione – Concorso Internazionale di Canto Lirico"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 29,
     "source": "Liricamente（声乐行业信息平台）",
     "url": "https://www.liricamente.it/audizioni-canto-lirico-cori-cantanti-lirici.asp",
-    "checked_at": "2026-11-10T15:43:13+01:00",
+    "checked_at": "2026-11-10T17:02:42+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Audizioni di canto lirico per cantanti lirici cori agenzie 2026",
@@ -749,13 +945,20 @@
       "Modulo di Iscrizione e bando informativo",
       "Bando - Modulo d'iscrizione:"
     ],
-    "error": null
+    "error": null,
+    "last_success_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_at": "2026-11-10T17:02:42+01:00",
+    "last_attempt_status": "ok",
+    "last_attempt_http_status": 200,
+    "last_attempt_error": null,
+    "consecutive_failures": 0,
+    "stale": false
   },
   {
     "number": 96,
     "source": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antic",
     "url": "https://www.indafondazione.org/bando-audizioni-per-filottete/",
-    "checked_at": "2026-11-10T15:45:06+01:00",
+    "checked_at": "2026-11-10T17:04:30+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico | Fondazione ONLUS | Siracusa",
@@ -771,7 +974,9 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T06:14:32+01:00"
+    "discovered_at": "2026-11-10T06:14:32+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 97,
@@ -792,7 +997,11 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T06:14:34+01:00"
+    "discovered_at": "2026-11-10T06:14:34+01:00",
+    "review_status": "legacy_unreviewed",
+    "auto_review_status": "needs_review",
+    "auto_review_reason": "insufficient_vocal_evidence",
+    "auto_review_checked_at": "2026-11-10T17:03:59+01:00"
   },
   {
     "number": 98,
@@ -811,7 +1020,11 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T06:14:37+01:00"
+    "discovered_at": "2026-11-10T06:14:37+01:00",
+    "review_status": "legacy_unreviewed",
+    "auto_review_status": "needs_review",
+    "auto_review_reason": "insufficient_vocal_evidence",
+    "auto_review_checked_at": "2026-11-10T17:03:59+01:00"
   },
   {
     "number": 99,
@@ -839,13 +1052,17 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T06:26:06+01:00"
+    "discovered_at": "2026-11-10T06:26:06+01:00",
+    "review_status": "legacy_unreviewed",
+    "auto_review_status": "needs_review",
+    "auto_review_reason": "insufficient_vocal_evidence",
+    "auto_review_checked_at": "2026-11-10T17:03:59+01:00"
   },
   {
     "number": 100,
     "source": "Lavora con noi - Elfo Puccini",
     "url": "https://www.elfo.org/chi-siamo/lavora-con-noi.htm",
-    "checked_at": "2026-11-10T10:06:50+01:00",
+    "checked_at": "2026-11-10T17:03:59+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Lavora con noi - Elfo Puccini",
@@ -856,13 +1073,15 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T06:26:11+01:00"
+    "discovered_at": "2026-11-10T06:26:11+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 101,
     "source": "Audizioni - MusicalMusical",
     "url": "https://www.musical.it/audizioni/",
-    "checked_at": "2026-11-10T10:06:55+01:00",
+    "checked_at": "2026-11-10T17:04:04+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Audizioni - MusicalMusical",
@@ -872,22 +1091,24 @@
       "Le compagnie e scuole interessate a far pubblicare i bandi delle proprie audizioni devono inviare",
       "Per i casting il bando dovrà contenere obbligatoriamente il nome della Produzione, il periodo di impegno per le prove e previsto per lo spettacolo e, nella e-mail di accompagnamento, che deve essere inviata all’indirizzo audizioni@musical.it, dovrà essere specificato",
       "Audizioni produzioni professionistiche",
-      "Audizioni per PERFORMER, BALLERINI e ACROBATI – Jurassic World The Experience, Milano",
       "Audizioni per DALIDA in Paradisco – Parigi, Francia",
       "Audizioni Produzioni non professionistiche",
       "Attoparallelo, Vercelli – Audizioni per Robin Hood – Prima della leggenda",
       "Audizioni per BIANCANEVE & la magia del tempo – I PerFORMErs – Produzioni Artistiche",
+      "SDM – La Scuola del Musical, Milano – Esami di ammissione all’anno accademico 2027/28",
       "©2026 MUSICAL.IT - P.I. e C.F. 01262820432"
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T06:39:44+01:00"
+    "discovered_at": "2026-11-10T06:39:44+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 102,
     "source": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e L",
     "url": "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
-    "checked_at": "2026-11-10T10:06:58+01:00",
+    "checked_at": "2026-11-10T17:04:07+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma - www.castingeprovini.com",
@@ -910,13 +1131,15 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T06:39:47+01:00"
+    "discovered_at": "2026-11-10T06:39:47+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 114,
     "source": "CollettivO CineticO | Energia Cinetica",
     "url": "https://www.collettivocinetico.it/energia-cinetica",
-    "checked_at": "2026-11-10T15:44:42+01:00",
+    "checked_at": "2026-11-10T17:04:09+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "CollettivO CineticO | Energia Cinetica",
@@ -928,13 +1151,15 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T08:31:06+01:00"
+    "discovered_at": "2026-11-10T08:31:06+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 115,
     "source": "Lavora con noi - Fondazione Aida",
     "url": "https://www.fondazioneaida.it/lavora-con-noi/",
-    "checked_at": "2026-11-10T15:44:43+01:00",
+    "checked_at": "2026-11-10T17:04:11+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Lavora con noi - Fondazione Aida",
@@ -948,19 +1173,22 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T08:31:07+01:00"
+    "discovered_at": "2026-11-10T08:31:07+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 117,
     "source": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
     "url": "https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/",
-    "checked_at": "2026-11-10T15:44:46+01:00",
+    "checked_at": "2026-11-10T17:04:13+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
     "relevant_lines": [
       "Mare fuori 8, casting aperto a Napoli per ragazzi e ragazze tra i 15 e i 20 anni",
       "Mare fuori 8, casting aperto a Napoli per ragazzi e ragazze tra i 15 e i 20 anni",
+      "È aperto un nuovo casting per la realizzazione di...",
       "entro il 10 dicembre 2026",
       "Casting Netflix 2026: Provini Per Film e Serie Tv in Italia",
       "Casting Sky 2026: Provini per Attori ed Attrici in Italia",
@@ -972,18 +1200,19 @@
       "Casting a Milano per il musical su Maradona: si cercano ballerini, attori e cantanti per il debutto del 2027",
       "Casting Netflix 2026: Provini Per Film e Serie Tv in Italia",
       "Casting Sky 2026: Provini per Attori ed Attrici in Italia",
-      "Casting Mediaset 2026: Provini per Rete 4, Canale 5 e Italia 1",
-      "Casting Rai 2026: Audizioni per le Tre Reti Nazionali"
+      "Casting Mediaset 2026: Provini per Rete 4, Canale 5 e Italia 1"
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T08:31:25+01:00"
+    "discovered_at": "2026-11-10T08:31:25+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 118,
     "source": "Lavora con noi • Teatro Franco Parenti • Milano",
     "url": "https://teatrofrancoparenti.it/lavora-con-noi/",
-    "checked_at": "2026-11-10T15:44:50+01:00",
+    "checked_at": "2026-11-10T17:04:16+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Lavora con noi • Teatro Franco Parenti • Milano",
@@ -997,13 +1226,15 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T09:52:17+01:00"
+    "discovered_at": "2026-11-10T09:52:17+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 120,
     "source": "Concorsi 2026 / Primo Oboe - Orchestra della Toscana",
     "url": "https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/",
-    "checked_at": "2026-11-10T15:44:53+01:00",
+    "checked_at": "2026-11-10T17:04:19+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Concorsi 2026 / Primo Oboe - Orchestra della Toscana",
@@ -1026,13 +1257,15 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T09:52:36+01:00"
+    "discovered_at": "2026-11-10T09:52:36+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 121,
     "source": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacol",
     "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
-    "checked_at": "2026-11-10T15:44:55+01:00",
+    "checked_at": "2026-11-10T17:04:21+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacolo teatrale - Piemonte - Provinispettacolo",
@@ -1055,13 +1288,15 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T10:07:41+01:00"
+    "discovered_at": "2026-11-10T10:07:41+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 123,
     "source": "Fringe in Progress 2027 | Un’azione per progetti in crescita – Torino ",
     "url": "https://www.tofringe.it/partecipa/fringe-in-progress-selezione-per-progetti-in-crescita-torino-fringe-festival-2027/",
-    "checked_at": "2026-11-10T15:44:58+01:00",
+    "checked_at": "2026-11-10T17:04:24+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Fringe in Progress 2027 | Un’azione per progetti in crescita – Torino Fringe Festival",
@@ -1084,13 +1319,15 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T10:08:02+01:00"
+    "discovered_at": "2026-11-10T10:08:02+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   },
   {
     "number": 124,
     "source": "Selezione per Strumentisti | Accademia Nazionale di Santa Cecilia",
     "url": "https://santacecilia.it/bandi/selezione-per-strumentisti-2027/",
-    "checked_at": "2026-11-10T15:45:00+01:00",
+    "checked_at": "2026-11-10T17:04:25+01:00",
     "status": "ok",
     "http_status": 200,
     "title": "Selezione per Strumentisti | Accademia Nazionale di Santa Cecilia",
@@ -1106,6 +1343,8 @@
     ],
     "error": null,
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-    "discovered_at": "2026-11-10T10:08:04+01:00"
+    "discovered_at": "2026-11-10T10:08:04+01:00",
+    "review_status": "legacy_unreviewed",
+    "publisher_status": "unverified"
   }
 ]

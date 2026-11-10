@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-11-10T15:45:15+01:00",
-  "cursor": 4,
+  "updated_at": "2026-11-10T17:04:32+01:00",
+  "cursor": 1,
   "items": [
     {
       "number": 96,
       "source": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antic",
       "url": "https://www.indafondazione.org/bando-audizioni-per-filottete/",
-      "checked_at": "2026-11-10T15:45:06+01:00",
+      "checked_at": "2026-11-10T17:04:30+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antico | Fondazione ONLUS | Siracusa",
@@ -22,7 +22,9 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T06:14:32+01:00"
+      "discovered_at": "2026-11-10T06:14:32+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 97,
@@ -43,7 +45,11 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T06:14:34+01:00"
+      "discovered_at": "2026-11-10T06:14:34+01:00",
+      "review_status": "legacy_unreviewed",
+      "auto_review_status": "needs_review",
+      "auto_review_reason": "insufficient_vocal_evidence",
+      "auto_review_checked_at": "2026-11-10T17:03:59+01:00"
     },
     {
       "number": 98,
@@ -62,7 +68,11 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T06:14:37+01:00"
+      "discovered_at": "2026-11-10T06:14:37+01:00",
+      "review_status": "legacy_unreviewed",
+      "auto_review_status": "needs_review",
+      "auto_review_reason": "insufficient_vocal_evidence",
+      "auto_review_checked_at": "2026-11-10T17:03:59+01:00"
     },
     {
       "number": 99,
@@ -90,13 +100,17 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T06:26:06+01:00"
+      "discovered_at": "2026-11-10T06:26:06+01:00",
+      "review_status": "legacy_unreviewed",
+      "auto_review_status": "needs_review",
+      "auto_review_reason": "insufficient_vocal_evidence",
+      "auto_review_checked_at": "2026-11-10T17:03:59+01:00"
     },
     {
       "number": 100,
       "source": "Lavora con noi - Elfo Puccini",
       "url": "https://www.elfo.org/chi-siamo/lavora-con-noi.htm",
-      "checked_at": "2026-11-10T10:06:50+01:00",
+      "checked_at": "2026-11-10T17:03:59+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi - Elfo Puccini",
@@ -107,13 +121,15 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T06:26:11+01:00"
+      "discovered_at": "2026-11-10T06:26:11+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 101,
       "source": "Audizioni - MusicalMusical",
       "url": "https://www.musical.it/audizioni/",
-      "checked_at": "2026-11-10T10:06:55+01:00",
+      "checked_at": "2026-11-10T17:04:04+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni - MusicalMusical",
@@ -123,22 +139,24 @@
         "Le compagnie e scuole interessate a far pubblicare i bandi delle proprie audizioni devono inviare",
         "Per i casting il bando dovrà contenere obbligatoriamente il nome della Produzione, il periodo di impegno per le prove e previsto per lo spettacolo e, nella e-mail di accompagnamento, che deve essere inviata all’indirizzo audizioni@musical.it, dovrà essere specificato",
         "Audizioni produzioni professionistiche",
-        "Audizioni per PERFORMER, BALLERINI e ACROBATI – Jurassic World The Experience, Milano",
         "Audizioni per DALIDA in Paradisco – Parigi, Francia",
         "Audizioni Produzioni non professionistiche",
         "Attoparallelo, Vercelli – Audizioni per Robin Hood – Prima della leggenda",
         "Audizioni per BIANCANEVE & la magia del tempo – I PerFORMErs – Produzioni Artistiche",
+        "SDM – La Scuola del Musical, Milano – Esami di ammissione all’anno accademico 2027/28",
         "©2026 MUSICAL.IT - P.I. e C.F. 01262820432"
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T06:39:44+01:00"
+      "discovered_at": "2026-11-10T06:39:44+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 102,
       "source": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e L",
       "url": "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
-      "checked_at": "2026-11-10T10:06:58+01:00",
+      "checked_at": "2026-11-10T17:04:07+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma - www.castingeprovini.com",
@@ -161,13 +179,15 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T06:39:47+01:00"
+      "discovered_at": "2026-11-10T06:39:47+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 114,
       "source": "CollettivO CineticO | Energia Cinetica",
       "url": "https://www.collettivocinetico.it/energia-cinetica",
-      "checked_at": "2026-11-10T15:44:42+01:00",
+      "checked_at": "2026-11-10T17:04:09+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "CollettivO CineticO | Energia Cinetica",
@@ -179,13 +199,15 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T08:31:06+01:00"
+      "discovered_at": "2026-11-10T08:31:06+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 115,
       "source": "Lavora con noi - Fondazione Aida",
       "url": "https://www.fondazioneaida.it/lavora-con-noi/",
-      "checked_at": "2026-11-10T15:44:43+01:00",
+      "checked_at": "2026-11-10T17:04:11+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi - Fondazione Aida",
@@ -199,19 +221,22 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T08:31:07+01:00"
+      "discovered_at": "2026-11-10T08:31:07+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 117,
       "source": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
       "url": "https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/",
-      "checked_at": "2026-11-10T15:44:46+01:00",
+      "checked_at": "2026-11-10T17:04:13+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
       "relevant_lines": [
         "Mare fuori 8, casting aperto a Napoli per ragazzi e ragazze tra i 15 e i 20 anni",
         "Mare fuori 8, casting aperto a Napoli per ragazzi e ragazze tra i 15 e i 20 anni",
+        "È aperto un nuovo casting per la realizzazione di...",
         "entro il 10 dicembre 2026",
         "Casting Netflix 2026: Provini Per Film e Serie Tv in Italia",
         "Casting Sky 2026: Provini per Attori ed Attrici in Italia",
@@ -223,18 +248,19 @@
         "Casting a Milano per il musical su Maradona: si cercano ballerini, attori e cantanti per il debutto del 2027",
         "Casting Netflix 2026: Provini Per Film e Serie Tv in Italia",
         "Casting Sky 2026: Provini per Attori ed Attrici in Italia",
-        "Casting Mediaset 2026: Provini per Rete 4, Canale 5 e Italia 1",
-        "Casting Rai 2026: Audizioni per le Tre Reti Nazionali"
+        "Casting Mediaset 2026: Provini per Rete 4, Canale 5 e Italia 1"
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T08:31:25+01:00"
+      "discovered_at": "2026-11-10T08:31:25+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 118,
       "source": "Lavora con noi • Teatro Franco Parenti • Milano",
       "url": "https://teatrofrancoparenti.it/lavora-con-noi/",
-      "checked_at": "2026-11-10T15:44:50+01:00",
+      "checked_at": "2026-11-10T17:04:16+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi • Teatro Franco Parenti • Milano",
@@ -248,13 +274,15 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T09:52:17+01:00"
+      "discovered_at": "2026-11-10T09:52:17+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 120,
       "source": "Concorsi 2026 / Primo Oboe - Orchestra della Toscana",
       "url": "https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/",
-      "checked_at": "2026-11-10T15:44:53+01:00",
+      "checked_at": "2026-11-10T17:04:19+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Concorsi 2026 / Primo Oboe - Orchestra della Toscana",
@@ -277,13 +305,15 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T09:52:36+01:00"
+      "discovered_at": "2026-11-10T09:52:36+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 121,
       "source": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacol",
       "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
-      "checked_at": "2026-11-10T15:44:55+01:00",
+      "checked_at": "2026-11-10T17:04:21+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacolo teatrale - Piemonte - Provinispettacolo",
@@ -306,13 +336,15 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T10:07:41+01:00"
+      "discovered_at": "2026-11-10T10:07:41+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 123,
       "source": "Fringe in Progress 2027 | Un’azione per progetti in crescita – Torino ",
       "url": "https://www.tofringe.it/partecipa/fringe-in-progress-selezione-per-progetti-in-crescita-torino-fringe-festival-2027/",
-      "checked_at": "2026-11-10T15:44:58+01:00",
+      "checked_at": "2026-11-10T17:04:24+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Fringe in Progress 2027 | Un’azione per progetti in crescita – Torino Fringe Festival",
@@ -335,13 +367,15 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T10:08:02+01:00"
+      "discovered_at": "2026-11-10T10:08:02+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     },
     {
       "number": 124,
       "source": "Selezione per Strumentisti | Accademia Nazionale di Santa Cecilia",
       "url": "https://santacecilia.it/bandi/selezione-per-strumentisti-2027/",
-      "checked_at": "2026-11-10T15:45:00+01:00",
+      "checked_at": "2026-11-10T17:04:25+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Selezione per Strumentisti | Accademia Nazionale di Santa Cecilia",
@@ -357,7 +391,9 @@
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
-      "discovered_at": "2026-11-10T10:08:04+01:00"
+      "discovered_at": "2026-11-10T10:08:04+01:00",
+      "review_status": "legacy_unreviewed",
+      "publisher_status": "unverified"
     }
   ]
 }
