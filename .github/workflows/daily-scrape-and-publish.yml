@@ -12,10 +12,14 @@ on:
       - "manifest.webmanifest"
       - "service-worker.js"
       - "data/**"
+      - "scrape_sources.py"
+      - "grow_sources.py"
+      - "run_conservatori.py"
+      - "mirror_pdfs.py"
+      - "audit_opportunity_quality.py"
+      - "audit_pdf_integrity.py"
       - "!data/repertoire_archive.json"
-      - "*.py"
       - "requirements.txt"
-      - ".github/workflows/daily-scrape-and-publish.yml"
   schedule:
     - cron: "15 6 * * *"
   workflow_dispatch:
