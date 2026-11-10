@@ -242,11 +242,11 @@ function renderMusicSearch(rawQuery){
   const target=$('#musicSearchResults');
   const query=rawQuery.trim();
   if(!query){
-    target.innerHTML='<div class="music-empty">打歌名、作曲家，或者一句歌词都行。歌词默认折起来，想读整段再点开。</div>';
+    target.innerHTML='<div class="music-empty">输入作品名称、作曲家或歌词片段，即可搜索曲目。点击作品卡片可展开完整文本。</div>';
     return;
   }
   if(!repertoireLoaded){
-    target.innerHTML='<div class="music-empty">曲目还在读，等一下就好。</div>';
+    target.innerHTML='<div class="music-empty">正在载入曲目资料，请稍候。</div>';
     return;
   }
   const terms=query.split(/[\/,，、;；|]+/).map(normalizeSearch).filter(Boolean);
@@ -258,13 +258,13 @@ function renderMusicSearch(rawQuery){
   if(!evaluated.length){
     const near=repertoire.map(item=>({item,sim:editDistance(normalizeSearch(query),itemNorm(item).title,6)}))
       .filter(entry=>entry.sim<=6).sort((a,b)=>a.sim-b.sim).slice(0,5);
-    target.innerHTML=`<div class="music-empty"><strong>没找到“${esc(query)}”</strong><p>${near.length?'是不是这几个：'+near.map(entry=>`<button type="button" class="search-chip" data-suggest="${esc(entry.item.title)}">${esc(entry.item.title)}</button>`).join(' '):'先试个短一点的词，比如 nessun、libiamo、amore。'}</p></div>`;
+    target.innerHTML=`<div class="music-empty"><strong>没找到“${esc(query)}”</strong><p>${near.length?'是不是这几个：'+near.map(entry=>`<button type="button" class="search-chip" data-suggest="${esc(entry.item.title)}">${esc(entry.item.title)}</button>`).join(' '):'请尝试缩短关键词，或使用作品名称、作曲家姓名进行搜索。'}</p></div>`;
     return;
   }
   const shown=main.slice(0,12);
   const chips=[...new Set(shown.flatMap(entry=>[cleanName(entry.item.composer),cleanName(entry.item.work)]).filter(value=>value&&value.length<=38))].slice(0,4);
   const bits=[];
-  bits.push(main.length?`歌名和作品里命中 ${main.length} 首`:'歌名和作品里没命中');
+  bits.push(main.length?`歌名和作品里命中 ${main.length} 首`:'未匹配到作品名称或别名');
   if(main.length>shown.length)bits.push(`先看前 ${shown.length} 首`);
   if(extra.length)bits.push(`歌词里还有 ${extra.length} 首`);
   const head=`<p class="result-meta">${bits.join(' · ')}${chips.length&&shown.length?' · 接着搜：':''}${shown.length?chips.map(value=>`<button type="button" class="search-chip" data-suggest="${esc(value)}">${esc(value)}</button>`).join(' '):''}</p>`;
@@ -283,7 +283,7 @@ function renderMusicSearch(rawQuery){
    <div class="music-text"><div class="music-text-label">歌词原文 · ${esc(languageLabel(item.language))}</div><p class="lyrics lyrics-preview">${esc(preview)}${hasMore?'…':''}</p>${hasMore?`<div class="lyrics-full" hidden><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div><button type="button" class="lyrics-toggle" data-open="0">展开全文 ↓</button>`:''}</div>
    <div class="music-reading"><div><span class="music-text-label">原文朗读</span><p>点开 Google 翻译，再按喇叭，会用这首的原文语言念。</p></div>${readLink?'<a class="reading-link" href="'+esc(readLink)+'" target="_blank" rel="noopener noreferrer">Google 翻译朗读 ↗</a>':'<span class="score-unavailable">这段太长，Google 翻译一次念不了</span>'}</div>
    ${summary?`<p class="music-meaning"><strong>大意：</strong>${esc(summary)}</p>`:''}
-   <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'这个版本核过，可以直接下。':'整份乐谱还没托管到本站。先去 IMSLP 对应作品页看，版本和版权自己核一下。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':item.scoreUrl?'<a class="score-imslp" href="'+esc(item.scoreUrl)+'" target="_blank" rel="noopener noreferrer">IMSLP 查看乐谱 ↗</a>':'<span class="score-unavailable">还没找到乐谱链接</span>'}</div>
+   <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'此版本已核对，可下载。':'本站暂未提供乐谱文件。可前往 IMSLP 查看相关版本，并留意作品及版本的版权信息。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':item.scoreUrl?'<a class="score-imslp" href="'+esc(item.scoreUrl)+'" target="_blank" rel="noopener noreferrer">IMSLP 查看乐谱 ↗</a>':'<span class="score-unavailable">还没找到乐谱链接</span>'}</div>
    <div class="music-source"><span>${esc(sourceNoteOf(item))}</span></div>
  </article>`;
   }).join('');
@@ -302,7 +302,7 @@ async function loadRepertoire(){
     renderMusicSearch($('#musicSearchInput').value);
   }catch(error){
     repertoireLoaded=false;
-    $('#musicSearchResults').innerHTML='<div class="music-empty">曲目没读出来，过一会儿再刷一次。</div>';
+    $('#musicSearchResults').innerHTML='<div class="music-empty">暂时无法载入曲目资料，请稍后重新载入。</div>';
   }
 }
 
@@ -376,7 +376,7 @@ function localPdfs(c){
   return list.filter(Boolean);
 }
 function stateLabel(state){
-  const map={'有窗口':'报名开放','只有要求':'只看到要求','只有大纲':'只有大纲','非招生页':'不是招生页','读不到':'打不开','可读':'读到了','报名中':'报名中','已截止':'已截止','未公布':'未公布','上期已截止':'上期已截止'};
+  const map={'有窗口':'开放报名','只有要求':'仅列出报考要求','仅提供考试大纲':'只有大纲','非招生页':'非招生信息页','暂无法读取':'暂时无法读取','已读取':'已读取','开放报名':'报名中','报名已截止':'已截止','未公布':'未公布','上一期已截止':'上期已截止'};
   return map[state]||state;
 }
 function stateClass(state=''){
@@ -390,13 +390,13 @@ function consLine(c){
   const dl=zh.deadline_iso||isoFromText((c.deadline_lines||[]).join(' '))||zhIsoFromText((zh.d||[]).join(' '));
   const ex=zh.exam_iso||isoFromText((c.exam_dates||[]).join(' '))||zhIsoFromText((zh.x||[]).join(' '));
   const bits=[];
-  if(dl)bits.push(`报名到 ${zhDate(dl)}${daysUntil(dl)<0?'，已过':countdown(dl).replace(/^ · /,'，')}`);
-  if(ex)bits.push(`考试 ${zhDate(ex)}`);
+  if(dl)bits.push(`报名截止：${zhDate(dl)}${daysUntil(dl)<0?'（已截止）':countdown(dl).replace(/^ · /,'（') + '）'}`);
+  if(ex)bits.push(`考试日期：${zhDate(ex)}`);
   if(bits.length)return bits.join(' · ');
   if((zh.d||[]).length)return humanText(zh.d[0]).slice(0,60);
   if((zh.x||[]).length)return humanText(zh.x[0]).slice(0,60);
   if((zh.r||[]).length)return humanText(zh.r[0]).slice(0,60);
-  return c.status==='ok'?'官网上没写这季的日期，点开原文看看':'这次没读到官网，点开可以跳过去自己看';
+  return c.status==='ok'?'暂未找到本学年的具体日期，请查看院校官网公告。':'本次未能读取官网内容，可前往院校官网查看。';
 }
 function consCard(c){
   const zh=c.zh||{};
@@ -495,7 +495,7 @@ function renderPdfList(){
     <h3>${esc(r.school)}</h3>
     ${r.zh?`<p class="pdf-note">${esc(humanText(r.zh))}</p>`:''}
     <p class="pdf-file">${esc(r.label)}</p>
-    <div class="pdf-actions"><a class="doc-link ${r.local?'doc-link--local':''}" href="${esc(r.url)}" target="_blank" rel="noopener">${r.local?'站内打开 ↓':'去官网打开 ↗'}</a><a class="doc-link" href="${esc(r.official)}" target="_blank" rel="noopener">官网页面 ↗</a></div>
+    <div class="pdf-actions"><a class="doc-link ${r.local?'doc-link--local':''}" href="${esc(r.url)}" target="_blank" rel="noopener">${r.local?'打开站内文件 ↓':'查看官网文件 ↗'}</a><a class="doc-link" href="${esc(r.official)}" target="_blank" rel="noopener">官网页面 ↗</a></div>
   </article>`).join(''):'<div class="empty">还没抓到简章。学院那栏里有官网链接，可以直接跳过去核对。</div>';
 }
 
@@ -543,8 +543,8 @@ async function loadConservatori(){
       }
     }
     const stamp=data.checked_at||(conservatoriData[0]||{}).checked_at;
-    $('#updatedAt').textContent=stamp?`最近更新 ${new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(stamp))}`:'数据已更新';
-  }catch(error){conservatoriData=[];$('#updatedAt').textContent='数据没读出来，点刷新再试';}
+    $('#updatedAt').textContent=stamp?`最近更新 ${new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(stamp))}`:'数据已载入';
+  }catch(error){conservatoriData=[];$('#updatedAt').textContent='暂时无法载入数据，请重新载入。';}
   renderConservatori();
   renderCalls();
 }
@@ -572,11 +572,11 @@ const expandAll=$('#consExpandAll');
 if(expandAll)expandAll.addEventListener('click',()=>{
   const on=expandAll.getAttribute('aria-pressed')!=='true';
   expandAll.setAttribute('aria-pressed',String(on));
-  expandAll.textContent=on?'收起全部':'展开全部';
+  expandAll.textContent=on?'收起全部院校':'展开全部院校';
   $$('.cons-card').forEach(card=>{card.open=on;});
 });
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;$('#installButton').hidden=false;});
-$('#installButton').addEventListener('click',async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('#installButton').hidden=true;}else{alert('iPhone 用 Safari 打开，点“分享”，再选“添加到主屏幕”。');}});
+$('#installButton').addEventListener('click',async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('#installButton').hidden=true;}else{alert('请使用 Safari 打开本网站，点击“分享”，再选择“添加到主屏幕”。');}});
 if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!window.navigator.standalone){$('#installButton').hidden=false;}
 if('serviceWorker' in navigator && /^https?:$/.test(location.protocol))navigator.serviceWorker.register(new URL('service-worker.js',sourceRoot)).catch(()=>{});
 $('#musicSearchForm').addEventListener('submit',event=>{event.preventDefault();renderMusicSearch($('#musicSearchInput').value);});
@@ -601,7 +601,7 @@ document.addEventListener('click',event=>{
     if(full)full.hidden=open;
     if(preview)preview.hidden=!open;
     toggle.dataset.open=open?'0':'1';
-    toggle.textContent=open?'展开全文 ↓':'收起 ↑';
+    toggle.textContent=open?'展开完整文本 ↓':'收起文本 ↑';
   }
 });
 $$('.search-chip').forEach(button=>button.addEventListener('click',()=>{const q=button.dataset.query;if(!q)return;$('#musicSearchInput').value=q;renderMusicSearch(q);}));
