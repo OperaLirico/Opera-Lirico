@@ -10,7 +10,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.svg">
-  <link rel="stylesheet" href="styles.css?v=ux10">
+  <link rel="stylesheet" href="styles.css?v=ux11">
   <title>意大利声乐现场 · 比赛、考试与曲目库</title>
 </head>
 <body>
@@ -33,8 +33,8 @@
   <main>
     <section class="shell hero">
       <div class="eyebrow">Opera · Audizioni · Concorsi</div>
-      <h1>选一条路，<em>直接进去。</em></h1>
-      <p class="lede">四个入口，各管一块：现在在招的剧院与比赛、各音乐学院的入学考试（中文写在前面、原文放在后面）、能边搜边读的咏叹调、还有从官网抓下来的招生简章。挑一个进去就行。</p>
+      <h1>去意大利唱歌，<em>先查这四件事。</em></h1>
+      <p class="lede">谁在招人、学院什么时候报名、考试要唱什么、谱子和原文去哪儿找——这些本来散在三四十个官网上，现在收在这里，每天自动更新。</p>
       <div class="hero-status">
         <span class="live-dot" aria-hidden="true"></span>
         <span id="updatedAt">正在读取最新数据…</span>
@@ -45,32 +45,32 @@
       <button class="tile" type="button" data-open="open-calls">
         <span class="tile-index">01</span>
         <span class="tile-title">歌剧 · 比赛</span>
-        <span class="tile-desc">剧院放出来的角色、青年歌手选拔、国际比赛，按截止日排好。</span>
+        <span class="tile-desc">剧院放出来的角色、青年歌手选拔、国际比赛，按截止日排，快到的在最前。</span>
         <span class="tile-stat"><b id="statCalls">—</b><span>个在招</span></span>
       </button>
       <button class="tile" type="button" data-open="conservatori">
         <span class="tile-index">02</span>
         <span class="tile-title">入学考试</span>
-        <span class="tile-desc">54 所公立音乐学院、11 所剧院学院：什么时候报名、哪天考、要唱什么。</span>
+        <span class="tile-desc">54 所公立音乐学院、11 所剧院学院：报名窗口、考试日期、要唱的曲目和语言要求。</span>
         <span class="tile-stat"><b id="statSchools">—</b><span>所读到</span></span>
       </button>
       <button class="tile" type="button" data-open="music-library">
         <span class="tile-index">03</span>
         <span class="tile-title">咏叹调 · 曲谱</span>
-        <span class="tile-desc">打两个字就出结果，歌词折起来，想读全文再点开。</span>
+        <span class="tile-desc">打两个字搜歌；歌词默认折着，想读整段再点开，还能听原文。</span>
         <span class="tile-stat"><b id="statSongs">—</b><span>首收录</span></span>
       </button>
       <button class="tile" type="button" data-open="pdfs">
         <span class="tile-index">04</span>
         <span class="tile-title">官方简章 PDF</span>
-        <span class="tile-desc">从官网抓下来的简章原件，站内就能翻，不用再找下载按钮。</span>
+        <span class="tile-desc">院校自己发的简章原件，直接在这儿打开，不用满网找下载按钮。</span>
         <span class="tile-stat"><b id="pdfCount">—</b><span>份可读</span></span>
       </button>
     </section>
     <section class="shell section panel" id="open-calls" hidden>
       <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
       <div class="section-head">
-        <div><div class="eyebrow">Open calls</div><h2>正在报名</h2><p>确认还在招的都在这儿。学院的报名窗口跟着每日数据自动带出来，时间按罗马走。</p></div>
+        <div><div class="eyebrow">Open calls</div><h2>正在报名</h2><p>还在招的都在这儿；学院的报名窗口跟着每日数据一起更新，时间按罗马算。</p></div>
         <span id="opportunityCount" class="count-pill">—</span>
       </div>
       <div id="opportunities" class="opportunity-list" aria-live="polite"></div>
@@ -78,7 +78,7 @@
     <section class="shell section music-section panel" id="music-library" hidden>
       <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
       <div class="section-head">
-        <div><div class="eyebrow">Aria · Lieder</div><h2>搜歌名，看歌词和大意</h2><p>意大利语、英语、中文都能搜，拼错一两个字母也认；歌词默认收起，点开才展开。</p></div>
+        <div><div class="eyebrow">Aria · Lieder</div><h2>搜歌名，看歌词和大意</h2><p>意大利语、英语、中文都能搜，拼错一两个字母也认得出；歌词默认收起，点开才展开。</p></div>
         <span id="repertoireCount" class="count-pill">读取曲目…</span>
       </div>
       <form id="musicSearchForm" class="music-search" role="search">
@@ -98,12 +98,12 @@
         <button type="button" class="search-chip" data-query="Quanto t’amo">Quanto t’amo</button>
       </div>
       <div id="musicSearchResults" aria-live="polite"></div>
-      <p class="music-rights-note">歌词和搜索结果都在本站。想听原文，点卡上的朗读链接，会打开 Google 翻译并已经设好这首的语言。乐谱先跳 IMSLP 对应作品页；整份乐谱 PDF 暂时没托管，确认版本可以合法提供之后才会加站内下载。</p>
+      <p class="music-rights-note">歌词和搜索结果都放在本站。想听原文发音，点卡片上的朗读链接，会按这首的语言打开 Google 翻译。乐谱先跳 IMSLP 对应作品页；整份乐谱 PDF 还没托管，确认版本可以合法提供之后才加下载。</p>
     </section>
     <section class="shell section panel" id="conservatori" hidden>
       <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
       <div class="section-head">
-        <div><div class="eyebrow">Conservatori · Accademie</div><h2>入学考试与招生</h2><p>每所先给一句中文结论：这季开没开、能确认的是哪几天。点开卡片才是原文和官方文件。</p></div>
+        <div><div class="eyebrow">Conservatori · Accademie</div><h2>入学考试与招生</h2><p>每所先给一句中文结论：这一季开了没有、能确认的是哪几天。点开卡片才是原文和官方文件。</p></div>
         <span id="conservatoriCount" class="count-pill">—</span>
       </div>
       <div class="cons-toolbar">
@@ -117,17 +117,17 @@
     <section class="shell section panel" id="pdfs" hidden>
       <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
       <div class="section-head">
-        <div><div class="eyebrow">Bandi · PDF</div><h2>官方简章原件</h2><p>每天把院校官网的简章拉下来存进站内，点开就读；同时留一份官网地址，以官网为准。</p></div>
+        <div><div class="eyebrow">Bandi · PDF</div><h2>官方简章原件</h2><p>每天从院校官网抓下来的简章，存在站内，点开就读；同时留官网地址，以官网为准。</p></div>
         <span id="pdfCountPill" class="count-pill">—</span>
       </div>
       <div id="pdfList" class="pdf-list" aria-live="polite"></div>
     </section>
     <footer class="shell">
       <span>意大利声乐现场 · <a href="./">Italia</a></span>
-      <span>信息来自各机构官网；抓取可能漏，报名资格和截止时间以主办方公告为准 · <a href="#sources-note" id="sourcesLink">来源说明</a></span>
-      <p id="sources-note" class="footnote">每天自动检查哪些机构、什么时候抓的，都记在 <a href="data/sources.json" target="_blank" rel="noopener">data/sources.json</a> 和 <a href="data/conservatori.json" target="_blank" rel="noopener">data/conservatori.json</a> 里，含每所院校的原网页地址。</p>
+      <span>信息来自各机构官网；抓取难免有漏，报名资格和截止时间以主办方公告为准 · <a href="#sources-note" id="sourcesLink">来源说明</a></span>
+      <p id="sources-note" class="footnote">每天检查了哪些机构、什么时候抓的，都记在 <a href="data/sources.json" target="_blank" rel="noopener">data/sources.json</a> 和 <a href="data/conservatori.json" target="_blank" rel="noopener">data/conservatori.json</a> 里，含每所院校的原网页地址。</p>
     </footer>
   </main>
-  <script src="app.js?v=ux10" defer></script>
+  <script src="app.js?v=ux11" defer></script>
 </body>
 </html>
