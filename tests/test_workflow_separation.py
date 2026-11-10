@@ -27,7 +27,7 @@ class WorkflowSeparationTests(unittest.TestCase):
 
     def test_weekly_coverage_has_independent_concurrency(self):
         workflow = (ROOT / ".github/workflows/weekly-source-coverage.yml").read_text(encoding="utf-8")
-        self.assertIn("group: weekly-source-coverage-\${{ github.event_name }}", workflow)
+        self.assertIn("group: weekly-source-coverage-${{ github.event_name }}", workflow)
         self.assertNotIn("group: auditions-data-and-pages", workflow)
 
     def test_weekly_discovery_has_independent_concurrency(self):
