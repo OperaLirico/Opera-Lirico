@@ -32,7 +32,7 @@ Limitations: the current main collector still uses a fixed Scrapling source list
 
 **Status: baseline inventory added; first five-source pilot implemented, results pending.**
 
-The new source policy registry records the current Scrapling path for every registered URL and explicitly marks alternatives as unassessed. This prevents an unrecorded default from being mistaken for a tested per-source strategy.
+The source policy registry records the current Scrapling path for every registered URL and explicitly marks alternatives as unassessed. The first five-source pilot checks robots.txt, advertised feeds and sitemaps, and compares Scrapling, lxml and Trafilatura on identical raw HTML. It remains evaluation-only pending review of the measured results.
 
 Acceptance:
 - Each source has an evidence-based preferred method and fallback.
@@ -64,7 +64,7 @@ Acceptance:
 - Test retention of title, dates, links, tables, role/voice type, eligibility, fees and application deadlines.
 - Keep Trafilatura only if it improves main-text completeness without losing structured details.
 
-A separate evaluation workflow captures five representative official pages as raw HTML artifacts and compares current Scrapling text extraction, lxml full text and Trafilatura on identical bytes. Trafilatura is installed only in the evaluation job and is not added to production requirements. Acceptance remains pending manual review of actual notice/date/role/link/table retention.
+A separate evaluation workflow captures five representative official pages as raw HTML artifacts and compares current Scrapling text extraction, lxml full text and Trafilatura on identical bytes. Parser runtimes and retention proxies are recorded. Trafilatura is installed only in the evaluation job and is not added to production requirements. Acceptance remains pending manual review of actual notice/date/role/link/table retention.
 
 ## P5 — Evidence integrity and isolated PDF automation
 
