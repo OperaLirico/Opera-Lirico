@@ -27,7 +27,7 @@ jobs:
       - name: Run digest tests
         run: |
           python -m py_compile weekly_digest.py
-          python -m unittest tests.test_weekly_digest -v
+          python -m unittest discover -s tests -p 'test_weekly_digest.py' -v
       - name: Generate local preview and optional private draft
         env:
           BUTTONDOWN_API_KEY: \${{ secrets.BUTTONDOWN_API_KEY }}
