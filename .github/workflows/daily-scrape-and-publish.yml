@@ -26,8 +26,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: auditions-data-and-pages
+  cancel-in-progress: false
 
 jobs:
   build:
