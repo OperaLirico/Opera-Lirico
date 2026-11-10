@@ -99,10 +99,15 @@
           "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf",
           "excerpt": "Modulo di iscrizione ufficiale del 1° Concorso Internazionale di Canto Lirico Francesco Morlacchi, Perugia 14–15 dicembre 2026.",
           "checked_at": "2026-11-10T17:47:53+01:00"
+        },
+        {
+          "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx",
+          "excerpt": "Modulo Word ufficiale di iscrizione scaricabile dal sito del concorso.",
+          "checked_at": "2026-11-10T17:47:53+01:00"
         }
       ],
       "notes": "比赛日期为2026年12月14日至15日；14日上午安排半决赛选手与官方钢琴伴奏排练，14日14:00开始半决赛，15日18:00举行公开决赛。具体材料和汇款方式以官网章程为准。",
-      "application_url": "https://www.concorsomorlacchi.it/",
+      "application_url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx",
       "official_pdf_url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf"
     },
     {
