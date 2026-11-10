@@ -39,6 +39,16 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
             actual[label] = actual.get(label, 0) + 1
         self.assertEqual(audit["summary"]["classifications"], actual)
 
+    def test_trafilatura_remains_evaluation_only(self):
+        requirements = (ROOT / "requirements.txt").read_text(encoding="utf-8")
+        pilot_workflow = (ROOT / ".github" / "workflows" / "p2-p4-extraction-pilot.yml").read_text(encoding="utf-8")
+        pilot_script = (ROOT / "audit_extraction_pilot.py").read_text(encoding="utf-8")
+        self.assertNotIn("trafilatura", requirements.lower())
+        self.assertIn("pip install trafilatura", pilot_workflow)
+        self.assertIn("Selector(content=html_bytes", pilot_script)
+        self.assertIn("trafilatura.extract", pilot_script)
+        self.assertIn("production_changes", pilot_script)
+
     def test_candidate_queue_stays_separate_and_pending(self):
         candidates_path = ROOT / "data" / "source_candidates.json"
         candidates = json.loads(candidates_path.read_text(encoding="utf-8"))
