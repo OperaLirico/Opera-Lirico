@@ -30,7 +30,7 @@ Limitations: the current main collector still uses a fixed Scrapling source list
 
 ## P2 — Per-source multi-engine strategy
 
-**Status: first five-source pilot completed; source-specific strategy decisions pending.**
+**Status: first five-source pilot completed; sitemap-child and public API-root checks added, source-specific decisions pending.**
 
 The source policy registry records the current Scrapling path for every registered URL and explicitly marks alternatives as unassessed. The first five-source pilot checks robots.txt, advertised feeds and sitemaps, and compares Scrapling, lxml and Trafilatura on identical raw HTML. It remains evaluation-only pending review of the measured results.
 
@@ -57,14 +57,14 @@ The first complete scan creates the baseline; trend-based anomaly detection beco
 
 ## P4 — Main-text extraction quality
 
-**Status: first offline snapshot comparison completed; corrected link-retention comparison in progress.**
+**Status: first offline comparison completed; corrected link-retention metrics show Trafilatura is not a safe general replacement.**
 
 Acceptance:
 - Compare the existing extraction with Trafilatura on the same offline HTML snapshots.
 - Test retention of title, dates, links, tables, role/voice type, eligibility, fees and application deadlines.
 - Keep Trafilatura only if it improves main-text completeness without losing structured details.
 
-A separate evaluation workflow captured five representative official pages as raw HTML artifacts and compared Scrapling, lxml full text and Trafilatura on identical bytes. First-pass character counts showed Trafilatura can be substantially shorter on list-heavy pages and longer on some content pages; this is not an accuracy verdict. The first report incorrectly repeated DOM link counts across parser rows, so a second pass now measures whether each parser's text actually retains relevant DOM anchor labels and separately counts Trafilatura Markdown links. Trafilatura remains evaluation-only and is not added to production requirements. Acceptance requires manual review of notice/date/role/eligibility/fee/link/table retention.
+A separate evaluation workflow captured five representative official pages as raw HTML artifacts and compared Scrapling, lxml full text and Trafilatura on identical bytes. The corrected comparison measured relevant anchor-label retention: Scrapling and lxml retained all tested relevant labels on all five pages, while Trafilatura retained only 0–2 labels per page (including 0/8 on Morlacchi, 0/1 on Teatro Massimo and 1/9 on AsLiCo). Trafilatura Markdown also retained very few relevant links. This is a strong warning against using Trafilatura as the sole parser for link-heavy audition pages, though the metrics remain proxies and require manual review. Keep Scrapling as the current default; lxml remains a candidate static fallback. Trafilatura stays evaluation-only and is not added to production requirements.
 
 ## P5 — Evidence integrity and isolated PDF automation
 
