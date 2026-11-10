@@ -92,6 +92,8 @@ def preserve_last_good(previous: dict | None, current: dict, attempted_at: str) 
         current["last_success_at"] = attempted_at
         current["last_attempt_at"] = attempted_at
         current["last_attempt_status"] = "ok"
+        current["last_attempt_http_status"] = current.get("http_status")
+        current["last_attempt_error"] = None
         current["consecutive_failures"] = 0
         current["stale"] = False
         return current
@@ -114,6 +116,8 @@ def preserve_last_good(previous: dict | None, current: dict, attempted_at: str) 
     current["checked_at"] = attempted_at
     current["last_attempt_at"] = attempted_at
     current["last_attempt_status"] = current.get("status", "error")
+    current["last_attempt_http_status"] = current.get("http_status")
+    current["last_attempt_error"] = current.get("error")
     current["consecutive_failures"] = int((previous or {}).get("consecutive_failures", 0)) + 1
     current["stale"] = True
     return current
@@ -160,7 +164,13 @@ def main() -> None:
             item["error"] = f"{type(exc).__name__}: {exc}"
         item = preserve_last_good(previous_by_number.get(number), item, checked_at)
         results.append(item)
-        print(f"[{number:02d}/{len(SOURCES):02d}] {item['status']} {item['http_status']} {name} — {item['title'][:100]}", flush=True)
+        print(
+            f"[{number:02d}/{len(SOURCES):02d}] snapshot={item['status']} "
+            f"attempt={item.get('last_attempt_status', item['status'])} "
+            f"http={item.get('last_attempt_http_status', item['http_status'])} "
+            f"stale={item.get('stale', False)} {name} — {item['title'][:100]}",
+            flush=True,
+        )
         time.sleep(1.2)
 
     json_path = out_dir / "sources.json"
