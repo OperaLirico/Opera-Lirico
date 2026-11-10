@@ -1,11 +1,9 @@
 name: Weekly source coverage
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - "audit_source_coverage.py"
-      - ".github/workflows/weekly-source-coverage.yml"
+  workflow_run:
+    workflows: ["Daily scrape and publish"]
+    types: [completed]
   schedule:
     - cron: "30 8 * * 1"
   workflow_dispatch:
@@ -14,12 +12,12 @@ permissions:
   contents: write
 
 concurrency:
-  group: source-coverage-audit
+  group: auditions-data-and-pages
   cancel-in-progress: false
 
 jobs:
   audit:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && (github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push'))
     runs-on: ubuntu-latest
     steps:
       - name: Check out main
