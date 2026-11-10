@@ -1,0 +1,58 @@
+name: Weekly source coverage
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "audit_source_coverage.py"
+      - ".github/workflows/weekly-source-coverage.yml"
+  schedule:
+    - cron: "30 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auditions-data-and-pages
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+      - name: Install scraping dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run source and opportunity quality tests
+        run: python -m unittest discover -s tests -v
+      - name: Run all coverage batches and persist checkpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          while true; do
+            python audit_source_coverage.py --batch-size 12
+            git add .github/audits/source-coverage-checkpoint.json .github/audits/source-coverage-latest.md
+            if ! git diff --cached --quiet; then
+              git commit -m 'Record weekly source coverage checkpoint'
+              git push origin HEAD:main
+              git fetch origin main
+              git reset --hard origin/main
+            fi
+            REMAINING=$(python -c "import json; from pathlib import Path; s=json.loads(Path('.github/audits/source-coverage-checkpoint.json').read_text()); print(max(s['inventory_count']-len(s['completed_source_ids']),0))")
+            if [ "$REMAINING" -le 0 ]; then
+              break
+            fi
+          done

@@ -53,14 +53,19 @@ jobs:
         run: python run_conservatori.py
       - name: Mirror the official bando PDFs into the site
         run: python mirror_pdfs.py
+      - name: Audit mirrored PDF byte integrity
+        run: python audit_pdf_integrity.py
+      - name: Generate daily opportunity quality report
+        run: python audit_opportunity_quality.py
       - name: Save refreshed source snapshots
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/sources.json data/sources_extra.json data/conservatori.json
+          git add data/sources.json data/sources_extra.json data/source_fetch_policies.json data/conservatori.json
           git add data/pdfs 2>/dev/null || true
+          git add .github/audits/opportunity-quality-latest.json .github/audits/opportunity-quality-latest.md .github/audits/pdf-integrity-manifest.json
           if ! git diff --cached --quiet; then
-            git commit -m 'Refresh official opportunity snapshots'
+            git commit -m 'Refresh official source snapshots and quality audits'
             git push origin HEAD:main
           fi
       - name: Prepare Pages artifact

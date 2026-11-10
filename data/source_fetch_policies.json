@@ -1,0 +1,896 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-11-10",
+  "description": "Inventory of the current production fetch path. Entries marked baseline_only have not yet undergone per-domain API/RSS/sitemap or parser benchmarking.",
+  "defaults": {
+    "current_fetch_method": "scrapling",
+    "strategy_status": "baseline_only",
+    "alternatives_assessed": false,
+    "fallback_method": "stop_and_review",
+    "timeout_seconds": 30,
+    "minimum_delay_seconds": 1.2,
+    "access_policy": "Public pages only; obey robots.txt, site terms, rate limits and Retry-After; never bypass 403/429, login walls or CAPTCHA."
+  },
+  "entries": [
+    {
+      "source_id": "source-1",
+      "source_name": "Teatro alla Scala",
+      "url": "https://www.teatroallascala.org/it/il-teatro/lavora-con-noi/concorsi-e-audizioni-coro.html",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-2",
+      "source_name": "Teatro Carlo Felice",
+      "url": "https://carlofelice.it/audizioni-e-concorsi/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-3",
+      "source_name": "Teatro Massimo",
+      "url": "https://www.teatromassimo.it/audizioni/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-4",
+      "source_name": "Teatro Regio Torino",
+      "url": "https://www.teatroregio.torino.it/selezione-personale",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-5",
+      "source_name": "Teatro dell'Opera di Roma - Fabbrica",
+      "url": "https://www.operaroma.it/bandi-e-concorsi/bandi-fabbrica-young-artist-program-2027-2028/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-6",
+      "source_name": "Teatro Verdi Trieste",
+      "url": "https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-7",
+      "source_name": "Teatro Comunale di Bologna",
+      "url": "https://www.tcbo.it/amministrazione-trasparente/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-8",
+      "source_name": "Maggio Musicale Fiorentino",
+      "url": "https://www.maggiofiorentino.com/bandi/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-9",
+      "source_name": "AsLiCo",
+      "url": "https://aslico.org/edizione-in-corso/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-10",
+      "source_name": "Teatro Lirico Sperimentale di Spoleto",
+      "url": "https://www.tls-belli.it/bandi_e_avvisi/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-11",
+      "source_name": "Fondazione Luciano Pavarotti",
+      "url": "https://www.lucianopavarottifoundation.com/c/news/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-12",
+      "source_name": "Ente Lirico Italiano - Premio E.L.I.",
+      "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-13",
+      "source_name": "Tommaso Traetta Opera Festival",
+      "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-14",
+      "source_name": "CLIP Portofino",
+      "url": "https://www.portofinoclip.it/clip-2026/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-15",
+      "source_name": "Concorso Francesco Morlacchi",
+      "url": "https://www.concorsomorlacchi.it/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-16",
+      "source_name": "Teatro La Fenice - 招募与选拔",
+      "url": "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-17",
+      "source_name": "Teatro Lirico di Cagliari - 招募与选拔",
+      "url": "https://www.liricocagliari.it/trasparenza/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-18",
+      "source_name": "Accademia d'Arte Lirica di Osimo",
+      "url": "https://www.accademialiricaosimo.com/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-19",
+      "source_name": "Sipario Lirico APS - 试唱",
+      "url": "https://www.siparioliricoaps.it/audizioni/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-20",
+      "source_name": "Valsesia Musica - 声乐比赛",
+      "url": "https://www.valsesiamusica.com/sezione_canto_lirico.htm",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-21",
+      "source_name": "Premio Fausto Ricci - 国际声乐比赛",
+      "url": "https://www.xxisecolo.org/faustoricci/opera.html",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-22",
+      "source_name": "Concorso Maria Malibran - 国际声乐比赛",
+      "url": "https://www.mariamalibran.it/xi-edizione-2026.html",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-23",
+      "source_name": "Agnesi Opera Competition",
+      "url": "https://www.agnesioperacompetition.com/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-24",
+      "source_name": "Nicola Martinucci 国际歌剧比赛",
+      "url": "https://nicolamartinucciprize.com/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-25",
+      "source_name": "Norma Fantini Opera Contest",
+      "url": "https://www.normafantinioperacontest.it/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-26",
+      "source_name": "Renata Tebaldi 国际声乐比赛",
+      "url": "https://www.fondazionerenatatebaldi.org/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-27",
+      "source_name": "Sportello Spettacolo（演艺行业信息平台）",
+      "url": "https://www.sportellospettacolo.it/bandi-call/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-28",
+      "source_name": "Opera Mundus（歌剧比赛信息平台）",
+      "url": "https://www.operamundus.com/en/concorsi/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-29",
+      "source_name": "Liricamente（声乐行业信息平台）",
+      "url": "https://www.liricamente.it/audizioni-canto-lirico-cori-cantanti-lirici.asp",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-96",
+      "source_name": "Bando audizioni per Filottete - INDA | Istituto Nazionale Dramma Antic",
+      "url": "https://www.indafondazione.org/bando-audizioni-per-filottete/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-97",
+      "source_name": "OPEN CALL Artists - Winterwerft",
+      "url": "https://winterwerft.de/opencall/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-98",
+      "source_name": "Partecipa al Festival – Fondazione Campania dei Festival",
+      "url": "https://contact.fondazionecampaniadeifestival.it/partecipa-al-festival/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-99",
+      "source_name": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia ",
+      "url": "https://www.teatrotrianon.org/audizioni-per-la-produzione-pulcinella-ovvero-una-cosa-che-somiglia-al-mondo/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-100",
+      "source_name": "Lavora con noi - Elfo Puccini",
+      "url": "https://www.elfo.org/chi-siamo/lavora-con-noi.htm",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-101",
+      "source_name": "Audizioni - MusicalMusical",
+      "url": "https://www.musical.it/audizioni/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-102",
+      "source_name": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e L",
+      "url": "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-114",
+      "source_name": "CollettivO CineticO | Energia Cinetica",
+      "url": "https://www.collettivocinetico.it/energia-cinetica",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-115",
+      "source_name": "Lavora con noi - Fondazione Aida",
+      "url": "https://www.fondazioneaida.it/lavora-con-noi/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-117",
+      "source_name": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
+      "url": "https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-118",
+      "source_name": "Lavora con noi • Teatro Franco Parenti • Milano",
+      "url": "https://teatrofrancoparenti.it/lavora-con-noi/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-120",
+      "source_name": "Concorsi 2026 / Primo Oboe - Orchestra della Toscana",
+      "url": "https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-121",
+      "source_name": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacol",
+      "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-123",
+      "source_name": "Fringe in Progress 2027 | Un’azione per progetti in crescita – Torino ",
+      "url": "https://www.tofringe.it/partecipa/fringe-in-progress-selezione-per-progetti-in-crescita-torino-fringe-festival-2027/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    },
+    {
+      "source_id": "source-124",
+      "source_name": "Selezione per Strumentisti | Accademia Nazionale di Santa Cecilia",
+      "url": "https://santacecilia.it/bandi/selezione-per-strumentisti-2027/",
+      "current_fetch_method": "scrapling",
+      "strategy_status": "baseline_only",
+      "alternatives_assessed": false,
+      "alternative_candidates": [
+        "official_api",
+        "rss_atom",
+        "sitemap",
+        "public_json_xhr",
+        "httpx_lxml"
+      ],
+      "fallback_method": "stop_and_review",
+      "timeout_seconds": 30,
+      "minimum_delay_seconds": 1.2,
+      "last_assessed_at": null,
+      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+    }
+  ]
+}
