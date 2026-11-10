@@ -24,9 +24,11 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                     })
                     self.assertTrue(entry["alternatives_assessed"])
                     self.assertTrue(entry.get("last_assessed_at"))
-                    self.assertEqual(entry.get("evidence_report"), ".github/audits/extraction-pilot-latest.md")
+                    report_path = entry.get("evidence_report", "")
+                    self.assertTrue(report_path.startswith("reports/p2/"))
+                    self.assertTrue((ROOT / report_path).exists())
 
-    def test_first_pilot_batch_has_evidence_backed_strategy_assessments(self):
+    def test_first_two_pilot_batches_have_evidence_backed_strategy_assessments(self):
         policy = json.loads((ROOT / "data" / "source_fetch_policies.json").read_text(encoding="utf-8"))
         assessed = {item["source_id"]: item for item in policy["entries"]
                     if item["strategy_status"] != "baseline_only"}
@@ -41,10 +43,17 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                 self.assertTrue(item["discovery_methods"])
                 self.assertIn("2026-11-10", item["last_assessed_at"])
                 self.assertIn("2026-11-10", item["assessment_note"])
+                self.assertIn(item.get("assessment_batch"), {"batch-1-2026-11-10", "batch-2-2026-11-10"})
+                self.assertTrue((ROOT / item["evidence_report"]).exists())
                 self.assertIn(item.get("assessment_batch"), {
                     "batch-1-2026-11-10", "batch-2-2026-11-10"
                 })
                 self.assertTrue(item["evidence_report"].startswith("reports/p2/"))
+
+        for batch in (1, 2):
+            stem = f"source-strategy-batch-{batch}-2026-11-10"
+            self.assertTrue((ROOT / "reports" / "p2" / f"{stem}.json").exists())
+            self.assertTrue((ROOT / "reports" / "p2" / f"{stem}.md").exists())
 
     def test_coverage_inventory_joins_source_review_classification(self):
         from audit_source_coverage import source_inventory
