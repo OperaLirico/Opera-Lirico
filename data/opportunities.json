@@ -44,13 +44,7 @@
       "title": "Concorso Internazionale di Canto lirico Francesco Morlacchi 2026",
       "opportunity_type": "vocal_competition",
       "voice_types": [
-        "soprano",
-        "mezzo_soprano",
-        "contralto",
-        "countertenor",
-        "tenor",
-        "baritone",
-        "bass"
+        "unspecified"
       ],
       "location": "佩鲁贾 · Sala dei Notari",
       "source_name": "Concorso Internazionale di Canto lirico Francesco Morlacchi",
@@ -60,8 +54,8 @@
       "review_status": "verified",
       "publication_status": "published",
       "application_deadline_at": "2026-11-30T23:59:00+01:00",
-      "audition_start_at": "2026-12-14T09:30:00+01:00",
-      "audition_end_at": "2026-12-15T23:59:00+01:00",
+      "audition_start_at": "2026-12-14T14:00:00+01:00",
+      "audition_end_at": "2026-12-15T18:00:00+01:00",
       "age_min": 18,
       "age_max": 35,
       "fee_eur": 80,
@@ -85,7 +79,7 @@
           "checked_at": "2026-11-10T16:56:21+01:00"
         }
       ],
-      "notes": "比赛日期为2026年12月14日至15日；具体提交材料和汇款方式以官网章程为准。"
+      "notes": "比赛日期为2026年12月14日至15日；14日上午安排半决赛选手与官方钢琴伴奏排练，14日14:00开始半决赛，15日18:00举行公开决赛。具体材料和汇款方式以官网章程为准。"
     },
     {
       "id": "carlofelice-academy-2027",
@@ -107,10 +101,8 @@
       "review_status": "verified",
       "publication_status": "published",
       "application_deadline_at": "2026-12-10T23:59:00+01:00",
-      "audition_start_at": "2027-01-10T00:00:00+01:00",
-      "audition_end_at": "2027-01-11T23:59:00+01:00",
       "fee_eur": 0,
-      "eligibility_summary": "面向出生于1997年1月1日及以后的歌手与钢琴合作人员；非欧盟申请人须符合公告所列有效居留或学习许可要求。歌手现场试唱须背谱，具体角色及材料见官方简章。",
+      "eligibility_summary": "面向出生于1997年1月1日及以后的歌手与钢琴合作人员；非欧盟申请人须符合公告所列有效居留或学习许可要求。歌手现场试唱须背谱；现场选拔安排在2027年1月10日至11日。具体角色及材料见官方简章。",
       "checked_at": "2026-11-10T16:56:21+01:00",
       "last_verified_at": "2026-11-10T16:56:21+01:00",
       "evidence": [
