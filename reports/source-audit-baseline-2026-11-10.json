@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0",
   "audit_id": "source-registry-baseline-2026-11-10",
-  "audited_at": "2026-11-10T17:05:00+01:00",
+  "audited_at": "2026-11-10T16:56:21+01:00",
   "baseline": {
     "branch": "main",
     "commit": "42ba2a354c90a3bc5bae994a4db2593f263c7eac",
