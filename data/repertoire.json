@@ -201,6 +201,93 @@
       "language": "it",
       "section": "意大利艺术歌曲",
       "priority": 2
+    },
+    {
+      "title": "Ständchen (Schwanengesang, D 957 No. 4)",
+      "aliases": [
+        "小夜曲",
+        "Serenade",
+        "Schubert Ständchen",
+        "Leise flehen meine Lieder"
+      ],
+      "composer": "Franz Schubert · 词：Ludwig Rellstab",
+      "work": "Schwanengesang, D 957 · 第四首",
+      "voice": "常见于男高音、男中音",
+      "kind": "艺术歌曲",
+      "section": "德奥艺术歌曲",
+      "priority": 1,
+      "language": "de",
+      "text": "Leise flehen meine Lieder\nDurch die Nacht zu dir,\nIn den stillen Hain hernieder,\nLiebchen, komm zu mir!\n\nFlüsternd schlanke Wipfel rauschen\nIn des Mondes Licht;\nDes Verräters feindlich Lauschen\nFürchte, Holde, nicht.\n\nHörst die Nachtigallen schlagen?\nAch! sie flehen dich,\nMit der Töne süßen Klagen\nFlehen sie für mich.\n\nSie verstehn des Busens Sehnen,\nKennen Liebesschmerz,\nRühren mit den Silbertönen\nJedes weiche Herz.\n\nLaß auch dir die Brust bewegen,\nLiebchen, höre mich!\nBebend harr ich dir entgegen;\nKomm, beglücke mich!",
+      "summary": "夜色中，歌者以歌声呼唤爱人走出房间，在月光与夜莺的陪伴下回应自己的爱意。",
+      "textSource": "https://www.lieder.net/lieder/assemble_texts.html?SongCycleId=13",
+      "textSourceName": "LiederNet · Schwanengesang 原文",
+      "scoreUrl": null,
+      "downloadUrl": null
+    },
+    {
+      "title": "An die Musik, D 547",
+      "aliases": [
+        "致音乐",
+        "To Music",
+        "Du holde Kunst",
+        "Schubert An die Musik"
+      ],
+      "composer": "Franz Schubert · 词：Franz von Schober",
+      "work": "D 547 · Op. 88 No. 4",
+      "voice": "常见于男高音、女高音及其他声部",
+      "kind": "艺术歌曲",
+      "section": "德奥艺术歌曲",
+      "priority": 2,
+      "language": "de",
+      "text": "Du holde Kunst, in wie viel grauen Stunden,\nWo mich des Lebens wilder Kreis umstrickt,\nHast du mein Herz zu warmer Lieb entzunden,\nHast mich in eine beßre Welt entrückt.\n\nOft hat ein Seufzer, deiner Harf entflossen,\nEin süßer, heiliger Akkord von dir,\nDen Himmel bessrer Zeiten mir erschlossen,\nDu holde Kunst, ich danke dir dafür.",
+      "summary": "歌者向音乐致谢：在生活艰难的时刻，音乐曾把自己带入更美好的世界。",
+      "textSource": "https://schubert-digital.acdh-dev.oeaw.ac.at/W-00522.html",
+      "textSourceName": "Schubert-Digital · 作品与原文记录",
+      "scoreUrl": null,
+      "downloadUrl": null
+    },
+    {
+      "title": "Wiegenlied, Op. 49 No. 4",
+      "aliases": [
+        "摇篮曲",
+        "Guten Abend, gut Nacht",
+        "Brahms Lullaby"
+      ],
+      "composer": "Johannes Brahms · 词：传统民歌文本（Des Knaben Wunderhorn）",
+      "work": "Fünf Lieder, Op. 49 · 第四首",
+      "voice": "常见于女高音，也有其他声部版本",
+      "kind": "艺术歌曲",
+      "section": "德奥艺术歌曲",
+      "priority": 3,
+      "language": "de",
+      "text": "Guten Abend, gut' Nacht,\nMit Rosen bedacht,\nMit Näglein besteckt,\nSchlupf' unter die Deck'.\nMorgen früh, wenn Gott will,\nWirst du wieder geweckt.",
+      "summary": "温柔的摇篮曲，祝愿孩子在玫瑰与花香的守护下安睡，迎接新的一天。",
+      "textSource": "https://www.lieder.net/lieder/get_multi_text_setting.html?SettingId=21065",
+      "textSourceName": "LiederNet · Brahms 作品与原文记录",
+      "scoreUrl": null,
+      "downloadUrl": null
+    },
+    {
+      "title": "L'invitation au voyage",
+      "aliases": [
+        "邀游",
+        "旅行的邀请",
+        "Invitation to the Voyage",
+        "Duparc"
+      ],
+      "composer": "Henri Duparc · 诗：Charles Baudelaire",
+      "work": "Mélodies · Baudelaire 诗作选段",
+      "voice": "常见于女高音、男中音",
+      "kind": "艺术歌曲",
+      "section": "法国艺术歌曲",
+      "priority": 1,
+      "language": "fr",
+      "text": "Mon enfant, ma sœur,\nSonge à la douceur\nD'aller là-bas vivre ensemble ;\nÀ aimer à loisir,\nÀ aimer et à mourir\nAu pays qui te ressemble !\n\nLes soleils mouillés\nDe ces ciels brouillés\nPour mon esprit ont les charmes\nSi mystérieux\nDe tes traîtres yeux\nBrillant à travers leurs larmes.\n\nLà, tout n'est qu'ordre et beauté,\nLuxe, calme et volupté.\n\nVois sur ces canaux\nDormir ces vaisseaux\nDont l'humeur est vagabonde ;\nC'est pour assouvir\nTon moindre désir\nQu'ils viennent du bout du monde.\n\nLes soleils couchants\nRevêtent les champs,\nLes canaux, la ville entière,\nD'hyacinthe et d'or ;\nLe monde s'endort\nDans une chaude lumière.\n\nLà, tout n'est qu'ordre et beauté,\nLuxe, calme et volupté.",
+      "summary": "诗人邀请爱人前往一个宁静、和谐、充满美与感官享受的理想国度。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=2255",
+      "textSourceName": "LiederNet · Baudelaire 原诗及 Duparc 选段说明",
+      "scoreUrl": null,
+      "downloadUrl": null
     }
   ],
   "scan_cursor": 144
