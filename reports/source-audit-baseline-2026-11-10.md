@@ -14,9 +14,9 @@ The duplicate finding is a data-quality flag only. No records were deleted, merg
 
 | Classification | Count | Meaning |
 |---|---:|---|
-| `auto_approved_official` | 24 | First-party source for its own institution or event, with relevant vocal content evidenced |
+| `auto_approved_official` | 26 | First-party source for its own institution or event, with relevant vocal content evidenced |
 | `auto_approved_third_party` | 4 | Useful third-party aggregator; individual notices must be traced back to organizers |
-| `needs_review` | 4 | Publisher may be identifiable, but relevance, maintenance value, or identity evidence is incomplete |
+| `needs_review` | 2 | Publisher may be identifiable, but relevance, maintenance value, or identity evidence is incomplete |
 | `irrelevant_candidate` | 12 | The inspected notice is actor-only, instrument-only, generic project submission, or unrelated hiring |
 
 ## Main findings
@@ -25,7 +25,7 @@ The duplicate finding is a data-quality flag only. No records were deleted, merg
 2. The registry contains several clearly out-of-scope items: actor-only auditions, instrument-only orchestra jobs, generic theatre project calls, and non-artistic vacancies.
 3. Some official institution pages are mixed-purpose. Their publisher identity can be trusted while individual notices still need vocal-role filtering.
 4. Third-party aggregators such as Sportello Spettacolo, Opera Mundus, and Liricamente can provide discovery value, but should never replace the original organizer notice as the final evidence for dates, eligibility, fees, or application links.
-5. The review queue prioritizes uncertain source relevance or identity, remaining priorities include Teatro Lirico di Cagliari, Musical.it, and cross-genre casting notices. AsLiCo has since been confirmed as an official source. Follow-up evidence has now confirmed Maggio Musicale Fiorentino, Teatro Lirico Sperimentale di Spoleto, and Fondazione Renata Tebaldi as official vocal sources; Winterwerft is out of scope for the classical-vocal registry.
+5. The remaining manual review priority is the Provinispettacolo record: the domain has useful opera-audition notices, but the currently registered permalink is a cross-genre Robin Hood casting notice rather than a primary organizer page. Musical.it has been marked out of scope for the current classical-vocal registry.
 
 ## Important limitations
 
@@ -47,7 +47,12 @@ The duplicate finding is a data-quality flag only. No records were deleted, merg
 - **Teatro Lirico Sperimentale di Spoleto “A. Belli”**: confirmed official and relevant. The institution's history describes its young opera-singer competition and training mission; its official 2026 free auditions were for opera singers. See [institution history](https://www.tls-belli.it/storia/) and [2026 auditions](https://www.tls-belli.it/2026/03/06/libere-audizioni-2026/).
 - **Fondazione Renata Tebaldi**: confirmed official and relevant. Its foundation profile and 2026 competition notice establish a biennial international voice competition for opera singers. See [foundation](https://www.fondazionerenatatebaldi.org/) and [2026 competition notice](https://www.fondazionerenatatebaldi.org/bando-2026-2/).
 - **Winterwerft**: marked irrelevant for this registry. The open call sought multidisciplinary theatre/performance projects and music groups, not individual classical singers; its deadline was 8 November 2026.
-- **AsLiCo**: remains `needs_review` until a direct official programme page and current voice-specific admissions evidence can be confirmed.
-
-
 - **AsLiCo**: confirmed official and relevant. Its own site describes its mission to select young opera singers and provide training and stage-debut opportunities; its current competition pages include the 78th Young Opera Singers competition. See [AsLiCo](https://aslico.org/), [Who we are](https://aslico.org/aslico/), and [current edition](https://aslico.org/edizione-in-corso/).
+
+
+- **Teatro Verdi Trieste**: upgraded to `auto_approved_official`. Its official 2026 recruitment page contains closed choir selections for mezzosoprano/contralto and tenore/baritono, with official notices, application forms, repertoire and results. The page also lists orchestra positions, so individual notices must still be filtered by role. [Official 2026 notices](https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/).
+- **Teatro Lirico di Cagliari**: upgraded to `auto_approved_official`. Its official notice dated 6 November 2026 opens an international selection for 2027 choir artists and links the public notice, application form, exam schedule and repertoire. [Official 2027 choir selection](https://www.liricocagliari.it/bandi-e-gare/approvazione-avviso-pubblico-e-indizione-selezione-internazionale-per-esami-volta-alla-costituzione-di-una-graduatoria-di-idonei-valevole-in-aggiunta-alle-vigenti-graduatorie-dei-titolari-di-diritt/).
+- **Musical.it**: classified `irrelevant_candidate` for this registry's current scope. Its audition board is oriented toward musical-theatre performers, dancers, acrobats and musical-theatre training. It may be useful only if a separate musical-theatre category is introduced. [Audition board](https://www.musical.it/audizioni).
+- **Provinispettacolo**: retained as `needs_review`, not auto-approved. The site has published an Opera e Lirica call for classical voice types, but the registered Robin Hood permalink is a cross-genre casting notice. Future handling should register a stable category/listing page separately from individual notices and trace each opportunity to its organizer. [Opera e Lirica listing](https://www.provinispettacolo.it/audizioni-opera-lirica-roma-cantanti-professori-orchestra/) and [site homepage](https://www.provinispettacolo.it/).
+
+Current follow-up classification totals: **26 official, 4 third-party, 2 needs review, 12 irrelevant** (44 unique sources). No source registry or production activation flag was modified.
