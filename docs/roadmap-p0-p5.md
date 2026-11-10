@@ -30,7 +30,9 @@ Limitations: the current main collector still uses a fixed Scrapling source list
 
 ## P2 — Per-source multi-engine strategy
 
-**Status: not yet accepted.**
+**Status: baseline inventory added; not yet accepted.**
+
+The new source policy registry records the current Scrapling path for every registered URL and explicitly marks alternatives as unassessed. This prevents an unrecorded default from being mistaken for a tested per-source strategy.
 
 Acceptance:
 - Each source has an evidence-based preferred method and fallback.
