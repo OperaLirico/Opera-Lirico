@@ -1,11 +1,11 @@
 # Daily opportunity data quality
 
-- Generated: 2026-11-10T17:53:44+01:00 (Europe/Rome)
-- Records in file: 6
-- Published records in file: 6
-- Currently open and publication-eligible: 6
+- Generated: 2026-11-10T18:27:24+01:00 (Europe/Rome)
+- Records in file: 7
+- Published records in file: 7
+- Currently open and publication-eligible: 7
 - Deadline within 7 days: 0
-- Deadline within 30 days: 5
+- Deadline within 30 days: 6
 - Expired but still present as published: 0
 - Missing application URL: 0
 - Missing official PDF: 0
@@ -29,6 +29,7 @@ No issues.
 - Audizione per Artisti del Coro – Tenori — 2026-11-23T23:59:00+01:00
 - Concorso per Artisti del Coro – Bassi — 2026-12-07T23:59:00+01:00
 - Concorso per Artisti del Coro – Baritoni — 2026-12-07T23:59:00+01:00
+- Selezione pubblica per 2 Contralti – Teatro Massimo 2026 — 2026-12-04T12:00:00+01:00
 
 ## Expired records still in file
 

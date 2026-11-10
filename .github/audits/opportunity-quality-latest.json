@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-10T17:53:44+01:00",
+  "generated_at": "2026-11-10T18:27:24+01:00",
   "source_file": "data/opportunities.json",
-  "total_records": 6,
-  "published_records_in_file": 6,
-  "currently_open_public_records": 6,
+  "total_records": 7,
+  "published_records_in_file": 7,
+  "currently_open_public_records": 7,
   "deadlines_within_7_days": [],
   "deadlines_within_30_days": [
     {
@@ -45,6 +45,14 @@
       "application_url_missing": false,
       "official_pdf_missing": false,
       "last_verified_at": "2026-11-10T16:56:21+01:00"
+    },
+    {
+      "id": "teatro-massimo-2-contralti-2026",
+      "title": "Selezione pubblica per 2 Contralti – Teatro Massimo 2026",
+      "deadline": "2026-12-04T12:00:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-10T18:20:00+01:00"
     }
   ],
   "expired_but_still_published_in_file": [],
