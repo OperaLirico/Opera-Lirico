@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wl19971007-lgtm.github.io/leo/data/opportunity.schema.json",
+  "title": "Italia Audizioni opportunity",
+  "description": "Structured opportunity record. Heuristic discovery is not publication approval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "title",
+    "opportunity_type",
+    "source_name",
+    "source_url",
+    "announcement_url",
+    "publisher_status",
+    "review_status",
+    "publication_status",
+    "checked_at",
+    "evidence"
+  ],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "opportunity_type": {
+      "type": "string",
+      "enum": ["opera_role", "choir", "vocal_competition", "young_artist", "conservatory_admission", "other_vocal"]
+    },
+    "voice_types": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string", "enum": ["soprano", "mezzo_soprano", "contralto", "countertenor", "tenor", "baritone", "bass", "all_voices", "unspecified"]}
+    },
+    "location": {"type": "string"},
+    "source_name": {"type": "string", "minLength": 1},
+    "source_url": {"type": "string", "format": "uri"},
+    "announcement_url": {"type": "string", "format": "uri"},
+    "application_url": {"type": "string", "format": "uri"},
+    "official_pdf_url": {"type": "string", "format": "uri"},
+    "publisher_status": {"type": "string", "enum": ["official", "third_party", "unknown"]},
+    "review_status": {"type": "string", "enum": ["pending_manual_review", "verified", "rejected"]},
+    "publication_status": {"type": "string", "enum": ["draft", "published", "archived"]},
+    "application_open_at": {"type": "string", "format": "date-time"},
+    "application_deadline_at": {"type": "string", "format": "date-time"},
+    "audition_start_at": {"type": "string", "format": "date-time"},
+    "audition_end_at": {"type": "string", "format": "date-time"},
+    "performance_start_at": {"type": "string", "format": "date-time"},
+    "performance_end_at": {"type": "string", "format": "date-time"},
+    "age_min": {"type": "integer", "minimum": 0},
+    "age_max": {"type": "integer", "minimum": 0},
+    "fee_eur": {"type": "number", "minimum": 0},
+    "eligibility_summary": {"type": "string"},
+    "checked_at": {"type": "string", "format": "date-time"},
+    "last_verified_at": {"type": "string", "format": "date-time"},
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "excerpt", "checked_at"],
+        "properties": {
+          "url": {"type": "string", "format": "uri"},
+          "excerpt": {"type": "string", "minLength": 1},
+          "checked_at": {"type": "string", "format": "date-time"},
+          "pdf_page": {"type": "integer", "minimum": 1}
+        }
+      }
+    },
+    "notes": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"publication_status": {"const": "published"}}},
+      "then": {
+        "properties": {
+          "review_status": {"const": "verified"},
+          "publisher_status": {"const": "official"}
+        }
+      }
+    }
+  ]
+}
