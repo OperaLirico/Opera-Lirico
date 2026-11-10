@@ -1,0 +1,78 @@
+name: Check website copy changes
+
+on:
+  push:
+    branches:
+      - release/chinese-copy-update
+    paths:
+      - "index.html"
+      - "app.js"
+      - "data/conservatori_zh.json"
+      - "data/conservatori_manual.json"
+      - ".github/workflows/check-site-copy.yml"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "index.html"
+      - "app.js"
+      - "data/conservatori_zh.json"
+      - "data/conservatori_manual.json"
+      - ".github/workflows/check-site-copy.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check JavaScript syntax
+        run: node --check app.js
+      - name: Check JSON data files
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for name in ("data/conservatori_zh.json", "data/conservatori_manual.json"):
+              json.loads(Path(name).read_text(encoding="utf-8"))
+              print(f"{name}: valid JSON")
+          PY
+      - name: Check homepage and Chinese copy quality
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          html = Path("index.html").read_text(encoding="utf-8")
+          app = Path("app.js").read_text(encoding="utf-8")
+          zh = json.loads(Path("data/conservatori_zh.json").read_text(encoding="utf-8"))
+
+          required = [
+              "找到下一次登台的机会",
+              "歌剧院招募与比赛",
+              "音乐学院招生",
+              "咏叹调与艺术歌曲",
+              "官方招生文件",
+          ]
+          missing = [phrase for phrase in required if phrase not in html]
+          if missing:
+              raise SystemExit(f"Missing expected homepage text: {missing}")
+
+          bad_phrases = ["爵士声考试唱", "所读到", "歌词默认折着", "不用满网找下载按钮"]
+          corpus = html + app + json.dumps(zh, ensure_ascii=False)
+          found = [phrase for phrase in bad_phrases if phrase in corpus]
+          if found:
+              raise SystemExit(f"Outdated or awkward Chinese copy remains: {found}")
+
+          if len(zh.get("items", {})) < 50:
+              raise SystemExit("Chinese conservatory summaries appear incomplete")
+
+          print("Homepage copy and Chinese terminology checks passed.")
+          PY
