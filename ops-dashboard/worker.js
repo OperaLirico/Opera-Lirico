@@ -78,7 +78,6 @@ function renderDrafts(items){
  items.forEach(item=>{const row=document.createElement("div");row.className="draft";
  const left=document.createElement("div");const title=document.createElement("strong");title.textContent=item.subject||"（无标题）";left.append(title);
  const small=document.createElement("small");small.textContent=item.created||"";left.append(small);row.append(left);
- if(item.url){const a=document.createElement("a");a.href=item.url;a.target="_blank";a.rel="noopener noreferrer";a.textContent="查看草稿 ↗";row.append(a);}
  root.append(row);});
 }
 async function loadData(){
@@ -135,11 +134,12 @@ async function signature(timestamp, secret) {
   return b64url(await crypto.subtle.sign("HMAC", key, new TextEncoder().encode("opera-ops:" + timestamp)));
 }
 async function validSession(request, secret) {
-  if (!secret || secret.length < 24) return false;
+  if (!secret || secret.length < 32) return false;
   const raw = request.headers.get("Cookie") || "";
   const found = raw.split(";").map(x => x.trim()).find(x => x.startsWith(SESSION_COOKIE + "="));
   if (!found) return false;
-  const value = decodeURIComponent(found.slice(SESSION_COOKIE.length + 1));
+  let value;
+  try { value = decodeURIComponent(found.slice(SESSION_COOKIE.length + 1)); } catch { return false; }
   const parts = value.split(".");
   if (parts.length !== 2 || !/^\d{13}$/.test(parts[0])) return false;
   const age = Date.now() - Number(parts[0]);
@@ -224,12 +224,7 @@ async function getButtondown(env) {
     draftCount = Number(page.count ?? draftCount + (page.results || []).length);
     for (const item of (page.results || [])) {
       if (drafts.length >= 10) break;
-      let safeUrl = "";
-      try {
-        const u = new URL(item.absolute_url || "");
-        if (u.protocol === "https:" && (u.hostname === "buttondown.com" || u.hostname.endsWith(".buttondown.com"))) safeUrl = u.toString();
-      } catch {}
-      drafts.push({ subject: String(item.subject || "（无标题）").slice(0, 160), created: String(item.creation_date || "").slice(0, 10), url: safeUrl });
+      drafts.push({ subject: String(item.subject || "（无标题）").slice(0, 160), created: String(item.creation_date || "").slice(0, 10) });
     }
     emailUrl = page.next || null;
   }
@@ -248,7 +243,7 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === "/" && request.method === "GET") return response(PAGE);
     if (url.pathname === "/api/login" && request.method === "POST") {
-      if (!env.OPS_DASHBOARD_PASSWORD || env.OPS_DASHBOARD_PASSWORD.length < 24) return json({ error: "login_not_configured" }, 503);
+      if (!env.OPS_DASHBOARD_PASSWORD || env.OPS_DASHBOARD_PASSWORD.length < 32) return json({ error: "login_not_configured" }, 503);
       if (!sameOrigin(request)) return json({ error: "forbidden" }, 403);
       const ip = request.headers.get("CF-Connecting-IP") || "unknown";
       const now = Date.now();
