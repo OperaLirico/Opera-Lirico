@@ -1,4 +1,4 @@
-const CACHE='vocal-italia-v16';
+const CACHE='vocal-italia-v17';
 const SHELL=['./','./index.html','./styles.css','./app.js','./site-config.js','./analytics.js','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>event.waitUntil(
   caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())
