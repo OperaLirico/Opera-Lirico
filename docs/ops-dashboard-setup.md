@@ -18,7 +18,7 @@
 | `CF_WORKERS_DEPLOY_TOKEN` | 部署 Worker 的 API Token |
 | `CF_ANALYTICS_API_TOKEN` | 读取 Cloudflare Analytics 的 API Token |
 | `BUTTONDOWN_API_KEY` | Buttondown API Key（如果每周简报已在使用同名 Secret，可复用） |
-| `OPS_DASHBOARD_PASSWORD` | 后台登录密码，建议使用密码管理器生成至少 32 位随机密码 |
+| `OPS_DASHBOARD_PASSWORD` | 后台登录密码，建议使用密码管理器生成至少 32 位随机密码（至少 24 个字符） |
 
 ### Cloudflare Token 权限
 
@@ -26,6 +26,8 @@
 
 1. `CF_WORKERS_DEPLOY_TOKEN`：Account → Workers Scripts → Edit。只用于部署。
 2. `CF_ANALYTICS_API_TOKEN`：Account → Account Analytics → Read。只用于读取统计。
+
+首次部署前，请先在 Cloudflare Dashboard → Workers & Pages 中创建一个名为 `opera-lirico-ops` 的 Worker，并启用 workers.dev。然后创建部署 Token，给这个 Worker 授予 Workers Editor（旧权限界面可能显示为 Workers Scripts Edit）。这样部署凭证只需要管理这个 Worker，不必长期持有整个账户的 Admin 权限。
 
 不要使用 Global API Key，也不要把这些 Token 发到聊天或写进代码。Cloudflare Account ID 可在 Cloudflare Dashboard 的账户概览中复制。
 
