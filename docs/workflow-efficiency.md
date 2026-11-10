@@ -81,3 +81,9 @@ change, documentation edit or source-coverage-only change. The weekly coverage
 workflow has its own trigger for changes to its scanner/workflow and runs after
 a successful push-triggered daily workflow, so its full-source scan does not
 compete with the daily collector.
+
+Queued push-triggered scrape runs explicitly check out the latest main branch
+when they start, rather than the older event SHA. This prevents a delayed run
+from starting behind a prior successful scrape commit and creating add/add
+conflicts during rebase. If a concurrent main change still causes a genuine
+content conflict, the workflow stops rather than force-pushing or overwriting.
