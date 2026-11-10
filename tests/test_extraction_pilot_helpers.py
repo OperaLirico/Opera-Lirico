@@ -32,11 +32,16 @@ Allow: /private/open$
         self.assertEqual(result["relevant_entry_count"], 1)
         self.assertEqual(result["relevant_titles"], ["Audizioni per tenore"])
 
-    def test_metrics_measures_actual_link_label_retention(self):
-        labels = ["Scarica il bando", "Domanda di iscrizione"]
-        result = metrics("Scarica il bando. Il termine è il 30 novembre.", labels)
+    def test_metrics_separates_link_label_from_href_retention(self):
+        anchors = [
+            {"text": "Scarica il bando", "url": "https://example.org/bando.pdf"},
+            {"text": "Domanda di iscrizione", "url": "https://example.org/apply"},
+        ]
+        result = metrics("Scarica il bando. Il termine è il 30 novembre.", anchors)
         self.assertEqual(result["relevant_dom_link_labels_available"], 2)
         self.assertEqual(result["relevant_dom_link_labels_retained_in_text"], 1)
+        self.assertEqual(result["relevant_link_targets_available"], 2)
+        self.assertEqual(result["relevant_link_targets_retained_in_text"], 0)
 
 
 if __name__ == "__main__":
