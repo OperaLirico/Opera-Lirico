@@ -14,6 +14,7 @@ on:
       - "run_conservatori.py"
       - "mirror_pdfs.py"
       - "grow_sources.py"
+      - "grow_conservatori.py"
       - "audit_source_coverage.py"
       - "audit_opportunity_quality.py"
       - "audit_pdf_integrity.py"
