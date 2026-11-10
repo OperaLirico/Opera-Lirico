@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T01:31:53+01:00",
+  "generated_at": "2026-11-10T01:45:51+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -10126,10 +10126,385 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "The violin of Saint Francis",
+      "aliases": [],
+      "composer": "Joaquín Rodrigo Vidre",
+      "work": "/lieder/get_settings.html?ComposerId=5522",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "en",
+      "text": "In Greccio, at the Nativity,\nin front of the Holy Child,\nthe bagpipes wail,\nthe tambours sound,\nthe flute trills,\nthe flute and the piccolo.\n\nA sweet, pastoral song\nFrancis wants to accompany.\nHe has neither triangle nor clarinet,\nneither clarinet nor mandolin.\n\nHe gathers two sticks which he finds\nthrown down near the path,\nplaces one on his shoulder\nas if it were a violin,\npassing the other over it\nlike a bow of fine gold.\n\nThe violin is of ash tree,\nthe bow a pine branch,\nbut from his sacred hands\ngreat music comes out.\n\nWould not music flow,\nwhen a Seraphim plays?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=43516",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Salvador Pila",
+      "settings": [
+        {
+          "composer": "Joaquín Rodrigo Vidre",
+          "title": "/lieder/get_settings.html?ComposerId=5522",
+          "instrumentation": "soprano and orchestra"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Murmur around my skiff",
+      "aliases": [],
+      "composer": "Joseph Henry Altès",
+      "work": "/lieder/get_settings.html?ComposerId=32413",
+      "voice": "待分类",
+      "kind": "咏叹调/歌剧选段",
+      "language": "en",
+      "text": "Murmur around my skiff,\nGentle seas, whose dear waves,\nLike a faithful lover,\nThrow an eternal moan\nOver her poetic debris.\n\nHow I love to float on your swells,\nAt the hour where from on the top of the rock\nThe orange tree, [and] the fecund vine,\nPour onto that deep billow\nA favorable shadow for the ferryman!\n\nOften, in my boat without oars,\nTrusting in your love,\nAs if to calm my soul,\nI close, to the crashing of your waves,\nMy eyes, tired of the day.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=114263",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Laura Stanfield Prichard",
+      "settings": [
+        {
+          "composer": "Joseph Henry Altès",
+          "title": "/lieder/get_settings.html?ComposerId=32413",
+          "instrumentation": "voice and piano or orchestra"
+        },
+        {
+          "composer": "M. Arnault",
+          "title": "/lieder/get_settings.html?ComposerId=27700",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Paul-Émile Berchon",
+          "title": "/lieder/get_settings.html?ComposerId=39466",
+          "instrumentation": "medium voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Jarní",
+      "aliases": [],
+      "composer": "Julius Otto Grimm",
+      "work": "/lieder/get_settings.html?ComposerId=12369",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "cs",
+      "text": "V nové záři jaro skvěje,\nv duši nový život leje,\nvšechny strasti, všechen stesk\nzapuzuje jeho lesk.\n\nSotva poroztály sněhy\njíž pozná vám jara něhy,\nzdá se mi, že sama Lada\nv smutnou mysl mou se vkrádá.\n\nNač se trápit s bledou tváří?\nPojď, o pojď, ó jarní záři!\nÓ! kéž oblaží tvůj mne kmit!\nmohu ještě šťasten být.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=40854",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Anonymous / Unidentified Author",
+      "settings": [
+        {
+          "composer": "Julius Otto Grimm",
+          "title": "/lieder/get_settings.html?ComposerId=12369",
+          "instrumentation": "SATB quartet and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Lament",
+      "aliases": [],
+      "composer": "Franz Peter Schubert",
+      "work": "/lieder/get_settings.html?ComposerId=2520",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "The sun rises, the sun sets,\nThe changing disc of the moon looks down,\nThe blue of the ether is interweaved with the glow\nOf the stars in their golden line dance:\n\nBut the sun's light no longer flows clearly,\nThe smiling face of the moon,\nThe dance of the stars, quiet and majestic,\nNo longer lift this heart with elation!\n\nThe meadow blossoms, the green of the bushes\nRings out with the melodies of spring,\nIn the evening light the brook winds\nDown into the valley garlanded by woods:\n\nBut the song of the woodlands no longer touches me,\nThe meadow that blossoms into a thousand colours,\nThe stream through the alder trees in the light of evening,\nThese things do not raise my soul as they used to!\n\nOh agony, when the friend of our youth\nWeeps the bitter tears of farewell!\nIt is like people at the merry harvest supper\nUnder the farmer's roof experiencing a downpour!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=121796",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Malcolm Wren",
+      "settings": [
+        {
+          "composer": "Franz Peter Schubert",
+          "title": "/lieder/get_settings.html?ComposerId=2520",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Go to the text.",
+          "title": "/lieder/get_text.html?TextId=121683",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The travelling mug",
+      "aliases": [],
+      "composer": "Jan Pieter Hendrik van Gilse",
+      "work": "/lieder/get_settings.html?ComposerId=4183",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Yesterday, clearing out the compartments of a long-forgotten cupboard,\nI found my first travelling mug, left to me by my father.\nWhile I, quietly singing, cleansed it of the dust of the years,\nIt was as if a mountain wind were lifting my grey locks from my brow,\nIt was as if the meadows, in which I once lay sunken in slumber, were filled with scent,\nIt was as if all of the water springs from which I once drank while wandering were murmuring.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=98841",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Sharon Krebs",
+      "settings": [
+        {
+          "composer": "Jan Pieter Hendrik van Gilse",
+          "title": "/lieder/get_settings.html?ComposerId=4183",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Othmar Schoeck",
+          "title": "/lieder/get_settings.html?ComposerId=5665",
+          "instrumentation": "medium voice and piano"
+        },
+        {
+          "composer": "Julius Weismann",
+          "title": "/lieder/get_settings.html?ComposerId=8179",
+          "instrumentation": "medium voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Le soleil que sa halte",
+      "aliases": [],
+      "composer": "Georges Boeuf",
+      "work": "/lieder/get_settings.html?ComposerId=28622",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Le soleil que sa halte\nSurnaturelle exalte\nAussitôt redescend\nIncandescent\n\nje sens comme aux vertèbres\nS'éployer des ténèbres\nToutes dans un frisson\nA l'unisson\n\nEt ma tête surgie\nSolitaire vigie\nDans les vois triomphaux\nDe cette faux\n\nComme rupture franche\nPlutôt refoule ou tranche\nLes anciens désaccords\nAvec le corps\n\nQu'elle de jeûnes ivres\nS'opiniâtre à suivre\nEn quelque bond hagard\nSon pur regard\n\nLà-haut où la froidure\nÉternelle n'endure\nQue vous le surpassiez\nTous ô glaciers\n\nMais selon un baptême\nIlluminée au même\nPrincipe qui m'élut\nPenche un salut.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=106455",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Stéphane Mallarmé",
+      "settings": [
+        {
+          "composer": "Georges Boeuf",
+          "title": "/lieder/get_settings.html?ComposerId=28622",
+          "instrumentation": "baritone and piano"
+        },
+        {
+          "composer": "Rémy-Michel Trotier",
+          "title": "/lieder/get_settings.html?ComposerId=30298",
+          "instrumentation": "baritone and flute"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Zauberblick",
+      "aliases": [],
+      "composer": "Ludwig Wilhelm Andreas Maria Thuille",
+      "work": "/lieder/get_settings.html?ComposerId=5964",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Die Burg, die liegt verfallen\nIn schöner Einsamkeit,\nDort saß ich vor den Hallen\nBei stiller Mittagszeit.\n\nEs ruhten in der Kühle\nDie Rehe auf dem Wall\nUnd tief in blauer Schwüle\nDie sonn'gen Täler all.\n\nTief unten hört ich Glocken\nIn weiter Ferne gehn,\nIch aber mußt erschrocken\nZum alten Erker sehn.\n\nDenn in dem Fensterbogen\nEin' schöne Fraue stand,\nAls hütete sie droben\nDie Wälder und das Land.\n\nIhr Haar, wie 'n goldner Mantel,\nWar tief herabgerollt;\nAuf einmal sie sich wandte,\nAls ob sie sprechen wollt.\n\nUnd als ich schauernd lauschte -\nDa war ich aufgewacht,\nUnd unter mir schon rauschte\nSo wunderbar die Nacht.\n\nTräumt ich im Mondesschimmer?\nIch weiß nicht, was mir graut,\nDoch das vergeß ich nimmer,\nWie sie mich angeschaut!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=37468",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Joseph Karl Benedikt, Freiherr von Eichendorff",
+      "settings": [
+        {
+          "composer": "Ludwig Wilhelm Andreas Maria Thuille",
+          "title": "/lieder/get_settings.html?ComposerId=5964",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "French (Français)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Dokka",
+      "aliases": [],
+      "composer": "Catharinus Elling",
+      "work": "/lieder/get_settings.html?ComposerId=3965",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "no",
+      "text": "Å Dokka, å Dokka,\nsnilde kui mi!\nNår gråten kjem i desse dagar seine,\nso kom og kjæl meg du med kinne reine;\ndu er so god, du er so hjarteblid.\n\nJa berre du meg fylgjer her i li,\nso er eg endå ikkje reint åleine.\nOg kjære seg meg, trur du det er von.\nSeg trur du eg må tenkja på han Jon?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=114200",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Arne Garborg",
+      "settings": [
+        {
+          "composer": "Catharinus Elling",
+          "title": "/lieder/get_settings.html?ComposerId=3965",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Hast du mich lieb?",
+      "aliases": [],
+      "composer": "Hans Fleischer",
+      "work": "/lieder/get_settings.html?ComposerId=10436",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Liebster, Schönster und Bester von allen,\nWirklich, wirklich, du hast mich noch lieb?\nWirklich, wirklich, ich kann dir gefallen?\nSag mir, was mich zu lieben dich trieb?\n\nAch ein Traum hat dich sicher befangen,\nTräumend siehst du mich, wie du mich liebst;\nUnd erwachst du, ist alles vergangen,\nWeiß ich, daß du den Abschied mir gibst.\n\nLeise soll dich mein Liedchen umschweben,\nTu nicht auf den bezauberten Blick:\nTräume, träume, dein Traum ist mein Leben,\nTräume, träume, dein Traum ist mein Glück!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=35001",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Ricarda Octavia Huch",
+      "settings": [
+        {
+          "composer": "Hans Fleischer",
+          "title": "/lieder/get_settings.html?ComposerId=10436",
+          "instrumentation": "alto and piano"
+        },
+        {
+          "composer": "Robert Kahn",
+          "title": "/lieder/get_settings.html?ComposerId=4574",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Oskar C. Posa",
+          "title": "/lieder/get_settings.html?ComposerId=27062",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The challenge",
+      "aliases": [],
+      "composer": "(Gerald) Graham Peel",
+      "work": "/lieder/get_settings.html?ComposerId=5305",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "There’s a clean wind blowing\nOver hill-flower and peat,\nWhere the bell-heather’s growing,\nAnd the brown burn flowing,\nAnd the ghost shadows going\nDown the glen on stealthy feet.\nThere’s a clean wind blowing,\nAnd the breath of it is sweet.\n\nThere's a clean wind blowing.\nAnd the world holds but three:\nThe purple peak against the sky,\nThe master-wind, and me.\nThe moor-birds are tossing\nLike ships upon the sea;\nThere’s a clean wind blowing,\nFree!\n\nThere’s a clean wind blowing\nUntainted of the town,\nA fair hitting foeman\nWith his glove flung down.\nWill you take his lordly challenge\nAnd the gauntlet that he throws,\nAnd come forth among the heather\nWhere the clean wind blows?",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=76371",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "William Henry Ogilvie",
+      "settings": [
+        {
+          "composer": "(Gerald) Graham Peel",
+          "title": "/lieder/get_settings.html?ComposerId=5305",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Die drei Wünsche",
+      "aliases": [],
+      "composer": "Rudolf Förster",
+      "work": "/lieder/get_settings.html?ComposerId=9186",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Vor dem Schank zum weissen Schwane\nSassen einst beim Traubennass\nWohlgemuth zwei Zechkumpane,\nSprachen dies und sprachen das.\nAuf dem Bänklein an der Mauer\nStand ein Glas; das Glas war leer,\nUnd dabei in stummer Trauer\nSass der Bruder Straubinger.\n\nSprach der Erste: \"Wenn ich hätte\nEinen Wunsch zu thun, ich wollt',\nDass im weiten Donaubette\nJeder Kiesel wäre Gold,\nUnd die Kiesel müssten alle\nAusgemünzt mein eigen sein. --\nBruderherz, in diesem Falle\nWäre eine Hälfte dein.\"\n\nSprach der Zweite: \"Meine Schulden\nKönnte ich bezahlen bald,\nWär' ein Schein von tausend Gulden\nJedes Blatt im Wienerwald,\nUnd der Rest, ich will es schwören\nAuf den heil'gen Leib des Herrn,\nSoll zur Halbscheid dir gehören. --\nBruderherz, ich thu' es gern.\"\n\nStraubinger in seiner Ecken\nHörte zu und dachte nach,\nStützte auf den Wanderstecken\nSein bestoppelt Kinn und sprach,\nSprach, und seine Stimme grollte\nIn das leere Glas hinein:\n\"Wenn ich mir was wünschen sollte,\nWär' es eine Halbe Wein.\"\n\nAlso sprach der Strassenweise[,]\nWieder sass er stumm und starr,\nUnd die Andern sprachen leise:\n\"Bruderherz, du bist ein Narr!\"\nDann zum Schanktisch hin erscholl es:\n\"Heda Meister Wirth, heran,\nSchenkt dem Straubinger ein Volles,\nDer den klügsten Wunsch gethan!\"",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=114560",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Rudolph Baumbach",
+      "settings": [
+        {
+          "composer": "Rudolf Förster",
+          "title": "/lieder/get_settings.html?ComposerId=9186",
+          "instrumentation": "bass and piano"
+        },
+        {
+          "composer": "Wilhelm Sturm",
+          "title": "/lieder/get_settings.html?ComposerId=8206",
+          "instrumentation": "ttbb chorus"
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The Sign of the Cross",
+      "aliases": [],
+      "composer": "Giuliano Mauroner",
+      "work": "/lieder/get_settings.html?ComposerId=29782",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "-\"I feel sleepy, Mother; do to me the Sign of the Cross\"-\n-\"In the name of the Father, of the Son,\nAnd of the Holy Spirit\"-. You, my only love,\nYou feel asleep as my voice softens away.\n\nHow calmly you sleep!... Now you won't hear me, so\nI can cry, my little child, by your pillow.\nMy heart aches, it really aches,\nThat nearly I'd lacerate my own soul with my teeth.\n\nI'd know the way to escape from these atrocious worries...\nBut you anchor my life to yours,\nYou that won't fall asleep in the evening time, if I won't trace\nOn your forehead, the Sign of the Cross.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=115029",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Mario Giuseppe Genesi",
+      "settings": [
+        {
+          "composer": "Giuliano Mauroner",
+          "title": "/lieder/get_settings.html?ComposerId=29782",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Pier Adolfo Tirindelli",
+          "title": "/lieder/get_settings.html?ComposerId=5970",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 1296,
+  "lieder_position": 1344,
   "aria_opera": 0,
   "aria_scene": 8
 }
