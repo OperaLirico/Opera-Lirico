@@ -30,12 +30,12 @@ jobs:
           python -m unittest discover -s tests -p 'test_weekly_digest.py' -v
       - name: Generate local preview and optional private draft
         env:
-          BUTTONDOWN_API_KEY: \${{ secrets.BUTTONDOWN_API_KEY }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
         run: python weekly_digest.py
       - name: Upload private preview artifact
         uses: actions/upload-artifact@v4
         with:
-          name: opera-lirico-weekly-draft-\${{ github.run_id }}
+          name: opera-lirico-weekly-draft-${{ github.run_id }}
           path: build/email-draft/
           retention-days: 14
       - name: Summarize draft-only result
