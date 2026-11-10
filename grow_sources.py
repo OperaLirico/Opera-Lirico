@@ -163,7 +163,12 @@ def main(discover: bool = False) -> None:
     payload = load(REGISTRY, {})
     registry: list[dict] = payload.get("items", [])
     cursor: int = int(payload.get("cursor", 0))
-    core_items: list[dict] = load(PAGE, [])
+    # Candidate discovery is anchored to the curated core list, not every extra URL.
+    core_numbers = {source[0] for source in core.SOURCES}
+    core_items: list[dict] = [
+        item for item in load(PAGE, [])
+        if item.get("number") in core_numbers
+    ]
 
     # Drop anything that slipped through earlier rules (share links, files,
     # jobs for ushers and box office, transparency portals, dance and writing
