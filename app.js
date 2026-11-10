@@ -381,8 +381,8 @@ function stateLabel(state){
 }
 function stateClass(state=''){
   if(/报名中|开放|有窗口/.test(state))return 'state--open';
-  if(/已截止|上期已截止|旧公告/.test(state))return 'state--closed';
-  if(/读不到/.test(state))return 'state--offline';
+  if(/已截止|上期已截止|上一期已截止|旧公告/.test(state))return 'state--closed';
+  if(/读不到|暂时无法读取/.test(state))return 'state--offline';
   return 'state--neutral';
 }
 function consLine(c){
