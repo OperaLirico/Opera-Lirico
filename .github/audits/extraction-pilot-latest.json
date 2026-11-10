@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T18:22:16+01:00",
+  "generated_at": "2026-11-10T18:27:06+01:00",
   "scope": "Five high-value first-party vocal sources.",
   "pilot_source_ids": [
     "source-1",
@@ -26,8 +26,8 @@
       "raw_snapshot": {
         "artifact_path": "artifacts/p2-p4-html-samples/source-1.html",
         "bytes": 29603,
-        "sha256": "47d71b683516f88c02a95b70218bcda50455da753d5b1a42a2f7d966f69d670e",
-        "captured_at": "2026-11-10T18:22:20+01:00"
+        "sha256": "2fc7d8f8b32f4934e7c1c3f588dbe884ab70dc3d94e7a708b696c11e13be2f59",
+        "captured_at": "2026-11-10T18:27:09+01:00"
       },
       "discovery": {
         "robots": {
@@ -202,7 +202,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0006,
+          "runtime_seconds": 0.0007,
           "characters": 3454,
           "signals": {
             "vocal_roles": false,
@@ -218,7 +218,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0004,
+          "runtime_seconds": 0.0005,
           "characters": 4757,
           "signals": {
             "vocal_roles": false,
@@ -235,7 +235,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.006,
+          "runtime_seconds": 0.0082,
           "characters": 1818,
           "signals": {
             "vocal_roles": false,
@@ -251,7 +251,7 @@
           "relevant_link_targets_retained_in_text": 1
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0041,
+          "runtime_seconds": 0.0056,
           "characters": 1855,
           "markdown_link_count": 1,
           "markdown_relevant_link_count": 1,
@@ -278,7 +278,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-15.html",
         "bytes": 34805,
         "sha256": "c954dd570d97dc8a9a3b90c9420f91dc02046373c233aa1edf1e5ada4497037b",
-        "captured_at": "2026-11-10T18:22:41+01:00"
+        "captured_at": "2026-11-10T18:27:30+01:00"
       },
       "discovery": {
         "robots": {
@@ -451,7 +451,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0009,
+          "runtime_seconds": 0.0011,
           "characters": 17733,
           "signals": {
             "vocal_roles": true,
@@ -467,7 +467,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0006,
+          "runtime_seconds": 0.0007,
           "characters": 17658,
           "signals": {
             "vocal_roles": true,
@@ -484,7 +484,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.006,
+          "runtime_seconds": 0.008,
           "characters": 12162,
           "signals": {
             "vocal_roles": true,
@@ -500,7 +500,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0063,
+          "runtime_seconds": 0.0086,
           "characters": 12253,
           "markdown_link_count": 0,
           "markdown_relevant_link_count": 0,
@@ -526,8 +526,8 @@
       "raw_snapshot": {
         "artifact_path": "artifacts/p2-p4-html-samples/source-2.html",
         "bytes": 398561,
-        "sha256": "f2491b3e9cc3a9394b6d46daab360f47951642d34227aef7ca688f1364a5cc8c",
-        "captured_at": "2026-11-10T18:23:00+01:00"
+        "sha256": "02139de7051135810f1c265d0aa20ac536e89569f6390924ec9e81eaad5e3f79",
+        "captured_at": "2026-11-10T18:27:49+01:00"
       },
       "discovery": {
         "robots": {
@@ -817,7 +817,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0069,
+          "runtime_seconds": 0.0086,
           "characters": 52378,
           "signals": {
             "vocal_roles": true,
@@ -833,7 +833,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0056,
+          "runtime_seconds": 0.007,
           "characters": 68502,
           "signals": {
             "vocal_roles": true,
@@ -850,7 +850,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.1093,
+          "runtime_seconds": 0.1398,
           "characters": 58971,
           "signals": {
             "vocal_roles": true,
@@ -866,7 +866,7 @@
           "relevant_link_targets_retained_in_text": 182
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.1188,
+          "runtime_seconds": 0.1513,
           "characters": 60954,
           "markdown_link_count": 187,
           "markdown_relevant_link_count": 187,
@@ -893,7 +893,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-3.html",
         "bytes": 135749,
         "sha256": "576e8eb4e393d3a24e4e0a41a059ad0e846a76408d71c42a4103e3ffc2486731",
-        "captured_at": "2026-11-10T18:23:49+01:00"
+        "captured_at": "2026-11-10T18:28:39+01:00"
       },
       "discovery": {
         "robots": {
@@ -1147,7 +1147,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0014,
+          "runtime_seconds": 0.0017,
           "characters": 3728,
           "signals": {
             "vocal_roles": true,
@@ -1163,7 +1163,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0009,
+          "runtime_seconds": 0.0012,
           "characters": 31754,
           "signals": {
             "vocal_roles": true,
@@ -1180,7 +1180,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0101,
+          "runtime_seconds": 0.0137,
           "characters": 906,
           "signals": {
             "vocal_roles": true,
@@ -1196,7 +1196,7 @@
           "relevant_link_targets_retained_in_text": 2
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0099,
+          "runtime_seconds": 0.0133,
           "characters": 911,
           "markdown_link_count": 1,
           "markdown_relevant_link_count": 1,
@@ -1223,7 +1223,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-9.html",
         "bytes": 376149,
         "sha256": "887e530634bdd3ed62b5cee4ed5d65dd67a2155955607b054325239ea72d1045",
-        "captured_at": "2026-11-10T18:24:22+01:00"
+        "captured_at": "2026-11-10T18:29:08+01:00"
       },
       "discovery": {
         "robots": {
@@ -1419,7 +1419,7 @@
           "table_count": 1
         },
         "scrapling": {
-          "runtime_seconds": 0.0123,
+          "runtime_seconds": 0.0126,
           "characters": 27005,
           "signals": {
             "vocal_roles": true,
@@ -1435,7 +1435,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.003,
+          "runtime_seconds": 0.0039,
           "characters": 168655,
           "signals": {
             "vocal_roles": true,
@@ -1452,7 +1452,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.02,
+          "runtime_seconds": 0.0264,
           "characters": 5421,
           "signals": {
             "vocal_roles": true,
@@ -1468,7 +1468,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0205,
+          "runtime_seconds": 0.0272,
           "characters": 5617,
           "markdown_link_count": 0,
           "markdown_relevant_link_count": 0,
