@@ -376,13 +376,20 @@ function localPdfs(c){
   return list.filter(Boolean);
 }
 function stateLabel(state){
-  const map={'有窗口':'开放报名','只有要求':'仅列出报考要求','只有大纲':'仅提供考试大纲','非招生页':'非招生信息页','读不到':'暂时无法读取','可读':'页面已读取','报名中':'开放报名','已截止':'报名已截止','未公布':'尚未公布','上期已截止':'上一期已截止','有日期':'已公布考试日期','待核实':'待核实','只有课程':'仅有课程信息','有安排':'已公布相关安排','只有规则':'仅有相关规则','有公告':'已发布招生公告','旧公告':'仅有往年公告'};
+  const map={
+    '有窗口':'已公布报名日期','只有要求':'仅有申请条件','只有大纲':'仅有考试大纲',
+    '非招生页':'非招生信息','读不到':'暂无法读取','可读':'页面可正常读取',
+    '报名中':'开放报名','已截止':'报名已截止','未公布':'尚未公布',
+    '上期已截止':'上一期已截止','有日期':'已公布考试日期','待核实':'待核实',
+    '只有课程':'仅有课程介绍','有安排':'已公布考试安排','只有规则':'仅有注册规则',
+    '有公告':'已发布招生公告','旧公告':'仅有往年公告'
+  };
   return map[state]||state;
 }
 function stateClass(state=''){
-  if(/报名中|开放|有窗口/.test(state))return 'state--open';
+  if(/报名中|开放报名/.test(state))return 'state--open';
   if(/已截止|上期已截止|上一期已截止|旧公告/.test(state))return 'state--closed';
-  if(/读不到|暂时无法读取/.test(state))return 'state--offline';
+  if(/读不到|暂无法读取/.test(state))return 'state--offline';
   return 'state--neutral';
 }
 function consLine(c){
@@ -405,19 +412,20 @@ function consCard(c){
   const dates=(c.exam_dates||[]).slice(0,2);
   const reqs=(c.requirements||[]).slice(0,2);
   const said=[...deadlines,...dates,...reqs].join(' ');
-  const soft=(c.fallback_lines||[]).filter(line=>!said.includes(line.slice(0,40))).slice(0,2);
+  const soft=(c.fallback_lines||[]).filter(line=>!/[\u3400-\u9fff]/.test(line)&&!said.includes(line.slice(0,40))).slice(0,2);
   const docs=pickDocs(c.documents);
   const locals=localPdfs(c);
   const zhBlocks=[
-    (zh.d||[]).length?`<p><span class="zh-key">报名</span>${zh.d.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
-    (zh.x||[]).length?`<p><span class="zh-key">考试</span>${zh.x.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
-    (zh.r||[]).length?`<p><span class="zh-key">要求</span>${zh.r.map(v=>esc(humanText(v))).join('<br>')}</p>`:''
+    (zh.d||[]).length?`<p><span class="zh-key">报名安排</span>${zh.d.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
+    (zh.x||[]).length?`<p><span class="zh-key">考试安排</span>${zh.x.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
+    (zh.r||[]).length?`<p><span class="zh-key">申请条件</span>${zh.r.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
+    (zh.notes||[]).length?`<p><span class="zh-key">补充说明</span>${zh.notes.map(v=>esc(humanText(v))).join('<br>')}</p>`:''
   ].filter(Boolean).join('');
   const origBlocks=[
-    deadlines.length?`<span class="orig-key">报名期限（意大利语原文）</span>${deadlines.map(esc).join('<br>')}`:'',
-    dates.length?`<span class="orig-key">考试日期（意大利语原文）</span>${dates.map(esc).join('<br>')}`:'',
-    reqs.length?`<span class="orig-key">入学要求（意大利语原文）</span>${reqs.map(esc).join('<br>')}`:'',
-    soft.length?`<span class="orig-key">其他相关信息（意大利语原文）</span>${soft.map(esc).join('<br>')}`:''
+    deadlines.length?`<span class="orig-key">官方页面摘录 · 报名期限</span>${deadlines.map(esc).join('<br>')}`:'',
+    dates.length?`<span class="orig-key">官方页面摘录 · 考试日期</span>${dates.map(esc).join('<br>')}`:'',
+    reqs.length?`<span class="orig-key">官方页面摘录 · 申请要求</span>${reqs.map(esc).join('<br>')}`:'',
+    soft.length?`<span class="orig-key">官网页面其他信息</span>${soft.map(esc).join('<br>')}`:''
   ].filter(Boolean).join('<br><br>');
   return `<details class="cons-card${c.number>=300?' cons-card--academy':''}">
    <summary>
@@ -429,7 +437,7 @@ function consCard(c){
    </summary>
    <div class="cons-body">
      ${zhBlocks?`<div class="cons-zh">${zhBlocks}</div>`:''}
-     ${origBlocks?`<details class="cons-orig-wrap"><summary>查看意大利语原文</summary><div class="cons-orig">${origBlocks}${staleMark(said)}</div></details>`:''}
+     ${origBlocks?`<details class="cons-orig-wrap"><summary>查看官方原文与页面摘录</summary><div class="cons-orig">${origBlocks}${staleMark(said)}</div></details>`:''}
      <p class="cons-docs"><span class="docs-key">官方文件</span>
        ${locals.map((u,i)=>`<a class="doc-link doc-link--local" href="${esc(u)}" target="_blank" rel="noopener">站内文件 ${locals.length>1?i+1:''} ↓</a>`).join('')}
        ${docs.map(d=>`<a class="doc-link" href="${esc(d)}" target="_blank" rel="noopener">${esc(fileLabel(d))} ↗</a>`).join('')}
@@ -442,7 +450,7 @@ function renderConservatori(){
   const wrap=$('#consGroups');
   if(!wrap)return;
   const readable=conservatoriData.filter(c=>c.status==='ok');
-  $('#conservatoriCount').textContent=`${readable.length}/${conservatoriData.length} 读到了`;
+  $('#conservatoriCount').textContent=`${readable.length}/${conservatoriData.length} 所院校页面可正常读取`;
   const q=normalizeSearch(consQuery);
   const filtered=conservatoriData.filter(c=>{
     if(q&&!normalizeSearch(`${c.city||''} ${c.school||''} ${(c.zh&&c.zh.state)||''}`).includes(q))return false;
