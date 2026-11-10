@@ -316,6 +316,10 @@ def main(discover: bool = False) -> None:
         else:
             # Keep the last good extract rather than blanking a working source.
             item["checked_at"] = fresh["checked_at"]
+            item["last_attempt_at"] = fresh["checked_at"]
+            item["last_attempt_status"] = fresh["status"]
+            item["last_attempt_http_status"] = fresh["http_status"]
+            item["last_attempt_access_policy"] = fresh.get("access_policy")
             item["http_status"] = fresh["http_status"]
             item["error"] = fresh["error"]
             item["misses"] = int(item.get("misses", 0)) + 1
