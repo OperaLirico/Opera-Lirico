@@ -33,7 +33,9 @@ def _classify_certificate_validation(value: str | None) -> str:
 def parse_pdfsig_output(output: str) -> dict:
     starts = list(re.finditer(r"^\s*Signature #(\d+):", output, re.I | re.M))
     if not starts:
-        return {"signature_presence": "not_detected", "signatures": []}
+        if re.search(r"does not contain any signatures|no signatures", output, re.I):
+            return {"signature_presence": "not_detected", "signatures": []}
+        return {"signature_presence": "inconclusive", "signatures": []}
     signatures = []
     for index, match in enumerate(starts):
         end = starts[index + 1].start() if index + 1 < len(starts) else len(output)
@@ -56,6 +58,17 @@ def parse_pdfsig_output(output: str) -> dict:
         })
     return {"signature_presence": "present", "signatures": signatures}
 
+def classify_inspection_status(return_code: int, parsed: dict) -> str:
+    presence = parsed.get("signature_presence")
+    if presence == "not_detected":
+        return "success_no_signature"
+    if presence == "present":
+        if all(item.get("signature_validation_text") for item in parsed.get("signatures", [])):
+            return "success"
+        return "inconclusive"
+    return "tool_error" if return_code != 0 else "inconclusive"
+
+
 def inspect_pdf(entry: dict) -> dict:
     relative = entry.get("local_path", "")
     path = (ROOT / relative).resolve()
@@ -76,7 +89,7 @@ def inspect_pdf(entry: dict) -> dict:
         return {**base, "inspection_status": "timeout", "signature_presence": "not_inspected", "signatures": []}
     output = (proc.stdout or "") + "\n" + (proc.stderr or "")
     parsed = parse_pdfsig_output(output)
-    return {**base, "inspection_status": "success" if proc.returncode == 0 else "tool_error",
+    return {**base, "inspection_status": classify_inspection_status(proc.returncode, parsed),
             "return_code": proc.returncode, **parsed}
 
 def build_report() -> dict:
@@ -90,11 +103,16 @@ def build_report() -> dict:
         "manifest_path": str(MANIFEST.relative_to(ROOT)),
         "manifest_sha256": hashlib.sha256(manifest_bytes).hexdigest(),
         "file_count": len(results),
-        "inspection_error_count": sum(item.get("inspection_status") != "success" for item in results),
+        "inspection_error_count": sum(item.get("inspection_status") in {"tool_error", "pdfsig_unavailable", "timeout", "missing_or_invalid_path"} for item in results),
+        "inconclusive_inspection_count": sum(item.get("inspection_status") == "inconclusive" for item in results),
         "signature_present_file_count": len(present),
         "no_signature_detected_file_count": sum(item.get("signature_presence") == "not_detected" for item in results),
+        "signature_count": sum(len(item.get("signatures", [])) for item in results),
         "cryptographically_valid_signature_count": sum(sig.get("signature_integrity_status") == "valid" for item in results for sig in item.get("signatures", [])),
+        "invalid_signature_count": sum(sig.get("signature_integrity_status") == "invalid" for item in results for sig in item.get("signatures", [])),
+        "inconclusive_signature_count": sum(sig.get("signature_integrity_status") == "inconclusive" for item in results for sig in item.get("signatures", [])),
         "trusted_certificate_count": sum(sig.get("certificate_trust_status") == "trusted" for item in results for sig in item.get("signatures", [])),
+        "untrusted_or_unknown_certificate_count": sum(sig.get("certificate_trust_status") == "untrusted_or_unknown" for item in results for sig in item.get("signatures", [])),
         "publisher_identity_verified_count": 0,
         "important_limitation": "Signature presence, cryptographic integrity and certificate trust are separate. No certificate subject is mapped to an official institution; publisher identity remains not_verified.",
         "files": results,
@@ -109,8 +127,12 @@ def render_markdown(report: dict) -> str:
         f"- Files with signature fields: {report['signature_present_file_count']}",
         f"- Files with no detected signature: {report['no_signature_detected_file_count']}",
         f"- Inspection errors: {report['inspection_error_count']}",
+        f"- Inconclusive inspections: {report['inconclusive_inspection_count']}",
+        f"- Signature instances: {report['signature_count']}",
         f"- Cryptographically valid signatures reported: {report['cryptographically_valid_signature_count']}",
+        f"- Invalid signatures reported: {report['invalid_signature_count']}",
         f"- Trusted certificates reported: {report['trusted_certificate_count']}",
+        f"- Untrusted/unknown certificates reported: {report['untrusted_or_unknown_certificate_count']}",
         "- Publisher identities verified: 0", "",
         "> Signature presence, signature integrity, certificate trust and publisher identity are separate claims. This audit does not map signer certificates to official institutions. No opportunity status or publisher_signature_status is changed.",
         "", "| PDF | Signature presence | Signature integrity | Certificate trust | Publisher identity |",
