@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-11-09T23:30:00+01:00",
-  "about": "人工逐页核对过的剧院学院报名窗口。脚本每次运行会把这些字段覆盖到抓取结果上，页面上的原文链接仍然保留。",
+  "about": "人工核对的歌剧院学院招生信息。每条记录保留官方来源、核对时间及意大利语公告摘录；中文说明用于帮助理解，申请前仍须以最新官方公告为准。",
   "items": [
     {
       "number": 300,
@@ -16,7 +16,7 @@
         "Corso triennale 2027-29 per cantanti lirici: preselezione su video, poi tre fasi dal vivo; si presentano 5 brani tratti da opere liriche, coerenti con l'elenco indicato nella domanda. Iscrizione via YAPTracker."
       ],
       "notes": [
-        "报名进行中：2026-10-22 起至 2027-01-27，现场选拔约 2027-04-16/20，入学注册截至 2027-06-15。"
+        "目前开放 2027–2029 三年制课程报名。申请截止日期为 2027 年 1 月 27 日；现场选拔预计于 2027 年 4 月 16 日至 20 日举行。课程注册截止日期为 2027 年 6 月 15 日。"
       ],
       "source_url": "https://www.accademialascala.it/musica/corso-per-cantanti-lirici",
       "checked_at": "2026-11-09T23:20:00+01:00"
@@ -32,7 +32,7 @@
         "L'esame di ammissione si svolgerà presso la sede dell'Accademia in Via Vittoria 6, Roma, il 21 ottobre 2026; i candidati ricevono la convocazione via e-mail.（本季已截止）"
       ],
       "notes": [
-        "2026/27 季已结束：报名截至 2026-07-19，考试 2026-10-21；新一季一般在次年春夏季公布。"
+        "2026/27 学年课程已结束报名：申请截止日期为 2026 年 7 月 19 日，入学考试于 2026 年 10 月 21 日举行。新一季招生信息尚未公布。"
       ],
       "source_url": "https://santacecilia.it/corso/canto/",
       "checked_at": "2026-11-09T23:20:00+01:00"
@@ -42,7 +42,7 @@
       "city": "佛罗伦萨",
       "status": "unknown",
       "notes": [
-        "官网 Accademia 页当前没有本季招生日期，只有课程介绍；需等新简章发布或直接写信给学院。"
+        "官网目前仅提供歌剧院学院课程介绍，尚未公布本学年的招生日期。建议等待新简章，或直接联系学院咨询。"
       ],
       "source_url": "https://www.maggiofiorentino.com/accademia/",
       "checked_at": "2026-11-09T23:20:00+01:00"
@@ -52,7 +52,7 @@
       "city": "都灵",
       "status": "unknown",
       "notes": [
-        "官网 Scuola di canto corale 页未见本季报名与考试日期，页面上只有课程说明。"
+        "官网合唱学校页面目前仅有课程介绍，尚未公布本学年的报名和考试日期。"
       ],
       "source_url": "https://www.teatroregio.torino.it/scuola-canto-corale/",
       "checked_at": "2026-11-09T23:20:00+01:00"
@@ -62,7 +62,7 @@
       "city": "罗马",
       "status": "unknown",
       "notes": [
-        "官网 bandi 页当前没有挂出新简章，只有旧季公告与课程介绍。"
+        "官网招募公告页面目前未发布新一季简章，现有内容主要为往年公告及课程介绍。"
       ],
       "source_url": "https://www.operaroma.it/opera-giovani/scuola-di-canto-corale/bandi/",
       "checked_at": "2026-11-09T23:20:00+01:00"
@@ -72,7 +72,7 @@
       "city": "那不勒斯",
       "status": "unknown",
       "notes": [
-        "官网目前只挂 2021–2023 归档简章与 2023 年 4 月的更新，没有本季招生公告。"
+        "目前可查到的是 2021–2023 期归档简章及 2023 年的更新，尚未见本学年招生公告。"
       ],
       "source_url": "https://www.teatrosancarlo.it/educational/accademia-per-cantanti-lirici/",
       "checked_at": "2026-11-09T23:20:00+01:00"
@@ -85,7 +85,7 @@
         "Le domande di ammissione dovranno pervenire entro le ore 23:59 di venerdì 7 agosto 2026.（本季已截止）"
       ],
       "notes": [
-        "2026/27 季报名已于 2026-08-07 截止；简章在 2026-07-10 发布，可在下方官方简章处打开。"
+        "2026/27 学年报名已于 2026 年 8 月 7 日截止。招生简章于 2026 年 7 月 10 日发布，可在下方查看官方文件。"
       ],
       "source_url": "https://www.teatromassimo.it/notizie/pubblicato-il-bando-dellaccademia-lirica-2026-2027/",
       "checked_at": "2026-11-09T23:20:00+01:00"
@@ -95,7 +95,7 @@
       "city": "热那亚",
       "status": "closed",
       "notes": [
-        "2026 年报名已于 2026-01-12 23:59 截止（原文见上），新一轮尚未公布。"
+        "2026 年本轮报名已于 2026 年 1 月 12 日 23:59 截止，新一轮招生信息尚未公布。"
       ],
       "source_url": "https://www.carlofelice.it/accademia/",
       "checked_at": "2026-11-09T23:20:00+01:00"
@@ -105,7 +105,7 @@
       "city": "诺瓦拉",
       "status": "unknown",
       "notes": [
-        "官网目前只有 2023 年的实习选拔公告，没有本季 Accademia AMO 招生简章。"
+        "官网目前仅有 2023 年的实习选拔公告，尚未找到本学年 Accademia AMO 的招生简章。"
       ],
       "source_url": "https://www.teatrococcia.it/accademia-amo.html",
       "checked_at": "2026-11-09T23:20:00+01:00"
@@ -118,7 +118,7 @@
         "Audizione a Pesaro il 9, 10 e 12 marzo 2026, su invito dopo la valutazione del materiale presentato.（本季已截止）"
       ],
       "notes": [
-        "2026 年选拔已在 3 月结束；流程是先交材料评审，再受邀到佩萨罗试唱。"
+        "2026 年选拔已于 3 月结束。申请人先提交材料接受评审，通过初审并收到邀请后，再前往佩萨罗参加现场试唱。"
       ],
       "source_url": "https://www.rossinioperafestival.it/formazione/accademia-rossiniana-alberto-zedda/bando/",
       "checked_at": "2026-11-09T23:20:00+01:00"
@@ -131,7 +131,7 @@
         "Le domande di partecipazione, complete della relativa documentazione, dovranno essere inviate dall'8 gennaio al 4 febbraio 2026, creando il proprio profilo online.（本季已截止）"
       ],
       "notes": [
-        "2026 年报名窗口已关闭（2026-01-08 至 2026-02-04）；新一季尚未公布。"
+        "2026 年本轮报名已于 2 月 4 日截止（报名时间为 1 月 8 日至 2 月 4 日）。新一季招生信息尚未公布。"
       ],
       "source_url": "https://teatroregioparma.it/formazione/accademia-verdiana/accademia-verdiana-2026/",
       "checked_at": "2026-11-09T23:20:00+01:00"
