@@ -18,7 +18,9 @@ SAMPLE_PATHS = [
 ]
 ROME = ZoneInfo("Europe/Rome")
 SIGNALS = {
-    "voice_types": re.compile(r"soprano|mezzosoprano|contralto|tenore|baritono|basso|tenor|baritone", re.I),
+    "voice_term_candidates": re.compile(r"soprano|mezzosoprano|contralto|tenore|baritono|basso|tenor|baritone", re.I),
+    "vocal_context": re.compile(r"cantant|canto|artisti del coro|coro|singer|vocal", re.I),
+    "instrument_context": re.compile(r"tuba|contrabbasso|fagotto|clarinetto|pianoforte|violino|flauto|tromba|sassofono|percussioni|strumenti", re.I),
     "deadline": re.compile(r"scadenz|entro il|termine|deadline|no later than", re.I),
     "dates": re.compile(r"\b(?:\d{1,2}[./-]\d{1,2}[./-]20\d{2}|20\d{2})\b", re.I),
     "fees": re.compile(r"quota|tassa|contributo|euro|€", re.I),
