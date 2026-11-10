@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T18:16:43+01:00",
+  "generated_at": "2026-11-10T18:20:13+01:00",
   "scope": "Five high-value first-party vocal sources.",
   "pilot_source_ids": [
     "source-1",
@@ -26,8 +26,8 @@
       "raw_snapshot": {
         "artifact_path": "artifacts/p2-p4-html-samples/source-1.html",
         "bytes": 29603,
-        "sha256": "bd5d2f4362fc39bde3bf5b9ec158cabcb6dd8d955a9ded7d7f703faf6770babd",
-        "captured_at": "2026-11-10T18:16:46+01:00"
+        "sha256": "a811ade4681b5d639a4e86623600b63fee92875c10aa8562fe04985e3fe13390",
+        "captured_at": "2026-11-10T18:20:18+01:00"
       },
       "discovery": {
         "robots": {
@@ -202,7 +202,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0006,
+          "runtime_seconds": 0.0007,
           "characters": 3454,
           "signals": {
             "vocal_roles": false,
@@ -218,7 +218,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0004,
+          "runtime_seconds": 0.0005,
           "characters": 4757,
           "signals": {
             "vocal_roles": false,
@@ -235,7 +235,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0057,
+          "runtime_seconds": 0.0089,
           "characters": 1818,
           "signals": {
             "vocal_roles": false,
@@ -251,7 +251,7 @@
           "relevant_link_targets_retained_in_text": 1
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.004,
+          "runtime_seconds": 0.006,
           "characters": 1855,
           "markdown_link_count": 1,
           "markdown_relevant_link_count": 1,
@@ -278,7 +278,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-15.html",
         "bytes": 34805,
         "sha256": "c954dd570d97dc8a9a3b90c9420f91dc02046373c233aa1edf1e5ada4497037b",
-        "captured_at": "2026-11-10T18:17:07+01:00"
+        "captured_at": "2026-11-10T18:20:41+01:00"
       },
       "discovery": {
         "robots": {
@@ -451,7 +451,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0009,
+          "runtime_seconds": 0.0011,
           "characters": 17733,
           "signals": {
             "vocal_roles": true,
@@ -467,7 +467,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0006,
+          "runtime_seconds": 0.0007,
           "characters": 17658,
           "signals": {
             "vocal_roles": true,
@@ -484,7 +484,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0059,
+          "runtime_seconds": 0.0078,
           "characters": 12162,
           "signals": {
             "vocal_roles": true,
@@ -500,7 +500,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0061,
+          "runtime_seconds": 0.0084,
           "characters": 12253,
           "markdown_link_count": 0,
           "markdown_relevant_link_count": 0,
@@ -536,7 +536,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-3.html",
         "bytes": 135749,
         "sha256": "576e8eb4e393d3a24e4e0a41a059ad0e846a76408d71c42a4103e3ffc2486731",
-        "captured_at": "2026-11-10T18:17:20+01:00"
+        "captured_at": "2026-11-10T18:20:55+01:00"
       },
       "discovery": {
         "robots": {
@@ -790,7 +790,7 @@
           "table_count": 0
         },
         "scrapling": {
-          "runtime_seconds": 0.0013,
+          "runtime_seconds": 0.0017,
           "characters": 3728,
           "signals": {
             "vocal_roles": true,
@@ -806,7 +806,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0009,
+          "runtime_seconds": 0.0011,
           "characters": 31754,
           "signals": {
             "vocal_roles": true,
@@ -823,7 +823,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0102,
+          "runtime_seconds": 0.0136,
           "characters": 906,
           "signals": {
             "vocal_roles": true,
@@ -839,7 +839,7 @@
           "relevant_link_targets_retained_in_text": 2
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0093,
+          "runtime_seconds": 0.0127,
           "characters": 911,
           "markdown_link_count": 1,
           "markdown_relevant_link_count": 1,
@@ -866,7 +866,7 @@
         "artifact_path": "artifacts/p2-p4-html-samples/source-9.html",
         "bytes": 376149,
         "sha256": "887e530634bdd3ed62b5cee4ed5d65dd67a2155955607b054325239ea72d1045",
-        "captured_at": "2026-11-10T18:17:45+01:00"
+        "captured_at": "2026-11-10T18:21:24+01:00"
       },
       "discovery": {
         "robots": {
@@ -1062,7 +1062,7 @@
           "table_count": 1
         },
         "scrapling": {
-          "runtime_seconds": 0.0033,
+          "runtime_seconds": 0.0045,
           "characters": 27005,
           "signals": {
             "vocal_roles": true,
@@ -1078,7 +1078,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "lxml_full_text": {
-          "runtime_seconds": 0.0029,
+          "runtime_seconds": 0.004,
           "characters": 168655,
           "signals": {
             "vocal_roles": true,
@@ -1095,7 +1095,7 @@
         },
         "trafilatura_plain": {
           "status": "ok",
-          "runtime_seconds": 0.0197,
+          "runtime_seconds": 0.0278,
           "characters": 5421,
           "signals": {
             "vocal_roles": true,
@@ -1111,7 +1111,7 @@
           "relevant_link_targets_retained_in_text": 0
         },
         "trafilatura_markdown": {
-          "runtime_seconds": 0.0185,
+          "runtime_seconds": 0.0264,
           "characters": 5617,
           "markdown_link_count": 0,
           "markdown_relevant_link_count": 0,
