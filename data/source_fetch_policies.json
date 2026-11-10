@@ -36,7 +36,8 @@
         "sitemap"
       ],
       "parser_decision": "keep_scrapling; lxml is a structural fallback candidate; Trafilatura is not the default",
-      "evidence_report": ".github/audits/extraction-pilot-latest.md"
+      "evidence_report": "reports/p2/source-strategy-batch-1-2026-11-10.md",
+      "assessment_batch": "batch-1-2026-11-10"
     },
     {
       "source_id": "source-2",
@@ -64,7 +65,8 @@
         "rss_atom_checked"
       ],
       "parser_decision": "keep_scrapling; do not promote Trafilatura without a structured-link comparison",
-      "evidence_report": ".github/audits/extraction-pilot-latest.md"
+      "evidence_report": "reports/p2/source-strategy-batch-1-2026-11-10.md",
+      "assessment_batch": "batch-1-2026-11-10"
     },
     {
       "source_id": "source-3",
@@ -90,15 +92,16 @@
         "sitemap"
       ],
       "parser_decision": "keep_scrapling; lxml full-text is too broad to replace without content-boundary validation",
-      "evidence_report": ".github/audits/extraction-pilot-latest.md"
+      "evidence_report": "reports/p2/source-strategy-batch-1-2026-11-10.md",
+      "assessment_batch": "batch-1-2026-11-10"
     },
     {
       "source_id": "source-4",
       "source_name": "Teatro Regio Torino",
       "url": "https://www.teatroregio.torino.it/selezione-personale",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_with_sitemap_discovery",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -109,16 +112,23 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-10T18:42:33+01:00",
+      "assessment_note": "2026-11-10 batch 2: official page HTTP 200; sitemap returned 48 vocal/audition keyword-match URLs across two child maps. DOM contained 1,133 links, 927 relevant labels and 883 relevant href targets. Scrapling retained 196/196 relevant labels; Trafilatura Markdown retained 42/883 exact relevant hrefs. Keep Scrapling and sitemap as secondary discovery; filter historical and non-vocal results before candidate review.",
+      "assessment_batch": "batch-2-2026-11-10",
+      "discovery_methods": [
+        "html",
+        "sitemap"
+      ],
+      "parser_decision": "keep_scrapling; lxml is a structural fallback candidate; Trafilatura is not the default",
+      "evidence_report": "reports/p2/source-strategy-batch-2-2026-11-10.md"
     },
     {
       "source_id": "source-5",
       "source_name": "Teatro dell'Opera di Roma - Fabbrica",
       "url": "https://www.operaroma.it/bandi-e-concorsi/bandi-fabbrica-young-artist-program-2027-2028/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_html_only",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -129,16 +139,25 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-10T18:42:33+01:00",
+      "assessment_note": "2026-11-10 batch 2: official Fabbrica 2027–28 page HTTP 200. Sitemap index had seven entries but the five inspected child maps yielded no page URLs; advertised feeds had zero relevant entries (one feed restricted HTTP 403, not bypassed). Public WordPress API root returned JSON with 272 routes; no route endpoint was queried. Scrapling retained 5/5 relevant labels; Trafilatura retained 2/5. The page is a closed/historical call at this check; do not publish it as open.",
+      "assessment_batch": "batch-2-2026-11-10",
+      "discovery_methods": [
+        "html",
+        "public_api_root_inspected",
+        "rss_atom_checked",
+        "sitemap_checked"
+      ],
+      "parser_decision": "keep_scrapling; direct HTML and official page links are currently the reliable route; do not query guessed API routes",
+      "evidence_report": "reports/p2/source-strategy-batch-2-2026-11-10.md"
     },
     {
       "source_id": "source-6",
       "source_name": "Teatro Verdi Trieste",
       "url": "https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_html_only",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -149,8 +168,17 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-10T18:42:33+01:00",
+      "assessment_note": "2026-11-10 batch 2: official page HTTP 200; sitemap_index.xml returned invalid XML and advertised feeds had zero relevant entries. Public WordPress API root returned JSON with 229 routes; no route endpoint was queried. Scrapling/lxml retained 106/106 relevant labels; Trafilatura retained 0/106. Keep direct HTML and page links; do not treat invalid sitemap as an access-control failure.",
+      "assessment_batch": "batch-2-2026-11-10",
+      "discovery_methods": [
+        "html",
+        "public_api_root_inspected",
+        "rss_atom_checked",
+        "sitemap_checked"
+      ],
+      "parser_decision": "keep_scrapling; lxml is a compact fallback; Trafilatura not suitable for this page",
+      "evidence_report": "reports/p2/source-strategy-batch-2-2026-11-10.md"
     },
     {
       "source_id": "source-7",
@@ -217,7 +245,8 @@
         "public_api_root_inspected"
       ],
       "parser_decision": "keep_scrapling; lxml full-text includes substantially more page boilerplate",
-      "evidence_report": ".github/audits/extraction-pilot-latest.md"
+      "evidence_report": "reports/p2/source-strategy-batch-1-2026-11-10.md",
+      "assessment_batch": "batch-1-2026-11-10"
     },
     {
       "source_id": "source-10",
@@ -343,15 +372,16 @@
         "direct_page_links"
       ],
       "parser_decision": "keep_scrapling; lxml is a near-equivalent text fallback; no sitemap or feed alternative found",
-      "evidence_report": ".github/audits/extraction-pilot-latest.md"
+      "evidence_report": "reports/p2/source-strategy-batch-1-2026-11-10.md",
+      "assessment_batch": "batch-1-2026-11-10"
     },
     {
       "source_id": "source-16",
       "source_name": "Teatro La Fenice - 招募与选拔",
       "url": "https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_with_sitemap_discovery",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -362,16 +392,23 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-10T18:42:33+01:00",
+      "assessment_note": "2026-11-10 batch 2: official page HTTP 200; sitemap index exposed 27 vocal/audition keyword-match URLs among the first five of 12 child maps inspected. Public API root returned HTTP 403 and was not bypassed. Scrapling/lxml retained 36/36 relevant labels; Trafilatura retained 0/36. Keep Scrapling and sitemap as secondary discovery; inspect remaining child maps only in a later controlled batch if needed.",
+      "assessment_batch": "batch-2-2026-11-10",
+      "discovery_methods": [
+        "html",
+        "sitemap"
+      ],
+      "parser_decision": "keep_scrapling; lxml is equivalent for relevant labels; Trafilatura is not the default",
+      "evidence_report": "reports/p2/source-strategy-batch-2-2026-11-10.md"
     },
     {
       "source_id": "source-17",
       "source_name": "Teatro Lirico di Cagliari - 招募与选拔",
       "url": "https://www.liricocagliari.it/trasparenza/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_with_sitemap_discovery",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -382,8 +419,17 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-10T18:42:33+01:00",
+      "assessment_note": "2026-11-10 batch 2: official transparency page HTTP 200; five of 12 sitemap children yielded nine vocal/audition keyword matches. Public WordPress API root returned JSON with 395 routes; no route endpoint was queried. Three advertised feeds had zero relevant entries. Scrapling retained 9/9 relevant labels; Trafilatura Markdown retained 6/8 exact relevant hrefs, while lxml full text was much larger (41,282 vs 11,584 characters). Keep Scrapling; sitemap is secondary discovery.",
+      "assessment_batch": "batch-2-2026-11-10",
+      "discovery_methods": [
+        "html",
+        "sitemap",
+        "public_api_root_inspected",
+        "rss_atom_checked"
+      ],
+      "parser_decision": "keep_scrapling; lxml full-text includes substantially more boilerplate; Trafilatura Markdown may be useful for link-preserving review but is not promoted",
+      "evidence_report": "reports/p2/source-strategy-batch-2-2026-11-10.md"
     },
     {
       "source_id": "source-18",
