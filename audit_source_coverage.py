@@ -290,6 +290,13 @@ def main() -> None:
         }
 
     state.setdefault("previous_cycle_complete", False)
+    inventory_by_id = {item["source_id"]: item for item in inventory}
+    for source_id, result in state.get("results", {}).items():
+        source = inventory_by_id.get(source_id)
+        if source:
+            for field in ("review_status", "publisher_status", "relevance_status",
+                          "audit_confidence", "audit_evidence_url", "audit_date"):
+                result[field] = source.get(field)
     completed = set(state.get("completed_source_ids", []))
     pending = [item for item in inventory if item["source_id"] not in completed]
     batch = pending[:args.batch_size]
