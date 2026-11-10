@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T01:02:11+01:00",
+  "generated_at": "2026-11-10T01:19:07+01:00",
   "catalogue_source": "LiederNet Archive originals + curated starter works",
   "items": [
     {
@@ -9386,10 +9386,400 @@
         }
       ],
       "autoImported": true
+    },
+    {
+      "title": "Unter der Linden",
+      "aliases": [],
+      "composer": "Petr Eben",
+      "work": "/lieder/get_settings.html?ComposerId=3938",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Unter der Linden,\nbei der Heide,\n[Da]1 unser beider Bette was,\nDa [könnet]2 ihr finden,\nwie wir beide\nDie Blumen brachen und das Gras.\n[Vor dem]3 Wald in einem Tal!\nTandaradei\nSang so [süß]4 die Nachtigall.\n\nKam da gegangen\nhin zur Aue\nUnd mein Liebster war schon da.\nDa ward ich empfangen,\nhehre Fraue,\nO welches Glück, daß ich ihn sah!\nOb er mich küßte? So manche Stund!\nTandaradei\nSeht, wie rot mir ist der Mund!\n\nDa hat er gemachet\nschnell bei Scherzen\nvon Blumen reich die Ruhestatt;\nJa, mancher noch lachet\nvon ganzem Herzen,\nWenn er kommt denselben Pfad.\nAn den Rosen er wohl mag --\nTandaradei\nMerken, wo das Haupt mir lag.\n\nWüßte das einer,\ndaß geblieben\nEr bei mir, ich schämte mich.\nO wollte doch keiner,\nwas wir trieben\nErfahren je, nur er und ich.\nUnd ein kleines Vögelein --\nTandaradei\nDas wird wohl verschwiegen sein!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=16407",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation by Karl Pannier",
+      "settings": [
+        {
+          "composer": "Petr Eben",
+          "title": "/lieder/get_settings.html?ComposerId=3938",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Hermann Hutter",
+          "title": "/lieder/get_settings.html?ComposerId=23550",
+          "instrumentation": "vocal quartet for male voices"
+        },
+        {
+          "composer": "Frank Martin",
+          "title": "/lieder/get_settings.html?ComposerId=4984",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Lachen",
+      "aliases": [],
+      "composer": "Franz Wilhelm Abt",
+      "work": "/lieder/get_settings.html?ComposerId=3121",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Freunde, laßt uns lachen, lachen,\nLachend trinken unsern Wein,\nDenn beim Trinken da kann lachen,\nLachen nur der Mensch allein.\n\nFreunde, laßt uns lachen, lachen,\nNur die Menschen trinken Wein,\nNur die Menschen können lachen,\nBeides soll zusammen sein!\n\nFreunde, laßt uns lachen, lachen,\nSingen laßt die Vögelein!\nNur die Menschen können lachen,\nNur die Menschen trinken Wein!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=115671",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Georg Hesekiel",
+      "settings": [
+        {
+          "composer": "Franz Wilhelm Abt",
+          "title": "/lieder/get_settings.html?ComposerId=3121",
+          "instrumentation": "vocal quartet for male voices"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Ie vis, ie meurs : ie me brule & me noye",
+      "aliases": [],
+      "composer": "Karol Beffa",
+      "work": "/lieder/get_settings.html?ComposerId=28379",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Ie vis, ie meurs : ie me brule & me noye.\n I'ay chaut estreme en endurant froidure :\n La vie m'est & trop molle & trop dure,\n I'ay grans ennuis entremeslez de ioye :\n\nTout à un coup ie ris & ie larmoye,\n Et en plaisir maint grief tourment i'endure :\n Mon bien s'en va, & à iamais il dure :\n Tout en un coup ie seiche & ie verdoye.\n\nAinsi Amour inconstamment me meine :\n Et quand ie pense auoir plus de douleur,\n Sans y penser ie me treuue hors de peine.\n\nPuis quand ie croy ma ioye estre certeine,\n Et estre au haut de mon desiré heur,\n Il me remet en mon premier malheur.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=9741",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Louise Labé",
+      "settings": [
+        {
+          "composer": "Karol Beffa",
+          "title": "/lieder/get_settings.html?ComposerId=28379",
+          "instrumentation": ""
+        },
+        {
+          "composer": "Konrad Boehmer",
+          "title": "/lieder/get_settings.html?ComposerId=24910",
+          "instrumentation": "soprano, flute, and percussion"
+        },
+        {
+          "composer": "Colette Delatour",
+          "title": "/lieder/get_settings.html?ComposerId=31482",
+          "instrumentation": "medium voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Bucaneve",
+      "aliases": [],
+      "composer": "Wilhelm Baumgartner",
+      "work": "/lieder/get_settings.html?ComposerId=3331",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "it",
+      "text": "La neve che appena ieri a piccoli fiocchi\nscendeva giù dal cielo,\npende oggi come una campanella\nappesa al delicato stelo.\n\nSuona la campanella, che cosa vuole dire\nnel bosco silenzioso?\nOh vieni presto! Nel bosco risuona\nl'annuncio della Primavera.\n\nVenite, foglie, fioritura e fiori,\nche ancora dormite sognando,\nvenite al tempio della Primavera,\nvenite subito perché sta arrivando!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=57203",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Ferdinando Albeggiani",
+      "settings": [
+        {
+          "composer": "Wilhelm Baumgartner",
+          "title": "/lieder/get_settings.html?ComposerId=3331",
+          "instrumentation": "vocal quartet (sopranos and altos)"
+        },
+        {
+          "composer": "Robert Schumann",
+          "title": "/lieder/get_settings.html?ComposerId=5685",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Elegie",
+      "aliases": [],
+      "composer": "Henri Duparc",
+      "work": "/lieder/get_settings.html?ComposerId=3926",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "nl",
+      "text": "O, fluister niet zijn naam! Laat hem slapen in de schaduw,\nWaar koud en eerloos zijn resten rusten.\nStil, droef, ijzig, vallen onze tranen,\nAls de dauw van de nacht, die het gras boven zijn hoofd bevochtigt;\n\nMaar de dauw van de nacht, ofschoon hij huilt in stilte,\nZal het groen op zijn rustplaats doen glanzen\nEn onze tranen, in het geheim geplengd,\nZullen zijn herinnering fris en groen houden in onze harten.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=28761",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Marike Lindhout",
+      "settings": [
+        {
+          "composer": "Henri Duparc",
+          "title": "/lieder/get_settings.html?ComposerId=3926",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Jeff Smallman",
+          "title": "/lieder/get_settings.html?ComposerId=26438",
+          "instrumentation": "high voice and piano"
+        },
+        {
+          "composer": "Dutch (Nederlands)",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Chioggia",
+      "aliases": [],
+      "composer": "Richard Maux",
+      "work": "/lieder/get_settings.html?ComposerId=16164",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "fr",
+      "text": "Façades serrées, patinées par le temps\nImages de la Vierge Marie dans des niches cachées,\nMiroir des eaux et parsemé de gondoles indolentes\nEt de grandes barques chargées de poissons bruns.\nMais partout, sur chaque mur s'effritant,\nDans toutes les ruelles, sur les marches et les canaux,\nIl y a une tristesse assoupie, désespérée\nQui veut nous parler des temps passés.\nAvec une inquiétude dissimulée je marche doucement\nSur les dalles, dans la crainte que je puisse les réveiller.\nS'ils se réveillaient ! Je ne pourrais jamais m'échapper !\nJe presse le pas et cherche le port,\nCherche la mer et un bateau en partance.\nDerrière moi les ruelles tristes tergiversent et dorment.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=122569",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Pierre Mathé",
+      "settings": [
+        {
+          "composer": "Richard Maux",
+          "title": "/lieder/get_settings.html?ComposerId=16164",
+          "instrumentation": "high voice or medium-high voice and piano"
+        },
+        {
+          "composer": "Catalan (Català)",
+          "title": "tr",
+          "instrumentation": ""
+        },
+        {
+          "composer": "English",
+          "title": "tr",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "I am the God Thor",
+      "aliases": [],
+      "composer": "Carl Reinhold Busch",
+      "work": "/lieder/get_settings.html?ComposerId=7285",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "I am the God Thor,\nI am the War God,\nI am the Thunderer!\nHere in my Northland,\nMy fastness and fortress,\nReign I forever!\n\nHere amid icebergs\nRule I the nations;\nThis is my hammer,\nMiölner the mighty;\nGiants and sorcerers\nCannot withstand it!\n\nThese are the gauntlets\nWherewith I wield it,\nAnd hurl it afar off;\nThis is my girdle;\nWhenever I brace it,\nStrength is redoubled!\n\nThe light thou beholdest\nStream through the heavens,\nIn flashes of crimson,\nIs but my red beard\nBlown by the night-wind,\nAffrighting the nations!\n\nJove is my brother;\nMine eyes are the lightning;\nThe wheels of my chariot\nRoll in the thunder,\nThe blows of my hammer\nRing in the earthquake!\n\nForce rules the world still,\nHas ruled it, shall rule it;\nMeekness is weakness,\nStrength is triumphant,\nOver the whole earth\nStill is it Thor's-Day!\n\nThou art a God too,\nO Galilean!\nAnd thus single-handed\nUnto the combat,\nGauntlet or Gospel,\nHere I defy thee!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=38894",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Henry Wadsworth Longfellow",
+      "settings": [
+        {
+          "composer": "Carl Reinhold Busch",
+          "title": "/lieder/get_settings.html?ComposerId=7285",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Percy Aldridge Grainger",
+          "title": "/lieder/get_settings.html?ComposerId=4242",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Sveinbjörn Sveinbjörnsson",
+          "title": "/lieder/get_settings.html?ComposerId=5892",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Im Maimond",
+      "aliases": [],
+      "composer": "Ernst Heuser",
+      "work": "/lieder/get_settings.html?ComposerId=25172",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Komm, Liebchen, komm zum Waldesgrün,\nder Frühlingstag will scheiden;\nschon schwebt das ros'ge Abendglüh'n\nums Haupt der Pappelweiden.\n\nDie Schwalbe zieht den letzten Kreis,\nvom Fruchtbaum weh'n die Flocken,\nund von den Türmen singen leis'\nden Nachtgesang die Glocken.\n\nWie seltsam im Dämmerlicht\ndie Waldesquellen rauschen!\nWas die Natur im Traume spricht,\ndas soll das Herz belauschen.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=145224",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "",
+      "settings": [
+        {
+          "composer": "Ernst Heuser",
+          "title": "/lieder/get_settings.html?ComposerId=25172",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Die Liebe kam zu uns in vergangener Zeit",
+      "aliases": [],
+      "composer": "Ross Lee Finney",
+      "work": "/lieder/get_settings.html?ComposerId=4037",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Die Liebe kam zu uns in vergangener Zeit\nals einer im Zwielicht scheu spielte\nund die andere in Furcht in der Nähe stand -\ndenn die Liebe ist am Anfang sehr ängstlich.\n\nWir waren ernste Liebende. Die Liebe ist vorbei.\nSie hatte manche süße Stunden;\nBegrüße nun schließlich\ndie Wege, auf denen wir gehen werden.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=115570",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by Beate Binnig",
+      "settings": [
+        {
+          "composer": "Ross Lee Finney",
+          "title": "/lieder/get_settings.html?ComposerId=4037",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Jack Marius Jarrett",
+          "title": "/lieder/get_settings.html?ComposerId=4535",
+          "instrumentation": "satb chorus and piano"
+        },
+        {
+          "composer": "Camille Pepin",
+          "title": "/lieder/get_settings.html?ComposerId=49335",
+          "instrumentation": "mezzo-soprano, violin, oboe, clarinet and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Was wecken aus dem Schlummer mich",
+      "aliases": [],
+      "composer": "Francis Edward Bache",
+      "work": "/lieder/get_settings.html?ComposerId=11532",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Was wecken aus dem Schlummer mich\nFür süße Klänge doch?\nO Mutter, sieh! wer mag es sein,\n[In]1 später Stunde noch?\n\n\"Ich [höre nichts, ich sehe]2 nichts,\nO schlummre fort so lind!\nMan bringt dir keine Ständchen [jetzt]3,\nDu armes, krankes Kind!\"\n\n[Es ist nicht irdische Musik,\nWas]4 mich so freudig macht;\nMich rufen Engel mit Gesang,\nO Mutter, gute Nacht!",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=17823",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Johann Ludwig Uhland",
+      "settings": [
+        {
+          "composer": "Francis Edward Bache",
+          "title": "/lieder/get_settings.html?ComposerId=11532",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Johanna Elisabeth Bandisch",
+          "title": "/lieder/get_settings.html?ComposerId=10264",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "(August Joseph) Norbert Burgmüller",
+          "title": "/lieder/get_settings.html?ComposerId=3617",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "Es war, als hätt' der Himmel",
+      "aliases": [],
+      "composer": "Algernon Bennet Langton Ashton",
+      "work": "/lieder/get_settings.html?ComposerId=3235",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "de",
+      "text": "Es war, als [hätt']1 der Himmel,\nDie Erde still geküßt,\nDaß sie im Blütenschimmer\nVon ihm [nun]2 träumen müßt.\n\nDie Luft ging durch die Felder,\nDie Ähren wogten sacht,\nEs rauschten leis die Wälder,\nSo sternklar war die Nacht.\n\nUnd meine Seele spannte\nWeit ihre Flügel aus,\nFlog [durch]3 die stillen [Lande]4,\nAls flöge sie nach Haus.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=5238",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Joseph Karl Benedikt, Freiherr von Eichendorff",
+      "settings": [
+        {
+          "composer": "Algernon Bennet Langton Ashton",
+          "title": "/lieder/get_settings.html?ComposerId=3235",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Selmar Bagge",
+          "title": "/lieder/get_settings.html?ComposerId=43205",
+          "instrumentation": "voice and piano"
+        },
+        {
+          "composer": "Franz Bendel",
+          "title": "/lieder/get_settings.html?ComposerId=11009",
+          "instrumentation": "voice and piano"
+        }
+      ],
+      "autoImported": true
+    },
+    {
+      "title": "The church militant",
+      "aliases": [],
+      "composer": "Guillaume Dufay",
+      "work": "/lieder/get_settings.html?ComposerId=3919",
+      "voice": "待分类",
+      "kind": "艺术歌曲",
+      "language": "en",
+      "text": "Triplum\n Rome, seat of the church militant\n And triumphant\n For the Father up to the stars;\n Rome, seat too of the clergy calling out\n And giving praise to the Pope;\n Let Rome call out with freed voice!\n\n The one whom she [Rome] called Gabriele1\n When she washed him of inherited sin\n By the receiving of baptism,\n She has re-named Eugenius\n Which means 'of noble family'\n By his election as Pope.\n\n The council which considered this,\n In which holy reason\n Thus led deliberation,\n So that piety alone\n Should reign in the palace\n Which God has blessed.\n\n Certainly God wished this\n And in this way satisfied\n The scion of the Venetians;\n But the Devil was saddened\n Because there was no sin\n In all this great heap of activity.\n\n Sweet father of the people,\n Who abhors the sweetness of wine\n And drunkenness,\n Grant to Lentus as your official\n The care of the poor flock\n Lest you should err unwittingly!\n\n May the Father, one with the Son\n And with the Spirit,\n Give by our solemn prayer\n Joy to Eugenius,\n Who has perfected his mastery,\n In life eternal.\n Amen.\n\nMotetus\n By the judgement of the saints,\n By the upright hearts\n Of clerics, meditating,\n Let no people withdraw\n From his door to the mocking\n Impudence of the shadows,\n For idle sloth\n Seeking long repose\n Eugenius has never known;\n Experience of the law\n With complete justice\n Are his abilities.\n This is the proof:\n He seeks peace for everyone\n Hating sin;\n And conquers the three-fold devilry\n Of the Devil and his troops,\n And the pomp of this world.\n\n [You whom the people honour2]\n Say that the shield which I brought\n To you, holy father,\n May give holiness, which your\n Eyes may discern very brightly\n As an image in a mirror.\n\n Ah, we ask you, most handsome,\n Most tender,\n For a long period of waiting;\n We are led most harshly\n We know not where, terribly\n To the destruction of the body.\n\n May the one Trinity,\n God, the true unity,\n Give you the radiance of heaven,\n Which his pure goodness,\n His silvery chastity,\n Have tailored to your way of life. Amen\n\nContratenor\n The peoples sing of wars, and we bewail\n The times, o holy father:\n One day will set many men free, if you wish it.\n Money and time flow away, and the great journey\n Of the globe must be completed,\n Yet all the world does not know its own God.\n Amen.",
+      "summary": "LiederNet 收录的声乐文本，中文大意尚未人工翻译。",
+      "textSource": "https://www.lieder.net/lieder/get_text.html?TextId=90730",
+      "textSourceName": "LiederNet 原文",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "licenseNote": "原语文本多已进入公版；页面与注释版权归 LiederNet，引用请保留来源链接。",
+      "poet": "Translation © by David Wyatt",
+      "settings": [
+        {
+          "composer": "Guillaume Dufay",
+          "title": "/lieder/get_settings.html?ComposerId=3919",
+          "instrumentation": ""
+        }
+      ],
+      "autoImported": true
     }
   ],
   "scan_cursor": 144,
-  "lieder_position": 1200,
+  "lieder_position": 1248,
   "aria_opera": 0,
   "aria_scene": 8
 }
