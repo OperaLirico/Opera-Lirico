@@ -15,7 +15,7 @@ on:
 permissions:
   contents: write
 concurrency:
-  group: weekly-source-coverage-\${{ github.event_name }}
+  group: weekly-source-coverage-${{ github.event_name }}
   cancel-in-progress: false
 jobs:
   audit:
