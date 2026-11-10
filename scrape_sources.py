@@ -60,7 +60,7 @@ GENERIC_LINES = {"coro", "concorso", "audizioni", "audizione", "bando", "news", 
 LINK_RELEVANCE = re.compile(
     r"audizion|concor|bando|selezion|candidat|cantant|coro|canto|soprano|"
     r"mezzosoprano|contralto|tenore|baritono|basso|domanda|modulo|iscrizion|"
-    r"application|young.artist|call|deadline|\\.pdf",
+    r"application|young.artist|call|deadline|\.pdf",
     re.IGNORECASE,
 )
 LINK_NOISE = re.compile(
@@ -188,6 +188,9 @@ def main() -> None:
             "title": "",
             "page_text": "",
             "relevant_lines": [],
+            "relevant_links": [],
+            "relevant_links_total": 0,
+            "relevant_links_truncated": False,
             "error": None,
         }
         try:
