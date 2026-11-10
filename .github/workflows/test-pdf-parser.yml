@@ -20,7 +20,7 @@ jobs:
   test:
     name: Install Docling and run parser tests
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - name: Check out the development branch
         uses: actions/checkout@v4
@@ -47,11 +47,19 @@ jobs:
       - name: Check parser command-line entry point
         run: python tools/pdf_parser/parse_pdf.py --help
 
-      - name: Upload test report
+      - name: Parse an existing conservatory admission PDF
+        run: |
+          python tools/pdf_parser/parse_pdf.py \
+            data/pdfs/306-bandoaccademialirica_2026_tm.pdf \
+            --output pdf-parser-sample.candidates.json
+
+      - name: Upload test report and real-PDF extraction
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pdf-parser-test-report
-          path: pdf-parser-test-report.txt
+          name: pdf-parser-test-and-sample
+          path: |
+            pdf-parser-test-report.txt
+            pdf-parser-sample.candidates.json
           if-no-files-found: warn
           retention-days: 14
