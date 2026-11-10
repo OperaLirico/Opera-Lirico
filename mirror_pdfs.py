@@ -13,8 +13,9 @@ from __future__ import annotations
 import json
 import re
 import urllib.parse
-import urllib.request
 from pathlib import Path
+
+from robots_policy import USER_AGENT, fetch_bytes_with_robots
 
 DATA = Path("data/conservatori.json")
 PDF_DIR = Path("data/pdfs")
@@ -54,13 +55,17 @@ def target_name(url: str, number) -> str:
 def fetch(url: str, path: Path) -> int:
     if path.exists() and path.stat().st_size > 2048:
         return path.stat().st_size
-    request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; leo-site/1.0)"})
     try:
-        with urllib.request.urlopen(request, timeout=25) as response:
-            blob = response.read(FILE_LIMIT + 1)
+        result = fetch_bytes_with_robots(
+            url, max_bytes=FILE_LIMIT, timeout=25, user_agent=USER_AGENT, delay=1.2
+        )
     except Exception as error:
         print(f"  skip {url}: {error}")
         return 0
+    if result.get("status") != "ok" or result.get("truncated"):
+        print(f"  skip {url}: {result.get('status')} / {result.get('error') or result.get('access_policy')}")
+        return 0
+    blob = result["body"]
     if len(blob) > FILE_LIMIT or not blob.startswith(b"%PDF"):
         return 0
     path.write_bytes(blob)
