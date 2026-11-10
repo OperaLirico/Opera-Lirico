@@ -2,9 +2,9 @@
 
 - Cycle: 2026-W46
 - Started: 2026-11-10T17:40:18+01:00
-- Last updated: 2026-11-10T17:41:32+01:00
+- Last updated: 2026-11-10T17:42:04+01:00
 - Status: **in_progress**
-- Coverage: **24/44** checked; 20 remaining
+- Coverage: **36/44** checked; 8 remaining
 - Failed/restricted/extraction errors: 0 (restricted: 0)
 - Changed normalized text hashes: 0
 - Sources with anomalies: 0
