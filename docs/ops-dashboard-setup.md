@@ -5,7 +5,7 @@
 ## 连接后可查看
 
 - Cloudflare Web Analytics：过去 30 天页面浏览量、访问次数和每日趋势。
-- Buttondown：当前有效订阅人数、过去 7 天新增人数、待审核草稿数量和草稿链接。
+- Buttondown：当前有效订阅人数、过去 7 天新增人数、待审核草稿数量、标题和创建日期。
 - 后台只读，不包含发送邮件、订阅者导出或删除操作。现有每周邮件流程仍然只创建草稿。
 
 ## 首次部署前需要配置的 GitHub Actions Secrets
@@ -18,7 +18,7 @@
 | `CF_WORKERS_DEPLOY_TOKEN` | 部署 Worker 的 API Token |
 | `CF_ANALYTICS_API_TOKEN` | 读取 Cloudflare Analytics 的 API Token |
 | `BUTTONDOWN_API_KEY` | Buttondown API Key（如果每周简报已在使用同名 Secret，可复用） |
-| `OPS_DASHBOARD_PASSWORD` | 后台登录密码，建议使用密码管理器生成至少 32 位随机密码（至少 24 个字符） |
+| `OPS_DASHBOARD_PASSWORD` | 后台登录密码，建议使用密码管理器生成至少 32 个随机字符 |
 
 ### Cloudflare Token 权限
 
