@@ -35,6 +35,7 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
         self.assertEqual(set(assessed), {
             "source-1", "source-2", "source-3", "source-9", "source-15",
             "source-4", "source-5", "source-6", "source-16", "source-17",
+            "source-7", "source-8", "source-10", "source-18", "source-20",
         })
         for source_id, item in assessed.items():
             with self.subTest(source_id=source_id):
@@ -43,14 +44,14 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                 self.assertTrue(item["discovery_methods"])
                 self.assertIn("2026-11-10", item["last_assessed_at"])
                 self.assertIn("2026-11-10", item["assessment_note"])
-                self.assertIn(item.get("assessment_batch"), {"batch-1-2026-11-10", "batch-2-2026-11-10"})
+                self.assertIn(item.get("assessment_batch"), {"batch-1-2026-11-10", "batch-2-2026-11-10", "batch-3-2026-11-10"})
                 self.assertTrue((ROOT / item["evidence_report"]).exists())
                 self.assertIn(item.get("assessment_batch"), {
                     "batch-1-2026-11-10", "batch-2-2026-11-10"
                 })
                 self.assertTrue(item["evidence_report"].startswith("reports/p2/"))
 
-        for batch in (1, 2):
+        for batch in (1, 2, 3):
             stem = f"source-strategy-batch-{batch}-2026-11-10"
             self.assertTrue((ROOT / "reports" / "p2" / f"{stem}.json").exists())
             self.assertTrue((ROOT / "reports" / "p2" / f"{stem}.md").exists())
