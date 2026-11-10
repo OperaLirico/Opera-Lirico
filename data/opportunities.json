@@ -23,8 +23,8 @@
       "application_deadline_at": "2026-11-25T18:00:00+01:00",
       "fee_eur": 70,
       "eligibility_summary": "分为歌剧角色赛与新秀歌手赛，报名时须选择其中一个组别；不同预选场次有名额限制，具体资格、曲目和出生日期要求请查看官方章程。",
-      "checked_at": "2026-11-10T16:56:21+01:00",
-      "last_verified_at": "2026-11-10T16:56:21+01:00",
+      "checked_at": "2026-11-10T17:47:53+01:00",
+      "last_verified_at": "2026-11-10T17:47:53+01:00",
       "evidence": [
         {
           "url": "https://aslico.org/edizione-in-corso/",
@@ -35,9 +35,21 @@
           "url": "https://aslico.org/edizione-in-corso/",
           "excerpt": "L’importo della tassa d’iscrizione è di 70 euro.",
           "checked_at": "2026-11-10T16:56:21+01:00"
+        },
+        {
+          "url": "https://aslico.org/edizione-in-corso/",
+          "excerpt": "Le iscrizioni del Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027 saranno aperte dal 16 ottobre fino al 25 novembre 2026 (ore 18.00); la pagina contiene i moduli di iscrizione online per le sezioni A e B.",
+          "checked_at": "2026-11-10T17:47:53+01:00"
+        },
+        {
+          "url": "https://aslico.org/wp-content/uploads/2026/10/Bando-78-Concorso-Internazionale-AsLiCo-per-Giovani-Cantanti-Lirici-78-International-AsLiCo-Competition-for-Young-Opera-Singers-2027_agg.15.10.26_.pdf",
+          "excerpt": "Bando ufficiale 78° Concorso AsLiCo 2027; art. 4 conferma apertura iscrizioni 16 ottobre 2026, scadenza 25 novembre 2026 ore 18:00 e tassa di 70 euro.",
+          "checked_at": "2026-11-10T17:47:53+01:00"
         }
       ],
-      "notes": "官方页面列出 2027/28 歌剧制作角色和多地预选安排；页面对最终比赛日期的年份表述存在不一致，因此本记录不展示未经确认的最终比赛日期。"
+      "notes": "官方页面列出 2027/28 歌剧制作角色和多地预选安排；页面对最终比赛日期的年份表述存在不一致，因此本记录不展示未经确认的最终比赛日期。",
+      "application_url": "https://aslico.org/edizione-in-corso/",
+      "official_pdf_url": "https://aslico.org/wp-content/uploads/2026/10/Bando-78-Concorso-Internazionale-AsLiCo-per-Giovani-Cantanti-Lirici-78-International-AsLiCo-Competition-for-Young-Opera-Singers-2027_agg.15.10.26_.pdf"
     },
     {
       "id": "morlacchi-2026-international-vocal-competition",
@@ -60,8 +72,8 @@
       "age_max": 35,
       "fee_eur": 80,
       "eligibility_summary": "面向18至35岁的各国歌剧歌手。需提交四首曲目（至少三首歌剧咏叹调）、两段视频、四份PDF乐谱及个人简历；视频预选后进入佩鲁贾现场半决赛和决赛。",
-      "checked_at": "2026-11-10T16:56:21+01:00",
-      "last_verified_at": "2026-11-10T16:56:21+01:00",
+      "checked_at": "2026-11-10T17:47:53+01:00",
+      "last_verified_at": "2026-11-10T17:47:53+01:00",
       "evidence": [
         {
           "url": "https://www.concorsomorlacchi.it/",
@@ -77,9 +89,26 @@
           "url": "https://www.concorsomorlacchi.it/",
           "excerpt": "La quota di iscrizione è fissata in euro 80 e non è rimborsabile.",
           "checked_at": "2026-11-10T16:56:21+01:00"
+        },
+        {
+          "url": "https://www.concorsomorlacchi.it/",
+          "excerpt": "Il sito ufficiale fornisce il modulo di iscrizione Word e la versione PDF; l'art. 1 indica che il modulo di iscrizione online è disponibile sul sito ufficiale.",
+          "checked_at": "2026-11-10T17:47:53+01:00"
+        },
+        {
+          "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf",
+          "excerpt": "Modulo di iscrizione ufficiale del 1° Concorso Internazionale di Canto Lirico Francesco Morlacchi, Perugia 14–15 dicembre 2026.",
+          "checked_at": "2026-11-10T17:47:53+01:00"
+        },
+        {
+          "url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx",
+          "excerpt": "Modulo Word ufficiale di iscrizione scaricabile dal sito del concorso.",
+          "checked_at": "2026-11-10T17:47:53+01:00"
         }
       ],
-      "notes": "比赛日期为2026年12月14日至15日；14日上午安排半决赛选手与官方钢琴伴奏排练，14日14:00开始半决赛，15日18:00举行公开决赛。具体材料和汇款方式以官网章程为准。"
+      "notes": "比赛日期为2026年12月14日至15日；14日上午安排半决赛选手与官方钢琴伴奏排练，14日14:00开始半决赛，15日18:00举行公开决赛。具体材料和汇款方式以官网章程为准。",
+      "application_url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx",
+      "official_pdf_url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf"
     },
     {
       "id": "carlofelice-academy-2027",
