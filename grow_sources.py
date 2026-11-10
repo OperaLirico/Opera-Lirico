@@ -1,24 +1,12 @@
 #!/usr/bin/env python3
-"""Let the theatre / audition source list grow on its own.
+"""Refresh discovered audition sources daily; discover new ones only weekly.
 
-``scrape_sources.py`` holds a hand-checked list of 29 pages and scrapes them
-every day. That list is a snapshot, not a growing thing: new seasons, new
-competitions and new houses never appear unless someone edits the file.
+The daily run refreshes a rotating batch of already-approved sources. The
+weekly --discover run additionally harvests outbound links from known official
+hubs, verifies candidates, and appends qualifying sources. This avoids
+repeating candidate searches every day.
 
-This script adds two behaviours on top:
-
-1. **Rediscovery** — audition pages link to other institutions' audition pages.
-   Every run harvests outbound links that look like calls for singers, verifies
-   them by fetching (reachable + actually about auditions/competitions), and
-   appends the good ones to ``data/sources_extra.json`` (committed, so the list
-   survives between runs).
-2. **Rotating coverage** — the discovered list is re-scraped in batches of
-   ``BATCH`` per run, round-robin through a stored cursor, so daily runtime stays
-   bounded while every discovered page still gets refreshed regularly.
-
-Everything known (hand-checked + discovered) is merged into ``data/sources.json``,
-which is what the site renders.
-"""
+All known sources are merged into data/sources.json for the site."""
 
 from __future__ import annotations
 
