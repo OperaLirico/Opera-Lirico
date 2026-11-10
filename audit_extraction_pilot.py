@@ -36,10 +36,9 @@ class SameHostRedirectHandler(urllib.request.HTTPRedirectHandler):
     def redirect_request(self,req,fp,code,msg,headers,newurl):
         old=urllib.parse.urlsplit(req.full_url).netloc.lower()
         new=urllib.parse.urlsplit(newurl).netloc.lower()
-        if old!=new:
-            raise urllib.error.HTTPError(req.full_url,code,
-                "Cross-host redirect requires a fresh robots.txt check",headers,fp)
-        return super().redirect_request(req,fp,code,msg,headers,newurl)
+        redirect_kind="cross-host" if old!=new else "same-host"
+        raise urllib.error.HTTPError(req.full_url,code,
+            f"{redirect_kind} redirect requires a fresh path-level robots.txt check",headers,fp)
 
 OPENER=urllib.request.build_opener(SameHostRedirectHandler())
 
@@ -55,7 +54,7 @@ def request_bytes(url):
                     "body":body[:MAX_BYTES],"truncated":truncated}
     except urllib.error.HTTPError as exc:
         if exc.code in REDIRECT_CODES and exc.headers and exc.headers.get("Location"):
-            return {"status":"cross_host_redirect","http_status":exc.code,
+            return {"status":"redirect_requires_policy_check","http_status":exc.code,
                 "redirect_url":urllib.parse.urljoin(exc.geturl(),exc.headers.get("Location")),
                 "final_url":exc.geturl(),"content_type":None,"body":b"","truncated":False}
         return {"status":"restricted" if exc.code in (403,429) else "http_error",
@@ -100,7 +99,7 @@ def robots_allows(url, text):
 
 def fetch_robots(origin):
     response=request_bytes(origin.rstrip("/")+"/robots.txt")
-    if response["status"]=="cross_host_redirect":
+    if response["status"]=="redirect_requires_policy_check":
         return {"status":"robots_redirect_requires_review","http_status":response["http_status"],
             "final_url":response.get("redirect_url"),"body":b"","error":"robots.txt redirected across hosts"}
     return response
@@ -121,7 +120,7 @@ def permitted_fetch(url,source_url,source_robots,max_redirects=2):
                 return {"status":"robots_disallowed","http_status":None,
                     "final_url":current,"body":b"","robots_status":"ok"}
         response=request_bytes(current)
-        if response["status"]=="cross_host_redirect":
+        if response["status"]=="redirect_requires_policy_check":
             current=response["redirect_url"]
             continue
         response["robots_status"]=policy["status"]
