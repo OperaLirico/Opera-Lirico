@@ -1,0 +1,44 @@
+name: PDF signature evidence audit
+on:
+  push:
+    branches: [main]
+    paths:
+      - "audit_pdf_signatures.py"
+      - "data/pdfs/**"
+  schedule:
+    - cron: "0 9 1 * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: pdf-signature-evidence-audit
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Install Poppler pdfsig
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run PDF signature evidence audit
+        run: python audit_pdf_signatures.py
+      - name: Save signature audit report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .github/audits/pdf-signature-audit-latest.json .github/audits/pdf-signature-audit-latest.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'Record PDF signature evidence audit'
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi

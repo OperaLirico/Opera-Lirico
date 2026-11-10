@@ -118,6 +118,7 @@ Current evidence:
 - All extracted evidence remains pending_manual_review, is_verified=false and publication_eligible=false.
 - The Docling workflow is isolated under experiments/pdf-parser and does not write to production opportunity data.
 - No publisher digital signature has been verified.
+- A read-only Poppler pdfsig audit prototype is being added to report signature presence, cryptographic integrity, certificate trust and publisher identity separately. Its first run against the eight local mirrors is pending; publisher identity will remain not_verified until a trusted institution-to-certificate mapping exists.
 
 Acceptance:
 - Mirrored PDF files have a manifest with source record, local path, size, PDF-byte validation and SHA-256.
