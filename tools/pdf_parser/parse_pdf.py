@@ -31,7 +31,7 @@ DEADLINE_RE = re.compile(
     re.IGNORECASE,
 )
 AGE_RE = re.compile(
-    r"(?:età|eta|anni compiuti|non aver compiuto|under)\s*"
+    r"(?:età|eta|anni compiuti|non (?:deve )?aver compiuto|under)\s*"
     r"(?:massima|minima|di|inferiore a|superiore a)?\s*\d{1,2}\s*anni?",
     re.IGNORECASE,
 )
