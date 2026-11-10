@@ -89,17 +89,25 @@ def compare(html_bytes, url):
 
 def robots_allows(url, robots_text):
  path=urllib.parse.urlsplit(url).path or "/"
- active=False; rules=[]
+ groups=[]; agents=[]; rules=[]; saw_rule=False
  for raw in robots_text.splitlines():
   line=raw.split("#",1)[0].strip()
   if not line or ":" not in line: continue
   key,value=[x.strip() for x in line.split(":",1)]
   key=key.lower(); value=value.strip()
   if key=="user-agent":
-   active=value=="*" or value.lower()=="italiaauditionsresearchbot"
-  elif active and key in ("allow","disallow") and value:
-   rules.append((key,value))
- matches=[(len(rule),kind) for kind,rule in rules if path.startswith(rule)]
+   if saw_rule:
+    groups.append((agents,rules)); agents=[]; rules=[]; saw_rule=False
+   agents.append(value.lower())
+  elif key in ("allow","disallow"):
+   saw_rule=True
+   if value: rules.append((key,value))
+ if agents: groups.append((agents,rules))
+ applicable=[]
+ for group_agents,group_rules in groups:
+  if "*" in group_agents or "italiaauditionsresearchbot" in group_agents:
+   applicable.extend(group_rules)
+ matches=[(len(rule),kind) for kind,rule in applicable if path.startswith(rule)]
  if not matches: return True
  longest=max(length for length,_ in matches)
  return any(kind=="allow" for length,kind in matches if length==longest)
@@ -147,8 +155,8 @@ def main():
   parts=urllib.parse.urlsplit(src["url"]); origin=f"{parts.scheme}://{parts.netloc}"
   robots=request_bytes(origin+"/robots.txt")
   robots_text=robots["body"].decode("utf-8","replace") if robots["status"]=="ok" else ""
-  blocked=(robots["status"] in ("restricted","error") or
-   (robots["http_status"] not in (None,200,404) and robots["http_status"]>=400) or
+  robots_unavailable=(robots["status"]!="ok" and robots["http_status"]!=404)
+  blocked=(robots_unavailable or
    (robots["status"]=="ok" and not robots_allows(src["url"],robots_text)))
   item={"source_id":sid,"source_name":src["source_name"],"url":src["url"],
    "robots_status":robots["status"],"robots_http_status":robots["http_status"]}
