@@ -2,19 +2,18 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const sourceRoot = new URL('.', location.href);
 
-let sourceData = [];
 let repertoire = [];
 let repertoireLoaded = false;
 let conservatoriData = [];
 let manualNotes = {};
+let zhNotes = {};
 let consQuery = '';
 let consDateOnly = false;
 let installPrompt = null;
-let openPanelName = null;
 
 const opportunities = [
-  {title:'78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027',category:'歌剧角色招募',place:'科莫 · 多地预选',deadline:'2026-11-25T18:00:00+01:00',summary:'为 2027/28 OperaLombardia 歌剧季选拔演员，也设青年歌手组。招募角色包括《拉美莫尔的露琪亚》《伊多美绚》等；报名费 70 欧元。',url:'https://aslico.org/edizione-in-corso/',source:'AsLiCo'},
-  {title:'Concorso Internazionale di Canto lirico Francesco Morlacchi 2026',category:'国际声乐比赛',place:'佩鲁贾',deadline:'2026-11-30T23:59:00+01:00',summary:'比赛将于 2026 年 12 月 14–15 日举行，面呁 18 至 35 岁歌手。报名费 80 欧元，需提交曲目、简历、身份证明及演唱视频。',url:'https://www.concorsomorlacchi.it/',source:'Morlacchi 声乐比赛'}
+  {title:'78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027',category:'歌剧角色招募',place:'科莫 · 多地预选',deadline:'2026-11-25T18:00:00+01:00',summary:'为 2027/28 OperaLombardia 歌剧季选拔演员，也设青年歌手组。招募角色包括《拉美莫尔的露琪亚》等；报名费 70 欧元。',url:'https://aslico.org/edizione-in-corso/',source:'AsLiCo'},
+  {title:'Concorso Internazionale di Canto lirico Francesco Morlacchi 2026',category:'国际声乐比赛',place:'佩鲁贾',deadline:'2026-11-30T23:59:00+01:00',summary:'比赛将于 2026 年 12 月 14–15 日举行，年龄 18–35 岁。报名费 80 欧元，需提交曲目、简历、身份证明及演唱视频。',url:'https://www.concorsomorlacchi.it/',source:'Morlacchi 声乐比赛'}
 ];
 
 function esc(text=''){return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
@@ -69,7 +68,6 @@ function fuzzyFieldMatch(query,field){
 /* ---------- dates ---------- */
 const MONTHS={gennaio:1,febbraio:2,marzo:3,aprile:4,maggio:5,giugno:6,luglio:7,agosto:8,settembre:9,ottobre:10,novembre:11,dicembre:12};
 function isoFromText(text){
-  // The closing date is almost always the last date in the sentence.
   const source=String(text||'');
   const slash=[...source.matchAll(/(\d{1,2})\/(\d{1,2})\/(20\d{2})/g)];
   if(slash.length){const m=slash[slash.length-1];return `${m[3]}-${String(m[2]).padStart(2,'0')}-${String(m[1]).padStart(2,'0')}`;}
@@ -80,7 +78,6 @@ function isoFromText(text){
   return '';
 }
 function zhIsoFromText(text){
-  // Chinese binding lines written by hand, e.g. "2027 年 4 月 16–20 日".
   const hits=[...String(text||'').matchAll(/(20\d{2})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})/g)];
   if(!hits.length)return '';
   const m=hits[hits.length-1];
@@ -179,13 +176,14 @@ function renderMusicSearch(rawQuery){
     const plain=(item.text||'').replace(/\s+/g,' ').trim();
     const preview=plain.slice(0,110);
     const hasMore=(item.text||'').trim().length>110;
+    const readLink=googleReadUrl(item);
     return `<article class="music-result">
    <div class="music-result-top"><span class="music-kind">${esc(item.kind)}</span><span class="music-voice">${esc(item.voice)}</span></div>
    <h3>${esc(item.title)}</h3>
    <p class="music-byline">${esc([item.composer,item.work?item.work:(item.poet?"词："+item.poet:"")].filter(Boolean).join(" · "))}</p>
    ${context?`<p class="music-hit">“${esc(hit.term)}”出现在原文：${esc(context)}…</p>`:''}
    <div class="music-text"><div class="music-text-label">歌词原文 · ${esc(languageLabel(item.language))}</div><p class="lyrics lyrics-preview">${esc(preview)}${hasMore?'…':''}</p>${hasMore?`<div class="lyrics-full" hidden><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div><button type="button" class="lyrics-toggle" data-open="0">展开全文 ↓</button>`:''}</div>
-   <div class="music-reading"><div><span class="music-text-label">泛读 · ${esc(languageLabel(item.language))}</span><p>在 Google 翻译中打开后，点击“听取原文”；会按这首作品的原文语言阅读。</p></div>${googleReadUrl(item)?'<a class="reading-link" href="'+esc(googleReadUrl(item))+'" target="_blank" rel="noopener noreferrer">Google 翻译朗读原文 ↗</a>':'<span class="score-unavailable">文本超过 Google 翻译单次朗读长度</span>'}</div>
+   <div class="music-reading"><div><span class="music-text-label">原文朗读</span><p>在 Google 翻译里打开后点“听取原文”，会按这首作品的原文语言朗读。</p></div>${readLink?'<a class="reading-link" href="'+esc(readLink)+'" target="_blank" rel="noopener noreferrer">Google 翻译朗读 ↗</a>':'<span class="score-unavailable">文本超过 Google 翻译单次朗读长度</span>'}</div>
    <p class="music-meaning"><strong>大意：</strong>${esc(item.summary)}</p>
    <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'本站提供已核验的可下载版本。':'本站暂未托管乐谱 PDF。可以先查看 IMSLP 对应作品页；版本与地区版权请自行核对。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':item.scoreUrl?'<a class="score-imslp" href="'+esc(item.scoreUrl)+'" target="_blank" rel="noopener noreferrer">IMSLP 查看乐谱 ↗</a>':'<span class="score-unavailable">暂无乐谱链接</span>'}</div>
    <div class="music-source"><span>文本出处：${esc(item.textSourceName||'公开文本来源')} · 本文已收录在本站，搜索和阅读无需跳转。</span></div>
@@ -208,21 +206,20 @@ async function loadRepertoire(){
 }
 
 /* ---------- panels ---------- */
-function closePanel(){
-  openPanelName=null;
+function closePanels(){
   $$('.panel').forEach(panel=>{panel.hidden=true;});
-  $$('.tile').forEach(tile=>tile.setAttribute('aria-expanded','false'));
 }
 function openPanel(name,{scroll=true}={}){
-  if(openPanelName===name&&!$('#panel-'+name).hidden){closePanel();return;}
-  closePanel();
-  const panel=$('#panel-'+name);
-  if(!panel)return;
-  panel.hidden=false;
-  openPanelName=name;
-  const tile=$(`.tile[data-panel="${name}"]`);
-  if(tile)tile.setAttribute('aria-expanded','true');
-  if(scroll)panel.scrollIntoView({behavior:'smooth',block:'start'});
+  const target=document.getElementById(name);
+  if(!target)return;
+  closePanels();
+  target.hidden=false;
+  if(scroll)target.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function backToTiles(){
+  closePanels();
+  const tiles=$('#tiles');
+  if(tiles)tiles.scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 /* ---------- open calls ---------- */
@@ -236,15 +233,17 @@ function renderCalls(){
       category:'学院报名中',
       place:c.city,
       deadline:`${iso}T23:59:00+01:00`,
-      summary:(c.zh&&c.zh.deadline)||(c.deadline_lines||[])[0]||'',
+      summary:(c.zh&&((c.zh.d||[])[0]||(c.zh.x||[])[0]))||(c.deadline_lines||[])[0]||'',
       url:c.manual_source||c.url,
       source:'学院官网'
     };
   }).filter(Boolean);
   const merged=[...derived,...opportunities].sort((a,b)=>new Date(a.deadline)-new Date(b.deadline));
   const current=merged.filter(o=>new Date(o.deadline).getTime()>=now);
-  $('#opportunityCount').textContent=`${current.length} 项报名中`;
-  $('#opportunities').innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">截止 ${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(o.summary)}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>主办方：${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a></article>`).join(''):'<div class="empty">目前没有已确认仍在报名的项目。入学考试板块里还有可以准备的目标。</div>';
+  const pill=$('#opportunityCount');
+  if(pill)pill.textContent=`${current.length} 项报名中`;
+  const box=$('#opportunities');
+  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">截止 ${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(o.summary)}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>主办方：${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a></article>`).join(''):'<div class="empty">目前没有已确认仍在报名的项目。入学考试板块里还有可以准备的目标。</div>';
   renderTiles();
 }
 
@@ -263,67 +262,97 @@ function staleMark(text){
   return Math.max(...years)<2026?'<span class="cons-stale">旧公告 · 参考价值有限</span>':'';
 }
 function pickDocs(list){
-  const items=(list||[]).map(url=>({url,rank:/bando|ammission|iscrizion/i.test(url)?2:(/calendario|programma|prova|graduator/i.test(url)?1:0)}))
+  const items=(list||[]).filter(url=>!/guida-dsa|dsa|accessibilit|english|inglese/i.test(url))
+    .map(url=>({url,rank:/bando|ammission|iscrizion/i.test(url)?2:(/calendario|programma|prova|graduator/i.test(url)?1:0)}))
     .sort((a,b)=>b.rank-a.rank||a.url.length-b.url.length);
   const top=items.filter(x=>x.rank===2);
   return (top.length?top.slice(0,2):items.slice(0,3)).map(x=>x.url);
 }
+function localPdfs(c){
+  const list=[];
+  if(c.pdf_local)list.push(c.pdf_local);
+  for(const extra of c.pdf_locals||[])if(!list.includes(extra))list.push(extra);
+  return list.filter(Boolean);
+}
+function stateClass(state=''){
+  if(/报名中|开放|有窗口/.test(state))return 'state--open';
+  if(/已截止|上期已截止|旧公告/.test(state))return 'state--closed';
+  if(/读不到/.test(state))return 'state--offline';
+  return 'state--neutral';
+}
+function consLine(c){
+  const zh=c.zh||{};
+  const dl=zh.deadline_iso||isoFromText((c.deadline_lines||[]).join(' '))||zhIsoFromText((zh.d||[]).join(' '));
+  const ex=zh.exam_iso||isoFromText((c.exam_dates||[]).join(' '))||zhIsoFromText((zh.x||[]).join(' '));
+  const bits=[];
+  if(dl)bits.push(`报名 ${zhDate(dl)}${daysUntil(dl)<0?'（已截止）':countdown(dl)}`);
+  if(ex)bits.push(`考试 ${zhDate(ex)}`);
+  if(bits.length)return bits.join(' · ');
+  if((zh.d||[]).length)return zh.d[0];
+  if((zh.x||[]).length)return zh.x[0];
+  if((zh.r||[]).length)return zh.r[0];
+  return c.status==='ok'?'官网页面没有本季日期，点开看原文核对':'官网本次读不到，点开可跳转核对';
+}
 function consCard(c){
   const zh=c.zh||{};
+  const state=zh.state||(c.manual_status==='open'?'报名中':c.manual_status==='closed'?'已截止':c.status==='ok'?'可读':'读不到');
   const deadlines=(c.deadline_lines||[]).slice(0,2);
   const dates=(c.exam_dates||[]).slice(0,2);
   const reqs=(c.requirements||[]).slice(0,2);
   const said=[...deadlines,...dates,...reqs].join(' ');
   const soft=(c.fallback_lines||[]).filter(line=>!said.includes(line.slice(0,40))).slice(0,2);
   const docs=pickDocs(c.documents);
-  const dlIso=isoFromText(deadlines.join(' '))||zhIsoFromText(zh.deadline||'');
-  const exIso=isoFromText(dates.join(' '))||zhIsoFromText(zh.exam||'');
-  const closed=c.manual_status==='closed';
-  const parts=[];
-  if(dlIso)parts.push(`报名截止 ${zhDate(dlIso)}${closed?'（已截止）':''}`);
-  if(exIso)parts.push(`考试 ${zhDate(exIso)}${closed?'（已截止）':''}`);
-  const summary=parts.length?parts.join(' · '):(zh.note||soft[0]||'官网本季未公布日期');
-  const badge=c.manual_status==='open'?`<span class="badge badge--gold">报名进行中${countdown(dlIso)}</span>`:'';
+  const locals=localPdfs(c);
   const zhBlocks=[
-    zh.deadline?`<p><strong>报名</strong>${esc(zh.deadline)}</p>`:'',
-    zh.exam?`<p><strong>考试</strong>${esc(zh.exam)}</p>`:'',
-    zh.requirements?`<p><strong>要求</strong>${esc(zh.requirements)}</p>`:'',
-    zh.note?`<p><strong>备注</strong>${esc(zh.note)}</p>`:''
-  ].join('');
+    (zh.d||[]).length?`<p><span class="zh-key">报名</span>${zh.d.map(esc).join('<br>')}</p>`:'',
+    (zh.x||[]).length?`<p><span class="zh-key">考试</span>${zh.x.map(esc).join('<br>')}</p>`:'',
+    (zh.r||[]).length?`<p><span class="zh-key">要求</span>${zh.r.map(esc).join('<br>')}</p>`:''
+  ].filter(Boolean).join('');
   const origBlocks=[
-    deadlines.length?`<strong>报名期限（原文）</strong><br>${deadlines.map(esc).join('<br>')}`:'',
-    dates.length?`<strong>考试日期（原文）</strong><br>${dates.map(esc).join('<br>')}`:'',
-    reqs.length?`<strong>入学要求（原文）</strong><br>${reqs.map(esc).join('<br>')}`:'',
-    (!zh.note&&soft.length)?`<strong>页面要点（原文）</strong><br>${soft.map(esc).join('<br>')}`:''
+    deadlines.length?`<span class="orig-key">报名期限（原文）</span>${deadlines.map(esc).join('<br>')}`:'',
+    dates.length?`<span class="orig-key">考试日期（原文）</span>${dates.map(esc).join('<br>')}`:'',
+    reqs.length?`<span class="orig-key">入学要求（原文）</span>${reqs.map(esc).join('<br>')}`:'',
+    soft.length?`<span class="orig-key">页面其他要点（原文）</span>${soft.map(esc).join('<br>')}`:''
   ].filter(Boolean).join('<br><br>');
-  return `<article class="cons-card${c.number>=300?' cons-card--academy':''}">
-   <div class="cons-head"><h3>${esc(c.city)}<small>${esc(c.school)}</small></h3><span class="status ${c.status==='ok'?'':'error'}">${c.status==='ok'?(c.cached?'上次读取':'官网可读'):'暂时读不到'}</span></div>
-   ${badge?`<div>${badge}</div>`:''}
-   <p class="cons-sum">${esc(summary)}</p>
-   <details class="cons-more"><summary>中文要点 · 原文 · 官方简章</summary>
+  return `<details class="cons-card${c.number>=300?' cons-card--academy':''}">
+   <summary>
+     <span class="cons-city">${esc(c.city)}</span>
+     <span class="cons-school">${esc(c.school)}</span>
+     <span class="cons-state ${stateClass(state)}">${esc(state)}</span>
+     <span class="cons-line">${esc(consLine(c))}</span>
+     <span class="cons-caret" aria-hidden="true">›</span>
+   </summary>
+   <div class="cons-body">
      ${zhBlocks?`<div class="cons-zh">${zhBlocks}</div>`:''}
-     ${origBlocks?`<div class="cons-orig">${origBlocks}</div>`:''}
-     ${docs.length?`<p class="cons-docs"><strong>官方简章</strong>${docs.map(d=>`<a class="doc-link" href="${esc(d)}" target="_blank" rel="noopener">${esc(fileLabel(d))} ↗</a>`).join('')}</p>`:''}
-     <p class="cons-docs"><a class="doc-link" href="${esc(c.url)}" target="_blank" rel="noopener">打开学院官网 ↗</a></p>
-   </details>
- </article>`;
+     ${origBlocks?`<details class="cons-orig-wrap"><summary>看原文（意大利语）</summary><div class="cons-orig">${origBlocks}${staleMark(said)}</div></details>`:''}
+     <p class="cons-docs"><span class="docs-key">官方文件</span>
+       ${locals.map((u,i)=>`<a class="doc-link doc-link--local" href="${esc(u)}" target="_blank" rel="noopener">站内 PDF ${locals.length>1?i+1:''} ↓</a>`).join('')}
+       ${docs.map(d=>`<a class="doc-link" href="${esc(d)}" target="_blank" rel="noopener">${esc(fileLabel(d))} ↗</a>`).join('')}
+       <a class="doc-link" href="${esc(c.url)}" target="_blank" rel="noopener">学院官网 ↗</a>
+     </p>
+   </div>
+ </details>`;
 }
 function renderConservatori(){
   const wrap=$('#consGroups');
   if(!wrap)return;
   const readable=conservatoriData.filter(c=>c.status==='ok');
-  $('#conservatoriCount').textContent=`${readable.length}/${conservatoriData.length}`;
+  $('#conservatoriCount').textContent=`${readable.length}/${conservatoriData.length} 可读`;
   const q=normalizeSearch(consQuery);
   const filtered=conservatoriData.filter(c=>{
-    if(q&&!normalizeSearch(`${c.city||''} ${c.school||''}`).includes(q))return false;
-    if(consDateOnly&&!((c.deadline_lines||[]).length||(c.exam_dates||[]).length))return false;
+    if(q&&!normalizeSearch(`${c.city||''} ${c.school||''} ${(c.zh&&c.zh.state)||''}`).includes(q))return false;
+    if(consDateOnly){
+      const z=c.zh||{};
+      const hasDate=Boolean(isoFromText((c.deadline_lines||[]).join(' '))||isoFromText((c.exam_dates||[]).join(' '))||zhIsoFromText((z.d||[]).join(' '))||zhIsoFromText((z.x||[]).join(' ')));
+      if(!hasDate)return false;
+    }
     return true;
   }).sort((a,b)=>{
     const oa=a.manual_status==='open'?1:0,ob=b.manual_status==='open'?1:0;
     if(ob!==oa)return ob-oa;
-    const da=(a.deadline_lines||[]).length+(a.exam_dates||[]).length;
-    const db=(b.deadline_lines||[]).length+(b.exam_dates||[]).length;
-    if(db!==da)return db-da;
+    const z=(x)=>isoFromText((x.deadline_lines||[]).join(' '))||zhIsoFromText(((x.zh||{}).d||[]).join(' '))||'9999';
+    const da=z(a),db=z(b);
+    if(da!==db)return da<db?-1:1;
     return String(a.city||'').localeCompare(String(b.city||''),'zh');
   });
   const groups=[
@@ -334,44 +363,53 @@ function renderConservatori(){
   const emptyBox=$('#conservatoriEmpty');
   if(emptyBox)emptyBox.innerHTML=filtered.length?'':'<div class="empty">没有符合条件的院校。换个城市名，或关掉“只看有日期”。</div>';
   renderTiles();
+  renderPdfList();
 }
 
-/* ---------- theatres ---------- */
-const THEATRE_RE=/teatro|teatri|opera|operahouse|festival|accademia|conservatorio|regio|massimo|carlofelice|coccia|sancarlo|rossini|maggio|aslico|compagnia/i;
-function renderTheatres(){
-  const q=$('#searchInput')?$('#searchInput').value.trim().toLocaleLowerCase():'';
-  const rows=sourceData.filter(s=>{
-    const hay=`${s.source||''} ${s.url||''}`;
-    if(!THEATRE_RE.test(hay))return false;
-    if(q&&!`${s.source} ${s.title} ${(s.relevant_lines||[]).join(' ')}`.toLocaleLowerCase().includes(q))return false;
-    return true;
-  });
-  $('#sourceCount').textContent=`${rows.length} 家`;
-  $('#sources').innerHTML=rows.length?`<div class="flow">${rows.map(s=>{
-    const lines=(s.relevant_lines||[]).filter(x=>!x.includes('Privacy')&&!x.includes('cookie')).slice(0,2);
-    const stamp=s.checked_at?new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',dateStyle:'medium',timeStyle:'short'}).format(new Date(s.checked_at)):'—';
-    return `<article class="flow-card"><h3><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.source)} ↗</a></h3>${lines.length?`<p>${esc(lines.join(' · '))}</p>`:'<p>这次没有找到可展示的招募内容。</p>'}<div class="flow-meta"><span>${s.status==='ok'?'页面可访问':'暂时无法读取 '+(s.http_status||'')}</span><span>最近查看 ${stamp}</span></div></article>`;
-  }).join('')}</div>`:'<div class="empty">没有符合条件的剧院。</div>';
-  renderTiles();
+/* ---------- PDF shelf ---------- */
+function renderPdfList(){
+  const box=$('#pdfList');
+  if(!box)return;
+  const withLocal=conservatoriData.filter(c=>localPdfs(c).length);
+  const academies=conservatoriData.filter(c=>(c.number||0)>=300&&(c.documents||[]).length);
+  const rows=[];
+  for(const c of withLocal){
+    for(const u of localPdfs(c))rows.push({city:c.city,school:c.school,url:u,official:(pickDocs(c.documents)[0]||c.url),local:true,label:fileLabel(u),zh:(c.zh&&((c.zh.x||[])[0]||(c.zh.d||[])[0]))||''});
+  }
+  for(const c of academies){
+    for(const d of pickDocs(c.documents).slice(0,1)){
+      if(withLocal.some(x=>localPdfs(x).includes(d)))continue;
+      rows.push({city:c.city,school:c.school,url:d,official:c.url,local:false,label:fileLabel(d),zh:(c.zh&&((c.zh.x||[])[0]||(c.zh.d||[])[0]))||''});
+    }
+  }
+  const count=rows.filter(r=>r.local).length;
+  $('#pdfCount').textContent=rows.length?String(rows.length):'—';
+  $('#pdfCountPill').textContent=`${rows.length} 份 · 站内 ${count}`;
+  box.innerHTML=rows.length?rows.map(r=>`<article class="pdf-card">
+    <div class="pdf-top"><span class="pdf-city">${esc(r.city)}</span><span class="pdf-kind ${r.local?'pdf-kind--local':''}">${r.local?'站内 PDF':'官网原件'}</span></div>
+    <h3>${esc(r.school)}</h3>
+    ${r.zh?`<p class="pdf-note">${esc(r.zh)}</p>`:''}
+    <p class="pdf-file">${esc(r.label)}</p>
+    <div class="pdf-actions"><a class="doc-link ${r.local?'doc-link--local':''}" href="${esc(r.url)}" target="_blank" rel="noopener">${r.local?'站内打开 ↓':'官网打开 ↗'}</a><a class="doc-link" href="${esc(r.official)}" target="_blank" rel="noopener">官网页面 ↗</a></div>
+  </article>`).join(''):'<div class="empty">还没有抓到简章 PDF。学院板块里有官网链接可以直接核对。</div>';
 }
 
 function renderTiles(){
   const callsCount=$('#opportunities')?$('#opportunities').querySelectorAll('.opportunity-card').length:0;
-  const totalCon=conservatoriData.length;
   const readable=conservatoriData.filter(c=>c.status==='ok').length;
-  const theatres=sourceData.filter(s=>THEATRE_RE.test(`${s.source||''} ${s.url||''}`)).length;
-  $('#tileCalls').textContent=callsCount?`${callsCount} 项报名中`:'暂无开放报名';
-  $('#tileExam').textContent=totalCon?`${totalCon} 所 · ${readable} 可读`:'读取中…';
-  $('#tileMusic').textContent=repertoireLoaded?`${repertoire.length} 首`:'读取中…';
-  $('#tileTeatro').textContent=theatres?`${theatres} 家机构`:'读取中…';
+  const set=(id,text)=>{const el=document.getElementById(id);if(el)el.textContent=text;};
+  set('statCalls',callsCount?String(callsCount):'0');
+  set('statSchools',conservatoriData.length?String(readable):'—');
+  set('statSongs',repertoireLoaded?String(repertoire.length):'—');
 }
 
 /* ---------- loading ---------- */
 async function loadConservatori(){
   try{
-    const [res,manual]=await Promise.all([
+    const [res,manual,zh]=await Promise.all([
       fetch(new URL('data/conservatori.json',sourceRoot),{cache:'no-store'}),
-      fetch(new URL('data/conservatori_manual.json',sourceRoot),{cache:'no-store'}).catch(()=>null)
+      fetch(new URL('data/conservatori_manual.json',sourceRoot),{cache:'no-store'}).catch(()=>null),
+      fetch(new URL('data/conservatori_zh.json',sourceRoot),{cache:'no-store'}).catch(()=>null)
     ]);
     if(!res.ok)throw new Error(`HTTP ${res.status}`);
     const data=await res.json();
@@ -382,40 +420,56 @@ async function loadConservatori(){
       for(const entry of m.items||[])manualNotes[entry.number]=entry;
       for(const item of conservatoriData){
         const note=manualNotes[item.number];
-        if(note&&note.zh)item.zh=note.zh;
+        if(note&&note.zh)item.zh=Object.assign({},note.zh);
       }
     }
-  }catch(error){conservatoriData=[];}
+    if(zh&&zh.ok){
+      const z=await zh.json();
+      zhNotes=z.items||{};
+      for(const item of conservatoriData){
+        const note=zhNotes[String(item.number)];
+        if(!note)continue;
+        const merged=Object.assign({},item.zh||{});
+        if(note.state)merged.state=note.state;
+        if(note.d&&note.d.length)merged.d=note.d;
+        if(note.x&&note.x.length)merged.x=note.x;
+        if(note.r&&note.r.length)merged.r=note.r;
+        item.zh=merged;
+      }
+    }
+    const stamp=data.checked_at||(conservatoriData[0]||{}).checked_at;
+    $('#updatedAt').textContent=stamp?`最近收录：${new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',dateStyle:'medium',timeStyle:'short'}).format(new Date(stamp))}`:'数据已更新';
+  }catch(error){conservatoriData=[];$('#updatedAt').textContent='暂时无法更新数据';}
   renderConservatori();
-  renderCalls();
-}
-async function loadData(){
-  $('#updatedAt').textContent='正在更新来源动态…';
-  try{
-    const res=await fetch(new URL('data/sources.json',sourceRoot),{cache:'no-store'});
-    if(!res.ok)throw new Error(`HTTP ${res.status}`);
-    const data=await res.json();
-    sourceData=data.sources||data;
-    const checked=data.generated_at||sourceData[0]?.checked_at;
-    $('#updatedAt').textContent=checked?`最近查看：${new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',dateStyle:'medium',timeStyle:'short'}).format(new Date(checked))}`:'数据已更新';
-  }catch(error){
-    $('#updatedAt').textContent='暂时无法更新数据';
-    sourceData=[];
-  }
-  renderTheatres();
   renderCalls();
 }
 
 /* ---------- wiring ---------- */
-$$('.tile').forEach(tile=>tile.addEventListener('click',()=>openPanel(tile.dataset.panel)));
-$$('.nav-link').forEach(link=>link.addEventListener('click',()=>openPanel(link.dataset.panel)));
-$$('.panel-close').forEach(button=>button.addEventListener('click',()=>{closePanel();$('#tiles').scrollIntoView({behavior:'smooth',block:'start'});}));
-$('#refreshButton').addEventListener('click',()=>{loadData();loadConservatori();loadRepertoire();});
-$('#searchInput').addEventListener('input',renderTheatres);
+function bindPanelLinks(){
+  document.addEventListener('click',event=>{
+    const opener=event.target.closest('[data-open]');
+    if(opener&&!opener.classList.contains('lyrics-toggle')){
+      const name=opener.dataset.open;
+      if(document.getElementById(name)){event.preventDefault();openPanel(name);}
+      return;
+    }
+    const back=event.target.closest('[data-back]');
+    if(back){event.preventDefault();backToTiles();}
+  });
+}
+bindPanelLinks();
+$('#refreshButton').addEventListener('click',()=>{loadConservatori();loadRepertoire();});
 const consInput=$('#consSearchInput');
 if(consInput)consInput.addEventListener('input',event=>{consQuery=event.target.value;renderConservatori();});
 const consToggle=$('#consDateOnly');
 if(consToggle)consToggle.addEventListener('click',()=>{consDateOnly=!consDateOnly;consToggle.setAttribute('aria-pressed',String(consDateOnly));renderConservatori();});
+const expandAll=$('#consExpandAll');
+if(expandAll)expandAll.addEventListener('click',()=>{
+  const on=expandAll.getAttribute('aria-pressed')!=='true';
+  expandAll.setAttribute('aria-pressed',String(on));
+  expandAll.textContent=on?'收起全部':'展开全部';
+  $$('.cons-card').forEach(card=>{card.open=on;});
+});
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;$('#installButton').hidden=false;});
 $('#installButton').addEventListener('click',async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;$('#installButton').hidden=true;}else{alert('iPhone 用户可在 Safari 中点“分享”，再选“添加到主屏幕”。');}});
 if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!window.navigator.standalone){$('#installButton').hidden=false;}
@@ -429,7 +483,8 @@ document.addEventListener('click',event=>{
     const value=suggest.dataset.suggest||'';
     $('#musicSearchInput').value=value;
     renderMusicSearch(value);
-    $('#panel-music').scrollIntoView({behavior:'smooth',block:'start'});
+    const panel=document.getElementById('music-library');
+    if(panel)panel.scrollIntoView({behavior:'smooth',block:'start'});
     return;
   }
   const toggle=event.target.closest('.lyrics-toggle');
@@ -445,8 +500,9 @@ document.addEventListener('click',event=>{
   }
 });
 $$('.search-chip').forEach(button=>button.addEventListener('click',()=>{const q=button.dataset.query;$('#musicSearchInput').value=q;renderMusicSearch(q);}));
+const sourcesLink=$('#sourcesLink');
+if(sourcesLink)sourcesLink.addEventListener('click',event=>{const note=$('#sources-note');if(note){event.preventDefault();note.scrollIntoView({behavior:'smooth',block:'nearest'});}});
 renderMusicSearch('');
 renderTiles();
 loadRepertoire();
-loadData();
 loadConservatori();
