@@ -200,7 +200,7 @@ async function getButtondown(env) {
   let active = 0, new7 = 0, pages = 0;
   const since = Date.now() - 7 * 86400000;
   while (url && pages++ < 100) {
-    const parsed = new URL(url);
+    const parsed = new URL(url, "https://api.buttondown.com");
     if (parsed.protocol !== "https:" || parsed.hostname !== "api.buttondown.com") throw new Error("Unexpected Buttondown pagination URL");
     const page = await fetchJson(parsed.toString(), headers);
     for (const s of (page.results || [])) {
@@ -219,7 +219,7 @@ async function getButtondown(env) {
   let draftCount = 0, emailPages = 0;
   const drafts = [];
   while (emailUrl && emailPages++ < 20) {
-    const parsed = new URL(emailUrl);
+    const parsed = new URL(emailUrl, "https://api.buttondown.com");
     if (parsed.protocol !== "https:" || parsed.hostname !== "api.buttondown.com") throw new Error("Unexpected Buttondown pagination URL");
     const page = await fetchJson(parsed.toString(), headers);
     draftCount = Number(page.count ?? draftCount + (page.results || []).length);
