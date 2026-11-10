@@ -1,6 +1,11 @@
 name: Weekly source coverage
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "audit_source_coverage.py"
+      - ".github/workflows/weekly-source-coverage.yml"
   workflow_run:
     workflows: ["Daily scrape and publish"]
     types: [completed]
