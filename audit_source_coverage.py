@@ -185,6 +185,7 @@ def render_report(state: dict) -> str:
     restricted = sum(item.get("status") == "restricted" for item in results)
     changed = sum(bool(item.get("content_changed")) for item in results)
     anomalies = [item for item in results if item.get("anomalies")]
+    baseline_available = bool(state.get("previous_cycle_complete"))
     lines = [
         "# Weekly source coverage audit",
         "",
@@ -194,7 +195,7 @@ def render_report(state: dict) -> str:
         f"- Status: **{state.get('scan_status')}**",
         f"- Coverage: **{checked}/{total}** checked; {remaining} remaining",
         f"- Failed/restricted/extraction errors: {failed} (restricted: {restricted})",
-        f"- Changed normalized text hashes: {changed}",
+        (f"- Changed normalized text hashes: {changed}" if baseline_available else "- Change comparison: first baseline; no previous complete weekly scan exists yet"),
         f"- Sources with anomalies: {len(anomalies)}",
         f"- Inventory SHA-256: {state.get('inventory_sha256')} (inventory identity only)",
         "",
@@ -205,7 +206,10 @@ def render_report(state: dict) -> str:
     ]
     notable = [item for item in results if item.get("status") != "ok" or item.get("anomalies") or item.get("content_changed")]
     if not notable:
-        lines.append("No failures or content-change anomalies in the sources checked so far.")
+        if baseline_available:
+            lines.append("No failures or content-change anomalies in the sources checked so far.")
+        else:
+            lines.append("No fetch failures detected. This is the initial baseline; content changes cannot be compared until a later complete weekly scan.")
     else:
         for item in notable:
             lines.append(f"### {item.get('name')} ({item.get('source_id')})")
@@ -240,7 +244,8 @@ def main() -> None:
     cycle = week_key()
     state = read_json(CHECKPOINT, {})
     if state.get("cycle") != cycle or state.get("inventory_sha256") != digest:
-        prior = state.get("results", {})
+        prior_complete = state.get("scan_status") == "completed" and state.get("inventory_sha256") == digest
+        prior = state.get("results", {}) if prior_complete else {}
         state = {
             "schema_version": 1,
             "cycle": cycle,
@@ -250,9 +255,11 @@ def main() -> None:
             "completed_source_ids": [],
             "results": {},
             "previous_cycle_results": prior,
+            "previous_cycle_complete": prior_complete,
             "scan_status": "in_progress",
         }
 
+    state.setdefault("previous_cycle_complete", False)
     completed = set(state.get("completed_source_ids", []))
     pending = [item for item in inventory if item["source_id"] not in completed]
     batch = pending[:args.batch_size]
