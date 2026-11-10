@@ -87,14 +87,30 @@ def compare(html_bytes, url):
   "dom_link_count":len(links),"relevant_links":relevant[:40],
   "comparison_note":"Coverage proxies only, not precision/recall ground truth; manually review actual notice facts."}
 
-def discovery(url, html_bytes):
+def robots_allows(url, robots_text):
+ path=urllib.parse.urlsplit(url).path or "/"
+ active=False; rules=[]
+ for raw in robots_text.splitlines():
+  line=raw.split("#",1)[0].strip()
+  if not line or ":" not in line: continue
+  key,value=[x.strip() for x in line.split(":",1)]
+  key=key.lower(); value=value.strip()
+  if key=="user-agent":
+   active=value=="*" or value.lower()=="italiaauditionsresearchbot"
+  elif active and key in ("allow","disallow") and value:
+   rules.append((key,value))
+ matches=[(len(rule),kind) for kind,rule in rules if path.startswith(rule)]
+ if not matches: return True
+ longest=max(length for length,_ in matches)
+ return any(kind=="allow" for length,kind in matches if length==longest)
+
+def discovery(url, html_bytes, robots):
  parts=urllib.parse.urlsplit(url); origin=f"{parts.scheme}://{parts.netloc}"
  root=lxml_html.fromstring(html_bytes,base_url=url)
  feeds=[]
  for node in root.xpath("//link[@href]"):
   rel=" ".join(node.get("rel","").lower().split()); typ=(node.get("type") or "").lower()
   if "alternate" in rel and ("rss" in typ or "atom" in typ): feeds.append(urllib.parse.urljoin(url,node.get("href")))
- time.sleep(DELAY); robots=request_bytes(origin+"/robots.txt")
  candidates=[]
  if robots["status"]=="ok":
   txt=robots["body"].decode("utf-8","replace")
@@ -128,11 +144,23 @@ def main():
  for sid in sorted(PILOT_IDS):
   src=source_map.get(sid)
   if not src: report["items"].append({"source_id":sid,"status":"missing_policy"}); continue
-  fetched=request_bytes(src["url"])
+  parts=urllib.parse.urlsplit(src["url"]); origin=f"{parts.scheme}://{parts.netloc}"
+  robots=request_bytes(origin+"/robots.txt")
+  robots_text=robots["body"].decode("utf-8","replace") if robots["status"]=="ok" else ""
+  blocked=(robots["status"] in ("restricted","error") or
+   (robots["http_status"] not in (None,200,404) and robots["http_status"]>=400) or
+   (robots["status"]=="ok" and not robots_allows(src["url"],robots_text)))
   item={"source_id":sid,"source_name":src["source_name"],"url":src["url"],
-   "fetch_status":fetched["status"],"http_status":fetched["http_status"],
+   "robots_status":robots["status"],"robots_http_status":robots["http_status"]}
+  if blocked:
+   item["fetch_status"]="robots_disallowed_or_unavailable"
+   item["strategy_recommendation"]="skip_page_fetch_and_review_robots_policy"
+   report["items"].append(item); time.sleep(DELAY); continue
+  time.sleep(DELAY)
+  fetched=request_bytes(src["url"])
+  item.update({"fetch_status":fetched["status"],"http_status":fetched["http_status"],
    "final_url":fetched["final_url"],"content_type":fetched["content_type"],
-   "truncated":fetched["truncated"],"error":fetched.get("error")}
+   "truncated":fetched["truncated"],"error":fetched.get("error")})
   if fetched["status"]!="ok" or not fetched["body"]:
    item["strategy_recommendation"]="retain_current_and_review_access"
    report["items"].append(item); time.sleep(DELAY); continue
@@ -140,7 +168,7 @@ def main():
   item["raw_snapshot"]={"artifact_path":str(sample.relative_to(ROOT)),"bytes":len(body),
    "sha256":hashlib.sha256(body).hexdigest(),"captured_at":now_iso()}
   try:
-   item["discovery"]=discovery(src["url"],body)
+   item["discovery"]=discovery(src["url"],body,robots)
    item["parsers"]=compare(body,src["url"])
    item["strategy_recommendation"]="manual_review_required"
   except Exception as exc:
