@@ -278,7 +278,7 @@ function renderMusicSearch(rawQuery){
     const plain=(item.text||'').replace(/\s+/g,' ').trim();
     const preview=plain.slice(0,110);
     const hasMore=(item.text||'').trim().length>110;
-    const readLink=googleReadUrl(item);
+    const readLink=plain?googleReadUrl(item):'';
     const summary=summaryOf(item);
     const tags=[item.kind,item.voice].filter(value=>value&&value!=='待分类');
     return `<article class="music-result">
@@ -286,10 +286,10 @@ function renderMusicSearch(rawQuery){
    <h3>${esc(item.title)}</h3>
    <p class="music-byline">${esc(bylineOf(item))}</p>
    <div class="music-text"><div class="music-text-label">作品原文 · ${esc(languageLabel(item.language))}</div><p class="lyrics lyrics-preview">${plain?esc(preview)+(hasMore?'…':''):'原文暂未收录，先查看作品信息与来源说明。'}</p>${hasMore?`<div class="lyrics-full" hidden><p class="lyrics">${esc(item.text).replace(/\n/g,'<br>')}</p></div><button type="button" class="lyrics-toggle" data-open="0" >展开完整文本 ↓</button>`:''}</div>
-   <div class="music-reading"><div><span class="music-text-label">原文发音</span><p>打开 Google 翻译后，点击扬声器即可收听原文发音。</p></div>${readLink?'<a class="reading-link" href="'+esc(readLink)+'" target="_blank" rel="noopener noreferrer" >收听原文发音 ↗</a>':'<span class="score-unavailable">文本较长，无法直接生成朗读</span>'}</div>
+   <div class="music-reading"><div><span class="music-text-label">原文发音</span><p>打开 Google 翻译后，点击扬声器即可收听原文发音。</p></div>${readLink?'<a class="reading-link" href="'+esc(readLink)+'" target="_blank" rel="noopener noreferrer" >收听原文发音 ↗</a>':'<span class="score-unavailable">'+(plain?'文本较长，无法直接生成朗读':'原文未收录，暂不提供朗读')+'</span>'}</div>
    ${summary?`<p class="music-meaning"><strong>大意：</strong>${esc(summary)}</p>`:''}
    <div class="music-score"><div><span class="music-text-label">乐谱</span><p>${item.downloadUrl?'此版本已核对，可下载。':'本站暂未提供乐谱文件。可前往 IMSLP 查看相关版本，并留意作品及版本的版权信息。'}</p></div>${item.downloadUrl?'<a class="score-download" href="'+esc(item.downloadUrl)+'" download>下载乐谱 PDF ↓</a>':item.scoreUrl?'<a class="score-imslp" href="'+esc(item.scoreUrl)+'" target="_blank" rel="noopener noreferrer">IMSLP 查看乐谱 ↗</a>':'<span class="score-unavailable" >暂未收录乐谱链接</span>'}</div>
-   <div class="music-source"><span>${esc(sourceNoteOf(item))}</span></div>
+   <div class="music-source"><span>${esc(sourceNoteOf(item))}</span>${item.attributionNote?`<p class="music-match-line">${esc(item.attributionNote)}</p>`:''}</div>
  </article>`;
   }).join('');
   const extraBlock=extra.length?`<details class="music-extra"><summary>歌词中也有匹配：${extra.length} 首（展开查看对应句子）</summary><div class="music-extra-body">${extra.slice(0,12).map(entry=>{const item=entry.item;const line=entry.text?entry.text.line:'';return `<div class="music-extra-row"><strong>${esc(item.title)}</strong><span class="music-byline">${esc(bylineOf(item))}</span><p class="music-match-line">${esc(line)}</p><button type="button" class="search-chip" data-suggest="${esc(item.title)}" >查看完整文本</button></div>`;}).join('')}${extra.length>12?`<p class="music-match-line">另有 ${extra.length-12} 首未显示。可增加关键词缩小范围。</p>`:''}</div></details>`:'';
