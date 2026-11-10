@@ -28,10 +28,7 @@ let consQuery = '';
 let consDateOnly = false;
 let installPrompt = null;
 
-const opportunities = [
-  {title:'78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027',category:'歌剧角色招募',place:'科莫 · 多地预选',deadline:'2026-11-25T18:00:00+01:00',summary:'为 2027/28 乐季招募歌剧演员，并设有青年组别。招募剧目包括《拉美莫尔的露琪亚》等；报名费为 70 欧元。',url:'https://aslico.org/edizione-in-corso/',source:'AsLiCo'},
-  {title:'Concorso Internazionale di Canto lirico Francesco Morlacchi 2026',category:'国际声乐比赛',place:'佩鲁贾',deadline:'2026-11-30T23:59:00+01:00',summary:'比赛将于 12 月 14 日至 15 日举行，面向 18–35 岁歌手。报名费为 80 欧元；申请材料包括曲目单、个人简历、身份证件及一段演唱视频。',url:'https://www.concorsomorlacchi.it/',source:'Morlacchi 声乐比赛'}
-];
+let opportunities = [];
 
 function esc(text=''){return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 /* 抓下来的记录里，work 位置偶尔存的是目录路径、poet 位置存的是译者署名，都不是我们能展示的东西。 */
@@ -324,9 +321,19 @@ function backToTiles(){
 }
 
 /* ---------- open calls ---------- */
+function publishedOpportunity(record){
+  if(record.publication_status!=='published'||record.review_status!=='verified'||record.publisher_status!=='official')return null;
+  const deadline=record.application_deadline_at;
+  if(!deadline||!Number.isFinite(Date.parse(deadline))||Date.parse(deadline)<Date.now())return null;
+  const categories={opera_role:'歌剧角色招募',choir:'合唱团招募',vocal_competition:'国际声乐比赛',young_artist:'青年艺术家项目',conservatory_admission:'音乐学院招生',other_vocal:'声乐机会'};
+  const voices=(record.voice_types||[]).map(v=>({soprano:'女高音',mezzo_soprano:'女中音',contralto:'女低音',countertenor:'假声男高音',tenor:'男高音',baritone:'男中音',bass:'男低音',all_voices:'不限声部',unspecified:'声部未注明'}[v]||v));
+  const details=[record.eligibility_summary,voices.length?`声部：${voices.join('、')}`: '',record.fee_eur!=null?(record.fee_eur===0?'报名费：免费':`报名费：€${record.fee_eur}`):'',record.audition_start_at?`试唱/比赛：${formatDate(record.audition_start_at)}${record.audition_end_at&&record.audition_end_at.slice(0,10)!==record.audition_start_at.slice(0,10)?' 至 '+formatDate(record.audition_end_at):''}`: ''].filter(Boolean);
+  return {title:record.title,category:categories[record.opportunity_type]||'声乐机会',place:record.location||'地点以公告为准',deadline,summary:details.join('；')||'详情请以主办方公告为准。',url:record.announcement_url,applicationUrl:record.application_url,source:record.source_name};
+}
 function renderCalls(){
   const now=Date.now();
-  const derived=conservatoriData.filter(c=>c.manual_status==='open').map(c=>{
+  const managedSchoolSources=new Set(opportunities.filter(o=>['young_artist','conservatory_admission'].includes(o.opportunity_type)).map(o=>o.source_url));
+  const derived=conservatoriData.filter(c=>c.manual_status==='open'&&!managedSchoolSources.has(c.manual_source||c.url)).map(c=>{
     const iso=isoFromText((c.deadline_lines||[]).join(' '));
     if(!iso)return null;
     return {
@@ -339,12 +346,13 @@ function renderCalls(){
       source:'学院官网'
     };
   }).filter(Boolean);
-  const merged=[...derived,...opportunities].sort((a,b)=>new Date(a.deadline)-new Date(b.deadline));
+  const verified=opportunities.map(publishedOpportunity).filter(Boolean);
+  const merged=[...derived,...verified].sort((a,b)=>new Date(a.deadline)-new Date(b.deadline));
   const current=merged.filter(o=>new Date(o.deadline).getTime()>=now);
   const pill=$('#opportunityCount');
   if(pill)pill.textContent=`${current.length} 项开放报名`;
   const box=$('#opportunities');
-  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">报名截止：${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a></article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
+  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">报名截止：${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a>${o.applicationUrl?`<a class="card-link" href="${esc(o.applicationUrl)}" target="_blank" rel="noopener">在线申请 <span>↗</span></a>`:''}</article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
   renderTiles();
 }
 
@@ -519,14 +527,20 @@ function renderTiles(){
 /* ---------- loading ---------- */
 async function loadConservatori(){
   try{
-    const [res,manual,zh]=await Promise.all([
+    const [res,manual,zh,opportunityRes]=await Promise.all([
       fetch(new URL('data/conservatori.json',sourceRoot),{cache:'no-store'}),
       fetch(new URL('data/conservatori_manual.json',sourceRoot),{cache:'no-store'}).catch(()=>null),
-      fetch(new URL('data/conservatori_zh.json',sourceRoot),{cache:'no-store'}).catch(()=>null)
+      fetch(new URL('data/conservatori_zh.json',sourceRoot),{cache:'no-store'}).catch(()=>null),
+      fetch(new URL('data/opportunities.json',sourceRoot),{cache:'no-store'}).catch(()=>null)
     ]);
     if(!res.ok)throw new Error(`HTTP ${res.status}`);
     const data=await res.json();
     conservatoriData=data.items||[];
+    opportunities=[];
+    if(opportunityRes&&opportunityRes.ok){
+      const opportunityData=await opportunityRes.json();
+      opportunities=opportunityData.items||[];
+    }
     if(manual&&manual.ok){
       const m=await manual.json();
       manualNotes={};
@@ -553,7 +567,7 @@ async function loadConservatori(){
     }
     const stamp=data.checked_at||(conservatoriData[0]||{}).checked_at;
     $('#updatedAt').textContent=stamp?`最近检查：${new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(stamp))}`:'数据已载入';
-  }catch(error){conservatoriData=[];$('#updatedAt').textContent='暂时无法载入数据，请重新载入。';}
+  }catch(error){conservatoriData=[];opportunities=[];$('#updatedAt').textContent='暂时无法载入数据，请重新载入。';}
   renderConservatori();
   renderCalls();
 }
