@@ -102,6 +102,21 @@ class OpportunityDataTests(unittest.TestCase):
         self.assertIn("record.publisher_status!=='official'", APP)
         self.assertIn("Date.parse(deadline)<Date.now()", APP)
 
+    def test_published_records_have_an_application_or_official_pdf_link(self):
+        for item in DATA.get("items", []):
+            if item.get("publication_status") == "published":
+                with self.subTest(opportunity=item.get("id")):
+                    self.assertTrue(item.get("application_url") or item.get("official_pdf_url"))
+
+    def test_application_and_pdf_links_are_https(self):
+        for item in DATA.get("items", []):
+            for field in ("application_url", "official_pdf_url"):
+                value = item.get(field)
+                if value:
+                    with self.subTest(opportunity=item.get("id"), field=field):
+                        self.assertTrue(value.startswith("https://"))
+
+
 
 if __name__ == "__main__":
     unittest.main()
