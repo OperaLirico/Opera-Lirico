@@ -30,7 +30,7 @@ Limitations: the current main collector still uses a fixed Scrapling source list
 
 ## P2 — Per-source multi-engine strategy
 
-**Status: baseline inventory added; not yet accepted.**
+**Status: baseline inventory added; first five-source pilot implemented, results pending.**
 
 The new source policy registry records the current Scrapling path for every registered URL and explicitly marks alternatives as unassessed. This prevents an unrecorded default from being mistaken for a tested per-source strategy.
 
@@ -57,14 +57,14 @@ The first complete scan creates the baseline; trend-based anomaly detection beco
 
 ## P4 — Main-text extraction quality
 
-**Status: deferred pending raw HTML snapshots.**
+**Status: first offline snapshot pilot implemented; results pending.**
 
 Acceptance:
 - Compare the existing extraction with Trafilatura on the same offline HTML snapshots.
 - Test retention of title, dates, links, tables, role/voice type, eligibility, fees and application deadlines.
 - Keep Trafilatura only if it improves main-text completeness without losing structured details.
 
-The current repository stores extracted text snippets and selected PDF files, but does not retain representative raw HTML snapshots. An honest offline comparison cannot yet be performed. Trafilatura is therefore not added to production dependencies.
+A separate evaluation workflow captures five representative official pages as raw HTML artifacts and compares current Scrapling text extraction, lxml full text and Trafilatura on identical bytes. Trafilatura is installed only in the evaluation job and is not added to production requirements. Acceptance remains pending manual review of actual notice/date/role/link/table retention.
 
 ## P5 — Evidence integrity and isolated PDF automation
 
