@@ -156,13 +156,18 @@ def feed_summary(data):
 def normalize(text):
     return re.sub(r"\s+"," ",text or "").strip()
 
-def metrics(text,relevant_labels):
+def metrics(text,relevant_anchors):
     normalized=normalize(text)
-    retained={label for label in relevant_labels if len(label)>=3 and label.casefold() in normalized.casefold()}
+    labels=sorted({x["text"] for x in relevant_anchors if x.get("text")})
+    targets=sorted({x["url"] for x in relevant_anchors if x.get("url")})
+    retained_labels={label for label in labels if len(label)>=3 and label.casefold() in normalized.casefold()}
+    retained_targets={url for url in targets if url.casefold() in normalized.casefold()}
     return {"characters":len(normalized),
         "signals":{key:bool(pattern.search(normalized)) for key,pattern in SIGNALS.items()},
-        "relevant_dom_link_labels_available":len(relevant_labels),
-        "relevant_dom_link_labels_retained_in_text":len(retained)}
+        "relevant_dom_link_labels_available":len(labels),
+        "relevant_dom_link_labels_retained_in_text":len(retained_labels),
+        "relevant_link_targets_available":len(targets),
+        "relevant_link_targets_retained_in_text":len(retained_targets)}
 
 def compare(html_bytes,url):
     started=time.perf_counter(); sel=Selector(content=html_bytes,url=url)
@@ -177,6 +182,7 @@ def compare(html_bytes,url):
     relevant_labels=sorted({x["text"] for x in anchors if x["text"] and RELEVANT_TEXT.search(x["text"])})
     relevant_text_anchors=[x for x in anchors if x["text"] and RELEVANT_TEXT.search(x["text"])]
     relevant_url_anchors=[x for x in anchors if RELEVANT_URL.search(x["url"])]
+    relevant_anchors=[x for x in anchors if (x["text"] and RELEVANT_TEXT.search(x["text"])) or RELEVANT_URL.search(x["url"])]
     title_nodes=dom.xpath("//title/text()"); title=normalize(title_nodes[0]) if title_nodes else ""
     try:
         import trafilatura
@@ -191,6 +197,10 @@ def compare(html_bytes,url):
     except Exception as exc:
         traf_plain=traf_md=""; plain_seconds=md_seconds=None; traf_status=f"error:{type(exc).__name__}"
     markdown_links=re.findall(r"\[([^\]]+)\]\((https?://[^)]+)\)",traf_md)
+    markdown_relevant_links=[(label,target) for label,target in markdown_links
+        if RELEVANT_TEXT.search(label) or RELEVANT_URL.search(target)]
+    relevant_targets={x["url"] for x in relevant_anchors}
+    markdown_retained_targets={target for _,target in markdown_relevant_links if target in relevant_targets}
     return {
         "title":title,
         "dom_structure":{"anchor_count":len(anchors),"relevant_text_anchor_count":len(relevant_text_anchors),
@@ -199,11 +209,11 @@ def compare(html_bytes,url):
             "relevant_url_examples":relevant_url_anchors[:30],
             "list_item_count":len(dom.xpath("//li")),"heading_count":len(dom.xpath("//h1|//h2|//h3")),
             "table_count":len(dom.xpath("//table"))},
-        "scrapling":{"runtime_seconds":round(scrap_seconds,4),**metrics(scrap_text,relevant_labels)},
-        "lxml_full_text":{"runtime_seconds":round(lxml_seconds,4),**metrics(lxml_text,relevant_labels)},
+        "scrapling":{"runtime_seconds":round(scrap_seconds,4),**metrics(scrap_text,relevant_anchors)},
+        "lxml_full_text":{"runtime_seconds":round(lxml_seconds,4),**metrics(lxml_text,relevant_anchors)},
         "trafilatura_plain":{"status":traf_status,
             "runtime_seconds":round(plain_seconds,4) if plain_seconds is not None else None,
-            **metrics(traf_plain,relevant_labels)},
+            **metrics(traf_plain,relevant_anchors)},
         "trafilatura_markdown":{"runtime_seconds":round(md_seconds,4) if md_seconds is not None else None,
             "characters":len(normalize(traf_md)),"markdown_link_count":len(markdown_links),
             "markdown_relevant_link_count":sum(bool(RELEVANT_TEXT.search(label) or RELEVANT_URL.search(link)) for label,link in markdown_links)},
@@ -354,9 +364,9 @@ def main():
             dom=p["dom_structure"]
             lines.append(f"- DOM: {dom['anchor_count']} links; relevant text labels={dom['relevant_text_anchor_count']}; relevant URLs={dom['relevant_url_anchor_count']}; list items={dom['list_item_count']}; headings={dom['heading_count']}; tables={dom['table_count']}")
             for name in ("scrapling","lxml_full_text","trafilatura_plain"):
-                m=p[name]; lines.append(f"- {name}: {m['characters']} chars; signals={sum(m['signals'].values())}/6; relevant labels retained={m['relevant_dom_link_labels_retained_in_text']}/{m['relevant_dom_link_labels_available']}; runtime={m['runtime_seconds']}s")
+                m=p[name]; lines.append(f"- {name}: {m['characters']} chars; signals={sum(m['signals'].values())}/6; relevant labels retained={m['relevant_dom_link_labels_retained_in_text']}/{m['relevant_dom_link_labels_available']}; href targets in plain text={m['relevant_link_targets_retained_in_text']}/{m['relevant_link_targets_available']}; runtime={m['runtime_seconds']}s")
             md=p["trafilatura_markdown"]
-            lines.append(f"- trafilatura_markdown: {md['characters']} chars; links={md['markdown_link_count']}; relevant links={md['markdown_relevant_link_count']}; runtime={md['runtime_seconds']}s")
+            lines.append(f"- trafilatura_markdown: {md['characters']} chars; links={md['markdown_link_count']}; relevant links={md['markdown_relevant_link_count']}; exact relevant hrefs retained={md['relevant_dom_link_targets_retained']}/{md['relevant_dom_link_targets_available']}; runtime={md['runtime_seconds']}s")
         lines.append(f"- Recommendation: {item.get('strategy_recommendation')}")
         if item.get("analysis_error"): lines.append(f"- Analysis error: {item['analysis_error']}")
         lines.append("")
