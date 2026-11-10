@@ -1,0 +1,65 @@
+name: Deploy private operations dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ops-dashboard/**"
+      - ".github/workflows/deploy-ops-dashboard.yml"
+      - "docs/ops-dashboard-setup.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-lirico-ops-dashboard
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Wrangler
+        run: npm install --global wrangler@4
+      - name: Validate required secrets
+        env:
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_WORKERS_DEPLOY_TOKEN: ${{ secrets.CF_WORKERS_DEPLOY_TOKEN }}
+          CF_ANALYTICS_API_TOKEN: ${{ secrets.CF_ANALYTICS_API_TOKEN }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          OPS_DASHBOARD_PASSWORD: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
+        run: |
+          set -euo pipefail
+          for name in CF_ACCOUNT_ID CF_WORKERS_DEPLOY_TOKEN CF_ANALYTICS_API_TOKEN BUTTONDOWN_API_KEY OPS_DASHBOARD_PASSWORD; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Missing required GitHub Actions secret: $name"
+              exit 1
+            fi
+          done
+      - name: Upload runtime secrets to the protected Worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_WORKERS_DEPLOY_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_ANALYTICS_API_TOKEN: ${{ secrets.CF_ANALYTICS_API_TOKEN }}
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+          OPS_DASHBOARD_PASSWORD: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
+        run: |
+          set -euo pipefail
+          printf '%s' "$CF_ACCOUNT_ID" | wrangler secret put CF_ACCOUNT_ID --config ops-dashboard/wrangler.toml --account-id "$CF_ACCOUNT_ID"
+          printf '%s' "$CF_ANALYTICS_API_TOKEN" | wrangler secret put CF_ANALYTICS_API_TOKEN --config ops-dashboard/wrangler.toml --account-id "$CF_ACCOUNT_ID"
+          printf '%s' "$BUTTONDOWN_API_KEY" | wrangler secret put BUTTONDOWN_API_KEY --config ops-dashboard/wrangler.toml --account-id "$CF_ACCOUNT_ID"
+          printf '%s' "$OPS_DASHBOARD_PASSWORD" | wrangler secret put OPS_DASHBOARD_PASSWORD --config ops-dashboard/wrangler.toml --account-id "$CF_ACCOUNT_ID"
+      - name: Deploy dashboard
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_WORKERS_DEPLOY_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: wrangler deploy --config ops-dashboard/wrangler.toml --account-id "$CF_ACCOUNT_ID"
