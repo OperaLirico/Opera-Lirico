@@ -534,6 +534,7 @@ async function loadConservatori(){
       for(const item of conservatoriData){
         const note=manualNotes[item.number];
         if(note&&note.zh)item.zh=Object.assign({},note.zh);
+        if(note&&note.notes&&note.notes.length)item.zh=Object.assign({},item.zh||{},{notes:note.notes});
       }
     }
     if(zh&&zh.ok){
