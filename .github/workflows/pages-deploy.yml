@@ -5,6 +5,8 @@ on:
     paths:
       - "index.html"
       - "app.js"
+      - "site-config.js"
+      - "analytics.js"
       - "styles.css"
       - "extra.css"
       - "icon.svg"
