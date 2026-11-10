@@ -21,9 +21,9 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
 
     def test_coverage_has_own_code_trigger_and_waits_for_daily_run(self):
         workflow = (ROOT / ".github" / "workflows" / "weekly-source-coverage.yml").read_text(encoding="utf-8")
-        self.assertIn('workflows: ["Daily scrape and publish"]', workflow)
+        self.assertIn('workflows: ["Daily source refresh"]', workflow)
         self.assertIn('"audit_source_coverage.py"', workflow)
-        self.assertIn('group: auditions-data-and-pages', workflow)
+        self.assertIn('group: weekly-source-coverage', workflow)
 
 
 if __name__ == "__main__":

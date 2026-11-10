@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: auditions-data-and-pages
+  group: weekly-source-discovery
   cancel-in-progress: false
 
 jobs:
