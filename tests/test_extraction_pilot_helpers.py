@@ -3,7 +3,7 @@ from unittest.mock import patch
 
 import audit_extraction_pilot as pilot
 from audit_extraction_pilot import (
-    feed_summary, metrics, parse_sitemap, robots_allows, permitted_fetch,
+    feed_summary, metrics, parse_sitemap, robots_allows, permitted_fetch, fetch_robots,
 )
 
 
@@ -60,6 +60,32 @@ Allow: /private/open$
         ):
             result = permitted_fetch("https://example.org/page", "https://example.org/page", source_policy)
         self.assertEqual(result["status"], "robots_unavailable")
+        self.assertEqual(request.call_count, 1)
+
+    def test_robots_redirect_to_canonical_robots_file_is_followed(self):
+        redirect = {
+            "status": "redirect_requires_policy_check", "http_status": 301,
+            "redirect_url": "https://www.example.org/robots.txt", "body": b"",
+        }
+        final = {
+            "status": "ok", "http_status": 200,
+            "body": b"User-agent: *\\nDisallow: /private",
+            "final_url": "https://www.example.org/robots.txt",
+        }
+        with patch.object(pilot, "request_bytes", side_effect=[redirect, final]) as request:
+            result = fetch_robots("https://example.org")
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(result["robots_origin"], "https://www.example.org")
+        self.assertEqual(request.call_count, 2)
+
+    def test_robots_redirect_to_non_robots_path_requires_review(self):
+        redirect = {
+            "status": "redirect_requires_policy_check", "http_status": 302,
+            "redirect_url": "https://www.example.org/terms/", "body": b"",
+        }
+        with patch.object(pilot, "request_bytes", return_value=redirect) as request:
+            result = fetch_robots("https://example.org")
+        self.assertEqual(result["status"], "robots_redirect_requires_review")
         self.assertEqual(request.call_count, 1)
 
     def test_same_host_redirect_rechecks_destination_path_robots(self):
