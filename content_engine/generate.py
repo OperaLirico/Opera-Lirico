@@ -54,9 +54,10 @@ def eligible(item, category):
         return False
     if not item.get("id") or not item.get("title") or not item.get("source_url") or not item.get("source_name"):
         return False
-    if category == "大师班":
-        # A masterclass must still be upcoming; use its end date when no application deadline exists.
-        return date_is_current(item.get("application_deadline_at") or item.get("end_at") or item.get("start_at"))
+    if category == "声乐大师班":
+        # A masterclass needs a dated upcoming session; undated listings are not promoted.
+        date_value = item.get("application_deadline_at") or item.get("end_at") or item.get("start_at")
+        return bool(date_value) and date_is_current(date_value)
     return date_is_current(item.get("application_deadline_at"))
 
 def records():
