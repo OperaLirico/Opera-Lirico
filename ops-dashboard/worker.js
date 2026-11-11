@@ -216,7 +216,8 @@ async function getCloudflare(env) {
   if (!Array.isArray(rows)) throw new Error("Cloudflare returned no analytics dataset");
   const map = new Map();
   for (const row of rows) {
-    if (row.dimensions?.requestHost !== env.CF_WEB_ANALYTICS_HOST) continue;
+    // The siteTag filter above already scopes this query to this Web Analytics site.
+    // Do not discard rows based on requestHost: Cloudflare may normalize or omit that dimension.
     const date = row.dimensions?.date;
     if (!date) continue;
     const item = map.get(date) || { date, pageviews: 0, visits: 0 };
