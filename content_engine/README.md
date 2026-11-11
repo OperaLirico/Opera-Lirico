@@ -17,7 +17,7 @@ python -m compileall -q content_engine
 python content_engine/generate.py
 ```
 
-输出包含 `index.json`、每条内容的 Markdown 文案和 SVG 图片。SVG 可导入设计软件或转换为 PNG；当前模板使用象牙白、墨绿、暗红的编辑部视觉。
+输出包含 `index.json`、每条内容的 Markdown 文案、SVG 源文件和 1080×1440 PNG 图片；PNG 可直接用于小红书图文或抖音图集。当前模板使用象牙白、墨绿、暗红的编辑部视觉。
 
 ## 内容状态与核验
 
