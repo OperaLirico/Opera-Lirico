@@ -37,7 +37,7 @@ jobs:
         run: |
           set -euo pipefail
           wrangler kv namespace list --json > /tmp/kv-namespaces.json
-          KV_ID="$(jq -r '.[] | select(.title == \"opera-lirico-content-drafts\") | .id' /tmp/kv-namespaces.json | head -n1)"
+          KV_ID="$(jq -r '.[] | select(.title == "opera-lirico-content-drafts") | .id' /tmp/kv-namespaces.json | head -n1)"
           if [ -z "$KV_ID" ]; then
             wrangler kv namespace create opera-lirico-content-drafts --json > /tmp/kv-created.json
             KV_ID="$(jq -r '.id // .result.id // empty' /tmp/kv-created.json)"
