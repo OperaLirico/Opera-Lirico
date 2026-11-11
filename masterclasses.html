@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#12352e">
+<meta name="description" content="Italia Audizioni 大师班与专业进修信息，收录经官方来源核验的声乐大师班、歌剧工作坊与课程。">
+<link rel="stylesheet" href="styles.css?v=ux15">
+<title>大师班与专业进修｜Italia Audizioni</title>
+<style>
+.master-wrap{max-width:1120px;margin:0 auto;padding:38px 24px 70px}
+.master-back{display:inline-block;margin-bottom:28px;color:var(--brand-2)}
+.master-head{padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.master-head h1{font-size:clamp(30px,5vw,46px);margin-bottom:12px}
+.master-head p{max-width:66ch;color:var(--ink-soft);font-size:14px}
+.master-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
+.master-card{background:var(--paper-2);border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:11px}
+.master-tag{font-size:11px;letter-spacing:.12em;color:var(--gold)}
+.master-card h2{font-size:21px;line-height:1.35}
+.master-meta{font-size:13px;color:var(--ink-soft);line-height:1.8}
+.master-actions{display:flex;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px;margin-top:auto;font-size:13px}
+.master-empty{padding:28px;border:1px dashed var(--line);border-radius:12px;color:var(--ink-soft);text-align:center}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./"><span class="brand-mark">♫</span><span class="brand-text">Italia Audizioni<small>OPERA · AUDIZIONI · CONSERVATORI</small></span></a><nav class="nav"><a href="./">网站首页</a><a href="https://buttondown.com/wl19971007" target="_blank" rel="noopener">每周简报</a></nav></div></header>
+<main class="master-wrap">
+<a class="master-back" href="./">← 返回 Italia Audizioni</a>
+<div class="master-head"><div class="eyebrow">Masterclasses · Corsi</div><h1>大师班与专业进修</h1><p>汇集声乐大师班、歌剧工作坊与专业进修课程。这里只展示已由主办机构官方来源核验并正式发布的信息。报名之前，请务必打开官方公告确认最新安排。</p></div>
+<div id="masterList" class="master-list" aria-live="polite"><div class="master-empty">正在载入官方信息…</div></div>
+</main>
+<script>
+const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl=s=>{try{const u=new URL(String(s||""));return ["https:","http:"].includes(u.protocol)?u.href:"";}catch{return "";}};\nconst fmt=s=>{if(!s)return "以官方公告为准";const d=new Date(s);return Number.isNaN(d.getTime())?"以官方公告为准":new Intl.DateTimeFormat("zh-CN",{timeZone:"Europe/Rome",dateStyle:"medium"}).format(d)};
+async function init(){
+ const root=document.getElementById("masterList");
+ try{
+  const r=await fetch("data/masterclasses.json",{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);
+  const data=await r.json(),today=Date.now();
+  const items=(data.items||[]).filter(x=>x.publisher_status==="official"&&x.review_status==="verified"&&x.publication_status==="published"&&(!x.end_at||Date.parse(x.end_at)>=today));
+  if(!items.length){root.innerHTML='<div class="master-empty">目前还没有通过官方核验并正式发布的大师班。我们会先核验信息，再更新这里。</div>';return;}
+  root.innerHTML=items.map(x=>{
+   const facts=[x.teacher?"导师："+x.teacher:"",x.instrument_or_voice?"专业："+x.instrument_or_voice:"","时间："+fmt(x.start_at)+(x.end_at?" 至 "+fmt(x.end_at):""),"地点："+(x.location||"以官方公告为准"),"费用："+(x.fee_eur==null?"以官方公告为准":x.fee_eur===0?"免费":"€"+x.fee_eur),x.language?"授课语言："+x.language:"",x.description_zh||""].filter(Boolean);
+   const source=safeUrl(x.source_url),apply=safeUrl(x.application_url);\n   return '<article class="master-card"><div class="master-tag">MASTERCLASS · 官方核验</div><h2>'+esc(x.title)+'</h2><div class="master-meta">'+facts.map(esc).join("<br>")+'</div><div class="master-meta">信息来源：'+esc(x.source_name)+'<br>最近核验：'+esc(x.last_verified_at||x.checked_at||"未记录")+'</div><div class="master-actions">'+(source?'<a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">官方公告 ↗</a>':'')+(apply?'<a href="'+esc(apply)+'" target="_blank" rel="noopener noreferrer">报名 / 详情 ↗</a>':'')+'</div></article>'
+  }).join("");
+ }catch(e){root.innerHTML='<div class="master-empty">暂时无法载入大师班资料，请稍后重试。</div>';}
+}
+init();
+</script>
+</body></html>

@@ -9,6 +9,11 @@ on:
       - "app.js"
       - "data/conservatori_zh.json"
       - "data/conservatori_manual.json"
+      - "data/masterclasses.json"
+      - "data/masterclass.schema.json"
+      - "masterclasses.html"
+      - "content_engine/**"
+      - ".github/workflows/generate-social-drafts.yml"
       - ".github/workflows/check-site-copy.yml"
   pull_request:
     branches:
@@ -18,6 +23,11 @@ on:
       - "app.js"
       - "data/conservatori_zh.json"
       - "data/conservatori_manual.json"
+      - "data/masterclasses.json"
+      - "data/masterclass.schema.json"
+      - "masterclasses.html"
+      - "content_engine/**"
+      - ".github/workflows/generate-social-drafts.yml"
       - ".github/workflows/check-site-copy.yml"
   workflow_dispatch:
 
@@ -40,9 +50,32 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          for name in ("data/conservatori_zh.json", "data/conservatori_manual.json"):
+          for name in ("data/conservatori_zh.json", "data/conservatori_manual.json", "data/masterclasses.json", "data/masterclass.schema.json"):
               json.loads(Path(name).read_text(encoding="utf-8"))
               print(f"{name}: valid JSON")
+          PY
+      - name: Test social content generation
+        run: |
+          pip install CairoSVG
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+          python -m compileall -q content_engine
+          python content_engine/generate.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          out = Path("build/social-drafts")
+          index = json.loads((out / "index.json").read_text(encoding="utf-8"))
+          if not index["items"]:
+              raise SystemExit("Expected at least one verified opportunity draft.")
+          for item in index["items"]:
+              image = out / item["image"]
+              caption = out / item["markdown"]
+              if not image.is_file() or image.stat().st_size < 1000:
+                  raise SystemExit(f"Missing or empty PNG for {item['id']}")
+              if not caption.is_file() or caption.stat().st_size < 100:
+                  raise SystemExit(f"Missing or empty caption for {item['id']}")
+          print(f"Generated and verified {len(index['items'])} social draft(s).")
           PY
       - name: Check page structure and data wiring
         run: |
@@ -53,7 +86,7 @@ jobs:
           html = Path("index.html").read_text(encoding="utf-8")
           app = Path("app.js").read_text(encoding="utf-8")
 
-          # The page is built on four entry tiles, each opening one panel.
+          # The homepage keeps four interactive panels plus a standalone masterclass link.
           # Wording may change; the structure and the wiring must not.
           panels = ["open-calls", "conservatori", "music-library", "pdfs"]
           missing = [p for p in panels if f'id="{p}"' not in html]
@@ -64,8 +97,10 @@ jobs:
               raise SystemExit("Expected exactly four entry tiles on the homepage")
 
           tile_titles = re.findall(r'<span class="tile-title">([^<]+)</span>', html)
-          if len(tile_titles) != 4:
-              raise SystemExit(f"Expected four tile titles, found {len(tile_titles)}")
+          if len(tile_titles) != 5:
+              raise SystemExit(f"Expected five homepage tile titles including masterclasses, found {len(tile_titles)}")
+          if 'href="masterclasses.html"' not in html:
+              raise SystemExit("Masterclasses entry link is missing")
 
           for panel in panels:
               if f'data-open="{panel}"' not in html:

@@ -1,0 +1,32 @@
+name: Generate social content drafts
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 7 * * *"
+permissions:
+  contents: read
+concurrency:
+  group: social-content-drafts
+  cancel-in-progress: false
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image renderer and CJK fonts
+        run: |
+          pip install CairoSVG
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+      - name: Validate Python syntax
+        run: python -m compileall -q content_engine
+      - name: Generate drafts from verified published records
+        run: python content_engine/generate.py
+      - name: Upload drafts to the private operations dashboard
+        env:
+          OPS_DASHBOARD_PASSWORD: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
+          OPS_DASHBOARD_URL: https://opera-lirico-ops.wl19971007.workers.dev
+        run: python content_engine/upload_drafts.py
