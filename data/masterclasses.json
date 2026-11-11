@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T00:39:00+01:00",
+  "updated_at": "2026-11-12T00:44:00+01:00",
   "items": [
     {
       "id": "wj-gregory-kunde-milano-2026-11",
@@ -119,6 +119,30 @@
           "url": "https://www.cantoalato.it/masterclass-di-canto-con-leo-nucci-rigoletto-il-trovatore-la-traviata/",
           "excerpt": "11–14 dicembre 2026; concerto finale 15 dicembre; iscrizioni allievi effettivi entro il 30 novembre 2026; limite d'età 42 anni; costo €650 effettivi e €250 uditori.",
           "checked_at": "2026-11-12T00:39:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "regium-lepidi-verdi-marathon-busseto-2027-03",
+      "title": "Verdi Marathon 2027 — Masterclass e Opera Gala",
+      "teacher": "Mirko Matarazzo; Davide Cavalli",
+      "instrument_or_voice": "Canto lirico · tecnica vocale, repertorio italiano, dizione, stile e interpretazione",
+      "location": "Teatro G. Verdi, Busseto (Parma), Italia",
+      "fee_eur": 0,
+      "description_zh": "主办方已正式公布 2027 年 3 月在布塞托举行的七日声乐项目：六天大师班与工作坊，最后在 Teatro G. Verdi 举办歌剧 Gala。课程由 Mirko Matarazzo 与 Davide Cavalli 指导，重点包括意大利歌剧曲目、声乐技术、意大利语咬字、风格和舞台表现。官方明确说明：具体日期及报名方式尚未公布，申请尚未开放。费用未公布（页面不显示收费信息）。",
+      "source_name": "Regium Lepidi Opera",
+      "source_url": "https://www.regiumlepidi.com/en/academy/masterclasses",
+      "application_url": "https://www.regiumlepidi.com/en/academy/masterclasses",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:44:00+01:00",
+      "last_verified_at": "2026-11-12T00:44:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.regiumlepidi.com/en/academy/masterclasses",
+          "excerpt": "Verdi Marathon 2027 · Teatro G. Verdi · Busseto (PR) · March 2027. Six days of masterclasses and workshops with Mirko Matarazzo and Davide Cavalli, ending with an Opera Gala. Applications are not open yet.",
+          "checked_at": "2026-11-12T00:44:00+01:00"
         }
       ]
     }
