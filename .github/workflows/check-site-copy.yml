@@ -20,6 +20,8 @@ on:
       - "app.js"
       - "data/conservatori_zh.json"
       - "data/conservatori_manual.json"
+      - "data/masterclasses.json"
+      - "masterclasses.html"
       - ".github/workflows/check-site-copy.yml"
   workflow_dispatch:
 
