@@ -38,8 +38,8 @@ VOICE_RE = re.compile(
     re.I,
 )
 NOISE_RE = re.compile(r"privacy|cookie|facebook|instagram|linkedin|youtube|newsletter", re.I)
-NUMERIC_DATE_RE = re.compile(r"\\b(\\d{1,2})[./-](\\d{1,2})[./-](20\\d{2})\\b")
-WORD_DATE_RE = re.compile(r"\\b(\\d{1,2})\\s+([a-zà-ÿ]+)\\s+(20\\d{2})\\b", re.I)
+NUMERIC_DATE_RE = re.compile(r"\b(\d{1,2})[./-](\d{1,2})[./-](20\d{2})\b")
+WORD_DATE_RE = re.compile(r"\b(\d{1,2})\s+([a-zà-ÿ]+)\s+(20\d{2})\b", re.I)
 MONTHS = {
     "jan": 1, "january": 1, "gennaio": 1,
     "feb": 2, "february": 2, "febbraio": 2,
