@@ -1,6 +1,6 @@
 import unittest
 
-from discover_masterclasses import make_candidate, slug
+from discover_masterclasses import canonical_url, make_candidate, slug
 
 
 class MasterclassDiscoveryTests(unittest.TestCase):
@@ -45,6 +45,22 @@ class MasterclassDiscoveryTests(unittest.TestCase):
             "2026-11-12T10:00:00+01:00",
         )
         self.assertIsNone(candidate)
+
+    def test_rejects_generic_academy_page_with_navigation_keywords(self):
+        candidate = make_candidate(
+            self.source,
+            "https://example.org/",
+            "Academy Home",
+            "Masterclasses for opera singers and voice students. Applications for 2027.",
+            "2026-11-12T10:00:00+01:00",
+        )
+        self.assertIsNone(candidate)
+
+    def test_canonical_url_removes_fragment(self):
+        self.assertEqual(
+            canonical_url("https://example.org/masterclass#details"),
+            "https://example.org/masterclass",
+        )
 
     def test_slug_is_stable_and_safe(self):
         self.assertEqual(slug("Verdi Marathon 2027"), "verdi-marathon-2027")
