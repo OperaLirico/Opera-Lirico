@@ -2,17 +2,17 @@
 
 - Cycle: 2026-W46
 - Started: 2026-11-11T11:21:19+01:00
-- Last updated: 2026-11-11T11:22:09+01:00
+- Last updated: 2026-11-11T11:22:51+01:00
 - Status: **in_progress**
-- Coverage: **12/45** checked; 33 remaining
-- Failed/restricted/extraction errors: 3 (restricted: 0)
+- Coverage: **24/45** checked; 21 remaining
+- Failed/restricted/extraction errors: 4 (restricted: 0)
 - Change comparison: first baseline; no previous complete weekly scan exists yet
-- Sources with anomalies: 2
-- Registered sources: 11; candidate queue entries: 1
-- Source review classifications: auto_approved_official=4, auto_approved_third_party=2, irrelevant_candidate=6
-- Official + relevant: 4
+- Sources with anomalies: 3
+- Registered sources: 23; candidate queue entries: 1
+- Source review classifications: auto_approved_official=12, auto_approved_third_party=2, irrelevant_candidate=9, needs_review=1
+- Official + relevant: 12
 - Third-party + relevant: 1
-- Needs review / irrelevant / unclassified: 6
+- Needs review / irrelevant / unclassified: 10
 - Inventory SHA-256: 51e30a921773c00e9a2b8f6092d1dcb4ac549bd90a7a0b6f050eaec5bcdd3fec (inventory identity only)
 
 This scan checks page access and normalized text changes. A successful HTTP response is not proof of official identity, opportunity validity, or complete announcement capture. Text hashes are not publisher signatures.
@@ -35,6 +35,12 @@ Keyword/vocal signals are discovery clues only. Source identity and relevance ar
 
 ### Audizioni attori e attrici per la commedia brillante "Napule è" (source-117)
 - URL: https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/
+- Status: extraction_error / HTTP 202
+- Last success: not yet successful
+- Anomalies: empty_extraction
+
+### Concorsi 2026 / Primo Oboe - Orchestra della Toscana (source-120)
+- URL: https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/
 - Status: extraction_error / HTTP 202
 - Last success: not yet successful
 - Anomalies: empty_extraction
