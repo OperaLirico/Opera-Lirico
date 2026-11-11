@@ -79,9 +79,18 @@ NON_VOCAL_ROLE_RE = re.compile(
 
 
 def carry_review_metadata(fresh: dict, previous: dict) -> dict:
-    """Do not lose human-review labels when an existing source is refreshed."""
-    fresh["review_status"] = previous.get("review_status", "legacy_unreviewed")
-    fresh["publisher_status"] = previous.get("publisher_status", "unverified")
+    """Preserve source-review decisions and audit evidence across refreshes."""
+    for key in (
+        "review_status",
+        "publisher_status",
+        "auto_review_status",
+        "auto_review_reason",
+        "auto_review_checked_at",
+    ):
+        if key in previous:
+            fresh[key] = previous[key]
+    fresh.setdefault("review_status", "legacy_unreviewed")
+    fresh.setdefault("publisher_status", "unverified")
     return fresh
 
 
