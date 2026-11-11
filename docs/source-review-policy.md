@@ -9,7 +9,14 @@ Every new item starts with:
 - `screening_status: heuristic_passed`
 - `publisher_status: unverified`
 
-Passing keyword and vocal-relevance checks only means the candidate is worth a human look. It does not prove that the publisher is official, that the page is a durable source, or that an opportunity is open.
+Passing keyword and vocal-relevance checks only means the candidate is worth review. It does not prove that the publisher is official, that the page is a durable source, or that an opportunity is open.
+
+Automated audits may record a separate `auto_review_status` with evidence, timestamp, confidence and reason:
+- `auto_approved_official` requires direct first-party evidence of publisher identity, relevant vocal content, an accessible stable page and no material conflict.
+- `auto_approved_third_party` is allowed for a clearly identified, useful third-party listing with relevant vocal content. It remains a discovery source, not an official publisher.
+- `needs_review`, `irrelevant_candidate`, `duplicate_candidate`, `unavailable_temporary` and `retired_candidate` preserve uncertainty or exclusion recommendations without deleting records.
+
+For candidates, `review_status: pending_manual_review` continues to mean “not integrated into the production source list”. An `auto_review_status: auto_approved_third_party` may therefore coexist with it: the source is approved for discovery, but is not automatically activated for production scraping. The coverage audit should report the automated classification separately from the queue/integration state.
 
 The existing `data/sources_extra.json` entries were admitted by earlier keyword heuristics. They are retained for continuity and tagged `legacy_unreviewed`; do not treat that tag as verified approval.
 
