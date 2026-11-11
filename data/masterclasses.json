@@ -1,4 +1,126 @@
 {
-  "updated_at": null,
-  "items": []
+  "updated_at": "2026-11-12T00:39:00+01:00",
+  "items": [
+    {
+      "id": "wj-gregory-kunde-milano-2026-11",
+      "title": "Masterclass di alto perfezionamento — Gregory Kunde",
+      "teacher": "Gregory Kunde; accompagnamento pianistico: Wei Jiang",
+      "instrument_or_voice": "Canto lirico · tecnica vocale e interpretazione musicale",
+      "location": "WJ Opera Music Academy, Via Antonio Oroboni 64, Milano, Italia",
+      "start_at": "2026-11-16T00:00:00+01:00",
+      "end_at": "2026-11-17T23:59:00+01:00",
+      "fee_eur": 200,
+      "description_zh": "两天高阶声乐大师班，重点为声乐技术与音乐诠释。官方报名表列明：正式学员每节课€200（两节€400），旁听€50。开课时间临近，报名名额及安排请直接向主办方确认。",
+      "source_name": "WJ Opera Music Academy",
+      "source_url": "https://www.wj-operamusic.academy/",
+      "application_url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/09/masterclass_registration_form_Gregory-Kunde.pdf",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:39:00+01:00",
+      "last_verified_at": "2026-11-12T00:39:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.wj-operamusic.academy/",
+          "excerpt": "Iscrizioni Aperte; Docente: M° Gregory Kunde; Date: 16–17 Novembre 2026; focus: Tecnica vocale e interpretazione musicale.",
+          "checked_at": "2026-11-12T00:39:00+01:00"
+        },
+        {
+          "url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/09/masterclass_registration_form_Gregory-Kunde.pdf",
+          "excerpt": "Allievo effettivo: 200€ per 1 lezione / 400€ per 2 lezioni; uditore: 50€; M° Gregory Kunde, 16–17 novembre 2026.",
+          "checked_at": "2026-11-12T00:39:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "consvv-thomas-heyer-2026-11",
+      "title": "Voce – Risonanza – Respiro: Masterclass di Canto",
+      "teacher": "Prof. Thomas Heyer",
+      "instrument_or_voice": "Canto lirico · tecnica vocale, risonanza, proiezione e respirazione",
+      "location": "Conservatorio di Musica Fausto Torrefranca, Vibo Valentia, Italia",
+      "start_at": "2026-11-30T00:00:00+01:00",
+      "end_at": "2026-12-01T23:59:00+01:00",
+      "application_deadline_at": "2026-11-25T23:59:00+01:00",
+      "fee_eur": 80,
+      "description_zh": "两天声乐大师班，围绕发声机能、共鸣与投射、呼吸和支撑，并结合个人歌剧、艺术歌曲及清唱剧曲目。外部正式学员€80、内部正式学员€40；外部旁听€30、内部旁听€20。申请需发送报名表及 PagoPA 付款凭证。",
+      "source_name": "Conservatorio di Musica Fausto Torrefranca",
+      "source_url": "https://consvv.it/evento/masterclass-di-canto-prof-thomas-heyer",
+      "application_url": "https://consvv.it/wp-content/uploads/modulo_masterclass_canto.pdf",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:39:00+01:00",
+      "last_verified_at": "2026-11-12T00:39:00+01:00",
+      "evidence": [
+        {
+          "url": "https://consvv.it/evento/masterclass-di-canto-prof-thomas-heyer",
+          "excerpt": "Masterclass di Canto Prof. Thomas Heyer; 30 Novembre e 1° Dicembre 2026; scadenza invio domanda 25 novembre 2026; quote: uditore esterno €30, effettivo esterno €80.",
+          "checked_at": "2026-11-12T00:39:00+01:00"
+        },
+        {
+          "url": "https://consvv.it/wp-content/uploads/modulo_masterclass_canto.pdf",
+          "excerpt": "Domanda di iscrizione Masterclass di Canto – Prof. Thomas Heyer; modalità uditore/effettivo, interno/esterno.",
+          "checked_at": "2026-11-12T00:39:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "wj-leone-magiera-milano-2026-12",
+      "title": "Masterclass per Cantanti lirici e Maestri collaboratori",
+      "teacher": "Leone Magiera; accompagnamento pianistico: Wei Jiang",
+      "instrument_or_voice": "Canto lirico e maestro collaboratore",
+      "location": "WJ Opera Music Academy, Via Antonio Oroboni 64, Milano, Italia",
+      "start_at": "2026-12-04T00:00:00+01:00",
+      "end_at": "2026-12-06T23:59:00+01:00",
+      "fee_eur": 350,
+      "description_zh": "三天课程面向歌剧演唱者及艺术指导/合作钢琴家。正式学员€350/三天，旁听€50（年度旁听会员免费）。报名表由主办机构官网提供；具体名额与报名状态建议直接联系主办方确认。",
+      "source_name": "WJ Opera Music Academy",
+      "source_url": "https://www.wj-operamusic.academy/",
+      "application_url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/10/Modulo-Masterclass-Leone-Magiera.pdf",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:39:00+01:00",
+      "last_verified_at": "2026-11-12T00:39:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.wj-operamusic.academy/",
+          "excerpt": "Iscrizioni Aperte; Docente: M° Leone Magiera; Date: 4–6 Dicembre 2026; per Cantanti lirici e Maestri collaboratori.",
+          "checked_at": "2026-11-12T00:39:00+01:00"
+        },
+        {
+          "url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/10/Modulo-Masterclass-Leone-Magiera.pdf",
+          "excerpt": "Allievo effettivo: 350€/3 giorni; uditore: 50€; M° Leone Magiera; 4–6 dicembre 2026.",
+          "checked_at": "2026-11-12T00:39:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "cantoalato-leo-nucci-milano-2026-12",
+      "title": "Interpretazione dei ruoli verdiani — La trilogia popolare",
+      "teacher": "Leo Nucci; pianista e concertatore: Gioele Muglialdo",
+      "instrument_or_voice": "Canto lirico · repertorio verdiano: Rigoletto, Il trovatore, La traviata",
+      "location": "Cantoalato Academy; concerto finale presso Casa Verdi, Milano, Italia",
+      "start_at": "2026-12-11T00:00:00+01:00",
+      "end_at": "2026-12-15T23:59:00+01:00",
+      "application_deadline_at": "2026-11-30T23:59:00+01:00",
+      "fee_eur": 650,
+      "description_zh": "面向意大利及海外声乐学生和职业歌唱家，年龄上限42岁。正式学员需准备至少一部指定歌剧中的完整角色；费用€650（报名€300+课程€350），旁听€250。正式学员申请截止11月30日，旁听报名截止12月11日。课程期间有歌剧经纪人到场聆听并提供职业建议。",
+      "source_name": "Cantoalato Academy",
+      "source_url": "https://www.cantoalato.it/masterclass-di-canto-con-leo-nucci-rigoletto-il-trovatore-la-traviata/",
+      "application_url": "https://www.cantoalato.it/masterclass-di-canto-con-leo-nucci-rigoletto-il-trovatore-la-traviata/",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:39:00+01:00",
+      "last_verified_at": "2026-11-12T00:39:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.cantoalato.it/masterclass-di-canto-con-leo-nucci-rigoletto-il-trovatore-la-traviata/",
+          "excerpt": "11–14 dicembre 2026; concerto finale 15 dicembre; iscrizioni allievi effettivi entro il 30 novembre 2026; limite d'età 42 anni; costo €650 effettivi e €250 uditori.",
+          "checked_at": "2026-11-12T00:39:00+01:00"
+        }
+      ]
+    }
+  ]
 }
