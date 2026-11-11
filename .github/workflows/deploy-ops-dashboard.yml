@@ -42,9 +42,11 @@ jobs:
             echo "::error::Cloudflare denied KV namespace access (HTTP $HTTP_STATUS). Add Workers KV Storage: Edit permission to CF_WORKERS_DEPLOY_TOKEN, scoped to this account, then update the GitHub Actions secret."
             exit 1
           fi
+          jq -e '.success == true' /tmp/kv-namespaces.json >/dev/null
           KV_ID="$(jq -r '.result[] | select(.title == "opera-lirico-content-drafts") | .id' /tmp/kv-namespaces.json | head -n1)"
           if [ -z "$KV_ID" ]; then
             curl -fsS -X POST -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" --data '{"title":"opera-lirico-content-drafts"}' "$API" > /tmp/kv-created.json
+            jq -e '.success == true' /tmp/kv-created.json >/dev/null
             KV_ID="$(jq -r '.result.id // empty' /tmp/kv-created.json)"
           fi
           if [ -z "$KV_ID" ]; then
