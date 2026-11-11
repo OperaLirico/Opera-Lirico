@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Upload generated social drafts to the authenticated Cloudflare review queue."""
 from __future__ import annotations
-import base64, json, os, urllib.request, http.cookiejar
+import base64, json, os, urllib.request, urllib.error, http.cookiejar
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -13,10 +13,14 @@ def request(opener, path, payload=None):
     data = None if payload is None else json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = urllib.request.Request(
         BASE + path, data=data, method="GET" if payload is None else "POST",
-        headers={"Accept": "application/json", **({"Content-Type": "application/json"} if data else {})},
+        headers={"Accept": "application/json", "User-Agent": "OperaLiricoDraftUploader/1.0", **({"Content-Type": "application/json"} if data else {})},
     )
-    with opener.open(req, timeout=30) as response:
-        return json.loads(response.read().decode("utf-8"))
+    try:
+        with opener.open(req, timeout=30) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        detail = exc.read(2048).decode("utf-8", errors="replace")
+        raise RuntimeError(f"Dashboard request failed: HTTP {exc.code}; response: {detail[:500]}") from None
 
 def main():
     if not PASSWORD or len(PASSWORD) < 32:
@@ -45,10 +49,14 @@ def main():
         }
         req = urllib.request.Request(
             BASE + "/api/content/drafts", data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-            method="POST", headers={"Content-Type": "application/json", "Accept": "application/json"},
+            method="POST", headers={"Content-Type": "application/json", "Accept": "application/json", "User-Agent": "OperaLiricoDraftUploader/1.0"},
         )
-        with opener.open(req, timeout=45) as response:
-            result = json.loads(response.read().decode("utf-8"))
+        try:
+            with opener.open(req, timeout=45) as response:
+                result = json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            detail = exc.read(2048).decode("utf-8", errors="replace")
+            raise RuntimeError(f"Draft upload failed: HTTP {exc.code}; response: {detail[:500]}") from None
         if not result.get("ok"):
             raise RuntimeError(f"Upload failed for {item['id']}")
         uploaded += 1
