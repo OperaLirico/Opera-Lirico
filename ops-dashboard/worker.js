@@ -27,6 +27,10 @@ button.primary{background:var(--green);border-color:var(--green);color:white}
 .login{max-width:420px;margin:12vh auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
 input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;margin:10px 0 14px}
 .notice{font-size:12px;color:var(--muted);margin-top:14px}.status{font-size:12px;color:var(--muted);margin:12px 0}
+.socialQueue{display:grid;gap:16px}.socialCard{display:grid;grid-template-columns:minmax(180px,260px) minmax(0,1fr);gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}.socialCard:last-child{border:0}
+.socialImage{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#f5f0e5}.socialEditor{min-width:0}.socialEditor textarea{width:100%;min-height:210px;padding:12px;border:1px solid var(--line);border-radius:10px;font:14px/1.7 system-ui,sans-serif;resize:vertical;background:#fff}
+.socialActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.socialMeta{font-size:12px;color:var(--muted);margin:4px 0 10px}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:11px;color:var(--green)}
+@media(max-width:620px){.socialCard{grid-template-columns:1fr}.socialImage{max-width:320px}.socialEditor textarea{min-height:180px}}
 @media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top{align-items:flex-start}}
 @media(max-width:420px){.grid{grid-template-columns:1fr 1fr}.card{padding:14px}.value{font-size:29px}}
 </style></head><body>
@@ -50,7 +54,11 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 <div><div class="kicker">DRAFTS</div><div class="value" id="draftCount">—</div><div class="hint">Buttondown 中尚未发送的草稿</div></div>
 <div><div class="kicker">NEWSLETTER</div><div class="value" style="font-size:20px;margin-top:13px">Opera Lirico Weekly</div><div class="hint"><a href="https://buttondown.com/wl19971007" target="_blank" rel="noopener noreferrer">打开 Buttondown ↗</a></div></div>
 </div><div id="drafts" class="drafts"><div class="empty">正在读取草稿…</div></div></div></section>
-<p class="notice">安全说明：此后台只读取 Cloudflare 访问统计、Buttondown 订阅状态汇总和草稿标题；不会显示订阅者邮箱，不提供发送邮件操作。</p>
+<section class="section"><h2>社交媒体内容审核</h2><div class="panel">
+<p class="hint">自动生成的中文图片与文案会先进入这里。保存修改或审核通过都不会自动发布到社交平台。</p>
+<div id="contentQueue" class="socialQueue"><div class="empty">正在读取内容草稿…</div></div>
+</div></section>
+<p class="notice">安全说明：访问统计、订阅汇总和社交媒体草稿均受后台登录保护；此后台不提供自动发布或邮件发送操作。</p>
 </main>
 <script>
 const $=id=>document.getElementById(id);
@@ -81,6 +89,36 @@ function renderDrafts(items){
  const small=document.createElement("small");small.textContent=item.created||"";left.append(small);row.append(left);
  root.append(row);});
 }
+async function loadContentQueue(){
+ const root=$("contentQueue");root.textContent="正在读取内容草稿…";
+ try{
+  const r=await fetch("/api/content/drafts",{cache:"no-store"});
+  if(r.status===401){showLogin();return;}
+  if(!r.ok)throw new Error("内容草稿读取失败");
+  const d=await r.json();root.replaceChildren();
+  if(!d.items||!d.items.length){const p=document.createElement("div");p.className="empty";p.textContent="目前没有待审核内容。";root.append(p);return;}
+  d.items.forEach(item=>{
+   const card=document.createElement("article");card.className="socialCard";
+   const image=document.createElement("img");image.className="socialImage";image.alt=item.title||"社交媒体图片";image.src="data:image/png;base64,"+item.image_base64;
+   const editor=document.createElement("div");editor.className="socialEditor";
+   const heading=document.createElement("strong");heading.textContent=item.title||"未命名内容";editor.append(heading);
+   const meta=document.createElement("div");meta.className="socialMeta";meta.textContent=(item.category||"音乐机会")+" · "+(item.status==="approved"?"已审核，待手动发布":item.status==="needs_changes"?"需要修改":"待审核");editor.append(meta);
+   const link=document.createElement("a");link.href=item.source_url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="打开官方来源 ↗";editor.append(link);
+   const area=document.createElement("textarea");area.value=item.caption||"";area.setAttribute("aria-label","社交媒体文案");editor.append(area);
+   const actions=document.createElement("div");actions.className="socialActions";
+   const save=document.createElement("button");save.textContent="保存文案";save.addEventListener("click",()=>updateDraft(item.id,{caption:area.value,status:"pending_review"},save));
+   const approve=document.createElement("button");approve.className="primary";approve.textContent="审核通过";approve.addEventListener("click",()=>updateDraft(item.id,{caption:area.value,status:"approved"},approve));
+   const revise=document.createElement("button");revise.textContent="需要修改";revise.addEventListener("click",()=>updateDraft(item.id,{caption:area.value,status:"needs_changes"},revise));
+   actions.append(save,approve,revise);editor.append(actions);card.append(image,editor);root.append(card);
+  });
+ }catch(err){root.textContent=err.message;}
+}
+async function updateDraft(id,payload,button){
+ const old=button.textContent;button.disabled=true;button.textContent="保存中…";
+ try{const r=await fetch("/api/content/drafts/"+encodeURIComponent(id),{method:"PATCH",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+ if(!r.ok)throw new Error("保存失败，请刷新后重试");await loadContentQueue();
+ }catch(err){button.textContent=err.message;button.disabled=false;return;}button.textContent=old;button.disabled=false;
+}
 async function loadData(){
  $("status").textContent="正在更新数据…";
  try{
@@ -91,6 +129,7 @@ async function loadData(){
   if(d.buttondown&&d.buttondown.ok){$("subscribers").textContent=fmt(d.buttondown.active_subscribers);$("newSubscribers").textContent=fmt(d.buttondown.new_subscribers_7d);$("draftCount").textContent=fmt(d.buttondown.draft_count);renderDrafts(d.buttondown.drafts||[]);}
   else{$("subscribers").textContent="—";$("newSubscribers").textContent="—";$("draftCount").textContent="—";$("drafts").textContent="Buttondown 数据暂时不可用。";}
   const issues=[];if(!d.cloudflare?.ok)issues.push("Cloudflare："+(d.cloudflare?.error||"不可用"));if(!d.buttondown?.ok)issues.push("Buttondown："+(d.buttondown?.error||"不可用"));
+  loadContentQueue();
   $("status").textContent=(issues.length?issues.join("；"):"两项数据源均已连接")+" · 更新于 "+new Date(d.generated_at).toLocaleString("zh-CN");
  }catch(err){$("status").textContent=err.message;}
 }
@@ -105,7 +144,7 @@ function response(body, status = 200, extra = {}) {
     "Referrer-Policy": "no-referrer",
     "X-Frame-Options": "DENY",
     "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
-    "Content-Security-Policy": "default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
+    "Content-Security-Policy": "default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'self'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'",
     ...extra
   }});
 }
@@ -268,6 +307,53 @@ export default {
     if (url.pathname === "/api/logout" && request.method === "POST") {
       if (!sameOrigin(request)) return json({ error: "forbidden" }, 403);
       return json({ ok: true }, 200, { "Set-Cookie": cookie("", 0) });
+    }
+    if (url.pathname === "/api/content/drafts" && request.method === "GET") {
+      if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
+      if (!env.CONTENT_DRAFTS) return json({ error: "content_storage_not_configured" }, 503);
+      const listed = await env.CONTENT_DRAFTS.list({ prefix: "draft:", limit: 50 });
+      const items = await Promise.all(listed.keys.map(async key => {
+        const value = await env.CONTENT_DRAFTS.get(key.name, "json");
+        return value && typeof value === "object" ? value : null;
+      }));
+      return json({ items: items.filter(Boolean).sort((a,b) => String(b.created_at||"").localeCompare(String(a.created_at||""))) });
+    }
+    if (url.pathname === "/api/content/drafts" && request.method === "POST") {
+      if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
+      if (!sameOrigin(request)) return json({ error: "forbidden" }, 403);
+      if (!env.CONTENT_DRAFTS) return json({ error: "content_storage_not_configured" }, 503);
+      const raw = await request.text();
+      if (raw.length > 1800000) return json({ error: "payload_too_large" }, 413);
+      let item = {}; try { item = JSON.parse(raw); } catch { return json({ error: "invalid_json" }, 400); }
+      const id = String(item.id || "");
+      const source = String(item.source_url || "");
+      if (!/^[a-zA-Z0-9_-]{1,100}$/.test(id) || !String(item.title||"").trim() || !/^https:\/\//i.test(source) || !/^[A-Za-z0-9+/]+=*$/.test(String(item.image_base64||"")) || String(item.image_base64).length > 1400000) {
+        return json({ error: "invalid_draft" }, 400);
+      }
+      const record = {
+        id, title: String(item.title).slice(0,240), category: String(item.category||"音乐机会").slice(0,80),
+        caption: String(item.caption||"").slice(0,12000), source_url: source.slice(0,2000),
+        image_base64: String(item.image_base64), status: "pending_review",
+        created_at: new Date().toISOString(), updated_at: new Date().toISOString()
+      };
+      await env.CONTENT_DRAFTS.put("draft:"+id, JSON.stringify(record), { expirationTtl: 60*60*24*30 });
+      return json({ ok: true, id }, 201);
+    }
+    if (url.pathname.startsWith("/api/content/drafts/") && request.method === "PATCH") {
+      if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
+      if (!sameOrigin(request)) return json({ error: "forbidden" }, 403);
+      if (!env.CONTENT_DRAFTS) return json({ error: "content_storage_not_configured" }, 503);
+      const id = decodeURIComponent(url.pathname.slice("/api/content/drafts/".length));
+      if (!/^[a-zA-Z0-9_-]{1,100}$/.test(id)) return json({ error: "invalid_id" }, 400);
+      const record = await env.CONTENT_DRAFTS.get("draft:"+id, "json");
+      if (!record) return json({ error: "not_found" }, 404);
+      let input = {}; try { input = await request.json(); } catch { return json({ error: "invalid_json" }, 400); }
+      if (input.status && !["pending_review","approved","needs_changes"].includes(input.status)) return json({ error: "invalid_status" }, 400);
+      if (input.caption !== undefined) record.caption = String(input.caption).slice(0,12000);
+      if (input.status) record.status = input.status;
+      record.updated_at = new Date().toISOString();
+      await env.CONTENT_DRAFTS.put("draft:"+id, JSON.stringify(record), { expirationTtl: 60*60*24*30 });
+      return json({ ok: true, id, status: record.status });
     }
     if (url.pathname === "/api/data" && request.method === "GET") {
       if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
