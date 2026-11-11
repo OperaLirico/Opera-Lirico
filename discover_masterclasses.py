@@ -23,7 +23,7 @@ import robots_policy
 ROOT = Path(__file__).resolve().parent
 SOURCES_PATH = ROOT / "data" / "masterclass_sources.json"
 CANDIDATES_PATH = ROOT / "data" / "masterclass_candidates.json"
-TIMEOUT = 25
+TIMEOUT = 15
 DELAY = 1.0
 MASTERCLASS_RE = re.compile(
     r"master.?class|masterclass|corso(?:\s+di)?\s+perfezionamento|"
@@ -44,7 +44,7 @@ DATE_RE = re.compile(
     re.I,
 )
 MAX_TEXT = 30000
-MAX_LINKS = 30
+MAX_LINKS = 8
 
 
 def now_iso() -> str:
