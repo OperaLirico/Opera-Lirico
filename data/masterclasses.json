@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T00:44:00+01:00",
+  "updated_at": "2026-11-12T00:55:00+01:00",
   "items": [
     {
       "id": "wj-gregory-kunde-milano-2026-11",
@@ -142,6 +142,133 @@
           "url": "https://www.regiumlepidi.com/en/academy/masterclasses",
           "excerpt": "Verdi Marathon 2027 · Teatro G. Verdi · Busseto (PR) · March 2027. Six days of masterclasses and workshops with Mirko Matarazzo and Davide Cavalli, ending with an Opera Gala. Applications are not open yet.",
           "checked_at": "2026-11-12T00:44:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "cantoalato-alessandro-corbelli-milano-2027-03",
+      "title": "Masterclass di Canto — Alessandro Corbelli · Dal Classicismo al Belcanto",
+      "teacher": "Alessandro Corbelli; pianista e concertatore: Gioele Muglialdo",
+      "instrument_or_voice": "Canto lirico · Classicismo e Belcanto",
+      "location": "Ottavanota, Via Marco Bruto 24, Milano, Italia",
+      "start_at": "2027-03-08T00:00:00+01:00",
+      "end_at": "2027-03-11T23:59:00+01:00",
+      "application_deadline_at": "2027-02-19T23:59:00+01:00",
+      "fee_eur": 650,
+      "description_zh": "四天声乐大师班，主题为“从古典主义到美声唱法”。正式学员 10 个名额，费用共 €650（报名费 €300 + 课程费 €350）；旁听 €250。正式学员申请截止 2027 年 2 月 19 日，旁听报名截止 3 月 8 日。正式学员年龄上限 42 岁。3 月 12 日 16:30 在米兰 Casa Verdi Salone d’Onore 举行结业音乐会。课程期间 Vocalia Management 的经纪人 Stefano Scardovi 将到场聆听并提供职业建议。申请材料及付款要求请以主办方页面为准。",
+      "source_name": "Cantoalato Academy",
+      "source_url": "https://www.cantoalato.it/masterclass-di-canto-con-alessandro-corbelli/",
+      "application_url": "https://www.cantoalato.it/masterclass-di-canto-con-alessandro-corbelli/",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:55:00+01:00",
+      "last_verified_at": "2026-11-12T00:55:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.cantoalato.it/masterclass-di-canto-con-alessandro-corbelli/",
+          "excerpt": "8–11 marzo 2027; concerto finale 12 marzo; allievi effettivi €650, uditori €250; iscrizioni effettivi entro 19 febbraio 2027; uditori entro 8 marzo; limite d'età 42 anni; 10 posti effettivi.",
+          "checked_at": "2026-11-12T00:55:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "cantoalato-gregory-kunde-milano-2027-02",
+      "title": "Masterclass di Canto — Gregory Kunde",
+      "teacher": "Gregory Kunde",
+      "instrument_or_voice": "Canto lirico",
+      "location": "Cantoalato Academy, Milano, Italia",
+      "start_at": "2027-02-08T00:00:00+01:00",
+      "end_at": "2027-02-12T23:59:00+01:00",
+      "description_zh": "Cantoalato 官方 2026–2027 学年日历已公布本期课程日期：2027 年 2 月 8–12 日。导师为 Gregory Kunde。具体地点安排、费用、申请条件及报名截止日期尚未在日历中列明，请关注主办方后续公告；目前不要将其视为已开放报名。",
+      "source_name": "Cantoalato Academy",
+      "source_url": "https://www.cantoalato.it/calendario/",
+      "application_url": "https://www.cantoalato.it/calendario/",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:55:00+01:00",
+      "last_verified_at": "2026-11-12T00:55:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.cantoalato.it/calendario/",
+          "excerpt": "Calendario 2026–2027: 8–12 febbraio 2027 – Masterclass di Canto con Gregory Kunde.",
+          "checked_at": "2026-11-12T00:55:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "cantoalato-leo-nucci-milano-2027-03",
+      "title": "Masterclass di Canto — Leo Nucci · Nabucco, Macbeth, Ernani",
+      "teacher": "Leo Nucci",
+      "instrument_or_voice": "Canto lirico · repertorio verdiano: Nabucco, Macbeth, Ernani",
+      "location": "Cantoalato Academy, Milano, Italia",
+      "start_at": "2027-03-29T00:00:00+02:00",
+      "end_at": "2027-04-02T23:59:00+02:00",
+      "description_zh": "Cantoalato 官方 2026–2027 学年日历已公布本期课程日期：2027 年 3 月 29 日至 4 月 2 日，主题曲目包括《纳布科》《麦克白》和《埃尔纳尼》。费用、申请条件、具体上课地点及报名截止日期尚未在日历中列明，等待主办方进一步公告。",
+      "source_name": "Cantoalato Academy",
+      "source_url": "https://www.cantoalato.it/calendario/",
+      "application_url": "https://www.cantoalato.it/calendario/",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:55:00+01:00",
+      "last_verified_at": "2026-11-12T00:55:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.cantoalato.it/calendario/",
+          "excerpt": "29 marzo–2 aprile 2027 – Masterclass di Canto con Leo Nucci (Nabucco, Macbeth, Ernani).",
+          "checked_at": "2026-11-12T00:55:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "cantoalato-leo-nucci-milano-2027-06",
+      "title": "Masterclass di Canto — Leo Nucci · Un ballo in maschera, La forza del destino, Don Carlo",
+      "teacher": "Leo Nucci",
+      "instrument_or_voice": "Canto lirico · repertorio verdiano: Un ballo in maschera, La forza del destino, Don Carlo",
+      "location": "Cantoalato Academy, Milano, Italia",
+      "start_at": "2027-06-14T00:00:00+02:00",
+      "end_at": "2027-06-18T23:59:00+02:00",
+      "description_zh": "Cantoalato 官方 2026–2027 学年日历已公布本期课程日期：2027 年 6 月 14–18 日，主题曲目包括《假面舞会》《命运之力》和《唐·卡洛》。费用、申请条件、具体上课地点及报名截止日期尚未在日历中列明，等待主办方进一步公告。",
+      "source_name": "Cantoalato Academy",
+      "source_url": "https://www.cantoalato.it/calendario/",
+      "application_url": "https://www.cantoalato.it/calendario/",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:55:00+01:00",
+      "last_verified_at": "2026-11-12T00:55:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.cantoalato.it/calendario/",
+          "excerpt": "14–18 giugno 2027 – Masterclass di Canto con Leo Nucci (Un ballo in maschera, La forza del destino, Don Carlo).",
+          "checked_at": "2026-11-12T00:55:00+01:00"
+        }
+      ]
+    },
+    {
+      "id": "cantoalato-giorgio-lormi-milano-2027-08",
+      "title": "Masterclass di Canto — Giorgio Lormi",
+      "teacher": "Giorgio Lormi",
+      "instrument_or_voice": "Canto lirico",
+      "location": "Cantoalato Academy, Italia",
+      "start_at": "2027-08-02T00:00:00+02:00",
+      "end_at": "2027-08-05T23:59:00+02:00",
+      "description_zh": "Cantoalato 官方 2026–2027 学年日历已公布本期声乐大师班日期：2027 年 8 月 2–5 日，导师为 Giorgio Lormi。具体城市、费用、申请条件及报名截止日期尚未在日历中列明，等待主办方进一步公告。",
+      "source_name": "Cantoalato Academy",
+      "source_url": "https://www.cantoalato.it/calendario/",
+      "application_url": "https://www.cantoalato.it/calendario/",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:55:00+01:00",
+      "last_verified_at": "2026-11-12T00:55:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.cantoalato.it/calendario/",
+          "excerpt": "2–5 agosto 2027 – Masterclass di Canto con Giorgio Lormi.",
+          "checked_at": "2026-11-12T00:55:00+01:00"
         }
       ]
     }
