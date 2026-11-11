@@ -44,9 +44,23 @@ Signature #1:
         self.assertEqual(sig["signature_integrity_status"], "invalid")
         self.assertEqual(sig["certificate_trust_status"], "trusted")
 
-    def test_no_signature_is_not_a_tool_error(self):
+    def test_digest_mismatch_is_an_invalid_signature(self):
+        output = """Signature #1:
+  - Signature Validation: Digest Mismatch.
+"""
+        parsed = audit.parse_pdfsig_output(output)
+        self.assertEqual(parsed["signatures"][0]["signature_integrity_status"], "invalid")
+        self.assertEqual(audit.classify_inspection_status(1, parsed), "success")
+
+    def test_no_signature_exit_code_is_a_successful_inspection(self):
         parsed = audit.parse_pdfsig_output("File 'sample.pdf' does not contain any signatures.")
         self.assertEqual(parsed, {"signature_presence": "not_detected", "signatures": []})
+        self.assertEqual(audit.classify_inspection_status(2, parsed), "success_no_signature")
+
+    def test_unrecognized_output_is_inconclusive_not_no_signature(self):
+        parsed = audit.parse_pdfsig_output("Syntax Error: Couldn't open file.")
+        self.assertEqual(parsed["signature_presence"], "inconclusive")
+        self.assertEqual(audit.classify_inspection_status(1, parsed), "tool_error")
 
 
 if __name__ == "__main__":
