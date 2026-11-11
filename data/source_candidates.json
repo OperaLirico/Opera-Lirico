@@ -1,4 +1,39 @@
 {
-  "updated_at": null,
-  "items": []
+  "updated_at": "2026-11-11T10:58:22+01:00",
+  "items": [
+    {
+      "candidate_id": 1,
+      "source": "Provinispettacolo — Musica",
+      "url": "https://www.provinispettacolo.it/casting/musica/",
+      "checked_at": "2026-11-11T10:58:22+01:00",
+      "status": "web_accessible",
+      "http_status": null,
+      "fetch_method": "web_open",
+      "title": "Musica",
+      "relevant_lines": [
+        "Scopri come candidarti gratuitamente per lavorare come cantante, musicista e altre figure artistiche legate al mondo della musica!",
+        "Audizioni Opera e Lirica a Roma: cercasi cantanti lirici e professori d’orchestra — soprani, mezzosoprani, tenori, baritoni, bassi.",
+        "Selezioni aperte per artisti del settore musicale e lirico."
+      ],
+      "discovered_from": "https://www.provinispettacolo.it/audizioni-opera-lirica-roma-cantanti-professori-orchestra/",
+      "discovered_at": "2026-11-11T10:58:22+01:00",
+      "review_status": "pending_manual_review",
+      "screening_status": "auto_reviewed",
+      "publisher_status": "third_party",
+      "relevance_status": "relevant",
+      "auto_review_status": "auto_approved_third_party",
+      "confidence": "high",
+      "evidence_url": "https://www.provinispettacolo.it/casting/musica/",
+      "evidence_urls": [
+        "https://www.provinispettacolo.it/casting/musica/",
+        "https://www.provinispettacolo.it/proponi-casting/",
+        "https://www.provinispettacolo.it/audizioni-opera-lirica-roma-cantanti-professori-orchestra/"
+      ],
+      "audit_date": "2026-11-11",
+      "auto_review_checked_at": "2026-11-11T10:58:22+01:00",
+      "auto_review_reason": "The stable Musica category explicitly covers singers and music professionals and currently lists an opera-singer audition with named voice types. The publisher self-identifies as a general casting portal that accepts externally submitted notices and warns that not all third-party notices are fully reliable; therefore it is approved only as a high-value third-party discovery source, never as an official publisher.",
+      "review_notes": "Discovery-only. Verify each opportunity against the original organizer before publication. The current Opera e Lirica listing reports an application deadline of 2026-11-13 and an audition on 2026-11-17 in Rome, but no first-party organizer notice was found in this audit; do not add it to data/opportunities.json.",
+      "production_activation": false
+    }
+  ]
 }
