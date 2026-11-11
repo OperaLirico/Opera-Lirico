@@ -38,6 +38,7 @@ jobs:
       - name: Run discovery tests
         run: python -m unittest tests.test_masterclass_discovery -v
       - name: Discover masterclass leads
+        if: github.event_name != 'pull_request'
         run: python discover_masterclasses.py
       - name: Save review queue
         if: github.event_name != 'pull_request'
