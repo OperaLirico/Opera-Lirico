@@ -13,7 +13,7 @@ def request(opener, path, payload=None):
     data = None if payload is None else json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = urllib.request.Request(
         BASE + path, data=data, method="GET" if payload is None else "POST",
-        headers={"Accept": "application/json", "User-Agent": "OperaLiricoDraftUploader/1.0", **({"Content-Type": "application/json"} if data else {})},
+        headers={"Accept": "application/json", "Origin": BASE, "User-Agent": "OperaLiricoDraftUploader/1.0", **({"Content-Type": "application/json"} if data else {})},
     )
     try:
         with opener.open(req, timeout=30) as response:
@@ -49,7 +49,7 @@ def main():
         }
         req = urllib.request.Request(
             BASE + "/api/content/drafts", data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
-            method="POST", headers={"Content-Type": "application/json", "Accept": "application/json", "User-Agent": "OperaLiricoDraftUploader/1.0"},
+            method="POST", headers={"Content-Type": "application/json", "Accept": "application/json", "Origin": BASE, "User-Agent": "OperaLiricoDraftUploader/1.0"},
         )
         try:
             with opener.open(req, timeout=45) as response:
