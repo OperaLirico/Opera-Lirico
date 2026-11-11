@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "audit_id": "source-audit-2026-11-11-tls-spoleto-and-provinispettacolo",
-  "generated_at": "2026-11-11T11:31:58+01:00",
+  "audit_id": "source-audit-2026-11-11-tls-spoleto-and-provinispettacolo-coverage-confirmed",
+  "generated_at": "2026-11-11T11:44:59+01:00",
   "audited_count": 2,
   "classifications": {
     "auto_approved_official": 1,
@@ -49,6 +49,13 @@
         "excerpt": "The official Opera e Lirica website lists candidatureopera@gmail.com for a separate Social Media Content Creator vacancy.",
         "checked_at": "2026-11-11T11:31:58+01:00",
         "finding": "The contact address is corroborated on the organizer's official site, but the specific 17 November 2026 singer audition is not published there."
+      },
+      "coverage_check": {
+        "checked_at": "2026-11-11T11:42:59+01:00",
+        "status": "ok",
+        "http_status": 200,
+        "content_changed": false,
+        "normalized_text_sha256": "45835885797662ceeac0e49699597a552ddda885dc1c9c3d137dd686201333c1"
       }
     },
     {
@@ -79,10 +86,18 @@
       "limitations": [
         "The bando and detailed information are not yet available.",
         "No application deadline, eligibility, fee, application route or official PDF can be verified yet.",
-        "robots.txt for this exact child path was not independently retrievable; keep the item as a candidate and do not activate production scraping."
+        "robots.txt for this exact child path was not independently retrievable; keep the item as a candidate and do not activate production scraping.",
+        "The crawler's document title metadata says '80° Concorso Internazionale di Canto', while the visible page body says '81ª edizione'. Treat the edition number as unresolved until the official bando is published."
       ],
       "production_activation": false,
-      "audit_date": "2026-11-11"
+      "audit_date": "2026-11-11",
+      "coverage_check": {
+        "checked_at": "2026-11-11T11:42:59+01:00",
+        "status": "ok",
+        "http_status": 200,
+        "content_changed": false,
+        "normalized_text_sha256": "af5fe4f04efce9de9db4b46cc09c0c32b61fc5793e9506cb328f30981071c9c2"
+      }
     }
   ],
   "existing_registry_context": {
@@ -102,36 +117,67 @@
   },
   "coverage": {
     "last_completed_cycle": "2026-W46",
-    "previous_inventory_checked": "45/45",
+    "scan_status": "completed",
+    "checked_at": "2026-11-11T11:44:59+01:00",
+    "inventory_count": 46,
+    "checked_count": 46,
+    "remaining_count": 0,
+    "failed_restricted_extraction_errors": 0,
+    "anomaly_count": 0,
     "candidate_1_in_previous_scan": true,
-    "candidate_2_in_previous_scan": false,
-    "next_inventory_expected": 46,
-    "next_scan_required": true
+    "candidate_2_in_previous_scan": true,
+    "inventory_sha256": "3830ac0c9ca41cf14b119aaf2376dfd86c357fc05588afd3ab2d1aa1acc17cd8",
+    "next_scan_required": false
   },
   "monitoring_notes": [
     {
       "source_id": "source-10",
-      "issue": "The weekly coverage batch timed out after 25 seconds, but the existing Daily source refresh fetched the official Bandi e avvisi page successfully at 2026-11-11T11:09:07+01:00 (HTTP 200); a manual page inspection also succeeded.",
-      "evidence_url": "https://www.tls-belli.it/bandi_e_avvisi/",
-      "action": "Treat as an intermittent crawler timeout, keep the source active and retry on the normal scheduled cycle; do not disable it."
+      "issue": "A previous 45-item coverage pass timed out after 25 seconds.",
+      "latest_recheck": {
+        "checked_at": "2026-11-11T11:42:59+01:00",
+        "status": "ok",
+        "http_status": 200,
+        "anomalies": []
+      },
+      "action": "Resolved on the subsequent 46-item pass; keep the source active and continue normal scheduled checks."
     },
     {
       "source_id": "source-115",
-      "issue": "HTTP 202 with empty extraction; manual inspection shows actress, technical audio-light and promotion roles, with no singer role.",
-      "classification": "irrelevant_candidate",
-      "action": "Keep the existing classification; no production or relevance change."
+      "issue": "A previous pass returned HTTP 202 with empty extraction.",
+      "latest_recheck": {
+        "checked_at": "2026-11-11T11:42:59+01:00",
+        "status": "ok",
+        "http_status": 200,
+        "anomalies": []
+      },
+      "action": "Resolved on the subsequent pass; existing irrelevant_candidate classifications remain unchanged."
     },
     {
       "source_id": "source-117",
-      "issue": "HTTP 202 with empty extraction; manual inspection shows an actor/actress comedy audition, not a vocal call.",
-      "classification": "irrelevant_candidate",
-      "action": "Keep the existing classification; no production or relevance change."
+      "issue": "A previous pass returned HTTP 202 with empty extraction.",
+      "latest_recheck": {
+        "checked_at": "2026-11-11T11:42:59+01:00",
+        "status": "ok",
+        "http_status": 200,
+        "anomalies": []
+      },
+      "action": "Resolved on the subsequent pass; existing irrelevant_candidate classifications remain unchanged."
     },
     {
       "source_id": "source-120",
-      "issue": "HTTP 202 with empty extraction; manual inspection shows a Primo Oboe competition, an instrumental-only call.",
-      "classification": "irrelevant_candidate",
-      "action": "Keep the existing classification; no production or relevance change."
+      "issue": "A previous pass returned HTTP 202 with empty extraction.",
+      "latest_recheck": {
+        "checked_at": "2026-11-11T11:43:30+01:00",
+        "status": "ok",
+        "http_status": 200,
+        "anomalies": []
+      },
+      "action": "Resolved on the subsequent pass; existing irrelevant_candidate classifications remain unchanged."
+    },
+    {
+      "source_id": "candidate-2",
+      "issue": "The dedicated official competition page returned HTTP 200 in the full coverage scan, but its HTML title metadata says 80° while the visible body says 81ª edizione.",
+      "action": "Keep as an official source candidate; do not create an opportunity or settle the edition number until the official bando clarifies it. The exact child-path robots policy remains unverified, so production activation stays false."
     }
   ]
 }
