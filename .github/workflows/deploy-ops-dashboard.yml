@@ -30,6 +30,25 @@ jobs:
           node-version: "22"
       - name: Install Wrangler
         run: npm install --global wrangler@4
+      - name: Provision private content draft storage
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_WORKERS_DEPLOY_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          set -euo pipefail
+          wrangler kv namespace list --json > /tmp/kv-namespaces.json
+          KV_ID="$(jq -r '.[] | select(.title == \"opera-lirico-content-drafts\") | .id' /tmp/kv-namespaces.json | head -n1)"
+          if [ -z "$KV_ID" ]; then
+            wrangler kv namespace create opera-lirico-content-drafts --json > /tmp/kv-created.json
+            KV_ID="$(jq -r '.id // .result.id // empty' /tmp/kv-created.json)"
+          fi
+          if [ -z "$KV_ID" ]; then
+            echo "::error::Unable to provision or identify the content draft KV namespace."
+            exit 1
+          fi
+          cp ops-dashboard/wrangler.toml ops-dashboard/wrangler.generated.toml
+          printf '\n[[kv_namespaces]]\nbinding = "CONTENT_DRAFTS"\nid = "%s"\n' "$KV_ID" >> ops-dashboard/wrangler.generated.toml
+          echo "Private content storage binding is ready."
       - name: Validate required secrets
         env:
           CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
@@ -53,7 +72,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_WORKERS_DEPLOY_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-        run: wrangler deploy --config ops-dashboard/wrangler.toml
+        run: wrangler deploy --config ops-dashboard/wrangler.generated.toml
 
       - name: Upload runtime secrets to the protected Worker
         env:
@@ -64,7 +83,7 @@ jobs:
           OPS_DASHBOARD_PASSWORD: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
         run: |
           set -euo pipefail
-          printf '%s' "$CLOUDFLARE_ACCOUNT_ID" | wrangler secret put CF_ACCOUNT_ID --config ops-dashboard/wrangler.toml
-          printf '%s' "$CF_ANALYTICS_API_TOKEN" | wrangler secret put CF_ANALYTICS_API_TOKEN --config ops-dashboard/wrangler.toml
-          printf '%s' "$BUTTONDOWN_API_KEY" | wrangler secret put BUTTONDOWN_API_KEY --config ops-dashboard/wrangler.toml
-          printf '%s' "$OPS_DASHBOARD_PASSWORD" | wrangler secret put OPS_DASHBOARD_PASSWORD --config ops-dashboard/wrangler.toml
+          printf '%s' "$CLOUDFLARE_ACCOUNT_ID" | wrangler secret put CF_ACCOUNT_ID --config ops-dashboard/wrangler.generated.toml
+          printf '%s' "$CF_ANALYTICS_API_TOKEN" | wrangler secret put CF_ANALYTICS_API_TOKEN --config ops-dashboard/wrangler.generated.toml
+          printf '%s' "$BUTTONDOWN_API_KEY" | wrangler secret put BUTTONDOWN_API_KEY --config ops-dashboard/wrangler.generated.toml
+          printf '%s' "$OPS_DASHBOARD_PASSWORD" | wrangler secret put OPS_DASHBOARD_PASSWORD --config ops-dashboard/wrangler.generated.toml
