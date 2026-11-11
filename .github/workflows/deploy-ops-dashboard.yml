@@ -36,11 +36,12 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
         run: |
           set -euo pipefail
-          wrangler kv namespace list --json > /tmp/kv-namespaces.json
-          KV_ID="$(jq -r '.[] | select(.title == "opera-lirico-content-drafts") | .id' /tmp/kv-namespaces.json | head -n1)"
+          API="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/storage/kv/namespaces"
+          curl -fsS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$API" > /tmp/kv-namespaces.json
+          KV_ID="$(jq -r '.result[] | select(.title == "opera-lirico-content-drafts") | .id' /tmp/kv-namespaces.json | head -n1)"
           if [ -z "$KV_ID" ]; then
-            wrangler kv namespace create opera-lirico-content-drafts --json > /tmp/kv-created.json
-            KV_ID="$(jq -r '.id // .result.id // empty' /tmp/kv-created.json)"
+            curl -fsS -X POST -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" --data '{"title":"opera-lirico-content-drafts"}' "$API" > /tmp/kv-created.json
+            KV_ID="$(jq -r '.result.id // empty' /tmp/kv-created.json)"
           fi
           if [ -z "$KV_ID" ]; then
             echo "::error::Unable to provision or identify the content draft KV namespace."
