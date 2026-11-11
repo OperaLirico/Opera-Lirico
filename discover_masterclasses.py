@@ -186,7 +186,13 @@ def load_json(path: Path, default):
 def discover() -> dict:
     config = load_json(SOURCES_PATH, {"sources": []})
     old = load_json(CANDIDATES_PATH, {"items": []})
-    old_by_id = {x.get("candidate_id"): x for x in old.get("items", [])}
+    old_by_id = {
+        item.get("candidate_id"): item
+        for item in old.get("items", [])
+        if item.get("candidate_id")
+        and "/archivio" not in (item.get("source_url") or "").lower()
+        and has_future_date(" ".join(item.get("date_signals", [])))
+    }
     checked_at = now_iso()
     found: dict[str, dict] = {}
     errors: list[dict] = []
