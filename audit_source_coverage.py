@@ -105,12 +105,12 @@ def source_inventory() -> list[dict]:
             "name": item.get("source") or item.get("title") or source_id,
             "url": url,
             "kind": "pending_candidate",
-            "review_status": item.get("review_status", "pending_manual_review"),
+            "review_status": item.get("auto_review_status") or item.get("review_status", "pending_manual_review"),
             "publisher_status": item.get("publisher_status", "unverified"),
             "relevance_status": item.get("relevance_status", "unknown"),
             "audit_confidence": item.get("confidence", "none"),
             "audit_evidence_url": item.get("evidence_url"),
-            "audit_date": item.get("audit_date"),
+            "audit_date": item.get("audit_date") or item.get("auto_review_checked_at"),
         })
     return sorted(inventory, key=lambda item: (item["kind"], item["source_id"]))
 
@@ -220,7 +220,7 @@ def render_report(state: dict) -> str:
         f"- Failed/restricted/extraction errors: {failed} (restricted: {restricted})",
         (f"- Changed normalized text hashes: {changed}" if baseline_available else "- Change comparison: first baseline; no previous complete weekly scan exists yet"),
         f"- Sources with anomalies: {len(anomalies)}",
-        f"- Registered sources: {len(registered)}; pending candidates: {len(candidates)}",
+        f"- Registered sources: {len(registered)}; candidate queue entries: {len(candidates)}",
         "- Source review classifications: " + ", ".join(f"{key}={value}" for key, value in sorted(classifications.items())),
         f"- Official + relevant: {sum(item.get('review_status') == 'auto_approved_official' and item.get('relevance_status') == 'relevant' for item in registered)}",
         f"- Third-party + relevant: {sum(item.get('review_status') == 'auto_approved_third_party' and item.get('relevance_status') == 'relevant' for item in registered)}",
