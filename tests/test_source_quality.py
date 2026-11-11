@@ -192,11 +192,17 @@ class PreserveLastGoodTests(unittest.TestCase):
         previous = {
             "review_status": "legacy_unreviewed",
             "publisher_status": "unverified",
+            "auto_review_status": "irrelevant_candidate",
+            "auto_review_reason": "non_vocal_role_only",
+            "auto_review_checked_at": "2026-11-11T09:00:00+01:00",
         }
         fresh = {"status": "ok", "title": "Updated page"}
         result = grow_sources.carry_review_metadata(fresh, previous)
         self.assertEqual(result["review_status"], "legacy_unreviewed")
         self.assertEqual(result["publisher_status"], "unverified")
+        self.assertEqual(result["auto_review_status"], "irrelevant_candidate")
+        self.assertEqual(result["auto_review_reason"], "non_vocal_role_only")
+        self.assertEqual(result["auto_review_checked_at"], "2026-11-11T09:00:00+01:00")
 
     def test_generic_actor_casting_is_rejected(self):
         probe = {
