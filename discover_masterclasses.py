@@ -13,7 +13,7 @@ import re
 import time
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urljoin, urlsplit, urlunsplit
 from zoneinfo import ZoneInfo
 
 from scrapling.fetchers import Fetcher
@@ -55,6 +55,11 @@ def clean(value: str) -> str:
     return re.sub(r"\s+", " ", value or "").strip()
 
 
+def canonical_url(url: str) -> str:
+    parts = urlsplit(url)
+    return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path, parts.query, ""))
+
+
 def slug(value: str) -> str:
     value = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
     return value[:70] or "masterclass"
@@ -78,7 +83,7 @@ def extract_page(response, url: str) -> tuple[str, str, list[tuple[str, str]]]:
             href = (node.css("::attr(href)").get() or "").strip()
         except Exception:
             continue
-        target = urljoin(url, href)
+        target = canonical_url(urljoin(url, href))
         if not target.startswith(("https://", "http://")) or NOISE_RE.search(target):
             continue
         if not (MASTERCLASS_RE.search(label) or MASTERCLASS_RE.search(target)):
@@ -95,28 +100,39 @@ def extract_page(response, url: str) -> tuple[str, str, list[tuple[str, str]]]:
 def make_candidate(source: dict, url: str, title: str, text: str, checked_at: str,
                    discovery_label: str = "") -> dict | None:
     blob = " ".join((title, discovery_label, text))
-    if not MASTERCLASS_RE.search(blob) or not VOICE_RE.search(blob):
+    # Require an event-level title/link label, vocal relevance in the page body,
+    # and an explicit date signal. This avoids turning generic navigation pages
+    # or evergreen academy descriptions into false opportunity records.
+    if not MASTERCLASS_RE.search(" ".join((title, discovery_label))):
+        return None
+    if not VOICE_RE.search(text):
+        return None
+    date_signals = DATE_RE.findall(blob)
+    if not date_signals:
         return None
     # Capture a short, human-readable excerpt around the first useful signal.
     match = MASTERCLASS_RE.search(text)
     start = max(0, match.start() - 180) if match else 0
     excerpt = text[start:start + 700].strip()
     label = discovery_label or title or source["name"]
+    if re.search(r"skip to content|^home$|^menu$", label, re.I):
+        label = title or source["name"]
     candidate_title = label if len(label) > 8 else title or source["name"]
-    identity = hashlib.sha256((source["id"] + "|" + url).encode()).hexdigest()[:12]
+    normalized_url = canonical_url(url)
+    identity = hashlib.sha256((source["id"] + "|" + normalized_url).encode()).hexdigest()[:12]
     return {
         "candidate_id": identity,
         "title_hint": candidate_title[:240],
         "source_name": source["name"],
         "source_type": source.get("source_type", "organizer"),
         "publisher_status": source.get("publisher_status", "unknown"),
-        "source_url": url,
+        "source_url": normalized_url,
         "discovered_from": source["url"],
         "checked_at": checked_at,
         "discovery_status": "candidate_found",
         "review_status": "pending_manual_review",
         "publication_status": "not_published",
-        "date_signals": DATE_RE.findall(blob)[:12],
+        "date_signals": date_signals[:12],
         "evidence_excerpt": excerpt,
         "verification_note": (
             "Discovery signal only. Confirm the organizer, edition, dates, deadline, "
