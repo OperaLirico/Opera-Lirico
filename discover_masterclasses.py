@@ -18,6 +18,8 @@ from zoneinfo import ZoneInfo
 
 from scrapling.fetchers import Fetcher
 
+import robots_policy
+
 ROOT = Path(__file__).resolve().parent
 SOURCES_PATH = ROOT / "data" / "masterclass_sources.json"
 CANDIDATES_PATH = ROOT / "data" / "masterclass_candidates.json"
@@ -56,6 +58,13 @@ def clean(value: str) -> str:
 def slug(value: str) -> str:
     value = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
     return value[:70] or "masterclass"
+
+
+def fetch_allowed(url: str):
+    """Respect robots.txt and validate every redirect hop before fetching."""
+    return robots_policy.fetch_page_with_robots(
+        url, Fetcher.get, timeout=TIMEOUT, retries=0, delay=1.2
+    )
 
 
 def extract_page(response, url: str) -> tuple[str, str, list[tuple[str, str]]]:
@@ -133,12 +142,14 @@ def discover() -> dict:
 
     for source in config.get("sources", []):
         try:
-            response = Fetcher.get(source["url"], timeout=TIMEOUT, retries=0)
+            response, access = fetch_allowed(source["url"])
             status = getattr(response, "status", 0) or 0
-            if status >= 400:
-                errors.append({"source": source["name"], "status": status})
+            if response is None or not access.get("allowed") or status >= 400:
+                errors.append({"source": source["name"], "status": access.get("status"),
+                               "http_status": status or access.get("http_status")})
                 continue
-            title, text, links = extract_page(response, source["url"])
+            page_url = access.get("final_url") or source["url"]
+            title, text, links = extract_page(response, page_url)
             candidate = make_candidate(source, source["url"], title, text, checked_at)
             if candidate:
                 found[candidate["candidate_id"]] = candidate
@@ -147,20 +158,23 @@ def discover() -> dict:
             # source page; never spider arbitrary site navigation.
             for label, target in links:
                 try:
-                    child = Fetcher.get(target, timeout=TIMEOUT, retries=0)
+                    child, child_access = fetch_allowed(target)
                     child_status = getattr(child, "status", 0) or 0
-                    if child_status >= 400:
+                    if child is None or not child_access.get("allowed") or child_status >= 400:
+                        errors.append({"source": source["name"], "url": target,
+                                       "status": child_access.get("status"),
+                                       "http_status": child_status or child_access.get("http_status")})
                         continue
-                    child_title, child_text, _ = extract_page(child, target)
+                    child_url = child_access.get("final_url") or target
+                    child_title, child_text, _ = extract_page(child, child_url)
                     candidate = make_candidate(
-                        source, target, child_title, child_text, checked_at, label
+                        source, child_url, child_title, child_text, checked_at, label
                     )
                     if candidate:
                         found[candidate["candidate_id"]] = candidate
                 except Exception as exc:
                     errors.append({"source": source["name"], "url": target,
                                    "error": type(exc).__name__})
-                time.sleep(DELAY)
         except Exception as exc:
             errors.append({"source": source.get("name", "unknown"),
                            "error": type(exc).__name__})
