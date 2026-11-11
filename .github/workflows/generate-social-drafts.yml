@@ -1,6 +1,12 @@
 name: Generate social content drafts
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "content_engine/**"
+      - "data/opportunities.json"
+      - ".github/workflows/generate-social-drafts.yml"
   schedule:
     - cron: "15 7 * * *"
 permissions:
