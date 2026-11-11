@@ -102,14 +102,15 @@ async function loadContentQueue(){
    const image=document.createElement("img");image.className="socialImage";image.alt=item.title||"社交媒体图片";image.src="data:image/png;base64,"+item.image_base64;
    const editor=document.createElement("div");editor.className="socialEditor";
    const heading=document.createElement("strong");heading.textContent=item.title||"未命名内容";editor.append(heading);
-   const meta=document.createElement("div");meta.className="socialMeta";meta.textContent=(item.category||"音乐机会")+" · "+(item.status==="approved"?"已审核，待手动发布":item.status==="needs_changes"?"需要修改":"待审核");editor.append(meta);
+   const meta=document.createElement("div");meta.className="socialMeta";meta.textContent=(item.category||"音乐机会")+" · "+({approved:"已审核，待手动发布",needs_changes:"需要修改",published:"已发布",pending_review:"待审核"}[item.status]||"待审核");editor.append(meta);
    const link=document.createElement("a");link.href=item.source_url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="打开官方来源 ↗";editor.append(link);
    const area=document.createElement("textarea");area.value=item.caption||"";area.setAttribute("aria-label","社交媒体文案");editor.append(area);
    const actions=document.createElement("div");actions.className="socialActions";
    const save=document.createElement("button");save.textContent="保存文案";save.addEventListener("click",()=>updateDraft(item.id,{caption:area.value,status:"pending_review"},save));
    const approve=document.createElement("button");approve.className="primary";approve.textContent="审核通过";approve.addEventListener("click",()=>updateDraft(item.id,{caption:area.value,status:"approved"},approve));
    const revise=document.createElement("button");revise.textContent="需要修改";revise.addEventListener("click",()=>updateDraft(item.id,{caption:area.value,status:"needs_changes"},revise));
-   actions.append(save,approve,revise);editor.append(actions);card.append(image,editor);root.append(card);
+   const published=document.createElement("button");published.textContent="标记已发布";published.addEventListener("click",()=>updateDraft(item.id,{caption:area.value,status:"published"},published));
+   actions.append(save,approve,revise,published);editor.append(actions);card.append(image,editor);root.append(card);
   });
  }catch(err){root.textContent=err.message;}
 }
@@ -330,14 +331,17 @@ export default {
       if (!/^[a-zA-Z0-9_-]{1,100}$/.test(id) || !String(item.title||"").trim() || !/^https:\/\//i.test(source) || !/^[A-Za-z0-9+/]+=*$/.test(String(item.image_base64||"")) || String(item.image_base64).length > 1400000) {
         return json({ error: "invalid_draft" }, 400);
       }
+      const key = "draft:"+id;
+      const existing = await env.CONTENT_DRAFTS.get(key, "json");
+      if (existing) return json({ ok: true, skipped: true, id, status: existing.status });
       const record = {
         id, title: String(item.title).slice(0,240), category: String(item.category||"音乐机会").slice(0,80),
         caption: String(item.caption||"").slice(0,12000), source_url: source.slice(0,2000),
         image_base64: String(item.image_base64), status: "pending_review",
         created_at: new Date().toISOString(), updated_at: new Date().toISOString()
       };
-      await env.CONTENT_DRAFTS.put("draft:"+id, JSON.stringify(record), { expirationTtl: 60*60*24*30 });
-      return json({ ok: true, id }, 201);
+      await env.CONTENT_DRAFTS.put(key, JSON.stringify(record), { expirationTtl: 60*60*24*30 });
+      return json({ ok: true, id, status: record.status }, 201);
     }
     if (url.pathname.startsWith("/api/content/drafts/") && request.method === "PATCH") {
       if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
@@ -348,7 +352,7 @@ export default {
       const record = await env.CONTENT_DRAFTS.get("draft:"+id, "json");
       if (!record) return json({ error: "not_found" }, 404);
       let input = {}; try { input = await request.json(); } catch { return json({ error: "invalid_json" }, 400); }
-      if (input.status && !["pending_review","approved","needs_changes"].includes(input.status)) return json({ error: "invalid_status" }, 400);
+      if (input.status && !["pending_review","approved","needs_changes","published"].includes(input.status)) return json({ error: "invalid_status" }, 400);
       if (input.caption !== undefined) record.caption = String(input.caption).slice(0,12000);
       if (input.status) record.status = input.status;
       record.updated_at = new Date().toISOString();
