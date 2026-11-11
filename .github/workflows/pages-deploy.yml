@@ -13,6 +13,8 @@ on:
       - "manifest.webmanifest"
       - "service-worker.js"
       - "data/conservatori.json"
+      - "masterclasses.html"
+      - "data/masterclasses.json"
       - "data/opportunities.json"
       - "data/repertoire.json"
       - "data/pdfs/**"
