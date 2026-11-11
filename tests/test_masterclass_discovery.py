@@ -1,6 +1,6 @@
 import unittest
 
-from discover_masterclasses import canonical_url, make_candidate, slug
+from discover_masterclasses import canonical_url, has_future_date, make_candidate, slug
 
 
 class MasterclassDiscoveryTests(unittest.TestCase):
@@ -55,6 +55,10 @@ class MasterclassDiscoveryTests(unittest.TestCase):
             "2026-11-12T10:00:00+01:00",
         )
         self.assertIsNone(candidate)
+
+    def test_future_date_filter_rejects_expired_and_accepts_upcoming_dates(self):
+        self.assertFalse(has_future_date("10 Novembre 2026"))
+        self.assertTrue(has_future_date("30 Novembre 2026"))
 
     def test_canonical_url_removes_fragment(self):
         self.assertEqual(
