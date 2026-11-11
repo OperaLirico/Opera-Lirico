@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T18:47:05+01:00",
+  "generated_at": "2026-11-11T08:34:14+01:00",
   "source_file": "data/opportunities.json",
   "total_records": 7,
   "published_records_in_file": 7,
@@ -21,6 +21,14 @@
       "application_url_missing": false,
       "official_pdf_missing": false,
       "last_verified_at": "2026-11-10T17:47:53+01:00"
+    },
+    {
+      "id": "carlofelice-academy-2027",
+      "title": "Accademia di alto perfezionamento per cantanti lirici e pianisti accompagnatori 2027",
+      "deadline": "2026-12-10T23:59:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-10T16:56:21+01:00"
     },
     {
       "id": "carlofelice-choir-tenors-2026",
