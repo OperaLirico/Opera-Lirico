@@ -11,7 +11,7 @@ import hashlib
 import json
 import re
 import time
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from urllib.parse import urljoin, urlsplit, urlunsplit
 from zoneinfo import ZoneInfo
@@ -38,6 +38,22 @@ VOICE_RE = re.compile(
     re.I,
 )
 NOISE_RE = re.compile(r"privacy|cookie|facebook|instagram|linkedin|youtube|newsletter", re.I)
+NUMERIC_DATE_RE = re.compile(r"\\b(\\d{1,2})[./-](\\d{1,2})[./-](20\\d{2})\\b")
+WORD_DATE_RE = re.compile(r"\\b(\\d{1,2})\\s+([a-zà-ÿ]+)\\s+(20\\d{2})\\b", re.I)
+MONTHS = {
+    "jan": 1, "january": 1, "gennaio": 1,
+    "feb": 2, "february": 2, "febbraio": 2,
+    "mar": 3, "march": 3, "marzo": 3,
+    "apr": 4, "april": 4, "aprile": 4,
+    "may": 5, "maggio": 5,
+    "jun": 6, "june": 6, "giugno": 6,
+    "jul": 7, "july": 7, "luglio": 7,
+    "aug": 8, "august": 8, "agosto": 8,
+    "sep": 9, "sept": 9, "september": 9, "settembre": 9,
+    "oct": 10, "october": 10, "ottobre": 10,
+    "nov": 11, "november": 11, "novembre": 11,
+    "dec": 12, "december": 12, "dicembre": 12,
+}
 DATE_RE = re.compile(
     r"\b(?:\d{1,2}[./-]\d{1,2}[./-]20\d{2}|"
     r"\d{1,2}\s+[a-zà-ÿ]+\s+20\d{2}|20(?:26|27|28))\b",
@@ -53,6 +69,25 @@ def now_iso() -> str:
 
 def clean(value: str) -> str:
     return re.sub(r"\s+", " ", value or "").strip()
+
+
+def has_future_date(value: str) -> bool:
+    today = datetime.now(ZoneInfo("Europe/Rome")).date()
+    for day, month, year in NUMERIC_DATE_RE.findall(value):
+        try:
+            if date(int(year), int(month), int(day)) >= today:
+                return True
+        except ValueError:
+            continue
+    for day, month_name, year in WORD_DATE_RE.findall(value):
+        month = MONTHS.get(month_name.lower().rstrip("."))
+        if month:
+            try:
+                if date(int(year), month, int(day)) >= today:
+                    return True
+            except ValueError:
+                continue
+    return False
 
 
 def canonical_url(url: str) -> str:
@@ -108,7 +143,7 @@ def make_candidate(source: dict, url: str, title: str, text: str, checked_at: st
     if not VOICE_RE.search(text):
         return None
     date_signals = DATE_RE.findall(blob)
-    if not date_signals:
+    if not date_signals or not has_future_date(blob):
         return None
     # Capture a short, human-readable excerpt around the first useful signal.
     match = MASTERCLASS_RE.search(text)
