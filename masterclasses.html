@@ -30,7 +30,7 @@
 </main>
 <script>
 const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const fmt=s=>{if(!s)return "以官方公告为准";const d=new Date(s);return Number.isNaN(d.getTime())?"以官方公告为准":new Intl.DateTimeFormat("zh-CN",{timeZone:"Europe/Rome",dateStyle:"medium"}).format(d)};
+const safeUrl=s=>{try{const u=new URL(String(s||""));return ["https:","http:"].includes(u.protocol)?u.href:"";}catch{return "";}};\nconst fmt=s=>{if(!s)return "以官方公告为准";const d=new Date(s);return Number.isNaN(d.getTime())?"以官方公告为准":new Intl.DateTimeFormat("zh-CN",{timeZone:"Europe/Rome",dateStyle:"medium"}).format(d)};
 async function init(){
  const root=document.getElementById("masterList");
  try{
@@ -40,7 +40,7 @@ async function init(){
   if(!items.length){root.innerHTML='<div class="master-empty">目前还没有通过官方核验并正式发布的大师班。我们会先核验信息，再更新这里。</div>';return;}
   root.innerHTML=items.map(x=>{
    const facts=[x.teacher?"导师："+x.teacher:"",x.instrument_or_voice?"专业："+x.instrument_or_voice:"","时间："+fmt(x.start_at)+(x.end_at?" 至 "+fmt(x.end_at):""),"地点："+(x.location||"以官方公告为准"),"费用："+(x.fee_eur==null?"以官方公告为准":x.fee_eur===0?"免费":"€"+x.fee_eur),x.language?"授课语言："+x.language:"",x.description_zh||""].filter(Boolean);
-   return '<article class="master-card"><div class="master-tag">MASTERCLASS · 官方核验</div><h2>'+esc(x.title)+'</h2><div class="master-meta">'+facts.map(esc).join("<br>")+'</div><div class="master-meta">信息来源：'+esc(x.source_name)+'<br>最近核验：'+esc(x.last_verified_at||x.checked_at||"未记录")+'</div><div class="master-actions"><a href="'+esc(x.source_url)+'" target="_blank" rel="noopener noreferrer">官方公告 ↗</a>'+(x.application_url?'<a href="'+esc(x.application_url)+'" target="_blank" rel="noopener noreferrer">报名 / 详情 ↗</a>':"")+'</div></article>';
+   const source=safeUrl(x.source_url),apply=safeUrl(x.application_url);\n   return '<article class="master-card"><div class="master-tag">MASTERCLASS · 官方核验</div><h2>'+esc(x.title)+'</h2><div class="master-meta">'+facts.map(esc).join("<br>")+'</div><div class="master-meta">信息来源：'+esc(x.source_name)+'<br>最近核验：'+esc(x.last_verified_at||x.checked_at||"未记录")+'</div><div class="master-actions">'+(source?'<a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">官方公告 ↗</a>':'')+(apply?'<a href="'+esc(apply)+'" target="_blank" rel="noopener noreferrer">报名 / 详情 ↗</a>':'')+'</div></article>'
   }).join("");
  }catch(e){root.innerHTML='<div class="master-empty">暂时无法载入大师班资料，请稍后重试。</div>';}
 }
