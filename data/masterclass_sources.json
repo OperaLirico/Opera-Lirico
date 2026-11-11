@@ -57,6 +57,34 @@
       "url": "https://www.operaeurope.eu/masterclasses",
       "publisher_status": "official",
       "source_type": "organizer"
+    },
+    {
+      "id": "wj-opera-music-academy",
+      "name": "WJ Opera Music Academy",
+      "url": "https://www.wj-operamusic.academy/",
+      "publisher_status": "official",
+      "source_type": "organizer"
+    },
+    {
+      "id": "cantoalato-academy",
+      "name": "Cantoalato Academy",
+      "url": "https://www.cantoalato.it/masterclass/",
+      "publisher_status": "official",
+      "source_type": "organizer"
+    },
+    {
+      "id": "conservatorio-fausto-torrefranca",
+      "name": "Conservatorio di Musica Fausto Torrefranca",
+      "url": "https://consvv.it/evento/masterclass-di-canto-prof-thomas-heyer",
+      "publisher_status": "official",
+      "source_type": "organizer"
+    },
+    {
+      "id": "venice-opera-arts",
+      "name": "VeniceOperaArts",
+      "url": "https://www.veniceoperaarts.com/index.php/masterclass",
+      "publisher_status": "official",
+      "source_type": "organizer"
     }
   ]
 }
