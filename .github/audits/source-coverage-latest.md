@@ -1,26 +1,44 @@
 # Weekly source coverage audit
 
 - Cycle: 2026-W46
-- Started: 2026-11-10T17:40:18+01:00
-- Last updated: 2026-11-11T11:13:26+01:00
-- Status: **completed**
-- Coverage: **44/44** checked; 0 remaining
-- Failed/restricted/extraction errors: 0 (restricted: 0)
+- Started: 2026-11-11T11:21:19+01:00
+- Last updated: 2026-11-11T11:22:09+01:00
+- Status: **in_progress**
+- Coverage: **12/45** checked; 33 remaining
+- Failed/restricted/extraction errors: 3 (restricted: 0)
 - Change comparison: first baseline; no previous complete weekly scan exists yet
-- Sources with anomalies: 0
-- Registered sources: 44; pending candidates: 0
-- Source review classifications: auto_approved_official=26, auto_approved_third_party=4, irrelevant_candidate=13, needs_review=1
-- Official + relevant: 26
-- Third-party + relevant: 4
-- Needs review / irrelevant / unclassified: 14
-- Inventory SHA-256: 0394802bb3872ca099b24081681e6c4df3553d13bd2e28508847e41c3f8cd652 (inventory identity only)
+- Sources with anomalies: 2
+- Registered sources: 11; candidate queue entries: 1
+- Source review classifications: auto_approved_official=4, auto_approved_third_party=2, irrelevant_candidate=6
+- Official + relevant: 4
+- Third-party + relevant: 1
+- Needs review / irrelevant / unclassified: 6
+- Inventory SHA-256: 51e30a921773c00e9a2b8f6092d1dcb4ac549bd90a7a0b6f050eaec5bcdd3fec (inventory identity only)
 
 This scan checks page access and normalized text changes. A successful HTTP response is not proof of official identity, opportunity validity, or complete announcement capture. Text hashes are not publisher signatures.
 Keyword/vocal signals are discovery clues only. Source identity and relevance are reported separately from HTTP reachability; source-level approval does not approve every notice on a mixed-purpose page.
 
 ## Exceptions and changes
 
-No fetch failures detected. This is the initial baseline; content changes cannot be compared until a later complete weekly scan.
+### Teatro Lirico Sperimentale di Spoleto (source-10)
+- URL: https://www.tls-belli.it/bandi_e_avvisi/
+- Status: error / HTTP None
+- Last success: not yet successful
+- Anomalies: none
+- Error: Timeout: Failed to perform, curl: (28) Connection timed out after 25000 milliseconds. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+### Lavora con noi - Fondazione Aida (source-115)
+- URL: https://www.fondazioneaida.it/lavora-con-noi/
+- Status: extraction_error / HTTP 202
+- Last success: not yet successful
+- Anomalies: empty_extraction
+
+### Audizioni attori e attrici per la commedia brillante "Napule è" (source-117)
+- URL: https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/
+- Status: extraction_error / HTTP 202
+- Last success: not yet successful
+- Anomalies: empty_extraction
+
 ## Coverage limitations
 
 - Pending candidates are monitored separately and are not promoted to approved sources by this scan.
