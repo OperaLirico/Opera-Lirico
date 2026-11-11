@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-11-11T11:48:20+01:00",
+  "repository_full_name": "OperaLirico/Opera-Lirico",
+  "repository_alias": "wl19971007-lgtm/leo",
+  "main_commit_checked": {
+    "sha": "ad4add178eb4d0c866220999245a092a515ce397",
+    "message": "Update source audit after 46-source coverage pass (#42)",
+    "committed_at": "2026-11-11T10:48:01Z"
+  },
+  "pull_requests": {
+    "open": [],
+    "reviewed": [
+      {
+        "number": 41,
+        "title": "Add official Spoleto 2027 singing competition source",
+        "state": "merged",
+        "merge_commit": "db75e1f0c3023a5cb0a61f0a9fcecae0e9fd9b18",
+        "head_sha": "b115c3d958ddc366ddff8278d2d579bca66acc70",
+        "changed_files": [
+          ".github/audits/source-audit-latest.json",
+          ".github/audits/source-audit-latest.md",
+          "data/source_candidates.json",
+          "tests/test_source_policy_registry.py"
+        ],
+        "validation": {
+          "workflow_run_id": 43005784369,
+          "workflow": "Source quality tests",
+          "conclusion": "success"
+        }
+      },
+      {
+        "number": 42,
+        "title": "Update source audit after 46-source coverage pass",
+        "state": "merged",
+        "merge_commit": "ad4add178eb4d0c866220999245a092a515ce397",
+        "head_sha": "0441f7c311efee2bc0550aa771fa8229c97661e2",
+        "changed_files": [
+          ".github/audits/source-audit-latest.json",
+          ".github/audits/source-audit-latest.md"
+        ],
+        "validation": {
+          "json_parse": "success",
+          "coverage_checkpoint": "46/46 complete"
+        }
+      }
+    ]
+  },
+  "recent_actions": [
+    {
+      "id": 43005908500,
+      "name": "Weekly source coverage",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43005908500"
+    },
+    {
+      "id": 43005784369,
+      "name": "Source quality tests",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43005784369"
+    },
+    {
+      "id": 43002888094,
+      "name": "Weekly source coverage",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43002888094"
+    },
+    {
+      "id": 43002753673,
+      "name": "Source quality tests",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43002753673"
+    },
+    {
+      "id": 43001750581,
+      "name": "Weekly source coverage",
+      "event": "workflow_run",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43001750581"
+    },
+    {
+      "id": 43001129074,
+      "name": "Daily source refresh",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43001129074"
+    },
+    {
+      "id": 43000981302,
+      "name": "Source quality tests",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43000981302"
+    },
+    {
+      "id": 43000479957,
+      "name": "PDF signature evidence audit",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43000479957"
+    }
+  ],
+  "older_action_notes": [
+    {
+      "id": 42980502399,
+      "name": "Weekly source coverage",
+      "conclusion": "skipped",
+      "reason": "workflow_run guard did not start a job; not a failed scan."
+    },
+    {
+      "id": 42925288682,
+      "name": "Deploy GitHub Pages",
+      "conclusion": "cancelled",
+      "jobs_started": 0,
+      "followed_by_successful_deploys": [
+        42925297156,
+        42925535558
+      ]
+    }
+  ],
+  "website": {
+    "url": "https://wl19971007-lgtm.github.io/leo/",
+    "direct_live_check": "not_verified",
+    "direct_check_note": "The web page inspection tool returned DisabledError; this is not evidence that the website is down.",
+    "latest_pages_deploy": {
+      "run_id": 42925535558,
+      "conclusion": "success",
+      "updated_at": "2026-11-10T23:42:54Z",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/42925535558"
+    },
+    "site_facing_files_changed": false,
+    "note": "PR #41 and #42 changed source/audit/test files only; no Pages deployment was expected."
+  },
+  "change_scope": {
+    "pr41": [
+      ".github/audits/source-audit-latest.json",
+      ".github/audits/source-audit-latest.md",
+      "data/source_candidates.json",
+      "tests/test_source_policy_registry.py"
+    ],
+    "pr42": [
+      ".github/audits/source-audit-latest.json",
+      ".github/audits/source-audit-latest.md"
+    ],
+    "coverage_bot_commit": [
+      ".github/audits/source-coverage-checkpoint.json",
+      ".github/audits/source-coverage-latest.md"
+    ],
+    "production_code_changed": false,
+    "production_source_registry_changed": false,
+    "production_fetch_methods_changed": false
+  },
+  "weekly_source_coverage": {
+    "cycle": "2026-W46",
+    "status": "completed",
+    "checked_at": "2026-11-11T11:44:59+01:00",
+    "inventory_count": 46,
+    "checked_count": 46,
+    "remaining": 0,
+    "failed": 0,
+    "restricted": 0,
+    "extraction_errors": 0,
+    "anomalies": 0,
+    "inventory_sha256": "3830ac0c9ca41cf14b119aaf2376dfd86c357fc05588afd3ab2d1aa1acc17cd8",
+    "note": "SHA-256 identifies this inventory snapshot; it does not authenticate source identity or publisher signatures."
+  },
+  "source_audit": {
+    "registered_sources": 44,
+    "registered_classifications": {
+      "auto_approved_official": 26,
+      "auto_approved_third_party": 4,
+      "needs_review": 1,
+      "irrelevant_candidate": 13
+    },
+    "exact_duplicate_sources_extra_records": 15,
+    "new_candidates": [
+      {
+        "id": "candidate-1",
+        "name": "Provinispettacolo — Musica",
+        "classification": "auto_approved_third_party",
+        "confidence": "high",
+        "production_activation": false,
+        "note": "Discovery-only; its Opera e Lirica audition lead remains third-party-only."
+      },
+      {
+        "id": "candidate-2",
+        "name": "Teatro Lirico Sperimentale di Spoleto — 81st International Singing Competition",
+        "classification": "auto_approved_official",
+        "confidence": "high",
+        "queue_status": "pending_manual_review",
+        "production_activation": false,
+        "access_policy_status": "not_independently_verified_for_child_path",
+        "coverage_http_status": 200,
+        "note": "Official page says bando/details coming soon; HTML title says 80° while visible body says 81ª. Wait for official bando before resolving edition number or creating an opportunity."
+      }
+    ],
+    "source121": "needs_review; mixed musical-theatre casting with named voice roles, not promoted or deleted."
+  },
+  "p2_strategy_assessment": {
+    "total_registered_sources": 44,
+    "evidence_assessed": 15,
+    "baseline_only": 29,
+    "completed_batches": [
+      "batch-1-2026-11-10",
+      "batch-2-2026-11-10",
+      "batch-3-2026-11-10"
+    ],
+    "note": "Production fetch method remains Scrapling for assessed sources; no broad parser replacement."
+  },
+  "opportunity_quality": {
+    "report_generated_at": "2026-11-11T11:12:45+01:00",
+    "records": 7,
+    "published": 7,
+    "currently_open_and_eligible": 7,
+    "deadlines_within_7_days": 0,
+    "deadlines_within_30_days": 7,
+    "expired_published": 0,
+    "missing_application_url": 0,
+    "missing_official_pdf": 0,
+    "pending_or_non_official": 0,
+    "invalid_timezone_offsets": 0,
+    "duplicate_ids": 0
+  },
+  "known_risks": [
+    "The Opera e Lirica 17 November audition and 13 November deadline are only reported by third-party sources; official site confirms the email is used for a different vacancy but does not publish this audition. Do not publish it.",
+    "The Spoleto 2027 competition page has a title/body edition-number conflict and no bando yet; its exact child-path robots/terms status is not independently verified; keep it inactive.",
+    "Publisher digital signatures remain not_verified; file hashes do not establish official origin.",
+    "Live website availability was not directly confirmed during this run."
+  ],
+  "next_run_guidance": [
+    "Read this checkpoint first, then compare current main with main_commit_checked.sha; ignore this checkpoint-only commit when identifying substantive changes.",
+    "Check current open PRs, latest 5–8 Actions, and Pages deployment; do not rerun full coverage unless the weekly schedule is due, inventory changes, or an anomaly triggers it.",
+    "Continue P2 from the 29 baseline_only sources, selecting the next high-value batch without repeating the 15 already assessed.",
+    "Check the official Spoleto bando when it appears; verify robots.txt/terms for the child path before production activation.",
+    "Keep the Opera e Lirica lead outside opportunities until a first-party announcement is found."
+  ]
+}
