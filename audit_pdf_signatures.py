@@ -19,7 +19,7 @@ def _classify_signature_validation(value: str | None) -> str:
     if not value: return "not_reported"
     lowered = value.lower()
     if "signature is valid" in lowered: return "valid"
-    if "signature is invalid" in lowered or "validation failed" in lowered: return "invalid"
+    if any(token in lowered for token in ("signature is invalid", "validation failed", "digest mismatch")): return "invalid"
     return "inconclusive"
 
 def _classify_certificate_validation(value: str | None) -> str:
