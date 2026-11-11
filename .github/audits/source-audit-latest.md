@@ -12,24 +12,22 @@
 **Teatro Lirico Sperimentale di Spoleto — 81st International Singing Competition**  
 https://www.tls-belli.it/concorso-di-canto-2026/
 
-- Classification: `auto_approved_official`
-- Confidence: high
-- Direct official evidence: the institution's official [Bandi e avvisi page](https://www.tls-belli.it/bandi_e_avvisi/) links directly to the competition page; the competition page identifies the 81st edition for young opera singers and the footer names Istituzione Teatro Lirico Sperimentale di Spoleto “A. Belli”.
-- Published information: Spoleto, Teatro Caio Melisso, **16–20 February 2027**.
-- Current limitation: the page says the bando and detailed information will be available soon. No application deadline, eligibility, fee, application route or official PDF is available yet.
-- Decision: high-confidence official source candidate; `review_status=pending_manual_review`, `production_activation=false`. This is a source registration, **not an opportunity record**.
-- The separate [Libere Audizioni 2026 page](https://www.tls-belli.it/libere-audizioni-2026/) gives a 20 March 2026 deadline and is historical; it was not treated as a current opportunity.
-- robots.txt for this exact child path could not be independently retrieved in this audit. The parent page is already an existing source and was fetched successfully by the current Daily source refresh; nevertheless, the new child page remains inactive pending the access-policy check.
+- Classification: `auto_approved_official`; confidence high.
+- Direct official evidence: the institution's [Bandi e avvisi page](https://www.tls-belli.it/bandi_e_avvisi/) links directly to the competition page; the page identifies a competition for young opera singers and its footer names Istituzione Teatro Lirico Sperimentale di Spoleto “A. Belli”.
+- Visible page information: Spoleto, Teatro Caio Melisso, **16–20 February 2027**; the page says the bando and details will be available soon.
+- **Important internal conflict:** the crawler's HTML title metadata says “80° Concorso Internazionale di Canto”, while the visible page body says “81ª edizione”. The edition number remains unresolved until the official bando appears.
+- No application deadline, eligibility, fee, application route or official PDF is available. This is a source registration, **not an opportunity record**.
+- The separate [Libere Audizioni 2026 page](https://www.tls-belli.it/libere-audizioni-2026/) has a 20 March 2026 deadline and is historical.
+- robots.txt for this exact child path could not be independently retrieved. The parent page is already an existing source and was fetched successfully, and the new page returned HTTP 200 in coverage; nevertheless, the new child page remains inactive pending the access-policy check.
 
 ## Auto-approved third-party source
 
 **Provinispettacolo — Musica**  
 https://www.provinispettacolo.it/casting/musica/
 
-- Publisher classification: third-party casting aggregator.
-- Automated review: `auto_approved_third_party`; confidence high.
+- Publisher classification: third-party casting aggregator; `auto_approved_third_party`, high confidence.
 - The category explicitly covers singers and music professionals. Its [submission policy](https://www.provinispettacolo.it/proponi-casting/) says notices are submitted by outside parties and warns that not all notices are in good faith.
-- Decision: retain as a discovery-only third-party source. Individual opportunities must be verified against the organizer; no notice from this source is official evidence by itself.
+- Retain as a discovery-only third-party source. Individual opportunities must be checked against the organizer; no notice from this source is official evidence by itself.
 
 ## High-priority third-party opportunity lead — not published
 
@@ -37,11 +35,10 @@ The [Opera e Lirica audition listing](https://www.provinispettacolo.it/audizioni
 
 - Application deadline: **13 November 2026** (no time stated on this listing).
 - Audition: **17 November 2026, 15:30–19:30**, St. Paul's Within the Walls Church, Rome.
-- Voice types: soprano, mezzo-soprano, tenor, baritone and bass.
-- Preparation: two arias of the candidate's choice.
+- Voice types: soprano, mezzo-soprano, tenor, baritone and bass; two arias of the candidate's choice.
 - Contact shown by the listing: candidatureopera@gmail.com; written confirmation and an individual time slot are required.
 
-Cross-check: the [official Opera e Lirica website's separate job page](https://www.opera-lirica.com/it/content/11-lavora-con-noi) also lists candidatureopera@gmail.com, corroborating that the address is used by the organization. It does **not** publish this specific singer audition. Another third-party listing reports a 13 November 19:00 deadline, but that time is not adopted because it is not confirmed by an official notice.
+The [official Opera e Lirica website's separate job page](https://www.opera-lirica.com/it/content/11-lavora-con-noi) also lists the same email, corroborating that the address is used by the organization. It does **not** publish this specific singer audition. Another third-party listing reports a 13 November 19:00 deadline, but that time is not adopted without an official notice.
 
 **No first-party announcement for this specific audition was located.** Its dates, requirements and application route remain third-party-only and were not added to `data/opportunities.json`.
 
@@ -52,15 +49,17 @@ Cross-check: the [official Opera e Lirica website's separate job page](https://w
 - `source-121` remains `needs_review`. Its Robin Hood page names tenor, soprano, baritone and bass roles, but is a low-budget mixed musical-theatre production requiring acting and singing, not a clear core classical-opera source. It was not deleted, disabled or promoted.
 - No existing production source was deleted, disabled or changed.
 
-## Monitoring exceptions from the weekly coverage scan
+## Latest full coverage and monitoring follow-up
 
-- Coverage completed **45/45** with 0 remaining. The new TLS competition page was discovered after that scan and requires the next inventory pass (expected 46 entries).
-- `source-10` had one 25-second Scrapling timeout in the weekly batch. The existing Daily source refresh fetched its parent page successfully at **2026-11-11 11:09:07 Europe/Rome (HTTP 200)**, and manual page inspection also succeeded. Treat as intermittent; keep active and retry on the normal cycle.
-- `source-115` (Fondazione Aida), `source-117` (Attoricasting) and `source-120` (Orchestra della Toscana) returned HTTP 202 with empty extraction. Manual inspection confirmed actress/technical/promotional roles, actor/actress comedy casting, and a Primo Oboe-only competition respectively. Their existing `irrelevant_candidate` classifications remain unchanged.
-- No 403/429 or login/CAPTCHA restriction was recorded in this scan.
+- The post-merge weekly coverage scan completed **46/46**: 44 registered sources + 2 candidates; **0 failures, 0 restricted pages, 0 extraction errors, 0 anomalies**.
+- Both candidates returned HTTP 200. Candidate-1 and candidate-2 are included in the completed inventory.
+- The earlier 45-item pass had a 25-second timeout for source-10 and HTTP 202 empty extractions for source-115, source-117 and source-120. The subsequent 46-item pass rechecked all four successfully (HTTP 200, no anomalies). Their existing relevance classifications were not changed.
+- Candidate-2's access policy for the child path remains unverified; a successful HTTP response does not replace the robots/terms check. It remains a pending source candidate and is not production-activated.
+- Inventory SHA-256: `3830ac0c9ca41cf14b119aaf2376dfd86c357fc05588afd3ab2d1aa1acc17cd8` (inventory identity only; not source authentication or publisher signature).
 
 ## Files and next check
 
 - Candidate queue: `data/source_candidates.json` (`candidate-1`, `candidate-2`)
 - Machine report: `.github/audits/source-audit-latest.json`
-- The next coverage run should include candidate-2; no production fetch method or source activation was changed.
+- Weekly checkpoint: `.github/audits/source-coverage-checkpoint.json`
+- Weekly coverage is complete for the current 46-item inventory; no further full scan is needed today.
