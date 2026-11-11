@@ -34,7 +34,7 @@ def card_svg(title, category, location, deadline, source, url):
     esc = lambda x: html.escape(str(x or ""), quote=True)
     # Character slicing keeps Chinese titles readable without relying on Latin word breaks.
     title_lines = [title[i:i+16] for i in range(0, min(len(title), 48), 16)] or ["音乐机会"]
-    lines = "".join(f'<text x="72" y="{390+i*72}" class="title">{esc(line)}</text>' for i, line in enumerate(title_lines[:3]))
+    lines = "".join(f'<text x="72" y="{390+i*78}" font-family="Noto Sans CJK SC, sans-serif" font-size="54" font-weight="600" fill="#173d32">{esc(line)}</text>' for i, line in enumerate(title_lines[:3]))
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1440" viewBox="0 0 1080 1440" role="img" aria-label="{esc(title)}">
 <rect width="1080" height="1440" fill="#f5f0e5"/><rect x="42" y="42" width="996" height="1356" rx="8" fill="none" stroke="#c9bda7" stroke-width="2"/>
 <text x="72" y="130" font-family="Georgia,serif" font-size="30" letter-spacing="7" fill="#8b2635">OPERA LIRICO</text>
@@ -61,12 +61,14 @@ def eligible(item, category):
 
 def records():
     sources = [
-        ("招聘与比赛", ROOT / "data" / "opportunities.json"),
-        ("大师班", ROOT / "data" / "masterclasses.json"),
+        ("opportunity", ROOT / "data" / "opportunities.json"),
+        ("masterclass", ROOT / "data" / "masterclasses.json"),
     ]
-    for category, path in sources:
+    labels = {"vocal_competition": "国际声乐比赛", "audition": "歌剧院招聘", "choir_audition": "合唱团招聘", "academy": "青年艺术家项目", "masterclass": "声乐大师班"}
+    for kind, path in sources:
         data = load(path, {"items": []})
         for item in data.get("items", []):
+            category = "声乐大师班" if kind == "masterclass" else labels.get(item.get("opportunity_type"), "音乐机会")
             if eligible(item, category):
                 yield category, item
 
@@ -80,20 +82,27 @@ def main():
         used_ids.add(ident)
         title = str(item.get("title") or "音乐机会")
         location = item.get("location", "")
-        deadline = str(item.get("application_deadline_at") or "")[:10]
+        deadline_raw = item.get("application_deadline_at") or ""
+        try:
+            deadline_dt = datetime.fromisoformat(str(deadline_raw).replace("Z", "+00:00"))
+            deadline = deadline_dt.strftime("%Y-%m-%d %H:%M")
+        except (TypeError, ValueError):
+            deadline = str(deadline_raw)[:10]
         source = item.get("source_name", "")
         url = item.get("application_url") or item.get("source_url", "")
         voices = "、".join(VOICE.get(v, v) for v in item.get("voice_types", []) if v)
         facts = [f"类别：{category}", f"地点：{location or '以官方公告为准'}"]
         if item.get("teacher"): facts.append(f"导师：{item['teacher']}")
         if voices: facts.append(f"声部：{voices}")
-        if deadline: facts.append(f"申请截止：{deadline}")
+        if deadline: facts.append(f"申请截止：{deadline}（意大利当地时间）")
+        if item.get("fee_eur") is not None: facts.append(f"报名费用：€{item['fee_eur']}")
         if item.get("start_at"): facts.append(f"活动开始：{str(item['start_at'])[:10]}")
         if item.get("eligibility_summary"): facts.append(f"申请要求：{item['eligibility_summary']}")
         facts += [f"官方来源：{source}", f"官方链接：{url}", f"最近核验：{item.get('last_verified_at') or item.get('checked_at') or '未记录'}"]
-        body = f"# {title}\n\n{category}｜Opera Lirico 精选\n\n" + "\n".join(f"- {x}" for x in facts) + "\n\n信息可能更新，申请前请务必打开官方公告核对完整条件与截止时间。\n\n#古典音乐 #声乐 #歌剧 #音乐留学 #音乐机会"
+        body = f"# {title}\n\n{category}｜Opera Lirico 精选\n\n这是一条面向声乐学习者与青年歌唱家的机会信息。建议先确认自身条件，再通过官方渠道提交申请。\n\n" + "\n".join(f"- {x}" for x in facts) + "\n\n**申请提醒**：具体资格、曲目、材料与预选安排，请以官方章程为准；信息可能更新，提交前请再次核对官方页面。\n\n更多欧洲声乐机会，关注 Italia Audizioni。\n\n#古典音乐 #声乐 #歌剧 #音乐留学 #国际声乐比赛"
         (OUT / f"{ident}.md").write_text(body, encoding="utf-8")
-        (OUT / f"{ident}.svg").write_text(card_svg(title, category, location, ("申请截止：" + deadline) if deadline else "", source, url), encoding="utf-8")
+        card_deadline = ("报名截止：" + deadline) if deadline else "具体时间请查看官方公告"
+        (OUT / f"{ident}.svg").write_text(card_svg(title, category, location, card_deadline, source, url), encoding="utf-8")
         cairosvg.svg2png(bytestring=(OUT / f"{ident}.svg").read_bytes(), write_to=str(OUT / f"{ident}.png"), output_width=1080, output_height=1440)
         index.append({"id": ident, "category": category, "title": title, "status": "draft", "markdown": f"{ident}.md", "image": f"{ident}.png", "source_svg": f"{ident}.svg", "source_url": url})
     (OUT / "index.json").write_text(json.dumps({"generated_at": datetime.now(ZoneInfo("Europe/Rome")).isoformat(timespec="seconds"), "count": len(index), "items": index}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
