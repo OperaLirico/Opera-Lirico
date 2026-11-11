@@ -5,6 +5,7 @@ import html, json, re
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
+import cairosvg
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "build" / "social-drafts"
@@ -93,7 +94,8 @@ def main():
         body = f"# {title}\n\n{category}｜Opera Lirico 精选\n\n" + "\n".join(f"- {x}" for x in facts) + "\n\n信息可能更新，申请前请务必打开官方公告核对完整条件与截止时间。\n\n#古典音乐 #声乐 #歌剧 #音乐留学 #音乐机会"
         (OUT / f"{ident}.md").write_text(body, encoding="utf-8")
         (OUT / f"{ident}.svg").write_text(card_svg(title, category, location, ("申请截止：" + deadline) if deadline else "", source, url), encoding="utf-8")
-        index.append({"id": ident, "category": category, "title": title, "status": "draft", "markdown": f"{ident}.md", "image": f"{ident}.svg", "source_url": url})
+        cairosvg.svg2png(bytestring=(OUT / f"{ident}.svg").read_bytes(), write_to=str(OUT / f"{ident}.png"), output_width=1080, output_height=1440)
+        index.append({"id": ident, "category": category, "title": title, "status": "draft", "markdown": f"{ident}.md", "image": f"{ident}.png", "source_svg": f"{ident}.svg", "source_url": url})
     (OUT / "index.json").write_text(json.dumps({"generated_at": datetime.now(ZoneInfo("Europe/Rome")).isoformat(timespec="seconds"), "count": len(index), "items": index}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Generated {len(index)} private draft(s) from verified published records.")
 
