@@ -37,7 +37,11 @@ jobs:
         run: |
           set -euo pipefail
           API="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/storage/kv/namespaces"
-          curl -fsS -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$API" > /tmp/kv-namespaces.json
+          HTTP_STATUS="$(curl -sS -o /tmp/kv-namespaces.json -w '%{http_code}' -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "$API")"
+          if [ "$HTTP_STATUS" != "200" ]; then
+            echo "::error::Cloudflare denied KV namespace access (HTTP $HTTP_STATUS). Add Workers KV Storage: Edit permission to CF_WORKERS_DEPLOY_TOKEN, scoped to this account, then update the GitHub Actions secret."
+            exit 1
+          fi
           KV_ID="$(jq -r '.result[] | select(.title == "opera-lirico-content-drafts") | .id' /tmp/kv-namespaces.json | head -n1)"
           if [ -z "$KV_ID" ]; then
             curl -fsS -X POST -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" --data '{"title":"opera-lirico-content-drafts"}' "$API" > /tmp/kv-created.json
