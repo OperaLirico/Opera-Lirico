@@ -1,0 +1,62 @@
+{
+  "updated_at": "2026-11-12",
+  "policy": "Discovery only. These pages are leads, not automatic approval. Every opportunity must be verified against the original organizer before publication.",
+  "sources": [
+    {
+      "id": "regium-lepidi",
+      "name": "Regium Lepidi Opera",
+      "url": "https://www.regiumlepidi.com/en/academy/masterclasses",
+      "publisher_status": "official",
+      "source_type": "organizer"
+    },
+    {
+      "id": "carlo-felice-academy",
+      "name": "Teatro Carlo Felice Academy",
+      "url": "https://www.carlofelice.it/en/academy/",
+      "publisher_status": "official",
+      "source_type": "organizer"
+    },
+    {
+      "id": "biima-voice-intensive",
+      "name": "Breno Italy International Music Academy",
+      "url": "https://biimaperformance.com/voice-intensive-masterclass/",
+      "publisher_status": "official",
+      "source_type": "organizer"
+    },
+    {
+      "id": "vienna-opera-academy",
+      "name": "Vienna Opera Academy",
+      "url": "https://viennaoperaacademy.com/",
+      "publisher_status": "official",
+      "source_type": "organizer"
+    },
+    {
+      "id": "accademia-opera-italiana",
+      "name": "Accademia dell'Opera Italiana",
+      "url": "https://accademiadelloperaitaliana.com/",
+      "publisher_status": "official",
+      "source_type": "organizer"
+    },
+    {
+      "id": "cantare-lopera",
+      "name": "Cantare l'Opera",
+      "url": "https://www.cantarelopera.com/studio-e-perfezionamento/corsi-e-masterclasses.php",
+      "publisher_status": "third_party",
+      "source_type": "discovery_directory"
+    },
+    {
+      "id": "musicalchairs-voice",
+      "name": "Musical Chairs — Voice Courses",
+      "url": "https://www.musicalchairs.info/voice/courses",
+      "publisher_status": "third_party",
+      "source_type": "discovery_directory"
+    },
+    {
+      "id": "opera-europe-masterclasses",
+      "name": "European Opera Centre",
+      "url": "https://www.operaeurope.eu/masterclasses",
+      "publisher_status": "official",
+      "source_type": "organizer"
+    }
+  ]
+}
