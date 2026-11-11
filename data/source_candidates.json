@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T10:58:22+01:00",
+  "updated_at": "2026-11-11T11:31:58+01:00",
   "items": [
     {
       "candidate_id": 1,
@@ -32,7 +32,48 @@
       "audit_date": "2026-11-11",
       "auto_review_checked_at": "2026-11-11T10:58:22+01:00",
       "auto_review_reason": "The stable Musica category explicitly covers singers and music professionals and currently lists an opera-singer audition with named voice types. The publisher self-identifies as a general casting portal that accepts externally submitted notices and warns that not all third-party notices are fully reliable; therefore it is approved only as a high-value third-party discovery source, never as an official publisher.",
-      "review_notes": "Discovery-only. Verify each opportunity against the original organizer before publication. The current Opera e Lirica listing reports an application deadline of 2026-11-13 and an audition on 2026-11-17 in Rome, but no first-party organizer notice was found in this audit; do not add it to data/opportunities.json.",
+      "review_notes": "Discovery-only. Verify each opportunity against the original organizer before publication. The third-party listing reports an application deadline of 2026-11-13 and an audition on 2026-11-17 in Rome. The official Opera e Lirica website separately uses candidatureopera@gmail.com for another vacancy, which corroborates the address but does not verify this audition notice. No first-party notice for this audition was found; do not add it to data/opportunities.json.",
+      "production_activation": false,
+      "lead_crosscheck": {
+        "organizer_official_site_url": "https://www.opera-lirica.com/it/content/11-lavora-con-noi",
+        "checked_at": "2026-11-11T11:31:58+01:00",
+        "evidence_excerpt": "The official Opera e Lirica website lists candidatureopera@gmail.com as the application address for a separate Social Media Content Creator vacancy.",
+        "finding": "This corroborates that the email address is used by Opera e Lirica, but the official page does not publish or verify the specific 17 November 2026 singer audition."
+      }
+    },
+    {
+      "candidate_id": 2,
+      "source": "Teatro Lirico Sperimentale di Spoleto — 81st International Singing Competition",
+      "url": "https://www.tls-belli.it/concorso-di-canto-2026/",
+      "checked_at": "2026-11-11T11:31:58+01:00",
+      "status": "web_accessible",
+      "http_status": null,
+      "fetch_method": "official_site_link_and_web_open",
+      "title": "CONCORSO INTERNAZIONALE DI CANTO — 81ª edizione",
+      "relevant_lines": [
+        "già Concorso \"Comunità Europea\" per giovani cantanti lirici",
+        "81ª edizione",
+        "Spoleto, Teatro Caio Melisso — 16–20 febbraio 2027",
+        "Bando e informazioni disponibili prossimamente"
+      ],
+      "discovered_from": "https://www.tls-belli.it/bandi_e_avvisi/",
+      "discovered_at": "2026-11-11T11:31:58+01:00",
+      "review_status": "pending_manual_review",
+      "screening_status": "auto_reviewed",
+      "publisher_status": "official",
+      "relevance_status": "relevant",
+      "auto_review_status": "auto_approved_official",
+      "confidence": "high",
+      "evidence_url": "https://www.tls-belli.it/concorso-di-canto-2026/",
+      "evidence_urls": [
+        "https://www.tls-belli.it/bandi_e_avvisi/",
+        "https://www.tls-belli.it/concorso-di-canto-2026/"
+      ],
+      "audit_date": "2026-11-11",
+      "auto_review_checked_at": "2026-11-11T11:31:58+01:00",
+      "access_policy_status": "not_independently_verified_for_child_path",
+      "auto_review_reason": "The official Bandi e avvisi page directly links to this dedicated page; the page identifies the 81st International Singing Competition for young opera singers, gives the dates 16–20 February 2027, and its footer identifies Istituzione Teatro Lirico Sperimentale di Spoleto A. Belli. Publisher identity and vocal relevance are high-confidence. The parent page was successfully fetched by the existing production source refresh on 2026-11-11; robots.txt for this exact child path was not independently retrievable in this audit.",
+      "review_notes": "Source candidate only. The official page says the bando and information will be available soon; no application deadline, eligibility, fee, application route or official PDF is published yet. Do not create or publish an opportunity until the official call and supporting details appear. The separate libere-audizioni-2026 page has a 2026-03-20 deadline and is historical, not a current opportunity.",
       "production_activation": false
     }
   ]

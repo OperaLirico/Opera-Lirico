@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "audit_id": "source-audit-2026-11-11-provinispettacolo-music",
-  "generated_at": "2026-11-11T10:58:22+01:00",
-  "audited_count": 1,
+  "audit_id": "source-audit-2026-11-11-tls-spoleto-and-provinispettacolo",
+  "generated_at": "2026-11-11T11:31:58+01:00",
+  "audited_count": 2,
   "classifications": {
-    "auto_approved_official": 0,
+    "auto_approved_official": 1,
     "auto_approved_third_party": 1,
     "needs_review": 0,
     "duplicate_candidate": 0,
@@ -38,9 +38,48 @@
       ],
       "reason": "Stable music-category page with explicit singer coverage and a current classical-vocal audition lead. The publisher clearly identifies itself as a third-party casting portal and discloses verification limitations.",
       "limitations": [
-        "Not an official organizer or institution.",
+        "Not an official organizer or institution; use only as a discovery source.",
         "Individual notices must be checked against the original organizer before opportunity publication.",
-        "The current Opera e Lirica notice reports an application deadline of 2026-11-13 and audition on 2026-11-17 in Rome, but no first-party organizer notice was found in this audit."
+        "The 17 November 2026 audition and 13 November deadline remain third-party-only; the official website confirms use of the email address for a different vacancy, not this audition."
+      ],
+      "production_activation": false,
+      "audit_date": "2026-11-11",
+      "organizer_crosscheck": {
+        "url": "https://www.opera-lirica.com/it/content/11-lavora-con-noi",
+        "excerpt": "The official Opera e Lirica website lists candidatureopera@gmail.com for a separate Social Media Content Creator vacancy.",
+        "checked_at": "2026-11-11T11:31:58+01:00",
+        "finding": "The contact address is corroborated on the organizer's official site, but the specific 17 November 2026 singer audition is not published there."
+      }
+    },
+    {
+      "source_id": "candidate-2",
+      "name": "Teatro Lirico Sperimentale di Spoleto — 81st International Singing Competition",
+      "url": "https://www.tls-belli.it/concorso-di-canto-2026/",
+      "publisher_status": "official",
+      "auto_review_status": "auto_approved_official",
+      "queue_status": "pending_manual_review",
+      "relevance_status": "relevant",
+      "confidence": "high",
+      "access_policy_status": "not_independently_verified_for_child_path",
+      "evidence": [
+        {
+          "url": "https://www.tls-belli.it/bandi_e_avvisi/",
+          "excerpt": "The official Bandi e avvisi page links directly to CONCORSO DI CANTO and LIBERE AUDIZIONI."
+        },
+        {
+          "url": "https://www.tls-belli.it/concorso-di-canto-2026/",
+          "excerpt": "CONCORSO INTERNAZIONALE DI CANTO — already the European Community Competition for young opera singers; 81st edition."
+        },
+        {
+          "url": "https://www.tls-belli.it/concorso-di-canto-2026/",
+          "excerpt": "Spoleto, Teatro Caio Melisso, 16–20 February 2027; bando and information available soon. Footer identifies Istituzione Teatro Lirico Sperimentale di Spoleto A. Belli."
+        }
+      ],
+      "reason": "The page is directly linked from the institution's official Bandi e avvisi page, explicitly targets young opera singers, and carries the institution's legal identity in the footer.",
+      "limitations": [
+        "The bando and detailed information are not yet available.",
+        "No application deadline, eligibility, fee, application route or official PDF can be verified yet.",
+        "robots.txt for this exact child path was not independently retrievable; keep the item as a candidate and do not activate production scraping."
       ],
       "production_activation": false,
       "audit_date": "2026-11-11"
@@ -51,7 +90,7 @@
     "legacy_extra_records": 15,
     "exact_extra_duplicates_already_recorded_in_baseline": 15,
     "pending_candidates_before_this_audit": 0,
-    "new_candidate_records": 1,
+    "new_candidate_records": 2,
     "production_source_registry_changed": false,
     "previous_baseline_classifications": {
       "auto_approved_official": 26,
@@ -59,13 +98,40 @@
       "needs_review": 1,
       "irrelevant_candidate": 13
     },
-    "unresolved_existing_item": "source-121 remains needs_review because its registered Robin Hood permalink is cross-genre; this new stable Musica category page is recorded separately."
+    "unresolved_existing_item": "source-121 remains needs_review after a 2026-11-11 page check: the Robin Hood listing names tenor, soprano, baritone and bass roles but is a low-budget mixed musical-theatre production requiring acting and singing, not a clear core classical-opera source. Keep it pending; do not delete or promote."
   },
   "coverage": {
     "last_completed_cycle": "2026-W46",
-    "previous_inventory_checked": "44/44",
-    "new_candidate_in_previous_scan": false,
-    "next_inventory_expected": 45,
+    "previous_inventory_checked": "45/45",
+    "candidate_1_in_previous_scan": true,
+    "candidate_2_in_previous_scan": false,
+    "next_inventory_expected": 46,
     "next_scan_required": true
-  }
+  },
+  "monitoring_notes": [
+    {
+      "source_id": "source-10",
+      "issue": "The weekly coverage batch timed out after 25 seconds, but the existing Daily source refresh fetched the official Bandi e avvisi page successfully at 2026-11-11T11:09:07+01:00 (HTTP 200); a manual page inspection also succeeded.",
+      "evidence_url": "https://www.tls-belli.it/bandi_e_avvisi/",
+      "action": "Treat as an intermittent crawler timeout, keep the source active and retry on the normal scheduled cycle; do not disable it."
+    },
+    {
+      "source_id": "source-115",
+      "issue": "HTTP 202 with empty extraction; manual inspection shows actress, technical audio-light and promotion roles, with no singer role.",
+      "classification": "irrelevant_candidate",
+      "action": "Keep the existing classification; no production or relevance change."
+    },
+    {
+      "source_id": "source-117",
+      "issue": "HTTP 202 with empty extraction; manual inspection shows an actor/actress comedy audition, not a vocal call.",
+      "classification": "irrelevant_candidate",
+      "action": "Keep the existing classification; no production or relevance change."
+    },
+    {
+      "source_id": "source-120",
+      "issue": "HTTP 202 with empty extraction; manual inspection shows a Primo Oboe competition, an instrumental-only call.",
+      "classification": "irrelevant_candidate",
+      "action": "Keep the existing classification; no production or relevance change."
+    }
+  ]
 }
