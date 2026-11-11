@@ -1,6 +1,14 @@
 name: Discover masterclasses
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "discover_masterclasses.py"
+      - "data/masterclass_sources.json"
+      - "tests/test_masterclass_discovery.py"
+      - ".github/workflows/discover-masterclasses.yml"
+      - "requirements.txt"
   pull_request:
     paths:
       - "discover_masterclasses.py"
