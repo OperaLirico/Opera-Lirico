@@ -6,7 +6,7 @@
 
 - `data/opportunities.json` 中仅选择官方发布、人工核验、正式发布且未过期的机会。
 - `data/masterclasses.json` 使用独立分类与 `data/masterclass.schema.json`；新增大师班默认草稿，必须具备官方来源和证据，人工核验后才能发布。
-- 生成中文社交媒体文案和统一品牌 SVG 图片，输出到 `build/social-drafts/`，不会进入 GitHub Pages 网站目录。
+- 生成中文社交媒体文案、统一品牌 SVG 源文件和 1080×1440 PNG 图片，输出到 `build/social-drafts/`，不会进入 GitHub Pages 网站目录。
 - GitHub Actions 将图片与文案通过受保护的运营后台 API 写入 Cloudflare KV 私有审核队列，不上传到公开网站或公开 workflow artifact。
 - 不自动发布到小红书或抖音，不调用非官方接口，不保存社交账号凭据。
 
