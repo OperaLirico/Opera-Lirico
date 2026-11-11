@@ -9,6 +9,8 @@ on:
       - "app.js"
       - "data/conservatori_zh.json"
       - "data/conservatori_manual.json"
+      - "data/masterclasses.json"
+      - "masterclasses.html"
       - ".github/workflows/check-site-copy.yml"
   pull_request:
     branches:
@@ -53,7 +55,7 @@ jobs:
           html = Path("index.html").read_text(encoding="utf-8")
           app = Path("app.js").read_text(encoding="utf-8")
 
-          # The page is built on four entry tiles, each opening one panel.
+          # The homepage keeps four interactive panels plus a standalone masterclass link.
           # Wording may change; the structure and the wiring must not.
           panels = ["open-calls", "conservatori", "music-library", "pdfs"]
           missing = [p for p in panels if f'id="{p}"' not in html]
@@ -64,8 +66,10 @@ jobs:
               raise SystemExit("Expected exactly four entry tiles on the homepage")
 
           tile_titles = re.findall(r'<span class="tile-title">([^<]+)</span>', html)
-          if len(tile_titles) != 4:
-              raise SystemExit(f"Expected four tile titles, found {len(tile_titles)}")
+          if len(tile_titles) != 5:
+              raise SystemExit(f"Expected five homepage tile titles including masterclasses, found {len(tile_titles)}")
+          if 'href="masterclasses.html"' not in html:
+              raise SystemExit("Masterclasses entry link is missing")
 
           for panel in panels:
               if f'data-open="{panel}"' not in html:
