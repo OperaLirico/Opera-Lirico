@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "audit_id": "source-audit-2026-11-11-provinispettacolo-music",
+  "generated_at": "2026-11-11T10:58:22+01:00",
+  "audited_count": 1,
+  "classifications": {
+    "auto_approved_official": 0,
+    "auto_approved_third_party": 1,
+    "needs_review": 0,
+    "duplicate_candidate": 0,
+    "irrelevant_candidate": 0,
+    "unavailable_temporary": 0,
+    "retired_candidate": 0
+  },
+  "items": [
+    {
+      "source_id": "candidate-1",
+      "name": "Provinispettacolo — Musica",
+      "url": "https://www.provinispettacolo.it/casting/musica/",
+      "publisher_status": "third_party",
+      "auto_review_status": "auto_approved_third_party",
+      "queue_status": "pending_manual_review",
+      "relevance_status": "relevant",
+      "confidence": "high",
+      "evidence": [
+        {
+          "url": "https://www.provinispettacolo.it/casting/musica/",
+          "excerpt": "Scopri come candidarti gratuitamente per lavorare come cantante, musicista e altre figure artistiche legate al mondo della musica!"
+        },
+        {
+          "url": "https://www.provinispettacolo.it/proponi-casting/",
+          "excerpt": "The site accepts casting/audition notices submitted by outside parties and says it attempts to verify them, while warning that not all notices are in good faith."
+        },
+        {
+          "url": "https://www.provinispettacolo.it/audizioni-opera-lirica-roma-cantanti-professori-orchestra/",
+          "excerpt": "The 8 October 2026 Opera e Lirica listing names soprano, mezzo-soprano, tenor, baritone and bass roles."
+        }
+      ],
+      "reason": "Stable music-category page with explicit singer coverage and a current classical-vocal audition lead. The publisher clearly identifies itself as a third-party casting portal and discloses verification limitations.",
+      "limitations": [
+        "Not an official organizer or institution.",
+        "Individual notices must be checked against the original organizer before opportunity publication.",
+        "The current Opera e Lirica notice reports an application deadline of 2026-11-13 and audition on 2026-11-17 in Rome, but no first-party organizer notice was found in this audit."
+      ],
+      "production_activation": false,
+      "audit_date": "2026-11-11"
+    }
+  ],
+  "existing_registry_context": {
+    "registered_sources": 44,
+    "legacy_extra_records": 15,
+    "exact_extra_duplicates_already_recorded_in_baseline": 15,
+    "pending_candidates_before_this_audit": 0,
+    "new_candidate_records": 1,
+    "production_source_registry_changed": false,
+    "previous_baseline_classifications": {
+      "auto_approved_official": 26,
+      "auto_approved_third_party": 4,
+      "needs_review": 1,
+      "irrelevant_candidate": 13
+    },
+    "unresolved_existing_item": "source-121 remains needs_review because its registered Robin Hood permalink is cross-genre; this new stable Musica category page is recorded separately."
+  },
+  "coverage": {
+    "last_completed_cycle": "2026-W46",
+    "previous_inventory_checked": "44/44",
+    "new_candidate_in_previous_scan": false,
+    "next_inventory_expected": 45,
+    "next_scan_required": true
+  }
+}
