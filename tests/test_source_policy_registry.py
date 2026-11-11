@@ -93,5 +93,26 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                 self.assertNotEqual(item.get("publisher_status"), "official")
 
 
+    def test_auto_reviewed_third_party_candidate_stays_out_of_production_registry(self):
+        candidates = json.loads((ROOT / "data" / "source_candidates.json").read_text(encoding="utf-8"))
+        candidate = next(item for item in candidates["items"] if item["candidate_id"] == 1)
+        self.assertEqual(candidate["review_status"], "pending_manual_review")
+        self.assertEqual(candidate["auto_review_status"], "auto_approved_third_party")
+        self.assertEqual(candidate["publisher_status"], "third_party")
+        self.assertEqual(candidate["relevance_status"], "relevant")
+        self.assertEqual(candidate["confidence"], "high")
+
+        sources = json.loads((ROOT / "data" / "sources.json").read_text(encoding="utf-8"))
+        policies = json.loads((ROOT / "data" / "source_fetch_policies.json").read_text(encoding="utf-8"))
+        self.assertNotIn(candidate["url"], {item["url"] for item in sources})
+        self.assertNotIn(candidate["url"], {item["url"] for item in policies["entries"]})
+
+        from audit_source_coverage import source_inventory
+        audited = next(item for item in source_inventory() if item["source_id"] == "candidate-1")
+        self.assertEqual(audited["kind"], "pending_candidate")
+        self.assertEqual(audited["review_status"], "auto_approved_third_party")
+        self.assertEqual(audited["publisher_status"], "third_party")
+        self.assertEqual(audited["audit_confidence"], "high")
+
 if __name__ == "__main__":
     unittest.main()
