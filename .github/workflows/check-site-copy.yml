@@ -24,7 +24,10 @@ on:
       - "data/conservatori_zh.json"
       - "data/conservatori_manual.json"
       - "data/masterclasses.json"
+      - "data/masterclass.schema.json"
       - "masterclasses.html"
+      - "content_engine/**"
+      - ".github/workflows/generate-social-drafts.yml"
       - ".github/workflows/check-site-copy.yml"
   workflow_dispatch:
 
