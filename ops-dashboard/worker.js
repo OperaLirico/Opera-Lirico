@@ -31,6 +31,7 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 .socialImage{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#f5f0e5}.socialEditor{min-width:0}.socialEditor textarea{width:100%;min-height:210px;padding:12px;border:1px solid var(--line);border-radius:10px;font:14px/1.7 system-ui,sans-serif;resize:vertical;background:#fff}
 .socialActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.socialMeta{font-size:12px;color:var(--muted);margin:4px 0 10px}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:11px;color:var(--green)}
 .masterclassQueue{display:grid;gap:14px}.masterclassCard{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fffefa}.masterclassCard h3{font:600 19px Georgia,serif;margin:0 0 6px}.masterclassMeta{font-size:12px;color:var(--muted);margin:5px 0}.masterclassExcerpt{font-size:13px;line-height:1.65;background:#f6f3eb;padding:12px;border-radius:8px;margin:10px 0;overflow-wrap:anywhere}.masterclassNotes{width:100%;min-height:72px;padding:10px;border:1px solid var(--line);border-radius:8px;font:14px/1.6 system-ui,sans-serif;margin-top:10px}.masterclassActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.masterclassState{font-size:12px;color:var(--green);margin-top:8px}
+.workflowList{display:grid;gap:0}.workflowRow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}.workflowRow:last-child{border:0}.workflowName{font-weight:600}.workflowMeta{font-size:11px;color:var(--muted)}.workflowBadge{font-size:11px;border:1px solid var(--line);border-radius:999px;padding:3px 9px;white-space:nowrap}.workflowBadge.success{color:#236347}.workflowBadge.failure{color:#a13c32}.workflowBadge.running{color:#8a652d}.workflowBadge.neutral{color:var(--muted)}
 @media(max-width:620px){.socialCard{grid-template-columns:1fr}.socialImage{max-width:320px}.socialEditor textarea{min-height:180px}}
 @media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top{align-items:flex-start}}
 @media(max-width:420px){.grid{grid-template-columns:1fr 1fr}.card{padding:14px}.value{font-size:29px}}
@@ -44,6 +45,7 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 <div class="top"><div><div class="brand">Opera Lirico</div><div class="sub">PRIVATE OPERATIONS DASHBOARD</div></div><div style="display:flex;gap:8px;align-items:center"><button id="refresh">刷新数据</button><button id="logout">退出登录</button></div></div>
 <h1>运营概览</h1><p class="intro">网站访问与邮件订阅 · 数据实时读取，不保存订阅者个人邮箱</p>
 <div id="status" class="status">正在读取数据…</div>
+<section class="section" style="margin-top:0"><h2>自动化运行状态</h2><div class="panel"><p class="hint">最近 20 次 GitHub Actions 运行 · 失败会自动记录并提醒</p><div id="workflowRuns" class="workflowList"><div class="empty">正在读取运行记录…</div></div></div></section>
 <div class="grid">
 <div class="card"><div class="kicker">PAGE VIEWS · 30 DAYS</div><div class="value" id="pageviews">—</div><div class="hint">过去 30 天页面浏览量</div></div>
 <div class="card"><div class="kicker">VISITS · 30 DAYS</div><div class="value" id="visits">—</div><div class="hint">过去 30 天访问次数（Visits）</div></div>
@@ -93,6 +95,27 @@ function renderDrafts(items){
  const left=document.createElement("div");const title=document.createElement("strong");title.textContent=item.subject||"（无标题）";left.append(title);
  const small=document.createElement("small");small.textContent=item.created||"";left.append(small);row.append(left);
  root.append(row);});
+}
+function renderWorkflowRuns(items){
+ const root=$("workflowRuns");root.replaceChildren();
+ if(!items.length){const p=document.createElement("div");p.className="empty";p.textContent="暂时没有可显示的运行记录。";root.append(p);return;}
+ items.forEach(item=>{
+  const row=document.createElement("div");row.className="workflowRow";
+  const left=document.createElement("div");
+  const name=document.createElement("div");name.className="workflowName";name.textContent=item.name||"未命名工作流";left.append(name);
+  const meta=document.createElement("div");meta.className="workflowMeta";meta.textContent=[item.event,item.branch,item.created_at?new Date(item.created_at).toLocaleString("zh-CN"):""].filter(Boolean).join(" · ");left.append(meta);
+  const status=document.createElement("span");status.className="workflowBadge "+(item.conclusion==="success"?"success":item.conclusion==="failure"?"failure":item.status==="in_progress"?"running":"neutral");
+  status.textContent=item.conclusion==="success"?"成功":item.conclusion==="failure"?"失败":item.conclusion==="cancelled"?"已取消":item.status==="in_progress"?"运行中":"排队中";
+  const link=document.createElement("a");
+  try{const u=new URL(item.html_url);if(u.hostname==="github.com"&&u.pathname.startsWith("/OperaLirico/Opera-Lirico/actions/runs/")){link.href=u.href;link.target="_blank";link.rel="noopener noreferrer";link.textContent="查看 ↗";}else link.textContent="";}catch{link.textContent="";}
+  const right=document.createElement("div");right.style.display="flex";right.style.alignItems="center";right.style.gap="8px";right.append(status);if(link.href)right.append(link);
+  row.append(left,right);root.append(row);
+ });
+}
+async function loadWorkflowRuns(){
+ const root=$("workflowRuns");root.textContent="正在读取运行记录…";
+ try{const r=await fetch("/api/workflows",{cache:"no-store"});if(r.status===401){showLogin();return;}if(!r.ok)throw new Error("运行记录读取失败");const d=await r.json();renderWorkflowRuns(d.runs||[]);}
+ catch(err){root.textContent="自动化运行记录暂时不可用，请稍后刷新。";}
 }
 async function loadContentQueue(){
  const root=$("contentQueue");root.textContent="正在读取内容草稿…";
@@ -180,6 +203,7 @@ async function loadData(){
   const issues=[];if(!d.cloudflare?.ok)issues.push("Cloudflare："+(d.cloudflare?.error||"不可用"));if(!d.buttondown?.ok)issues.push("Buttondown："+(d.buttondown?.error||"不可用"));
   loadContentQueue();
   loadMasterclassQueue();
+  loadWorkflowRuns();
   $("status").textContent=(issues.length?issues.join("；"):"两项数据源均已连接")+" · 更新于 "+new Date(d.generated_at).toLocaleString("zh-CN");
  }catch(err){$("status").textContent=err.message;}
 }
@@ -467,6 +491,28 @@ export default {
       };
       await env.CONTENT_DRAFTS.put("masterclass-review:" + id, JSON.stringify(record), { expirationTtl: 60 * 60 * 24 * 365 });
       return json({ ok: true, review: record });
+    }
+    if (url.pathname === "/api/workflows" && request.method === "GET") {
+      if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
+      try {
+        const source = await fetchJson("https://api.github.com/repos/OperaLirico/Opera-Lirico/actions/runs?per_page=20", {
+          "X-GitHub-Api-Version": "2022-11-28",
+          "User-Agent": "Opera-Lirico-Operations-Dashboard"
+        });
+        const runs = (Array.isArray(source.workflow_runs) ? source.workflow_runs : []).slice(0, 20).map(run => ({
+          id: run.id,
+          name: String(run.name || "").slice(0, 160),
+          event: String(run.event || ""),
+          status: String(run.status || ""),
+          conclusion: run.conclusion || null,
+          branch: String(run.head_branch || "").slice(0, 120),
+          created_at: run.created_at || null,
+          html_url: run.html_url || ""
+        }));
+        return json({ updated_at: new Date().toISOString(), runs });
+      } catch {
+        return json({ error: "workflow_runs_unavailable" }, 502);
+      }
     }
     if (url.pathname === "/api/data" && request.method === "GET") {
       if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
