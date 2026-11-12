@@ -415,7 +415,14 @@ export default {
       try {
         const source = await fetchJson("https://raw.githubusercontent.com/OperaLirico/Opera-Lirico/main/data/masterclass_candidates.json");
         const items = Array.isArray(source.items) ? source.items.slice(0, 300) : [];
-        const reviews = await Promise.all(items.map(item => env.CONTENT_DRAFTS.get("masterclass-review:" + item.candidate_id, "json")));
+        const reviews = await Promise.all(items.map(async item => {
+          const ids = [item.candidate_id, ...(Array.isArray(item.legacy_candidate_ids) ? item.legacy_candidate_ids : [])];
+          for (const id of ids) {
+            const review = await env.CONTENT_DRAFTS.get("masterclass-review:" + id, "json");
+            if (review) return review;
+          }
+          return null;
+        }));
         return json({
           updated_at: source.updated_at || null,
           candidate_count: items.length,
