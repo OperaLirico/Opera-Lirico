@@ -488,11 +488,13 @@ function renderConservatori(){
     if(da!==db)return da<db?-1:1;
     return String(a.city||'').localeCompare(String(b.city||''),'zh');
   });
+  const special=filtered.filter(c=>(c.number||0)>=300);
   const groups=[
-    {title:'歌剧院学院',hint:'Teatro · Accademia',items:filtered.filter(c=>(c.number||0)>=300)},
+    {title:'歌剧院专业学院',hint:'Opera Academy',items:special.filter(c=>c.institution_type==='opera_academy')},
+    {title:'合唱学校',hint:'Choral Schools',items:special.filter(c=>c.institution_type==='choral_school')},
     {title:'公立音乐学院',hint:'Conservatorio',items:filtered.filter(c=>(c.number||0)<300)}
   ].filter(g=>g.items.length);
-  wrap.innerHTML=groups.map(g=>`<section class="cons-group"><div class="cons-group-head"><h3>${g.title}</h3><span>${g.hint} · ${g.items.length} 所</span></div><div class="cons-list">${g.items.map(consCard).join('')}</div></section>`).join('');
+  wrap.innerHTML=groups.map(g=>`<section class="cons-group"><div class="cons-group-head"><h3>${g.title}</h3><span>${g.hint} · ${g.items.length} 个项目</span></div><div class="cons-list">${g.items.map(consCard).join('')}</div></section>`).join('');
   const emptyBox=$('#conservatoriEmpty');
   if(emptyBox)emptyBox.innerHTML=filtered.length?'':'<div class="empty">没有找到符合条件的院校。请更换城市或调整筛选条件。</div>';
   renderTiles();
@@ -563,6 +565,7 @@ async function loadConservatori(){
         const note=manualNotes[item.number];
         if(note&&note.zh)item.zh=Object.assign({},note.zh);
         if(note&&note.notes&&note.notes.length)item.zh=Object.assign({},item.zh||{},{notes:note.notes});
+        if(note&&note.institution_type)item.institution_type=note.institution_type;
       }
     }
     if(zh&&zh.ok){
