@@ -39,7 +39,7 @@ VOICE_RE = re.compile(
 )
 NOISE_RE = re.compile(r"privacy|cookie|facebook|instagram|linkedin|youtube|newsletter", re.I)
 GENERIC_NAV_RE = re.compile(r"^(?:skip to (?:main )?content|salta al contenuto|vai al contenuto|home|menu)$", re.I)
-GENERIC_LISTING_RE = re.compile(r"^(?:master.?classes?|corsi e masterclasses?)(?:\s*[-|–:]\s*.+)?$|^courses?\s*[|–-]\s*voice$", re.I)
+GENERIC_LISTING_RE = re.compile(r"^(?:master.?class(?:es)?|corsi e master.?class(?:es)?)(?:\s*[-|–:]\s*.+)?$|^courses?\s*[|–-]\s*voice$", re.I)
 NUMERIC_DATE_RE = re.compile(r"\b(\d{1,2})[./-](\d{1,2})[./-](20\d{2})\b")
 WORD_DATE_RE = re.compile(r"\b(\d{1,2})\s+([a-zà-ÿ]+)\s+(20\d{2})\b", re.I)
 MONTHS = {
