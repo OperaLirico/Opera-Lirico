@@ -13,10 +13,10 @@ ROOT=Path(__file__).resolve().parent
 AUDIT=ROOT/".github"/"audits"
 SAMPLES=ROOT/"artifacts"/"p2-p4-html-samples"
 ROME=ZoneInfo("Europe/Rome")
-PILOT_IDS={"source-7","source-8","source-10","source-18","source-20"}
-PILOT_BATCH="batch-3-2026-11-10"
+PILOT_IDS={"source-12","source-13","source-14","source-21","source-22"}
+PILOT_BATCH="batch-4-2026-11-12"
 MAX_BYTES,DELAY=1_500_000,1.2
-UA="ItaliaAuditionsResearchBot/1.0 (+https://github.com/wl19971007-lgtm/leo)"
+UA="ItaliaAuditionsResearchBot/1.0 (+https://github.com/OperaLirico/Opera-Lirico)"
 SIGNALS={
  "vocal_roles":re.compile(r"soprano|mezzosoprano|contralto|tenore|baritono|basso",re.I),
  "deadline":re.compile(r"scadenz|entro il|termine|deadline|application",re.I),
@@ -311,7 +311,7 @@ def main():
     sources={x["source_id"]:x for x in policies["entries"]}
     AUDIT.mkdir(parents=True,exist_ok=True); SAMPLES.mkdir(parents=True,exist_ok=True)
     report={"generated_at":now_iso(),"batch":PILOT_BATCH,
-        "scope":"Third batch of five high-value official vocal-source and competition pages.",
+        "scope":"Fourth batch of five high-value official vocal competition pages; all selected IDs were baseline_only at selection time.",
         "pilot_source_ids":sorted(PILOT_IDS),"production_changes":False,"strategy_status":"evaluation_only","items":[],
         "limitations":["robots.txt/sitemap availability does not prove relevant notices are present.",
             "Only page-advertised RSS/Atom and explicit public API links are inspected; no guessed API endpoint is queried.",
