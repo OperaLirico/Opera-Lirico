@@ -235,13 +235,18 @@ function summaryOf(item){
   if(/尚未人工翻译|LiederNet 收录的声乐文本/.test(text))return '';
   return text;
 }
+const voicePatterns={tenor:/男高音|tenor/i,soprano:/女高音|soprano/i,mezzo:/女中音|mezzo/i,baritone:/男中音|baritone/i,bass:/男低音|basso|bass/i,contralto:/女低音|contralto/i};
+function matchesVoiceFilter(item,filter){return filter==='all'||Boolean((voicePatterns[filter]||/$a/).test(String(item.voice||'')));}
 function renderMusicSearch(rawQuery){
   const target=$('#musicSearchResults');
   const query=rawQuery.trim();
+  const voiceFilter=$('#musicVoiceFilter')?.value||'all';
+  const visibleRepertoire=repertoire.filter(item=>matchesVoiceFilter(item,voiceFilter));
   if(!query){
-    const groups=[...new Set(repertoire.filter(item=>item.section).map(item=>item.section))];
+    if(!visibleRepertoire.length){target.innerHTML='<div class="music-empty">这个声部暂时没有收录曲目。可以切换到“全部声部”查看完整曲库。</div>';return;}
+    const groups=[...new Set(visibleRepertoire.filter(item=>item.section).map(item=>item.section))];
     const featured=groups.map(group=>{
-      const items=repertoire.filter(item=>item.section===group).sort((a,b)=>(a.priority||999)-(b.priority||999));
+      const items=visibleRepertoire.filter(item=>item.section===group).sort((a,b)=>(a.priority||999)-(b.priority||999));
       return items.length?'<section class="music-feature-group"><h3>'+esc(group)+'</h3><div class="music-feature-list">'+items.map(item=>'<button type="button" class="music-feature-item" data-suggest="'+esc(item.title)+'"><strong>'+esc(item.title)+'</strong><span>'+esc(cleanName(item.composer||''))+'</span></button>').join('')+'</div></section>':'';
     }).join('');
     target.innerHTML='<p class="result-meta">先浏览常见、经典的声乐曲目；输入作品名或作曲家可搜索。冷门自动导入记录已从主曲库分离。</p>'+featured;
@@ -252,13 +257,13 @@ function renderMusicSearch(rawQuery){
     return;
   }
   const terms=query.split(/[\/,，、;；|]+/).map(normalizeSearch).filter(Boolean);
-  const evaluated=repertoire.map(item=>matchItem(item,terms)).filter(Boolean);
+  const evaluated=visibleRepertoire.map(item=>matchItem(item,terms)).filter(Boolean);
   const main=evaluated.filter(entry=>entry.nameScore>0)
     .sort((a,b)=>b.nameScore-a.nameScore||(a.item.priority||9999)-(b.item.priority||9999)||a.item.title.localeCompare(b.item.title));
   const extra=evaluated.filter(entry=>!entry.nameScore)
     .sort((a,b)=>((b.text&&b.text.count)||0)-((a.text&&a.text.count)||0)||a.item.title.localeCompare(b.item.title));
   if(!evaluated.length){
-    const near=repertoire.map(item=>({item,sim:editDistance(normalizeSearch(query),itemNorm(item).title,6)}))
+    const near=visibleRepertoire.map(item=>({item,sim:editDistance(normalizeSearch(query),itemNorm(item).title,6)}))
       .filter(entry=>entry.sim<=6).sort((a,b)=>a.sim-b.sim).slice(0,5);
     target.innerHTML=`<div class="music-empty"><strong>未找到“${esc(query)}”</strong><p>${near.length?'你可能想找：'+near.map(entry=>`<button type="button" class="search-chip" data-suggest="${esc(entry.item.title)}">${esc(entry.item.title)}</button>`).join(' '):'请尝试缩短关键词，或使用作品名称、作曲家姓名进行搜索。'}</p></div>`;
     return;
@@ -614,6 +619,8 @@ $('#installButton').addEventListener('click',async()=>{if(installPrompt){install
 if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!window.navigator.standalone){$('#installButton').hidden=false;}
 if('serviceWorker' in navigator && /^https?:$/.test(location.protocol))navigator.serviceWorker.register(new URL('service-worker.js',sourceRoot)).catch(()=>{});
 $('#musicSearchForm').addEventListener('submit',event=>{event.preventDefault();renderMusicSearch($('#musicSearchInput').value);});
+const musicVoiceFilter=$('#musicVoiceFilter');
+if(musicVoiceFilter)musicVoiceFilter.addEventListener('change',()=>renderMusicSearch($('#musicSearchInput').value));
 let musicSearchTimer=null;
 $('#musicSearchInput').addEventListener('input',event=>{const value=event.target.value;clearTimeout(musicSearchTimer);musicSearchTimer=setTimeout(()=>renderMusicSearch(value),160);});
 document.addEventListener('click',event=>{
