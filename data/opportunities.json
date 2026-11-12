@@ -62,7 +62,8 @@
       ],
       "notes": "官方页面列出 2027/28 歌剧制作角色和多地预选安排；页面对最终比赛日期的年份表述存在不一致，因此本记录不展示未经确认的最终比赛日期。",
       "application_url": "https://aslico.org/edizione-in-corso/",
-      "official_pdf_url": "https://aslico.org/wp-content/uploads/2026/10/Bando-78-Concorso-Internazionale-AsLiCo-per-Giovani-Cantanti-Lirici-78-International-AsLiCo-Competition-for-Young-Opera-Singers-2027_agg.15.10.26_.pdf"
+      "official_pdf_url": "https://aslico.org/wp-content/uploads/2026/10/Bando-78-Concorso-Internazionale-AsLiCo-per-Giovani-Cantanti-Lirici-78-International-AsLiCo-Competition-for-Young-Opera-Singers-2027_agg.15.10.26_.pdf",
+      "title_zh": "第 78 届 AsLiCo 国际青年歌唱家比赛（2027）"
     },
     {
       "id": "morlacchi-2026-international-vocal-competition",
@@ -134,7 +135,8 @@
       ],
       "notes": "比赛日期为2026年12月14日至15日；14日上午安排半决赛选手与官方钢琴伴奏排练，14日14:00开始半决赛，15日18:00举行公开决赛。具体材料和汇款方式以官网章程为准。",
       "application_url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.docx",
-      "official_pdf_url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf"
+      "official_pdf_url": "https://www.concorsomorlacchi.it/assets/modulo-iscrizione-morlacchi-2026.pdf",
+      "title_zh": "弗朗切斯科·莫拉基国际声乐比赛（2026）"
     },
     {
       "id": "carlofelice-academy-2027",
@@ -186,7 +188,8 @@
           "pdf_page": 1
         }
       ],
-      "notes": "现场选拔安排在2027年1月10日至11日；官方 PDF 第1页列出歌手角色，第2页列出截止日期及现场选拔信息。"
+      "notes": "现场选拔安排在2027年1月10日至11日；官方 PDF 第1页列出歌手角色，第2页列出截止日期及现场选拔信息。",
+      "title_zh": "Teatro Carlo Felice 歌剧学院：歌唱家与合作钢琴家进修项目（2027）"
     },
     {
       "id": "carlofelice-choir-tenors-2026",
@@ -249,7 +252,8 @@
           "pdf_page": 2
         }
       ],
-      "notes": "请在申请前再次检查剧院公告是否有时间或程序变更。"
+      "notes": "请在申请前再次检查剧院公告是否有时间或程序变更。",
+      "title_zh": "Audizione per Artisti del Coro – Tenori"
     },
     {
       "id": "carlofelice-choir-basses-2026",
@@ -312,7 +316,8 @@
           "pdf_page": 2
         }
       ],
-      "notes": "官方公告把男低音和男中音放在同一份简章中；此处按不同声部拆分，以准确显示试唱日期。"
+      "notes": "官方公告把男低音和男中音放在同一份简章中；此处按不同声部拆分，以准确显示试唱日期。",
+      "title_zh": "Concorso per Artisti del Coro – Bassi"
     },
     {
       "id": "carlofelice-choir-baritones-2026",
@@ -375,7 +380,8 @@
           "pdf_page": 2
         }
       ],
-      "notes": "官方公告把男低音和男中音放在同一份简章中；此处按不同声部拆分，以准确显示试唱日期。"
+      "notes": "官方公告把男低音和男中音放在同一份简章中；此处按不同声部拆分，以准确显示试唱日期。",
+      "title_zh": "Concorso per Artisti del Coro – Baritoni"
     },
     {
       "id": "teatro-massimo-2-contralti-2026",
@@ -441,7 +447,8 @@
       ],
       "notes": "全职、无固定期限的合唱团岗位，招聘2名Contralto。考试日期存在官方来源冲突：招聘网页写2026年12月19日10:00，官方简章PDF第6页（PDF第5页索引）写2026年12月20日10:00。为避免误导，暂不填写结构化考试日期；出行前应向剧院确认。官网简章列出第一轮需背谱演唱三首不同作曲家的歌剧咏叹调（至少一首意大利语），另有视唱练耳/声乐练习及合唱曲目。公告未明确列出报名费，本记录不将其推定为免费。\n2026-11-12 recheck: the official page still says 19 December 2026 at 10:00, while the official PDF still says 20 December 2026 at 10:00. audition_start_at remains empty pending organizer clarification.",
       "application_url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/",
-      "official_pdf_url": "https://www.teatromassimo.it/wp-content/uploads/2026/11/BandoSelezione_2Contralti_TM_2026.pdf"
+      "official_pdf_url": "https://www.teatromassimo.it/wp-content/uploads/2026/11/BandoSelezione_2Contralti_TM_2026.pdf",
+      "title_zh": "Teatro Massimo 女低音合唱团招募（2 个名额）"
     }
   ]
 }
