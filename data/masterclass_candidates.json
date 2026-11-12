@@ -1,15 +1,9 @@
 {
-  "updated_at": "2026-11-12T01:16:12+01:00",
+  "updated_at": "2026-11-12T01:18:50+01:00",
   "source_count": 12,
   "candidate_count": 4,
   "new_or_refreshed_this_run": 1,
-  "fetch_errors": [
-    {
-      "source": "Cantoalato Academy",
-      "url": "https://www.cantoalato.it/opera-studio/",
-      "error": "Timeout"
-    }
-  ],
+  "fetch_errors": [],
   "items": [
     {
       "candidate_id": "de1a8dd1d6cf",
@@ -91,7 +85,7 @@
       "publisher_status": "official",
       "source_url": "https://www.veniceoperaarts.com/index.php/masterclass",
       "discovered_from": "https://www.veniceoperaarts.com/index.php/masterclass",
-      "checked_at": "2026-11-12T01:16:12+01:00",
+      "checked_at": "2026-11-12T01:18:50+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
