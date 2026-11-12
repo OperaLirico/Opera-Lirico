@@ -17,7 +17,7 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
 
     def test_daily_scrape_checks_out_latest_main_not_stale_push_sha(self):
         workflow = (ROOT / ".github" / "workflows" / "daily-scrape-and-publish.yml").read_text(encoding="utf-8")
-        self.assertRegex(workflow, r"uses: actions/checkout@v4\s+with:\s+ref: main")
+        self.assertRegex(workflow, r"uses: actions/checkout@(?:v4|[0-9a-f]{40})(?: # v4)?\s+with:\s+ref: main")
 
     def test_p2_pilot_only_reruns_for_pilot_code_or_dependency_changes(self):
         workflow = (ROOT / ".github" / "workflows" / "p2-p4-extraction-pilot.yml").read_text(encoding="utf-8")
