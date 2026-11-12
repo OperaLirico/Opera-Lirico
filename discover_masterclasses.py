@@ -23,6 +23,7 @@ import robots_policy
 ROOT = Path(__file__).resolve().parent
 SOURCES_PATH = ROOT / "data" / "masterclass_sources.json"
 CANDIDATES_PATH = ROOT / "data" / "masterclass_candidates.json"
+PUBLISHED_PATH = ROOT / "data" / "masterclasses.json"
 TIMEOUT = 15
 DELAY = 1.0
 MASTERCLASS_RE = re.compile(
@@ -203,6 +204,27 @@ def load_json(path: Path, default):
         return default
 
 
+def is_already_published(candidate: dict, published_items: list[dict]) -> bool:
+    candidate_url = canonical_url(candidate.get("source_url", ""))
+    candidate_title = clean(candidate.get("title_hint", "")).casefold()
+    if not candidate_url:
+        return False
+    for item in published_items:
+        if (item.get("publisher_status") != "official"
+                or item.get("review_status") != "verified"
+                or item.get("publication_status") != "published"):
+            continue
+        if canonical_url(item.get("source_url", "")) != candidate_url:
+            continue
+        teacher_names = [clean(part).casefold() for part in (item.get("teacher") or "").split(";")]
+        if any(name and name in candidate_title for name in teacher_names):
+            return True
+        published_title = clean(item.get("title", "")).casefold()
+        if published_title and (published_title in candidate_title or candidate_title in published_title):
+            return True
+    return False
+
+
 def deduplicate_candidates(items: list[dict]) -> list[dict]:
     """Collapse legacy fragment duplicates while retaining review decisions."""
     merged: dict[tuple[str, str], dict] = {}
@@ -238,6 +260,8 @@ def deduplicate_candidates(items: list[dict]) -> list[dict]:
 def discover() -> dict:
     config = load_json(SOURCES_PATH, {"sources": []})
     old = load_json(CANDIDATES_PATH, {"items": []})
+    published = load_json(PUBLISHED_PATH, {"items": []})
+    published_items = published.get("items", []) if isinstance(published, dict) else []
     old_by_id = {
         item.get("candidate_id"): item
         for item in old.get("items", [])
@@ -245,6 +269,7 @@ def discover() -> dict:
         and "/archivio" not in (item.get("source_url") or "").lower()
         and has_future_date(" ".join(item.get("date_signals", [])))
         and not is_generic_candidate_title(item.get("title_hint", ""), item.get("source_name", ""))
+        and not is_already_published(item, published_items)
     }
     checked_at = now_iso()
     found: dict[str, dict] = {}
@@ -261,7 +286,7 @@ def discover() -> dict:
             page_url = access.get("final_url") or source["url"]
             title, text, links = extract_page(response, page_url)
             candidate = make_candidate(source, source["url"], title, text, checked_at)
-            if candidate:
+            if candidate and not is_already_published(candidate, published_items):
                 found[candidate["candidate_id"]] = candidate
 
             # Follow only clearly labelled masterclass/course links from the
@@ -280,7 +305,7 @@ def discover() -> dict:
                     candidate = make_candidate(
                         source, child_url, child_title, child_text, checked_at, label
                     )
-                    if candidate:
+                    if candidate and not is_already_published(candidate, published_items):
                         found[candidate["candidate_id"]] = candidate
                 except Exception as exc:
                     errors.append({"source": source["name"], "url": target,
