@@ -377,7 +377,7 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === "/api/admin/backup" && request.method === "GET") {
       const expected = env.OPS_BACKUP_TOKEN || "";
-      const supplied = (request.headers.get("Authorization") || "").replace(/^Bearer\\s+/i, "");
+      const supplied = (request.headers.get("Authorization") || "").replace(/^Bearer\s+/i, "");
       if (!expected || expected.length < 32) return json({ error: "backup_not_configured" }, 503);
       if (!constantTimeEqual(supplied, expected)) return json({ error: "unauthorized" }, 401);
       if (!env.CONTENT_DRAFTS) return json({ error: "content_storage_not_configured" }, 503);
