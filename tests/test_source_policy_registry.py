@@ -20,6 +20,7 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                 else:
                     self.assertIn(entry["strategy_status"], {
                         "assessed_keep_scrapling_with_sitemap_discovery",
+                        "assessed_keep_scrapling_with_feed_discovery",
                         "assessed_keep_scrapling_html_only",
                     })
                     self.assertTrue(entry["alternatives_assessed"])
@@ -28,7 +29,7 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
                     self.assertTrue(report_path.startswith("reports/p2/"))
                     self.assertTrue((ROOT / report_path).exists())
 
-    def test_first_three_pilot_batches_have_evidence_backed_strategy_assessments(self):
+    def test_first_four_pilot_batches_have_evidence_backed_strategy_assessments(self):
         policy = json.loads((ROOT / "data" / "source_fetch_policies.json").read_text(encoding="utf-8"))
         assessed = {item["source_id"]: item for item in policy["entries"]
                     if item["strategy_status"] != "baseline_only"}
@@ -36,22 +37,38 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
             "source-1", "source-2", "source-3", "source-9", "source-15",
             "source-4", "source-5", "source-6", "source-16", "source-17",
             "source-7", "source-8", "source-10", "source-18", "source-20",
+            "source-12", "source-13", "source-14", "source-21", "source-22",
         })
         for source_id, item in assessed.items():
             with self.subTest(source_id=source_id):
                 self.assertEqual(item["current_fetch_method"], "scrapling")
                 self.assertTrue(item["alternatives_assessed"])
                 self.assertTrue(item["discovery_methods"])
-                self.assertIn("2026-11-10", item["last_assessed_at"])
-                self.assertIn("2026-11-10", item["assessment_note"])
-                self.assertIn(item.get("assessment_batch"), {"batch-1-2026-11-10", "batch-2-2026-11-10", "batch-3-2026-11-10"})
+                batch_date = item["assessment_batch"].split("-", 2)[-1]
+                self.assertIn(batch_date, item["last_assessed_at"])
+                self.assertIn(batch_date, item["assessment_note"])
+                self.assertIn(item.get("assessment_batch"), {
+                    "batch-1-2026-11-10", "batch-2-2026-11-10",
+                    "batch-3-2026-11-10", "batch-4-2026-11-12",
+                })
                 self.assertTrue((ROOT / item["evidence_report"]).exists())
                 self.assertTrue(item["evidence_report"].startswith("reports/p2/"))
 
-        for batch in (1, 2, 3):
-            stem = f"source-strategy-batch-{batch}-2026-11-10"
+        for batch, batch_date in (
+            (1, "2026-11-10"), (2, "2026-11-10"),
+            (3, "2026-11-10"), (4, "2026-11-12"),
+        ):
+            stem = f"source-strategy-batch-{batch}-{batch_date}"
             self.assertTrue((ROOT / "reports" / "p2" / f"{stem}.json").exists())
             self.assertTrue((ROOT / "reports" / "p2" / f"{stem}.md").exists())
+
+    def test_batch_four_uses_the_advertised_rss_feed_only_for_source_13(self):
+        policy = json.loads((ROOT / "data" / "source_fetch_policies.json").read_text(encoding="utf-8"))
+        source = next(item for item in policy["entries"] if item["source_id"] == "source-13")
+        self.assertEqual(source["strategy_status"], "assessed_keep_scrapling_with_feed_discovery")
+        self.assertIn("rss_atom", source["discovery_methods"])
+        self.assertEqual(source["current_fetch_method"], "scrapling")
+        self.assertFalse(any("production" in x.lower() and "switch" in x.lower() for x in source.get("discovery_methods", [])))
 
     def test_coverage_inventory_joins_source_review_classification(self):
         from audit_source_coverage import source_inventory
