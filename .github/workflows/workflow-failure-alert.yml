@@ -17,6 +17,7 @@ on:
       - "Weekly source coverage"
       - "Weekly source discovery"
       - "System health check"
+      - "KV backup"
     types: [completed]
 
 permissions:
