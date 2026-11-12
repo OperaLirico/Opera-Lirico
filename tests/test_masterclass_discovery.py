@@ -78,6 +78,11 @@ class MasterclassDiscoveryTests(unittest.TestCase):
         self.assertIsNotNone(candidate)
         self.assertEqual(candidate["title_hint"], "Masterclass di Canto con Anna Rossi")
 
+    def test_rejects_source_homepage_title(self):
+        from discover_masterclasses import is_generic_candidate_title
+        self.assertTrue(is_generic_candidate_title("WJ Opera Music Academy - Milano", "WJ Opera Music Academy"))
+        self.assertTrue(is_generic_candidate_title("CONSERVATORIO", "Conservatorio di Musica Fausto Torrefranca"))
+
     def test_rejects_generic_listing_page_title(self):
         candidate = make_candidate(
             self.source,
