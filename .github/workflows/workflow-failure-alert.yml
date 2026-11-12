@@ -16,6 +16,7 @@ on:
       - "Weekly email digest (draft only)"
       - "Weekly source coverage"
       - "Weekly source discovery"
+      - "System health check"
     types: [completed]
 
 permissions:
