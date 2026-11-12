@@ -1,0 +1,1102 @@
+{
+  "generated_at": "2026-11-12T12:50:03+01:00",
+  "batch": "batch-4-2026-11-12",
+  "scope": "Fourth batch of five high-value official vocal competition pages; all selected IDs were baseline_only at selection time.",
+  "pilot_source_ids": [
+    "source-12",
+    "source-13",
+    "source-14",
+    "source-21",
+    "source-22"
+  ],
+  "production_changes": false,
+  "strategy_status": "evaluation_only",
+  "items": [
+    {
+      "source_id": "source-12",
+      "source_name": "Ente Lirico Italiano - Premio E.L.I.",
+      "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-12.html",
+        "bytes": 298242,
+        "sha256": "2fc4d9098cdb9557cddee9d5c52ab8fc4e114da93bd76f9d02c9d5c1a890eb43",
+        "captured_at": "2026-11-12T12:50:06+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.enteliricoitaliano.it/wp-sitemap.xml",
+            "status": "ok",
+            "http_status": 200,
+            "sitemap_kind": "sitemapindex",
+            "loc_count": 1,
+            "child_sitemaps_checked": 1,
+            "child_sitemaps": [
+              {
+                "url": "https://www.enteliricoitaliano.it/wp-sitemap-posts-page-1.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 14,
+                "audition_or_vocal_url_count": 7,
+                "url_examples": [
+                  "https://www.enteliricoitaliano.it/audizioni-coro-stabile/",
+                  "https://www.enteliricoitaliano.it/audizioni-coro-stabile/modulo-iscrizione/",
+                  "https://www.enteliricoitaliano.it/audizioni-orchestra-stabile/",
+                  "https://www.enteliricoitaliano.it/audizioni-orchestra-stabile/modulo-iscrizione/",
+                  "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+                  "https://www.enteliricoitaliano.it/workshop-canto-lirico/",
+                  "https://www.enteliricoitaliano.it/workshop-canto-lirico/modulo-iscrizione-workshop/"
+                ]
+              }
+            ],
+            "page_url_count": 14,
+            "audition_or_vocal_url_count": 7,
+            "url_examples": [
+              "https://www.enteliricoitaliano.it/audizioni-coro-stabile/",
+              "https://www.enteliricoitaliano.it/audizioni-coro-stabile/modulo-iscrizione/",
+              "https://www.enteliricoitaliano.it/audizioni-orchestra-stabile/",
+              "https://www.enteliricoitaliano.it/audizioni-orchestra-stabile/modulo-iscrizione/",
+              "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+              "https://www.enteliricoitaliano.it/workshop-canto-lirico/",
+              "https://www.enteliricoitaliano.it/workshop-canto-lirico/modulo-iscrizione-workshop/"
+            ]
+          }
+        ],
+        "advertised_feeds": [
+          {
+            "url": "https://www.enteliricoitaliano.it/comments/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "invalid_xml",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          },
+          {
+            "url": "https://www.enteliricoitaliano.it/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "invalid_xml",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          }
+        ],
+        "advertised_public_api_links": [
+          "https://www.enteliricoitaliano.it/wp-json/"
+        ],
+        "public_api_checks": [
+          {
+            "url": "https://www.enteliricoitaliano.it/wp-json/",
+            "status": "restricted",
+            "http_status": 403
+          }
+        ]
+      },
+      "parsers": {
+        "title": "Bando 2026 - \"Premio E.L.I.\" Concorso Lirico Internazionale",
+        "dom_structure": {
+          "anchor_count": 40,
+          "relevant_anchor_count": 31,
+          "relevant_anchor_examples": [
+            {
+              "text": "Premio E.L.I. Concorso",
+              "url": "https://www.enteliricoitaliano.it/premioeli/"
+            },
+            {
+              "text": "Audizioni Orchestra Stabile",
+              "url": "https://www.enteliricoitaliano.it/audizioni-orchestra-stabile/"
+            },
+            {
+              "text": "Audizioni Coro Stabile",
+              "url": "https://www.enteliricoitaliano.it/audizioni-coro-stabile/"
+            },
+            {
+              "text": "Premio E.L.I. Concorso",
+              "url": "https://www.enteliricoitaliano.it/premioeli/"
+            },
+            {
+              "text": "Bando Concorso",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+            },
+            {
+              "text": "Modulo di Iscrizione",
+              "url": "https://www.enteliricoitaliano.it/premioeli/modulo-di-iscrizione-2026/"
+            },
+            {
+              "text": "Bando Concorso",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+            },
+            {
+              "text": "Modulo di Iscrizione",
+              "url": "https://www.enteliricoitaliano.it/premioeli/modulo-di-iscrizione-2026/"
+            },
+            {
+              "text": "Modulo Iscrizione Workshop",
+              "url": "https://www.enteliricoitaliano.it/workshop-canto-lirico/modulo-iscrizione-workshop/"
+            },
+            {
+              "text": "Modulo Iscrizione Workshop",
+              "url": "https://www.enteliricoitaliano.it/workshop-canto-lirico/modulo-iscrizione-workshop/"
+            },
+            {
+              "text": "Audizioni Orchestra Stabile",
+              "url": "https://www.enteliricoitaliano.it/audizioni-orchestra-stabile/"
+            },
+            {
+              "text": "Modulo iscrizione",
+              "url": "https://www.enteliricoitaliano.it/audizioni-orchestra-stabile/modulo-iscrizione/"
+            },
+            {
+              "text": "Modulo iscrizione",
+              "url": "https://www.enteliricoitaliano.it/audizioni-orchestra-stabile/modulo-iscrizione/"
+            },
+            {
+              "text": "Audizioni Coro Stabile",
+              "url": "https://www.enteliricoitaliano.it/audizioni-coro-stabile/"
+            },
+            {
+              "text": "Modulo iscrizione",
+              "url": "https://www.enteliricoitaliano.it/audizioni-coro-stabile/modulo-iscrizione/"
+            },
+            {
+              "text": "Modulo iscrizione",
+              "url": "https://www.enteliricoitaliano.it/audizioni-coro-stabile/modulo-iscrizione/"
+            },
+            {
+              "text": "https://www.enteliricoitaliano.it/premioeli/modulo-di-iscrizione-2026/",
+              "url": "https://www.enteliricoitaliano.it/premioeli/modulo-di-iscrizione-2026/"
+            },
+            {
+              "text": "CLICCA QUI PER COMPILARE ONLINE IL MODULO DI ISCRIZIONE",
+              "url": "https://www.enteliricoitaliano.it/premioeli/modulo-di-iscrizione-2026/"
+            },
+            {
+              "text": "CLICCA QUI PER COMPILARE ONLINE IL MODULO DI ISCRIZIONE",
+              "url": "https://www.enteliricoitaliano.it/premioeli/modulo-di-iscrizione-2026/"
+            },
+            {
+              "text": "CLICCA QUI PER COMPILARE ONLINE IL MODULO DI ISCRIZIONE",
+              "url": "https://www.enteliricoitaliano.it/premioeli/modulo-di-iscrizione-2026/"
+            },
+            {
+              "text": "Configura",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+            },
+            {
+              "text": "Accetta",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+            },
+            {
+              "text": "Rifiuta",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+            },
+            {
+              "text": "Cookie icon Impostazioni sulla privacy",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+            },
+            {
+              "text": "Traduttore di siti web",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/#websiteTranslator"
+            },
+            {
+              "text": "IONOS SiteAnalytics",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/#analytics"
+            },
+            {
+              "text": "Google Maps",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/#maps"
+            },
+            {
+              "text": "Altro Meno",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+            },
+            {
+              "text": "Altro Meno",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+            },
+            {
+              "text": "Altro Meno",
+              "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+            }
+          ],
+          "list_item_count": 35,
+          "heading_count": 1,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0023,
+          "characters": 20182,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 18,
+          "relevant_dom_link_labels_retained_in_text": 18,
+          "relevant_link_targets_available": 11,
+          "relevant_link_targets_retained_in_text": 2
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0026,
+          "characters": 65698,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 18,
+          "relevant_dom_link_labels_retained_in_text": 18,
+          "relevant_link_targets_available": 11,
+          "relevant_link_targets_retained_in_text": 2
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0293,
+          "characters": 18652,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 18,
+          "relevant_dom_link_labels_retained_in_text": 4,
+          "relevant_link_targets_available": 11,
+          "relevant_link_targets_retained_in_text": 2
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0303,
+          "characters": 18983,
+          "markdown_link_count": 1,
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 11,
+          "relevant_dom_link_targets_retained": 0
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-13",
+      "source_name": "Tommaso Traetta Opera Festival",
+      "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/",
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-13.html",
+        "bytes": 108743,
+        "sha256": "b1d89ec979f24226adb50c9f6bcedfb80d76ab1cd90c5313d74dd2f1ebca9c18",
+        "captured_at": "2026-11-12T12:50:27+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "http://traettafestival.it/sitemapindex.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "http://traettafestival.it/?sitemapindex.xml",
+            "status": "redirect_limit",
+            "http_status": null,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "http://traettafestival.it/sitemap_3190.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          }
+        ],
+        "advertised_feeds": [
+          {
+            "url": "https://www.traettafestival.it/sito/comments/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          },
+          {
+            "url": "https://www.traettafestival.it/sito/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 10,
+            "relevant_entry_count": 10,
+            "relevant_titles": [
+              "Concorso “Traetta” 2026: i vincitori",
+              "Ecco i vincitori del Concorso “Caffarelli” 2026",
+              "Esito semifinale Concorso lirico “Tommaso Traetta” 2026",
+              "Esito Semifinale Concorso “Caffarelli” 2026",
+              "Concorsi di canto “Caffarelli” e “Traetta” 2026 – Estrazione della lettera",
+              "Finalisti Concorso “Caffarelli” 2024",
+              "Vincitori Concorso Traetta X edizione",
+              "Finalisti Concorso “Tommaso Traetta” 2024",
+              "Finalisti Concorso “Tommaso Traetta” 2023",
+              "Proroga iscrizioni Concorso “Tommaso Traetta” IX edizione"
+            ]
+          }
+        ],
+        "advertised_public_api_links": [
+          "https://www.traettafestival.it/sito/wp-json/"
+        ],
+        "public_api_checks": [
+          {
+            "url": "https://www.traettafestival.it/sito/wp-json/",
+            "status": "ok",
+            "http_status": 200,
+            "json_valid": true,
+            "namespace_count": 11,
+            "route_count": 153,
+            "namespace_examples": [
+              "oembed/1.0",
+              "contact-form-7/v1",
+              "pys-profile/v1",
+              "pys/v1",
+              "tribe/events/v1",
+              "tc-braintree-3ds2/v1",
+              "pys-facebook/v1",
+              "pys-openai/v1",
+              "wp/v2",
+              "wp-site-health/v1",
+              "wp-block-editor/v1"
+            ],
+            "route_examples": []
+          }
+        ]
+      },
+      "parsers": {
+        "title": "Concorso Internazionale di Canto Lirico “Tommaso Traetta” – TRAETTA OPERA FESTIVAL",
+        "dom_structure": {
+          "anchor_count": 91,
+          "relevant_anchor_count": 20,
+          "relevant_anchor_examples": [
+            {
+              "text": "Contenuto a piena larghezza",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#content"
+            },
+            {
+              "text": "CERCA",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#go"
+            },
+            {
+              "text": "TOF",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/"
+            },
+            {
+              "text": "TOF",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/"
+            },
+            {
+              "text": "SCARICA QUI",
+              "url": "https://www.traettafestival.it/sito/wp-content/uploads/2026/03/Bando-Concorso-Tommaso-Traetta-XII-edizione.pdf"
+            },
+            {
+              "text": "Dodicesima edizione 2026",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1790934130846-1b489a42-1392"
+            },
+            {
+              "text": "Undicesima edizione 2025",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1774537503768-b5a36e24-b918"
+            },
+            {
+              "text": "Decima edizione 2024",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1723662912493-4014274e-4087"
+            },
+            {
+              "text": "Nona edizione 2023",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1746461569750-3a6f3f92-b9df"
+            },
+            {
+              "text": "Ottava edizione 2022",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1509966649906-15e17281-9e16"
+            },
+            {
+              "text": "Settima edizione 2021",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1693293974891-ca169c4e-9371"
+            },
+            {
+              "text": "Sesta edizione 2019",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1648545745986-123e492a-e17f"
+            },
+            {
+              "text": "Quinta edizione 2013",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1615830833534-62d6ee74-d84b"
+            },
+            {
+              "text": "Quarta edizione 2009",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1509966649981-a79a9de0-eb8b"
+            },
+            {
+              "text": "Terza edizione 2008",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1509966741008-9659b651-0b77"
+            },
+            {
+              "text": "Seconda edizione 2007",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1509966767747-c61f528c-e580"
+            },
+            {
+              "text": "Prima edizione 2007",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/#1509966795194-e19d5eec-b998"
+            },
+            {
+              "text": "Go to Top",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/"
+            },
+            {
+              "text": "MENÙ",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/"
+            },
+            {
+              "text": "TOF",
+              "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/"
+            }
+          ],
+          "list_item_count": 66,
+          "heading_count": 3,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0019,
+          "characters": 7048,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 18,
+          "relevant_dom_link_labels_retained_in_text": 18,
+          "relevant_link_targets_available": 16,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0014,
+          "characters": 16184,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 18,
+          "relevant_dom_link_labels_retained_in_text": 18,
+          "relevant_link_targets_available": 16,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0162,
+          "characters": 1514,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 18,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 16,
+          "relevant_link_targets_retained_in_text": 1
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0156,
+          "characters": 1526,
+          "markdown_link_count": 2,
+          "markdown_relevant_link_count": 1,
+          "relevant_dom_link_targets_available": 16,
+          "relevant_dom_link_targets_retained": 1
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-14",
+      "source_name": "CLIP Portofino",
+      "url": "https://www.portofinoclip.it/clip-2026/",
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.portofinoclip.it/clip-2026/",
+      "content_type": "text/html; charset=UTF-8",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-14.html",
+        "bytes": 395901,
+        "sha256": "6ee0ca0916cb4213a63376af1eb2e538bb98d19303977ed53698252d329a2cad",
+        "captured_at": "2026-11-12T12:50:58+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.portofinoclip.it/sitemap_index.xml",
+            "status": "ok",
+            "http_status": 200,
+            "sitemap_kind": "sitemapindex",
+            "loc_count": 11,
+            "child_sitemaps_checked": 5,
+            "child_sitemaps": [
+              {
+                "url": "https://www.portofinoclip.it/page-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 284,
+                "audition_or_vocal_url_count": 1,
+                "url_examples": [
+                  "https://www.portofinoclip.it/wp-content/uploads/2021/07/2%C2%B0-Premio-Miglior-cantante-italiano-Dave-Monaco-scaled.jpg"
+                ]
+              },
+              {
+                "url": "https://www.portofinoclip.it/dt_portfolio-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 391,
+                "audition_or_vocal_url_count": 2,
+                "url_examples": [
+                  "https://www.portofinoclip.it/wp-content/uploads/2023/07/Premio-Tenore-Emergente-Lorenzo-Martelli.jpg",
+                  "https://www.portofinoclip.it/wp-content/uploads/2023/07/Premio-Miglior-Cantante-Italiano-Premio-Rapallo-Opera-Festival-Alessia-Panza.jpg"
+                ]
+              },
+              {
+                "url": "https://www.portofinoclip.it/dt_testimonials-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 25,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.portofinoclip.it/dt_team-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 19,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              },
+              {
+                "url": "https://www.portofinoclip.it/dt_slideshow-sitemap.xml",
+                "status": "ok",
+                "http_status": 200,
+                "sitemap_kind": "urlset",
+                "loc_count": 3,
+                "audition_or_vocal_url_count": 0,
+                "url_examples": []
+              }
+            ],
+            "page_url_count": 722,
+            "audition_or_vocal_url_count": 3,
+            "url_examples": [
+              "https://www.portofinoclip.it/wp-content/uploads/2021/07/2%C2%B0-Premio-Miglior-cantante-italiano-Dave-Monaco-scaled.jpg",
+              "https://www.portofinoclip.it/wp-content/uploads/2023/07/Premio-Tenore-Emergente-Lorenzo-Martelli.jpg",
+              "https://www.portofinoclip.it/wp-content/uploads/2023/07/Premio-Miglior-Cantante-Italiano-Premio-Rapallo-Opera-Festival-Alessia-Panza.jpg"
+            ]
+          }
+        ],
+        "advertised_feeds": [
+          {
+            "url": "https://www.portofinoclip.it/comments/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          },
+          {
+            "url": "https://www.portofinoclip.it/feed/",
+            "status": "ok",
+            "http_status": 200,
+            "kind": "rss",
+            "entry_count": 0,
+            "relevant_entry_count": 0,
+            "relevant_titles": []
+          }
+        ],
+        "advertised_public_api_links": [
+          "https://www.portofinoclip.it/wp-json/"
+        ],
+        "public_api_checks": [
+          {
+            "url": "https://www.portofinoclip.it/wp-json/",
+            "status": "ok",
+            "http_status": 200,
+            "json_valid": true,
+            "namespace_count": 16,
+            "route_count": 276,
+            "namespace_examples": [
+              "oembed/1.0",
+              "ultimate-vc/v1",
+              "uavc/v1",
+              "contact-form-7/v1",
+              "iubenda-cookie-law-solution/v1",
+              "sliderrevolution",
+              "yoast/v1",
+              "popup-maker/v2",
+              "popup-maker/v1",
+              "pum/v1",
+              "the7/v1",
+              "nps-survey/v1"
+            ],
+            "route_examples": []
+          }
+        ]
+      },
+      "parsers": {
+        "title": "CLIP 2026 | CLIP Portofino",
+        "dom_structure": {
+          "anchor_count": 135,
+          "relevant_anchor_count": 8,
+          "relevant_anchor_examples": [
+            {
+              "text": "Facebook page opens in new window",
+              "url": "https://www.facebook.com/concorsolirico.portofino/?fref=ts"
+            },
+            {
+              "text": "Instagram page opens in new window",
+              "url": "https://www.instagram.com/concorsoliricoportofino/"
+            },
+            {
+              "text": "Biografia",
+              "url": "https://www.portofinoclip.it/wp-content/uploads/Biografie/ORCHESTRA-DELLA-FONDAZIONE-TEATRO-CARLO-FELICE-2021.pdf"
+            },
+            {
+              "text": "Bando CLIP 2026",
+              "url": "https://www.portofinoclip.it/wp-content/uploads/2026/01/CLIP_2026_Bando.pdf"
+            },
+            {
+              "text": "Facebook",
+              "url": "https://www.facebook.com/concorsolirico.portofino/?fref=ts"
+            },
+            {
+              "text": "Instagram",
+              "url": "https://www.instagram.com/concorsoliricoportofino/"
+            },
+            {
+              "text": "Facebook",
+              "url": "https://www.facebook.com/concorsolirico.portofino/?fref=ts"
+            },
+            {
+              "text": "Instagram",
+              "url": "https://www.instagram.com/concorsoliricoportofino/"
+            }
+          ],
+          "list_item_count": 30,
+          "heading_count": 57,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0038,
+          "characters": 5998,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 6,
+          "relevant_dom_link_labels_retained_in_text": 6,
+          "relevant_link_targets_available": 4,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0033,
+          "characters": 199358,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 6,
+          "relevant_dom_link_labels_retained_in_text": 6,
+          "relevant_link_targets_available": 4,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0755,
+          "characters": 1161,
+          "signals": {
+            "vocal_roles": false,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": false,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 6,
+          "relevant_dom_link_labels_retained_in_text": 0,
+          "relevant_link_targets_available": 4,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0737,
+          "characters": 1242,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 4,
+          "relevant_dom_link_targets_retained": 0
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-21",
+      "source_name": "Premio Fausto Ricci - 国际声乐比赛",
+      "url": "https://www.xxisecolo.org/faustoricci/opera.html",
+      "robots_status": "http_error",
+      "robots_http_status": 404,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.xxisecolo.org/faustoricci/opera.html",
+      "content_type": "text/html",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-21.html",
+        "bytes": 11479,
+        "sha256": "125cd702e4b72fc17d388601483f86fbab746288afa6507194633cbc018c22a1",
+        "captured_at": "2026-11-12T12:51:19+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "http_error",
+          "http_status": 404
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.xxisecolo.org/sitemap.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "https://www.xxisecolo.org/wp-sitemap.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          },
+          {
+            "url": "https://www.xxisecolo.org/sitemap_index.xml",
+            "status": "http_error",
+            "http_status": 404,
+            "sitemap_kind": "unavailable",
+            "loc_count": 0,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 0,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          }
+        ],
+        "advertised_feeds": [],
+        "advertised_public_api_links": [],
+        "public_api_checks": []
+      },
+      "parsers": {
+        "title": "Opera · Premio Fausto Ricci",
+        "dom_structure": {
+          "anchor_count": 15,
+          "relevant_anchor_count": 4,
+          "relevant_anchor_examples": [
+            {
+              "text": "Iscriviti",
+              "url": "https://www.xxisecolo.org/faustoricci/opera.html#iscrizione"
+            },
+            {
+              "text": "Compila il modulo di iscrizione",
+              "url": "https://forms.gle/1APuvbT3ibPECsXe8"
+            },
+            {
+              "text": "Scarica il Regolamento (IT)",
+              "url": "https://www.xxisecolo.org/faustoricci/faustoricci/documenti/Fausto%20Ricci%20-%20Bando%20e%20Regolamento%202026.pdf"
+            },
+            {
+              "text": "Download Rules (EN)",
+              "url": "https://www.xxisecolo.org/faustoricci/faustoricci/documenti/Fausto%20Ricci%20-%20Bando%20e%20Regolamento%202026%20EN.pdf"
+            }
+          ],
+          "list_item_count": 7,
+          "heading_count": 5,
+          "table_count": 2
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0008,
+          "characters": 3187,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 4,
+          "relevant_dom_link_labels_retained_in_text": 4,
+          "relevant_link_targets_available": 4,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0005,
+          "characters": 4080,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 4,
+          "relevant_dom_link_labels_retained_in_text": 4,
+          "relevant_link_targets_available": 4,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0073,
+          "characters": 2987,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": false,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 4,
+          "relevant_dom_link_labels_retained_in_text": 1,
+          "relevant_link_targets_available": 4,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0083,
+          "characters": 3049,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 4,
+          "relevant_dom_link_targets_retained": 0
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    },
+    {
+      "source_id": "source-22",
+      "source_name": "Concorso Maria Malibran - 国际声乐比赛",
+      "url": "https://www.mariamalibran.it/xi-edizione-2026.html",
+      "robots_status": "ok",
+      "robots_http_status": 200,
+      "fetch_status": "ok",
+      "http_status": 200,
+      "final_url": "https://www.mariamalibran.it/xi-edizione-2026.html",
+      "content_type": "text/html",
+      "truncated": false,
+      "error": null,
+      "raw_snapshot": {
+        "artifact_path": "artifacts/p2-p4-html-samples/source-22.html",
+        "bytes": 50343,
+        "sha256": "d6fc65f36d85b26a7db7e7e87ac31e711a618e5b8e1e1d16f232013a93b41848",
+        "captured_at": "2026-11-12T12:51:29+01:00"
+      },
+      "discovery": {
+        "robots": {
+          "status": "ok",
+          "http_status": 200
+        },
+        "sitemaps": [
+          {
+            "url": "https://www.mariamalibran.it/sitemap.xml",
+            "status": "ok",
+            "http_status": 200,
+            "sitemap_kind": "urlset",
+            "loc_count": 20,
+            "child_sitemaps_checked": 0,
+            "child_sitemaps": [],
+            "page_url_count": 20,
+            "audition_or_vocal_url_count": 0,
+            "url_examples": []
+          }
+        ],
+        "advertised_feeds": [],
+        "advertised_public_api_links": [],
+        "public_api_checks": []
+      },
+      "parsers": {
+        "title": "XI edizione 2026 - Nuovo Progetto",
+        "dom_structure": {
+          "anchor_count": 64,
+          "relevant_anchor_count": 2,
+          "relevant_anchor_examples": [
+            {
+              "text": "BANDO DI CONCORSO E REGOLAMENTO",
+              "url": "https://www.mariamalibran.it/files/BANDO-Concorso-Maria-Malibran-2026--2-.pdf"
+            },
+            {
+              "text": "COMPETITION ANNOUNCEMENT AND REGULATIONS",
+              "url": "https://www.mariamalibran.it/files/COMPETITION-ANNOUNCEMENT-Vocal-Competition-Maria-Malibran-2026--1---1-.pdf"
+            }
+          ],
+          "list_item_count": 60,
+          "heading_count": 1,
+          "table_count": 0
+        },
+        "scrapling": {
+          "runtime_seconds": 0.0014,
+          "characters": 8903,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 2,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "lxml_full_text": {
+          "runtime_seconds": 0.0009,
+          "characters": 16604,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 2,
+          "relevant_link_targets_available": 2,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_plain": {
+          "status": "ok",
+          "runtime_seconds": 0.0115,
+          "characters": 7528,
+          "signals": {
+            "vocal_roles": true,
+            "deadline": true,
+            "audition": true,
+            "dates": true,
+            "application": true,
+            "pdf": true
+          },
+          "relevant_dom_link_labels_available": 2,
+          "relevant_dom_link_labels_retained_in_text": 1,
+          "relevant_link_targets_available": 2,
+          "relevant_link_targets_retained_in_text": 0
+        },
+        "trafilatura_markdown": {
+          "runtime_seconds": 0.0114,
+          "characters": 7539,
+          "markdown_link_count": 0,
+          "markdown_relevant_link_count": 0,
+          "relevant_dom_link_targets_available": 2,
+          "relevant_dom_link_targets_retained": 0
+        },
+        "comparison_note": "Text-label retention and exact URL-target retention are separate metrics. Plain-text parsers are not expected to embed hrefs; structured link extraction must preserve URL targets separately. Coverage proxies are not ground-truth accuracy."
+      },
+      "strategy_recommendation": "manual_review_required"
+    }
+  ],
+  "limitations": [
+    "robots.txt/sitemap availability does not prove relevant notices are present.",
+    "Only page-advertised RSS/Atom and explicit public API links are inspected; no guessed API endpoint is queried.",
+    "403/429, login restrictions and unreadable robots policies are recorded and not bypassed.",
+    "Parser counts and keyword signals are coverage proxies, not ground-truth accuracy.",
+    "All parsers receive identical captured HTML bytes; no production policy is promoted automatically.",
+    "Sitemap indexes are followed for at most five child maps per index; deeper nesting is not traversed.",
+    "Only explicitly advertised public API roots are fetched; route endpoints are not guessed or queried."
+  ]
+}
