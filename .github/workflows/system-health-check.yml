@@ -1,0 +1,49 @@
+name: System health check
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - "Deploy GitHub Pages"
+      - "Daily source refresh"
+      - "Discover masterclasses"
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-lirico-system-health
+  cancel-in-progress: false
+
+jobs:
+  health:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out current main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install project dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run full automated test suite
+        run: python -m unittest discover -s tests -v
+      - name: Validate local data and deployed public endpoints
+        run: python system_health_check.py
+      - name: Publish health report
+        if: always()
+        run: |
+          {
+            echo "## Opera Lirico system health"
+            echo "- Trigger: ${{ github.event_name }}"
+            echo "- Commit: ${{ github.sha }}"
+            echo "- This check is read-only; it does not publish candidates or modify data."
+          } >> "$GITHUB_STEP_SUMMARY"
