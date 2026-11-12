@@ -164,6 +164,14 @@ class MasterclassDiscoveryTests(unittest.TestCase):
                     datetime.fromisoformat(item["start_at"]),
                 )
 
+    def test_masterclass_page_prevents_link_underlines_in_all_interaction_states(self):
+        root = Path(__file__).resolve().parents[1]
+        page = (root / "masterclasses.html").read_text(encoding="utf-8")
+        self.assertIn("a:any-link:visited", page)
+        self.assertIn("text-decoration-line:none!important", page)
+        self.assertIn("master-link-primary", page)
+        self.assertIn("title_zh||x.title", page)
+
     def test_slug_is_stable_and_safe(self):
         self.assertEqual(slug("Verdi Marathon 2027"), "verdi-marathon-2027")
 
