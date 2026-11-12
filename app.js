@@ -141,11 +141,11 @@ function daysUntil(iso){
   const diff=Math.round((Date.UTC(dy,dm-1,dd)-Date.UTC(ty,tm-1,td))/86400000);
   return Number.isFinite(diff)?diff:null;
 }
-function countdown(iso){
+function countdown(iso,timeUnknown=false){
   const left=daysUntil(iso);
   if(left===null)return '';
   if(left<0)return ' · 已截止';
-  if(left===0)return ' · 今天截止';
+  if(left===0)return timeUnknown?' · 今天为截止日期':' · 今天截止';
   return ` · 剩 ${left} 天`;
 }
 function formatDate(iso){return new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(iso));}
@@ -328,12 +328,21 @@ function backToTiles(){
 /* ---------- open calls ---------- */
 function publishedOpportunity(record){
   if(record.publication_status!=='published'||record.review_status!=='verified'||record.publisher_status!=='official')return null;
-  const deadline=record.application_deadline_at;
-  if(!deadline||!Number.isFinite(Date.parse(deadline))||Date.parse(deadline)<Date.now())return null;
+  const deadlineAt=record.application_deadline_at||'';
+  const deadlineDate=deadlineAt?deadlineAt.slice(0,10):(record.application_deadline_date||'');
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(deadlineDate))return null;
+  if(deadlineAt){
+    const deadlineMs=Date.parse(deadlineAt);
+    if(!Number.isFinite(deadlineMs)||deadlineMs<Date.now())return null;
+  }else{
+    const left=daysUntil(deadlineDate);
+    if(left===null||left<0)return null;
+  }
   const categories={opera_role:'歌剧角色招募',choir:'合唱团招募',vocal_competition:'国际声乐比赛',young_artist:'青年艺术家项目',conservatory_admission:'音乐学院招生',other_vocal:'声乐机会'};
   const voices=(record.voice_types||[]).map(v=>({soprano:'女高音',mezzo_soprano:'女中音',contralto:'女低音',countertenor:'假声男高音',tenor:'男高音',baritone:'男中音',bass:'男低音',all_voices:'不限声部',unspecified:'声部未注明'}[v]||v));
-  const details=[record.eligibility_summary,voices.length?`声部：${voices.join('、')}`: '',record.fee_eur!=null?(record.fee_eur===0?'报名费：免费':`报名费：€${record.fee_eur}`):'',record.audition_start_at?`试唱/比赛：${formatDate(record.audition_start_at)}${record.audition_end_at&&record.audition_end_at.slice(0,10)!==record.audition_start_at.slice(0,10)?' 至 '+formatDate(record.audition_end_at):''}`: '',record.notes?`说明：${record.notes}`: ''].filter(Boolean);
-  return {title:record.title,category:categories[record.opportunity_type]||'声乐机会',place:record.location||'地点以公告为准',deadline,summary:details.join('；')||'详情请以主办方公告为准。',url:record.announcement_url,applicationUrl:record.application_url,officialPdfUrl:record.official_pdf_url,source:record.source_name};
+  const details=[record.eligibility_summary,voices.length?`声部：${voices.join('、')}`:'',record.fee_eur!=null?(record.fee_eur===0?'报名费：免费':`报名费：€${record.fee_eur}`):'',record.audition_start_at?`试唱/比赛：${formatDate(record.audition_start_at)}${record.audition_end_at&&record.audition_end_at.slice(0,10)!==record.audition_start_at.slice(0,10)?' 至 '+formatDate(record.audition_end_at):''}`:'',record.notes?`说明：${record.notes}`:''].filter(Boolean);
+  const deadlineLabel=deadlineAt?formatDate(deadlineAt):`${zhDate(deadlineDate)}（具体时间未公布）`;
+  return {title:record.title,category:categories[record.opportunity_type]||'声乐机会',place:record.location||'地点以公告为准',deadlineAt,deadlineDate,deadlineLabel,deadlineTimeUnknown:!deadlineAt,summary:details.join('；')||'详情请以主办方公告为准。',url:record.announcement_url,applicationUrl:record.application_url,applicationEmail:record.application_email,officialPdfUrl:record.official_pdf_url,source:record.source_name};
 }
 function renderCalls(){
   const now=Date.now();
@@ -345,19 +354,22 @@ function renderCalls(){
       title:`${c.city} · ${c.school}`,
       category:'学院报名中',
       place:c.city,
-      deadline:`${iso}T23:59:00+01:00`,
+      deadlineAt:'',
+      deadlineDate:iso,
+      deadlineLabel:`${zhDate(iso)}（具体时间未公布）`,
+      deadlineTimeUnknown:true,
       summary:(c.zh&&((c.zh.d||[])[0]||(c.zh.x||[])[0]))||(c.deadline_lines||[])[0]||'',
       url:c.manual_source||c.url,
       source:'学院官网'
     };
   }).filter(Boolean);
   const verified=opportunities.map(publishedOpportunity).filter(Boolean);
-  const merged=[...derived,...verified].sort((a,b)=>new Date(a.deadline)-new Date(b.deadline));
-  const current=merged.filter(o=>new Date(o.deadline).getTime()>=now);
+  const merged=[...derived,...verified].sort((a,b)=>a.deadlineDate.localeCompare(b.deadlineDate)||(a.deadlineAt||'').localeCompare(b.deadlineAt||''));
+  const current=merged.filter(o=>o.deadlineAt?Date.parse(o.deadlineAt)>=now:daysUntil(o.deadlineDate)>=0);
   const pill=$('#opportunityCount');
   if(pill)pill.textContent=`${current.length} 项开放报名`;
   const box=$('#opportunities');
-  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">报名截止：${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a>${o.applicationUrl?`<a class="card-link" href="${esc(o.applicationUrl)}" target="_blank" rel="noopener">在线申请 <span>↗</span></a>`:'' }${o.officialPdfUrl?`<a class="card-link" href="${esc(o.officialPdfUrl)}" target="_blank" rel="noopener">下载官方简章 PDF <span>↗</span></a>`:''}</article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
+  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">报名截止：${esc(o.deadlineLabel)}${countdown(o.deadlineDate,o.deadlineTimeUnknown)}</span></div><h3>${esc(o.title)}</h3><p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a>${o.applicationUrl?`<a class="card-link" href="${esc(o.applicationUrl)}" target="_blank" rel="noopener">在线申请 <span>↗</span></a>`:'' }${o.applicationEmail?`<a class="card-link" href="mailto:${esc(o.applicationEmail)}">邮件申请：${esc(o.applicationEmail)}</a>`:''}${o.officialPdfUrl?`<a class="card-link" href="${esc(o.officialPdfUrl)}" target="_blank" rel="noopener">下载官方简章 PDF <span>↗</span></a>`:''}</article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
   renderTiles();
 }
 
