@@ -15,6 +15,7 @@ on:
       - "data/conservatori.json"
       - "masterclasses.html"
       - "data/masterclasses.json"
+      - "data/masterclass.schema.json"
       - "data/opportunities.json"
       - "data/repertoire.json"
       - "data/pdfs/**"
