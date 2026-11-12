@@ -9609,10 +9609,29 @@
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
     "discovered_at": "2026-11-10T06:14:32+01:00",
     "review_status": "legacy_unreviewed",
-    "publisher_status": "unverified",
-    "auto_review_status": "needs_review",
-    "auto_review_reason": "insufficient_vocal_evidence",
-    "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+    "publisher_status": "official",
+    "auto_review_status": "irrelevant_candidate",
+    "auto_review_reason": "The official INDA page identifies the Filottete production audition and explicitly limits it to male performers. The notice is an acting call, not a vocal audition or singer recruitment source.",
+    "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+    "relevance_status": "irrelevant",
+    "confidence": "high",
+    "audit_page_title": "Bando audizioni per Filottete - INDA",
+    "evidence_urls": [
+      "https://www.indafondazione.org/bando-audizioni-per-filottete/"
+    ],
+    "audit_evidence": [
+      {
+        "url": "https://www.indafondazione.org/bando-audizioni-per-filottete/",
+        "page_title": "Bando audizioni per Filottete - INDA",
+        "excerpt": "La pagina ufficiale precisa che le audizioni sono rivolte soltanto ad interpreti maschili; si tratta di una selezione attoriale, non di una ricerca per cantanti.",
+        "checked_at": "2026-11-12T11:49:52+01:00"
+      }
+    ],
+    "review_notes": "Keep the source record for audit history only. No singer role is described; do not create an opportunity for this platform.",
+    "audit_method": "evidence_based",
+    "audit_date": "2026-11-12",
+    "audit_access_status": "accessible_via_web_open",
+    "production_activation": false
   },
   {
     "number": 97,
@@ -9635,10 +9654,30 @@
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
     "discovered_at": "2026-11-10T06:14:34+01:00",
     "review_status": "legacy_unreviewed",
-    "publisher_status": "unverified",
+    "publisher_status": "official",
     "auto_review_status": "needs_review",
-    "auto_review_reason": "insufficient_vocal_evidence",
-    "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+    "auto_review_reason": "The festival's own page is accessible and includes musicians, but it is a broad interdisciplinary theatre/performance call with no singer-, opera- or vocal-specific criteria. The current deadline has passed.",
+    "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+    "relevance_status": "uncertain",
+    "confidence": "medium",
+    "audit_page_title": "OPEN CALL Artists - Winterwerft",
+    "evidence_urls": [
+      "https://winterwerft.de/opencall/",
+      "https://winterwerft.de/"
+    ],
+    "audit_evidence": [
+      {
+        "url": "https://winterwerft.de/opencall/",
+        "page_title": "OPEN CALL Artists - Winterwerft",
+        "excerpt": "The Winterwerft 2027 open call addresses theatre makers, dancers, painters, storytellers, sculptors, action artists, musicians and other artists; submissions closed on 8 November 2026.",
+        "checked_at": "2026-11-12T11:49:52+01:00"
+      }
+    ],
+    "review_notes": "Retain as needs_review rather than auto-promoting. No current opportunity should be created; recheck only if a future call explicitly includes vocal performers or opera.",
+    "audit_method": "evidence_based",
+    "audit_date": "2026-11-12",
+    "audit_access_status": "accessible_via_web_open",
+    "production_activation": false
   },
   {
     "number": 98,
@@ -9659,10 +9698,30 @@
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
     "discovered_at": "2026-11-10T06:14:37+01:00",
     "review_status": "legacy_unreviewed",
-    "publisher_status": "unverified",
+    "publisher_status": "official",
     "auto_review_status": "needs_review",
-    "auto_review_reason": "insufficient_vocal_evidence",
-    "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+    "auto_review_reason": "The official foundation subdomain links to the parent foundation and festival, and the page offers a music proposal category. However, the application is for artistic projects/companies, not an individual singer audition; relevance to individual voice students is uncertain.",
+    "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+    "relevance_status": "uncertain",
+    "confidence": "medium",
+    "audit_page_title": "Partecipa al Festival – Fondazione Campania dei Festival",
+    "evidence_urls": [
+      "https://contact.fondazionecampaniadeifestival.it/partecipa-al-festival/",
+      "https://www.fondazionecampaniadeifestival.it/"
+    ],
+    "audit_evidence": [
+      {
+        "url": "https://contact.fondazionecampaniadeifestival.it/partecipa-al-festival/",
+        "page_title": "Partecipa al Festival – Fondazione Campania dei Festival",
+        "excerpt": "The official 2027 Campania Teatro Festival form accepts artistic project proposals through 15 November 2026 at 16:00 and includes a Musica section; the form asks for a project/company proposal rather than an individual singer audition.",
+        "checked_at": "2026-11-12T11:49:52+01:00"
+      }
+    ],
+    "review_notes": "Time-sensitive official project call: deadline 2026-11-15 16:00 Europe/Rome. Do not add it as an individual singer opportunity. Keep as a possible project-proposal source pending a clear scope decision.",
+    "audit_method": "evidence_based",
+    "audit_date": "2026-11-12",
+    "audit_access_status": "accessible_via_web_open",
+    "production_activation": false
   },
   {
     "number": 99,
@@ -9692,10 +9751,29 @@
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
     "discovered_at": "2026-11-10T06:26:06+01:00",
     "review_status": "legacy_unreviewed",
-    "publisher_status": "unverified",
-    "auto_review_status": "needs_review",
-    "auto_review_reason": "insufficient_vocal_evidence",
-    "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+    "publisher_status": "official",
+    "auto_review_status": "irrelevant_candidate",
+    "auto_review_reason": "The official Trianon Viviani notice is an acting audition for the role of Pulcinella and explicitly requests acting in Neapolitan, not vocal performance.",
+    "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+    "relevance_status": "irrelevant",
+    "confidence": "high",
+    "audit_page_title": "Audizioni per la produzione Pulcinella, ovvero una cosa che somiglia al mondo",
+    "evidence_urls": [
+      "https://www.teatrotrianon.org/audizioni-per-la-produzione-pulcinella-ovvero-una-cosa-che-somiglia-al-mondo/"
+    ],
+    "audit_evidence": [
+      {
+        "url": "https://www.teatrotrianon.org/audizioni-per-la-produzione-pulcinella-ovvero-una-cosa-che-somiglia-al-mondo/",
+        "page_title": "Audizioni per la produzione Pulcinella, ovvero una cosa che somiglia al mondo",
+        "excerpt": "The official Trianon page seeks actors and actresses with excellent command of Neapolitan; it does not describe a singing role.",
+        "checked_at": "2026-11-12T11:49:52+01:00"
+      }
+    ],
+    "review_notes": "Keep the source record for audit history only. The notice is not relevant to a classical voice/opera opportunity feed.",
+    "audit_method": "evidence_based",
+    "audit_date": "2026-11-12",
+    "audit_access_status": "accessible_via_web_open",
+    "production_activation": false
   },
   {
     "number": 100,
@@ -9744,10 +9822,30 @@
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
     "discovered_at": "2026-11-10T06:39:44+01:00",
     "review_status": "legacy_unreviewed",
-    "publisher_status": "unverified",
-    "auto_review_status": "needs_review",
-    "auto_review_reason": "insufficient_vocal_evidence",
-    "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+    "publisher_status": "third_party",
+    "auto_review_status": "auto_approved_third_party",
+    "auto_review_reason": "The publisher identity is clear as a specialist musical-theatre audition portal and the page is accessible. It provides independent singer/performer opportunity discovery, but it is third-party and covers musical theatre rather than opera.",
+    "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+    "relevance_status": "relevant",
+    "confidence": "medium",
+    "audit_page_title": "Audizioni - MusicalMusical",
+    "evidence_urls": [
+      "https://www.musical.it/audizioni/",
+      "https://www.musical.it/contatti/"
+    ],
+    "audit_evidence": [
+      {
+        "url": "https://www.musical.it/audizioni/",
+        "page_title": "Audizioni - MusicalMusical",
+        "excerpt": "The portal lists professional and non-professional musical auditions and states that companies and schools submit announcements; it also disclaims responsibility for announcement content.",
+        "checked_at": "2026-11-12T11:49:52+01:00"
+      }
+    ],
+    "review_notes": "Retain as a third-party discovery source with a separate musical-theatre category. Verify every listing against the original producer before publication; never treat portal text as official evidence.",
+    "audit_method": "evidence_based",
+    "audit_date": "2026-11-12",
+    "audit_access_status": "accessible_via_web_open",
+    "production_activation": false
   },
   {
     "number": 102,
@@ -9778,10 +9876,32 @@
     "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
     "discovered_at": "2026-11-10T06:39:47+01:00",
     "review_status": "legacy_unreviewed",
-    "publisher_status": "unverified",
-    "auto_review_status": "needs_review",
-    "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
-    "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+    "publisher_status": "third_party",
+    "auto_review_status": "duplicate_candidate",
+    "auto_review_reason": "This page is a separate third-party publisher, but the specific 17 November 2026 Opera e Lirica notice duplicates the lead already recorded under candidate-1. The official organizer page does not publish this singer audition.",
+    "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+    "relevance_status": "relevant",
+    "confidence": "high",
+    "audit_page_title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma",
+    "evidence_urls": [
+      "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
+      "https://www.provinispettacolo.it/audizioni-opera-lirica-roma-cantanti-professori-orchestra/"
+    ],
+    "audit_evidence": [
+      {
+        "url": "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
+        "page_title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma",
+        "excerpt": "The third-party notice reports the same Opera e Lirica audition in Rome on 17 November 2026, with the same voice types and 13 November application deadline already listed by candidate-1.",
+        "checked_at": "2026-11-12T11:49:52+01:00"
+      }
+    ],
+    "review_notes": "duplicate_scope=notice only. Do not delete or disable this distinct source domain; do not create a second opportunity record. The underlying audition remains third-party-only and must not be published without organizer confirmation.",
+    "duplicate_of": "candidate-1: Provinispettacolo — Musica",
+    "duplicate_scope": "same_Opera_e_Lirica_2026-11-17_audition_notice",
+    "audit_method": "evidence_based",
+    "audit_date": "2026-11-12",
+    "audit_access_status": "accessible_via_web_open",
+    "production_activation": false
   },
   {
     "number": 114,

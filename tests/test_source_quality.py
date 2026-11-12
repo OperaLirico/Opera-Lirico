@@ -204,6 +204,53 @@ class PreserveLastGoodTests(unittest.TestCase):
         self.assertEqual(result["auto_review_reason"], "non_vocal_role_only")
         self.assertEqual(result["auto_review_checked_at"], "2026-11-11T09:00:00+01:00")
 
+    def test_evidence_based_audit_survives_refresh_and_is_not_overwritten(self):
+        checked_at = "2026-11-12T11:49:52+01:00"
+        previous = {
+            "review_status": "legacy_unreviewed",
+            "publisher_status": "official",
+            "auto_review_status": "needs_review",
+            "auto_review_reason": "music_project_proposal_not_individual_audition",
+            "auto_review_checked_at": checked_at,
+            "audit_method": "evidence_based",
+            "audit_date": "2026-11-12",
+            "relevance_status": "uncertain",
+            "confidence": "medium",
+            "evidence_urls": ["https://example.org/official-call"],
+            "audit_evidence": [{
+                "url": "https://example.org/official-call",
+                "page_title": "Official call",
+                "excerpt": "Music project proposals only.",
+                "checked_at": checked_at,
+            }],
+            "review_notes": "Keep for review; do not activate.",
+            "production_activation": False,
+        }
+        fresh = {
+            "status": "ok",
+            "title": "Updated page",
+            "relevant_lines": ["Audizioni per soprano e tenore"],
+        }
+        result = grow_sources.carry_review_metadata(fresh, previous)
+        grow_sources.apply_legacy_review(result, checked_at="2026-11-13T09:00:00+01:00")
+        self.assertEqual(result["auto_review_status"], "needs_review")
+        self.assertEqual(result["auto_review_checked_at"], checked_at)
+        self.assertEqual(result["audit_method"], "evidence_based")
+        self.assertEqual(result["evidence_urls"], previous["evidence_urls"])
+        self.assertEqual(result["audit_evidence"], previous["audit_evidence"])
+        self.assertFalse(result["production_activation"])
+
+    def test_unaudited_legacy_entries_still_receive_heuristic_screening(self):
+        item = {
+            "source": "Theatre casting",
+            "title": "Audizioni attori",
+            "status": "ok",
+            "relevant_lines": ["Selezione per attori e attrici"],
+        }
+        grow_sources.apply_legacy_review(item, checked_at="2026-11-12T11:49:52+01:00")
+        self.assertEqual(item["auto_review_status"], "irrelevant_candidate")
+        self.assertEqual(item["audit_method"], "heuristic")
+
     def test_generic_actor_casting_is_rejected(self):
         probe = {
             "status": "ok",

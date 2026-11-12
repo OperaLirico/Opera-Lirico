@@ -78,15 +78,34 @@ NON_VOCAL_ROLE_RE = re.compile(
 )
 
 
+REVIEW_METADATA_FIELDS = (
+    "review_status",
+    "publisher_status",
+    "auto_review_status",
+    "auto_review_reason",
+    "auto_review_checked_at",
+    "audit_method",
+    "audit_date",
+    "relevance_status",
+    "confidence",
+    "evidence_url",
+    "evidence_urls",
+    "audit_evidence",
+    "audit_page_title",
+    "audit_access_status",
+    "audit_http_status",
+    "duplicate_of",
+    "duplicate_scope",
+    "review_notes",
+    "production_activation",
+    "access_policy_status",
+    "lead_crosscheck",
+)
+
+
 def carry_review_metadata(fresh: dict, previous: dict) -> dict:
-    """Preserve source-review decisions and audit evidence across refreshes."""
-    for key in (
-        "review_status",
-        "publisher_status",
-        "auto_review_status",
-        "auto_review_reason",
-        "auto_review_checked_at",
-    ):
+    """Preserve source-review decisions and their evidence across source refreshes."""
+    for key in REVIEW_METADATA_FIELDS:
         if key in previous:
             fresh[key] = previous[key]
     fresh.setdefault("review_status", "legacy_unreviewed")
@@ -141,6 +160,18 @@ def legacy_relevance_status(item: dict) -> tuple[str, str]:
 
 def now_iso() -> str:
     return datetime.now(ZoneInfo("Europe/Rome")).isoformat(timespec="seconds")
+
+
+def apply_legacy_review(item: dict, checked_at: str | None = None) -> dict:
+    """Apply heuristics only until an evidence-based source audit is recorded."""
+    if item.get("audit_method") == "evidence_based":
+        return item
+    auto_status, auto_reason = legacy_relevance_status(item)
+    item["auto_review_status"] = auto_status
+    item["auto_review_reason"] = auto_reason
+    item["auto_review_checked_at"] = checked_at or now_iso()
+    item["audit_method"] = "heuristic"
+    return item
 
 
 def load(path: Path, default):
@@ -289,10 +320,8 @@ def main(discover: bool = False) -> None:
     for item in registry:
         item.pop("_response", None)
         item.setdefault("review_status", "legacy_unreviewed")
-        auto_status, auto_reason = legacy_relevance_status(item)
-        item["auto_review_status"] = auto_status
-        item["auto_review_reason"] = auto_reason
-        item["auto_review_checked_at"] = now_iso()
+        item.setdefault("publisher_status", "unverified")
+        apply_legacy_review(item)
 
     # 1. Refresh a rotating slice of the discovered list.
     batch: list[dict] = []
