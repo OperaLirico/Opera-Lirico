@@ -3,51 +3,85 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#12352e">
-<meta name="description" content="Italia Audizioni 大师班与专业进修信息，收录经官方来源核验的声乐大师班、歌剧工作坊与课程。">
-<link rel="stylesheet" href="styles.css?v=ux15">
+<meta name="description" content="声乐大师班、歌剧工作坊与专业进修课程。中文整理课程主题、导师、地点、费用和报名信息，并提供主办方官方入口。">
+<link rel="stylesheet" href="styles.css?v=ux16">
 <title>大师班与专业进修｜Italia Audizioni</title>
 <style>
-.master-wrap{max-width:1120px;margin:0 auto;padding:38px 24px 70px}
-.master-back{display:inline-block;margin-bottom:28px;color:var(--brand-2);text-decoration:none}.master-wrap a{text-decoration:none}.master-wrap a:hover{text-decoration:none}
-.master-head{padding:30px;border:1px solid var(--line);border-radius:18px;background:radial-gradient(ellipse at 90% 10%,rgba(185,138,74,.16),transparent 42%),linear-gradient(135deg,rgba(18,53,46,.06),rgba(255,253,248,.86));margin-bottom:26px;box-shadow:var(--shadow)}
+.master-wrap{max-width:1120px;margin:0 auto;padding:38px 24px 76px}
+.master-wrap a:any-link,.master-wrap a:any-link:visited,.master-wrap a:hover,.master-wrap a:focus,.master-wrap a:focus-visible,.master-wrap a:active,header .nav a:any-link,header .nav a:any-link:visited,header .nav a:hover,header .nav a:focus,header .nav a:focus-visible{ text-decoration:none!important;text-decoration-line:none!important;border-bottom:0!important;box-shadow:none!important }
+.master-back{display:inline-flex;align-items:center;gap:8px;margin-bottom:24px;color:var(--brand-2);font-size:13px;font-weight:600}
+.master-head{padding:32px;border:1px solid var(--line);border-radius:20px;background:radial-gradient(ellipse at 90% 10%,rgba(185,138,74,.16),transparent 42%),linear-gradient(135deg,rgba(18,53,46,.06),rgba(255,253,248,.9));margin-bottom:28px;box-shadow:var(--shadow)}
 .master-head h1{font-size:clamp(30px,5vw,46px);margin-bottom:12px}
-.master-head p{max-width:66ch;color:var(--ink-soft);font-size:14px}
-.master-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px}
-.master-card{position:relative;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:11px;min-height:100%}.master-card:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,var(--gold-soft),var(--brand-2))}.master-card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.master-date{font-family:var(--serif);font-size:13px;color:var(--brand);background:rgba(18,53,46,.07);border:1px solid rgba(18,53,46,.12);border-radius:999px;padding:5px 10px}.master-source{display:inline-flex;align-items:center;gap:7px;font-size:12px;color:var(--ink-soft);padding-top:2px}.master-source-mark{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;font-family:var(--serif);font-size:11px;color:var(--gold);background:#fffdf8}
-.master-tag{font-size:10px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}
-.master-card h2{font-size:21px;line-height:1.35}
-.master-meta{font-size:13px;color:var(--ink-soft);line-height:1.8}
-.master-actions{display:flex;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:12px;margin-top:auto;font-size:13px}
-.master-empty{padding:28px;border:1px dashed var(--line);border-radius:12px;color:var(--ink-soft);text-align:center}
+.master-head p{max-width:68ch;color:var(--ink-soft);font-size:14px;line-height:1.85}
+.master-intro-note{display:flex;gap:10px;align-items:flex-start;margin-top:18px;padding:12px 14px;border-radius:12px;background:rgba(18,53,46,.055);color:var(--ink-soft);font-size:12px;line-height:1.7}
+.master-intro-note strong{color:var(--brand)}
+.master-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:18px;align-items:stretch}
+.master-card{position:relative;overflow:hidden;background:var(--paper-2);border:1px solid var(--line);border-radius:17px;padding:23px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:13px;min-width:0}
+.master-card:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:linear-gradient(180deg,var(--gold-soft),var(--brand-2))}
+.master-card-top{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap}
+.master-kind{font-size:10px;letter-spacing:.14em;color:var(--gold);text-transform:uppercase}
+.master-date{font-size:12px;color:var(--brand);background:rgba(18,53,46,.07);border:1px solid rgba(18,53,46,.12);border-radius:999px;padding:5px 10px}
+.master-card h2{font-family:var(--serif);font-size:22px;line-height:1.35;color:var(--ink)}
+.master-original{margin-top:-7px;color:var(--ink-soft);font-size:11px;line-height:1.55}
+.master-focus{display:inline-flex;align-self:flex-start;max-width:100%;padding:5px 10px;border-radius:7px;background:#f3ead8;color:#74552d;font-size:11px;line-height:1.5}
+.master-description{color:var(--ink-soft);font-size:13px;line-height:1.85;margin:0}
+.master-facts{display:grid;grid-template-columns:1fr;gap:8px;margin:0}
+.master-fact{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;font-size:12px;line-height:1.65}
+.master-fact dt{color:var(--ink-soft)}
+.master-fact dd{margin:0;color:var(--ink);overflow-wrap:anywhere}
+.master-fee{font-weight:600;color:var(--brand)!important}
+.master-source{display:flex;align-items:center;gap:8px;margin-top:auto;padding-top:13px;border-top:1px solid var(--line);font-size:11px;color:var(--ink-soft)}
+.master-source-mark{width:25px;height:25px;flex:0 0 25px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;font-family:var(--serif);font-size:10px;color:var(--gold);background:#fffdf8}
+.master-verified{margin-left:auto;font-size:10px;color:#426b55;white-space:nowrap}
+.master-checked{font-size:10px;color:var(--ink-soft)}
+.master-actions{display:flex;gap:9px;flex-wrap:wrap;padding-top:2px}
+.master-link{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:38px;padding:8px 14px;border:1px solid var(--line)!important;border-radius:999px;background:transparent;color:var(--brand-2)!important;font-size:12px;font-weight:600;transition:background .18s ease,border-color .18s ease,color .18s ease}
+.master-link:hover,.master-link:focus-visible{background:var(--brand)!important;border-color:var(--brand)!important;color:#fff!important;outline:2px solid var(--gold-soft);outline-offset:2px}
+.master-link-primary{background:var(--brand)!important;border-color:var(--brand)!important;color:#fff!important}
+.master-link-primary:hover,.master-link-primary:focus-visible{background:var(--brand-2)!important}
+.master-empty{grid-column:1/-1;padding:30px;border:1px dashed var(--line);border-radius:14px;color:var(--ink-soft);text-align:center;line-height:1.8}
+@media(max-width:620px){.master-wrap{padding:26px 16px 54px}.master-head{padding:23px 20px}.master-card{padding:20px}.master-card h2{font-size:20px}.master-verified{margin-left:0}.master-source{flex-wrap:wrap}.master-fact{grid-template-columns:70px minmax(0,1fr)}}
 </style>
 </head>
 <body>
-<header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./"><span class="brand-mark">♫</span><span class="brand-text">Italia Audizioni<small>OPERA · AUDIZIONI · CONSERVATORI</small></span></a><nav class="nav"><a href="./">网站首页</a><a href="https://buttondown.com/wl19971007" target="_blank" rel="noopener">每周简报</a></nav></div></header>
+<header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./"><span class="brand-mark">♫</span><span class="brand-text">Italia Audizioni<small>OPERA · AUDIZIONI · CONSERVATORI</small></span></a><nav class="nav" aria-label="主导航"><a href="./">网站首页</a><a href="https://buttondown.com/wl19971007" target="_blank" rel="noopener noreferrer">每周简报</a></nav></div></header>
 <main class="master-wrap">
-<a class="master-back" href="./">← 返回 Italia Audizioni</a>
-<div class="master-head"><div class="eyebrow">Masterclasses · Corsi</div><h1>大师班与专业进修</h1><p>汇集声乐大师班、歌剧工作坊与专业进修课程。这里只展示已由主办机构官方来源核验并正式发布的信息。报名之前，请务必打开官方公告确认最新安排。</p></div>
-<div id="masterList" class="master-list" aria-live="polite"><div class="master-empty">正在载入官方信息…</div></div>
+<a class="master-back" href="./" aria-label="返回网站首页">← 返回首页</a>
+<section class="master-head"><div class="eyebrow">Masterclasses · Corsi</div><h1>大师班与专业进修</h1><p>这里整理欧洲声乐大师班、歌剧工作坊和专业进修课程。我们会尽量用中文说明课程内容、导师、费用与申请要求，同时保留活动的原文名称，方便你核对主办方公告。</p><div class="master-intro-note"><span aria-hidden="true">✦</span><span><strong>信息核验说明：</strong>公开页面仅收录已核对主办方官方资料的项目。部分课程可能只公布了日期，尚未开放报名；未公布的费用或申请条件不会自行推测。</span></div></section>
+<div id="masterList" class="master-list" aria-live="polite"><div class="master-empty">正在载入已核验的大师班信息…</div></div>
 </main>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"42879f330b824eb4843baa5bd13ba002"}'></script>
 <script>
-const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+"use strict";
+const esc=s=>String(s??"").replace(/[&<>\"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl=s=>{try{const u=new URL(String(s||""));return ["https:","http:"].includes(u.protocol)?u.href:"";}catch{return "";}};
-const fmt=s=>{if(!s)return "以官方公告为准";const d=new Date(s);return Number.isNaN(d.getTime())?"以官方公告为准":new Intl.DateTimeFormat("zh-CN",{timeZone:"Europe/Rome",dateStyle:"medium"}).format(d)};
+const fmt=s=>{if(!s)return "";const d=new Date(s);return Number.isNaN(d.getTime())?"":new Intl.DateTimeFormat("zh-CN",{timeZone:"Europe/Rome",year:"numeric",month:"long",day:"numeric"}).format(d)};
+const teacherLabel=s=>String(s||"").split(";").map(v=>v.trim()).filter(Boolean).map(v=>v.replace(/^accompagnamento pianistico\s*:\s*/i,"钢琴合作：").replace(/^pianista e concertatore\s*:\s*/i,"钢琴合作与音乐指导：")).join("；");
+function renderCard(x){
+ const dateLabel=x.date_label_zh||(fmt(x.start_at)+(x.end_at?" — "+fmt(x.end_at):""))||"具体日期待公布";
+ const source=safeUrl(x.source_url),apply=safeUrl(x.application_url);
+ const initials=String(x.source_name||"OL").split(/\s+/).filter(Boolean).slice(0,2).map(v=>v[0]).join("").toUpperCase();
+ const deadline=x.application_deadline_at?fmt(x.application_deadline_at):"";
+ const teacher=teacherLabel(x.teacher);
+ const facts=[
+  teacher?["导师",teacher]:null,
+  x.location?["地点",x.location]:null,
+  x.fee_label_zh?["费用",x.fee_label_zh]:(x.fee_eur!=null?["费用",x.fee_eur===0?"免费":"€"+x.fee_eur]:["费用","尚未公布"]),
+  x.language?["授课语言",x.language]:null,
+  deadline?["申请截止",deadline]:null
+ ].filter(Boolean);
+ const status=deadline?"申请截止："+deadline:(x.start_at?"报名安排以主办方公告为准":"具体日期待公布");
+ const factsHtml=facts.map(([label,value])=>'<div class="master-fact"><dt>'+esc(label)+'</dt><dd class="'+(label==="费用"?"master-fee":"")+'">'+esc(value)+'</dd></div>').join("");
+ return '<article class="master-card"><div class="master-card-top"><span class="master-kind">声乐 · Masterclass</span><span class="master-date">'+esc(dateLabel)+'</span></div><h2>'+esc(x.title_zh||x.title)+'</h2>'+(x.title_zh?'<p class="master-original">'+esc(x.title)+'</p>':'')+(x.focus_zh?'<span class="master-focus">'+esc(x.focus_zh)+'</span>':'')+'<p class="master-description">'+esc(x.description_zh||"课程详情请查看主办方公告。")+'</p><dl class="master-facts">'+factsHtml+'</dl><div class="master-source"><span class="master-source-mark">'+esc(initials)+'</span><span>主办机构：'+esc(x.source_name)+'</span><span class="master-verified">已核对官方资料</span></div><div class="master-checked">最近核验：'+esc(fmt(x.last_verified_at||x.checked_at)||"未记录")+' · '+esc(status)+'</div><div class="master-actions">'+(source?'<a class="master-link" href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">官方课程介绍 ↗</a>':'')+(apply?'<a class="master-link master-link-primary" href="'+esc(apply)+'" target="_blank" rel="noopener noreferrer">报名表 / 申请详情 ↗</a>':'')+'</div></article>';
+}
 async function init(){
  const root=document.getElementById("masterList");
  try{
   const r=await fetch("data/masterclasses.json",{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);
   const data=await r.json(),today=Date.now();
   const items=(data.items||[]).filter(x=>x.publisher_status==="official"&&x.review_status==="verified"&&x.publication_status==="published"&&(!x.end_at||Date.parse(x.end_at)>=today)&&(!x.application_deadline_at||Date.parse(x.application_deadline_at)>=today)).sort((a,b)=>{const da=Date.parse(a.start_at),db=Date.parse(b.start_at);if(!Number.isFinite(da))return Number.isFinite(db)?1:0;if(!Number.isFinite(db))return -1;return da-db;});
-  if(!items.length){root.innerHTML='<div class="master-empty">目前还没有通过官方核验并正式发布的大师班。我们会先核验信息，再更新这里。</div>';return;}
-  root.innerHTML=items.map(x=>{
-   const dateLabel=x.date_label_zh||fmt(x.start_at)+(x.end_at?" — "+fmt(x.end_at):"");
-   const initials=String(x.source_name||"OL").split(/\s+/).filter(Boolean).slice(0,2).map(v=>v[0]).join("").toUpperCase();
-   const facts=[x.teacher?"导师："+x.teacher:"",x.instrument_or_voice?"专业："+x.instrument_or_voice:"","地点："+(x.location||"以官方公告为准"),"费用："+(x.fee_eur==null?"以官方公告为准":x.fee_eur===0?"免费":"€"+x.fee_eur),x.language?"授课语言："+x.language:"",x.description_zh||""].filter(Boolean);
-   const source=safeUrl(x.source_url),apply=safeUrl(x.application_url);
-   return '<article class="master-card"><div class="master-card-top"><div class="master-tag">MASTERCLASS · OFFICIAL SOURCE</div><span class="master-date">'+esc(dateLabel)+'</span></div><h2>'+esc(x.title)+'</h2><div class="master-meta">'+facts.map(esc).join("<br>")+'</div><div class="master-source"><span class="master-source-mark">'+esc(initials)+'</span><span>信息发布方：'+esc(x.source_name)+'</span></div><div class="master-meta">最近核验：'+esc(x.last_verified_at||x.checked_at||"未记录")+'</div><div class="master-actions">'+(source?'<a href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">官方公告 ↗</a>':'')+(apply?'<a href="'+esc(apply)+'" target="_blank" rel="noopener noreferrer">报名 / 详情 ↗</a>':'')+'</div></article>'
-  }).join("");
- }catch(e){root.innerHTML='<div class="master-empty">暂时无法载入大师班资料，请稍后重试。</div>';}
+  if(!items.length){root.innerHTML='<div class="master-empty">目前没有仍在有效期内的已核验课程。你可以查看主办方官网，或稍后再来查看更新。</div>';return;}
+  root.innerHTML=items.map(renderCard).join("");
+ }catch(e){root.innerHTML='<div class="master-empty">暂时无法载入大师班资料。请稍后重试；这不会影响其他板块的使用。</div>';console.error("Masterclass page load failed:",e);}
 }
 init();
 </script>
