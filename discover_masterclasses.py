@@ -38,8 +38,8 @@ VOICE_RE = re.compile(
     re.I,
 )
 NOISE_RE = re.compile(r"privacy|cookie|facebook|instagram|linkedin|youtube|newsletter", re.I)
-GENERIC_NAV_RE = re.compile(r"^(?:skip to (?:main )?content|salta al contenuto|vai al contenuto|home|menu)$", re.I)
-GENERIC_LISTING_RE = re.compile(r"^(?:master.?class(?:es)?|corsi e master.?class(?:es)?)(?:\s*[-|–:]\s*.+)?$|^courses?\s*[|–-]\s*voice$", re.I)
+GENERIC_NAV_RE = re.compile(r"^(?:skip to (?:main )?content|salta al contenuto|vai al contenuto|home|menu|conservatorio|istituzione)$", re.I)
+GENERIC_LISTING_RE = re.compile(r"^(?:master.?class(?:es)?(?:\s*[-|–:]\s*.+)?|corsi e master.?class(?:es)?\b.*|courses?\s*[|–-]\s*voice)$", re.I)
 NUMERIC_DATE_RE = re.compile(r"\b(\d{1,2})[./-](\d{1,2})[./-](20\d{2})\b")
 WORD_DATE_RE = re.compile(r"\b(\d{1,2})\s+([a-zà-ÿ]+)\s+(20\d{2})\b", re.I)
 MONTHS = {
@@ -97,6 +97,20 @@ def canonical_url(url: str) -> str:
     return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path, parts.query, ""))
 
 
+def is_generic_candidate_title(title: str, source_name: str = "") -> bool:
+    value = clean(title)
+    if not value:
+        return True
+    if GENERIC_NAV_RE.fullmatch(value) or GENERIC_LISTING_RE.fullmatch(value):
+        return True
+    source = clean(source_name)
+    if source and value.casefold().startswith(source.casefold()):
+        suffix = value[len(source):].strip(" -–—|:")
+        if not suffix or len(suffix) <= 24:
+            return True
+    return False
+
+
 def slug(value: str) -> str:
     value = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
     return value[:70] or "masterclass"
@@ -137,7 +151,7 @@ def extract_page(response, url: str) -> tuple[str, str, list[tuple[str, str]]]:
 def make_candidate(source: dict, url: str, title: str, text: str, checked_at: str,
                    discovery_label: str = "") -> dict | None:
     blob = " ".join((title, discovery_label, text))
-    if GENERIC_LISTING_RE.search(clean(title)) and not discovery_label:
+    if is_generic_candidate_title(title, source.get("name", "")) and not discovery_label:
         return None
     # Require an event-level title/link label, vocal relevance in the page body,
     # and an explicit date signal. This avoids turning generic navigation pages
@@ -154,11 +168,9 @@ def make_candidate(source: dict, url: str, title: str, text: str, checked_at: st
     start = max(0, match.start() - 180) if match else 0
     excerpt = text[start:start + 700].strip()
     label = discovery_label or title or source["name"]
-    if GENERIC_NAV_RE.fullmatch(clean(label)):
+    if is_generic_candidate_title(label, source.get("name", "")):
         label = title or source["name"]
-    if GENERIC_LISTING_RE.fullmatch(clean(label)):
-        label = title or source["name"]
-    if GENERIC_NAV_RE.fullmatch(clean(label)) or GENERIC_LISTING_RE.fullmatch(clean(label)):
+    if is_generic_candidate_title(label, source.get("name", "")):
         return None
     candidate_title = label if len(label) > 8 else title or source["name"]
     normalized_url = canonical_url(url)
@@ -232,6 +244,7 @@ def discover() -> dict:
         if item.get("candidate_id")
         and "/archivio" not in (item.get("source_url") or "").lower()
         and has_future_date(" ".join(item.get("date_signals", [])))
+        and not is_generic_candidate_title(item.get("title_hint", ""), item.get("source_name", ""))
     }
     checked_at = now_iso()
     found: dict[str, dict] = {}
