@@ -8,7 +8,7 @@ import re
 import time
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit
 from zoneinfo import ZoneInfo
 
 from lxml import html as lxml_html
@@ -76,8 +76,33 @@ def clean_line(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def classify_relevant_link(label: str, href: str) -> str:
+    """Classify a relevant destination without assuming it is safe or verified."""
+    signal = f"{label} {href}"
+    if re.search(r"\\.pdf(?:$|[?#])|pdf|regolamento", signal, re.IGNORECASE):
+        return "official_document"
+    if re.search(
+        r"application|apply|domanda|modulo|iscrizion|candidatura|registration",
+        signal,
+        re.IGNORECASE,
+    ):
+        return "application"
+    if re.search(r"audizion|concor|bando|selezion|call|notice", signal, re.IGNORECASE):
+        return "notice"
+    return "related_resource"
+
+
+def _normalized_host(url: str) -> str:
+    host = (urlsplit(url).hostname or "").lower()
+    return host[4:] if host.startswith("www.") else host
+
+
 def extract_relevant_links(html_bytes: bytes, page_url: str) -> tuple[list[dict], int, bool]:
-    """Preserve first-party page links as structured evidence, not flattened text."""
+    """Preserve relevant anchors with structured destination evidence.
+
+    External application providers are retained, but explicitly identified as
+    external; discovery is not treated as verification or permission to publish.
+    """
     try:
         dom = lxml_html.fromstring(html_bytes, base_url=page_url)
     except (ValueError, TypeError):
@@ -85,10 +110,12 @@ def extract_relevant_links(html_bytes: bytes, page_url: str) -> tuple[list[dict]
     links: list[dict] = []
     seen: set[str] = set()
     total = 0
+    source_host = _normalized_host(page_url)
     for node in dom.xpath("//a[@href]"):
         raw_href = (node.get("href") or "").strip()
         href = urljoin(page_url, raw_href)
-        if not href.startswith(("http://", "https://")):
+        parsed = urlsplit(href)
+        if parsed.scheme.lower() not in {"http", "https"} or not parsed.netloc:
             continue
         visible_label = clean_line(" ".join(node.itertext()))
         aria_label = clean_line(node.get("aria-label") or "")
@@ -97,16 +124,29 @@ def extract_relevant_links(html_bytes: bytes, page_url: str) -> tuple[list[dict]
         combined = f"{label} {aria_label} {title} {href}"
         if not LINK_RELEVANCE.search(combined) or LINK_NOISE.search(combined):
             continue
-        if href in seen:
+        dedupe_key = href.split("#", 1)[0]
+        if dedupe_key in seen:
             continue
-        seen.add(href)
+        seen.add(dedupe_key)
         total += 1
         if len(links) < MAX_RELEVANT_LINKS:
-            link = {"text": label[:240], "url": href}
+            link = {
+                "text": label[:240],
+                "url": href,
+                "link_type": classify_relevant_link(combined, href),
+                "host": parsed.hostname.lower() if parsed.hostname else "",
+                "same_host": _normalized_host(href) == source_host,
+            }
+            rel = clean_line(node.get("rel") or "")
+            target = clean_line(node.get("target") or "")
             if aria_label:
                 link["aria_label"] = aria_label[:240]
             if title:
                 link["title"] = title[:240]
+            if rel:
+                link["rel"] = rel[:120]
+            if target:
+                link["target"] = target[:40]
             links.append(link)
     return links, total, total > MAX_RELEVANT_LINKS
 
