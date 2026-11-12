@@ -41,6 +41,7 @@ class OpportunityDataTests(unittest.TestCase):
                 self.assertIn(item["review_status"], {"pending_manual_review", "verified", "rejected"})
                 self.assertIn(item["publication_status"], {"draft", "published", "archived"})
                 self.assertTrue(item["title"].strip())
+                self.assertTrue(item["title_zh"].strip())
                 self.assertTrue(item["source_name"].strip())
                 self.assertTrue(item["evidence"])
 
@@ -103,6 +104,13 @@ class OpportunityDataTests(unittest.TestCase):
         self.assertIn("record.review_status!=='verified'", APP)
         self.assertIn("record.publisher_status!=='official'", APP)
         self.assertIn("Date.parse(deadline)<Date.now()", APP)
+
+    def test_chinese_titles_and_full_section_search_are_wired(self):
+        self.assertIn("record.title_zh||record.title", APP)
+        self.assertIn("o.originalTitle", APP)
+        self.assertIn("c.requirements||[]", APP)
+        self.assertIn("pdfSearchInput", APP)
+        self.assertIn("filteredRows", APP)
 
     def test_opportunity_cards_show_notes_and_official_pdf_links(self):
         self.assertIn("record.notes", APP)

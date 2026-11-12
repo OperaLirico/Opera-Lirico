@@ -235,13 +235,18 @@ function summaryOf(item){
   if(/尚未人工翻译|LiederNet 收录的声乐文本/.test(text))return '';
   return text;
 }
+const voicePatterns={tenor:/男高音|tenor/i,soprano:/女高音|soprano/i,mezzo:/女中音|mezzo/i,baritone:/男中音|baritone/i,bass:/男低音|basso|bass/i,contralto:/女低音|contralto/i};
+function matchesVoiceFilter(item,filter){return filter==='all'||Boolean((voicePatterns[filter]||/$a/).test(String(item.voice||'')));}
 function renderMusicSearch(rawQuery){
   const target=$('#musicSearchResults');
   const query=rawQuery.trim();
+  const voiceFilter=$('#musicVoiceFilter')?.value||'all';
+  const visibleRepertoire=repertoire.filter(item=>matchesVoiceFilter(item,voiceFilter));
   if(!query){
-    const groups=[...new Set(repertoire.filter(item=>item.section).map(item=>item.section))];
+    if(!visibleRepertoire.length){target.innerHTML='<div class="music-empty">这个声部暂时没有收录曲目。可以切换到“全部声部”查看完整曲库。</div>';return;}
+    const groups=[...new Set(visibleRepertoire.filter(item=>item.section).map(item=>item.section))];
     const featured=groups.map(group=>{
-      const items=repertoire.filter(item=>item.section===group).sort((a,b)=>(a.priority||999)-(b.priority||999));
+      const items=visibleRepertoire.filter(item=>item.section===group).sort((a,b)=>(a.priority||999)-(b.priority||999));
       return items.length?'<section class="music-feature-group"><h3>'+esc(group)+'</h3><div class="music-feature-list">'+items.map(item=>'<button type="button" class="music-feature-item" data-suggest="'+esc(item.title)+'"><strong>'+esc(item.title)+'</strong><span>'+esc(cleanName(item.composer||''))+'</span></button>').join('')+'</div></section>':'';
     }).join('');
     target.innerHTML='<p class="result-meta">先浏览常见、经典的声乐曲目；输入作品名或作曲家可搜索。冷门自动导入记录已从主曲库分离。</p>'+featured;
@@ -252,13 +257,13 @@ function renderMusicSearch(rawQuery){
     return;
   }
   const terms=query.split(/[\/,，、;；|]+/).map(normalizeSearch).filter(Boolean);
-  const evaluated=repertoire.map(item=>matchItem(item,terms)).filter(Boolean);
+  const evaluated=visibleRepertoire.map(item=>matchItem(item,terms)).filter(Boolean);
   const main=evaluated.filter(entry=>entry.nameScore>0)
     .sort((a,b)=>b.nameScore-a.nameScore||(a.item.priority||9999)-(b.item.priority||9999)||a.item.title.localeCompare(b.item.title));
   const extra=evaluated.filter(entry=>!entry.nameScore)
     .sort((a,b)=>((b.text&&b.text.count)||0)-((a.text&&a.text.count)||0)||a.item.title.localeCompare(b.item.title));
   if(!evaluated.length){
-    const near=repertoire.map(item=>({item,sim:editDistance(normalizeSearch(query),itemNorm(item).title,6)}))
+    const near=visibleRepertoire.map(item=>({item,sim:editDistance(normalizeSearch(query),itemNorm(item).title,6)}))
       .filter(entry=>entry.sim<=6).sort((a,b)=>a.sim-b.sim).slice(0,5);
     target.innerHTML=`<div class="music-empty"><strong>未找到“${esc(query)}”</strong><p>${near.length?'你可能想找：'+near.map(entry=>`<button type="button" class="search-chip" data-suggest="${esc(entry.item.title)}">${esc(entry.item.title)}</button>`).join(' '):'请尝试缩短关键词，或使用作品名称、作曲家姓名进行搜索。'}</p></div>`;
     return;
@@ -333,7 +338,7 @@ function publishedOpportunity(record){
   const categories={opera_role:'歌剧角色招募',choir:'合唱团招募',vocal_competition:'国际声乐比赛',young_artist:'青年艺术家项目',conservatory_admission:'音乐学院招生',other_vocal:'声乐机会'};
   const voices=(record.voice_types||[]).map(v=>({soprano:'女高音',mezzo_soprano:'女中音',contralto:'女低音',countertenor:'假声男高音',tenor:'男高音',baritone:'男中音',bass:'男低音',all_voices:'不限声部',unspecified:'声部未注明'}[v]||v));
   const details=[record.eligibility_summary,voices.length?`声部：${voices.join('、')}`: '',record.fee_eur!=null?(record.fee_eur===0?'报名费：免费':`报名费：€${record.fee_eur}`):'',record.audition_start_at?`试唱/比赛：${formatDate(record.audition_start_at)}${record.audition_end_at&&record.audition_end_at.slice(0,10)!==record.audition_start_at.slice(0,10)?' 至 '+formatDate(record.audition_end_at):''}`: '',record.notes?`说明：${record.notes}`: ''].filter(Boolean);
-  return {title:record.title,category:categories[record.opportunity_type]||'声乐机会',place:record.location||'地点以公告为准',deadline,summary:details.join('；')||'详情请以主办方公告为准。',url:record.announcement_url,applicationUrl:record.application_url,officialPdfUrl:record.official_pdf_url,source:record.source_name};
+  return {title:record.title_zh||record.title,originalTitle:record.title_zh?record.title:'',category:categories[record.opportunity_type]||'声乐机会',place:record.location||'地点以公告为准',deadline,summary:details.join('；')||'详情请以主办方公告为准。',url:record.announcement_url,applicationUrl:record.application_url,officialPdfUrl:record.official_pdf_url,source:record.source_name};
 }
 function renderCalls(){
   const now=Date.now();
@@ -357,7 +362,7 @@ function renderCalls(){
   const pill=$('#opportunityCount');
   if(pill)pill.textContent=`${current.length} 项开放报名`;
   const box=$('#opportunities');
-  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">报名截止：${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3><p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a>${o.applicationUrl?`<a class="card-link" href="${esc(o.applicationUrl)}" target="_blank" rel="noopener">在线申请 <span>↗</span></a>`:'' }${o.officialPdfUrl?`<a class="card-link" href="${esc(o.officialPdfUrl)}" target="_blank" rel="noopener">下载官方简章 PDF <span>↗</span></a>`:''}</article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
+  if(box)box.innerHTML=current.length?current.map(o=>`<article class="opportunity-card"><div class="card-top"><span class="badge">${esc(o.category)}</span><span class="deadline">报名截止：${formatDate(o.deadline)}${countdown(String(o.deadline).slice(0,10))}</span></div><h3>${esc(o.title)}</h3>${o.originalTitle?`<p class="opportunity-original">${esc(o.originalTitle)}</p>`:'' }<p>${esc(humanText(o.summary))}</p><div class="card-meta"><span>⌖ ${esc(o.place)}</span><span>${esc(o.source)}</span></div><a class="card-link" href="${esc(o.url)}" target="_blank" rel="noopener">查看主办方公告 <span>↗</span></a>${o.applicationUrl?`<a class="card-link" href="${esc(o.applicationUrl)}" target="_blank" rel="noopener">在线申请 <span>↗</span></a>`:'' }${o.officialPdfUrl?`<a class="card-link" href="${esc(o.officialPdfUrl)}" target="_blank" rel="noopener">下载官方简章 PDF <span>↗</span></a>`:''}</article>`).join(''):'<div class="empty">现在没有确认在招的项目。可以先看考试那栏，挑几个能提前准备的。</div>';
   renderTiles();
 }
 
@@ -466,7 +471,9 @@ function renderConservatori(){
   $('#conservatoriCount').textContent=`${readable.length}/${conservatoriData.length} 所院校页面可正常读取`;
   const q=normalizeSearch(consQuery);
   const filtered=conservatoriData.filter(c=>{
-    if(q&&!normalizeSearch(`${c.city||''} ${c.school||''} ${(c.zh&&c.zh.state)||''}`).includes(q))return false;
+    const zh=c.zh||{};
+    const searchable=[c.city,c.school,c.status,zh.state,...(c.deadline_lines||[]),...(c.exam_dates||[]),...(c.requirements||[]),...(c.fallback_lines||[]),...(zh.d||[]),...(zh.x||[]),...(zh.r||[]),...(Array.isArray(zh.notes)?zh.notes:[zh.notes||''])].filter(Boolean).join(' ');
+    if(q&&!normalizeSearch(searchable).includes(q))return false;
     if(consDateOnly){
       const z=c.zh||{};
       const hasDate=Boolean(isoFromText((c.deadline_lines||[]).join(' '))||isoFromText((c.exam_dates||[]).join(' '))||zhIsoFromText((z.d||[]).join(' '))||zhIsoFromText((z.x||[]).join(' ')));
@@ -509,15 +516,17 @@ function renderPdfList(){
     }
   }
   const count=rows.filter(r=>r.local).length;
+  const query=normalizeSearch($('#pdfSearchInput')?.value||'');
+  const filteredRows=rows.filter(r=>!query||normalizeSearch([r.city,r.school,r.label,r.zh].join(' ')).includes(query));
   $('#pdfCount').textContent=rows.length?String(rows.length):'—';
-  $('#pdfCountPill').textContent=`${rows.length} 份，站内 ${count}`;
-  box.innerHTML=rows.length?rows.map(r=>`<article class="pdf-card">
+  $('#pdfCountPill').textContent=`显示 ${filteredRows.length}/${rows.length} 份 · 站内 ${count}`;
+  box.innerHTML=filteredRows.length?filteredRows.map(r=>`<article class="pdf-card">
     <div class="pdf-top"><span class="pdf-city">${esc(r.city)}</span><span class="pdf-kind ${r.local?'pdf-kind--local':''}">${r.local?'已在站内':'在官网'}</span></div>
     <h3>${esc(r.school)}</h3>
     ${r.zh?`<p class="pdf-note">${esc(humanText(r.zh))}</p>`:''}
     <p class="pdf-file">${esc(r.label)}</p>
     <div class="pdf-actions"><a class="doc-link ${r.local?'doc-link--local':''}" href="${esc(r.url)}" target="_blank" rel="noopener">${r.local?'打开站内文件 ↓':'查看官网文件 ↗'}</a><a class="doc-link" href="${esc(r.official)}" target="_blank" rel="noopener">官网页面 ↗</a></div>
-  </article>`).join(''):'<div class="empty">还没抓到简章。学院那栏里有官网链接，可以直接跳过去核对。</div>';
+  </article>`).join(''):(rows.length?'<div class="empty">没有找到匹配的文件，请换一个城市、院校或文件关键词。</div>':'<div class="empty">还没抓到简章。学院那栏里有官网链接，可以直接跳过去核对。</div>');
 }
 
 function renderTiles(){
@@ -594,6 +603,8 @@ bindPanelLinks();
 $('#refreshButton').addEventListener('click',()=>{loadConservatori();loadRepertoire();});
 const consInput=$('#consSearchInput');
 if(consInput)consInput.addEventListener('input',event=>{consQuery=event.target.value;renderConservatori();});
+const pdfSearch=$('#pdfSearchInput');
+if(pdfSearch)pdfSearch.addEventListener('input',renderPdfList);
 const consToggle=$('#consDateOnly');
 if(consToggle)consToggle.addEventListener('click',()=>{consDateOnly=!consDateOnly;consToggle.setAttribute('aria-pressed',String(consDateOnly));renderConservatori();});
 const expandAll=$('#consExpandAll');
@@ -608,6 +619,8 @@ $('#installButton').addEventListener('click',async()=>{if(installPrompt){install
 if(/iphone|ipad|ipod/i.test(navigator.userAgent)&&!window.navigator.standalone){$('#installButton').hidden=false;}
 if('serviceWorker' in navigator && /^https?:$/.test(location.protocol))navigator.serviceWorker.register(new URL('service-worker.js',sourceRoot)).catch(()=>{});
 $('#musicSearchForm').addEventListener('submit',event=>{event.preventDefault();renderMusicSearch($('#musicSearchInput').value);});
+const musicVoiceFilter=$('#musicVoiceFilter');
+if(musicVoiceFilter)musicVoiceFilter.addEventListener('change',()=>renderMusicSearch($('#musicSearchInput').value));
 let musicSearchTimer=null;
 $('#musicSearchInput').addEventListener('input',event=>{const value=event.target.value;clearTimeout(musicSearchTimer);musicSearchTimer=setTimeout(()=>renderMusicSearch(value),160);});
 document.addEventListener('click',event=>{
