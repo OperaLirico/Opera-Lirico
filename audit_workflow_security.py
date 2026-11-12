@@ -33,7 +33,7 @@ def audit_workflows() -> list[str]:
         text = path.read_text(encoding="utf-8")
         lines = text.splitlines()
         for number, line in enumerate(lines, 1):
-            match = re.match(r"^\s*uses:\s*([^\s#]+)", line)
+            match = re.match(r"^\s*(?:-\s*)?uses:\s*([^\s#]+)", line)
             if not match:
                 continue
             action = match.group(1)
