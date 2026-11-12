@@ -81,7 +81,7 @@ button{font:inherit;color:inherit}
 .card-link:hover{color:var(--gold)}
 .empty{border:1px dashed var(--line);border-radius:12px;padding:26px;text-align:center;color:var(--ink-soft);font-size:13px}
 /* music */
-.music-search{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.music-filter-row{display:flex;justify-content:flex-end;margin-top:12px}\n.music-voice-filter{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--ink-soft)}\n.music-voice-filter select{border:1px solid var(--line);border-radius:999px;background:var(--paper-2);color:var(--brand);padding:7px 13px;font:inherit;max-width:180px}\n.music-voice-filter select:focus-visible{outline:2px solid var(--gold-soft);outline-offset:2px}\n.music-search{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
 .music-search-field{display:flex;align-items:center;gap:8px;flex:1 1 320px;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:10px 16px}
 .music-search-field input{flex:1;border:0;background:none;font-size:15px;outline:none;min-width:0}
 .music-search button[type=submit]{border:0;border-radius:999px;background:var(--brand);color:#f4ecdb;padding:10px 22px;font-size:14px;cursor:pointer}
