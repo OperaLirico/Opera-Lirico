@@ -30,6 +30,7 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 .socialQueue{display:grid;gap:16px}.socialCard{display:grid;grid-template-columns:minmax(180px,260px) minmax(0,1fr);gap:18px;padding:16px 0;border-bottom:1px solid var(--line)}.socialCard:last-child{border:0}
 .socialImage{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#f5f0e5}.socialEditor{min-width:0}.socialEditor textarea{width:100%;min-height:210px;padding:12px;border:1px solid var(--line);border-radius:10px;font:14px/1.7 system-ui,sans-serif;resize:vertical;background:#fff}
 .socialActions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.socialMeta{font-size:12px;color:var(--muted);margin:4px 0 10px}.pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:11px;color:var(--green)}
+.masterclassQueue{display:grid;gap:14px}.masterclassCard{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fffefa}.masterclassCard h3{font:600 19px Georgia,serif;margin:0 0 6px}.masterclassMeta{font-size:12px;color:var(--muted);margin:5px 0}.masterclassExcerpt{font-size:13px;line-height:1.65;background:#f6f3eb;padding:12px;border-radius:8px;margin:10px 0;overflow-wrap:anywhere}.masterclassNotes{width:100%;min-height:72px;padding:10px;border:1px solid var(--line);border-radius:8px;font:14px/1.6 system-ui,sans-serif;margin-top:10px}.masterclassActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.masterclassState{font-size:12px;color:var(--green);margin-top:8px}
 @media(max-width:620px){.socialCard{grid-template-columns:1fr}.socialImage{max-width:320px}.socialEditor textarea{min-height:180px}}
 @media(max-width:760px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.top{align-items:flex-start}}
 @media(max-width:420px){.grid{grid-template-columns:1fr 1fr}.card{padding:14px}.value{font-size:29px}}
@@ -57,6 +58,10 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 <section class="section"><h2>社交媒体内容审核</h2><div class="panel">
 <p class="hint">自动生成的中文图片与文案会先进入这里。保存修改或审核通过都不会自动发布到社交平台。</p>
 <div id="contentQueue" class="socialQueue"><div class="empty">正在读取内容草稿…</div></div>
+</div></section>
+<section class="section"><h2>大师班候选审核</h2><div class="panel">
+<p class="hint">每日自动发现的课程线索。请打开主办方原始页面核对日期、费用、报名条件和截止时间。核实通过只代表审核完成，不会自动发布到网站。</p>
+<div id="masterclassQueue" class="masterclassQueue"><div class="empty">正在读取大师班候选…</div></div>
 </div></section>
 <p class="notice">安全说明：访问统计、订阅汇总和社交媒体草稿均受后台登录保护；此后台不提供自动发布或邮件发送操作。</p>
 </main>
@@ -120,6 +125,49 @@ async function updateDraft(id,payload,button){
  if(!r.ok)throw new Error("保存失败，请刷新后重试");await loadContentQueue();
  }catch(err){button.textContent=err.message;button.disabled=false;return;}button.textContent=old;button.disabled=false;
 }
+async function loadMasterclassQueue(){
+ const root=$("masterclassQueue");root.textContent="正在读取大师班候选…";
+ try{
+  const r=await fetch("/api/masterclasses/candidates",{cache:"no-store"});
+  if(r.status===401){showLogin();return;}
+  if(!r.ok)throw new Error("大师班候选读取失败");
+  const d=await r.json();root.replaceChildren();
+  const items=d.items||[];
+  if(!items.length){const p=document.createElement("div");p.className="empty";p.textContent="目前没有待审核候选。";root.append(p);return;}
+  items.forEach(item=>{
+   const card=document.createElement("article");card.className="masterclassCard";
+   const heading=document.createElement("h3");heading.textContent=item.title_hint||"未命名课程";card.append(heading);
+   const meta=document.createElement("div");meta.className="masterclassMeta";
+   const state=item.review?.status||"pending_manual_review";
+   const stateLabel={pending_manual_review:"待人工审核",verified_pending_publication:"已核实 · 待整理发布",needs_more_info:"需要补充信息",rejected:"已排除"}[state]||state;
+   meta.textContent=(item.source_name||"未知来源")+" · "+(item.publisher_status==="official"?"主办方来源":"第三方发现来源")+" · "+stateLabel;
+   card.append(meta);
+   const dates=document.createElement("div");dates.className="masterclassMeta";dates.textContent="发现日期线索："+(item.date_signals||[]).join("、");card.append(dates);
+   const checked=document.createElement("div");checked.className="masterclassMeta";checked.textContent="最近抓取："+(item.checked_at||"—")+" · 首次发现："+(item.first_seen_at||"—");card.append(checked);
+   const source=document.createElement("a");source.href=item.source_url||"#";source.target="_blank";source.rel="noopener noreferrer";source.textContent="打开候选原始来源 ↗";card.append(source);
+   const discovered=document.createElement("div");discovered.className="masterclassMeta";discovered.textContent="发现入口："+(item.discovered_from||"—");card.append(discovered);
+   const excerpt=document.createElement("div");excerpt.className="masterclassExcerpt";excerpt.textContent=item.evidence_excerpt||"抓取结果未提供摘录。";card.append(excerpt);
+   const notes=document.createElement("textarea");notes.className="masterclassNotes";notes.placeholder="记录核实结果：准确日期、报名截止、费用、年龄限制、官方申请链接等…";notes.value=item.review?.notes||item.review_notes||"";notes.setAttribute("aria-label","大师班审核备注");card.append(notes);
+   const status=document.createElement("div");status.className="masterclassState";status.textContent=item.review?.reviewed_at?"上次审核："+new Date(item.review.reviewed_at).toLocaleString("zh-CN"):"尚未审核";card.append(status);
+   const actions=document.createElement("div");actions.className="masterclassActions";
+   const verified=document.createElement("button");verified.className="primary";verified.textContent="核实通过（待发布）";verified.disabled=item.publisher_status!=="official";
+   verified.title=verified.disabled?"第三方目录只能作为线索，需先找到主办方官方页面。":"核实通过不会自动发布。";
+   verified.addEventListener("click",()=>saveMasterclassReview(item.candidate_id,"verified_pending_publication",notes.value,verified));
+   const more=document.createElement("button");more.textContent="需要补充信息";more.addEventListener("click",()=>saveMasterclassReview(item.candidate_id,"needs_more_info",notes.value,more));
+   const reject=document.createElement("button");reject.textContent="排除";reject.addEventListener("click",()=>saveMasterclassReview(item.candidate_id,"rejected",notes.value,reject));
+   actions.append(verified,more,reject);card.append(actions);root.append(card);
+  });
+ }catch(err){root.textContent=err.message;}
+}
+async function saveMasterclassReview(id,state,notes,button){
+ const old=button.textContent;button.disabled=true;button.textContent="保存中…";
+ try{
+  const r=await fetch("/api/masterclasses/candidates/"+encodeURIComponent(id),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({status:state,notes})});
+  if(!r.ok){const d=await r.json().catch(()=>({}));throw new Error(d.error==="official_source_required"?"请先找到并核对主办方官方页面。":"审核结果保存失败，请刷新后重试。");}
+  await loadMasterclassQueue();
+ }catch(err){button.textContent=err.message;button.disabled=false;return;}
+ button.textContent=old;button.disabled=false;
+}
 async function loadData(){
  $("status").textContent="正在更新数据…";
  try{
@@ -131,6 +179,7 @@ async function loadData(){
   else{$("subscribers").textContent="—";$("newSubscribers").textContent="—";$("draftCount").textContent="—";$("drafts").textContent="Buttondown 数据暂时不可用。";}
   const issues=[];if(!d.cloudflare?.ok)issues.push("Cloudflare："+(d.cloudflare?.error||"不可用"));if(!d.buttondown?.ok)issues.push("Buttondown："+(d.buttondown?.error||"不可用"));
   loadContentQueue();
+  loadMasterclassQueue();
   $("status").textContent=(issues.length?issues.join("；"):"两项数据源均已连接")+" · 更新于 "+new Date(d.generated_at).toLocaleString("zh-CN");
  }catch(err){$("status").textContent=err.message;}
 }
@@ -359,6 +408,58 @@ export default {
       record.updated_at = new Date().toISOString();
       await env.CONTENT_DRAFTS.put("draft:"+id, JSON.stringify(record), { expirationTtl: 60*60*24*30 });
       return json({ ok: true, id, status: record.status });
+    }
+    if (url.pathname === "/api/masterclasses/candidates" && request.method === "GET") {
+      if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
+      if (!env.CONTENT_DRAFTS) return json({ error: "content_storage_not_configured" }, 503);
+      try {
+        const source = await fetchJson("https://raw.githubusercontent.com/OperaLirico/Opera-Lirico/main/data/masterclass_candidates.json");
+        const items = Array.isArray(source.items) ? source.items.slice(0, 300) : [];
+        const reviews = await Promise.all(items.map(item => env.CONTENT_DRAFTS.get("masterclass-review:" + item.candidate_id, "json")));
+        return json({
+          updated_at: source.updated_at || null,
+          candidate_count: items.length,
+          items: items.map((item, index) => ({ ...item, review: reviews[index] || null }))
+        });
+      } catch (error) {
+        return json({ error: "candidate_source_unavailable", message: "无法读取 GitHub 候选队列，请稍后重试。" }, 502);
+      }
+    }
+    if (url.pathname.startsWith("/api/masterclasses/candidates/") && request.method === "POST") {
+      if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
+      if (!sameOrigin(request)) return json({ error: "forbidden" }, 403);
+      if (!env.CONTENT_DRAFTS) return json({ error: "content_storage_not_configured" }, 503);
+      const id = decodeURIComponent(url.pathname.slice("/api/masterclasses/candidates/".length));
+      if (!/^[a-f0-9]{12}$/i.test(id)) return json({ error: "invalid_candidate_id" }, 400);
+      const raw = await request.text();
+      if (raw.length > 8000) return json({ error: "payload_too_large" }, 413);
+      let input = {};
+      try { input = JSON.parse(raw); } catch { return json({ error: "invalid_json" }, 400); }
+      const allowed = ["verified_pending_publication", "needs_more_info", "rejected"];
+      if (!allowed.includes(input.status)) return json({ error: "invalid_status" }, 400);
+      let candidate;
+      try {
+        const source = await fetchJson("https://raw.githubusercontent.com/OperaLirico/Opera-Lirico/main/data/masterclass_candidates.json");
+        candidate = (source.items || []).find(item => item.candidate_id === id);
+      } catch {
+        return json({ error: "candidate_source_unavailable" }, 502);
+      }
+      if (!candidate) return json({ error: "candidate_not_found" }, 404);
+      if (input.status === "verified_pending_publication" && candidate.publisher_status !== "official") {
+        return json({ error: "official_source_required" }, 400);
+      }
+      const record = {
+        candidate_id: id,
+        status: input.status,
+        notes: String(input.notes || "").slice(0, 3000),
+        reviewed_at: new Date().toISOString(),
+        title_hint: String(candidate.title_hint || "").slice(0, 240),
+        source_name: String(candidate.source_name || "").slice(0, 160),
+        source_url: String(candidate.source_url || "").slice(0, 2000),
+        publisher_status: String(candidate.publisher_status || "unknown")
+      };
+      await env.CONTENT_DRAFTS.put("masterclass-review:" + id, JSON.stringify(record), { expirationTtl: 60 * 60 * 24 * 365 });
+      return json({ ok: true, review: record });
     }
     if (url.pathname === "/api/data" && request.method === "GET") {
       if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
