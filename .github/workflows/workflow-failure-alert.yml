@@ -3,19 +3,12 @@ name: Workflow failure alert
 on:
   workflow_run:
     workflows:
-      - "Check website copy changes"
       - "Daily source refresh"
       - "Deploy private operations dashboard"
       - "Discover masterclasses"
-      - "Isolated Docling PDF pilot"
-      - "Generate social content drafts"
-      - "P2 P4 extraction pilot"
       - "Deploy GitHub Pages"
       - "PDF signature evidence audit"
       - "Source quality tests"
-      - "Weekly email digest (draft only)"
-      - "Weekly source coverage"
-      - "Weekly source discovery"
       - "System health check"
       - "KV backup"
     types: [completed]

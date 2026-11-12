@@ -27,6 +27,25 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
         self.assertNotIn('"reports/source-audit-baseline-2026-11-10.json"', workflow)
         self.assertNotIn('".github/workflows/p2-p4-extraction-pilot.yml"', workflow)
 
+
+    def test_system_health_runs_on_schedule_not_every_upstream_completion(self):
+        workflow = (ROOT / ".github" / "workflows" / "system-health-check.yml").read_text(encoding="utf-8")
+        self.assertIn("  schedule:", workflow)
+        self.assertIn("  workflow_dispatch:", workflow)
+        self.assertNotIn("  workflow_run:", workflow)
+        self.assertNotIn("github.event.workflow_run", workflow)
+
+    def test_failure_alert_only_listens_to_operationally_critical_workflows(self):
+        workflow = (ROOT / ".github" / "workflows" / "workflow-failure-alert.yml").read_text(encoding="utf-8")
+        for name in (
+            "Daily source refresh", "Deploy GitHub Pages",
+            "Deploy private operations dashboard", "Discover masterclasses",
+            "Source quality tests", "System health check", "KV backup",
+        ):
+            self.assertIn(f'      - "{name}"', workflow)
+        for name in ("Generate social content drafts", "Weekly email digest (draft only)", "Weekly source coverage", "Weekly source discovery", "P2 P4 extraction pilot"):
+            self.assertNotIn(f'      - "{name}"', workflow)
+
     def test_coverage_has_own_code_trigger_and_waits_for_daily_run(self):
         workflow = (ROOT / ".github" / "workflows" / "weekly-source-coverage.yml").read_text(encoding="utf-8")
         self.assertIn('workflows: ["Daily source refresh"]', workflow)
