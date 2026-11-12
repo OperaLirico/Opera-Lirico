@@ -111,6 +111,7 @@ class MasterclassDiscoveryTests(unittest.TestCase):
         self.assertEqual(result[0]["source_url"], "https://example.org/masterclass")
         self.assertEqual(result[0]["review_status"], "verified_pending_publication")
         self.assertEqual(result[0]["review_notes"], "Checked against organizer page")
+        self.assertCountEqual(result[0]["legacy_candidate_ids"], ["aaaaaaaaaaaa"])
 
     def test_slug_is_stable_and_safe(self):
         self.assertEqual(slug("Verdi Marathon 2027"), "verdi-marathon-2027")
