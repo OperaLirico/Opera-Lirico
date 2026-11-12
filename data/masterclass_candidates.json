@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-11-12T08:55:33+01:00",
+  "updated_at": "2026-11-12T13:07:26+01:00",
   "source_count": 12,
-  "candidate_count": 6,
-  "new_or_refreshed_this_run": 3,
+  "candidate_count": 5,
+  "new_or_refreshed_this_run": 2,
   "fetch_errors": [],
   "items": [
     {
@@ -85,7 +85,7 @@
       "publisher_status": "official",
       "source_url": "https://www.cantoalato.it/masterclass-di-canto-con-anna-pirozzi-2026/",
       "discovered_from": "https://www.cantoalato.it/masterclass/",
-      "checked_at": "2026-11-12T08:55:33+01:00",
+      "checked_at": "2026-11-12T13:07:26+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
@@ -109,37 +109,6 @@
       "review_notes": ""
     },
     {
-      "candidate_id": "0891cf6ed691",
-      "title_hint": "Masterclass di Canto con Gregory Kunde",
-      "source_name": "Cantoalato Academy",
-      "source_type": "organizer",
-      "publisher_status": "official",
-      "source_url": "https://www.cantoalato.it/masterclass-con-gregory-kunde/",
-      "discovered_from": "https://www.cantoalato.it/masterclass/",
-      "checked_at": "2026-11-12T08:55:33+01:00",
-      "discovery_status": "candidate_found",
-      "review_status": "pending_manual_review",
-      "publication_status": "not_published",
-      "date_signals": [
-        "29 Maggio 2026",
-        "2 Giugno 2026",
-        "14 luglio 2026",
-        "30 giugno 2026",
-        "30 giugno 2026",
-        "2026",
-        "3 luglio 2026",
-        "2026",
-        "12 giugno 2026",
-        "2026",
-        "30 giugno 2026",
-        "15 luglio 2026"
-      ],
-      "evidence_excerpt": "Masterclass con Gregory Kunde - Cantoalato Salta al contenuto ATTIVITA’ Espandi CALENDARIO CORSO PREPARATORIO AMMISSIONE CONSERVATORIO PACCHETTI DI LEZIONI REPERTOIRE COACHING MASTERCLASS WORKSHOP OPERA STUDIO CONCERTI MISSION DOCENTI COLLABORAZIONI SERVIZI NEWS GALLERY PRESS CONTATTI STAFF Facebook Instagram Email Telefono Attiva/disattiva menu MASTERCLASS | NEWS Masterclass con Gregory Kunde Di Cantoalato Academy 29 Maggio 2026 2 Giugno 2026 ITALIANO ENGLISH Masterclass di Canto con Gregory Kunde «Dalla Tecnica all’Emozione» M° Gioele Muglialdo | pianista 12-14 luglio 2026 15 luglio: Concerto Finale | Salone d’Onore – Casa Verdi, Milano INCONTRO CON L’AGENTE Sarà presente il Dott. Marco Im",
-      "verification_note": "Discovery signal only. Confirm the organizer, edition, dates, deadline, eligibility, fees and application link on the original organizer page.",
-      "first_seen_at": "2026-11-12T08:55:33+01:00",
-      "review_notes": ""
-    },
-    {
       "candidate_id": "234885e49f13",
       "title_hint": "Masterclass Canto Lirico Padova 2-5 Dicembre 2026",
       "source_name": "VeniceOperaArts",
@@ -147,7 +116,7 @@
       "publisher_status": "official",
       "source_url": "https://www.veniceoperaarts.com/index.php/masterclass",
       "discovered_from": "https://www.veniceoperaarts.com/index.php/masterclass",
-      "checked_at": "2026-11-12T08:55:33+01:00",
+      "checked_at": "2026-11-12T13:07:26+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
