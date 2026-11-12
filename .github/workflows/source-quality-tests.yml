@@ -24,6 +24,10 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - "discover_masterclasses.py"
+      - "data/masterclass_sources.json"
+      - "data/masterclasses.json"
+      - "data/masterclass.schema.json"
       - "app.js"
       - "data/opportunities.json"
       - "data/conservatori_manual.json"

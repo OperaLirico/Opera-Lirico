@@ -1,4 +1,7 @@
+import json
 import unittest
+from datetime import datetime
+from pathlib import Path
 
 from discover_masterclasses import canonical_url, has_future_date, make_candidate, slug
 
@@ -117,6 +120,31 @@ class MasterclassDiscoveryTests(unittest.TestCase):
         self.assertEqual(result[0]["review_status"], "verified_pending_publication")
         self.assertEqual(result[0]["review_notes"], "Checked against organizer page")
         self.assertCountEqual(result[0]["legacy_candidate_ids"], ["aaaaaaaaaaaa"])
+
+    def test_published_masterclasses_are_official_verified_and_evidenced(self):
+        root = Path(__file__).resolve().parents[1]
+        data = json.loads((root / "data" / "masterclasses.json").read_text(encoding="utf-8"))
+        schema = json.loads((root / "data" / "masterclass.schema.json").read_text(encoding="utf-8"))
+        self.assertEqual(schema.get("title"), "Opera Lirico masterclass")
+        items = data.get("items", [])
+        self.assertTrue(items)
+        ids = [item.get("id") for item in items]
+        self.assertEqual(len(ids), len(set(ids)), "Published masterclass IDs must be unique")
+        for item in items:
+            self.assertEqual(item.get("publisher_status"), "official")
+            self.assertEqual(item.get("review_status"), "verified")
+            self.assertEqual(item.get("publication_status"), "published")
+            self.assertTrue(item.get("source_url", "").startswith(("https://", "http://")))
+            self.assertTrue(item.get("evidence"), f"Missing evidence for {item.get('id')}")
+            for evidence in item["evidence"]:
+                self.assertTrue(evidence.get("url", "").startswith(("https://", "http://")))
+                self.assertTrue(evidence.get("excerpt", "").strip())
+                datetime.fromisoformat(evidence["checked_at"])
+            if item.get("start_at") and item.get("end_at"):
+                self.assertGreaterEqual(
+                    datetime.fromisoformat(item["end_at"]),
+                    datetime.fromisoformat(item["start_at"]),
+                )
 
     def test_slug_is_stable_and_safe(self):
         self.assertEqual(slug("Verdi Marathon 2027"), "verdi-marathon-2027")
