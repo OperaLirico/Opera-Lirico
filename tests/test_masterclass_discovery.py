@@ -96,6 +96,22 @@ class MasterclassDiscoveryTests(unittest.TestCase):
         )
         self.assertIsNone(candidate)
 
+    def test_skips_candidates_already_published_from_same_official_page(self):
+        from discover_masterclasses import is_already_published
+        candidate = {
+            "source_url": "https://example.org/thomas-heyer",
+            "title_hint": "Masterclass di Canto - Prof. Thomas Heyer",
+        }
+        published = [{
+            "source_url": "https://example.org/thomas-heyer#details",
+            "title": "Voce – Risonanza – Respiro: Masterclass di Canto",
+            "teacher": "Prof. Thomas Heyer",
+            "publisher_status": "official",
+            "review_status": "verified",
+            "publication_status": "published",
+        }]
+        self.assertTrue(is_already_published(candidate, published))
+
     def test_deduplicates_fragment_urls_and_preserves_review(self):
         from discover_masterclasses import deduplicate_candidates
         base = {
