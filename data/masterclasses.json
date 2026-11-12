@@ -10,7 +10,7 @@
       "start_at": "2026-11-16T00:00:00+01:00",
       "end_at": "2026-11-17T23:59:00+01:00",
       "fee_eur": 200,
-      "description_zh": "两天高阶声乐大师班，重点为声乐技术与音乐诠释。官方报名表列明：正式学员每节课€200（两节€400），旁听€50。开课时间临近，报名名额及安排请直接向主办方确认。",
+      "description_zh": "课程为期两天，重点围绕声乐技术与音乐诠释展开。官方报名表注明：正式学员每节课 €200，报名两节共 €400；旁听费用为 €50。课程即将开始，是否还有名额及具体上课安排，请直接向主办方确认。",
       "source_name": "WJ Opera Music Academy",
       "source_url": "https://www.wj-operamusic.academy/",
       "application_url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/09/masterclass_registration_form_Gregory-Kunde.pdf",
@@ -30,7 +30,10 @@
           "excerpt": "Allievo effettivo: 200€ per 1 lezione / 400€ per 2 lezioni; uditore: 50€; M° Gregory Kunde, 16–17 novembre 2026.",
           "checked_at": "2026-11-12T00:39:00+01:00"
         }
-      ]
+      ],
+      "title_zh": "Gregory Kunde 声乐大师班",
+      "focus_zh": "声乐技术与音乐诠释",
+      "fee_label_zh": "正式学员：€200/节（两节共 €400）；旁听：€50"
     },
     {
       "id": "consvv-thomas-heyer-2026-11",
@@ -42,7 +45,7 @@
       "end_at": "2026-12-01T23:59:00+01:00",
       "application_deadline_at": "2026-11-25T23:59:00+01:00",
       "fee_eur": 80,
-      "description_zh": "两天声乐大师班，围绕发声机能、共鸣与投射、呼吸和支撑，并结合个人歌剧、艺术歌曲及清唱剧曲目。外部正式学员€80、内部正式学员€40；外部旁听€30、内部旁听€20。申请需发送报名表及 PagoPA 付款凭证。",
+      "description_zh": "这期课程为期两天，内容包括发声、共鸣、声音投射和呼吸训练，也会结合学员准备的歌剧、艺术歌曲或清唱剧曲目进行指导。费用按是否为本校学员、以及正式参加或旁听分别计算。申请时需提交报名表和 PagoPA 付款凭证，截止日期为 2026 年 11 月 25 日。",
       "source_name": "Conservatorio di Musica Fausto Torrefranca",
       "source_url": "https://consvv.it/evento/masterclass-di-canto-prof-thomas-heyer",
       "application_url": "https://consvv.it/wp-content/uploads/modulo_masterclass_canto.pdf",
@@ -62,7 +65,10 @@
           "excerpt": "Domanda di iscrizione Masterclass di Canto – Prof. Thomas Heyer; modalità uditore/effettivo, interno/esterno.",
           "checked_at": "2026-11-12T00:39:00+01:00"
         }
-      ]
+      ],
+      "title_zh": "Thomas Heyer 声乐大师班：声音、共鸣与呼吸",
+      "focus_zh": "发声、共鸣、声音投射与呼吸",
+      "fee_label_zh": "外部正式学员：€80；内部正式学员：€40；外部旁听：€30；内部旁听：€20"
     },
     {
       "id": "wj-leone-magiera-milano-2026-12",
@@ -73,7 +79,7 @@
       "start_at": "2026-12-04T00:00:00+01:00",
       "end_at": "2026-12-06T23:59:00+01:00",
       "fee_eur": 350,
-      "description_zh": "三天课程面向歌剧演唱者及艺术指导/合作钢琴家。正式学员€350/三天，旁听€50（年度旁听会员免费）。报名表由主办机构官网提供；具体名额与报名状态建议直接联系主办方确认。",
+      "description_zh": "课程为期三天，面向歌剧演唱者，也欢迎合作钢琴家及艺术指导方向的学员参加。官方报名表列明，正式学员三天课程费用为 €350，旁听费用为 €50；年度旁听会员可免费旁听。报名名额和具体课程安排请以 WJ Opera Music Academy 的最新通知为准。",
       "source_name": "WJ Opera Music Academy",
       "source_url": "https://www.wj-operamusic.academy/",
       "application_url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/10/Modulo-Masterclass-Leone-Magiera.pdf",
@@ -93,7 +99,10 @@
           "excerpt": "Allievo effettivo: 350€/3 giorni; uditore: 50€; M° Leone Magiera; 4–6 dicembre 2026.",
           "checked_at": "2026-11-12T00:39:00+01:00"
         }
-      ]
+      ],
+      "title_zh": "Leone Magiera 歌剧演唱与艺术指导大师班",
+      "focus_zh": "歌剧演唱与合作钢琴 / 艺术指导",
+      "fee_label_zh": "正式学员：三天 €350；旁听：€50（年度旁听会员免费）"
     },
     {
       "id": "cantoalato-leo-nucci-milano-2026-12",
@@ -105,7 +114,7 @@
       "end_at": "2026-12-15T23:59:00+01:00",
       "application_deadline_at": "2026-11-30T23:59:00+01:00",
       "fee_eur": 650,
-      "description_zh": "面向意大利及海外声乐学生和职业歌唱家，年龄上限42岁。正式学员需准备至少一部指定歌剧中的完整角色；费用€650（报名€300+课程€350），旁听€250。正式学员申请截止11月30日，旁听报名截止12月11日。课程期间有歌剧经纪人到场聆听并提供职业建议。",
+      "description_zh": "本课程围绕威尔第的三部歌剧——《弄臣》《游吟诗人》和《茶花女》展开，面向声乐学生及职业歌唱家。正式学员需准备指定歌剧中至少一个完整角色。正式学员申请截止日期为 2026 年 11 月 30 日，旁听报名截止日期为 12 月 11 日。课程期间还安排歌剧经纪人到场聆听并提供职业建议。正式学员年龄上限为 42 岁。",
       "source_name": "Cantoalato Academy",
       "source_url": "https://www.cantoalato.it/masterclass-di-canto-con-leo-nucci-rigoletto-il-trovatore-la-traviata/",
       "application_url": "https://www.cantoalato.it/masterclass-di-canto-con-leo-nucci-rigoletto-il-trovatore-la-traviata/",
@@ -120,7 +129,10 @@
           "excerpt": "11–14 dicembre 2026; concerto finale 15 dicembre; iscrizioni allievi effettivi entro il 30 novembre 2026; limite d'età 42 anni; costo €650 effettivi e €250 uditori.",
           "checked_at": "2026-11-12T00:39:00+01:00"
         }
-      ]
+      ],
+      "title_zh": "Leo Nucci：威尔第歌剧角色诠释",
+      "focus_zh": "《弄臣》《游吟诗人》《茶花女》",
+      "fee_label_zh": "正式学员：€650（报名费 €300 + 课程费 €350）；旁听：€250"
     },
     {
       "id": "regium-lepidi-verdi-marathon-busseto-2027-03",
@@ -128,7 +140,7 @@
       "teacher": "Mirko Matarazzo; Davide Cavalli",
       "instrument_or_voice": "Canto lirico · tecnica vocale, repertorio italiano, dizione, stile e interpretazione",
       "location": "Teatro G. Verdi, Busseto (Parma), Italia",
-      "description_zh": "主办方已正式公布 2027 年 3 月在布塞托举行的七日声乐项目：六天大师班与工作坊，最后在 Teatro G. Verdi 举办歌剧 Gala。课程由 Mirko Matarazzo 与 Davide Cavalli 指导，重点包括意大利歌剧曲目、声乐技术、意大利语咬字、风格和舞台表现。官方明确说明：具体日期及报名方式尚未公布，申请尚未开放。费用未公布（页面不显示收费信息）。",
+      "description_zh": "Regium Lepidi Opera 已公布 2027 年 3 月将在布塞托举行这一七日声乐项目。课程包括六天大师班与工作坊，最后以 Teatro G. Verdi 的歌剧 Gala 收尾；授课导师为 Mirko Matarazzo 和 Davide Cavalli。具体日期、费用及申请方式尚未公布，主办方目前也尚未开放报名。",
       "source_name": "Regium Lepidi Opera",
       "source_url": "https://www.regiumlepidi.com/en/academy/masterclasses",
       "application_url": "https://www.regiumlepidi.com/en/academy/masterclasses",
@@ -144,7 +156,10 @@
           "checked_at": "2026-11-12T00:44:00+01:00"
         }
       ],
-      "date_label_zh": "2027年3月（具体日期待公布）"
+      "date_label_zh": "2027年3月（具体日期待公布）",
+      "title_zh": "Verdi Marathon 2027：声乐进修与歌剧 Gala",
+      "focus_zh": "意大利歌剧曲目、声乐技术、意大利语咬字与舞台诠释",
+      "fee_label_zh": "费用尚未公布"
     },
     {
       "id": "cantoalato-alessandro-corbelli-milano-2027-03",
@@ -156,7 +171,7 @@
       "end_at": "2027-03-11T23:59:00+01:00",
       "application_deadline_at": "2027-03-08T23:59:00+01:00",
       "fee_eur": 650,
-      "description_zh": "四天声乐大师班，主题为“从古典主义到美声唱法”。正式学员 10 个名额，费用共 €650（报名费 €300 + 课程费 €350）；旁听 €250。正式学员申请截止 2027 年 2 月 19 日，旁听报名截止 3 月 8 日。页面保留至最后一类申请（旁听）截止日，避免过早隐藏仍可报名的旁听名额。正式学员年龄上限 42 岁。3 月 12 日 16:30 在米兰 Casa Verdi Salone d’Onore 举行结业音乐会。课程期间 Vocalia Management 的经纪人 Stefano Scardovi 将到场聆听并提供职业建议。申请材料及付款要求请以主办方页面为准。",
+      "description_zh": "为期四天的声乐大师班，由 Alessandro Corbelli 授课，主题从古典主义延伸至 Bel Canto 美声风格。正式学员限额 10 人，年龄上限为 42 岁；正式学员申请截止日期为 2027 年 2 月 19 日，旁听报名截止日期为 3 月 8 日。课程费用为正式学员 €650、旁听 €250。结业音乐会安排在 3 月 12 日 16:30，于米兰 Casa Verdi 的 Salone d’Onore 举行。课程期间，Vocalia Management 的经纪人 Stefano Scardovi 也将到场聆听并提供职业建议。",
       "source_name": "Cantoalato Academy",
       "source_url": "https://www.cantoalato.it/masterclass-di-canto-con-alessandro-corbelli/",
       "application_url": "https://www.cantoalato.it/masterclass-di-canto-con-alessandro-corbelli/",
@@ -171,7 +186,10 @@
           "excerpt": "8–11 marzo 2027; concerto finale 12 marzo; allievi effettivi €650, uditori €250; iscrizioni effettivi entro 19 febbraio 2027; uditori entro 8 marzo; limite d'età 42 anni; 10 posti effettivi.",
           "checked_at": "2026-11-12T00:57:00+01:00"
         }
-      ]
+      ],
+      "title_zh": "Alessandro Corbelli：从古典主义到美声唱法",
+      "focus_zh": "古典主义时期曲目与 Bel Canto 美声风格",
+      "fee_label_zh": "正式学员：€650（报名费 €300 + 课程费 €350）；旁听：€250"
     },
     {
       "id": "cantoalato-gregory-kunde-milano-2027-02",
@@ -181,7 +199,7 @@
       "location": "Cantoalato Academy, Milano, Italia",
       "start_at": "2027-02-08T00:00:00+01:00",
       "end_at": "2027-02-12T23:59:00+01:00",
-      "description_zh": "Cantoalato 官方 2026–2027 学年日历已公布本期课程日期：2027 年 2 月 8–12 日。导师为 Gregory Kunde。具体地点安排、费用、申请条件及报名截止日期尚未在日历中列明，请关注主办方后续公告；目前不要将其视为已开放报名。",
+      "description_zh": "Cantoalato Academy 的 2026–2027 学年日历已列出本期课程：2027 年 2 月 8 日至 12 日，由 Gregory Kunde 授课。目前公开日历尚未提供具体上课地点、费用、申请条件和报名截止日期，也不能据此判断报名已经开放。请留意主办方后续公告。",
       "source_name": "Cantoalato Academy",
       "source_url": "https://www.cantoalato.it/calendario/",
       "application_url": "https://www.cantoalato.it/calendario/",
@@ -196,7 +214,10 @@
           "excerpt": "Calendario 2026–2027: 8–12 febbraio 2027 – Masterclass di Canto con Gregory Kunde.",
           "checked_at": "2026-11-12T00:55:00+01:00"
         }
-      ]
+      ],
+      "title_zh": "Gregory Kunde 声乐大师班（2027 年 2 月）",
+      "focus_zh": "声乐大师班",
+      "fee_label_zh": "费用尚未公布"
     },
     {
       "id": "cantoalato-leo-nucci-milano-2027-03",
@@ -206,7 +227,7 @@
       "location": "Cantoalato Academy, Milano, Italia",
       "start_at": "2027-03-29T00:00:00+02:00",
       "end_at": "2027-04-02T23:59:00+02:00",
-      "description_zh": "Cantoalato 官方 2026–2027 学年日历已公布本期课程日期：2027 年 3 月 29 日至 4 月 2 日，主题曲目包括《纳布科》《麦克白》和《埃尔纳尼》。费用、申请条件、具体上课地点及报名截止日期尚未在日历中列明，等待主办方进一步公告。",
+      "description_zh": "根据 Cantoalato Academy 公布的 2026–2027 学年日历，本期课程安排在 2027 年 3 月 29 日至 4 月 2 日，由 Leo Nucci 授课，曲目主题包括《纳布科》《麦克白》和《埃尔纳尼》。目前日历尚未公布费用、申请条件、具体上课地点及报名截止日期，报名安排有待主办方进一步通知。",
       "source_name": "Cantoalato Academy",
       "source_url": "https://www.cantoalato.it/calendario/",
       "application_url": "https://www.cantoalato.it/calendario/",
@@ -221,7 +242,10 @@
           "excerpt": "29 marzo–2 aprile 2027 – Masterclass di Canto con Leo Nucci (Nabucco, Macbeth, Ernani).",
           "checked_at": "2026-11-12T00:55:00+01:00"
         }
-      ]
+      ],
+      "title_zh": "Leo Nucci：威尔第歌剧选段与角色诠释",
+      "focus_zh": "《纳布科》《麦克白》《埃尔纳尼》",
+      "fee_label_zh": "费用尚未公布"
     },
     {
       "id": "cantoalato-leo-nucci-milano-2027-06",
@@ -231,7 +255,7 @@
       "location": "Cantoalato Academy, Milano, Italia",
       "start_at": "2027-06-14T00:00:00+02:00",
       "end_at": "2027-06-18T23:59:00+02:00",
-      "description_zh": "Cantoalato 官方 2026–2027 学年日历已公布本期课程日期：2027 年 6 月 14–18 日，主题曲目包括《假面舞会》《命运之力》和《唐·卡洛》。费用、申请条件、具体上课地点及报名截止日期尚未在日历中列明，等待主办方进一步公告。",
+      "description_zh": "Cantoalato Academy 的 2026–2027 学年日历列出了这期课程，时间为 2027 年 6 月 14 日至 18 日，由 Leo Nucci 授课，重点曲目包括《假面舞会》《命运之力》和《唐·卡洛》。费用、申请条件、具体上课地点和报名截止日期目前均未公布，需等待主办方后续通知。",
       "source_name": "Cantoalato Academy",
       "source_url": "https://www.cantoalato.it/calendario/",
       "application_url": "https://www.cantoalato.it/calendario/",
@@ -246,7 +270,10 @@
           "excerpt": "14–18 giugno 2027 – Masterclass di Canto con Leo Nucci (Un ballo in maschera, La forza del destino, Don Carlo).",
           "checked_at": "2026-11-12T00:55:00+01:00"
         }
-      ]
+      ],
+      "title_zh": "Leo Nucci：威尔第歌剧选段与角色诠释",
+      "focus_zh": "《假面舞会》《命运之力》《唐·卡洛》",
+      "fee_label_zh": "费用尚未公布"
     },
     {
       "id": "cantoalato-giorgio-lormi-milano-2027-08",
@@ -256,7 +283,7 @@
       "location": "Cantoalato Academy, Italia",
       "start_at": "2027-08-02T00:00:00+02:00",
       "end_at": "2027-08-05T23:59:00+02:00",
-      "description_zh": "Cantoalato 官方 2026–2027 学年日历已公布本期声乐大师班日期：2027 年 8 月 2–5 日，导师为 Giorgio Lormi。具体城市、费用、申请条件及报名截止日期尚未在日历中列明，等待主办方进一步公告。",
+      "description_zh": "Cantoalato Academy 的 2026–2027 学年日历已公布本期课程日期：2027 年 8 月 2 日至 5 日，授课导师为 Giorgio Lormi。目前公开日历尚未说明具体举办城市、费用、申请条件和报名截止日期，相关信息以主办方后续公告为准。",
       "source_name": "Cantoalato Academy",
       "source_url": "https://www.cantoalato.it/calendario/",
       "application_url": "https://www.cantoalato.it/calendario/",
@@ -271,7 +298,10 @@
           "excerpt": "2–5 agosto 2027 – Masterclass di Canto con Giorgio Lormi.",
           "checked_at": "2026-11-12T00:55:00+01:00"
         }
-      ]
+      ],
+      "title_zh": "Giorgio Lormi 声乐大师班",
+      "focus_zh": "声乐大师班",
+      "fee_label_zh": "费用尚未公布"
     }
   ]
 }
