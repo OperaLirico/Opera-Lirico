@@ -12,7 +12,9 @@
     "review_status",
     "publication_status",
     "checked_at",
-    "evidence"
+    "evidence",
+    "title_zh",
+    "description_zh"
   ],
   "properties": {
     "id": {
@@ -52,7 +54,8 @@
       "type": "string"
     },
     "description_zh": {
-      "type": "string"
+      "type": "string",
+      "minLength": 1
     },
     "source_name": {
       "type": "string",
