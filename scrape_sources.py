@@ -79,7 +79,7 @@ def clean_line(value: str) -> str:
 def classify_relevant_link(label: str, href: str) -> str:
     """Classify a relevant destination without assuming it is safe or verified."""
     signal = f"{label} {href}"
-    if re.search(r"\\.pdf(?:$|[?#])|pdf|regolamento", signal, re.IGNORECASE):
+    if re.search(r"\.pdf(?:$|[?#])|pdf|regolamento", signal, re.IGNORECASE):
         return "official_document"
     if re.search(
         r"application|apply|domanda|modulo|iscrizion|candidatura|registration",
