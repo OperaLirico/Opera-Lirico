@@ -41,6 +41,35 @@ jobs:
       - name: Discover masterclass leads
         if: github.event_name != 'pull_request'
         run: python discover_masterclasses.py
+      - name: Summarize discovery results
+        if: github.event_name != 'pull_request'
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          data = json.loads(Path("data/masterclass_candidates.json").read_text(encoding="utf-8"))
+          errors = data.get("fetch_errors", [])
+          lines = [
+              "## Masterclass discovery",
+              f"- Sources checked: {data.get('source_count', 0)}",
+              f"- Current candidate queue: {data.get('candidate_count', 0)}",
+              f"- New or refreshed this run: {data.get('new_or_refreshed_this_run', 0)}",
+              f"- Source fetch errors: {len(errors)}",
+              f"- Updated at: {data.get('updated_at', 'unknown')}",
+          ]
+          if errors:
+              lines.append("### Sources needing attention")
+              for error in errors[:20]:
+                  lines.append(f"- {error.get('source', 'unknown')}: {error.get('status') or error.get('http_status') or error.get('error') or 'fetch error'}")
+          summary = "\\n".join(lines) + "\\n"
+          print(summary)
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
+              handle.write(summary)
+          if errors:
+              print(f"::warning::{len(errors)} masterclass source fetch error(s); see the step summary.")
+          PY
       - name: Save review queue
         if: github.event_name != 'pull_request'
         run: |
