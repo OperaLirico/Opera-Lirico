@@ -11,6 +11,7 @@ from datetime import datetime
 
 ROOT = Path(__file__).resolve().parent
 BASE_URL = "https://operalirico.github.io/Opera-Lirico"
+OPS_URL = "https://opera-lirico-ops.wl19971007.workers.dev"
 JSON_FILES = (
     "data/masterclasses.json",
     "data/opportunities.json",
@@ -131,6 +132,38 @@ def check_public_site(base_url):
         checked.append(path)
     return checked
 
+def check_ops_dashboard(base_url):
+    root = fetch_url(base_url.rstrip("/") + "/")
+    if b"Opera Lirico" not in root or b"\xe8\xbf\x90\xe8\x90\xa5\xe5\x90\x8e\xe5\x8f\xb0" not in root:
+        raise RuntimeError("Operations dashboard root is not serving the expected login page")
+    health_body = fetch_url(base_url.rstrip("/") + "/api/health")
+    try:
+        health = json.loads(health_body.decode("utf-8"))
+    except Exception as exc:
+        raise RuntimeError(f"Operations health endpoint returned invalid JSON: {exc}") from exc
+    if health != {"ok": True, "service": "opera-lirico-ops"}:
+        raise RuntimeError("Operations health endpoint returned an unexpected response")
+
+    protected_paths = (
+        "/api/session",
+        "/api/data",
+        "/api/content/drafts",
+        "/api/masterclasses/candidates",
+        "/api/workflows",
+    )
+    for path in protected_paths:
+        request = Request(base_url.rstrip("/") + path, headers={"User-Agent": "OperaLirico-SystemHealth/1.0"})
+        try:
+            with urlopen(request, timeout=20) as response:
+                status = response.status
+        except HTTPError as exc:
+            status = exc.code
+        except (URLError, TimeoutError) as exc:
+            raise RuntimeError(f"Operations endpoint {path} could not be reached: {exc}") from exc
+        if status != 401:
+            raise RuntimeError(f"Protected endpoint {path} returned HTTP {status}; expected 401 without a session")
+    return ["operations dashboard login page", "public runtime health endpoint", *[f"{path} rejects unauthenticated access" for path in protected_paths]]
+
 def main():
     base_url = sys.argv[1] if len(sys.argv) > 1 else BASE_URL
     print("Opera Lirico read-only health check")
@@ -138,6 +171,7 @@ def main():
     try:
         local = check_local_data()
         remote = check_public_site(base_url)
+        ops = check_ops_dashboard(OPS_URL)
     except Exception as exc:
         print(f"HEALTH CHECK FAILED: {exc}", file=sys.stderr)
         return 1
@@ -146,6 +180,9 @@ def main():
         print(f"  - {item}")
     print(f"PASS: {len(remote)} deployed public endpoints")
     for item in remote:
+        print(f"  - {item}")
+    print(f"PASS: {len(ops)} private-dashboard availability and access-control checks")
+    for item in ops:
         print(f"  - {item}")
     print("No content was modified.")
     return 0
