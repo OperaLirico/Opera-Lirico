@@ -375,6 +375,48 @@ async function getDashboardData(env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === "/api/admin/backup" && request.method === "GET") {
+      const expected = env.OPS_BACKUP_TOKEN || "";
+      const supplied = (request.headers.get("Authorization") || "").replace(/^Bearer\\s+/i, "");
+      if (!expected || expected.length < 32) return json({ error: "backup_not_configured" }, 503);
+      if (!constantTimeEqual(supplied, expected)) return json({ error: "unauthorized" }, 401);
+      if (!env.CONTENT_DRAFTS) return json({ error: "content_storage_not_configured" }, 503);
+      try {
+        const items = [];
+        let totalBytes = 0;
+        for (const prefix of ["draft:", "masterclass-review:"]) {
+          let cursor;
+          let pages = 0;
+          do {
+            const page = await env.CONTENT_DRAFTS.list({ prefix, limit: 1000, ...(cursor ? { cursor } : {}) });
+            for (const key of page.keys) {
+              const value = await env.CONTENT_DRAFTS.get(key.name);
+              if (value === null) continue;
+              totalBytes += new TextEncoder().encode(value).length;
+              if (totalBytes > 15 * 1024 * 1024) return json({ error: "backup_size_limit_exceeded" }, 413);
+              let parsed = value;
+              try { parsed = JSON.parse(value); } catch {}
+              items.push({ key: key.name, value: parsed, expiration: key.expiration || null, metadata: key.metadata || null });
+              if (items.length > 2000) return json({ error: "backup_key_limit_exceeded" }, 413);
+            }
+            cursor = page.list_complete ? undefined : page.cursor;
+            if (!page.list_complete && !cursor) throw new Error("KV pagination cursor missing");
+            if (++pages > 10) throw new Error("KV pagination safety limit reached");
+          } while (cursor);
+        }
+        return json({
+          format: "opera-lirico-kv-backup-v1",
+          exported_at: new Date().toISOString(),
+          namespace: "opera-lirico-content-drafts",
+          key_count: items.length,
+          total_bytes: totalBytes,
+          prefixes: ["draft:", "masterclass-review:"],
+          items
+        }, 200, { "Content-Disposition": 'attachment; filename="opera-lirico-kv-backup.json"' });
+      } catch (error) {
+        return json({ error: "backup_export_failed", message: String(error?.message || "KV export failed").slice(0, 240) }, 500);
+      }
+    }
     if (url.pathname === "/api/health" && request.method === "GET") return json({ ok: true, service: "opera-lirico-ops" });
     if (url.pathname === "/" && request.method === "GET") return response(PAGE);
     if (url.pathname === "/api/login" && request.method === "POST") {
