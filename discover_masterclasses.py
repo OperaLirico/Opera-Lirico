@@ -38,6 +38,8 @@ VOICE_RE = re.compile(
     re.I,
 )
 NOISE_RE = re.compile(r"privacy|cookie|facebook|instagram|linkedin|youtube|newsletter", re.I)
+GENERIC_NAV_RE = re.compile(r"^(?:skip to (?:main )?content|salta al contenuto|vai al contenuto|home|menu)$", re.I)
+GENERIC_LISTING_RE = re.compile(r"^(?:master.?classes?|corsi e masterclasses?)(?:\s*[-|–:]\s*.+)?$|^courses?\s*[|–-]\s*voice$", re.I)
 NUMERIC_DATE_RE = re.compile(r"\b(\d{1,2})[./-](\d{1,2})[./-](20\d{2})\b")
 WORD_DATE_RE = re.compile(r"\b(\d{1,2})\s+([a-zà-ÿ]+)\s+(20\d{2})\b", re.I)
 MONTHS = {
@@ -135,6 +137,8 @@ def extract_page(response, url: str) -> tuple[str, str, list[tuple[str, str]]]:
 def make_candidate(source: dict, url: str, title: str, text: str, checked_at: str,
                    discovery_label: str = "") -> dict | None:
     blob = " ".join((title, discovery_label, text))
+    if GENERIC_LISTING_RE.search(clean(title)) and not discovery_label:
+        return None
     # Require an event-level title/link label, vocal relevance in the page body,
     # and an explicit date signal. This avoids turning generic navigation pages
     # or evergreen academy descriptions into false opportunity records.
@@ -150,8 +154,12 @@ def make_candidate(source: dict, url: str, title: str, text: str, checked_at: st
     start = max(0, match.start() - 180) if match else 0
     excerpt = text[start:start + 700].strip()
     label = discovery_label or title or source["name"]
-    if re.search(r"skip to content|^home$|^menu$", label, re.I):
+    if GENERIC_NAV_RE.fullmatch(clean(label)):
         label = title or source["name"]
+    if GENERIC_LISTING_RE.fullmatch(clean(label)):
+        label = title or source["name"]
+    if GENERIC_NAV_RE.fullmatch(clean(label)) or GENERIC_LISTING_RE.fullmatch(clean(label)):
+        return None
     candidate_title = label if len(label) > 8 else title or source["name"]
     normalized_url = canonical_url(url)
     identity = hashlib.sha256((source["id"] + "|" + normalized_url).encode()).hexdigest()[:12]
@@ -181,6 +189,32 @@ def load_json(path: Path, default):
         return json.loads(path.read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         return default
+
+
+def deduplicate_candidates(items: list[dict]) -> list[dict]:
+    """Collapse legacy fragment duplicates while retaining review decisions."""
+    merged: dict[tuple[str, str], dict] = {}
+    for item in items:
+        source = clean(item.get("source_name", "")).casefold()
+        url = canonical_url(item.get("source_url", ""))
+        key = (source, url)
+        previous = merged.get(key)
+        if previous is None:
+            merged[key] = item
+            continue
+        # Prefer the freshest record, but never discard a completed human review.
+        winner = item if item.get("checked_at", "") >= previous.get("checked_at", "") else previous
+        other = previous if winner is item else item
+        if other.get("review_status") not in (None, "", "pending_manual_review"):
+            winner = {**winner, "review_status": other.get("review_status"),
+                      "review_notes": other.get("review_notes", "")}
+        elif winner.get("review_notes") in (None, "") and other.get("review_notes"):
+            winner = {**winner, "review_notes": other.get("review_notes")}
+        winner["source_url"] = url
+        merged[key] = winner
+    return sorted(merged.values(), key=lambda x: (
+        x.get("source_name", ""), x.get("title_hint", "")
+    ))
 
 
 def discover() -> dict:
@@ -248,13 +282,14 @@ def discover() -> dict:
             "review_status": previous.get("review_status", "pending_manual_review"),
             "review_notes": previous.get("review_notes", ""),
         }
+    deduplicated = deduplicate_candidates(list(merged.values()))
     payload = {
         "updated_at": checked_at,
         "source_count": len(config.get("sources", [])),
-        "candidate_count": len(merged),
+        "candidate_count": len(deduplicated),
         "new_or_refreshed_this_run": len(found),
         "fetch_errors": errors,
-        "items": sorted(merged.values(), key=lambda x: (x.get("source_name", ""), x.get("title_hint", ""))),
+        "items": deduplicated,
     }
     CANDIDATES_PATH.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Found/refreshed {len(found)} masterclass lead(s); {len(merged)} queued. No lead was published.")
