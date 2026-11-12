@@ -41,6 +41,7 @@ class OpportunityDataTests(unittest.TestCase):
                 self.assertIn(item["review_status"], {"pending_manual_review", "verified", "rejected"})
                 self.assertIn(item["publication_status"], {"draft", "published", "archived"})
                 self.assertTrue(item["title"].strip())
+                self.assertTrue(item["title_zh"].strip())
                 self.assertTrue(item["source_name"].strip())
                 self.assertTrue(item["evidence"])
 
