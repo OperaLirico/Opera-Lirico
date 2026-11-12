@@ -142,6 +142,8 @@ class MasterclassDiscoveryTests(unittest.TestCase):
         data = json.loads((root / "data" / "masterclasses.json").read_text(encoding="utf-8"))
         schema = json.loads((root / "data" / "masterclass.schema.json").read_text(encoding="utf-8"))
         self.assertEqual(schema.get("title"), "Opera Lirico masterclass")
+        self.assertIn("title_zh", schema.get("required", []))
+        self.assertIn("description_zh", schema.get("required", []))
         items = data.get("items", [])
         self.assertTrue(items)
         ids = [item.get("id") for item in items]
