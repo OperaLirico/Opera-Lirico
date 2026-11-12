@@ -375,6 +375,7 @@ async function getDashboardData(env) {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === "/api/health" && request.method === "GET") return json({ ok: true, service: "opera-lirico-ops" });
     if (url.pathname === "/" && request.method === "GET") return response(PAGE);
     if (url.pathname === "/api/login" && request.method === "POST") {
       if (!env.OPS_DASHBOARD_PASSWORD || env.OPS_DASHBOARD_PASSWORD.length < 32) return json({ error: "login_not_configured" }, 503);
