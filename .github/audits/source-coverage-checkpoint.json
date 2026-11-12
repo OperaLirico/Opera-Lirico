@@ -63,7 +63,7 @@
       "relevance_status": "relevant",
       "audit_confidence": "high",
       "audit_evidence_url": "https://www.provinispettacolo.it/casting/musica/",
-      "audit_date": "2026-11-11",
+      "audit_date": "2026-11-12",
       "checked_at": "2026-11-11T11:42:59+01:00",
       "status": "ok",
       "http_status": 200,
@@ -87,7 +87,7 @@
       "relevance_status": "relevant",
       "audit_confidence": "high",
       "audit_evidence_url": "https://www.tls-belli.it/concorso-di-canto-2026/",
-      "audit_date": "2026-11-11",
+      "audit_date": "2026-11-12",
       "checked_at": "2026-11-11T11:42:59+01:00",
       "status": "ok",
       "http_status": 200,
@@ -1161,6 +1161,6 @@
   "previous_cycle_results": {},
   "previous_cycle_complete": false,
   "scan_status": "completed",
-  "updated_at": "2026-11-12T01:12:18+01:00",
-  "completed_at": "2026-11-12T01:12:18+01:00"
+  "updated_at": "2026-11-12T12:11:06+01:00",
+  "completed_at": "2026-11-12T12:11:06+01:00"
 }
