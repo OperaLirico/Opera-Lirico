@@ -1,6 +1,11 @@
 name: System health check
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - "system_health_check.py"
+      - ".github/workflows/system-health-check.yml"
   schedule:
     - cron: "0 9 * * *"
   workflow_dispatch:
