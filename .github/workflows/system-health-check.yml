@@ -14,6 +14,7 @@ on:
       - "Deploy GitHub Pages"
       - "Daily source refresh"
       - "Discover masterclasses"
+      - "Deploy private operations dashboard"
     types: [completed]
 
 permissions:
