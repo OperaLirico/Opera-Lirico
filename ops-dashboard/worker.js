@@ -495,11 +495,11 @@ export default {
     if (url.pathname === "/api/workflows" && request.method === "GET") {
       if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
       try {
-        const source = await fetchJson("https://api.github.com/repos/OperaLirico/Opera-Lirico/actions/runs?per_page=20", {
+        const source = await fetchJson("https://api.github.com/repos/OperaLirico/Opera-Lirico/actions/runs?per_page=30", {
           "X-GitHub-Api-Version": "2022-11-28",
           "User-Agent": "Opera-Lirico-Operations-Dashboard"
         });
-        const runs = (Array.isArray(source.workflow_runs) ? source.workflow_runs : []).slice(0, 20).map(run => ({
+        const runs = (Array.isArray(source.workflow_runs) ? source.workflow_runs : []).filter(run => run.name !== "Workflow failure alert").slice(0, 20).map(run => ({
           id: run.id,
           name: String(run.name || "").slice(0, 160),
           event: String(run.event || ""),
