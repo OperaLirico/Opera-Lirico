@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-12T11:49:52+01:00",
-  "cursor": 1,
+  "updated_at": "2026-11-12T12:09:04+01:00",
+  "cursor": 13,
   "items": [
     {
       "number": 96,
@@ -52,7 +52,7 @@
       "number": 97,
       "source": "OPEN CALL Artists - Winterwerft",
       "url": "https://winterwerft.de/opencall/",
-      "checked_at": "2026-11-11T11:10:45+01:00",
+      "checked_at": "2026-11-12T12:08:33+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "OPEN CALL Artists - Winterwerft",
@@ -73,9 +73,10 @@
       "auto_review_status": "needs_review",
       "auto_review_reason": "The festival's own page is accessible and includes musicians, but it is a broad interdisciplinary theatre/performance call with no singer-, opera- or vocal-specific criteria. The current deadline has passed.",
       "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-12",
       "relevance_status": "uncertain",
       "confidence": "medium",
-      "audit_page_title": "OPEN CALL Artists - Winterwerft",
       "evidence_urls": [
         "https://winterwerft.de/opencall/",
         "https://winterwerft.de/"
@@ -88,17 +89,16 @@
           "checked_at": "2026-11-12T11:49:52+01:00"
         }
       ],
-      "review_notes": "Retain as needs_review rather than auto-promoting. No current opportunity should be created; recheck only if a future call explicitly includes vocal performers or opera.",
-      "audit_method": "evidence_based",
-      "audit_date": "2026-11-12",
+      "audit_page_title": "OPEN CALL Artists - Winterwerft",
       "audit_access_status": "accessible_via_web_open",
+      "review_notes": "Retain as needs_review rather than auto-promoting. No current opportunity should be created; recheck only if a future call explicitly includes vocal performers or opera.",
       "production_activation": false
     },
     {
       "number": 98,
       "source": "Partecipa al Festival – Fondazione Campania dei Festival",
       "url": "https://contact.fondazionecampaniadeifestival.it/partecipa-al-festival/",
-      "checked_at": "2026-11-11T11:10:47+01:00",
+      "checked_at": "2026-11-12T12:08:35+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Partecipa al Festival – Fondazione Campania dei Festival",
@@ -117,9 +117,10 @@
       "auto_review_status": "needs_review",
       "auto_review_reason": "The official foundation subdomain links to the parent foundation and festival, and the page offers a music proposal category. However, the application is for artistic projects/companies, not an individual singer audition; relevance to individual voice students is uncertain.",
       "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-12",
       "relevance_status": "uncertain",
       "confidence": "medium",
-      "audit_page_title": "Partecipa al Festival – Fondazione Campania dei Festival",
       "evidence_urls": [
         "https://contact.fondazionecampaniadeifestival.it/partecipa-al-festival/",
         "https://www.fondazionecampaniadeifestival.it/"
@@ -132,17 +133,16 @@
           "checked_at": "2026-11-12T11:49:52+01:00"
         }
       ],
-      "review_notes": "Time-sensitive official project call: deadline 2026-11-15 16:00 Europe/Rome. Do not add it as an individual singer opportunity. Keep as a possible project-proposal source pending a clear scope decision.",
-      "audit_method": "evidence_based",
-      "audit_date": "2026-11-12",
+      "audit_page_title": "Partecipa al Festival – Fondazione Campania dei Festival",
       "audit_access_status": "accessible_via_web_open",
+      "review_notes": "Time-sensitive official project call: deadline 2026-11-15 16:00 Europe/Rome. Do not add it as an individual singer opportunity. Keep as a possible project-proposal source pending a clear scope decision.",
       "production_activation": false
     },
     {
       "number": 99,
       "source": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia ",
       "url": "https://www.teatrotrianon.org/audizioni-per-la-produzione-pulcinella-ovvero-una-cosa-che-somiglia-al-mondo/",
-      "checked_at": "2026-11-11T11:10:49+01:00",
+      "checked_at": "2026-11-12T12:08:37+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni per la produzione \"Pulcinella, ovvero una cosa che somiglia al mondo\" - teatro Trianon Viviani",
@@ -170,9 +170,10 @@
       "auto_review_status": "irrelevant_candidate",
       "auto_review_reason": "The official Trianon Viviani notice is an acting audition for the role of Pulcinella and explicitly requests acting in Neapolitan, not vocal performance.",
       "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-12",
       "relevance_status": "irrelevant",
       "confidence": "high",
-      "audit_page_title": "Audizioni per la produzione Pulcinella, ovvero una cosa che somiglia al mondo",
       "evidence_urls": [
         "https://www.teatrotrianon.org/audizioni-per-la-produzione-pulcinella-ovvero-una-cosa-che-somiglia-al-mondo/"
       ],
@@ -184,17 +185,16 @@
           "checked_at": "2026-11-12T11:49:52+01:00"
         }
       ],
-      "review_notes": "Keep the source record for audit history only. The notice is not relevant to a classical voice/opera opportunity feed.",
-      "audit_method": "evidence_based",
-      "audit_date": "2026-11-12",
+      "audit_page_title": "Audizioni per la produzione Pulcinella, ovvero una cosa che somiglia al mondo",
       "audit_access_status": "accessible_via_web_open",
+      "review_notes": "Keep the source record for audit history only. The notice is not relevant to a classical voice/opera opportunity feed.",
       "production_activation": false
     },
     {
       "number": 100,
       "source": "Lavora con noi - Elfo Puccini",
       "url": "https://www.elfo.org/chi-siamo/lavora-con-noi.htm",
-      "checked_at": "2026-11-12T08:37:09+01:00",
+      "checked_at": "2026-11-12T12:08:40+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi - Elfo Puccini",
@@ -210,13 +210,14 @@
       "publisher_status": "unverified",
       "auto_review_status": "needs_review",
       "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+      "auto_review_checked_at": "2026-11-12T12:08:33+01:00",
+      "audit_method": "heuristic"
     },
     {
       "number": 101,
       "source": "Audizioni - MusicalMusical",
       "url": "https://www.musical.it/audizioni/",
-      "checked_at": "2026-11-12T08:37:14+01:00",
+      "checked_at": "2026-11-12T12:08:45+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni - MusicalMusical",
@@ -241,9 +242,10 @@
       "auto_review_status": "auto_approved_third_party",
       "auto_review_reason": "The publisher identity is clear as a specialist musical-theatre audition portal and the page is accessible. It provides independent singer/performer opportunity discovery, but it is third-party and covers musical theatre rather than opera.",
       "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-12",
       "relevance_status": "relevant",
       "confidence": "medium",
-      "audit_page_title": "Audizioni - MusicalMusical",
       "evidence_urls": [
         "https://www.musical.it/audizioni/",
         "https://www.musical.it/contatti/"
@@ -256,17 +258,16 @@
           "checked_at": "2026-11-12T11:49:52+01:00"
         }
       ],
-      "review_notes": "Retain as a third-party discovery source with a separate musical-theatre category. Verify every listing against the original producer before publication; never treat portal text as official evidence.",
-      "audit_method": "evidence_based",
-      "audit_date": "2026-11-12",
+      "audit_page_title": "Audizioni - MusicalMusical",
       "audit_access_status": "accessible_via_web_open",
+      "review_notes": "Retain as a third-party discovery source with a separate musical-theatre category. Verify every listing against the original producer before publication; never treat portal text as official evidence.",
       "production_activation": false
     },
     {
       "number": 102,
       "source": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e L",
       "url": "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
-      "checked_at": "2026-11-12T08:37:17+01:00",
+      "checked_at": "2026-11-12T12:08:48+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma - www.castingeprovini.com",
@@ -285,7 +286,7 @@
         "Durante l’audizione sarà presente un pianista accompagnatore di Opera e Lirica.",
         "Per partecipare all’audizione è necessario inviare richiesta tramite mail",
         ", sarà possibile sostenere l’audizione esclusivamente dopo aver ricevuto la conferma scritta da parte di Opera e Lirica.",
-        "Casting concorrenti per: La Ruota della Fortuna. Come partecipare al game show Mediaset"
+        "Audizione ballerini per il Grand Théâtre de Genève – Svizzera"
       ],
       "error": null,
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
@@ -295,9 +296,10 @@
       "auto_review_status": "duplicate_candidate",
       "auto_review_reason": "This page is a separate third-party publisher, but the specific 17 November 2026 Opera e Lirica notice duplicates the lead already recorded under candidate-1. The official organizer page does not publish this singer audition.",
       "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-12",
       "relevance_status": "relevant",
       "confidence": "high",
-      "audit_page_title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma",
       "evidence_urls": [
         "https://www.castingeprovini.com/audizioni-cantanti-lirici-professori-dorchestra-roma/",
         "https://www.provinispettacolo.it/audizioni-opera-lirica-roma-cantanti-professori-orchestra/"
@@ -310,19 +312,18 @@
           "checked_at": "2026-11-12T11:49:52+01:00"
         }
       ],
-      "review_notes": "duplicate_scope=notice only. Do not delete or disable this distinct source domain; do not create a second opportunity record. The underlying audition remains third-party-only and must not be published without organizer confirmation.",
+      "audit_page_title": "Audizioni Cantanti Lirici e Professori d'Orchestra a cura di Opera e Lirica - Roma",
+      "audit_access_status": "accessible_via_web_open",
       "duplicate_of": "candidate-1: Provinispettacolo — Musica",
       "duplicate_scope": "same_Opera_e_Lirica_2026-11-17_audition_notice",
-      "audit_method": "evidence_based",
-      "audit_date": "2026-11-12",
-      "audit_access_status": "accessible_via_web_open",
+      "review_notes": "duplicate_scope=notice only. Do not delete or disable this distinct source domain; do not create a second opportunity record. The underlying audition remains third-party-only and must not be published without organizer confirmation.",
       "production_activation": false
     },
     {
       "number": 114,
       "source": "CollettivO CineticO | Energia Cinetica",
       "url": "https://www.collettivocinetico.it/energia-cinetica",
-      "checked_at": "2026-11-12T08:37:19+01:00",
+      "checked_at": "2026-11-12T12:08:49+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "CollettivO CineticO | Energia Cinetica",
@@ -339,13 +340,14 @@
       "publisher_status": "unverified",
       "auto_review_status": "needs_review",
       "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+      "auto_review_checked_at": "2026-11-12T12:08:33+01:00",
+      "audit_method": "heuristic"
     },
     {
       "number": 115,
       "source": "Lavora con noi - Fondazione Aida",
       "url": "https://www.fondazioneaida.it/lavora-con-noi/",
-      "checked_at": "2026-11-12T08:37:20+01:00",
+      "checked_at": "2026-11-12T12:08:51+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi - Fondazione Aida",
@@ -364,13 +366,14 @@
       "publisher_status": "unverified",
       "auto_review_status": "needs_review",
       "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+      "auto_review_checked_at": "2026-11-12T12:08:33+01:00",
+      "audit_method": "heuristic"
     },
     {
       "number": 117,
       "source": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
       "url": "https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/",
-      "checked_at": "2026-11-12T08:37:23+01:00",
+      "checked_at": "2026-11-12T12:08:53+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Audizioni attori e attrici per la commedia brillante \"Napule è\"",
@@ -398,13 +401,14 @@
       "publisher_status": "unverified",
       "auto_review_status": "needs_review",
       "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
-      "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+      "auto_review_checked_at": "2026-11-12T12:08:33+01:00",
+      "audit_method": "heuristic"
     },
     {
       "number": 118,
       "source": "Lavora con noi • Teatro Franco Parenti • Milano",
       "url": "https://teatrofrancoparenti.it/lavora-con-noi/",
-      "checked_at": "2026-11-12T08:37:26+01:00",
+      "checked_at": "2026-11-12T12:08:56+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Lavora con noi • Teatro Franco Parenti • Milano",
@@ -423,13 +427,14 @@
       "publisher_status": "unverified",
       "auto_review_status": "needs_review",
       "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
-      "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+      "auto_review_checked_at": "2026-11-12T12:08:33+01:00",
+      "audit_method": "heuristic"
     },
     {
       "number": 120,
       "source": "Concorsi 2026 / Primo Oboe - Orchestra della Toscana",
       "url": "https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/",
-      "checked_at": "2026-11-12T08:37:28+01:00",
+      "checked_at": "2026-11-12T12:08:59+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Concorsi 2026 / Primo Oboe - Orchestra della Toscana",
@@ -457,13 +462,14 @@
       "publisher_status": "unverified",
       "auto_review_status": "irrelevant_candidate",
       "auto_review_reason": "non_vocal_role_only",
-      "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+      "auto_review_checked_at": "2026-11-12T12:08:33+01:00",
+      "audit_method": "heuristic"
     },
     {
       "number": 121,
       "source": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacol",
       "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
-      "checked_at": "2026-11-12T08:37:31+01:00",
+      "checked_at": "2026-11-12T12:09:01+01:00",
       "status": "ok",
       "http_status": 200,
       "title": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacolo teatrale - Piemonte - Provinispettacolo",
@@ -491,7 +497,8 @@
       "publisher_status": "unverified",
       "auto_review_status": "needs_review",
       "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
-      "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+      "auto_review_checked_at": "2026-11-12T12:08:33+01:00",
+      "audit_method": "heuristic"
     },
     {
       "number": 123,
@@ -525,7 +532,8 @@
       "publisher_status": "unverified",
       "auto_review_status": "needs_review",
       "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+      "auto_review_checked_at": "2026-11-12T12:08:33+01:00",
+      "audit_method": "heuristic"
     },
     {
       "number": 124,
@@ -552,7 +560,8 @@
       "publisher_status": "unverified",
       "auto_review_status": "needs_review",
       "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
-      "auto_review_checked_at": "2026-11-12T08:37:09+01:00"
+      "auto_review_checked_at": "2026-11-12T12:08:33+01:00",
+      "audit_method": "heuristic"
     }
   ]
 }
