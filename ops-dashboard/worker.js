@@ -210,7 +210,7 @@ async function loadData(){
   }
   if(d.buttondown&&d.buttondown.ok){$("subscribers").textContent=fmt(d.buttondown.active_subscribers);$("newSubscribers").textContent=fmt(d.buttondown.new_subscribers_7d);$("draftCount").textContent=fmt(d.buttondown.draft_count);renderDrafts(d.buttondown.drafts||[]);}
   else{$("subscribers").textContent="—";$("newSubscribers").textContent="—";$("draftCount").textContent="—";$("drafts").textContent="Buttondown 数据暂时不可用。";}
-  const issues=[];if(!d.cloudflare?.ok)issues.push("Cloudflare："+(d.cloudflare?.error||"不可用"));if(!d.buttondown?.ok)issues.push("Buttondown："+(d.buttondown?.error||"不可用"));
+  const issues=[];if(!d.cloudflare?.ok)issues.push("Cloudflare："+(d.cloudflare?.error||"不可用"));else if(d.cloudflare.has_events!==true)issues.push("Cloudflare：查询成功但暂无事件记录");if(!d.buttondown?.ok)issues.push("Buttondown："+(d.buttondown?.error||"不可用"));
   loadContentQueue();
   loadMasterclassQueue();
   loadWorkflowRuns();
