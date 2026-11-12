@@ -87,9 +87,11 @@ jobs:
           CF_ANALYTICS_API_TOKEN: ${{ secrets.CF_ANALYTICS_API_TOKEN }}
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
           OPS_DASHBOARD_PASSWORD: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
+          OPS_BACKUP_TOKEN: ${{ secrets.OPS_BACKUP_TOKEN }}
         run: |
           set -euo pipefail
           printf '%s' "$CLOUDFLARE_ACCOUNT_ID" | wrangler secret put CF_ACCOUNT_ID --config ops-dashboard/wrangler.generated.toml
           printf '%s' "$CF_ANALYTICS_API_TOKEN" | wrangler secret put CF_ANALYTICS_API_TOKEN --config ops-dashboard/wrangler.generated.toml
           printf '%s' "$BUTTONDOWN_API_KEY" | wrangler secret put BUTTONDOWN_API_KEY --config ops-dashboard/wrangler.generated.toml
           printf '%s' "$OPS_DASHBOARD_PASSWORD" | wrangler secret put OPS_DASHBOARD_PASSWORD --config ops-dashboard/wrangler.generated.toml
+          if [ -n "$OPS_BACKUP_TOKEN" ]; then printf '%s' "$OPS_BACKUP_TOKEN" | wrangler secret put OPS_BACKUP_TOKEN --config ops-dashboard/wrangler.generated.toml; fi
