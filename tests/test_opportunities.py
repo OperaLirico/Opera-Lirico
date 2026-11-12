@@ -2,7 +2,7 @@ import json
 import unittest
 
 # Official application and PDF entry points were rechecked against publisher pages on 2026-11-10.
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -73,6 +73,10 @@ class OpportunityDataTests(unittest.TestCase):
             deadline = item.get("application_deadline_at")
             if deadline:
                 self.assertGreater(parse_aware(deadline), checked)
+            date_only = item.get("application_deadline_date")
+            if date_only:
+                self.assertEqual(date.fromisoformat(date_only).isoformat(), date_only)
+                self.assertNotIn("application_deadline_at", item)
             opened = item.get("application_open_at")
             if opened and deadline:
                 self.assertLessEqual(parse_aware(opened), parse_aware(deadline))
@@ -94,6 +98,8 @@ class OpportunityDataTests(unittest.TestCase):
                         self.assertTrue(parsed.netloc)
                 for voice in item.get("voice_types", []):
                     self.assertIn(voice, ALLOWED_VOICES)
+                if item.get("application_email"):
+                    self.assertRegex(item["application_email"], r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
                 if "fee_eur" in item:
                     self.assertGreaterEqual(item["fee_eur"], 0)
 
@@ -102,7 +108,11 @@ class OpportunityDataTests(unittest.TestCase):
         self.assertIn("record.publication_status!=='published'", APP)
         self.assertIn("record.review_status!=='verified'", APP)
         self.assertIn("record.publisher_status!=='official'", APP)
-        self.assertIn("Date.parse(deadline)<Date.now()", APP)
+        self.assertIn("Date.parse(deadlineAt)<Date.now()", APP)
+        self.assertIn("application_deadline_date", APP)
+        self.assertIn("deadlineTimeUnknown", APP)
+        self.assertIn("mailto:", APP)
+        self.assertNotIn("T23:59:00+01:00", APP)
 
     def test_opportunity_cards_show_notes_and_official_pdf_links(self):
         self.assertIn("record.notes", APP)
@@ -124,7 +134,18 @@ class OpportunityDataTests(unittest.TestCase):
         for item in DATA.get("items", []):
             if item.get("publication_status") == "published":
                 with self.subTest(opportunity=item.get("id")):
-                    self.assertTrue(item.get("application_url") or item.get("official_pdf_url"))
+                    self.assertTrue(item.get("application_url") or item.get("application_email") or item.get("official_pdf_url"))
+
+    def test_rai_voci_in_barcaccia_candidate_preserves_date_only_deadline_and_manual_gate(self):
+        record = next(item for item in DATA["items"] if item["id"] == "rai-voci-in-barcaccia-vi-2026")
+        self.assertEqual(record["application_deadline_date"], "2026-12-09")
+        self.assertNotIn("application_deadline_at", record)
+        self.assertEqual(record["application_email"], "vocinbarcaccia@rai.it")
+        self.assertEqual(record["publisher_status"], "official")
+        self.assertEqual(record["review_status"], "pending_manual_review")
+        self.assertEqual(record["publication_status"], "draft")
+        self.assertTrue(record["official_pdf_url"].endswith(".pdf"))
+        self.assertIn("具体截止时刻未公布", record["notes"])
 
     def test_application_and_pdf_links_are_https(self):
         for item in DATA.get("items", []):
