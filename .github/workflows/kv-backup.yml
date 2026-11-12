@@ -1,0 +1,76 @@
+name: KV backup
+
+on:
+  schedule:
+    - cron: "17 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-lirico-kv-backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check backup configuration
+        id: config
+        env:
+          BACKUP_TOKEN: ${{ secrets.OPS_BACKUP_TOKEN }}
+          ENCRYPTION_KEY: ${{ secrets.OPS_BACKUP_ENCRYPTION_KEY }}
+        run: |
+          if [ -z "$BACKUP_TOKEN" ] || [ -z "$ENCRYPTION_KEY" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Backup is not configured. Add OPS_BACKUP_TOKEN and OPS_BACKUP_ENCRYPTION_KEY repository secrets."
+            echo "Backup skipped: required repository secrets are not configured." >> "$GITHUB_STEP_SUMMARY"
+          else
+            if [ "${#BACKUP_TOKEN}" -lt 32 ] || [ "${#ENCRYPTION_KEY}" -lt 32 ]; then
+              echo "::error::Both backup secrets must contain at least 32 characters."
+              exit 1
+            fi
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Export and encrypt KV data
+        if: steps.config.outputs.configured == 'true'
+        env:
+          BACKUP_TOKEN: ${{ secrets.OPS_BACKUP_TOKEN }}
+          ENCRYPTION_KEY: ${{ secrets.OPS_BACKUP_ENCRYPTION_KEY }}
+        run: |
+          set -euo pipefail
+          RAW="$RUNNER_TEMP/opera-lirico-backup.json"
+          ENC="$RUNNER_TEMP/opera-lirico-backup.gpg"
+          VERIFY="$RUNNER_TEMP/opera-lirico-verify.json"
+          trap 'rm -f "$RAW" "$ENC" "$VERIFY"' EXIT
+          curl --fail --silent --show-error --retry 3 --retry-all-errors             -H "Authorization: Bearer $BACKUP_TOKEN"             -H "Accept: application/json"             "https://opera-lirico-ops.wl19971007.workers.dev/api/admin/backup"             -o "$RAW"
+          jq -e '.format == "opera-lirico-kv-backup-v1" and (.items | type == "array") and (.key_count == (.items | length))' "$RAW" >/dev/null
+          printf '%s' "$ENCRYPTION_KEY" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --symmetric --cipher-algo AES256 --output "$ENC" "$RAW"
+          printf '%s' "$ENCRYPTION_KEY" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --decrypt --output "$VERIFY" "$ENC"
+          jq -e '.format == "opera-lirico-kv-backup-v1" and (.key_count == (.items | length))' "$VERIFY" >/dev/null
+          echo "KEY_COUNT=$(jq -r '.key_count' "$RAW")" >> "$GITHUB_ENV"
+          echo "EXPORTED_AT=$(jq -r '.exported_at' "$RAW")" >> "$GITHUB_ENV"
+          rm -f "$RAW" "$VERIFY"
+          mv "$ENC" "$RUNNER_TEMP/opera-lirico-backup.gpg"
+      - name: Upload encrypted backup
+        if: steps.config.outputs.configured == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: opera-lirico-kv-backup-${{ github.run_id }}
+          path: ${{ runner.temp }}/opera-lirico-backup.gpg
+          if-no-files-found: error
+          retention-days: 90
+      - name: Write backup report
+        if: steps.config.outputs.configured == 'true'
+        run: |
+          {
+            echo "## KV backup"
+            echo "- Result: encrypted artifact uploaded"
+            echo "- Exported at: $EXPORTED_AT"
+            echo "- KV keys: $KEY_COUNT"
+            echo "- Retention: 90 days"
+            echo "- Encryption: GPG symmetric AES-256"
+            echo "- Plaintext backup removed from runner."
+          } >> "$GITHUB_STEP_SUMMARY"
