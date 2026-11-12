@@ -37,10 +37,10 @@ async function init(){
  try{
   const r=await fetch("data/masterclasses.json",{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);
   const data=await r.json(),today=Date.now();
-  const items=(data.items||[]).filter(x=>x.publisher_status==="official"&&x.review_status==="verified"&&x.publication_status==="published"&&(!x.end_at||Date.parse(x.end_at)>=today)&&(!x.application_deadline_at||Date.parse(x.application_deadline_at)>=today)).sort((a,b)=>(Date.parse(a.start_at)||0)-(Date.parse(b.start_at)||0));
+  const items=(data.items||[]).filter(x=>x.publisher_status==="official"&&x.review_status==="verified"&&x.publication_status==="published"&&(!x.end_at||Date.parse(x.end_at)>=today)&&(!x.application_deadline_at||Date.parse(x.application_deadline_at)>=today)).sort((a,b)=>{const da=Date.parse(a.start_at),db=Date.parse(b.start_at);if(!Number.isFinite(da))return Number.isFinite(db)?1:0;if(!Number.isFinite(db))return -1;return da-db;});
   if(!items.length){root.innerHTML='<div class="master-empty">目前还没有通过官方核验并正式发布的大师班。我们会先核验信息，再更新这里。</div>';return;}
   root.innerHTML=items.map(x=>{
-   const dateLabel=fmt(x.start_at)+(x.end_at?" — "+fmt(x.end_at):"");
+   const dateLabel=x.date_label_zh||fmt(x.start_at)+(x.end_at?" — "+fmt(x.end_at):"");
    const initials=String(x.source_name||"OL").split(/\s+/).filter(Boolean).slice(0,2).map(v=>v[0]).join("").toUpperCase();
    const facts=[x.teacher?"导师："+x.teacher:"",x.instrument_or_voice?"专业："+x.instrument_or_voice:"","地点："+(x.location||"以官方公告为准"),"费用："+(x.fee_eur==null?"以官方公告为准":x.fee_eur===0?"免费":"€"+x.fee_eur),x.language?"授课语言："+x.language:"",x.description_zh||""].filter(Boolean);
    const source=safeUrl(x.source_url),apply=safeUrl(x.application_url);
