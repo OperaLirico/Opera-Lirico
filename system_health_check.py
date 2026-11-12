@@ -150,6 +150,7 @@ def check_ops_dashboard(base_url):
         "/api/content/drafts",
         "/api/masterclasses/candidates",
         "/api/workflows",
+        "/api/admin/backup",
     )
     for path in protected_paths:
         request = Request(base_url.rstrip("/") + path, headers={"User-Agent": "OperaLirico-SystemHealth/1.0"})
@@ -160,8 +161,9 @@ def check_ops_dashboard(base_url):
             status = exc.code
         except (URLError, TimeoutError) as exc:
             raise RuntimeError(f"Operations endpoint {path} could not be reached: {exc}") from exc
-        if status != 401:
-            raise RuntimeError(f"Protected endpoint {path} returned HTTP {status}; expected 401 without a session")
+        expected = (401, 503) if path == "/api/admin/backup" else (401,)
+        if status not in expected:
+            raise RuntimeError(f"Protected endpoint {path} returned HTTP {status}; expected one of {expected} without credentials")
     return ["operations dashboard login page", "public runtime health endpoint", *[f"{path} rejects unauthenticated access" for path in protected_paths]]
 
 def main():
