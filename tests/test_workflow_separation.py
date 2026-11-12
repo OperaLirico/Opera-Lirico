@@ -23,7 +23,7 @@ class WorkflowSeparationTests(unittest.TestCase):
         self.assertIn('"data/opportunities.json"', workflow)
         self.assertIn('"data/conservatori.json"', workflow)
         self.assertIn("group: github-pages-deploy", workflow)
-        self.assertIn("actions/deploy-pages@v4", workflow)
+        self.assertRegex(workflow, r"actions/deploy-pages@(?:v4|[0-9a-f]{40})(?: # v4)?")
 
     def test_weekly_coverage_has_independent_concurrency(self):
         workflow = (ROOT / ".github/workflows/weekly-source-coverage.yml").read_text(encoding="utf-8")

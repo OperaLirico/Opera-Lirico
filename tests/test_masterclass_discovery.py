@@ -151,6 +151,8 @@ class MasterclassDiscoveryTests(unittest.TestCase):
             self.assertEqual(item.get("review_status"), "verified")
             self.assertEqual(item.get("publication_status"), "published")
             self.assertTrue(item.get("source_url", "").startswith(("https://", "http://")))
+            self.assertTrue(item.get("title_zh", "").strip(), f"Missing Chinese display title for {item.get('id')}")
+            self.assertTrue(item.get("description_zh", "").strip(), f"Missing Chinese editorial description for {item.get('id')}")
             self.assertTrue(item.get("evidence"), f"Missing evidence for {item.get('id')}")
             for evidence in item["evidence"]:
                 self.assertTrue(evidence.get("url", "").startswith(("https://", "http://")))
