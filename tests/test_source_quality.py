@@ -69,6 +69,44 @@ class PreserveLastGoodTests(unittest.TestCase):
         self.assertEqual(links[0]["aria_label"], "Download audition application form")
         self.assertEqual(links[0]["title"], "Official application")
 
+    def test_extract_relevant_links_classifies_documents_and_external_application_forms(self):
+        html = b"""<html><body>
+          <a href="/download/bando-2027.pdf" rel="noopener">Scarica il bando</a>
+          <a href="//forms.example.net/apply/123" target="_blank"
+             aria-label="Online application form"> </a>
+          <a href="/audizioni/#details">Dettagli audizioni</a>
+          <a href="/privacy.pdf">Informativa privacy</a>
+        </body></html>"""
+        links, total, truncated = scrape_sources.extract_relevant_links(
+            html, "https://www.example.org/audizioni/"
+        )
+        by_type = {item["link_type"]: item for item in links}
+        self.assertEqual(total, 3)
+        self.assertFalse(truncated)
+        self.assertIn("official_document", by_type)
+        self.assertEqual(by_type["official_document"]["host"], "www.example.org")
+        self.assertTrue(by_type["official_document"]["same_host"])
+        self.assertEqual(by_type["official_document"]["rel"], "noopener")
+        self.assertIn("application", by_type)
+        self.assertEqual(by_type["application"]["host"], "forms.example.net")
+        self.assertFalse(by_type["application"]["same_host"])
+        self.assertEqual(
+            by_type["application"]["aria_label"], "Online application form"
+        )
+        self.assertIn("notice", by_type)
+
+    def test_extract_relevant_links_deduplicates_fragment_variants(self):
+        html = b"""<html><body>
+          <a href="/bando/2027.pdf#page=1">Bando ufficiale</a>
+          <a href="/bando/2027.pdf#page=2">Bando ufficiale - seconda pagina</a>
+        </body></html>"""
+        links, total, truncated = scrape_sources.extract_relevant_links(
+            html, "https://example.org/"
+        )
+        self.assertEqual(total, 1)
+        self.assertFalse(truncated)
+        self.assertEqual(len(links), 1)
+
     def test_extract_relevant_links_reports_truncation_instead_of_silently_dropping(self):
         html = ("<html><body>" + "".join(
             f'<a href="/bando-{i}.pdf">Bando {i}</a>' for i in range(1010)
