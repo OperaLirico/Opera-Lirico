@@ -63,7 +63,7 @@ jobs:
               lines.append("### Sources needing attention")
               for error in errors[:20]:
                   lines.append(f"- {error.get('source', 'unknown')}: {error.get('status') or error.get('http_status') or error.get('error') or 'fetch error'}")
-          summary = "\\n".join(lines) + "\\n"
+          summary = chr(10).join(lines) + chr(10)
           print(summary)
           with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
               handle.write(summary)
