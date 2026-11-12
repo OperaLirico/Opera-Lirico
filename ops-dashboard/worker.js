@@ -196,8 +196,18 @@ async function loadData(){
  try{
   const r=await fetch("/api/data",{cache:"no-store"});if(r.status===401){showLogin();return;}if(!r.ok)throw new Error("数据读取失败");
   const d=await r.json();
-  if(d.cloudflare&&d.cloudflare.ok){$("pageviews").textContent=fmt(d.cloudflare.pageviews);$("visits").textContent=fmt(d.cloudflare.visits);drawChart(d.cloudflare.days||[]);}
-  else{$("pageviews").textContent="—";$("visits").textContent="—";}
+  if(d.cloudflare&&d.cloudflare.ok){
+   const hasEvents=d.cloudflare.has_events===true;
+   $("pageviews").textContent=hasEvents?fmt(d.cloudflare.pageviews):"—";
+   $("visits").textContent=hasEvents?fmt(d.cloudflare.visits):"—";
+   drawChart(d.cloudflare.days||[]);
+   $("analyticsQuality").textContent=hasEvents
+    ?"统计查询成功 · "+fmt(d.cloudflare.event_rows)+" 条日期记录 · 最近事件："+d.cloudflare.latest_event_date+" · 查询区间："+d.cloudflare.query_window.start+" 至 "+d.cloudflare.query_window.end
+    :"Cloudflare API 查询成功，但没有返回事件记录。暂不能判断是零访问还是 Beacon 尚未上报；指标暂不显示为 0。";
+  } else {
+   $("pageviews").textContent="—";$("visits").textContent="—";
+   $("analyticsQuality").textContent="统计不可用："+(d.cloudflare?.error||"未知错误");
+  }
   if(d.buttondown&&d.buttondown.ok){$("subscribers").textContent=fmt(d.buttondown.active_subscribers);$("newSubscribers").textContent=fmt(d.buttondown.new_subscribers_7d);$("draftCount").textContent=fmt(d.buttondown.draft_count);renderDrafts(d.buttondown.drafts||[]);}
   else{$("subscribers").textContent="—";$("newSubscribers").textContent="—";$("draftCount").textContent="—";$("drafts").textContent="Buttondown 数据暂时不可用。";}
   const issues=[];if(!d.cloudflare?.ok)issues.push("Cloudflare："+(d.cloudflare?.error||"不可用"));if(!d.buttondown?.ok)issues.push("Buttondown："+(d.buttondown?.error||"不可用"));
@@ -274,9 +284,13 @@ async function fetchJson(url, headers = {}) {
   return body;
 }
 async function getCloudflare(env) {
+  if (!env.CF_ACCOUNT_ID || !env.CF_ANALYTICS_API_TOKEN || !env.CF_WEB_ANALYTICS_SITE_TAG) {
+    throw new Error("Cloudflare 配置不完整：需要 Account ID、Analytics Token 和 Web Analytics Site Tag");
+  }
   const start = new Date(Date.now() - 29 * 86400000).toISOString().slice(0, 10);
   const end = new Date().toISOString().slice(0, 10);
-  const q = 'query { viewer { accounts(filter: { accountTag: "' + env.CF_ACCOUNT_ID + '" }) { rumPageloadEventsAdaptiveGroups(limit: 1000, filter: { siteTag: "' + env.CF_WEB_ANALYTICS_SITE_TAG + '", date_geq: "' + start + '", date_leq: "' + end + '" }) { count sum { visits } dimensions { date requestHost } } } } }';
+  // Aggregate by date only; siteTag scopes the dataset and avoids host-level row duplication.
+  const q = 'query { viewer { accounts(filter: { accountTag: "' + env.CF_ACCOUNT_ID + '" }) { rumPageloadEventsAdaptiveGroups(limit: 1000, filter: { siteTag: "' + env.CF_WEB_ANALYTICS_SITE_TAG + '", date_geq: "' + start + '", date_leq: "' + end + '" }) { count sum { visits } dimensions { date } } } } }';
   const r = await fetch("https://api.cloudflare.com/client/v4/graphql", {
     method: "POST",
     headers: { Authorization: "Bearer " + env.CF_ANALYTICS_API_TOKEN, "Content-Type": "application/json" },
@@ -287,26 +301,31 @@ async function getCloudflare(env) {
   if (!r.ok || body.errors?.length) throw new Error("Cloudflare Analytics API query failed");
   const rows = body.data?.viewer?.accounts?.[0]?.rumPageloadEventsAdaptiveGroups;
   if (!Array.isArray(rows)) throw new Error("Cloudflare returned no analytics dataset");
+  if (rows.length >= 1000) throw new Error("Cloudflare returned the maximum 1,000 groups; totals may be incomplete");
   const map = new Map();
   for (const row of rows) {
-    // The siteTag filter above already scopes this query to this Web Analytics site.
-    // Do not discard rows based on requestHost: Cloudflare may normalize or omit that dimension.
     const date = row.dimensions?.date;
-    if (!date) continue;
-    const item = map.get(date) || { date, pageviews: 0, visits: 0 };
-    item.pageviews += Number(row.count || 0);
-    item.visits += Number(row.sum?.visits || 0);
-    map.set(date, item);
+    if (!date || !/^\\d{4}-\\d{2}-\\d{2}$/.test(date)) throw new Error("Cloudflare returned an invalid date dimension");
+    const pageviews = Number(row.count);
+    const visits = Number(row.sum?.visits ?? 0);
+    if (!Number.isFinite(pageviews) || pageviews < 0 || !Number.isFinite(visits) || visits < 0) {
+      throw new Error("Cloudflare returned invalid analytics values");
+    }
+    map.set(date, { date, pageviews, visits });
   }
   const days = [];
   const cursor = new Date(start + "T12:00:00Z");
   const last = new Date(end + "T12:00:00Z");
   while (cursor <= last) {
     const date = cursor.toISOString().slice(0, 10);
-    days.push(map.get(date) || { date, pageviews: 0, referral_views: 0 });
+    days.push(map.get(date) || { date, pageviews: 0, visits: 0 });
     cursor.setUTCDate(cursor.getUTCDate() + 1);
   }
-  return { pageviews: days.reduce((s, x) => s + x.pageviews, 0), visits: days.reduce((s, x) => s + x.visits, 0), days };
+  const pageviews = days.reduce((sum, day) => sum + day.pageviews, 0);
+  const visits = days.reduce((sum, day) => sum + day.visits, 0);
+  return { pageviews, visits, days, event_rows: rows.length, has_events: rows.length > 0,
+    latest_event_date: rows.length ? rows.map(row => row.dimensions.date).sort().at(-1) : null,
+    query_window: { start, end } };
 }
 async function getButtondown(env) {
   const headers = { Authorization: "Token " + env.BUTTONDOWN_API_KEY };
@@ -516,7 +535,7 @@ export default {
     }
     if (url.pathname === "/api/data" && request.method === "GET") {
       if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
-      if (!env.CF_ACCOUNT_ID || !env.CF_ANALYTICS_API_TOKEN || !env.BUTTONDOWN_API_KEY) return json({ error: "missing_configuration" }, 503);
+      if (!env.CF_ACCOUNT_ID || !env.CF_ANALYTICS_API_TOKEN || !env.CF_WEB_ANALYTICS_SITE_TAG || !env.BUTTONDOWN_API_KEY) return json({ error: "missing_configuration" }, 503);
       return json(await getDashboardData(env));
     }
     return json({ error: "not_found" }, 404);
