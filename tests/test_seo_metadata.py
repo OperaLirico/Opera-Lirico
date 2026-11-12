@@ -38,6 +38,18 @@ class SeoAndSharingTests(unittest.TestCase):
             "https://operalirico.github.io/Opera-Lirico/masterclasses.html",
         ])
 
+
+    def test_repertoire_quick_search_chips_are_unique(self):
+        import re
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        chips = re.findall(r'class="search-chip" data-query="([^"]+)"', homepage)
+        self.assertEqual(len(chips), len(set(chips)))
+        self.assertEqual(len(chips), 12)
+
+    def test_unreviewed_repertoire_archive_is_not_loaded_by_the_frontend(self):
+        app = (ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertNotIn("repertoire_archive.json", app)
+
     def test_404_page_exists_and_returns_home_link(self):
         page = (ROOT / "404.html").read_text(encoding="utf-8")
         self.assertIn('name="robots" content="noindex,follow"', page)
