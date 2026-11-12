@@ -48,7 +48,7 @@ def audit_workflows() -> list[str]:
         has_top_level_write = any(re.search(r":\s*write\s*$", line) for line in permissions)
         jobs_index = next((i for i, line in enumerate(lines) if line == "jobs:"), None)
         job_lines = lines[jobs_index + 1:] if jobs_index is not None else []
-        job_count = sum(1 for line in job_lines if re.match(r"^  [a-zA-Z0-9_-]+:\\s*$", line))
+        job_count = sum(1 for line in job_lines if re.match(r"^  [a-zA-Z0-9_-]+:\s*$", line))
         if has_top_level_write and job_count > 1:
             errors.append(
                 f"{path.relative_to(ROOT)}: workflow-level write permission spans {job_count} jobs; scope it to the required job"
