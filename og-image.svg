@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+<title id="title">Opera Lirico — 连接世界歌剧舞台</title>
+<desc id="desc">歌剧院招募、音乐学院招生、声乐比赛、大师班与曲目资料。</desc>
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071e1a"/><stop offset=".55" stop-color="#12352e"/><stop offset="1" stop-color="#071713"/></linearGradient>
+ <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b98749"/><stop offset=".5" stop-color="#f1d59b"/><stop offset="1" stop-color="#a97539"/></linearGradient>
+ <linearGradient id="curtain" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7d1823"/><stop offset=".55" stop-color="#3b0c16"/><stop offset="1" stop-color="#17090d"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#d8a75c" stop-opacity=".38"/><stop offset="1" stop-color="#d8a75c" stop-opacity="0"/></radialGradient>
+ <pattern id="grain" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#fff" opacity=".08"/></pattern>
+</defs>
+<rect width="1200" height="630" fill="url(#bg)"/>
+<circle cx="940" cy="275" r="420" fill="url(#glow)"/>
+<path d="M790 0H1200V630H790C860 530 835 425 870 315C900 205 820 110 790 0Z" fill="url(#curtain)"/>
+<path d="M820 0C890 120 880 230 850 330C820 445 870 550 930 630" fill="none" stroke="#a34d40" stroke-opacity=".45" stroke-width="18"/>
+<path d="M1160 0C1090 115 1110 230 1140 330C1170 445 1120 550 1060 630" fill="none" stroke="#a34d40" stroke-opacity=".35" stroke-width="16"/>
+<g opacity=".5" stroke="#d6b477" fill="none">
+ <path d="M860 80H1130M875 105H1115M890 130H1100" stroke-width="2"/>
+ <path d="M885 80V210M1105 80V210M875 210H1115" stroke-width="2"/>
+ <path d="M910 210V145Q995 70 1080 145V210" stroke-width="3"/>
+ <path d="M935 210V158Q995 108 1055 158V210" stroke-width="2"/>
+</g>
+<g fill="#f1d59b" opacity=".85"><circle cx="885" cy="80" r="4"/><circle cx="1105" cy="80" r="4"/><circle cx="995" cy="64" r="5"/><circle cx="925" cy="130" r="3"/><circle cx="1065" cy="130" r="3"/></g>
+<rect width="1200" height="630" fill="url(#grain)"/>
+<rect x="54" y="48" width="1092" height="534" rx="12" fill="none" stroke="url(#gold)" stroke-opacity=".62" stroke-width="2"/>
+<path d="M84 160H735" stroke="url(#gold)" stroke-width="2"/>
+<g fill="#f6eddb">
+ <text x="88" y="116" font-family="Georgia, 'Times New Roman', serif" font-size="62" letter-spacing="1">♫ Opera Lirico</text>
+ <text x="92" y="148" font-family="Georgia, serif" font-size="16" letter-spacing="4" fill="#d8bd8a">INFORMAZIONI · OPPORTUNITÀ · MUSICA</text>
+ <text x="88" y="260" font-family="'Noto Serif CJK SC','Songti SC',serif" font-size="52" font-weight="600">连接世界歌剧舞台</text>
+ <text x="88" y="326" font-family="'Noto Serif CJK SC','Songti SC',serif" font-size="48" fill="#e4c58b">助力声乐学习与职业发展</text>
+ <text x="92" y="386" font-family="'Noto Sans CJK SC','PingFang SC',sans-serif" font-size="22" fill="#e4dfd2">歌剧院招募 · 音乐学院招生 · 声乐比赛</text>
+ <text x="92" y="422" font-family="'Noto Sans CJK SC','PingFang SC',sans-serif" font-size="22" fill="#e4dfd2">大师班与进修课程 · 咏叹调与艺术歌曲</text>
+</g>
+<path d="M92 472H710" stroke="#b88b50" stroke-opacity=".8"/>
+<text x="92" y="518" font-family="Georgia,serif" font-size="17" letter-spacing="3" fill="#d9bd8b">OPERA · AUDIZIONI · CONSERVATORI</text>
+<g transform="translate(920 345)" fill="none" stroke="url(#gold)" stroke-width="3" opacity=".9">
+ <path d="M0 150V10Q110 -70 220 10V150"/>
+ <path d="M22 150V25Q110 -35 198 25V150"/>
+ <path d="M45 150V42Q110 -5 175 42V150"/>
+ <path d="M-8 150H228M12 165H208"/>
+ <path d="M110 20V150"/>
+</g>
+<text x="92" y="555" font-family="'Noto Sans CJK SC','PingFang SC',sans-serif" font-size="16" letter-spacing="2" fill="#d9bd8b">发现机会 · 核验信息 · 走向舞台</text>
+</svg>
