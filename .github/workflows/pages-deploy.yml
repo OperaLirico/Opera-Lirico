@@ -38,6 +38,39 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
+      - name: Validate published masterclass records
+        run: |
+          python - <<'PY'
+          import json
+          from datetime import datetime
+          from pathlib import Path
+
+          data = json.loads(Path("data/masterclasses.json").read_text(encoding="utf-8"))
+          schema = json.loads(Path("data/masterclass.schema.json").read_text(encoding="utf-8"))
+          items = data.get("items", [])
+          ids = [item.get("id") for item in items]
+          if len(ids) != len(set(ids)):
+              raise SystemExit("Duplicate masterclass IDs detected")
+          for index, item in enumerate(items, 1):
+              missing = [key for key in schema.get("required", []) if not item.get(key)]
+              if missing:
+                  raise SystemExit(f"Masterclass #{index} missing required fields: {missing}")
+              if item.get("publisher_status") != "official" or item.get("review_status") != "verified" or item.get("publication_status") != "published":
+                  raise SystemExit(f"Masterclass #{index} is not eligible for public display")
+              if not str(item.get("source_url", "")).startswith("https://"):
+                  raise SystemExit(f"Masterclass #{index} has an invalid source URL")
+              evidence = item.get("evidence") or []
+              if not evidence:
+                  raise SystemExit(f"Masterclass #{index} has no evidence")
+              for record in evidence:
+                  if not str(record.get("url", "")).startswith("https://") or not str(record.get("excerpt", "")).strip():
+                      raise SystemExit(f"Masterclass #{index} has incomplete evidence")
+                  datetime.fromisoformat(record["checked_at"])
+              if item.get("start_at") and item.get("end_at"):
+                  if datetime.fromisoformat(item["end_at"]) < datetime.fromisoformat(item["start_at"]):
+                      raise SystemExit(f"Masterclass #{index} ends before it starts")
+          print(f"Validated {len(items)} published masterclass records.")
+          PY
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
       - name: Upload site artifact
