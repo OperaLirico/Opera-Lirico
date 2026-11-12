@@ -52,7 +52,7 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 <div class="card"><div class="kicker">ACTIVE SUBSCRIBERS</div><div class="value" id="subscribers">—</div><div class="hint">当前有效订阅者</div></div>
 <div class="card"><div class="kicker">NEW · 7 DAYS</div><div class="value" id="newSubscribers">—</div><div class="hint">过去 7 天新增有效订阅</div></div>
 </div>
-<section class="section"><h2>网站访问趋势</h2><div class="panel"><div id="chart" class="bars"></div><div class="hint">按 Cloudflare 日期维度汇总。访问数据来自 Cloudflare Web Analytics。</div></div></section>
+<section class="section"><h2>网站访问趋势</h2><div class="panel"><div id="chart" class="bars"></div><div class="hint">按 Cloudflare 日期维度汇总。访问数据来自 Cloudflare Web Analytics。</div><div id="analyticsQuality" class="hint" role="status" aria-live="polite" style="margin-top:8px">等待统计结果…</div></div></section>
 <section class="section"><h2>邮件草稿</h2><div class="panel"><div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:12px">
 <div><div class="kicker">DRAFTS</div><div class="value" id="draftCount">—</div><div class="hint">Buttondown 中尚未发送的草稿</div></div>
 <div><div class="kicker">NEWSLETTER</div><div class="value" style="font-size:20px;margin-top:13px">Opera Lirico Weekly</div><div class="hint"><a href="https://buttondown.com/wl19971007" target="_blank" rel="noopener noreferrer">打开 Buttondown ↗</a></div></div>
@@ -201,12 +201,12 @@ async function loadData(){
    $("pageviews").textContent=hasEvents?fmt(d.cloudflare.pageviews):"—";
    $("visits").textContent=hasEvents?fmt(d.cloudflare.visits):"—";
    drawChart(d.cloudflare.days||[]);
-   $("analyticsQuality").textContent=hasEvents
+   if($("analyticsQuality")) $("analyticsQuality").textContent=hasEvents
     ?"统计查询成功 · "+fmt(d.cloudflare.event_rows)+" 条日期记录 · 最近事件："+d.cloudflare.latest_event_date+" · 查询区间："+d.cloudflare.query_window.start+" 至 "+d.cloudflare.query_window.end
     :"Cloudflare API 查询成功，但没有返回事件记录。暂不能判断是零访问还是 Beacon 尚未上报；指标暂不显示为 0。";
   } else {
    $("pageviews").textContent="—";$("visits").textContent="—";
-   $("analyticsQuality").textContent="统计不可用："+(d.cloudflare?.error||"未知错误");
+   if($("analyticsQuality")) $("analyticsQuality").textContent="统计不可用："+(d.cloudflare?.error||"未知错误");
   }
   if(d.buttondown&&d.buttondown.ok){$("subscribers").textContent=fmt(d.buttondown.active_subscribers);$("newSubscribers").textContent=fmt(d.buttondown.new_subscribers_7d);$("draftCount").textContent=fmt(d.buttondown.draft_count);renderDrafts(d.buttondown.drafts||[]);}
   else{$("subscribers").textContent="—";$("newSubscribers").textContent="—";$("draftCount").textContent="—";$("drafts").textContent="Buttondown 数据暂时不可用。";}
