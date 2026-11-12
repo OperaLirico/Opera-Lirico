@@ -14,6 +14,8 @@ on:
       - "audit_opportunity_quality.py"
       - "audit_pdf_integrity.py"
       - "audit_extraction_pilot.py"
+      - "audit_workflow_security.py"
+      - ".github/workflows/**"
       - "discover_masterclasses.py"
       - "data/masterclass_sources.json"
       - ".github/workflows/weekly-source-coverage.yml"
@@ -38,12 +40,15 @@ on:
       - "audit_opportunity_quality.py"
       - "audit_pdf_integrity.py"
       - "audit_extraction_pilot.py"
+      - "audit_workflow_security.py"
+      - ".github/workflows/**"
       - ".github/workflows/weekly-source-coverage.yml"
       - "tests/**"
       - "data/opportunity.schema.json"
       - "data/source_fetch_policies.json"
       - ".github/workflows/source-quality-tests.yml"
       - ".github/workflows/p2-p4-extraction-pilot.yml"
+      - ".github/workflows/**"
   workflow_dispatch:
 
 permissions:
@@ -65,6 +70,8 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Run source quality tests
         run: python -m unittest discover -s tests -v
+      - name: Audit GitHub Actions security
+        run: python audit_workflow_security.py
       - name: Smoke-test read-only audit reports
         run: |
           python audit_opportunity_quality.py
