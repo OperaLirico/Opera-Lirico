@@ -211,6 +211,12 @@ def deduplicate_candidates(items: list[dict]) -> list[dict]:
         elif winner.get("review_notes") in (None, "") and other.get("review_notes"):
             winner = {**winner, "review_notes": other.get("review_notes")}
         winner["source_url"] = url
+        aliases = set(previous.get("legacy_candidate_ids", [])) | set(item.get("legacy_candidate_ids", []))
+        aliases.update((previous.get("candidate_id"), item.get("candidate_id")))
+        aliases.discard(None)
+        aliases.discard(winner.get("candidate_id"))
+        if aliases:
+            winner["legacy_candidate_ids"] = sorted(aliases)
         merged[key] = winner
     return sorted(merged.values(), key=lambda x: (
         x.get("source_name", ""), x.get("title_hint", "")
