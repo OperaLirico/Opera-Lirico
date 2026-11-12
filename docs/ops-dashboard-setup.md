@@ -52,6 +52,10 @@
 - 后台仅读取 Cloudflare RUM 数据和 Buttondown 订阅/草稿信息，不调用任何邮件发送接口。
 - 如果 Cloudflare 统计暂时没有数据，可能需要等待 Beacon 收集并处理首批访问数据。
 
+## 自动化失败提醒
+
+仓库中的 `.github/workflows/workflow-failure-alert.yml` 监听项目工作流。任一受监控工作流失败时，会创建或更新一个统一的 GitHub Issue，附上失败运行链接、分支、提交和失败 Job，并提醒仓库维护账号。成功或取消的运行不会创建失败记录。该提醒只记录失败信息，不会自动重跑工作流或修改网站数据。
+
 ## 大师班候选审核
 
 私有后台新增“大师班候选审核”区域，读取公开仓库中的 `data/masterclass_candidates.json`，并把人工审核决定保存在现有的 `CONTENT_DRAFTS` KV 命名空间中，使用独立的 `masterclass-review:` 前缀，与社交媒体草稿分开。
