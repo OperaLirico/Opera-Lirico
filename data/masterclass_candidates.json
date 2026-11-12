@@ -1,15 +1,9 @@
 {
-  "updated_at": "2026-11-12T01:06:42+01:00",
+  "updated_at": "2026-11-12T01:09:22+01:00",
   "source_count": 12,
   "candidate_count": 11,
   "new_or_refreshed_this_run": 5,
-  "fetch_errors": [
-    {
-      "source": "Cantoalato Academy",
-      "url": "https://www.cantoalato.it/masterclass-con-gregory-kunde/",
-      "error": "Timeout"
-    }
-  ],
+  "fetch_errors": [],
   "items": [
     {
       "candidate_id": "b16e95131e07",
@@ -19,7 +13,7 @@
       "publisher_status": "third_party",
       "source_url": "https://www.cantarelopera.com/studio-e-perfezionamento/corsi-e-masterclasses.php",
       "discovered_from": "https://www.cantarelopera.com/studio-e-perfezionamento/corsi-e-masterclasses.php",
-      "checked_at": "2026-11-12T01:06:42+01:00",
+      "checked_at": "2026-11-12T01:09:22+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
@@ -122,7 +116,7 @@
       "publisher_status": "official",
       "source_url": "https://www.cantoalato.it/masterclass-di-canto-con-alessandro-corbelli/",
       "discovered_from": "https://www.cantoalato.it/masterclass/",
-      "checked_at": "2026-11-12T01:06:42+01:00",
+      "checked_at": "2026-11-12T01:09:22+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
@@ -153,7 +147,7 @@
       "publisher_status": "official",
       "source_url": "https://www.cantoalato.it/masterclass-di-canto-con-leo-nucci-rigoletto-il-trovatore-la-traviata/",
       "discovered_from": "https://www.cantoalato.it/masterclass/",
-      "checked_at": "2026-11-12T01:06:42+01:00",
+      "checked_at": "2026-11-12T01:09:22+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
@@ -215,7 +209,7 @@
       "publisher_status": "official",
       "source_url": "https://consvv.it/evento/masterclass-di-canto-prof-thomas-heyer",
       "discovered_from": "https://consvv.it/evento/masterclass-di-canto-prof-thomas-heyer",
-      "checked_at": "2026-11-12T01:06:42+01:00",
+      "checked_at": "2026-11-12T01:09:22+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
@@ -274,7 +268,7 @@
       "publisher_status": "official",
       "source_url": "https://www.veniceoperaarts.com/index.php/masterclass",
       "discovered_from": "https://www.veniceoperaarts.com/index.php/masterclass",
-      "checked_at": "2026-11-12T01:06:42+01:00",
+      "checked_at": "2026-11-12T01:09:22+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
