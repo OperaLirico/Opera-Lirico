@@ -14,6 +14,8 @@ on:
       - "audit_opportunity_quality.py"
       - "audit_pdf_integrity.py"
       - "audit_extraction_pilot.py"
+      - "discover_masterclasses.py"
+      - "data/masterclass_sources.json"
       - ".github/workflows/weekly-source-coverage.yml"
       - "tests/**"
       - "data/opportunity.schema.json"

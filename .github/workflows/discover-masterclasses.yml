@@ -6,14 +6,6 @@ on:
     paths:
       - "discover_masterclasses.py"
       - "data/masterclass_sources.json"
-      - "tests/test_masterclass_discovery.py"
-      - ".github/workflows/discover-masterclasses.yml"
-      - "requirements.txt"
-  pull_request:
-    paths:
-      - "discover_masterclasses.py"
-      - "data/masterclass_sources.json"
-      - "tests/test_masterclass_discovery.py"
       - ".github/workflows/discover-masterclasses.yml"
       - "requirements.txt"
   schedule:
@@ -30,6 +22,7 @@ concurrency:
 jobs:
   discover:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4

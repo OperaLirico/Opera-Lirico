@@ -6,7 +6,6 @@ on:
     paths:
       - "ops-dashboard/**"
       - ".github/workflows/deploy-ops-dashboard.yml"
-      - "docs/ops-dashboard-setup.md"
   workflow_dispatch:
 
 permissions:
