@@ -6,7 +6,9 @@
 
 - Cloudflare Web Analytics：过去 30 天页面浏览量、访问次数和每日趋势。
 - Buttondown：当前有效订阅人数、过去 7 天新增人数、待审核草稿数量、标题和创建日期。
+- GitHub Actions：最近 20 次自动化工作流运行状态、失败结论、分支和运行链接；只读取公开仓库的 Actions 元数据，不需要新增 GitHub Token。
 - 后台只读，不包含发送邮件、订阅者导出或删除操作。现有每周邮件流程仍然只创建草稿。
+- 工作流状态来自公开 GitHub Actions API；后台仅显示运行元数据和运行链接，不读取构建日志、仓库密钥或私有内容。
 
 ## 首次部署前需要配置的 GitHub Actions Secrets
 
