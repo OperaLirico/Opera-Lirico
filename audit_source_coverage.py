@@ -75,17 +75,29 @@ def source_inventory() -> list[dict]:
             number = item.get("number")
             source_id = str(item.get("source_id") or f"source-{number if number is not None else canonical}")
             audit = audit_by_id.get(source_id) or audit_by_number.get(number) or {}
+            evidence_urls = item.get("evidence_urls") or []
+            evidence = item.get("audit_evidence") or []
+            evidence_url = (
+                item.get("evidence_url")
+                or (evidence_urls[0] if evidence_urls else None)
+                or (evidence[0].get("url") if evidence and isinstance(evidence[0], dict) else None)
+                or audit.get("evidence_url")
+            )
+            confidence = item.get("confidence")
+            if not confidence:
+                confidence = "low" if item.get("audit_method") == "heuristic" else audit.get("confidence", "none")
             inventory.append({
                 "source_id": source_id,
                 "name": item.get("source") or item.get("name") or source_id,
                 "url": url,
                 "kind": "registered",
-                "review_status": audit.get("auto_review_status") or item.get("review_status") or "classification_missing",
-                "publisher_status": audit.get("publisher_status") or item.get("publisher_status") or "unverified",
-                "relevance_status": audit.get("relevance_status", "unknown"),
-                "audit_confidence": audit.get("confidence", "none"),
-                "audit_evidence_url": audit.get("evidence_url"),
-                "audit_date": audit.get("audit_date"),
+                # Current source-level audit metadata must override the original baseline.
+                "review_status": item.get("auto_review_status") or audit.get("auto_review_status") or item.get("review_status") or "classification_missing",
+                "publisher_status": item.get("publisher_status") or audit.get("publisher_status") or "unverified",
+                "relevance_status": item.get("relevance_status") or audit.get("relevance_status") or "unknown",
+                "audit_confidence": confidence,
+                "audit_evidence_url": evidence_url,
+                "audit_date": item.get("audit_date") or item.get("auto_review_checked_at") or audit.get("audit_date"),
             })
 
     candidates_payload = read_json(DATA / "source_candidates.json", {})
@@ -225,6 +237,7 @@ def render_report(state: dict) -> str:
         f"- Official + relevant: {sum(item.get('review_status') == 'auto_approved_official' and item.get('relevance_status') == 'relevant' for item in registered)}",
         f"- Third-party + relevant: {sum(item.get('review_status') == 'auto_approved_third_party' and item.get('relevance_status') == 'relevant' for item in registered)}",
         f"- Needs review / irrelevant / unclassified: {sum(item.get('review_status') in ('needs_review', 'irrelevant_candidate', 'classification_missing') for item in registered)}",
+        f"- Duplicate candidates (registered): {sum(item.get('review_status') == 'duplicate_candidate' for item in registered)}",
         f"- Inventory SHA-256: {state.get('inventory_sha256')} (inventory identity only)",
         "",
         "This scan checks page access and normalized text changes. A successful HTTP response is not proof of official identity, opportunity validity, or complete announcement capture. Text hashes are not publisher signatures.",

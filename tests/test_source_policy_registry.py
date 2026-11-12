@@ -62,9 +62,28 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
         self.assertEqual(len(inventory), 44)
         self.assertEqual(counts.get("auto_approved_official"), 26)
         self.assertEqual(counts.get("auto_approved_third_party"), 4)
-        self.assertEqual(counts.get("needs_review"), 1)
-        self.assertEqual(counts.get("irrelevant_candidate"), 13)
+        self.assertEqual(counts.get("needs_review"), 10)
+        self.assertEqual(counts.get("irrelevant_candidate"), 3)
+        self.assertEqual(counts.get("duplicate_candidate"), 1)
+        self.assertEqual(sum(counts.values()), 44)
         self.assertNotIn("legacy_unreviewed", counts)
+        self.assertNotIn("classification_missing", counts)
+
+    def test_current_source_audit_overrides_baseline_classification(self):
+        from audit_source_coverage import source_inventory
+        registered = {
+            item["source_id"]: item
+            for item in source_inventory()
+            if item["kind"] == "registered"
+        }
+        self.assertEqual(registered["source-97"]["review_status"], "needs_review")
+        self.assertEqual(registered["source-98"]["review_status"], "needs_review")
+        self.assertEqual(registered["source-100"]["review_status"], "needs_review")
+        self.assertEqual(registered["source-101"]["review_status"], "auto_approved_third_party")
+        self.assertEqual(registered["source-102"]["review_status"], "duplicate_candidate")
+        self.assertEqual(registered["source-100"]["audit_confidence"], "low")
+        self.assertEqual(registered["source-97"]["audit_date"], "2026-11-12")
+        self.assertTrue(registered["source-97"]["audit_evidence_url"])
 
     def test_source_audit_summary_matches_item_classifications(self):
         audit = json.loads((ROOT / "reports" / "source-audit-baseline-2026-11-10.json").read_text(encoding="utf-8"))
