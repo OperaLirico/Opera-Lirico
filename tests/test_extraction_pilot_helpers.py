@@ -8,10 +8,10 @@ from audit_extraction_pilot import (
 
 
 class ExtractionPilotHelperTests(unittest.TestCase):
-    def test_pilot_scope_is_second_five_source_batch(self):
-        self.assertEqual(pilot.PILOT_BATCH, "batch-3-2026-11-10")
+    def test_pilot_scope_is_fourth_five_source_batch(self):
+        self.assertEqual(pilot.PILOT_BATCH, "batch-4-2026-11-12")
         self.assertEqual(pilot.PILOT_IDS, {
-            "source-7", "source-8", "source-10", "source-18", "source-20"
+            "source-12", "source-13", "source-14", "source-21", "source-22"
         })
 
     def test_robots_wildcards_and_specific_allow_precedence(self):
