@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-10",
+  "generated_at": "2026-11-12",
   "description": "Inventory of the current production fetch path. Entries marked baseline_only have not undergone source-specific benchmarking; assessed entries record evidence and keep production changes separate from evaluation.",
   "defaults": {
     "current_fetch_method": "scrapling",
@@ -316,8 +316,8 @@
       "source_name": "Ente Lirico Italiano - Premio E.L.I.",
       "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_with_sitemap_discovery",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -328,16 +328,25 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-12T12:50:03+01:00",
+      "assessment_note": "2026-11-12 batch 4: official page HTTP 200; robots.txt returned 200; the WordPress sitemap index and its child map yielded 14 pages, including 7 vocal/audition URL matches. Advertised RSS feeds were empty. The explicitly advertised WP REST API root returned HTTP 403; no retry or bypass was attempted. Scrapling retained 18/18 relevant DOM link labels; Trafilatura plain retained 4/18 and Markdown retained 0/11 exact relevant hrefs. Keep Scrapling with sitemap as secondary discovery; every discovered URL still requires notice-level verification.",
+      "discovery_methods": [
+        "html",
+        "sitemap",
+        "rss_atom_checked",
+        "public_api_root_restricted_403"
+      ],
+      "parser_decision": "keep_scrapling; use the permitted sitemap as secondary URL discovery; do not use the restricted WP API root or promote Trafilatura",
+      "evidence_report": "reports/p2/source-strategy-batch-4-2026-11-12.md",
+      "assessment_batch": "batch-4-2026-11-12"
     },
     {
       "source_id": "source-13",
       "source_name": "Tommaso Traetta Opera Festival",
       "url": "https://www.traettafestival.it/sito/tof/concorsi/concorso-internazionale-di-canto-lirico-tommaso-traetta/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_with_feed_discovery",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -348,16 +357,25 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-12T12:50:03+01:00",
+      "assessment_note": "2026-11-12 batch 4: official page HTTP 200 and robots.txt HTTP 200. The common sitemap paths returned 404 or a redirect loop, while the advertised RSS feed contained 10 entries, all matching the broad audition/competition discovery signals. The explicitly advertised WP REST API root returned valid JSON with 11 namespaces and 153 routes, but no vocal routes were identified by the current keyword filter; no route endpoint was queried. Scrapling retained 18/18 relevant DOM labels; Trafilatura plain retained 2/18 and lost the vocal-role signal. Keep Scrapling and use the advertised RSS feed only as an auxiliary discovery channel; verify each item against its official notice.",
+      "discovery_methods": [
+        "html",
+        "sitemap_checked_404",
+        "rss_atom",
+        "public_api_root_inspected"
+      ],
+      "parser_decision": "keep_scrapling; use the advertised RSS feed for secondary discovery; do not query guessed API routes or replace structured links with Trafilatura",
+      "evidence_report": "reports/p2/source-strategy-batch-4-2026-11-12.md",
+      "assessment_batch": "batch-4-2026-11-12"
     },
     {
       "source_id": "source-14",
       "source_name": "CLIP Portofino",
       "url": "https://www.portofinoclip.it/clip-2026/",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_html_only",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -368,8 +386,17 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-12T12:50:03+01:00",
+      "assessment_note": "2026-11-12 batch 4: official page and robots.txt returned HTTP 200. The sitemap index lists 11 child maps; the pilot checked the first five (722 page URLs) and found three vocal-keyword matches, all media/award-image URLs rather than announcement pages. Advertised feeds were empty. The explicitly advertised API root returned valid JSON with 16 namespaces and 276 routes, but no vocal route was identified; no route endpoint was queried. Scrapling retained 6/6 relevant DOM labels; Trafilatura retained 0/6. Keep Scrapling with direct HTML links; sitemap/API discovery did not demonstrate a useful announcement feed, and sitemap coverage remains partial (5/11 child maps).",
+      "discovery_methods": [
+        "html",
+        "sitemap_partial",
+        "rss_atom_checked",
+        "public_api_root_inspected"
+      ],
+      "parser_decision": "keep_scrapling and direct HTML href capture; do not treat image URLs or a partial sitemap keyword count as opportunity discovery",
+      "evidence_report": "reports/p2/source-strategy-batch-4-2026-11-12.md",
+      "assessment_batch": "batch-4-2026-11-12"
     },
     {
       "source_id": "source-15",
@@ -535,8 +562,8 @@
       "source_name": "Premio Fausto Ricci - 国际声乐比赛",
       "url": "https://www.xxisecolo.org/faustoricci/opera.html",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_html_only",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -547,16 +574,24 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-12T12:50:03+01:00",
+      "assessment_note": "2026-11-12 batch 4: official page returned HTTP 200. robots.txt and common sitemap endpoints returned 404; this means no robots file/sitemap was found, not that access was restricted. No feed or advertised API was present. The page contains two tables and four relevant links, including a Google application form and official Italian/English regulation PDFs. Scrapling retained 4/4 relevant DOM labels; Trafilatura retained 1/4. Keep Scrapling HTML-only and preserve the form/PDF hrefs separately.",
+      "discovery_methods": [
+        "html",
+        "robots_404",
+        "sitemap_checked_404"
+      ],
+      "parser_decision": "keep_scrapling HTML and structured href capture; no alternative discovery endpoint was demonstrated",
+      "evidence_report": "reports/p2/source-strategy-batch-4-2026-11-12.md",
+      "assessment_batch": "batch-4-2026-11-12"
     },
     {
       "source_id": "source-22",
       "source_name": "Concorso Maria Malibran - 国际声乐比赛",
       "url": "https://www.mariamalibran.it/xi-edizione-2026.html",
       "current_fetch_method": "scrapling",
-      "strategy_status": "baseline_only",
-      "alternatives_assessed": false,
+      "strategy_status": "assessed_keep_scrapling_html_only",
+      "alternatives_assessed": true,
       "alternative_candidates": [
         "official_api",
         "rss_atom",
@@ -567,8 +602,15 @@
       "fallback_method": "stop_and_review",
       "timeout_seconds": 30,
       "minimum_delay_seconds": 1.2,
-      "last_assessed_at": null,
-      "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet."
+      "last_assessed_at": "2026-11-12T12:50:03+01:00",
+      "assessment_note": "2026-11-12 batch 4: official page and robots.txt returned HTTP 200. The sitemap contained 20 page URLs but no vocal-keyword URL matches; the inspected competition page itself exposes the official 2026 Italian and English regulations PDFs. Scrapling retained 2/2 relevant DOM labels; Trafilatura retained 1/2 and its Markdown output retained no exact relevant href target. Keep Scrapling HTML-only; direct structured link capture is more useful than the sitemap for this source.",
+      "discovery_methods": [
+        "html",
+        "sitemap_checked_no_vocal_url_hits"
+      ],
+      "parser_decision": "keep_scrapling and direct structured link capture; sitemap adds no demonstrated vocal-announcement coverage",
+      "evidence_report": "reports/p2/source-strategy-batch-4-2026-11-12.md",
+      "assessment_batch": "batch-4-2026-11-12"
     },
     {
       "source_id": "source-23",
