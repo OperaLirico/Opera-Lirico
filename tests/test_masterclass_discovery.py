@@ -3,7 +3,7 @@ import unittest
 from datetime import datetime
 from pathlib import Path
 
-from discover_masterclasses import canonical_url, has_future_date, make_candidate, preserve_review_state, slug
+from discover_masterclasses import canonical_url, has_future_date, is_already_published, make_candidate, preserve_review_state, slug
 
 
 class MasterclassDiscoveryTests(unittest.TestCase):
@@ -15,6 +15,30 @@ class MasterclassDiscoveryTests(unittest.TestCase):
             "publisher_status": "official",
             "source_type": "organizer",
         }
+
+    def test_published_event_is_matched_against_candidate_evidence_not_only_title(self):
+        candidate = {
+            "source_url": "https://www.veniceoperaarts.com/index.php/masterclass",
+            "title_hint": "Masterclass Canto Lirico Padova 2-5 Dicembre 2026",
+            "evidence_excerpt": "02-05 December 2026 Padova. M° Simone Piazzola (baritone) and M° Alberto Bellio (pianist).",
+            "date_context": ["Padova, 02-05 December 2026"],
+        }
+        published = {
+            "source_url": "https://www.veniceoperaarts.com/index.php/masterclass",
+            "title": "Masterclass internazionale di canto lirico — Simone Piazzola & Alberto Bellio",
+            "teacher": "M° Simone Piazzola (baritone); M° Alberto Bellio (pianist)",
+            "publisher_status": "official",
+            "review_status": "verified",
+            "publication_status": "published",
+        }
+        self.assertTrue(is_already_published(candidate, [published]))
+
+        unrelated = {
+            **candidate,
+            "evidence_excerpt": "Masterclass with Elena Rossi, 12 January 2027.",
+            "date_context": ["Elena Rossi, 12 January 2027"],
+        }
+        self.assertFalse(is_already_published(unrelated, [published]))
 
     def test_detects_vocal_masterclass(self):
         candidate = make_candidate(
