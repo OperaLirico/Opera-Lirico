@@ -43,6 +43,7 @@ GENERIC_NAV_RE = re.compile(r"^(?:skip to (?:main )?content|salta al contenuto|v
 GENERIC_LISTING_RE = re.compile(r"^(?:master.?class(?:es)?(?:\s*[-|–:]\s*.+)?|corsi e master.?class(?:es)?\b.*|courses?\s*[|–-]\s*voice)$", re.I)
 NUMERIC_DATE_RE = re.compile(r"\b(\d{1,2})[./-](\d{1,2})[./-](20\d{2})\b")
 WORD_DATE_RE = re.compile(r"\b(\d{1,2})\s+([a-zà-ÿ]+)\s+(20\d{2})\b", re.I)
+MONTH_FIRST_DATE_RE = re.compile(r"\b([a-zà-ÿ]+)\s+(\d{1,2}),?\s+(20\d{2})\b", re.I)
 MONTHS = {
     "jan": 1, "january": 1, "gennaio": 1,
     "feb": 2, "february": 2, "febbraio": 2,
@@ -59,7 +60,8 @@ MONTHS = {
 }
 DATE_RE = re.compile(
     r"\b(?:\d{1,2}[./-]\d{1,2}[./-]20\d{2}|"
-    r"\d{1,2}\s+[a-zà-ÿ]+\s+20\d{2}|20(?:26|27|28))\b",
+    r"\d{1,2}\s+[a-zà-ÿ]+\s+20\d{2}|"
+    r"[a-zà-ÿ]+\s+\d{1,2},?\s+20\d{2}|20(?:26|27|28))\b",
     re.I,
 )
 MAX_TEXT = 30000
@@ -83,6 +85,14 @@ def has_future_date(value: str) -> bool:
         except ValueError:
             continue
     for day, month_name, year in WORD_DATE_RE.findall(value):
+        month = MONTHS.get(month_name.lower().rstrip("."))
+        if month:
+            try:
+                if date(int(year), month, int(day)) >= today:
+                    return True
+            except ValueError:
+                continue
+    for month_name, day, year in MONTH_FIRST_DATE_RE.findall(value):
         month = MONTHS.get(month_name.lower().rstrip("."))
         if month:
             try:
@@ -151,13 +161,13 @@ def extract_page(response, url: str) -> tuple[str, str, list[tuple[str, str]]]:
 
 def make_candidate(source: dict, url: str, title: str, text: str, checked_at: str,
                    discovery_label: str = "") -> dict | None:
-    blob = " ".join((title, discovery_label, text))
-    if is_generic_candidate_title(title, source.get("name", "")) and not discovery_label:
+    configured_title = clean(source.get("title_hint", ""))
+    blob = " ".join((title, discovery_label, configured_title, text))
+    if is_generic_candidate_title(title, source.get("name", "")) and not discovery_label and not configured_title:
         return None
-    # Require an event-level title/link label, vocal relevance in the page body,
-    # and an explicit date signal. This avoids turning generic navigation pages
-    # or evergreen academy descriptions into false opportunity records.
-    if not MASTERCLASS_RE.search(" ".join((title, discovery_label))):
+    # A curated source may provide an editorial title for an official programme
+    # page whose browser title is generic (for example, "Master Class").
+    if not MASTERCLASS_RE.search(" ".join((title, discovery_label, configured_title))):
         return None
     if not VOICE_RE.search(text):
         return None
@@ -168,7 +178,7 @@ def make_candidate(source: dict, url: str, title: str, text: str, checked_at: st
     match = MASTERCLASS_RE.search(text)
     start = max(0, match.start() - 180) if match else 0
     excerpt = text[start:start + 700].strip()
-    label = discovery_label or title or source["name"]
+    label = discovery_label or configured_title or title or source["name"]
     if is_generic_candidate_title(label, source.get("name", "")):
         label = title or source["name"]
     if is_generic_candidate_title(label, source.get("name", "")):
@@ -189,6 +199,10 @@ def make_candidate(source: dict, url: str, title: str, text: str, checked_at: st
         "review_status": "pending_manual_review",
         "publication_status": "not_published",
         "date_signals": date_signals[:12],
+        "date_context": [
+            clean(blob[max(0, match.start() - 100):match.end() + 100])
+            for match in list(DATE_RE.finditer(blob))[:8]
+        ],
         "evidence_excerpt": excerpt,
         "verification_note": (
             "Discovery signal only. Confirm the organizer, edition, dates, deadline, "
