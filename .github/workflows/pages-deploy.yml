@@ -29,6 +29,9 @@ permissions:
   contents: read
   pages: write
   id-token: write
+# Do not rerun a failed job after the Pages artifact upload: each retry adds
+# another github-pages artifact to the same workflow run. deploy-pages requires
+# exactly one artifact; if deployment fails, start a fresh workflow run instead.
 concurrency:
   group: github-pages-deploy
   cancel-in-progress: false
