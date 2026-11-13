@@ -454,7 +454,8 @@ function consLine(c){
 function consCard(c){
   const zh=c.zh||{};
   const state=zh.state||(c.manual_status==='open'?'报名中':c.manual_status==='closed'?'已截止':c.status==='ok'?'可读':'读不到');
-  const rawLines=[...(c.deadline_lines||[]),...(c.exam_dates||[]),...(c.requirements||[]),...(c.fallback_lines||[]),...(zh.d||[]),...(zh.x||[]),...(zh.r||[]),...(zh.notes||[])];
+  const zhNoteLines=Array.isArray(zh.notes)?zh.notes:(zh.notes?[zh.notes]:[]);
+  const rawLines=[...(c.deadline_lines||[]),...(c.exam_dates||[]),...(c.requirements||[]),...(c.fallback_lines||[]),...(zh.d||[]),...(zh.x||[]),...(zh.r||[]),...zhNoteLines];
   const hasHiddenHistory=rawLines.some(isExpiredAcademicSnippet);
   const deadlines=visibleCurrentLines(c.deadline_lines).slice(0,2);
   const dates=visibleCurrentLines(c.exam_dates).slice(0,2);
@@ -462,7 +463,7 @@ function consCard(c){
   const zhDeadlines=visibleCurrentLines(zh.d);
   const zhExamDates=visibleCurrentLines(zh.x);
   const zhRequirements=visibleCurrentLines(zh.r);
-  const zhNotes=visibleCurrentLines(zh.notes);
+  const zhNotes=visibleCurrentLines(zhNoteLines);
   const said=[...deadlines,...dates,...reqs].join(' ');
   const soft=visibleCurrentLines(c.fallback_lines).filter(line=>!/[\u3400-\u9fff]/.test(line)&&!said.includes(line.slice(0,40))).slice(0,2);
   const docs=pickDocs(c.documents);
@@ -507,7 +508,7 @@ function filterInstitutionRecords(records,query,dateOnly){
     if(q&&!normalizeSearch(searchable).includes(q))return false;
     if(dateOnly){
       const z=c.zh||{};
-      const hasDate=Boolean(isoFromText((c.deadline_lines||[]).join(' '))||isoFromText((c.exam_dates||[]).join(' '))||zhIsoFromText((z.d||[]).join(' '))||zhIsoFromText((z.x||[]).join(' ')));
+      const hasDate=Boolean(isoFromText(visibleCurrentLines(c.deadline_lines).join(' '))||isoFromText(visibleCurrentLines(c.exam_dates).join(' '))||zhIsoFromText(visibleCurrentLines(z.d).join(' '))||zhIsoFromText(visibleCurrentLines(z.x).join(' ')));
       if(!hasDate)return false;
     }
     return true;
