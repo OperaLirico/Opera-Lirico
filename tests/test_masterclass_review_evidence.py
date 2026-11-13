@@ -20,6 +20,12 @@ class MasterclassReviewEvidenceContractTests(unittest.TestCase):
         self.assertIn('officialEvidenceExcerpt.length < 40', self.worker)
         self.assertIn('official_evidence_excerpt_required', self.worker)
 
+    def test_dashboard_collects_and_submits_official_evidence(self):
+        self.assertIn('官方证据链接', self.worker)
+        self.assertIn('官方证据原文摘录', self.worker)
+        self.assertIn('official_evidence_url:evidenceUrl', self.worker)
+        self.assertIn('official_evidence_excerpt:evidenceExcerpt', self.worker)
+
     def test_review_record_persists_evidence_without_publishing(self):
         self.assertIn('official_evidence_url: officialEvidenceUrl', self.worker)
         self.assertIn('official_evidence_excerpt: officialEvidenceExcerpt.slice(0, 2000)', self.worker)
