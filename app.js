@@ -382,6 +382,27 @@ function staleMark(text){
   if(!years.length)return '';
   return Math.max(...years)<2026?'<span class="cons-stale">往年公告，仅供参考</span>':'';
 }
+function isExpiredAcademicSnippet(text){
+  const value=String(text||'');
+  const years=(value.match(/\b20\d{2}\b/g)||[]).map(Number);
+  if(!years.length)return false;
+  // Keep a current status note that explicitly says no new intake has been found.
+  if(/目前|尚未|未找到|未公布|暂无|没有新一季|新一轮招生信息尚未/i.test(value))return false;
+  const ranges=[...value.matchAll(/\b(20\d{2})\s*[-/–]\s*(?:(20)?(\d{2}))\b/g)];
+  if(ranges.length){
+    // Keep a multi-year programme if its stated range extends into 2027 or later.
+    const hasCurrentOrFutureRange=ranges.some(match=>{
+      const endYear=match[2]?Number(match[2]+match[3]):Number(match[1].slice(0,2)+match[3]);
+      return endYear>=2027;
+    });
+    return !hasCurrentOrFutureRange;
+  }
+  if(years.some(year=>year<2026)&&/ammission|admission|bando|selezione|iscrizion|audizion|报名|截止|试唱|考试|招募/i.test(value))return true;
+  return Math.max(...years)<2026;
+}
+function visibleCurrentLines(lines){
+  return (lines||[]).filter(line=>!isExpiredAcademicSnippet(line));
+}
 function currentDocs(list){
   return (list||[]).filter(url=>{
     const years=(String(url).match(/20\d{2}/g)||[]).map(Number);
@@ -420,32 +441,45 @@ function stateClass(state=''){
 }
 function consLine(c){
   const zh=c.zh||{};
-  const dl=zh.deadline_iso||isoFromText((c.deadline_lines||[]).join(' '))||zhIsoFromText((zh.d||[]).join(' '));
-  const ex=zh.exam_iso||isoFromText((c.exam_dates||[]).join(' '))||zhIsoFromText((zh.x||[]).join(' '));
+  const deadlineLines=visibleCurrentLines(c.deadline_lines);
+  const examDates=visibleCurrentLines(c.exam_dates);
+  const zhDeadlines=visibleCurrentLines(zh.d);
+  const zhExamDates=visibleCurrentLines(zh.x);
+  const zhRequirements=visibleCurrentLines(zh.r);
+  const dl=zh.deadline_iso||isoFromText(deadlineLines.join(' '))||zhIsoFromText(zhDeadlines.join(' '));
+  const ex=zh.exam_iso||isoFromText(examDates.join(' '))||zhIsoFromText(zhExamDates.join(' '));
   const bits=[];
   if(dl)bits.push(`报名截止：${zhDate(dl)}${daysUntil(dl)<0?'（已截止）':countdown(dl).replace(/^ · /,'（') + '）'}`);
   if(ex)bits.push(`考试日期：${zhDate(ex)}`);
   if(bits.length)return bits.join(' · ');
-  if((zh.d||[]).length)return humanText(zh.d[0]).slice(0,60);
-  if((zh.x||[]).length)return humanText(zh.x[0]).slice(0,60);
-  if((zh.r||[]).length)return humanText(zh.r[0]).slice(0,60);
+  if(zhDeadlines.length)return humanText(zhDeadlines[0]).slice(0,60);
+  if(zhExamDates.length)return humanText(zhExamDates[0]).slice(0,60);
+  if(zhRequirements.length)return humanText(zhRequirements[0]).slice(0,60);
   return c.status==='ok'?'暂未找到本学年的具体日期，请查看院校官网公告。':'本次未能读取官网内容，可前往院校官网查看。';
 }
 function consCard(c){
   const zh=c.zh||{};
   const state=zh.state||(c.manual_status==='open'?'报名中':c.manual_status==='closed'?'已截止':c.status==='ok'?'可读':'读不到');
-  const deadlines=(c.deadline_lines||[]).slice(0,2);
-  const dates=(c.exam_dates||[]).slice(0,2);
-  const reqs=(c.requirements||[]).slice(0,2);
+  const zhNoteLines=Array.isArray(zh.notes)?zh.notes:(zh.notes?[zh.notes]:[]);
+  const rawLines=[...(c.deadline_lines||[]),...(c.exam_dates||[]),...(c.requirements||[]),...(c.fallback_lines||[]),...(zh.d||[]),...(zh.x||[]),...(zh.r||[]),...zhNoteLines];
+  const hasHiddenHistory=rawLines.some(isExpiredAcademicSnippet);
+  const deadlines=visibleCurrentLines(c.deadline_lines).slice(0,2);
+  const dates=visibleCurrentLines(c.exam_dates).slice(0,2);
+  const reqs=visibleCurrentLines(c.requirements).slice(0,2);
+  const zhDeadlines=visibleCurrentLines(zh.d);
+  const zhExamDates=visibleCurrentLines(zh.x);
+  const zhRequirements=visibleCurrentLines(zh.r);
+  const zhNotes=visibleCurrentLines(zhNoteLines);
   const said=[...deadlines,...dates,...reqs].join(' ');
-  const soft=(c.fallback_lines||[]).filter(line=>!/[\u3400-\u9fff]/.test(line)&&!said.includes(line.slice(0,40))).slice(0,2);
+  const soft=visibleCurrentLines(c.fallback_lines).filter(line=>!/[\u3400-\u9fff]/.test(line)&&!said.includes(line.slice(0,40))).slice(0,2);
   const docs=pickDocs(c.documents);
   const locals=localPdfs(c);
   const zhBlocks=[
-    (zh.d||[]).length?`<p><span class="zh-key">报名安排</span>${zh.d.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
-    (zh.x||[]).length?`<p><span class="zh-key">考试安排</span>${zh.x.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
-    (zh.r||[]).length?`<p><span class="zh-key">申请条件</span>${zh.r.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
-    (zh.notes||[]).length?`<p><span class="zh-key">补充说明</span>${zh.notes.map(v=>esc(humanText(v))).join('<br>')}</p>`:''
+    zhDeadlines.length?`<p><span class="zh-key">报名安排</span>${zhDeadlines.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
+    zhExamDates.length?`<p><span class="zh-key">考试安排</span>${zhExamDates.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
+    zhRequirements.length?`<p><span class="zh-key">申请条件</span>${zhRequirements.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
+    zhNotes.length?`<p><span class="zh-key">补充说明</span>${zhNotes.map(v=>esc(humanText(v))).join('<br>')}</p>`:'',
+    hasHiddenHistory?`<p><span class="zh-key">历史信息</span>检测到往年招生摘录，已从当前信息区隐藏；请以院校官网最新公告为准。</p>`:''
   ].filter(Boolean).join('');
   const origBlocks=[
     deadlines.length?`<span class="orig-key">官方页面摘录 · 报名期限</span>${deadlines.map(esc).join('<br>')}`:'',
@@ -476,11 +510,11 @@ function filterInstitutionRecords(records,query,dateOnly){
   const q=normalizeSearch(query);
   return records.filter(c=>{
     const zh=c.zh||{};
-    const searchable=[c.city,c.school,c.status,zh.state,...(c.deadline_lines||[]),...(c.exam_dates||[]),...(c.requirements||[]),...(c.fallback_lines||[]),...(zh.d||[]),...(zh.x||[]),...(zh.r||[]),...(Array.isArray(zh.notes)?zh.notes:[zh.notes||''])].filter(Boolean).join(' ');
+    const searchable=[c.city,c.school,c.status,zh.state,...visibleCurrentLines(c.deadline_lines),...visibleCurrentLines(c.exam_dates),...visibleCurrentLines(c.requirements),...visibleCurrentLines(c.fallback_lines),...visibleCurrentLines(zh.d),...visibleCurrentLines(zh.x),...visibleCurrentLines(zh.r),...visibleCurrentLines(Array.isArray(zh.notes)?zh.notes:[zh.notes||''])].filter(Boolean).join(' ');
     if(q&&!normalizeSearch(searchable).includes(q))return false;
     if(dateOnly){
       const z=c.zh||{};
-      const hasDate=Boolean(isoFromText((c.deadline_lines||[]).join(' '))||isoFromText((c.exam_dates||[]).join(' '))||zhIsoFromText((z.d||[]).join(' '))||zhIsoFromText((z.x||[]).join(' ')));
+      const hasDate=Boolean(isoFromText(visibleCurrentLines(c.deadline_lines).join(' '))||isoFromText(visibleCurrentLines(c.exam_dates).join(' '))||zhIsoFromText(visibleCurrentLines(z.d).join(' '))||zhIsoFromText(visibleCurrentLines(z.x).join(' ')));
       if(!hasDate)return false;
     }
     return true;
