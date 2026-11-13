@@ -13803,32 +13803,43 @@
     "last_attempt_error": null,
     "consecutive_failures": 0,
     "stale": false,
-    "publisher_status": "unverified",
-    "auto_review_status": "needs_review",
-    "auto_review_reason": "official_identity_not_independently_corroborated",
+    "publisher_status": "official",
+    "auto_review_status": "auto_approved_official",
+    "auto_review_reason": "official_main_site_navigation_organization_profile_and_legal_contact_evidence",
     "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
     "audit_method": "evidence_based",
     "audit_date": "2026-11-13",
     "relevance_status": "relevant",
-    "confidence": "medium",
-    "evidence_url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+    "confidence": "high",
+    "evidence_url": "https://www.enteliricoitaliano.it/",
     "evidence_urls": [
-      "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+      "https://www.enteliricoitaliano.it/",
+      "https://www.enteliricoitaliano.it/premioeli/",
+      "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+      "https://www.enteliricoitaliano.it/newsletter/"
     ],
     "audit_evidence": [
       {
-        "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
-        "quote": "Ente per la Tutela del Patrimonio Lirico Nazionale"
+        "url": "https://www.enteliricoitaliano.it/",
+        "quote": "Ente per la promozione e la tutela della tecnica belcantista italiana e dell'opera lirica italiana nei teatri di provincia"
       },
       {
-        "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+        "url": "https://www.enteliricoitaliano.it/",
+        "quote": "E.L.I. - Ente Lirico Italiano è il punto di riferimento per cantanti che vogliano debuttare in teatro o apprendere e perfezionare la tecnica belcantista italiana"
+      },
+      {
+        "url": "https://www.enteliricoitaliano.it/premioeli/",
+        "quote": "Premio E.L.I. Concorso — Concorso Lirico Internazionale"
+      },
+      {
+        "url": "https://www.enteliricoitaliano.it/newsletter/",
         "quote": "E.L.I. - Ente Lirico Italiano ETS - Via Goffredo Mameli, 63 - 15033 Casale Monferrato - Tel: +390142691781 - C.F. 91037820064"
       }
     ],
-    "audit_page_title": "Bando 2026 - Premio E.L.I. Concorso Lirico Internazionale",
+    "audit_page_title": "Ente nazionale per la tutela del patrimonio lirico belcantista",
     "audit_access_status": "accessible",
     "audit_http_status": 200,
-    "review_notes": "比赛页面确实包含歌剧歌手竞赛、声部、报名规则和官方联系方式；但目前身份依据主要来自同一站点的自述、导航和页脚联系方式，尚无独立机构目录或外部官方背书形成交叉证明。按规则将官方身份置信度保持 medium，并降为 needs_review；不得自动标记官方可信。",
+    "review_notes": "复核后发现同域官方主站直接介绍 E.L.I. 的机构使命与声乐活动，导航列出 Premio E.L.I.，并在官方联系/Newsletter 页面公开 ETS 法律名称、地址、电话和税号。该主站与具体比赛公告形成直接站内关联，满足官方身份直接证据要求；因此从 needs_review 恢复为 high-confidence auto_approved_official。",
     "production_activation": false
   },
   {
