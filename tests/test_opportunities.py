@@ -109,8 +109,8 @@ class OpportunityDataTests(unittest.TestCase):
         self.assertIn("record.title_zh||record.title", APP)
         self.assertIn("o.originalTitle", APP)
         self.assertIn("c.requirements||[]", APP)
-        self.assertIn("pdfSearchInput", APP)
-        self.assertIn("filteredRows", APP)
+        self.assertIn("function currentDocs(list)", APP)
+        self.assertIn("Math.max(...years)>=2026", APP)
 
     def test_opportunity_cards_show_notes_and_official_pdf_links(self):
         self.assertIn("record.notes", APP)

@@ -86,18 +86,18 @@ jobs:
           html = Path("index.html").read_text(encoding="utf-8")
           app = Path("app.js").read_text(encoding="utf-8")
 
-          # The homepage keeps five interactive panels plus a standalone masterclass link.
+          # The homepage keeps four interactive panels; official documents live inside institution cards.
           # Wording may change; the structure and the wiring must not.
-          panels = ["open-calls", "conservatori", "opera-academies", "music-library", "pdfs"]
+          panels = ["open-calls", "conservatori", "opera-academies", "music-library"]
           missing = [p for p in panels if f'id="{p}"' not in html]
           if missing:
               raise SystemExit(f"Missing panel sections: {missing}")
 
-          if len(re.findall(r'<button class="tile"', html)) != 5:
+          if len(re.findall(r'<button class="tile"', html)) != 4:
               raise SystemExit("Expected exactly five entry tiles on the homepage")
 
           tile_titles = re.findall(r'<span class="tile-title">([^<]+)</span>', html)
-          if len(tile_titles) != 6:
+          if len(tile_titles) != 5:
               raise SystemExit(f"Expected six homepage tile titles including masterclasses, found {len(tile_titles)}")
           if 'href="masterclasses.html"' not in html:
               raise SystemExit("Masterclasses entry link is missing")

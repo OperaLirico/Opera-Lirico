@@ -382,8 +382,14 @@ function staleMark(text){
   if(!years.length)return '';
   return Math.max(...years)<2026?'<span class="cons-stale">往年公告，仅供参考</span>':'';
 }
+function currentDocs(list){
+  return (list||[]).filter(url=>{
+    const years=(String(url).match(/20\d{2}/g)||[]).map(Number);
+    return !years.length || Math.max(...years)>=2026;
+  });
+}
 function pickDocs(list){
-  const items=(list||[]).filter(url=>!/guida-dsa|dsa|accessibilit|english|inglese/i.test(url))
+  const items=currentDocs(list).filter(url=>!/guida-dsa|dsa|accessibilit|english|inglese/i.test(url))
     .map(url=>({url,rank:/bando|ammission|iscrizion/i.test(url)?2:(/calendario|programma|prova|gradando|graduatori/i.test(url)?1:0)}))
     .sort((a,b)=>b.rank-a.rank||a.url.length-b.url.length);
   const top=items.filter(x=>x.rank===2);
@@ -393,7 +399,7 @@ function localPdfs(c){
   const list=[];
   if(c.pdf_local)list.push(c.pdf_local);
   for(const extra of c.pdf_locals||[])if(!list.includes(extra))list.push(extra);
-  return list.filter(Boolean);
+  return currentDocs(list);
 }
 function stateLabel(state){
   const map={
@@ -458,7 +464,7 @@ function consCard(c){
    <div class="cons-body">
      ${zhBlocks?`<div class="cons-zh">${zhBlocks}</div>`:''}
      ${origBlocks?`<details class="cons-orig-wrap"><summary>查看官方原文与页面摘录</summary><div class="cons-orig">${origBlocks}${staleMark(said)}</div></details>`:''}
-     <p class="cons-docs"><span class="docs-key">官方文件</span>
+     <p class="cons-docs"><span class="docs-key">对应官方文件</span>
        ${locals.map((u,i)=>`<a class="doc-link doc-link--local" href="${esc(u)}" target="_blank" rel="noopener">站内文件 ${locals.length>1?i+1:''} ↓</a>`).join('')}
        ${docs.map(d=>`<a class="doc-link" href="${esc(d)}" target="_blank" rel="noopener">${esc(fileLabel(d))} ↗</a>`).join('')}
        <a class="doc-link" href="${esc(c.url)}" target="_blank" rel="noopener">院校官网 ↗</a>
@@ -499,7 +505,6 @@ function renderConservatori(){
   const emptyBox=$('#conservatoriEmpty');
   if(emptyBox)emptyBox.innerHTML=filtered.length?'':'<div class="empty">没有找到符合条件的公立音乐学院。请更换城市或调整筛选条件。</div>';
   renderTiles();
-  renderPdfList();
 }
 function renderAcademies(){
   const wrap=$('#academyGroups');
@@ -516,36 +521,6 @@ function renderAcademies(){
   const emptyBox=$('#academyEmpty');
   if(emptyBox)emptyBox.innerHTML=filtered.length?'':'<div class="empty">没有找到匹配的剧院学院或专业培养项目。</div>';
   renderTiles();
-}
-
-/* ---------- PDF shelf ---------- */
-function renderPdfList(){
-  const box=$('#pdfList');
-  if(!box)return;
-  const withLocal=conservatoriData.filter(c=>localPdfs(c).length);
-  const academies=conservatoriData.filter(c=>(c.number||0)>=300&&(c.documents||[]).length);
-  const rows=[];
-  for(const c of withLocal){
-    for(const u of localPdfs(c))rows.push({city:c.city,school:c.school,url:u,official:(pickDocs(c.documents)[0]||c.url),local:true,label:fileLabel(u),institutionType:c.institution_type||'conservatorio',zh:(c.zh&&((c.zh.x||[])[0]||(c.zh.d||[])[0]))||''});
-  }
-  for(const c of academies){
-    for(const d of pickDocs(c.documents).slice(0,1)){
-      if(withLocal.some(x=>localPdfs(x).includes(d)))continue;
-      rows.push({city:c.city,school:c.school,url:d,official:c.url,local:false,label:fileLabel(d),institutionType:c.institution_type||'opera_academy',zh:(c.zh&&((c.zh.x||[])[0]||(c.zh.d||[])[0]))||''});
-    }
-  }
-  const count=rows.filter(r=>r.local).length;
-  const query=normalizeSearch($('#pdfSearchInput')?.value||'');
-  const filteredRows=rows.filter(r=>!query||normalizeSearch([r.city,r.school,r.label,r.zh].join(' ')).includes(query));
-  $('#pdfCount').textContent=rows.length?String(rows.length):'—';
-  $('#pdfCountPill').textContent=`显示 ${filteredRows.length}/${rows.length} 份 · 站内 ${count}`;
-  box.innerHTML=filteredRows.length?filteredRows.map(r=>`<article class="pdf-card">
-    <div class="pdf-top"><span class="pdf-city">${esc(r.city)} · ${r.institutionType==='opera_academy'?'剧院 Accademia':r.institutionType==='choral_school'?'剧院合唱学校':'公立音乐学院'}</span><span class="pdf-kind ${r.local?'pdf-kind--local':''}">${r.local?'已在站内':'在官网'}</span></div>
-    <h3>${esc(r.school)}</h3>
-    ${r.zh?`<p class="pdf-note">${esc(humanText(r.zh))}</p>`:''}
-    <p class="pdf-file">${esc(r.label)}</p>
-    <div class="pdf-actions"><a class="doc-link ${r.local?'doc-link--local':''}" href="${esc(r.url)}" target="_blank" rel="noopener">${r.local?'打开站内文件 ↓':'查看官网文件 ↗'}</a><a class="doc-link" href="${esc(r.official)}" target="_blank" rel="noopener">官网页面 ↗</a></div>
-  </article>`).join(''):(rows.length?'<div class="empty">没有找到匹配的文件，请换一个城市、院校或文件关键词。</div>':'<div class="empty">还没抓到简章。学院那栏里有官网链接，可以直接跳过去核对。</div>');
 }
 
 function renderTiles(){
@@ -638,8 +613,6 @@ if(academyExpand)academyExpand.addEventListener('click',()=>{
   academyExpand.textContent=on?'收起全部项目':'展开全部项目';
   $('#academyGroups .cons-card').forEach(card=>{card.open=on;});
 });
-const pdfSearch=$('#pdfSearchInput');
-if(pdfSearch)pdfSearch.addEventListener('input',renderPdfList);
 const consToggle=$('#consDateOnly');
 if(consToggle)consToggle.addEventListener('click',()=>{consDateOnly=!consDateOnly;consToggle.setAttribute('aria-pressed',String(consDateOnly));renderConservatori();});
 const expandAll=$('#consExpandAll');
