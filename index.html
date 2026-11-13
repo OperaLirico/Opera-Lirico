@@ -52,6 +52,7 @@
       <nav class="nav" aria-label="板块导航">
         <a href="#open-calls" data-open="open-calls">歌剧院招募与比赛</a>
         <a href="#conservatori" data-open="conservatori">音乐学院招生</a>
+        <a href="#opera-academies" data-open="opera-academies">剧院 Accademia</a>
         <a href="masterclasses.html">大师班</a>
         <a href="#music-library" data-open="music-library">咏叹调与艺术歌曲</a>
         <a href="#pdfs" data-open="pdfs">官方招生文件</a>
@@ -80,22 +81,28 @@
       <button class="tile" type="button" data-open="conservatori">
         <span class="tile-index">02</span>
         <span class="tile-title">音乐学院招生</span>
-        <span class="tile-desc">查看意大利公立音乐学院及歌剧院学院的招生信息、考试日期、声乐曲目要求与官方简章。</span>
+        <span class="tile-desc">专注公立 Conservatorio 的学位课程、入学考试、报名时间与官方招生简章。</span>
         <span class="tile-stat"><b id="statSchools">—</b><span>所院校</span></span>
       </button>
-      <button class="tile" type="button" data-open="music-library">
+      <button class="tile" type="button" data-open="opera-academies">
         <span class="tile-index">03</span>
+        <span class="tile-title">剧院 Accademia</span>
+        <span class="tile-desc">查看歌剧院及专业机构的歌唱家培养项目、专业进修课程、选拔方式与剧院实践机会。</span>
+        <span class="tile-stat"><b id="statAcademies">—</b><span>个专业项目</span></span>
+      </button>
+      <button class="tile" type="button" data-open="music-library">
+        <span class="tile-index">04</span>
         <span class="tile-title">咏叹调与艺术歌曲</span>
         <span class="tile-desc">按作品名、作曲家或歌词搜索。查看作品原文与中文大意，并打开原文朗读。</span>
         <span class="tile-stat"><b id="statSongs">—</b><span>首作品</span></span>
       </button>
       <button class="tile" type="button" data-open="pdfs">
-        <span class="tile-index">04</span>
+        <span class="tile-index">05</span>
         <span class="tile-title">官方招生文件</span>
         <span class="tile-desc">集中查看音乐学院与歌剧院学院发布的招生简章、考试日程及相关文件。</span>
         <span class="tile-stat"><b id="pdfCount">—</b><span>份文件</span></span>
       </button>
-      <a class="tile" href="masterclasses.html"><span class="tile-index">05</span><span class="tile-title">大师班与进修课程</span><span class="tile-desc">查看声乐大师班、歌剧工作坊与专业进修项目。</span><span class="tile-stat"><b>独立分类</b><span>官方信息核验后发布</span></span></a>
+      <a class="tile" href="masterclasses.html"><span class="tile-index">06</span><span class="tile-title">大师班与进修课程</span><span class="tile-desc">查看声乐大师班、歌剧工作坊与专业进修项目。</span><span class="tile-stat"><b>独立分类</b><span>官方信息核验后发布</span></span></a>
     </section>
     <section class="shell section panel" id="open-calls" hidden>
       <button class="panel-back" type="button" data-back="tiles">← 返回首页</button>
@@ -140,7 +147,7 @@
     <section class="shell section panel" id="conservatori" hidden>
       <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
       <div class="section-head">
-        <div><div class="eyebrow">Conservatori · Accademie</div><h2>音乐学院招生信息</h2><p>查看各院校本学年的招生状态、报名时间与考试安排。展开院校卡片，可阅读信息摘要、意大利语原文及官方文件。</p></div>
+        <div><div class="eyebrow">Conservatorio · Admission</div><h2>公立音乐学院入学考试</h2><p>这里仅收录公立音乐学院的学位课程与入学考试。查看本学年的报名状态、考试日期、声乐曲目要求和官方简章；不包含剧院 Accademia 培养项目。</p></div>
         <span id="conservatoriCount" class="count-pill">—</span>
       </div>
       <div class="cons-toolbar">
@@ -150,6 +157,20 @@
       </div>
       <div id="consGroups" class="cons-groups" aria-live="polite"></div>
       <div id="conservatoriEmpty"></div>
+    </section>
+    <section class="shell section panel" id="opera-academies" hidden>
+      <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
+      <div class="section-head">
+        <div><div class="eyebrow">Teatri · Opera Accademie</div><h2>剧院学院与专业培养项目</h2><p>这类项目由歌剧院或专业机构组织，侧重歌唱家培养、剧目实践、导师指导与舞台经验，不等同于公立音乐学院的学位入学考试。每个项目的课程性质、选拔方式和证书效力请以官方公告为准。</p></div>
+        <span id="academyCount" class="count-pill">—</span>
+      </div>
+      <div class="cons-toolbar">
+        <label class="searchbox"><span aria-hidden="true">⌕</span><input id="academySearchInput" type="search" placeholder="搜索城市、剧院或 Accademia 名称" autocomplete="off" aria-label="搜索剧院学院与专业培养项目"></label>
+        <button id="academyDateOnly" class="ghost-toggle" type="button" aria-pressed="false">只显示有明确日期的项目</button>
+        <button id="academyExpandAll" class="ghost-toggle" type="button" aria-pressed="false">展开全部项目</button>
+      </div>
+      <div id="academyGroups" class="cons-groups" aria-live="polite"></div>
+      <div id="academyEmpty"></div>
     </section>
     <section class="shell section panel" id="pdfs" hidden>
       <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
