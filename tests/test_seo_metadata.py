@@ -13,7 +13,7 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertIn('property="og:site_name" content="OperaLab."', HOME)
         self.assertNotIn('Italia Audizioni', HOME)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/"', HOME)
-        self.assertIn('property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"', HOME)
+        self.assertIn('property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.svg"', HOME)
         self.assertIn('name="twitter:card" content="summary_large_image"', HOME)
         self.assertIn('"@type": "WebSite"', HOME)
 
