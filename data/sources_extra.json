@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T08:34:32+01:00",
+  "updated_at": "2026-11-13T11:34:22+01:00",
   "cursor": 7,
   "items": [
     {
@@ -207,11 +207,37 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T06:26:11+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-13T08:33:57+01:00",
-      "audit_method": "heuristic"
+      "publisher_status": "official",
+      "auto_review_status": "irrelevant_candidate",
+      "auto_review_reason": "official_actor_and_staff_roles_only_no_vocal_call",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "irrelevant",
+      "confidence": "high",
+      "evidence_url": "https://www.elfo.org/chi-siamo/lavora-con-noi.htm",
+      "evidence_urls": [
+        "https://www.elfo.org/chi-siamo/lavora-con-noi.htm"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://www.elfo.org/chi-siamo/lavora-con-noi.htm",
+          "quote": "ATTORI — Al momento non sono programmati provini"
+        },
+        {
+          "url": "https://www.elfo.org/chi-siamo/lavora-con-noi.htm",
+          "quote": "MASCHERE — Al momento non ci sono posizioni aperte"
+        },
+        {
+          "url": "https://www.elfo.org/chi-siamo/lavora-con-noi.htm",
+          "quote": "BIGLIETTERIA — Al momento non ci sono posizioni aperte"
+        }
+      ],
+      "audit_page_title": "Lavora con noi - Elfo Puccini",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "官网当前仅列演员（且没有计划中的试镜）、场务/票务岗位；没有歌唱岗位或声乐要求。保留记录，不从生产配置删除。",
+      "production_activation": false
     },
     {
       "number": 101,
@@ -337,11 +363,33 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T08:31:06+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-13T08:33:57+01:00",
-      "audit_method": "heuristic"
+      "publisher_status": "official",
+      "auto_review_status": "irrelevant_candidate",
+      "auto_review_reason": "non_performer_distribution_and_business_development_role",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "irrelevant",
+      "confidence": "high",
+      "evidence_url": "https://www.collettivocinetico.it/energia-cinetica",
+      "evidence_urls": [
+        "https://www.collettivocinetico.it/energia-cinetica"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://www.collettivocinetico.it/energia-cinetica",
+          "quote": "Responsabile della Distribuzione, Co-produzioni & Sviluppo Strategico"
+        },
+        {
+          "url": "https://www.collettivocinetico.it/energia-cinetica",
+          "quote": "Promozione e vendita del repertorio e delle nuove creazioni"
+        }
+      ],
+      "audit_page_title": "CollettivO CineticO | Energia Cinetica",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "官方 open call 招聘的是发行、联合制作与战略发展岗位，属于行政/商务职能，不是歌唱家、声乐学员或舞台演唱岗位。",
+      "production_activation": false
     },
     {
       "number": 115,
@@ -363,11 +411,42 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T08:31:07+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-13T08:33:57+01:00",
-      "audit_method": "heuristic"
+      "publisher_status": "official",
+      "auto_review_status": "irrelevant_candidate",
+      "auto_review_reason": "non_vocal_staff_and_actress_roles_only",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "irrelevant",
+      "confidence": "high",
+      "evidence_url": "https://www.fondazioneaida.it/lavora-con-noi/",
+      "evidence_urls": [
+        "https://www.fondazioneaida.it/lavora-con-noi/",
+        "https://www.fondazioneaida.it/"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://www.fondazioneaida.it/lavora-con-noi/",
+          "quote": "un pensionato per 3 mattine a settimana come factotum"
+        },
+        {
+          "url": "https://www.fondazioneaida.it/lavora-con-noi/",
+          "quote": "Personale tecnico audio-luci"
+        },
+        {
+          "url": "https://www.fondazioneaida.it/lavora-con-noi/",
+          "quote": "Collaboratore/trice — Attività di promozione"
+        },
+        {
+          "url": "https://www.fondazioneaida.it/",
+          "quote": "Cercasi attrice"
+        }
+      ],
+      "audit_page_title": "Lavora con noi - Fondazione Aida",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "官网招聘内容为杂务、音响灯光技术、推广及演员；未出现歌手/声乐岗位。",
+      "production_activation": false
     },
     {
       "number": 117,
@@ -398,11 +477,34 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T08:31:25+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
-      "auto_review_checked_at": "2026-11-13T08:33:57+01:00",
-      "audit_method": "heuristic"
+      "publisher_status": "third_party",
+      "auto_review_status": "irrelevant_candidate",
+      "auto_review_reason": "acting_only_notice_without_vocal_or_singing_roles",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "irrelevant",
+      "confidence": "high",
+      "evidence_url": "https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/",
+      "evidence_urls": [
+        "https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/",
+        "https://www.attoricasting.it/chi-siamo/"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/",
+          "quote": "La ricerca è rivolta ad attori e attrici"
+        },
+        {
+          "url": "https://www.attoricasting.it/chi-siamo/",
+          "quote": "AttoriCasting.it nasce a Roma nel 2012 ed è un sito realizzato da Madcrumbs"
+        }
+      ],
+      "audit_page_title": "Audizioni attori e attrici per la commedia brillante “Napule è”",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "AttoriCasting 自述为第三方 casting magazine；这条具体公告只招演员，要求表演和口音，没有声乐角色。仅排除此公告，不将整个 AttoriCasting 域名判为无价值。",
+      "production_activation": false
     },
     {
       "number": 118,
@@ -424,11 +526,33 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T09:52:17+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
-      "auto_review_checked_at": "2026-11-13T08:33:57+01:00",
-      "audit_method": "heuristic"
+      "publisher_status": "official",
+      "auto_review_status": "irrelevant_candidate",
+      "auto_review_reason": "generic_spontaneous_cv_page_no_specific_singer_or_audition_call",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "irrelevant",
+      "confidence": "high",
+      "evidence_url": "https://teatrofrancoparenti.it/lavora-con-noi/",
+      "evidence_urls": [
+        "https://teatrofrancoparenti.it/lavora-con-noi/"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://teatrofrancoparenti.it/lavora-con-noi/",
+          "quote": "candidatura spontanea"
+        },
+        {
+          "url": "https://teatrofrancoparenti.it/lavora-con-noi/",
+          "quote": "invia CV e breve presentazione"
+        }
+      ],
+      "audit_page_title": "Lavora con noi • Teatro Franco Parenti • Milano",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "官方页面只接受一般性自荐简历，没有具体职位、声乐岗位或歌唱试镜信息。",
+      "production_activation": false
     },
     {
       "number": 120,
@@ -459,11 +583,34 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T09:52:36+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
+      "publisher_status": "official",
       "auto_review_status": "irrelevant_candidate",
-      "auto_review_reason": "non_vocal_role_only",
-      "auto_review_checked_at": "2026-11-13T08:33:57+01:00",
-      "audit_method": "heuristic"
+      "auto_review_reason": "instrumental_oboe_position_only",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "irrelevant",
+      "confidence": "high",
+      "evidence_url": "https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/",
+      "evidence_urls": [
+        "https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/",
+        "https://www.orchestradellatoscana.it/elenco-bandi/"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/",
+          "quote": "Primo Oboe con l’obbligo della fila e del corno inglese"
+        },
+        {
+          "url": "https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/",
+          "quote": "n.1 posto"
+        }
+      ],
+      "audit_page_title": "Concorsi 2026 / Primo Oboe - Orchestra della Toscana",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "官方公告明确为第一双簧管岗位，属于器乐招聘，不涉及歌唱家。",
+      "production_activation": false
     },
     {
       "number": 121,
@@ -494,11 +641,46 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T10:07:41+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
-      "auto_review_checked_at": "2026-11-13T08:33:57+01:00",
-      "audit_method": "heuristic"
+      "publisher_status": "third_party",
+      "auto_review_status": "auto_approved_third_party",
+      "auto_review_reason": "identified_third_party_portal_with_specific_vocal_roles_but_no_primary_producer_confirmation",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "relevant",
+      "confidence": "medium",
+      "evidence_url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
+      "evidence_urls": [
+        "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
+        "https://artisti.provinispettacolo.it/privacy-policy/"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
+          "quote": "Robin di Locksley: tenore medio-alto"
+        },
+        {
+          "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
+          "quote": "Marian: soprano"
+        },
+        {
+          "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
+          "quote": "Little John: basso profondo"
+        },
+        {
+          "url": "https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/",
+          "quote": "Le candidature dovranno essere inviate entro il 16 novembre 2026"
+        },
+        {
+          "url": "https://artisti.provinispettacolo.it/privacy-policy/",
+          "quote": "Questo sito è amministrato da Domenico Pugliese, fondatore del sito web “Provinispettacolo.it” nel 2011"
+        }
+      ],
+      "audit_page_title": "Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacolo teatrale – Piemonte",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "Provinispettacolo 的隐私/条款页明确其运营者及 2011 年创办背景，身份可确认，作为第三方线索保留。该公告列出多个声部角色且申请截止声称为 2026-11-16；但尚无制作方/活动主办方一手公告，不能把这条线索写入公开机会库，需继续找主办方证据。",
+      "production_activation": false
     },
     {
       "number": 123,
@@ -529,11 +711,42 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T10:08:02+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
+      "publisher_status": "official",
       "auto_review_status": "needs_review",
-      "auto_review_reason": "insufficient_vocal_evidence",
-      "auto_review_checked_at": "2026-11-13T08:33:57+01:00",
-      "audit_method": "heuristic"
+      "auto_review_reason": "broad_professional_performing_arts_call_not_voice_specific",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "uncertain",
+      "confidence": "medium",
+      "evidence_url": "https://www.tofringe.it/partecipa/fringe-in-progress-selezione-per-progetti-in-crescita-torino-fringe-festival-2027/",
+      "evidence_urls": [
+        "https://www.tofringe.it/partecipa/fringe-in-progress-selezione-per-progetti-in-crescita-torino-fringe-festival-2027/",
+        "https://www.tofringe.it/partecipa/"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://www.tofringe.it/partecipa/fringe-in-progress-selezione-per-progetti-in-crescita-torino-fringe-festival-2027/",
+          "quote": "Possono partecipare artisti singoli e compagnie residenti in Italia, under 35"
+        },
+        {
+          "url": "https://www.tofringe.it/partecipa/fringe-in-progress-selezione-per-progetti-in-crescita-torino-fringe-festival-2027/",
+          "quote": "con progetti di spettacolo appartenenti a qualsiasi genere delle arti performative"
+        },
+        {
+          "url": "https://www.tofringe.it/partecipa/fringe-in-progress-selezione-per-progetti-in-crescita-torino-fringe-festival-2027/",
+          "quote": "esclusivamente artisti e artiste professionisti e compagnie di professionisti"
+        },
+        {
+          "url": "https://www.tofringe.it/partecipa/",
+          "quote": "Il bando è ora aperto. Scade il 20 novembre 2026"
+        }
+      ],
+      "audit_page_title": "Fringe in Progress 2027 | Un’azione per progetti in crescita – Torino Fringe Festival",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "官方项目面向 under-35 专业个人艺术家/公司，接受任何表演艺术类型，截止 2026-11-20。可能适用于声乐/歌剧项目，但公告没有声乐或歌唱要求；保留观察，不作为个人歌手试唱机会发布。",
+      "production_activation": false
     },
     {
       "number": 124,
@@ -557,11 +770,34 @@
       "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
       "discovered_at": "2026-11-10T10:08:04+01:00",
       "review_status": "legacy_unreviewed",
-      "publisher_status": "unverified",
-      "auto_review_status": "needs_review",
-      "auto_review_reason": "vocal_signal_found_but_publisher_not_verified",
-      "auto_review_checked_at": "2026-11-13T08:33:57+01:00",
-      "audit_method": "heuristic"
+      "publisher_status": "official",
+      "auto_review_status": "irrelevant_candidate",
+      "auto_review_reason": "instrumental_positions_only_no_vocal_roles",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "irrelevant",
+      "confidence": "high",
+      "evidence_url": "https://santacecilia.it/bandi/selezione-per-strumentisti-2027/",
+      "evidence_urls": [
+        "https://santacecilia.it/bandi/selezione-per-strumentisti-2027/",
+        "https://santacecilia.it/bandi/"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://santacecilia.it/bandi/selezione-per-strumentisti-2027/",
+          "quote": "SECONDA ARPA E SEGUENTI"
+        },
+        {
+          "url": "https://santacecilia.it/bandi/",
+          "quote": "SECONDO FLAUTO CON OBBLIGO DEL TERZO E SEGUENTI E DELL’OTTAVINO"
+        }
+      ],
+      "audit_page_title": "Selezione per Strumentisti | Accademia Nazionale di Santa Cecilia",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "官方公告只列竖琴与长笛/短笛器乐岗位；没有声乐职位。",
+      "production_activation": false
     }
   ]
 }
