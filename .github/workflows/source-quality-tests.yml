@@ -18,6 +18,8 @@ on:
       - ".github/workflows/**"
       - "discover_masterclasses.py"
       - "data/masterclass_sources.json"
+      - "data/masterclass_candidates.json"
+      - "ops-dashboard/**"
       - ".github/workflows/weekly-source-coverage.yml"
       - "tests/**"
       - "data/opportunity.schema.json"
@@ -30,6 +32,8 @@ on:
       - "data/masterclass_sources.json"
       - "data/masterclasses.json"
       - "data/masterclass.schema.json"
+      - "data/masterclass_candidates.json"
+      - "ops-dashboard/**"
       - "app.js"
       - "data/opportunities.json"
       - "data/conservatori_manual.json"
@@ -79,7 +83,9 @@ jobs:
       - name: Validate pilot script syntax
         run: python -m py_compile audit_extraction_pilot.py build_extraction_benchmark.py
       - name: Validate JavaScript syntax
-        run: node --check app.js
+        run: |
+          node --check app.js
+          node --check ops-dashboard/worker.js
       - name: Validate JSON data contract
         run: |
           python -m json.tool data/opportunity.schema.json > /dev/null
