@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-11-13T08:54:37+01:00",
+  "updated_at": "2026-11-13T21:40:00+01:00",
   "source_count": 12,
-  "candidate_count": 5,
+  "candidate_count": 4,
   "new_or_refreshed_this_run": 2,
   "fetch_errors": [],
   "items": [
@@ -85,9 +85,9 @@
       "publisher_status": "official",
       "source_url": "https://www.cantoalato.it/masterclass-di-canto-con-anna-pirozzi-2026/",
       "discovered_from": "https://www.cantoalato.it/masterclass/",
-      "checked_at": "2026-11-13T08:54:37+01:00",
+      "checked_at": "2026-11-13T21:40:00+01:00",
       "discovery_status": "candidate_found",
-      "review_status": "pending_manual_review",
+      "review_status": "rejected",
       "publication_status": "not_published",
       "date_signals": [
         "2026",
@@ -106,33 +106,7 @@
       "evidence_excerpt": "Masterclass di Canto con Anna Pirozzi - 2026 - Cantoalato Salta al contenuto ATTIVITA’ Espandi CALENDARIO CORSO PREPARATORIO AMMISSIONE CONSERVATORIO PACCHETTI DI LEZIONI REPERTOIRE COACHING MASTERCLASS WORKSHOP OPERA STUDIO CONCERTI MISSION DOCENTI COLLABORAZIONI SERVIZI NEWS GALLERY PRESS CONTATTI STAFF Facebook Instagram Email Telefono Attiva/disattiva menu MASTERCLASS | NEWS Masterclass di Canto con Anna Pirozzi – 2026 Di Cantoalato Academy 5 Ottobre 2026 12 Novembre 2026 ITALIANO ENGLISH MASTERCLASS DI CANTO CON ANNA PIROZZI «La Voce in Scena» M° Gioele Muglialdo | pianista 26-28 novembre 2026 29 novembre: Concerto finale | Amici Loggione Teatro Alla Scala – Milano FACE TO FACE CON IL C",
       "verification_note": "Discovery signal only. Confirm the organizer, edition, dates, deadline, eligibility, fees and application link on the original organizer page.",
       "first_seen_at": "2026-11-12T08:55:33+01:00",
-      "review_notes": ""
-    },
-    {
-      "candidate_id": "234885e49f13",
-      "title_hint": "Masterclass Canto Lirico Padova 2-5 Dicembre 2026",
-      "source_name": "VeniceOperaArts",
-      "source_type": "organizer",
-      "publisher_status": "official",
-      "source_url": "https://www.veniceoperaarts.com/index.php/masterclass",
-      "discovered_from": "https://www.veniceoperaarts.com/index.php/masterclass",
-      "checked_at": "2026-11-13T08:54:37+01:00",
-      "discovery_status": "candidate_found",
-      "review_status": "pending_manual_review",
-      "publication_status": "not_published",
-      "date_signals": [
-        "5 Dicembre 2026",
-        "5 Dicembre 2026",
-        "2026",
-        "2026",
-        "2026",
-        "05 December 2026",
-        "05 Dicembre 2026"
-      ],
-      "evidence_excerpt": "Masterclass Canto Lirico Padova 2-5 Dicembre 2026 Skip to main content Login Register 1° Concorso in canto lirico Alida Ferrarini Piazzola & Friends Castello Scaligero 2026 Masterclass di Canto Lirico 2026 Venezia Register Contact Us Login Masterclass Concorso Alida Ferrarini Piazzola & Friends 2026 Login Register 02-05 December 2026 Padova | Teatro Torresino Via Torresino, 2 - 35122 PADOVA CONCERTO FINALE Sabato 05 Dicembre 2026 ore 20:15 La tua voce, il tuo talento, il tuo futuro. Your voice, your talent, your future . M° Simone Piazzola (baritone) M° Alberto Bellio (pianist) Open the poster Un’opportunità di crescita artistica dedicata a cantanti lirici che desiderano perfezionare la prop",
-      "verification_note": "Discovery signal only. Confirm the organizer, edition, dates, deadline, eligibility, fees and application link on the original organizer page.",
-      "first_seen_at": "2026-11-12T00:42:41+01:00",
-      "review_notes": ""
+      "review_notes": "已核对 Cantoalato 官方详情页：本期课程为 2026-11-01 至 2026-11-03，11-04 举行结业音乐会；正式学员申请截止 2026-10-27，旁听截止 2026-11-01。以上日期截至 2026-11-13 均已过去，因此不得作为即将举行的机会发布。"
     }
   ]
 }
