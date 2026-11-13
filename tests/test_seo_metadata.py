@@ -13,7 +13,7 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertIn('property="og:site_name" content="OperaLab."', HOME)
         self.assertNotIn('Italia Audizioni', HOME)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/"', HOME)
-        self.assertIn('property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.svg"', HOME)
+        self.assertIn('property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"', HOME)
         self.assertIn('name="twitter:card" content="summary_large_image"', HOME)
         self.assertIn('"@type": "WebSite"', HOME)
 
@@ -63,7 +63,7 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertIn("ERROR 404", page)
 
     def test_share_image_source_has_expected_canvas(self):
-        svg = ET.parse(ROOT / "og-image.svg").getroot()
+        svg = ET.parse(ROOT / "og-image.png").getroot()
         self.assertEqual(svg.attrib.get("width"), "1200")
         self.assertEqual(svg.attrib.get("height"), "630")
 
