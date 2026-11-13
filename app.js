@@ -526,12 +526,12 @@ function renderPdfList(){
   const academies=conservatoriData.filter(c=>(c.number||0)>=300&&(c.documents||[]).length);
   const rows=[];
   for(const c of withLocal){
-    for(const u of localPdfs(c))rows.push({city:c.city,school:c.school,url:u,official:(pickDocs(c.documents)[0]||c.url),local:true,label:fileLabel(u),zh:(c.zh&&((c.zh.x||[])[0]||(c.zh.d||[])[0]))||''});
+    for(const u of localPdfs(c))rows.push({city:c.city,school:c.school,url:u,official:(pickDocs(c.documents)[0]||c.url),local:true,label:fileLabel(u),institutionType:c.institution_type||'conservatorio',zh:(c.zh&&((c.zh.x||[])[0]||(c.zh.d||[])[0]))||''});
   }
   for(const c of academies){
     for(const d of pickDocs(c.documents).slice(0,1)){
       if(withLocal.some(x=>localPdfs(x).includes(d)))continue;
-      rows.push({city:c.city,school:c.school,url:d,official:c.url,local:false,label:fileLabel(d),zh:(c.zh&&((c.zh.x||[])[0]||(c.zh.d||[])[0]))||''});
+      rows.push({city:c.city,school:c.school,url:d,official:c.url,local:false,label:fileLabel(d),institutionType:c.institution_type||'opera_academy',zh:(c.zh&&((c.zh.x||[])[0]||(c.zh.d||[])[0]))||''});
     }
   }
   const count=rows.filter(r=>r.local).length;
@@ -540,7 +540,7 @@ function renderPdfList(){
   $('#pdfCount').textContent=rows.length?String(rows.length):'—';
   $('#pdfCountPill').textContent=`显示 ${filteredRows.length}/${rows.length} 份 · 站内 ${count}`;
   box.innerHTML=filteredRows.length?filteredRows.map(r=>`<article class="pdf-card">
-    <div class="pdf-top"><span class="pdf-city">${esc(r.city)}</span><span class="pdf-kind ${r.local?'pdf-kind--local':''}">${r.local?'已在站内':'在官网'}</span></div>
+    <div class="pdf-top"><span class="pdf-city">${esc(r.city)} · ${r.institutionType==='opera_academy'?'剧院 Accademia':r.institutionType==='choral_school'?'剧院合唱学校':'公立音乐学院'}</span><span class="pdf-kind ${r.local?'pdf-kind--local':''}">${r.local?'已在站内':'在官网'}</span></div>
     <h3>${esc(r.school)}</h3>
     ${r.zh?`<p class="pdf-note">${esc(humanText(r.zh))}</p>`:''}
     <p class="pdf-file">${esc(r.label)}</p>
