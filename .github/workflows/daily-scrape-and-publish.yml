@@ -73,9 +73,10 @@ jobs:
 
   repertoire-collection:
     name: Collect repertoire review candidates
+    needs: build
     permissions:
       contents: write
-    if: github.event_name != 'push' || github.actor != 'github-actions[bot]'
+    if: always() && (needs.build.result == 'success' || needs.build.result == 'failure')
     runs-on: ubuntu-latest
     steps:
       - name: Get project files
@@ -91,7 +92,7 @@ jobs:
       - name: Install collection dependencies
         run: python -m pip install -r requirements.txt
       - name: Run repertoire collection tests
-        run: python -m unittest tests.test_repertoire_candidates -v
+        run: python -m unittest discover -s tests -p 'test_repertoire_candidates.py' -v
       - name: Collect the next batch of opera-libretto candidates
         run: python collect_repertoire_candidates.py
       - name: Save candidate queue (not public catalogue)
