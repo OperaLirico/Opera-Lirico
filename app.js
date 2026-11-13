@@ -384,15 +384,19 @@ function staleMark(text){
 }
 function isExpiredAcademicSnippet(text){
   const value=String(text||'');
-  const ranges=[...value.matchAll(/\b(20\d{2})\s*[-/–]\s*(?:(20)?(\d{2}))\b/g)];
-  if(ranges.length){
-    return ranges.every(match=>{
-      const endYear=match[2]?Number(match[2]+match[3]):Number(match[1].slice(0,2)+match[3]);
-      return endYear<2027;
-    });
-  }
   const years=(value.match(/\b20\d{2}\b/g)||[]).map(Number);
-  return years.length>0&&Math.max(...years)<2026;
+  if(!years.length)return false;
+  // Keep a current status note that explicitly says no new intake has been found.
+  if(/目前|尚未|未找到|未公布|暂无|没有新一季|新一轮招生信息尚未/i.test(value))return false;
+  const ranges=[...value.matchAll(/\b(20\d{2})\s*[-/–]\s*(?:(20)?(\d{2}))\b/g)];
+  const expiredRange=ranges.some(match=>{
+    const endYear=match[2]?Number(match[2]+match[3]):Number(match[1].slice(0,2)+match[3]);
+    return endYear<2027;
+  });
+  if(expiredRange)return true;
+  // A multi-year course can still run in 2027, but its 2025 intake/audition is not current.
+  if(years.some(year=>year<2026)&&/ammission|admission|bando|selezione|iscrizion|audizion|报名|截止|试唱|考试|招募/i.test(value))return true;
+  return Math.max(...years)<2026;
 }
 function visibleCurrentLines(lines){
   return (lines||[]).filter(line=>!isExpiredAcademicSnippet(line));
