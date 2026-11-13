@@ -43,6 +43,7 @@ GENERIC_NAV_RE = re.compile(r"^(?:skip to (?:main )?content|salta al contenuto|v
 GENERIC_LISTING_RE = re.compile(r"^(?:master.?class(?:es)?(?:\s*[-|–:]\s*.+)?|corsi e master.?class(?:es)?\b.*|courses?\s*[|–-]\s*voice)$", re.I)
 NUMERIC_DATE_RE = re.compile(r"\b(\d{1,2})[./-](\d{1,2})[./-](20\d{2})\b")
 WORD_DATE_RE = re.compile(r"\b(\d{1,2})\s+([a-zà-ÿ]+)\s+(20\d{2})\b", re.I)
+MONTH_FIRST_DATE_RE = re.compile(r"\b([a-zà-ÿ]+)\s+(\d{1,2}),?\s+(20\d{2})\b", re.I)
 MONTHS = {
     "jan": 1, "january": 1, "gennaio": 1,
     "feb": 2, "february": 2, "febbraio": 2,
@@ -59,7 +60,8 @@ MONTHS = {
 }
 DATE_RE = re.compile(
     r"\b(?:\d{1,2}[./-]\d{1,2}[./-]20\d{2}|"
-    r"\d{1,2}\s+[a-zà-ÿ]+\s+20\d{2}|20(?:26|27|28))\b",
+    r"\d{1,2}\s+[a-zà-ÿ]+\s+20\d{2}|"
+    r"[a-zà-ÿ]+\s+\d{1,2},?\s+20\d{2}|20(?:26|27|28))\b",
     re.I,
 )
 MAX_TEXT = 30000
