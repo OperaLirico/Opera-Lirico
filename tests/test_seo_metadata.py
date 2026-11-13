@@ -63,7 +63,7 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertIn("ERROR 404", page)
 
     def test_share_image_source_has_expected_canvas(self):
-        svg = ET.parse(ROOT / "og-image.png").getroot()
+        svg = ET.parse(ROOT / "og-image.svg").getroot()
         self.assertEqual(svg.attrib.get("width"), "1200")
         self.assertEqual(svg.attrib.get("height"), "630")
 
