@@ -346,11 +346,11 @@
       "name": "Ente Lirico Italiano - Premio E.L.I.",
       "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
       "kind": "registered",
-      "review_status": "needs_review",
-      "publisher_status": "unverified",
+      "review_status": "auto_approved_official",
+      "publisher_status": "official",
       "relevance_status": "relevant",
-      "audit_confidence": "medium",
-      "audit_evidence_url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+      "audit_confidence": "high",
+      "audit_evidence_url": "https://www.enteliricoitaliano.it/",
       "audit_date": "2026-11-13",
       "checked_at": "2026-11-11T11:43:30+01:00",
       "status": "ok",
@@ -1161,6 +1161,6 @@
   "previous_cycle_results": {},
   "previous_cycle_complete": false,
   "scan_status": "completed",
-  "updated_at": "2026-11-13T11:47:35+01:00",
-  "completed_at": "2026-11-13T11:47:35+01:00"
+  "updated_at": "2026-11-13T11:54:57+01:00",
+  "completed_at": "2026-11-13T11:54:57+01:00"
 }
