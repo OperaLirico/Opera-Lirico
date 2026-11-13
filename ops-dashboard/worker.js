@@ -166,6 +166,7 @@ async function loadMasterclassQueue(){
    meta.textContent=(item.source_name||"未知来源")+" · "+(item.publisher_status==="official"?"主办方来源":"第三方发现来源")+" · "+stateLabel;
    card.append(meta);
    const dates=document.createElement("div");dates.className="masterclassMeta";dates.textContent="发现日期线索："+(item.date_signals||[]).join("、");card.append(dates);
+   if((item.date_context||[]).length){const dateContext=document.createElement("div");dateContext.className="masterclassMeta";dateContext.textContent="日期上下文："+item.date_context.join(" / ");card.append(dateContext);}
    const checked=document.createElement("div");checked.className="masterclassMeta";checked.textContent="最近抓取："+(item.checked_at||"—")+" · 首次发现："+(item.first_seen_at||"—");card.append(checked);
    const source=document.createElement("a");source.href=item.source_url||"#";source.target="_blank";source.rel="noopener noreferrer";source.textContent="打开候选原始来源 ↗";card.append(source);
    const discovered=document.createElement("div");discovered.className="masterclassMeta";discovered.textContent="发现入口："+(item.discovered_from||"—");card.append(discovered);
