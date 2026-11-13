@@ -16,6 +16,9 @@ class MasterclassReviewEvidenceContractTests(unittest.TestCase):
         self.assertIn('new URL(officialEvidenceUrl)', self.worker)
         self.assertIn('official_evidence_domain_mismatch', self.worker)
 
+    def test_official_evidence_hostname_normalizes_www_prefix(self):
+        self.assertIn(r'replace(/^www\./, "")', self.worker)
+
     def test_verification_requires_exact_source_excerpt(self):
         self.assertIn('officialEvidenceExcerpt.length < 40', self.worker)
         self.assertIn('official_evidence_excerpt_required', self.worker)
@@ -29,7 +32,6 @@ class MasterclassReviewEvidenceContractTests(unittest.TestCase):
     def test_review_record_persists_evidence_without_publishing(self):
         self.assertIn('official_evidence_url: officialEvidenceUrl', self.worker)
         self.assertIn('official_evidence_excerpt: officialEvidenceExcerpt.slice(0, 2000)', self.worker)
-        self.assertIn('verified_pending_publication', self.worker)
         self.assertIn('verified_pending_publication', self.worker)
 
 

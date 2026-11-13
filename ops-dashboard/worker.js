@@ -566,8 +566,8 @@ export default {
           return json({ error: "official_evidence_excerpt_required" }, 400);
         }
         try {
-          const evidenceHost = new URL(officialEvidenceUrl).hostname.toLowerCase().replace(/^www\\./, "");
-          const candidateHost = new URL(candidate.source_url).hostname.toLowerCase().replace(/^www\\./, "");
+          const evidenceHost = new URL(officialEvidenceUrl).hostname.toLowerCase().replace(/^www\./, "");
+          const candidateHost = new URL(candidate.source_url).hostname.toLowerCase().replace(/^www\./, "");
           if (evidenceHost !== candidateHost && !evidenceHost.endsWith("." + candidateHost)) {
             return json({ error: "official_evidence_domain_mismatch" }, 400);
           }
