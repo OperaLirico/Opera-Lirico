@@ -9,8 +9,8 @@ MASTER = (ROOT / "masterclasses.html").read_text(encoding="utf-8")
 
 class SeoAndSharingTests(unittest.TestCase):
     def test_homepage_has_canonical_and_social_preview_metadata(self):
-        self.assertIn('<title>OperaLab｜意大利声乐机会、招生与曲目</title>', HOME)
-        self.assertIn('property="og:site_name" content="OperaLab"', HOME)
+        self.assertIn('<title>OperaLab.｜意大利声乐机会、招生与曲目</title>', HOME)
+        self.assertIn('property="og:site_name" content="OperaLab."', HOME)
         self.assertNotIn('Italia Audizioni', HOME)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/"', HOME)
         self.assertIn('property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"', HOME)
@@ -18,11 +18,11 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertIn('"@type": "WebSite"', HOME)
 
     def test_masterclass_page_has_page_specific_share_metadata(self):
-        self.assertIn('<title>大师班与专业进修｜OperaLab</title>', MASTER)
-        self.assertIn('property="og:site_name" content="OperaLab"', MASTER)
+        self.assertIn('<title>大师班与专业进修｜OperaLab.</title>', MASTER)
+        self.assertIn('property="og:site_name" content="OperaLab."', MASTER)
         self.assertNotIn('Italia Audizioni', MASTER)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/masterclasses.html"', MASTER)
-        self.assertIn('property="og:title" content="声乐大师班与专业进修｜OperaLab"', MASTER)
+        self.assertIn('property="og:title" content="声乐大师班与专业进修｜OperaLab."', MASTER)
         self.assertIn('name="twitter:card" content="summary_large_image"', MASTER)
 
     def test_source_evidence_is_not_exposed_in_public_footer(self):
