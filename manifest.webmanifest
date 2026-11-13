@@ -1,7 +1,7 @@
 {
-  "name": "意大利声乐现场",
-  "short_name": "声乐现场",
-  "description": "意大利歌剧角色招募、试唱和声乐比赛信息",
+  "name": "OperaLab.｜声乐与歌剧专业平台",
+  "short_name": "OperaLab.",
+  "description": "歌剧院招募、音乐学院招生、声乐比赛、大师班与专业学习资源",
   "lang": "zh-CN",
   "start_url": "./",
   "scope": "./",
