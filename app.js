@@ -384,7 +384,7 @@ function staleMark(text){
 }
 function currentDocs(list){
   return (list||[]).filter(url=>{
-    const years=(String(url).match(/20\\d{2}/g)||[]).map(Number);
+    const years=(String(url).match(/20\d{2}/g)||[]).map(Number);
     return !years.length || Math.max(...years)>=2026;
   });
 }
