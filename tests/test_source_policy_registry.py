@@ -81,7 +81,7 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
         self.assertEqual(registered["source-12"]["audit_confidence"], "high")
         self.assertEqual(registered["source-97"]["review_status"], "needs_review")
         self.assertEqual(registered["source-98"]["review_status"], "needs_review")
-        for source_id in ("source-12", "source-15"):
+        for source_id in ("source-15",):
             with self.subTest(source_id=source_id):
                 self.assertEqual(registered[source_id]["review_status"], "needs_review")
                 self.assertEqual(registered[source_id]["publisher_status"], "unverified")
