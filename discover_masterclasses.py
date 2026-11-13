@@ -90,6 +90,14 @@ def has_future_date(value: str) -> bool:
                     return True
             except ValueError:
                 continue
+    for month_name, day, year in MONTH_FIRST_DATE_RE.findall(value):
+        month = MONTHS.get(month_name.lower().rstrip("."))
+        if month:
+            try:
+                if date(int(year), month, int(day)) >= today:
+                    return True
+            except ValueError:
+                continue
     return False
 
 
