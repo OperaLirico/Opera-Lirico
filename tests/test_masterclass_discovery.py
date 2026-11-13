@@ -3,7 +3,7 @@ import unittest
 from datetime import datetime
 from pathlib import Path
 
-from discover_masterclasses import canonical_url, has_future_date, make_candidate, slug
+from discover_masterclasses import canonical_url, has_future_date, make_candidate, preserve_review_state, slug
 
 
 class MasterclassDiscoveryTests(unittest.TestCase):
@@ -111,6 +111,20 @@ class MasterclassDiscoveryTests(unittest.TestCase):
             "publication_status": "published",
         }]
         self.assertTrue(is_already_published(candidate, published))
+
+    def test_preserves_manual_review_state_and_timestamp_across_refreshes(self):
+        fresh = {"title_hint": "Updated candidate", "checked_at": "2026-11-14T08:00:00+01:00"}
+        previous = {
+            "first_seen_at": "2026-11-12T08:00:00+01:00",
+            "review_status": "rejected",
+            "review_notes": "Application deadline has passed.",
+            "reviewed_at": "2026-11-13T21:40:00+01:00",
+        }
+        merged = preserve_review_state(fresh, previous, "2026-11-14T08:00:00+01:00")
+        self.assertEqual(merged["first_seen_at"], previous["first_seen_at"])
+        self.assertEqual(merged["review_status"], "rejected")
+        self.assertEqual(merged["review_notes"], previous["review_notes"])
+        self.assertEqual(merged["reviewed_at"], previous["reviewed_at"])
 
     def test_deduplicates_fragment_urls_and_preserves_review(self):
         from discover_masterclasses import deduplicate_candidates
