@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import unicodedata
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import quote
@@ -27,7 +28,8 @@ QUEUE_LIMIT = 500
 
 
 def normalized_title(value: str) -> str:
-    value = str(value or "").casefold()
+    value = unicodedata.normalize("NFKD", str(value or "").casefold())
+    value = "".join(char for char in value if not unicodedata.combining(char))
     return re.sub(r"[^a-z0-9]+", " ", value).strip()
 
 
