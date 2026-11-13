@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect Italian opera-libretto excerpts into a private review queue.
+"""Collect Italian opera-libretto excerpts into an unpublished review queue.
 
 This is discovery, not publication: full libretto scenes are not assumed to be
 arias. Candidates stay in data/repertoire_candidates.json and are never loaded
