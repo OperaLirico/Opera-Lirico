@@ -221,6 +221,11 @@ def load_json(path: Path, default):
 def is_already_published(candidate: dict, published_items: list[dict]) -> bool:
     candidate_url = canonical_url(candidate.get("source_url", ""))
     candidate_title = clean(candidate.get("title_hint", "")).casefold()
+    candidate_evidence = " ".join([
+        candidate_title,
+        clean(candidate.get("evidence_excerpt", "")),
+        " ".join(clean(part) for part in candidate.get("date_context", [])),
+    ]).casefold()
     if not candidate_url:
         return False
     for item in published_items:
@@ -231,10 +236,10 @@ def is_already_published(candidate: dict, published_items: list[dict]) -> bool:
         if canonical_url(item.get("source_url", "")) != candidate_url:
             continue
         teacher_names = [clean(part).casefold() for part in (item.get("teacher") or "").split(";")]
-        if any(name and name in candidate_title for name in teacher_names):
+        if any(name and name in candidate_evidence for name in teacher_names):
             return True
         published_title = clean(item.get("title", "")).casefold()
-        if published_title and (published_title in candidate_title or candidate_title in published_title):
+        if published_title and (published_title in candidate_evidence or candidate_evidence in published_title):
             return True
     return False
 
