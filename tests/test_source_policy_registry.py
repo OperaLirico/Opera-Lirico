@@ -61,9 +61,9 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
             counts[item["review_status"]] = counts.get(item["review_status"], 0) + 1
         self.assertEqual(len(inventory), 44)
         self.assertEqual(counts.get("auto_approved_official"), 26)
-        self.assertEqual(counts.get("auto_approved_third_party"), 4)
-        self.assertEqual(counts.get("needs_review"), 10)
-        self.assertEqual(counts.get("irrelevant_candidate"), 3)
+        self.assertEqual(counts.get("auto_approved_third_party"), 5)
+        self.assertEqual(counts.get("needs_review"), 3)
+        self.assertEqual(counts.get("irrelevant_candidate"), 9)
         self.assertEqual(counts.get("duplicate_candidate"), 1)
         self.assertEqual(sum(counts.values()), 44)
         self.assertNotIn("legacy_unreviewed", counts)
@@ -78,10 +78,10 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
         }
         self.assertEqual(registered["source-97"]["review_status"], "needs_review")
         self.assertEqual(registered["source-98"]["review_status"], "needs_review")
-        self.assertEqual(registered["source-100"]["review_status"], "needs_review")
+        self.assertEqual(registered["source-100"]["review_status"], "irrelevant_candidate")
         self.assertEqual(registered["source-101"]["review_status"], "auto_approved_third_party")
         self.assertEqual(registered["source-102"]["review_status"], "duplicate_candidate")
-        self.assertEqual(registered["source-100"]["audit_confidence"], "low")
+        self.assertEqual(registered["source-100"]["audit_confidence"], "high")
         self.assertEqual(registered["source-97"]["audit_date"], "2026-11-12")
         self.assertTrue(registered["source-97"]["audit_evidence_url"])
 
