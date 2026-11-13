@@ -151,13 +151,13 @@ def extract_page(response, url: str) -> tuple[str, str, list[tuple[str, str]]]:
 
 def make_candidate(source: dict, url: str, title: str, text: str, checked_at: str,
                    discovery_label: str = "") -> dict | None:
-    blob = " ".join((title, discovery_label, text))
-    if is_generic_candidate_title(title, source.get("name", "")) and not discovery_label:
+    configured_title = clean(source.get("title_hint", ""))
+    blob = " ".join((title, discovery_label, configured_title, text))
+    if is_generic_candidate_title(title, source.get("name", "")) and not discovery_label and not configured_title:
         return None
-    # Require an event-level title/link label, vocal relevance in the page body,
-    # and an explicit date signal. This avoids turning generic navigation pages
-    # or evergreen academy descriptions into false opportunity records.
-    if not MASTERCLASS_RE.search(" ".join((title, discovery_label))):
+    # A curated source may provide an editorial title for an official programme
+    # page whose browser title is generic (for example, "Master Class").
+    if not MASTERCLASS_RE.search(" ".join((title, discovery_label, configured_title))):
         return None
     if not VOICE_RE.search(text):
         return None
@@ -168,7 +168,7 @@ def make_candidate(source: dict, url: str, title: str, text: str, checked_at: st
     match = MASTERCLASS_RE.search(text)
     start = max(0, match.start() - 180) if match else 0
     excerpt = text[start:start + 700].strip()
-    label = discovery_label or title or source["name"]
+    label = discovery_label or configured_title or title or source["name"]
     if is_generic_candidate_title(label, source.get("name", "")):
         label = title or source["name"]
     if is_generic_candidate_title(label, source.get("name", "")):
@@ -189,6 +189,10 @@ def make_candidate(source: dict, url: str, title: str, text: str, checked_at: st
         "review_status": "pending_manual_review",
         "publication_status": "not_published",
         "date_signals": date_signals[:12],
+        "date_context": [
+            clean(blob[max(0, match.start() - 100):match.end() + 100])
+            for match in list(DATE_RE.finditer(blob))[:8]
+        ],
         "evidence_excerpt": excerpt,
         "verification_note": (
             "Discovery signal only. Confirm the organizer, edition, dates, deadline, "
