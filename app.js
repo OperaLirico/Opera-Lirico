@@ -21,6 +21,7 @@ const sourceRoot = new URL('.', location.href);
 
 let repertoire = [];
 let repertoireLoaded = false;
+let masterclassCount = null;
 let conservatoriData = [];
 let manualNotes = {};
 let zhNotes = {};
@@ -567,9 +568,19 @@ function renderTiles(){
   set('statSchools',schools.length?String(readable):'—');
   set('statAcademies',academyCount?String(academyCount):'—');
   set('statSongs',repertoireLoaded?String(repertoire.length):'—');
+  set('statMasterclasses',masterclassCount===null?'—':String(masterclassCount));
 }
 
 /* ---------- loading ---------- */
+async function loadMasterclassCount(){
+  try{
+    const response=await fetch(new URL('data/masterclasses.json',sourceRoot),{cache:'no-store'});
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    const data=await response.json();
+    masterclassCount=(data.items||[]).filter(item=>item.publication_status==='published'&&item.review_status==='verified'&&item.publisher_status==='official').length;
+  }catch(error){masterclassCount=null;}
+  renderTiles();
+}
 async function loadConservatori(){
   try{
     const [res,manual,zh,opportunityRes]=await Promise.all([
@@ -694,3 +705,4 @@ renderMusicSearch('');
 renderTiles();
 loadRepertoire();
 loadConservatori();
+loadMasterclassCount();
