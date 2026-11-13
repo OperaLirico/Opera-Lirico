@@ -364,6 +364,14 @@ async function getButtondown(env) {
   }
   return { active_subscribers: active, new_subscribers_7d: new7, draft_count: draftCount, drafts };
 }
+function attachMasterclassReview(item, storedReview) {
+  const fileReview = {
+    status: item.review_status || "pending_manual_review",
+    notes: item.review_notes || "",
+    reviewed_at: item.reviewed_at || null
+  };
+  return { ...item, review: storedReview || fileReview };
+}
 async function getDashboardData(env) {
   const [cf, bd] = await Promise.allSettled([getCloudflare(env), getButtondown(env)]);
   return {
@@ -512,7 +520,7 @@ export default {
         return json({
           updated_at: source.updated_at || null,
           candidate_count: items.length,
-          items: items.map((item, index) => ({ ...item, review: reviews[index] || null }))
+          items: items.map((item, index) => attachMasterclassReview(item, reviews[index]))
         });
       } catch (error) {
         return json({ error: "candidate_source_unavailable", message: "无法读取 GitHub 候选队列，请稍后重试。" }, 502);
