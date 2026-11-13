@@ -240,10 +240,16 @@ def deduplicate_candidates(items: list[dict]) -> list[dict]:
         winner = item if item.get("checked_at", "") >= previous.get("checked_at", "") else previous
         other = previous if winner is item else item
         if other.get("review_status") not in (None, "", "pending_manual_review"):
-            winner = {**winner, "review_status": other.get("review_status"),
-                      "review_notes": other.get("review_notes", "")}
+            winner = {
+                **winner,
+                "review_status": other.get("review_status"),
+                "review_notes": other.get("review_notes", ""),
+                "reviewed_at": other.get("reviewed_at") or winner.get("reviewed_at", ""),
+            }
         elif winner.get("review_notes") in (None, "") and other.get("review_notes"):
             winner = {**winner, "review_notes": other.get("review_notes")}
+        if not winner.get("reviewed_at") and other.get("reviewed_at"):
+            winner = {**winner, "reviewed_at": other.get("reviewed_at")}
         winner["source_url"] = url
         aliases = set(previous.get("legacy_candidate_ids", [])) | set(item.get("legacy_candidate_ids", []))
         aliases.update((previous.get("candidate_id"), item.get("candidate_id")))
@@ -255,6 +261,17 @@ def deduplicate_candidates(items: list[dict]) -> list[dict]:
     return sorted(merged.values(), key=lambda x: (
         x.get("source_name", ""), x.get("title_hint", "")
     ))
+
+
+def preserve_review_state(fresh: dict, previous: dict, checked_at: str) -> dict:
+    """Keep manual review decisions and their timestamps across discovery refreshes."""
+    return {
+        **fresh,
+        "first_seen_at": previous.get("first_seen_at", checked_at),
+        "review_status": previous.get("review_status", "pending_manual_review"),
+        "review_notes": previous.get("review_notes", ""),
+        "reviewed_at": previous.get("reviewed_at", ""),
+    }
 
 
 def discover() -> dict:
@@ -320,12 +337,7 @@ def discover() -> dict:
     merged = dict(old_by_id)
     for key, fresh in found.items():
         previous = merged.get(key, {})
-        merged[key] = {
-            **fresh,
-            "first_seen_at": previous.get("first_seen_at", checked_at),
-            "review_status": previous.get("review_status", "pending_manual_review"),
-            "review_notes": previous.get("review_notes", ""),
-        }
+        merged[key] = preserve_review_state(fresh, previous, checked_at)
     deduplicated = deduplicate_candidates(list(merged.values()))
     payload = {
         "updated_at": checked_at,
