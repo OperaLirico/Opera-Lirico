@@ -1,0 +1,26 @@
+name: Repertoire candidate tests
+
+on:
+  pull_request:
+    paths:
+      - "collect_repertoire_candidates.py"
+      - "update_arias.py"
+      - "tests/test_repertoire_candidates.py"
+      - ".github/workflows/repertoire-candidate-tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Test candidate collection safeguards
+        run: python -m unittest discover -s tests -p 'test_repertoire_candidates.py' -v
