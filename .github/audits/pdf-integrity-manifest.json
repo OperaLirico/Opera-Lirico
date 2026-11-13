@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-13T11:50:29+01:00",
+  "generated_at": "2026-11-13T22:08:12+01:00",
   "algorithm": "SHA-256",
   "purpose": "Local byte-integrity manifest for mirrored PDF files",
   "publisher_signature_verification": "not_implemented",
-  "referenced_pdf_count": 8,
-  "valid_pdf_count": 8,
+  "referenced_pdf_count": 7,
+  "valid_pdf_count": 7,
   "invalid_or_missing_pdf_count": 0,
-  "unreferenced_pdf_count": 0,
+  "unreferenced_pdf_count": 1,
   "files": [
     {
       "institution": 4,
@@ -16,17 +16,6 @@
       "integrity_status": "valid_pdf_bytes",
       "size_bytes": 428126,
       "sha256": "99f2b3c65f714cfd7c28b2e16f44414e680b8ba1314a03d88b9286f1f9df7b0d",
-      "publisher_signature_status": "not_verified",
-      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
-    },
-    {
-      "institution": 11,
-      "source_record_number": 11,
-      "local_path": "data/pdfs/11-allegato-a-bando-afam030.pdf",
-      "source_url": "https://www.consme.it/images/bandi_e_graduatorie/2026_2027/ALLEGATO%20A%20BANDO%20AFAM030.pdf",
-      "integrity_status": "valid_pdf_bytes",
-      "size_bytes": 1648886,
-      "sha256": "291c23409e1a450e8210ce2d0d9deb57581744ba3048921ff0a26f51cd47f98a",
       "publisher_signature_status": "not_verified",
       "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
     },
@@ -97,5 +86,14 @@
       "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
     }
   ],
-  "unreferenced_files": []
+  "unreferenced_files": [
+    {
+      "local_path": "data/pdfs/11-allegato-a-bando-afam030.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 1648886,
+      "sha256": "291c23409e1a450e8210ce2d0d9deb57581744ba3048921ff0a26f51cd47f98a",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "Unreferenced local PDF retained for review; no source identity inferred from filename."
+    }
+  ]
 }
