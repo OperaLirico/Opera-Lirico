@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-11-13T11:34:22+01:00",
+  "items": [
+    {
+      "source_id": "source-12",
+      "publisher_status": "official",
+      "auto_review_status": "auto_approved_official",
+      "auto_review_reason": "official_main_site_navigation_organization_profile_and_legal_contact_evidence",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "relevant",
+      "confidence": "high",
+      "evidence_url": "https://www.enteliricoitaliano.it/",
+      "evidence_urls": [
+        "https://www.enteliricoitaliano.it/",
+        "https://www.enteliricoitaliano.it/premioeli/",
+        "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+        "https://www.enteliricoitaliano.it/newsletter/"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://www.enteliricoitaliano.it/",
+          "quote": "Ente per la promozione e la tutela della tecnica belcantista italiana e dell'opera lirica italiana nei teatri di provincia"
+        },
+        {
+          "url": "https://www.enteliricoitaliano.it/",
+          "quote": "E.L.I. - Ente Lirico Italiano è il punto di riferimento per cantanti che vogliano debuttare in teatro o apprendere e perfezionare la tecnica belcantista italiana"
+        },
+        {
+          "url": "https://www.enteliricoitaliano.it/premioeli/",
+          "quote": "Premio E.L.I. Concorso — Concorso Lirico Internazionale"
+        },
+        {
+          "url": "https://www.enteliricoitaliano.it/newsletter/",
+          "quote": "E.L.I. - Ente Lirico Italiano ETS - Via Goffredo Mameli, 63 - 15033 Casale Monferrato - Tel: +390142691781 - C.F. 91037820064"
+        }
+      ],
+      "audit_page_title": "Ente nazionale per la tutela del patrimonio lirico belcantista",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "官方主站直接介绍 E.L.I. 的机构使命与声乐活动，导航列出 Premio E.L.I.，官方联系/Newsletter 页面公开 ETS 法律名称、地址、电话和税号；与具体比赛公告形成直接站内关联，满足 high-confidence 官方身份证据要求。",
+      "production_activation": false
+    },
+    {
+      "source_id": "source-15",
+      "publisher_status": "unverified",
+      "auto_review_status": "needs_review",
+      "auto_review_reason": "official_identity_not_independently_corroborated",
+      "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+      "audit_method": "evidence_based",
+      "audit_date": "2026-11-13",
+      "relevance_status": "relevant",
+      "confidence": "medium",
+      "evidence_url": "https://www.concorsomorlacchi.it/",
+      "evidence_urls": [
+        "https://www.concorsomorlacchi.it/"
+      ],
+      "audit_evidence": [
+        {
+          "url": "https://www.concorsomorlacchi.it/",
+          "quote": "organizzata e promossa dall’Associazione Musicale Internazionale La La La di Perugia, con la collaborazione di Grande Lirica Umbria APS"
+        },
+        {
+          "url": "https://www.concorsomorlacchi.it/",
+          "quote": "Per il Comitato organizzatore del Concorso — Associazione Musicale Internazionale La La La"
+        },
+        {
+          "url": "https://www.concorsomorlacchi.it/",
+          "quote": "lalalaassociazione@gmail.com"
+        }
+      ],
+      "audit_page_title": "Concorso Internazionale di Canto lirico Francesco Morlacchi · Perugia 2026",
+      "audit_access_status": "accessible",
+      "audit_http_status": 200,
+      "review_notes": "比赛内容与声乐领域高度相关，页面列出主办协会、合作组织和联系邮箱；但身份依据仍集中在比赛站点自述，未取得独立机构目录或可核验的外部官方交叉证据，因此保留 needs_review。",
+      "production_activation": false
+    }
+  ]
+}
