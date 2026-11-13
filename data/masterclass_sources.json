@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12",
+  "updated_at": "2026-11-13",
   "policy": "Discovery only. These pages are leads, not automatic approval. Every opportunity must be verified against the original organizer before publication.",
   "sources": [
     {
@@ -85,6 +85,14 @@
       "url": "https://www.veniceoperaarts.com/index.php/masterclass",
       "publisher_status": "official",
       "source_type": "organizer"
+    },
+    {
+      "id": "accademia-lirica-osimo",
+      "name": "Accademia d'Arte Lirica Osimo",
+      "url": "https://www.accademialiricaosimo.com/en/master-class/",
+      "publisher_status": "official",
+      "source_type": "organizer",
+      "title_hint": "Accademia d'Arte Lirica Osimo 2026–2027 masterclass programme and applications"
     }
   ]
 }
