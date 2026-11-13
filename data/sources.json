@@ -13802,7 +13802,34 @@
     "last_attempt_http_status": 200,
     "last_attempt_error": null,
     "consecutive_failures": 0,
-    "stale": false
+    "stale": false,
+    "publisher_status": "unverified",
+    "auto_review_status": "needs_review",
+    "auto_review_reason": "official_identity_not_independently_corroborated",
+    "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+    "audit_method": "evidence_based",
+    "audit_date": "2026-11-13",
+    "relevance_status": "relevant",
+    "confidence": "medium",
+    "evidence_url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+    "evidence_urls": [
+      "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/"
+    ],
+    "audit_evidence": [
+      {
+        "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+        "quote": "Ente per la Tutela del Patrimonio Lirico Nazionale"
+      },
+      {
+        "url": "https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/",
+        "quote": "E.L.I. - Ente Lirico Italiano ETS - Via Goffredo Mameli, 63 - 15033 Casale Monferrato - Tel: +390142691781 - C.F. 91037820064"
+      }
+    ],
+    "audit_page_title": "Bando 2026 - Premio E.L.I. Concorso Lirico Internazionale",
+    "audit_access_status": "accessible",
+    "audit_http_status": 200,
+    "review_notes": "比赛页面确实包含歌剧歌手竞赛、声部、报名规则和官方联系方式；但目前身份依据主要来自同一站点的自述、导航和页脚联系方式，尚无独立机构目录或外部官方背书形成交叉证明。按规则将官方身份置信度保持 medium，并降为 needs_review；不得自动标记官方可信。",
+    "production_activation": false
   },
   {
     "number": 13,
@@ -13986,7 +14013,38 @@
     "last_attempt_http_status": 200,
     "last_attempt_error": null,
     "consecutive_failures": 0,
-    "stale": false
+    "stale": false,
+    "publisher_status": "unverified",
+    "auto_review_status": "needs_review",
+    "auto_review_reason": "official_identity_not_independently_corroborated",
+    "auto_review_checked_at": "2026-11-13T11:34:22+01:00",
+    "audit_method": "evidence_based",
+    "audit_date": "2026-11-13",
+    "relevance_status": "relevant",
+    "confidence": "medium",
+    "evidence_url": "https://www.concorsomorlacchi.it/",
+    "evidence_urls": [
+      "https://www.concorsomorlacchi.it/"
+    ],
+    "audit_evidence": [
+      {
+        "url": "https://www.concorsomorlacchi.it/",
+        "quote": "organizzata e promossa dall’Associazione Musicale Internazionale La La La di Perugia, con la collaborazione di Grande Lirica Umbria APS"
+      },
+      {
+        "url": "https://www.concorsomorlacchi.it/",
+        "quote": "Per il Comitato organizzatore del Concorso — Associazione Musicale Internazionale La La La"
+      },
+      {
+        "url": "https://www.concorsomorlacchi.it/",
+        "quote": "lalalaassociazione@gmail.com"
+      }
+    ],
+    "audit_page_title": "Concorso Internazionale di Canto lirico Francesco Morlacchi · Perugia 2026",
+    "audit_access_status": "accessible",
+    "audit_http_status": 200,
+    "review_notes": "比赛内容与声乐领域高度相关，页面列出主办协会、合作组织和联系邮箱；但身份依据仍集中在比赛站点自述，未取得独立机构目录或可核验的外部官方交叉证据。按规则将 publisher_status 设为 unverified、置信度保持 medium，并降为 needs_review。",
+    "production_activation": false
   },
   {
     "number": 16,
