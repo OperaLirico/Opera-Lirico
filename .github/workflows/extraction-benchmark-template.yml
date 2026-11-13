@@ -1,0 +1,27 @@
+name: Build 30-case extraction benchmark template
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Build annotation template
+        run: python build_extraction_benchmark.py
+      - name: Upload 30-case template
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: extraction-benchmark-30-template
+          path: .github/audits/extraction-benchmark-30-template.json
+          if-no-files-found: error
+          retention-days: 90

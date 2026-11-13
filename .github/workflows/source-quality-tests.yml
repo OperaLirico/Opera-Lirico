@@ -77,7 +77,7 @@ jobs:
           python audit_opportunity_quality.py
           python audit_pdf_integrity.py
       - name: Validate pilot script syntax
-        run: python -m py_compile audit_extraction_pilot.py
+        run: python -m py_compile audit_extraction_pilot.py build_extraction_benchmark.py
       - name: Validate JavaScript syntax
         run: node --check app.js
       - name: Validate JSON data contract
