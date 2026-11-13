@@ -27,3 +27,10 @@
 ## 后续
 
 如能从主办协会/机构的独立官网、政府/协会登记目录或官方社交账号取得直接证据，再重新评估。下一次周度覆盖扫描将把本次来源元数据作为当前分类输入；此前周度 checkpoint 保留为历史记录，不手动改写。
+
+
+## 持久化修正
+
+本次将 source-12 与 source-15 的核心来源审核结论保存到 `data/source_review_overrides.json`，并让 `audit_source_coverage.py` 在每次构建来源清单时优先读取该覆盖文件。原因是 `data/sources.json` 是每日刷新生成的合并清单，不能作为核心来源人工审核元数据的唯一持久化位置；否则刷新可能恢复旧基线分类。
+
+当前 44 条登记来源分类：auto_approved_official=25、auto_approved_third_party=5、needs_review=4、irrelevant_candidate=9、duplicate_candidate=1。
