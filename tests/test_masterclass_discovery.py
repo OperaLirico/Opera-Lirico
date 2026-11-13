@@ -29,6 +29,32 @@ class MasterclassDiscoveryTests(unittest.TestCase):
         self.assertEqual(candidate["publication_status"], "not_published")
         self.assertIn("2027", candidate["date_signals"])
 
+    def test_official_osimo_programme_uses_curated_title_and_month_first_dates(self):
+        source = {
+            **self.source,
+            "id": "accademia-lirica-osimo",
+            "name": "Accademia d'Arte Lirica Osimo",
+            "title_hint": "Accademia d'Arte Lirica Osimo 2026–2027 masterclass programme and applications",
+        }
+        text = (
+            "During the 2026–2027 academic year, masterclasses for young opera singers "
+            "will be organized. The schedule will be announced by December 10, 2026. "
+            "Applications close January 7, 2027. Applicants submit three video-recorded arias."
+        )
+        candidate = make_candidate(
+            source,
+            "https://www.accademialiricaosimo.com/en/master-class/",
+            "Master Class – Accademia Lirica Osimo",
+            text,
+            "2026-11-13T22:00:00+01:00",
+        )
+        self.assertIsNotNone(candidate)
+        self.assertEqual(candidate["title_hint"], source["title_hint"])
+        self.assertIn("January 7, 2027", candidate["date_signals"])
+        self.assertTrue(any("Applications close January 7, 2027" in item for item in candidate["date_context"]))
+        self.assertEqual(candidate["publisher_status"], "official")
+        self.assertEqual(candidate["publication_status"], "not_published")
+
     def test_rejects_non_vocal_masterclass(self):
         candidate = make_candidate(
             self.source,
@@ -62,6 +88,8 @@ class MasterclassDiscoveryTests(unittest.TestCase):
     def test_future_date_filter_rejects_expired_and_accepts_upcoming_dates(self):
         self.assertFalse(has_future_date("10 Novembre 2026"))
         self.assertTrue(has_future_date("30 Novembre 2026"))
+        self.assertTrue(has_future_date("January 7, 2027"))
+        self.assertFalse(has_future_date("October 1, 2026"))
 
     def test_canonical_url_removes_fragment(self):
         self.assertEqual(
