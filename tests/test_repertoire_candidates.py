@@ -5,7 +5,7 @@ from collect_repertoire_candidates import candidate_id, make_candidate, normaliz
 
 class RepertoireCandidateTests(unittest.TestCase):
     def test_title_normalization_is_accent_and_punctuation_tolerant(self):
-        self.assertEqual(normalized_title("La donna è mobile!"), "la donna mobile")
+        self.assertEqual(normalized_title("La donna è mobile!"), "la donna e mobile")
 
     def test_candidate_id_is_stable_for_same_title_and_page(self):
         first = candidate_id("La Traviata · Atto I · Scena I", "La traviata/Atto I")
