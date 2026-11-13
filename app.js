@@ -26,6 +26,8 @@ let manualNotes = {};
 let zhNotes = {};
 let consQuery = '';
 let consDateOnly = false;
+let academyQuery = '';
+let academyDateOnly = false;
 let installPrompt = null;
 
 let opportunities = [];
@@ -464,17 +466,13 @@ function consCard(c){
    </div>
  </details>`;
 }
-function renderConservatori(){
-  const wrap=$('#consGroups');
-  if(!wrap)return;
-  const readable=conservatoriData.filter(c=>c.status==='ok');
-  $('#conservatoriCount').textContent=`${readable.length}/${conservatoriData.length} 所院校页面可正常读取`;
-  const q=normalizeSearch(consQuery);
-  const filtered=conservatoriData.filter(c=>{
+function filterInstitutionRecords(records,query,dateOnly){
+  const q=normalizeSearch(query);
+  return records.filter(c=>{
     const zh=c.zh||{};
     const searchable=[c.city,c.school,c.status,zh.state,...(c.deadline_lines||[]),...(c.exam_dates||[]),...(c.requirements||[]),...(c.fallback_lines||[]),...(zh.d||[]),...(zh.x||[]),...(zh.r||[]),...(Array.isArray(zh.notes)?zh.notes:[zh.notes||''])].filter(Boolean).join(' ');
     if(q&&!normalizeSearch(searchable).includes(q))return false;
-    if(consDateOnly){
+    if(dateOnly){
       const z=c.zh||{};
       const hasDate=Boolean(isoFromText((c.deadline_lines||[]).join(' '))||isoFromText((c.exam_dates||[]).join(' '))||zhIsoFromText((z.d||[]).join(' '))||zhIsoFromText((z.x||[]).join(' ')));
       if(!hasDate)return false;
@@ -483,22 +481,41 @@ function renderConservatori(){
   }).sort((a,b)=>{
     const oa=a.manual_status==='open'?1:0,ob=b.manual_status==='open'?1:0;
     if(ob!==oa)return ob-oa;
-    const z=(x)=>isoFromText((x.deadline_lines||[]).join(' '))||zhIsoFromText(((x.zh||{}).d||[]).join(' '))||'9999';
+    const z=x=>isoFromText((x.deadline_lines||[]).join(' '))||zhIsoFromText(((x.zh||{}).d||[]).join(' '))||'9999';
     const da=z(a),db=z(b);
     if(da!==db)return da<db?-1:1;
     return String(a.city||'').localeCompare(String(b.city||''),'zh');
   });
-  const special=filtered.filter(c=>(c.number||0)>=300);
-  const groups=[
-    {title:'歌剧院专业学院',hint:'Opera Academy',items:special.filter(c=>c.institution_type==='opera_academy')},
-    {title:'合唱学校',hint:'Choral Schools',items:special.filter(c=>c.institution_type==='choral_school')},
-    {title:'公立音乐学院',hint:'Conservatorio',items:filtered.filter(c=>(c.number||0)<300)}
-  ].filter(g=>g.items.length);
-  wrap.innerHTML=groups.map(g=>`<section class="cons-group"><div class="cons-group-head"><h3>${g.title}</h3><span>${g.hint} · ${g.items.length} 个项目</span></div><div class="cons-list">${g.items.map(consCard).join('')}</div></section>`).join('');
+}
+function renderConservatori(){
+  const wrap=$('#consGroups');
+  if(!wrap)return;
+  const schools=conservatoriData.filter(c=>(c.number||0)<300);
+  const readable=schools.filter(c=>c.status==='ok');
+  $('#conservatoriCount').textContent=`${readable.length}/${schools.length} 所院校页面可正常读取`;
+  const filtered=filterInstitutionRecords(schools,consQuery,consDateOnly);
+  const groups=filtered.length?[{title:'公立音乐学院',hint:'Conservatorio',items:filtered}]:[];
+  wrap.innerHTML=groups.map(g=>`<section class="cons-group"><div class="cons-group-head"><h3>${g.title}</h3><span>${g.hint} · ${g.items.length} 所</span></div><div class="cons-list">${g.items.map(consCard).join('')}</div></section>`).join('');
   const emptyBox=$('#conservatoriEmpty');
-  if(emptyBox)emptyBox.innerHTML=filtered.length?'':'<div class="empty">没有找到符合条件的院校。请更换城市或调整筛选条件。</div>';
+  if(emptyBox)emptyBox.innerHTML=filtered.length?'':'<div class="empty">没有找到符合条件的公立音乐学院。请更换城市或调整筛选条件。</div>';
   renderTiles();
   renderPdfList();
+}
+function renderAcademies(){
+  const wrap=$('#academyGroups');
+  if(!wrap)return;
+  const programs=conservatoriData.filter(c=>['opera_academy','choral_school'].includes(c.institution_type));
+  const filtered=filterInstitutionRecords(programs,academyQuery,academyDateOnly);
+  const groups=[
+    {title:'歌剧院 Accademia',hint:'Opera Academy',items:filtered.filter(c=>c.institution_type==='opera_academy')},
+    {title:'剧院合唱学校',hint:'Choral School · 独立培养类别',items:filtered.filter(c=>c.institution_type==='choral_school')}
+  ].filter(g=>g.items.length);
+  wrap.innerHTML=groups.map(g=>`<section class="cons-group"><div class="cons-group-head"><h3>${g.title}</h3><span>${g.hint} · ${g.items.length} 个项目</span></div><div class="cons-list">${g.items.map(consCard).join('')}</div></section>`).join('');
+  const total=programs.filter(c=>c.institution_type==='opera_academy').length;
+  $('#academyCount').textContent=`${total} 个 Accademia · ${programs.filter(c=>c.institution_type==='choral_school').length} 个合唱学校`;
+  const emptyBox=$('#academyEmpty');
+  if(emptyBox)emptyBox.innerHTML=filtered.length?'':'<div class="empty">没有找到匹配的剧院学院或专业培养项目。</div>';
+  renderTiles();
 }
 
 /* ---------- PDF shelf ---------- */
@@ -533,10 +550,13 @@ function renderPdfList(){
 
 function renderTiles(){
   const callsCount=$('#opportunities')?$('#opportunities').querySelectorAll('.opportunity-card').length:0;
-  const readable=conservatoriData.filter(c=>c.status==='ok').length;
+  const schools=conservatoriData.filter(c=>(c.number||0)<300);
+  const readable=schools.filter(c=>c.status==='ok').length;
+  const academyCount=conservatoriData.filter(c=>c.institution_type==='opera_academy').length;
   const set=(id,text)=>{const el=document.getElementById(id);if(el)el.textContent=text;};
   set('statCalls',callsCount?String(callsCount):'0');
-  set('statSchools',conservatoriData.length?String(readable):'—');
+  set('statSchools',schools.length?String(readable):'—');
+  set('statAcademies',academyCount?String(academyCount):'—');
   set('statSongs',repertoireLoaded?String(repertoire.length):'—');
 }
 
@@ -586,6 +606,7 @@ async function loadConservatori(){
     $('#updatedAt').textContent=stamp?`最近检查：${new Intl.DateTimeFormat('zh-CN',{timeZone:'Europe/Rome',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(stamp))}`:'数据已载入';
   }catch(error){conservatoriData=[];opportunities=[];$('#updatedAt').textContent='暂时无法载入数据，请重新载入。';}
   renderConservatori();
+  renderAcademies();
   renderCalls();
 }
 
@@ -606,6 +627,17 @@ bindPanelLinks();
 $('#refreshButton').addEventListener('click',()=>{loadConservatori();loadRepertoire();});
 const consInput=$('#consSearchInput');
 if(consInput)consInput.addEventListener('input',event=>{consQuery=event.target.value;renderConservatori();});
+const academyInput=$('#academySearchInput');
+if(academyInput)academyInput.addEventListener('input',event=>{academyQuery=event.target.value;renderAcademies();});
+const academyToggle=$('#academyDateOnly');
+if(academyToggle)academyToggle.addEventListener('click',()=>{academyDateOnly=!academyDateOnly;academyToggle.setAttribute('aria-pressed',String(academyDateOnly));renderAcademies();});
+const academyExpand=$('#academyExpandAll');
+if(academyExpand)academyExpand.addEventListener('click',()=>{
+  const on=academyExpand.getAttribute('aria-pressed')!=='true';
+  academyExpand.setAttribute('aria-pressed',String(on));
+  academyExpand.textContent=on?'收起全部项目':'展开全部项目';
+  $('#academyGroups .cons-card').forEach(card=>{card.open=on;});
+});
 const pdfSearch=$('#pdfSearchInput');
 if(pdfSearch)pdfSearch.addEventListener('input',renderPdfList);
 const consToggle=$('#consDateOnly');
