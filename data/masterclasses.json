@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T00:57:00+01:00",
+  "updated_at": "2026-11-13T21:40:00+01:00",
   "items": [
     {
       "id": "wj-gregory-kunde-milano-2026-11",
@@ -302,6 +302,45 @@
       "title_zh": "Giorgio Lormi 声乐大师班",
       "focus_zh": "声乐大师班",
       "fee_label_zh": "费用尚未公布"
+    },
+    {
+      "id": "veniceoperaarts-simone-piazzola-padova-2026-12",
+      "title": "Masterclass internazionale di canto lirico — Simone Piazzola & Alberto Bellio",
+      "teacher": "M° Simone Piazzola (baritone); M° Alberto Bellio (pianist)",
+      "instrument_or_voice": "Canto lirico · tecnica vocale, dizione, fraseggio, intonazione, interpretazione e approccio scenico",
+      "location": "Teatro Torresino, Via Torresino 2, 35122 Padova (PD), Italia",
+      "start_at": "2026-12-02T00:00:00+01:00",
+      "end_at": "2026-12-05T23:59:00+01:00",
+      "fee_eur": 450,
+      "description_zh": "面向歌剧演唱者的四日国际声乐大师班，由男中音 Simone Piazzola 与钢琴家 Alberto Bellio 指导，内容包括声乐技术、意大利语咬字、乐句、音准、音乐诠释与舞台表达。正式学员需提交至少两首准备演唱的曲目，并将填写签名的报名表发送至 lyric@veniceoperaarts.com；旁听学员也可报名。官方报名规则把截止日期写为“2026年11月31日 00:30”，但11月没有31日；同一文件另说明满15名报名者即提前关闭报名。因此平台不填写未经确认的截止日期，建议申请前直接向主办方确认剩余名额和正确截止时间。",
+      "source_name": "VeniceOperaArts",
+      "source_url": "https://www.veniceoperaarts.com/index.php/masterclass",
+      "application_url": "https://www.veniceoperaarts.com/images/lyric/masterclass-canto-lirico/MODULO-DI-ISCRIZIONE_Masterclass-Padova-2-5-dicembre-2026.pdf",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-13T21:40:00+01:00",
+      "last_verified_at": "2026-11-13T21:40:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.veniceoperaarts.com/index.php/masterclass",
+          "excerpt": "Official organizer page: 2–5 December 2026, Padova | Teatro Torresino; final concert on 5 December at 20:15; Simone Piazzola (baritone) and Alberto Bellio (pianist); the programme is for opera singers and includes vocal technique, diction, phrasing, intonation, interpretation and stage approach.",
+          "checked_at": "2026-11-13T21:40:00+01:00"
+        },
+        {
+          "url": "https://www.veniceoperaarts.com/images/lyric/masterclass-canto-lirico/regolamento-MASTERCLASS-di-canto-lirico_PADOVA-2026.pdf",
+          "excerpt": "Official rules PDF: singers submit at least two repertoire titles and a signed registration form by email; active participants €450, auditors €80. The printed deadline is “31 Novembre 2026 at 00:30” (an invalid calendar date); the same rules state registration closes once 15 enrolments are reached.",
+          "checked_at": "2026-11-13T21:40:00+01:00"
+        },
+        {
+          "url": "https://www.veniceoperaarts.com/images/lyric/masterclass-canto-lirico/MODULO-DI-ISCRIZIONE_Masterclass-Padova-2-5-dicembre-2026.pdf",
+          "excerpt": "Official registration form confirms the Padova masterclass dates 2–5 December 2026, venue Teatro Torresino, and the active-singer/auditor registration categories.",
+          "checked_at": "2026-11-13T21:40:00+01:00"
+        }
+      ],
+      "title_zh": "Padova 国际声乐大师班：Simone Piazzola & Alberto Bellio",
+      "focus_zh": "声乐技术、意大利语咬字、乐句、音准、音乐诠释与舞台表达",
+      "fee_label_zh": "正式学员：€450（四天）；旁听：€80（四天）"
     }
   ]
 }
