@@ -27,3 +27,18 @@
 ## 后续
 
 如能从主办协会/机构的独立官网、政府/协会登记目录或官方社交账号取得直接证据，再重新评估。下一次周度覆盖扫描将把本次来源元数据作为当前分类输入；此前周度 checkpoint 保留为历史记录，不手动改写。
+
+
+## 后续复核 — source-12（同日）
+
+在查看该机构官方主站后，source-12 的身份直接证据已补足：主站介绍 E.L.I. 的机构使命与声乐活动，导航列出 Premio E.L.I.，官方联系/Newsletter 页面列出 E.L.I. - Ente Lirico Italiano ETS 的地址、电话和税号。因此 source-12 从 `needs_review` 恢复为 `auto_approved_official`，置信度 high。
+
+证据：
+- [机构官方主站](https://www.enteliricoitaliano.it/) — 机构介绍、声乐活动与联系方式
+- [Premio E.L.I. 官方栏目](https://www.enteliricoitaliano.it/premioeli/)
+- [Premio E.L.I. 2026 官方公告](https://www.enteliricoitaliano.it/premioeli/bando-concorso-2026/)
+- [官方联系/Newsletter 页面](https://www.enteliricoitaliano.it/newsletter/) — ETS 名称、地址、电话及税号
+
+source-15 仍保持 `needs_review` / `unverified` / medium；第三方目录对比赛信息的转载不能替代主办协会的独立官方身份依据。
+
+**当前 44 条登记来源分类**：auto_approved_official=25、auto_approved_third_party=5、needs_review=4、irrelevant_candidate=9、duplicate_candidate=1。
