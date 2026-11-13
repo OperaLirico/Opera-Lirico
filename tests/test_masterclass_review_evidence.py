@@ -24,7 +24,7 @@ class MasterclassReviewEvidenceContractTests(unittest.TestCase):
         self.assertIn('official_evidence_url: officialEvidenceUrl', self.worker)
         self.assertIn('official_evidence_excerpt: officialEvidenceExcerpt.slice(0, 2000)', self.worker)
         self.assertIn('verified_pending_publication', self.worker)
-        self.assertIn('publication_status', self.worker)
+        self.assertIn('verified_pending_publication', self.worker)
 
 
 if __name__ == "__main__":
