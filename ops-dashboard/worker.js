@@ -62,7 +62,7 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 <div id="contentQueue" class="socialQueue"><div class="empty">正在读取内容草稿…</div></div>
 </div></section>
 <section class="section"><h2>大师班候选审核</h2><div class="panel">
-<p class="hint">每日自动发现的课程线索。请打开主办方原始页面核对日期、费用、报名条件和截止时间。核实通过只代表审核完成，不会自动发布到网站。</p>
+<p class="hint">每日自动发现的课程线索。核实时必须填写主办方官方 HTTPS 页面/文件链接，并粘贴至少 40 个字符的原文证据；第三方目录不能作为核验依据。核实通过只代表审核完成，不会自动发布到网站。</p>
 <div id="masterclassQueue" class="masterclassQueue"><div class="empty">正在读取大师班候选…</div></div>
 </div></section>
 <p class="notice">安全说明：访问统计、订阅汇总和社交媒体草稿均受后台登录保护；此后台不提供自动发布或邮件发送操作。</p>
@@ -170,23 +170,28 @@ async function loadMasterclassQueue(){
    const source=document.createElement("a");source.href=item.source_url||"#";source.target="_blank";source.rel="noopener noreferrer";source.textContent="打开候选原始来源 ↗";card.append(source);
    const discovered=document.createElement("div");discovered.className="masterclassMeta";discovered.textContent="发现入口："+(item.discovered_from||"—");card.append(discovered);
    const excerpt=document.createElement("div");excerpt.className="masterclassExcerpt";excerpt.textContent=item.evidence_excerpt||"抓取结果未提供摘录。";card.append(excerpt);
-   const notes=document.createElement("textarea");notes.className="masterclassNotes";notes.placeholder="记录核实结果：准确日期、报名截止、费用、年龄限制、官方申请链接等…";notes.value=item.review?.notes||item.review_notes||"";notes.setAttribute("aria-label","大师班审核备注");card.append(notes);
+   const evidenceUrl=document.createElement("textarea");evidenceUrl.className="masterclassNotes";evidenceUrl.style.minHeight="48px";evidenceUrl.placeholder="官方证据 URL（必须是主办方官网或其官方文件 HTTPS 链接）";evidenceUrl.value=item.review?.official_evidence_url||"";evidenceUrl.setAttribute("aria-label","官方证据链接");card.append(evidenceUrl);
+   const evidenceExcerpt=document.createElement("textarea");evidenceExcerpt.className="masterclassNotes";evidenceExcerpt.placeholder="粘贴官方页面/文件中直接支持课程日期、教师、费用或报名信息的原文摘录（至少 40 个字符）";evidenceExcerpt.value=item.review?.official_evidence_excerpt||"";evidenceExcerpt.setAttribute("aria-label","官方证据原文摘录");card.append(evidenceExcerpt);
+   const notes=document.createElement("textarea");notes.className="masterclassNotes";notes.placeholder="审核备注：日期、报名截止、费用、报名条件、未解决的冲突…";notes.value=item.review?.notes||item.review_notes||"";notes.setAttribute("aria-label","大师班审核备注");card.append(notes);
    const status=document.createElement("div");status.className="masterclassState";status.textContent=item.review?.reviewed_at?"上次审核："+new Date(item.review.reviewed_at).toLocaleString("zh-CN"):"尚未审核";card.append(status);
    const actions=document.createElement("div");actions.className="masterclassActions";
-   const verified=document.createElement("button");verified.className="primary";verified.textContent="核实通过（待发布）";verified.disabled=item.publisher_status!=="official";
-   verified.title=verified.disabled?"第三方目录只能作为线索，需先找到主办方官方页面。":"核实通过不会自动发布。";
-   verified.addEventListener("click",()=>saveMasterclassReview(item.candidate_id,"verified_pending_publication",notes.value,verified));
-   const more=document.createElement("button");more.textContent="需要补充信息";more.addEventListener("click",()=>saveMasterclassReview(item.candidate_id,"needs_more_info",notes.value,more));
-   const reject=document.createElement("button");reject.textContent="排除";reject.addEventListener("click",()=>saveMasterclassReview(item.candidate_id,"rejected",notes.value,reject));
+   const evidenceReady=()=>/^https:\/\//i.test(evidenceUrl.value.trim())&&evidenceExcerpt.value.trim().length>=40;
+   const verified=document.createElement("button");verified.className="primary";verified.textContent="核实通过（待发布）";verified.disabled=item.publisher_status!=="official"||!evidenceReady();
+   verified.title=item.publisher_status!=="official"?"第三方目录只能作为线索，需先找到主办方官方页面。":(!evidenceReady()?"填写官方 HTTPS 证据链接和至少 40 个字符的原文摘录后才能核实。":"核实通过不会自动发布。");
+   const refreshEvidenceGate=()=>{verified.disabled=item.publisher_status!=="official"||!evidenceReady();};
+   evidenceUrl.addEventListener("input",refreshEvidenceGate);evidenceExcerpt.addEventListener("input",refreshEvidenceGate);
+   verified.addEventListener("click",()=>saveMasterclassReview(item.candidate_id,"verified_pending_publication",notes.value,evidenceUrl.value,evidenceExcerpt.value,verified));
+   const more=document.createElement("button");more.textContent="需要补充信息";more.addEventListener("click",()=>saveMasterclassReview(item.candidate_id,"needs_more_info",notes.value,evidenceUrl.value,evidenceExcerpt.value,more));
+   const reject=document.createElement("button");reject.textContent="排除";reject.addEventListener("click",()=>saveMasterclassReview(item.candidate_id,"rejected",notes.value,evidenceUrl.value,evidenceExcerpt.value,reject));
    actions.append(verified,more,reject);card.append(actions);root.append(card);
   });
  }catch(err){root.textContent=err.message;}
 }
-async function saveMasterclassReview(id,state,notes,button){
+async function saveMasterclassReview(id,state,notes,evidenceUrl,evidenceExcerpt,button){
  const old=button.textContent;button.disabled=true;button.textContent="保存中…";
  try{
-  const r=await fetch("/api/masterclasses/candidates/"+encodeURIComponent(id),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({status:state,notes})});
-  if(!r.ok){const d=await r.json().catch(()=>({}));throw new Error(d.error==="official_source_required"?"请先找到并核对主办方官方页面。":"审核结果保存失败，请刷新后重试。");}
+  const r=await fetch("/api/masterclasses/candidates/"+encodeURIComponent(id),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({status:state,notes,official_evidence_url:evidenceUrl,official_evidence_excerpt:evidenceExcerpt})});
+  if(!r.ok){const d=await r.json().catch(()=>({}));const messages={official_source_required:"第三方目录不能作为核实依据，请先找到主办方官方页面。",official_evidence_url_required:"请填写主办方官网或官方文件的 HTTPS 链接。",official_evidence_excerpt_required:"请粘贴至少 40 个字符的官方原文证据。",official_evidence_domain_mismatch:"证据链接必须来自该主办方的官方域名。",invalid_official_evidence_url:"官方证据链接格式无效。"};throw new Error(messages[d.error]||"审核结果保存失败，请刷新后重试。");}
   await loadMasterclassQueue();
  }catch(err){button.textContent=err.message;button.disabled=false;return;}
  button.textContent=old;button.disabled=false;
@@ -368,6 +373,8 @@ function attachMasterclassReview(item, storedReview) {
   const fileReview = {
     status: item.review_status || "pending_manual_review",
     notes: item.review_notes || "",
+    official_evidence_url: item.official_evidence_url || "",
+    official_evidence_excerpt: item.official_evidence_excerpt || "",
     reviewed_at: item.reviewed_at || null
   };
   return { ...item, review: storedReview || fileReview };
@@ -549,10 +556,31 @@ export default {
       if (input.status === "verified_pending_publication" && candidate.publisher_status !== "official") {
         return json({ error: "official_source_required" }, 400);
       }
+      const officialEvidenceUrl = String(input.official_evidence_url || "").trim();
+      const officialEvidenceExcerpt = String(input.official_evidence_excerpt || "").trim();
+      if (input.status === "verified_pending_publication") {
+        if (!/^https:\/\//i.test(officialEvidenceUrl)) {
+          return json({ error: "official_evidence_url_required" }, 400);
+        }
+        if (officialEvidenceExcerpt.length < 40) {
+          return json({ error: "official_evidence_excerpt_required" }, 400);
+        }
+        try {
+          const evidenceHost = new URL(officialEvidenceUrl).hostname.toLowerCase().replace(/^www\\./, "");
+          const candidateHost = new URL(candidate.source_url).hostname.toLowerCase().replace(/^www\\./, "");
+          if (evidenceHost !== candidateHost && !evidenceHost.endsWith("." + candidateHost)) {
+            return json({ error: "official_evidence_domain_mismatch" }, 400);
+          }
+        } catch {
+          return json({ error: "invalid_official_evidence_url" }, 400);
+        }
+      }
       const record = {
         candidate_id: id,
         status: input.status,
         notes: String(input.notes || "").slice(0, 3000),
+        official_evidence_url: officialEvidenceUrl,
+        official_evidence_excerpt: officialEvidenceExcerpt.slice(0, 2000),
         reviewed_at: new Date().toISOString(),
         title_hint: String(candidate.title_hint || "").slice(0, 240),
         source_name: String(candidate.source_name || "").slice(0, 160),

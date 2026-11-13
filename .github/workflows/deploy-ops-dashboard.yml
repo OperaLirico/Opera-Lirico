@@ -27,6 +27,8 @@ jobs:
         uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
         with:
           node-version: "22"
+      - name: Check Worker JavaScript syntax
+        run: node --check ops-dashboard/worker.js
       - name: Install Wrangler
         run: npm install --global wrangler@4
       - name: Provision private content draft storage
