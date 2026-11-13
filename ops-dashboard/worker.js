@@ -191,7 +191,7 @@ async function saveMasterclassReview(id,state,notes,evidenceUrl,evidenceExcerpt,
  const old=button.textContent;button.disabled=true;button.textContent="保存中…";
  try{
   const r=await fetch("/api/masterclasses/candidates/"+encodeURIComponent(id),{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({status:state,notes,official_evidence_url:evidenceUrl,official_evidence_excerpt:evidenceExcerpt})});
-  if(!r.ok){const d=await r.json().catch(()=>({}));throw new Error(d.error==="official_source_required"?"请先找到并核对主办方官方页面。":"审核结果保存失败，请刷新后重试。");}
+  if(!r.ok){const d=await r.json().catch(()=>({}));const messages={official_source_required:"第三方目录不能作为核实依据，请先找到主办方官方页面。",official_evidence_url_required:"请填写主办方官网或官方文件的 HTTPS 链接。",official_evidence_excerpt_required:"请粘贴至少 40 个字符的官方原文证据。",official_evidence_domain_mismatch:"证据链接必须来自该主办方的官方域名。",invalid_official_evidence_url:"官方证据链接格式无效。"};throw new Error(messages[d.error]||"审核结果保存失败，请刷新后重试。");}
   await loadMasterclassQueue();
  }catch(err){button.textContent=err.message;button.disabled=false;return;}
  button.textContent=old;button.disabled=false;
@@ -566,8 +566,8 @@ export default {
           return json({ error: "official_evidence_excerpt_required" }, 400);
         }
         try {
-          const evidenceHost = new URL(officialEvidenceUrl).hostname.toLowerCase();
-          const candidateHost = new URL(candidate.source_url).hostname.toLowerCase();
+          const evidenceHost = new URL(officialEvidenceUrl).hostname.toLowerCase().replace(/^www\\./, "");
+          const candidateHost = new URL(candidate.source_url).hostname.toLowerCase().replace(/^www\\./, "");
           if (evidenceHost !== candidateHost && !evidenceHost.endsWith("." + candidateHost)) {
             return json({ error: "official_evidence_domain_mismatch" }, 400);
           }
