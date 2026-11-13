@@ -47,11 +47,15 @@ console.log(JSON.stringify([rejected.review, pending.review, stored.review]));
                 {
                     "status": "rejected",
                     "notes": "Expired deadline",
+                    "official_evidence_url": "",
+                    "official_evidence_excerpt": "",
                     "reviewed_at": "2026-11-13T21:40:00+01:00",
                 },
                 {
                     "status": "pending_manual_review",
                     "notes": "Official source not yet verified",
+                    "official_evidence_url": "",
+                    "official_evidence_excerpt": "",
                     "reviewed_at": None,
                 },
                 {
