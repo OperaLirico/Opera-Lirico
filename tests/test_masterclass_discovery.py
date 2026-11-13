@@ -55,6 +55,12 @@ class MasterclassDiscoveryTests(unittest.TestCase):
         self.assertEqual(candidate["publisher_status"], "official")
         self.assertEqual(candidate["publication_status"], "not_published")
 
+    def test_dashboard_displays_date_context_for_reviewers(self):
+        root = Path(__file__).resolve().parents[1]
+        worker = (root / "ops-dashboard" / "worker.js").read_text(encoding="utf-8")
+        self.assertIn("日期上下文：", worker)
+        self.assertIn("item.date_context", worker)
+
     def test_rejects_non_vocal_masterclass(self):
         candidate = make_candidate(
             self.source,
