@@ -17,7 +17,7 @@ class MasterclassReviewEvidenceContractTests(unittest.TestCase):
         self.assertIn('official_evidence_domain_mismatch', self.worker)
 
     def test_official_evidence_hostname_normalizes_www_prefix(self):
-        self.assertIn(r'replace(/^www\\./, "")', self.worker)
+        self.assertIn(r'replace(/^www\./, "")', self.worker)
 
     def test_verification_requires_exact_source_excerpt(self):
         self.assertIn('officialEvidenceExcerpt.length < 40', self.worker)
