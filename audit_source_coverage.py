@@ -26,6 +26,7 @@ AUDIT = ROOT / ".github" / "audits"
 CHECKPOINT = AUDIT / "source-coverage-checkpoint.json"
 REPORT = AUDIT / "source-coverage-latest.md"
 SOURCE_AUDIT = ROOT / "reports" / "source-audit-baseline-2026-11-10.json"
+SOURCE_REVIEW_OVERRIDES = DATA / "source_review_overrides.json"
 VOCAL_RE = re.compile(
     r"canto|cantant|soprano|mezzosoprano|contralto|tenore|baritono|basso|"
     r"vocal|voce|young artist|artisti del coro|coro|corale",
@@ -56,11 +57,13 @@ def canonical_url(url: str) -> str:
 
 
 def source_inventory() -> list[dict]:
-    """Use sources.json as the merged registry; join the source audit baseline."""
+    """Use sources.json as the merged registry and apply persistent source-review overrides."""
     inventory: list[dict] = []
     audit_payload = read_json(SOURCE_AUDIT, {})
     audit_by_id = {x.get("source_id"): x for x in audit_payload.get("items", []) if x.get("source_id")}
     audit_by_number = {x.get("legacy_number"): x for x in audit_payload.get("items", []) if x.get("legacy_number") is not None}
+    override_payload = read_json(SOURCE_REVIEW_OVERRIDES, {})
+    overrides_by_id = {x.get("source_id"): x for x in override_payload.get("items", []) if x.get("source_id")}
     seen_urls: set[str] = set()
     sources = read_json(DATA / "sources.json", [])
     if isinstance(sources, list):
@@ -74,30 +77,34 @@ def source_inventory() -> list[dict]:
             seen_urls.add(canonical)
             number = item.get("number")
             source_id = str(item.get("source_id") or f"source-{number if number is not None else canonical}")
-            audit = audit_by_id.get(source_id) or audit_by_number.get(number) or {}
-            evidence_urls = item.get("evidence_urls") or []
-            evidence = item.get("audit_evidence") or []
+            # Persistent overrides outrank generated registry fields and the immutable baseline.
+            override = overrides_by_id.get(source_id) or {}
+            baseline = audit_by_id.get(source_id) or audit_by_number.get(number) or {}
+            evidence_urls = override.get("evidence_urls") or item.get("evidence_urls") or []
+            evidence = override.get("audit_evidence") or item.get("audit_evidence") or []
             evidence_url = (
-                item.get("evidence_url")
+                override.get("evidence_url")
                 or (evidence_urls[0] if evidence_urls else None)
                 or (evidence[0].get("url") if evidence and isinstance(evidence[0], dict) else None)
-                or audit.get("evidence_url")
+                or item.get("evidence_url")
+                or baseline.get("evidence_url")
             )
-            confidence = item.get("confidence")
-            if not confidence:
-                confidence = "low" if item.get("audit_method") == "heuristic" else audit.get("confidence", "none")
+            confidence = (
+                override.get("confidence")
+                or item.get("confidence")
+                or ("low" if item.get("audit_method") == "heuristic" else baseline.get("confidence", "none"))
+            )
             inventory.append({
                 "source_id": source_id,
                 "name": item.get("source") or item.get("name") or source_id,
                 "url": url,
                 "kind": "registered",
-                # Current source-level audit metadata must override the original baseline.
-                "review_status": item.get("auto_review_status") or audit.get("auto_review_status") or item.get("review_status") or "classification_missing",
-                "publisher_status": item.get("publisher_status") or audit.get("publisher_status") or "unverified",
-                "relevance_status": item.get("relevance_status") or audit.get("relevance_status") or "unknown",
+                "review_status": (override.get("auto_review_status") or item.get("auto_review_status") or baseline.get("auto_review_status") or item.get("review_status") or "classification_missing"),
+                "publisher_status": (override.get("publisher_status") or item.get("publisher_status") or baseline.get("publisher_status") or "unverified"),
+                "relevance_status": (override.get("relevance_status") or item.get("relevance_status") or baseline.get("relevance_status") or "unknown"),
                 "audit_confidence": confidence,
                 "audit_evidence_url": evidence_url,
-                "audit_date": item.get("audit_date") or item.get("auto_review_checked_at") or audit.get("audit_date"),
+                "audit_date": (override.get("audit_date") or override.get("auto_review_checked_at") or item.get("audit_date") or item.get("auto_review_checked_at") or baseline.get("audit_date")),
             })
 
     candidates_payload = read_json(DATA / "source_candidates.json", {})
@@ -125,7 +132,6 @@ def source_inventory() -> list[dict]:
             "audit_date": item.get("audit_date") or item.get("auto_review_checked_at"),
         })
     return sorted(inventory, key=lambda item: (item["kind"], item["source_id"]))
-
 
 def inventory_hash(inventory: list[dict]) -> str:
     stable = [
