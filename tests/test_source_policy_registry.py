@@ -60,9 +60,9 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
         for item in inventory:
             counts[item["review_status"]] = counts.get(item["review_status"], 0) + 1
         self.assertEqual(len(inventory), 44)
-        self.assertEqual(counts.get("auto_approved_official"), 24)
+        self.assertEqual(counts.get("auto_approved_official"), 25)
         self.assertEqual(counts.get("auto_approved_third_party"), 5)
-        self.assertEqual(counts.get("needs_review"), 5)
+        self.assertEqual(counts.get("needs_review"), 4)
         self.assertEqual(counts.get("irrelevant_candidate"), 9)
         self.assertEqual(counts.get("duplicate_candidate"), 1)
         self.assertEqual(sum(counts.values()), 44)
@@ -76,6 +76,9 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
             for item in source_inventory()
             if item["kind"] == "registered"
         }
+        self.assertEqual(registered["source-12"]["review_status"], "auto_approved_official")
+        self.assertEqual(registered["source-12"]["publisher_status"], "official")
+        self.assertEqual(registered["source-12"]["audit_confidence"], "high")
         self.assertEqual(registered["source-97"]["review_status"], "needs_review")
         self.assertEqual(registered["source-98"]["review_status"], "needs_review")
         for source_id in ("source-12", "source-15"):
