@@ -24,10 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Checkout
+      - name: Checkout latest main
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
-          ref: ${{ github.event.pull_request.head.sha || github.ref }}
+          ref: main
       - name: Set up Python
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
@@ -38,9 +38,40 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Run discovery tests
         run: python -m unittest tests.test_masterclass_discovery -v
-      - name: Discover masterclass leads
+      - name: Refresh and safely save review queue
         if: github.event_name != 'pull_request'
-        run: python discover_masterclasses.py
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          # Rebuild from the newest main on each attempt. Never rebase a stale
+          # generated JSON snapshot over a newer queue, which can lose records.
+          for attempt in 1 2 3; do
+            echo "Discovery write attempt ${attempt}/3"
+            git fetch origin main
+            git reset --hard origin/main
+            python discover_masterclasses.py
+            git add data/masterclass_candidates.json
+
+            if git diff --cached --quiet; then
+              echo "Candidate queue is already up to date."
+              exit 0
+            fi
+
+            git commit -m 'Refresh masterclass discovery queue'
+            if git push origin HEAD:main; then
+              echo "Candidate queue saved successfully."
+              exit 0
+            fi
+
+            echo "::warning::Push race detected on attempt ${attempt}; will rebuild from latest main."
+            sleep $((attempt * 3))
+          done
+
+          echo "::error::Could not save the candidate queue after 3 fresh rebuild attempts."
+          exit 1
       - name: Summarize discovery results
         if: github.event_name != 'pull_request'
         run: |
@@ -58,6 +89,7 @@ jobs:
               f"- New or refreshed this run: {data.get('new_or_refreshed_this_run', 0)}",
               f"- Source fetch errors: {len(errors)}",
               f"- Updated at: {data.get('updated_at', 'unknown')}",
+              "- Queue writes: rebuilt from latest main with up to 3 push attempts",
           ]
           if errors:
               lines.append("### Sources needing attention")
@@ -70,15 +102,3 @@ jobs:
           if errors:
               print(f"::warning::{len(errors)} masterclass source fetch error(s); see the step summary.")
           PY
-      - name: Save review queue
-        if: github.event_name != 'pull_request'
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/masterclass_candidates.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'Refresh masterclass discovery queue'
-            git fetch origin main
-            git rebase origin/main
-            git push origin HEAD:main
-          fi
