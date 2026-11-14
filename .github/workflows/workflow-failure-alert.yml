@@ -38,8 +38,17 @@ jobs:
               per_page: 100
             });
             const failedJobs = data.jobs.filter(job => job.conclusion === "failure");
+            // Report step names only. Never copy raw job logs into an issue: logs may contain secrets.
             const jobLines = failedJobs.length
-              ? failedJobs.map(job => `- [${job.name}](${job.html_url})`).join("\n")
+              ? failedJobs.map(job => {
+                  const failedSteps = (job.steps || [])
+                    .filter(step => step.conclusion === "failure")
+                    .map(step => String(step.name || "Unnamed step").replace(/[\r\n`]/g, " ").slice(0, 120));
+                  const stepLine = failedSteps.length
+                    ? `\n  - Failed step(s): ${failedSteps.map(name => `\`${name}\``).join(", ")}`
+                    : "";
+                  return `- [${job.name}](${job.html_url})${stepLine}`;
+                }).join("\n")
               : "- GitHub reported a workflow-level failure; no failed job details were returned.";
             const body = [
               "@wl19971007-lgtm",
