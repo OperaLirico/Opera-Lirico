@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Read-only system health checks for Opera Lirico."""
+"""Read-only health checks for the OperaLab. public site and private operations service."""
 from __future__ import annotations
 import json
 import sys
@@ -12,6 +12,7 @@ from datetime import datetime
 ROOT = Path(__file__).resolve().parent
 BASE_URL = "https://operalirico.github.io/Opera-Lirico"
 OPS_URL = "https://opera-lirico-ops.wl19971007.workers.dev"
+PUBLIC_BRAND = b"OperaLab."
 JSON_FILES = (
     "data/masterclasses.json",
     "data/opportunities.json",
@@ -125,10 +126,10 @@ def check_public_site(base_url):
                 raise RuntimeError(f"{url}: response is not valid UTF-8 JSON: {exc}") from exc
             if not isinstance(payload, dict) or not isinstance(payload.get("items"), list):
                 raise RuntimeError(f"{url}: response JSON has an unexpected structure")
-        elif path == "/" and b"Opera Lirico" not in body:
-            raise RuntimeError(f"{url}: homepage response does not contain expected site title")
-        elif path == "/masterclasses.html" and b"Opera Lirico" not in body and b"masterclass" not in body.lower():
-            raise RuntimeError(f"{url}: masterclass page does not contain expected content")
+        elif path == "/" and PUBLIC_BRAND not in body:
+            raise RuntimeError(f"{url}: homepage response does not contain expected public brand {PUBLIC_BRAND.decode()}")
+        elif path == "/masterclasses.html" and PUBLIC_BRAND not in body:
+            raise RuntimeError(f"{url}: masterclass page does not contain expected public brand {PUBLIC_BRAND.decode()}")
         checked.append(path)
     return checked
 
@@ -168,7 +169,7 @@ def check_ops_dashboard(base_url):
 
 def main():
     base_url = sys.argv[1] if len(sys.argv) > 1 else BASE_URL
-    print("Opera Lirico read-only health check")
+    print("OperaLab. read-only health check")
     print(f"Public base URL: {base_url}")
     try:
         local = check_local_data()
