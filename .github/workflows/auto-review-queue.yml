@@ -1,10 +1,6 @@
 name: Auto-review content queue
 
-# L4 layer 3: replace the blanket "a human approves everything" gate with rules.
-# Drafts are still written by generate-social-drafts.yml; this job re-checks them
-# and approves only the ones whose evidence is machine-verifiable. Everything
-# ambiguous stays pending_review with a note, so the queue only contains real
-# decisions instead of everything.
+# Conservative first-pass review. Publishing remains a manual action.
 
 on:
   schedule:
@@ -31,6 +27,8 @@ jobs:
         uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
         with:
           python-version: "3.12"
+      - name: Run conservative auto-review regression tests
+        run: python -m unittest tests.test_auto_review -v
       - name: Validate the review script
         run: python -m py_compile content_engine/auto_review.py
       - name: Approve machine-verifiable drafts and annotate the rest
