@@ -1,6 +1,7 @@
+---
 # 按声部细分的邮件订阅链路
 
-状态：已实现并通过本地测试；线上部署与端到端验证见“七、验证记录”。
+状态：已上线并完成线上端到端验证（除 Buttondown 后台预览一项需人工核对）。
 相关文档：`docs/newsletter-copy-guide.md`（正文怎么写）、`docs/analytics-and-newsletter-setup.md`（统计与订阅总览）、`docs/ops-dashboard-setup.md`（后台）。
 
 ## 一、链路总览
@@ -90,10 +91,16 @@ GitHub Actions（每周一 08:00 UTC）
 | 误建了草稿 | 在 Buttondown 删除草稿即可，链路不会自动发送 |
 | 想暂停订阅 | 把 `site-config.js` 的 `subscribeEndpoint` 置空，表单会提示“订阅服务还没配置好” |
 | 想复查账号能力 | 手动触发 `Newsletter capability probe`（只读，打印 `/newsletters`、`/tags`、`/subscribers`、`/emails` 的 HTTP 状态与片段） |
+| 想复查订阅者与草稿 | 手动触发 `Newsletter state check`（只读，把订阅者声部与草稿 slug、条件段数量写进 job summary） |
 
 ## 七、验证记录
 
 - 2026-11-15：`GET /v1/newsletters` 200、`GET /v1/tags` 200（`results: []`，count 0）、`GET /v1/subscribers` 200、`GET /v1/emails?status=draft` 200。结论：可读、可写订阅者，但没有 tag，条件段方案是唯一不依赖付费套餐的可行路径。
 - 2026-11-15：本地 `python -m unittest tests.test_newsletter_segments tests.test_weekly_digest` 13 项通过；`node --check subscribe.js site-config.js ops-dashboard/worker.js` 通过。
 - 2026-11-15：本地 `python weekly_digest.py --now 2026-11-15T12:00:00+01:00` 生成 7 条机会、8 个声部段落；男高音 3 条、男低音 3 条、女低音 1 条、不限声部 1 条按预期分配。
-- 线上端到端（订阅写入 + 草稿生成 + 预览渲染）记录见下一节，完成后补在这里。
+- 线上端到端（2026-11-15）：
+  - 订阅写入：`POST /api/subscribe`（Origin `https://operalirico.github.io`，`voice=tenor`）返回 `200 {"ok":true,"result":"pending_confirmation"}`；`Newsletter state check` 运行 `43742422885` 读到该订阅者 `type=unactivated voice='tenor' consent=True source=site:newsletter-form`，说明 metadata 已落库。
+  - 拒绝路径：`voice=unknown` 与缺 `consent` 都返回 400；预检 `OPTIONS` 返回 204 且带 `Access-Control-Allow-Origin: https://operalirico.github.io`。
+  - 草稿生成：`Weekly email digest (draft only)` 运行 `43741859570` 成功，新建草稿 `Opera Lirico 每周简报｜2026-11-15｜按你的声部`（`slug=opera-lirico-weekly-2026-11-15-voiced`，`type=private`，条件段 8 个 / `{% endif %}` 8 个）。
+  - 清理：测试地址标记 `+voicetest` 的记录已用一次性 workflow 删除，订阅者数回到 2（运行 `43742679241` 记录 `before 3, deleted 1, after 2`），该 workflow 已从仓库移除。
+  - 未自动化的一步：Buttondown 的“按订阅者预览”需要登录后台才能看到渲染结果，这一步留给人工在发送前核对（清单见 `docs/newsletter-copy-guide.md` 第七节）。
