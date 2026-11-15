@@ -68,6 +68,27 @@ class AutoReviewSafetyTests(unittest.TestCase):
         parsed = auto_review.parse_created_at("2026-11-14T10:00:00+01:00")
         self.assertEqual(parsed.tzinfo, timezone.utc)
 
+    def test_future_creation_timestamp_is_not_treated_as_fresh(self):
+        now = auto_review.parse_created_at("2026-11-15T12:00:00+00:00")
+        self.assertEqual(
+            auto_review.creation_time_state("2026-11-15T12:10:00+00:00", now),
+            "future",
+        )
+
+    def test_recent_creation_timestamp_is_skipped_as_fresh(self):
+        now = auto_review.parse_created_at("2026-11-15T12:00:00+00:00")
+        self.assertEqual(
+            auto_review.creation_time_state("2026-11-15T11:30:00+00:00", now),
+            "fresh",
+        )
+
+    def test_old_creation_timestamp_is_ready_for_review(self):
+        now = auto_review.parse_created_at("2026-11-15T12:00:00+00:00")
+        self.assertEqual(
+            auto_review.creation_time_state("2026-11-15T10:00:00+00:00", now),
+            "ready",
+        )
+
     def test_duplicate_caption_is_rejected(self):
         draft = self.valid_draft()
         ok, reasons = auto_review.judge(draft, {"wj-operamusic.academy"}, {
