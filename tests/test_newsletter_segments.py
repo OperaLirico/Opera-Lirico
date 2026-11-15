@@ -3,7 +3,9 @@ import re
 import unittest
 
 from weekly_digest import (
+    VOICE_FALLBACK_GUARDS,
     VOICE_ORDER,
+    build_fallback_block,
     build_personalized_digest,
     build_voice_block,
     items_for_voice,
@@ -49,10 +51,26 @@ class NewsletterVoiceSegmentationTests(unittest.TestCase):
     def test_personalized_digest_has_one_guard_per_voice(self):
         _, body, _ = build_personalized_digest([self.item()], self.now)
         guards = re.findall(r'{% if subscriber\.metadata\.voice == "([a-z_]+)" %}', body)
-        self.assertEqual(guards, list(VOICE_ORDER) + ["all_voices"])
-        self.assertEqual(body.count("{% endif %}"), len(guards))
+        # Named voices first, then the "声部未注明" fallback (its guard uses == too);
+        # the empty-metadata fallback is checked separately below.
+        self.assertEqual(guards, list(VOICE_ORDER) + ["all_voices", "unspecified"])
+        total_blocks = len(VOICE_ORDER) + 1 + len(VOICE_FALLBACK_GUARDS)
+        self.assertEqual(body.count("{% endif %}"), total_blocks)
+        for guard in VOICE_FALLBACK_GUARDS:
+            self.assertIn("{% if " + guard + " %}", body)
         # No stray braces that Buttondown's template engine would try to parse.
         self.assertIsNone(re.search(r'(?<!%|\{)\{[^{%]', body))
+
+    def test_fallback_block_carries_the_whole_list(self):
+        block = build_fallback_block(
+            [self.item(id="tenor-only", voice_types=["tenor"],
+                       application_deadline_at="2026-11-18T18:00:00+01:00"),
+             self.item(id="bass-only", voice_types=["bass"],
+                       application_deadline_at="2026-11-24T18:00:00+01:00")],
+            self.now,
+        )
+        self.assertIn("还没填声部", block)
+        self.assertEqual(block.count("<article>"), 2)
 
     def test_personalized_digest_escapes_untrusted_text(self):
         _, body, _ = build_personalized_digest([self.item()], self.now)
