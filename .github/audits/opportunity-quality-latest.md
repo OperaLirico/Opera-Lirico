@@ -1,6 +1,6 @@
 # Daily opportunity data quality
 
-- Generated: 2026-11-14T08:23:07+01:00 (Europe/Rome)
+- Generated: 2026-11-15T08:26:08+01:00 (Europe/Rome)
 - Records in file: 7
 - Published records in file: 7
 - Currently open and publication-eligible: 7
