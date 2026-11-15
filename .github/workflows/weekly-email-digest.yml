@@ -28,10 +28,11 @@ jobs:
         run: |
           python -m py_compile weekly_digest.py
           python -m unittest discover -s tests -p 'test_weekly_digest.py' -v
+          python -m unittest discover -s tests -p 'test_newsletter_segments.py' -v
       - name: Generate local preview and optional private draft
         env:
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
-        run: python weekly_digest.py
+        run: python weekly_digest.py --mode segmented
       - name: Upload private preview artifact
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
@@ -42,7 +43,8 @@ jobs:
         run: |
           {
             echo "## Opera Lirico weekly email"
-            echo "- Mode: DRAFT ONLY"
+            echo "- Mode: SEGMENTED DRAFT ONLY (one draft, per-voice conditional sections)"
             echo "- No send endpoint is called by this workflow."
-            echo "- Preview artifact retained for 14 days."
+            echo "- Preview artifacts (preview.html/txt and voice-*.html) retained for 14 days."
+            echo "- Review with docs/newsletter-copy-guide.md before sending in Buttondown."
           } >> "$GITHUB_STEP_SUMMARY"
