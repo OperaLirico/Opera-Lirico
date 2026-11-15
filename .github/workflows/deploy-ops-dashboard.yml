@@ -107,10 +107,10 @@ jobs:
           fi
 
       # Temporary drill hook: fires only when the commit message contains
-      # [rollback-drill]. It runs after the deploy, so a real new version is live,
-      # then fails on purpose to exercise the automatic rollback path.
+      # [rollback-drill] and only on the first attempt, so a self-heal re-run
+      # turns green instead of rolling back again.
       - name: Rollback drill (temporary)
-        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[rollback-drill]') }}
+        if: ${{ github.event_name == 'push' && github.run_attempt == 1 && contains(github.event.head_commit.message, '[rollback-drill]') }}
         run: |
           echo "::error::Intentional failure to exercise the automatic rollback."
           exit 1
