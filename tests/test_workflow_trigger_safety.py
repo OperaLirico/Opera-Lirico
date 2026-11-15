@@ -36,15 +36,19 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
         self.assertNotIn("github.event.workflow_run", workflow)
 
     def test_failure_alert_only_listens_to_operationally_critical_workflows(self):
+        # The digest is scheduled (it scans the last 24h instead of firing on every
+        # completion), but it must still report only the workflows whose failure
+        # actually blocks production. Noisy jobs are filtered out by name.
         workflow = (ROOT / ".github" / "workflows" / "workflow-failure-alert.yml").read_text(encoding="utf-8")
+        self.assertIn("  schedule:", workflow)
         for name in (
             "Daily source refresh", "Deploy GitHub Pages",
             "Deploy private operations dashboard", "Discover masterclasses",
             "Source quality tests", "System health check", "KV backup",
         ):
-            self.assertIn(f'      - "{name}"', workflow)
+            self.assertIn(f'"{name}"', workflow)
         for name in ("Generate social content drafts", "Weekly email digest (draft only)", "Weekly source coverage", "Weekly source discovery", "P2 P4 extraction pilot"):
-            self.assertNotIn(f'      - "{name}"', workflow)
+            self.assertNotIn(f'"{name}"', workflow)
 
     def test_coverage_has_own_code_trigger_and_waits_for_daily_run(self):
         workflow = (ROOT / ".github" / "workflows" / "weekly-source-coverage.yml").read_text(encoding="utf-8")

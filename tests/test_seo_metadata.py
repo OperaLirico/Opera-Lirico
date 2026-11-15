@@ -52,9 +52,15 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertEqual(len(chips), len(set(chips)))
         self.assertEqual(len(chips), 12)
 
-    def test_unreviewed_repertoire_archive_is_not_loaded_by_the_frontend(self):
+    def test_repertoire_archive_is_only_merged_after_the_reader_starts_a_search(self):
+        # The archive holds unreviewed entries, so it must never be part of the first
+        # paint. It may be merged into search only when the reader actually searches.
         app = (ROOT / "app.js").read_text(encoding="utf-8")
-        self.assertNotIn("repertoire_archive.json", app)
+        self.assertIn("function ensureArchive()", app)
+        archive_start = app.index("async function loadArchive(")
+        self.assertIn("repertoire_archive.json", app[archive_start:])
+        first_paint = app[app.index("async function loadRepertoire("):archive_start]
+        self.assertNotIn("repertoire_archive.json", first_paint)
 
     def test_404_page_exists_and_returns_home_link(self):
         page = (ROOT / "404.html").read_text(encoding="utf-8")
