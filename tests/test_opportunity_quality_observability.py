@@ -20,6 +20,9 @@ class OpportunityQualityObservabilityTests(unittest.TestCase):
             "announcement_url": "https://user:pass@example.org/call",
             "application_url": "https://apply.example.org/form",
             "official_pdf_url": "javascript:alert(1)",
+        }, {
+            "id": "malformed",
+            "source_url": "https://[broken",
         }]
         findings = audit.invalid_urls(records)
         self.assertEqual(
@@ -28,6 +31,7 @@ class OpportunityQualityObservabilityTests(unittest.TestCase):
                 ("bad-links", "source_url"),
                 ("bad-links", "announcement_url"),
                 ("bad-links", "official_pdf_url"),
+                ("malformed", "source_url"),
             },
         )
 
