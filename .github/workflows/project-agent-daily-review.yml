@@ -38,8 +38,16 @@ jobs:
             ]);
 
             const runs = runsResponse.data.workflow_runs || [];
-            const failedRuns = runs.filter(run =>
-              run.status === "completed" && run.conclusion === "failure" &&
+            const latestCompletedByWorkflow = new Map();
+            for (const run of runs
+              .filter(item => item.status === "completed")
+              .sort((a, b) => new Date(a.created_at) - new Date(b.created_at))) {
+              latestCompletedByWorkflow.set(run.workflow_id, run);
+            }
+            // A failure is actionable only if it is still the latest completed run
+            // for that workflow. A later successful run means the incident recovered.
+            const failedRuns = [...latestCompletedByWorkflow.values()].filter(run =>
+              run.conclusion === "failure" &&
               new Date(run.created_at).getTime() >= since
             );
             const failedRunDetails = await Promise.all(failedRuns.map(async run => {
