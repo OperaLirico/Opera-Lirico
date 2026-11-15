@@ -2,10 +2,15 @@
 
 ## Newsletter
 
-The site links to the hosted Opera Lirico signup page:
-https://buttondown.com/wl19971007
+订阅入口是站点自己的表单（`index.html` 的 `#newsletterForm` + `subscribe.js`），不再外链 Buttondown 的托管订阅页：
 
-The signup is handled by Buttondown, not by a form hosted on this website. Subscribers can unsubscribe using the link included in Buttondown emails. Before promoting subscriptions, publish a privacy notice that identifies the data controller and contact address and explains Buttondown's role as a processor.
+- 表单字段：邮箱、声部、同意勾选；提交到 `site-config.js` 里的 `subscribeEndpoint`（运营 Worker 的公开路由 `POST /api/subscribe`）。
+- Worker 把邮箱、声部、同意记录写入 Buttondown 订阅者（`type: unactivated`，双确认后才算订阅成功）。
+- 邮件由 Buttondown 发送；退订用每封邮件页脚的链接。
+- 隐私说明在 `privacy.html`，表单必须勾选后才允许提交。
+- 按声部细分的实现与运维见 `docs/newsletter-segmentation.md`；正文写法见 `docs/newsletter-copy-guide.md`。
+
+后台（`ops-dashboard`）只读订阅汇总与草稿，不提供发送操作。站点前台不展示订阅人数。
 
 ## Cloudflare Web Analytics
 
@@ -23,4 +28,5 @@ The loader only inserts Cloudflare's beacon script when a non-empty, valid-looki
 
 - With an empty analytics token, no Cloudflare beacon request should be made.
 - With a configured site token, inspect the browser Network panel for `beacon.min.js` and successful analytics collection.
-- Test the Buttondown link in a private browser window and confirm the hosted signup page is reachable.
+- Submit the site form once with a test address, confirm the confirmation email arrives and the subscriber appears as `unactivated` in Buttondown with `metadata.voice` set.
+- Empty `subscribeEndpoint` in a local copy: the form must show "订阅服务还没配置好" and make no network request.

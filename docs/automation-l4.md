@@ -84,7 +84,7 @@
 
 - Cloudflare `sum { visits }` 与 `count` 在早期数据里几乎相等，口径仍需观察，看门狗会以 warning 形式记录 `visits > pageviews`。
 - Workers Observability 未开启，Worker 内部异常只能通过接口表现推断；如需根因日志要先在 Cloudflare 打开日志。
-- `newsletterUrl` 仍指向旧的 Buttondown 用户名，刊名与站点品牌尚未统一，属内容侧待办，不阻塞 L4。
+- `newsletterUrl` 仍指向旧的 Buttondown 用户名，刊名与站点品牌尚未统一，属内容侧待办，不阻塞 L4。订阅入口已改为站内表单（见 `docs/newsletter-segmentation.md`），`newsletterUrl` 现在只作后台链接使用。
 
 ## 七、验证记录（2026-11-15 实测）
 
