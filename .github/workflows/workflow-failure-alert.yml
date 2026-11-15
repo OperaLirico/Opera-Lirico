@@ -1,72 +1,86 @@
-name: Workflow failure alert
+name: Workflow failure digest
+
+# Replaces the previous per-run alert, which started once for every completion of
+# eight workflows and produced mostly empty runs.
+# Now it runs once a day and stays silent unless something actually failed.
 
 on:
-  workflow_run:
-    workflows:
-      - "Daily source refresh"
-      - "Deploy private operations dashboard"
-      - "Discover masterclasses"
-      - "Deploy GitHub Pages"
-      - "PDF signature evidence audit"
-      - "Source quality tests"
-      - "System health check"
-      - "KV backup"
-    types: [completed]
+  schedule:
+    - cron: "0 10 * * *"
+  workflow_dispatch:
 
 permissions:
   actions: read
   issues: write
 
 concurrency:
-  group: workflow-failure-alert-${{ github.event.workflow_run.id }}
+  group: opera-lirico-failure-digest
   cancel-in-progress: false
 
 jobs:
-  notify:
-    if: github.event.workflow_run.conclusion == 'failure'
+  digest:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - name: Create or update the automation failure log
+      - name: Summarize failures from the last 24 hours
         uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         with:
           script: |
-            const run = context.payload.workflow_run;
-            const { data } = await github.rest.actions.listJobsForWorkflowRun({
+            const since = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString();
+            const { data } = await github.rest.actions.listWorkflowRunsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              run_id: run.id,
+              created: `>=${since}`,
               per_page: 100
             });
-            const failedJobs = data.jobs.filter(job => job.conclusion === "failure");
-            // Report step names only. Never copy raw job logs into an issue: logs may contain secrets.
-            const jobLines = failedJobs.length
-              ? failedJobs.map(job => {
-                  const failedSteps = (job.steps || [])
+            const runs = data.workflow_runs || [];
+            const failed = runs.filter(run => run.conclusion === "failure");
+            core.info(`Runs in the last 24h: ${runs.length}. Failures: ${failed.length}.`);
+
+            // Silent when everything is green: no issue, no comment, no notification.
+            if (failed.length === 0) {
+              core.info("No failures in the last 24 hours; nothing to report.");
+              return;
+            }
+
+            const MAX_DETAIL = 10;
+            const lines = [];
+            for (const run of failed.slice(0, MAX_DETAIL)) {
+              let stepLine = "";
+              try {
+                const jobs = await github.rest.actions.listJobsForWorkflowRun({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  run_id: run.id,
+                  per_page: 100
+                });
+                // Report step names only. Never copy raw job logs into an issue: logs may contain secrets.
+                const failedSteps = (jobs.data.jobs || [])
+                  .filter(job => job.conclusion === "failure")
+                  .flatMap(job => (job.steps || [])
                     .filter(step => step.conclusion === "failure")
-                    .map(step => String(step.name || "Unnamed step").replace(/[\r\n`]/g, " ").slice(0, 120));
-                  const stepLine = failedSteps.length
-                    ? `\n  - Failed step(s): ${failedSteps.map(name => `\`${name}\``).join(", ")}`
-                    : "";
-                  return `- [${job.name}](${job.html_url})${stepLine}`;
-                }).join("\n")
-              : "- GitHub reported a workflow-level failure; no failed job details were returned.";
+                    .map(step => String(step.name || "Unnamed step").replace(/[\r\n`]/g, " ").slice(0, 120)));
+                if (failedSteps.length) {
+                  stepLine = `\n  - Failed step(s): ${failedSteps.map(name => `\`${name}\``).join(", ")}`;
+                }
+              } catch (error) {
+                stepLine = "";
+              }
+              lines.push(`- **${run.name}** \u00b7 [#${run.run_number}](${run.html_url}) \u00b7 \`${run.head_branch || "unknown"}\` \u00b7 ${run.event}${stepLine}`);
+            }
+
+            const title = "Opera Lirico \u2014 automation failure log";
             const body = [
-              "@wl19971007-lgtm",
               "",
-              "### Workflow failure detected",
-              `- Workflow: **${run.name}**`,
-              `- Run: [#${run.run_number}](${run.html_url})`,
-              `- Branch: ${run.head_branch || "unknown"}`,
-              `- Event: ${run.event}`,
-              `- Commit: ${run.head_sha}`,
-              `- Started: ${run.run_started_at || run.created_at}`,
+              `### Daily failure digest (${new Date().toISOString().slice(0, 10)})`,
+              `- Failures in the last 24 hours: **${failed.length}** of ${runs.length} runs`,
+              failed.length > MAX_DETAIL ? `- Showing the most recent ${MAX_DETAIL}; open the Actions tab for the rest` : "",
               "",
-              "### Failed jobs",
-              jobLines,
+              lines.join("\n"),
               "",
               "This issue is an alert log only. Review the linked run before changing production data or rerunning the workflow."
-            ].join("\n");
-            const title = "Opera Lirico — automation failure log";
+            ].filter(Boolean).join("\n");
+
             const { data: issues } = await github.rest.issues.listForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -81,7 +95,7 @@ jobs:
                 issue_number: existing.number,
                 body
               });
-              core.info(`Added failure alert to issue #${existing.number}`);
+              core.info(`Added daily digest to issue #${existing.number}`);
             } else {
               const { data: issue } = await github.rest.issues.create({
                 owner: context.repo.owner,
@@ -89,5 +103,5 @@ jobs:
                 title,
                 body
               });
-              core.info(`Created failure alert issue #${issue.number}`);
+              core.info(`Created failure log issue #${issue.number}`);
             }
