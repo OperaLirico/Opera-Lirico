@@ -507,6 +507,16 @@ export default {
       if (input.status && !["pending_review","approved","needs_changes","published"].includes(input.status)) return json({ error: "invalid_status" }, 400);
       if (input.caption !== undefined) record.caption = String(input.caption).slice(0,12000);
       if (input.status) record.status = input.status;
+      if (input.review && typeof input.review === "object") {
+        record.review = {
+          reviewer: String(input.review.reviewer || "").slice(0, 40),
+          auto: input.review.auto === true,
+          decided_at: String(input.review.decided_at || "").slice(0, 40),
+          reasons: Array.isArray(input.review.reasons)
+            ? input.review.reasons.slice(0, 6).map((reason) => String(reason).slice(0, 200))
+            : []
+        };
+      }
       record.updated_at = new Date().toISOString();
       await env.CONTENT_DRAFTS.put("draft:"+id, JSON.stringify(record), { expirationTtl: 60*60*24*30 });
       return json({ ok: true, id, status: record.status });
