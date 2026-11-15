@@ -34,8 +34,22 @@ jobs:
               per_page: 100
             });
             const runs = data.workflow_runs || [];
-            const failed = runs.filter(run => run.conclusion === "failure");
-            core.info(`Runs in the last 24h: ${runs.length}. Failures: ${failed.length}.`);
+            // Only operationally critical workflows are reported. Noisy or
+            // self-healing jobs (social drafts, coverage, pilots) would turn this
+            // log into a place people stop reading, which is worse than silence.
+            const CRITICAL = new Set([
+              "Daily source refresh",
+              "Deploy GitHub Pages",
+              "Deploy private operations dashboard",
+              "Discover masterclasses",
+              "Source quality tests",
+              "System health check",
+              "KV backup",
+              "Analytics watchdog",
+            ]);
+            const failed = runs.filter(run => run.conclusion === "failure" && CRITICAL.has(run.name));
+            const ignored = runs.filter(run => run.conclusion === "failure" && !CRITICAL.has(run.name)).length;
+            core.info(`Runs in the last 24h: ${runs.length}. Critical failures: ${failed.length}. Non-critical failures left to self-heal: ${ignored}.`);
 
             // Silent when everything is green: no issue, no comment, no notification.
             if (failed.length === 0) {
