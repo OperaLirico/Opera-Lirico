@@ -1,7 +1,7 @@
 import json
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import timezone
 from pathlib import Path
 from unittest.mock import patch
 
@@ -24,7 +24,9 @@ class AutoReviewSafetyTests(unittest.TestCase):
 
     def test_only_explicit_official_registry_entries_are_trusted(self):
         with tempfile.TemporaryDirectory() as tmp:
-            registry = Path(tmp) / "masterclass_sources.json"
+            data_dir = Path(tmp) / "data"
+            data_dir.mkdir()
+            registry = data_dir / "masterclass_sources.json"
             registry.write_text(json.dumps({
                 "sources": [
                     {"url": "https://official.example/events", "publisher_status": "official"},
