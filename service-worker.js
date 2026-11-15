@@ -1,4 +1,4 @@
-const CACHE='vocal-italia-v17';
+const CACHE='vocal-italia-v18';
 const SHELL=['./','./index.html','./styles.css','./app.js','./site-config.js','./analytics.js','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>event.waitUntil(
   caches.open(CACHE).then(cache=>cache.addAll(SHELL)).then(()=>self.skipWaiting())
@@ -19,13 +19,30 @@ const freshFirst=(request,event)=>event.respondWith(
     })
     .catch(()=>caches.match(request))
 );
+// The archive is roughly 800 KB, so it is served from cache first and refreshed in
+// the background: the search opens instantly on a repeat visit, and the next visit
+// already has the newer archive without the user waiting for the download again.
+const cacheThenRefresh=(request,event)=>event.respondWith(
+  caches.match(request).then(cached=>{
+    const refresh=fetch(request,{cache:'no-store'})
+      .then(response=>{
+        const copy=response.clone();
+        caches.open(CACHE).then(cache=>cache.put(request,copy)).catch(()=>{});
+        return response;
+      })
+      .catch(()=>cached);
+    return cached||refresh;
+  })
+);
 self.addEventListener('fetch',event=>{
  const request=event.request;
  if(request.method!=='GET')return;
  const url=new URL(request.url);
  if(url.origin!==location.origin)return;
  const path=url.pathname;
- if(path.endsWith('/data/sources.json')||path.endsWith('/data/repertoire.json')||path.endsWith('/data/conservatori.json')||path.endsWith('/data/conservatori_extra.json')||path.endsWith('/data/conservatori_zh.json')||path.endsWith('/data/conservatori_manual.json')){
+ if(path.endsWith('/data/repertoire_archive.json')){
+   cacheThenRefresh(request,event);
+ }else if(path.endsWith('/data/sources.json')||path.endsWith('/data/repertoire.json')||path.endsWith('/data/conservatori.json')||path.endsWith('/data/conservatori_extra.json')||path.endsWith('/data/conservatori_zh.json')||path.endsWith('/data/conservatori_manual.json')){
    freshFirst(request,event);
  }else if(request.mode==='navigate'||path.endsWith('/index.html')||/\.(?:css|js)$/.test(path)){
    freshFirst(request,event);
