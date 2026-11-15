@@ -168,17 +168,38 @@
     <section class="shell newsletter-panel" aria-labelledby="newsletter-title">
     <div class="newsletter-copy">
       <div class="eyebrow">OperaLab. Weekly</div>
-      <h2 id="newsletter-title">每周收到新的声乐机会</h2>
-      <p>订阅每周简报，了解意大利歌剧院招募、声乐比赛与青年艺术家项目。邮件由 Buttondown 管理，可随时通过邮件中的退订链接取消。</p>
+      <h2 id="newsletter-title">订阅每周简报，按你的声部发</h2>
+      <p>填邮箱和声部，之后每期会把点名你这个声部的机会放在最前面，其余声部的机会汇总在下面。声部信息只用于分拣内容，不会展示在网站上。邮件由 Buttondown 发送，随时可用邮件里的退订链接取消。</p>
     </div>
-    <a class="newsletter-link" href="https://buttondown.com/wl19971007" target="_blank" rel="noopener noreferrer">订阅每周简报 <span aria-hidden="true">↗</span></a>
+    <form id="newsletterForm" class="newsletter-form" novalidate>
+      <label class="nl-field" for="nlEmail"><span>邮箱</span><input id="nlEmail" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com"></label>
+      <label class="nl-field" for="nlVoice"><span>声部</span>
+        <select id="nlVoice" name="voice" required>
+          <option value="">选择你的声部</option>
+          <option value="soprano">女高音 Soprano</option>
+          <option value="mezzo_soprano">女中音 Mezzo-soprano</option>
+          <option value="contralto">女低音 Contralto</option>
+          <option value="countertenor">假声男高音 Countertenor</option>
+          <option value="tenor">男高音 Tenore</option>
+          <option value="baritone">男中音 Baritono</option>
+          <option value="bass">男低音 Basso</option>
+          <option value="all_voices">不限声部 · 只看全部机会</option>
+        </select>
+      </label>
+      <label class="nl-consent" for="nlConsent"><input id="nlConsent" type="checkbox" required><span>我同意用上面的邮箱接收每周简报，并已阅读<a href="privacy.html">隐私说明</a>。</span></label>
+      <input id="nlHp" class="nl-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="newsletter-link" type="submit" id="nlSubmit">订阅每周简报</button>
+      <p id="nlStatus" class="nl-status" role="status" aria-live="polite"></p>
+      <p class="nl-note">提交后会收到一封确认邮件，点确认才真正订阅。<a href="https://buttondown.com/wl19971007/archive" target="_blank" rel="noopener noreferrer">先看往期 ↗</a></p>
+    </form>
   </section>
   <footer class="shell">
-      <span>OperaLab. · OperaLab. · <a href="./">首页</a></span>
+      <span>OperaLab. · OperaLab. · <a href="./">首页</a> · <a href="privacy.html">隐私说明</a></span>
     </footer>
   </main>
   <script src="site-config.js?v=1" defer></script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"42879f330b824eb4843baa5bd13ba002"}'></script>
+  <script src="subscribe.js?v=1" defer></script>
   <script src="app.js?v=ux15" defer></script>
 </body>
 </html>
