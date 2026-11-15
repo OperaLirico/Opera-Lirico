@@ -75,7 +75,7 @@
 ## 五、回滚与调参
 
 - 部署回滚：`wrangler rollback --config ops-dashboard/wrangler.generated.toml --yes`（部署失败时流水线自动执行，见 `deploy-ops-dashboard.yml` 末尾的 `if: failure()` 步骤）
-- 回滚演练：提交信息里带 `[rollback-drill]` 时，`deploy-ops-dashboard.yml` 会在部署与密钥上传之后再跑一个必然失败的步骤，触发自动回滚；只在第一次尝试触发，被 self-heal 重跑时自动跳过，平时这一步会自动跳过
+- 回滚演练：提交信息里带 `[rollback-drill]` 时，`deploy-ops-dashboard.yml` 会在部署与密钥上传之后再跑一个必然失败的步骤，触发自动回滚；只在第一次尝试触发，被 self-heal 重跑时自动跳过
 - 自动审核收得太紧/太松：改 `content_engine/auto_review.py` 里的 `MAX_APPROVALS`、`MIN_AGE_MINUTES`、`BANNED_CLAIMS` 与长度阈值，环境变量 `AUTO_REVIEW_MAX_APPROVALS`、`AUTO_REVIEW_MIN_AGE_MINUTES` 可覆盖前两项。
 - 看门狗阈值：`analytics_watchdog.py` 里 `pv7 >= 30` 与 48 小时冻结判据；站点流量还小的时候不要调低，否则正常的零访问会被当成故障。
 - 自愈范围：`self-heal.yml` 的 `SAFE` 白名单，加新定时任务时记得加进去。
@@ -111,3 +111,15 @@
 - 回滚后线上探活正常：`/api/health` 返回 `{"ok":true,"service":"opera-lirico-ops"}`，后台首页 HTTP 200。
 
 边界：`wrangler rollback` 只对「新版本已上传、但后续步骤失败」有用；失败若发生在部署之前（没有生成 `wrangler.generated.toml`），脚本会直接跳过并说明原因，因为那时没有可回滚的版本。
+
+### 演练留下的那条红 run（按设计）
+
+演练 run `43736732435`（Deploy dashboard #57）会一直停在 failure，因为它就是"故意失败"的那一条：
+
+- 第 1 次尝试：drill 步骤失败 → 自动回滚成功。
+- 第 2、3 次尝试：self-heal 各重跑一次（当时那条 run 用的还是旧版工作流文件，里面没有 `github.run_attempt == 1` 这道守卫，所以又失败、又回滚一次）。
+- 到 attempt 3 后 self-heal 主动放弃，摘要写的是 "gave up on Deploy private operations dashboard #57: attempt 3 already"，不再重跑。
+
+这顺带验证了重试上限确实把次数卡死在 3 次尝试。主分支现在带 `run_attempt == 1` 守卫，以后再做演练，被 self-heal 重跑的那一次会跳过 drill 并直接转绿，不会再留红。
+
+生产始终没受影响：每次回滚后 `/api/health` 都是 `{"ok":true,...}`，后台首页 200。
