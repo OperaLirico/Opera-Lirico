@@ -1,4 +1,17 @@
 const SESSION_COOKIE = "__Host-opera_ops";
+// Public newsletter signup. Keep this list in sync with the deployed site origin.
+const SUBSCRIBE_ORIGINS = new Set([
+  "https://operalirico.github.io",
+  "https://www.operalirico.github.io",
+  "http://localhost:8080",
+  "http://127.0.0.1:8080",
+]);
+const VOICE_LABELS = {
+  soprano: "女高音", mezzo_soprano: "女中音", contralto: "女低音",
+  countertenor: "假声男高音", tenor: "男高音", baritone: "男中音", bass: "男低音",
+  all_voices: "不限声部", unspecified: "声部未注明",
+};
+const subscribeAttempts = new Map();
 const SESSION_TTL_SECONDS = 8 * 60 * 60;
 const loginAttempts = new Map();
 
@@ -56,7 +69,7 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 <section class="section"><h2>邮件草稿</h2><div class="panel"><div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:12px">
 <div><div class="kicker">DRAFTS</div><div class="value" id="draftCount">—</div><div class="hint">Buttondown 中尚未发送的草稿</div></div>
 <div><div class="kicker">NEWSLETTER</div><div class="value" style="font-size:20px;margin-top:13px">Opera Lirico Weekly</div><div class="hint"><a href="https://buttondown.com/wl19971007" target="_blank" rel="noopener noreferrer">打开 Buttondown ↗</a></div></div>
-</div><div id="drafts" class="drafts"><div class="empty">正在读取草稿…</div></div></div></section>
+</div><div id="voiceBreakdown" class="hint">声部分布：暂无带声部信息的订阅者</div><div id="drafts" class="drafts"><div class="empty">正在读取草稿…</div></div></div></section>
 <section class="section"><h2>社交媒体内容审核</h2><div class="panel">
 <p class="hint">自动生成的中文图片与文案会先进入这里。保存修改或审核通过都不会自动发布到社交平台。</p>
 <div id="contentQueue" class="socialQueue"><div class="empty">正在读取内容草稿…</div></div>
@@ -214,8 +227,10 @@ async function loadData(){
    $("pageviews").textContent="—";$("visits").textContent="—";
    if($("analyticsQuality")) $("analyticsQuality").textContent="统计不可用："+(d.cloudflare?.error||"未知错误");
   }
-  if(d.buttondown&&d.buttondown.ok){$("subscribers").textContent=fmt(d.buttondown.active_subscribers);$("newSubscribers").textContent=fmt(d.buttondown.new_subscribers_7d);$("draftCount").textContent=fmt(d.buttondown.draft_count);renderDrafts(d.buttondown.drafts||[]);}
-  else{$("subscribers").textContent="—";$("newSubscribers").textContent="—";$("draftCount").textContent="—";$("drafts").textContent="Buttondown 数据暂时不可用。";}
+  if(d.buttondown&&d.buttondown.ok){$("subscribers").textContent=fmt(d.buttondown.active_subscribers);$("newSubscribers").textContent=fmt(d.buttondown.new_subscribers_7d);$("draftCount").textContent=fmt(d.buttondown.draft_count);renderDrafts(d.buttondown.drafts||[]);
+   const vb=d.buttondown.voice_breakdown||[];
+   if($("voiceBreakdown")) $("voiceBreakdown").textContent=vb.length?"声部分布："+vb.filter(v=>v.voice!=="unspecified").map(v=>v.label+" "+fmt(v.count)).join(" · ")+(vb.find(v=>v.voice==="unspecified")?" · 未填写声部 "+fmt(vb.find(v=>v.voice==="unspecified").count):""):"声部分布：暂无带声部信息的订阅者";}
+  else{$("subscribers").textContent="—";$("newSubscribers").textContent="—";$("draftCount").textContent="—";$("drafts").textContent="Buttondown 数据暂时不可用。";if($("voiceBreakdown"))$("voiceBreakdown").textContent="声部分布：暂无数据";}
   const issues=[];if(!d.cloudflare?.ok)issues.push("Cloudflare："+(d.cloudflare?.error||"不可用"));else if(d.cloudflare.has_events!==true)issues.push("Cloudflare：查询成功但暂无事件记录");if(!d.buttondown?.ok)issues.push("Buttondown："+(d.buttondown?.error||"不可用"));
   loadContentQueue();
   loadMasterclassQueue();
@@ -247,8 +262,53 @@ function json(data, status = 200, extra = {}) {
     ...extra
   }});
 }
-function constantTimeEqual(a, b) {
-  if (typeof a !== "string" || typeof b !== "string") return false;
+function corsHeaders(origin) {
+  return {
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Max-Age": "600",
+    "Vary": "Origin",
+  };
+}
+function allowedOrigin(request) {
+  const origin = request.headers.get("Origin");
+  if (!origin) return "";           // non-browser client (curl, tests)
+  return SUBSCRIBE_ORIGINS.has(origin) ? origin : null;
+}
+function corsJson(data, status, origin) {
+  return json(data, status, origin ? corsHeaders(origin) : {});
+}
+async function createSubscriber(env, { email, voice, ip }) {
+  const payload = {
+    email_address: email,
+    type: "unactivated",
+    metadata: {
+      voice,
+      voice_label: VOICE_LABELS[voice] || voice,
+      consent: true,
+      consent_at: new Date().toISOString(),
+      source: "site:newsletter-form",
+      locale: "zh-CN",
+    },
+    notes: "通过网站订阅表单提交，含声部与同意记录",
+    referrer_url: "https://operalirico.github.io/Opera-Lirico/",
+  };
+  if (ip) payload.ip_address = ip;
+  const response = await fetch("https://api.buttondown.com/v1/subscribers", {
+    method: "POST",
+    headers: {
+      Authorization: "Token " + env.BUTTONDOWN_API_KEY,
+      "Content-Type": "application/json",
+      // Merge instead of fail when someone resubmits with another voice part.
+      "X-Buttondown-Collision-Behavior": "add",
+    },
+    body: JSON.stringify(payload),
+    signal: AbortSignal.timeout(15000),
+  });
+  return response.status;
+}
+function constantTimeEqual(a, b) {  if (typeof a !== "string" || typeof b !== "string") return false;
   let diff = a.length ^ b.length;
   const n = Math.max(a.length, b.length);
   for (let i = 0; i < n; i++) diff |= (a.charCodeAt(i) || 0) ^ (b.charCodeAt(i) || 0);
@@ -337,6 +397,7 @@ async function getButtondown(env) {
   const headers = { Authorization: "Token " + env.BUTTONDOWN_API_KEY };
   let url = "https://api.buttondown.com/v1/subscribers";
   let active = 0, new7 = 0, pages = 0;
+  const voiceCounts = new Map();
   const since = Date.now() - 7 * 86400000;
   while (url && pages++ < 100) {
     const parsed = new URL(url, "https://api.buttondown.com");
@@ -349,6 +410,10 @@ async function getButtondown(env) {
         active++;
         const created = Date.parse(s.creation_date || "");
         if (Number.isFinite(created) && created >= since) new7++;
+        // Voice part is stored in subscriber metadata; unset means the subscriber joined
+        // before the segmented form existed.
+        const voice = String((s.metadata && s.metadata.voice) || "unspecified");
+        voiceCounts.set(voice, (voiceCounts.get(voice) || 0) + 1);
       }
     }
     url = page.next || null;
@@ -368,7 +433,12 @@ async function getButtondown(env) {
     }
     emailUrl = page.next || null;
   }
-  return { active_subscribers: active, new_subscribers_7d: new7, draft_count: draftCount, drafts };
+  return {
+    active_subscribers: active, new_subscribers_7d: new7, draft_count: draftCount, drafts,
+    voice_breakdown: [...voiceCounts.entries()]
+      .map(([voice, count]) => ({ voice, label: VOICE_LABELS[voice] || voice, count }))
+      .sort((a, b) => b.count - a.count),
+  };
 }
 function attachMasterclassReview(item, storedReview) {
   const fileReview = {
@@ -432,6 +502,49 @@ export default {
       } catch (error) {
         return json({ error: "backup_export_failed", message: String(error?.message || "KV export failed").slice(0, 240) }, 500);
       }
+    }
+    if (url.pathname === "/api/subscribe") {
+      const origin = allowedOrigin(request);
+      if (origin === null) return json({ error: "origin_not_allowed" }, 403);
+      if (request.method === "OPTIONS") {
+        return new Response(null, { status: 204, headers: corsHeaders(origin) });
+      }
+      if (request.method !== "POST") return corsJson({ error: "method_not_allowed" }, 405, origin);
+      if (!env.BUTTONDOWN_API_KEY) return corsJson({ error: "not_configured" }, 503, origin);
+      const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+      const now = Date.now();
+      const attempt = subscribeAttempts.get(ip) || { count: 0, start: now };
+      if (now - attempt.start > 10 * 60 * 1000) { attempt.count = 0; attempt.start = now; }
+      if (attempt.count >= 5) return corsJson({ error: "rate_limited" }, 429, origin);
+      const raw = await request.text();
+      if (raw.length > 2000) return corsJson({ error: "payload_too_large" }, 413, origin);
+      let input = {};
+      try { input = JSON.parse(raw); } catch { return corsJson({ error: "invalid_json" }, 400, origin); }
+      // Honeypot: bots fill hidden fields. Pretend success, store nothing.
+      if (typeof input.hp === "string" && input.hp.trim()) return corsJson({ ok: true, result: "pending_confirmation" }, 200, origin);
+      const email = typeof input.email === "string" ? input.email.trim().toLowerCase().slice(0, 254) : "";
+      const voice = typeof input.voice === "string" ? input.voice.trim() : "";
+      if (!/^[^\s@]{1,64}@[^\s@]{1,180}\.[A-Za-z]{2,12}$/.test(email)) {
+        return corsJson({ error: "invalid_email" }, 400, origin);
+      }
+      if (!VOICE_LABELS[voice] || voice === "unspecified") {
+        return corsJson({ error: "invalid_voice" }, 400, origin);
+      }
+      if (input.consent !== true) return corsJson({ error: "consent_required" }, 400, origin);
+      attempt.count++;
+      subscribeAttempts.set(ip, attempt);
+      let status;
+      try {
+        status = await createSubscriber(env, { email, voice, ip: ip === "unknown" ? "" : ip });
+      } catch (error) {
+        return corsJson({ error: "upstream_unreachable" }, 502, origin);
+      }
+      if (status === 201) return corsJson({ ok: true, result: "pending_confirmation" }, 200, origin);
+      // 400/409: address already on the list. Return the same answer as success so the
+      // endpoint cannot be used to test whether a given address is subscribed.
+      if (status === 400 || status === 409) return corsJson({ ok: true, result: "pending_confirmation" }, 200, origin);
+      if (status === 429) return corsJson({ error: "upstream_rate_limited" }, 429, origin);
+      return corsJson({ error: "upstream_error" }, 502, origin);
     }
     if (url.pathname === "/api/health" && request.method === "GET") return json({ ok: true, service: "opera-lirico-ops" });
     if (url.pathname === "/" && request.method === "GET") return response(PAGE);
