@@ -28,7 +28,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Run conservative auto-review regression tests
-        run: python -m unittest tests.test_auto_review -v
+        run: python -m unittest discover -s tests -p 'test_auto_review.py' -v
       - name: Validate the review script
         run: python -m py_compile content_engine/auto_review.py
       - name: Approve machine-verifiable drafts and annotate the rest
