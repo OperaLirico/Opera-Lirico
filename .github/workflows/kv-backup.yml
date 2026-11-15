@@ -1,5 +1,13 @@
 name: KV backup
 
+# Nightly encrypted snapshot of the private content draft KV namespace.
+#
+# This workflow deliberately reuses a secret that already exists, so the backup
+# path works without provisioning anything new:
+#   OPS_DASHBOARD_PASSWORD -> bearer for /api/admin/backup and GPG passphrase.
+# Both the worker and this job read the same secret, so rotating the dashboard
+# password keeps the backup working after the next dashboard deploy.
+
 on:
   schedule:
     - cron: "17 2 * * *"
@@ -20,25 +28,20 @@ jobs:
       - name: Check backup configuration
         id: config
         env:
-          BACKUP_TOKEN: ${{ secrets.OPS_BACKUP_TOKEN }}
-          ENCRYPTION_KEY: ${{ secrets.OPS_BACKUP_ENCRYPTION_KEY }}
+          BACKUP_TOKEN: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
         run: |
-          if [ -z "$BACKUP_TOKEN" ] || [ -z "$ENCRYPTION_KEY" ]; then
+          if [ -z "$BACKUP_TOKEN" ] || [ "${#BACKUP_TOKEN}" -lt 32 ]; then
             echo "configured=false" >> "$GITHUB_OUTPUT"
-            echo "::warning::Backup is not configured. Add OPS_BACKUP_TOKEN and OPS_BACKUP_ENCRYPTION_KEY repository secrets."
-            echo "Backup skipped: required repository secrets are not configured." >> "$GITHUB_STEP_SUMMARY"
-          else
-            if [ "${#BACKUP_TOKEN}" -lt 32 ] || [ "${#ENCRYPTION_KEY}" -lt 32 ]; then
-              echo "::error::Both backup secrets must contain at least 32 characters."
-              exit 1
-            fi
-            echo "configured=true" >> "$GITHUB_OUTPUT"
+            echo "::error::OPS_DASHBOARD_PASSWORD is missing or shorter than 32 characters, so the nightly KV backup cannot run."
+            echo "Add the OPS_DASHBOARD_PASSWORD repository secret (32+ characters) under Settings -> Secrets and variables -> Actions." >> "$GITHUB_STEP_SUMMARY"
+            exit 1
           fi
+          echo "configured=true" >> "$GITHUB_OUTPUT"
       - name: Export and encrypt KV data
         if: steps.config.outputs.configured == 'true'
         env:
-          BACKUP_TOKEN: ${{ secrets.OPS_BACKUP_TOKEN }}
-          ENCRYPTION_KEY: ${{ secrets.OPS_BACKUP_ENCRYPTION_KEY }}
+          BACKUP_TOKEN: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
+          ENCRYPTION_KEY: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
         run: |
           set -euo pipefail
           RAW="$RUNNER_TEMP/opera-lirico-backup.json"
@@ -71,6 +74,6 @@ jobs:
             echo "- Exported at: $EXPORTED_AT"
             echo "- KV keys: $KEY_COUNT"
             echo "- Retention: 90 days"
-            echo "- Encryption: GPG symmetric AES-256"
+            echo "- Encryption: GPG symmetric AES-256 with OPS_DASHBOARD_PASSWORD"
             echo "- Plaintext backup removed from runner."
           } >> "$GITHUB_STEP_SUMMARY"
