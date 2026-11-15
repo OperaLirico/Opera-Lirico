@@ -96,4 +96,12 @@ jobs:
           printf '%s' "$CF_ANALYTICS_API_TOKEN" | wrangler secret put CF_ANALYTICS_API_TOKEN --config ops-dashboard/wrangler.generated.toml
           printf '%s' "$BUTTONDOWN_API_KEY" | wrangler secret put BUTTONDOWN_API_KEY --config ops-dashboard/wrangler.generated.toml
           printf '%s' "$OPS_DASHBOARD_PASSWORD" | wrangler secret put OPS_DASHBOARD_PASSWORD --config ops-dashboard/wrangler.generated.toml
-          if [ -n "$OPS_BACKUP_TOKEN" ]; then printf '%s' "$OPS_BACKUP_TOKEN" | wrangler secret put OPS_BACKUP_TOKEN --config ops-dashboard/wrangler.generated.toml; fi
+          if [ -n "$OPS_BACKUP_TOKEN" ]; then
+            printf '%s' "$OPS_BACKUP_TOKEN" | wrangler secret put OPS_BACKUP_TOKEN --config ops-dashboard/wrangler.generated.toml
+          else
+            # No dedicated backup token. Configure the endpoint with the dashboard
+            # password instead: without a configured value the worker answers every
+            # caller with 503 backup_not_configured, which is what kept the nightly
+            # health check red and left the KV backup silently skipping.
+            printf '%s' "$OPS_DASHBOARD_PASSWORD" | wrangler secret put OPS_BACKUP_TOKEN --config ops-dashboard/wrangler.generated.toml
+          fi
