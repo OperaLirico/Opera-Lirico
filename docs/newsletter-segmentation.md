@@ -16,7 +16,7 @@
 GitHub Actions（每周一 08:00 UTC）
   └─ weekly_digest.py --mode segmented
        └─ POST /v1/emails (status=draft, email_type=private)               （只建草稿，从不发送）
-            └─ 正文含 8 个 {% if subscriber.metadata.voice == "..." %} 条件段
+            └─ 正文含 7 个声部件段 + 1 个“不限声部”段 + 2 个兜底段，均为 {% if subscriber.metadata.voice … %} 条件段
                  └─ 人工在 Buttondown 预览、检查、点发送
 ```
 
@@ -67,7 +67,7 @@ GitHub Actions（每周一 08:00 UTC）
 
 - 复用原来的三道闸：`publisher_status=official` + `review_status=verified` + `publication_status=published`，且截止时间在未来。
 - 每条声部段落 = 该声部命中的公告（`voice_types` 含该声部，或含 `all_voices`），最多 5 条；空则明确写“本周没有新增点名该声部的已核验机会”。
-- 8 个条件段由 `{% if subscriber.metadata.voice == "<voice>" %}` 包住，`--mode single` 保留旧的单版本简报，供对比和回退。
+- 条件段一共 10 个：7 个声部 + 1 个 `all_voices` + 2 个兜底（`{% if not subscriber.metadata.voice %}` 与 `{% if subscriber.metadata.voice == "unspecified" %}`）。兜底段给“没填声部的人”看全量列表，避免旧订阅者或 metadata 没写进去的人收到一封没有个人段落的邮件。`--mode single` 保留旧的单版本简报，供对比和回退。
 - 草稿 slug 为 `opera-lirico-weekly-<date>-voiced`，与旧的单版本草稿分开，避免去重把新草稿吞掉。
 - 仍然只建 `status=draft`、`email_type=private`、`archival_mode=disabled` 的草稿，从不调用发送。
 
@@ -92,15 +92,17 @@ GitHub Actions（每周一 08:00 UTC）
 | 想暂停订阅 | 把 `site-config.js` 的 `subscribeEndpoint` 置空，表单会提示“订阅服务还没配置好” |
 | 想复查账号能力 | 手动触发 `Newsletter capability probe`（只读，打印 `/newsletters`、`/tags`、`/subscribers`、`/emails` 的 HTTP 状态与片段） |
 | 想复查订阅者与草稿 | 手动触发 `Newsletter state check`（只读，把订阅者声部与草稿 slug、条件段数量写进 job summary） |
+| 想发一封一次性公告 | 改 `content/newsletter-announcement.md` 后手动触发 `Newsletter draft from file`（只建草稿，`content_engine/buttondown_draft.py` 负责提交） |
 
 ## 七、验证记录
 
 - 2026-11-15：`GET /v1/newsletters` 200、`GET /v1/tags` 200（`results: []`，count 0）、`GET /v1/subscribers` 200、`GET /v1/emails?status=draft` 200。结论：可读、可写订阅者，但没有 tag，条件段方案是唯一不依赖付费套餐的可行路径。
-- 2026-11-15：本地 `python -m unittest tests.test_newsletter_segments tests.test_weekly_digest` 13 项通过；`node --check subscribe.js site-config.js ops-dashboard/worker.js` 通过。
-- 2026-11-15：本地 `python weekly_digest.py --now 2026-11-15T12:00:00+01:00` 生成 7 条机会、8 个声部段落；男高音 3 条、男低音 3 条、女低音 1 条、不限声部 1 条按预期分配。
+- 2026-11-15：本地 `python -m unittest tests.test_newsletter_segments tests.test_weekly_digest` 通过；`node --check subscribe.js site-config.js ops-dashboard/worker.js` 通过。
+- 2026-11-15：本地 `python weekly_digest.py --now 2026-11-15T12:00:00+01:00` 生成 7 条机会、10 个条件段；男高音 3 条、男低音 3 条、女低音 1 条、不限声部 1 条按预期分配。
 - 线上端到端（2026-11-15）：
   - 订阅写入：`POST /api/subscribe`（Origin `https://operalirico.github.io`，`voice=tenor`）返回 `200 {"ok":true,"result":"pending_confirmation"}`；`Newsletter state check` 运行 `43742422885` 读到该订阅者 `type=unactivated voice='tenor' consent=True source=site:newsletter-form`，说明 metadata 已落库。
   - 拒绝路径：`voice=unknown` 与缺 `consent` 都返回 400；预检 `OPTIONS` 返回 204 且带 `Access-Control-Allow-Origin: https://operalirico.github.io`。
-  - 草稿生成：`Weekly email digest (draft only)` 运行 `43741859570` 成功，新建草稿 `Opera Lirico 每周简报｜2026-11-15｜按你的声部`（`slug=opera-lirico-weekly-2026-11-15-voiced`，`type=private`，条件段 8 个 / `{% endif %}` 8 个）。
+  - 草稿生成：`Weekly email digest (draft only)` 运行 `43741859570` 成功，新建草稿 `Opera Lirico 每周简报｜2026-11-15｜按你的声部`（`slug=opera-lirico-weekly-2026-11-15-voiced`，`type=private`，当时为 8 个条件段，现已扩为 10 个）。
+  - 公告草稿：`Newsletter draft from file` 运行 `43770309938` 成功，以 `content/newsletter-announcement.md` 为源建了草稿（`email_type=public`、`archival_mode=enabled`）。
   - 清理：测试地址标记 `+voicetest` 的记录已用一次性 workflow 删除，订阅者数回到 2（运行 `43742679241` 记录 `before 3, deleted 1, after 2`），该 workflow 已从仓库移除。
   - 未自动化的一步：Buttondown 的“按订阅者预览”需要登录后台才能看到渲染结果，这一步留给人工在发送前核对（清单见 `docs/newsletter-copy-guide.md` 第七节）。
