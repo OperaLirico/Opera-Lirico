@@ -1,0 +1,50 @@
+name: Newsletter test cleanup
+
+# One-off maintenance. Deletes only subscribers whose address contains the
+# "+voicetest" test marker used during the signup smoke test. Manual only.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Delete test subscribers
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+
+          KEY = os.environ["BUTTONDOWN_API_KEY"]
+          BASE = "https://api.buttondown.com/v1"
+          MARKER = "+voicetest"
+
+          def call(method, path):
+              request = urllib.request.Request(
+                  BASE + path, method=method, headers={"Authorization": "Token " + KEY}
+              )
+              with urllib.request.urlopen(request, timeout=20) as response:
+                  raw = response.read().decode("utf-8")
+                  return json.loads(raw) if raw else {}
+
+          subs = call("GET", "/subscribers")
+          targets = [
+              item for item in subs.get("results", [])
+              if MARKER in (item.get("email_address") or "")
+          ]
+          print(f"before: {subs.get('count')} subscribers, {len(targets)} test records")
+          for item in targets:
+              call("DELETE", f"/subscribers/{item['id']}")
+              print("deleted", item["id"], item.get("type"))
+
+          after = call("GET", "/subscribers")
+          print(f"after: {after.get('count')} subscribers")
+          with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as handle:
+              handle.write(f"- before {subs.get('count')}, deleted {len(targets)}, after {after.get('count')}\n")
+          PY
