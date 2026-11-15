@@ -1,10 +1,16 @@
 name: Newsletter draft from file
 
-# Manual. Creates a Buttondown draft from content/newsletter-announcement.md.
+# Creates a Buttondown draft from content/newsletter-announcement.md.
 # Draft only: this workflow never calls a send endpoint.
+# Runs on push to the announcement file (so a copy change can be drafted without
+# opening the Actions UI) and can also be started by hand.
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - content/newsletter-announcement.md
 
 permissions:
   contents: read
