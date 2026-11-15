@@ -125,8 +125,8 @@ def check_public_site(base_url):
                 raise RuntimeError(f"{url}: response is not valid UTF-8 JSON: {exc}") from exc
             if not isinstance(payload, dict) or not isinstance(payload.get("items"), list):
                 raise RuntimeError(f"{url}: response JSON has an unexpected structure")
-        elif path == "/" and b"Opera Lirico" not in body:
-            raise RuntimeError(f"{url}: homepage response does not contain expected site title")
+        elif path == "/" and b"OperaLab." not in body:
+            raise RuntimeError(f"{url}: homepage response does not contain expected OperaLab. brand")
         elif path == "/masterclasses.html" and b"Opera Lirico" not in body and b"masterclass" not in body.lower():
             raise RuntimeError(f"{url}: masterclass page does not contain expected content")
         checked.append(path)
