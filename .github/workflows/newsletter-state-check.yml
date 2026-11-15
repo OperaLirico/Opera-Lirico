@@ -23,6 +23,11 @@ jobs:
 
           KEY = os.environ["BUTTONDOWN_API_KEY"]
           BASE = "https://api.buttondown.com/v1"
+          lines = []
+
+          def emit(text):
+              print(text)
+              lines.append(text)
 
           def get(path):
               request = urllib.request.Request(BASE + path, headers={"Authorization": "Token " + KEY})
@@ -34,10 +39,10 @@ jobs:
               return (local[:2] + "***@" + domain) if domain else "***"
 
           subs = get("/subscribers")
-          print(f"subscribers: {subs.get('count')}")
+          emit(f"subscribers: {subs.get('count')}")
           for item in subs.get("results", []):
               meta = item.get("metadata") or {}
-              print(
+              emit(
                   "- {email} type={type} voice={voice!r} consent={consent} source={source}".format(
                       email=mask(item.get("email_address", "")),
                       type=item.get("type"),
@@ -48,10 +53,10 @@ jobs:
               )
 
           drafts = get("/emails?status=draft")
-          print(f"drafts: {drafts.get('count')}")
+          emit(f"drafts: {drafts.get('count')}")
           for item in drafts.get("results", []):
               body = item.get("body") or ""
-              print(
+              emit(
                   "- {subject} | slug={slug} | type={type} | guards={guards} | endif={endifs}".format(
                       subject=item.get("subject", "")[:70],
                       slug=item.get("slug"),
@@ -60,6 +65,10 @@ jobs:
                       endifs=body.count("{% endif %}"),
                   )
               )
+
+          path = os.environ["GITHUB_STEP_SUMMARY"]
+          with open(path, "a", encoding="utf-8") as handle:
+              handle.write("```\n" + "\n".join(lines) + "\n```\n")
           PY
       - name: Summarize
         run: echo "Read-only check finished; no subscriber or draft was written by this workflow." >> "$GITHUB_STEP_SUMMARY"
