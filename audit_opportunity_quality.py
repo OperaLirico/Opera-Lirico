@@ -49,7 +49,10 @@ def invalid_urls(records):
             value = item.get(field)
             if not value:
                 continue
-            parsed = urlparse(value) if isinstance(value, str) else None
+            try:
+                parsed = urlparse(value) if isinstance(value, str) else None
+            except ValueError:
+                parsed = None
             if (
                 not parsed
                 or parsed.scheme != "https"
@@ -118,9 +121,10 @@ def main() -> None:
             "id": item.get("id"),
             "title": item.get("title"),
             "deadline": item.get("application_deadline_at"),
+            "source_url_missing": not bool(item.get("source_url")),
             "application_url_missing": not bool(item.get("application_url")),
             "official_pdf_missing": not bool(item.get("official_pdf_url")),
-            "last_verified_at": item.get("last_verified_at"),
+            "verification_timestamp": item.get("last_verified_at") or item.get("checked_at"),
         } for item in records]
 
     result = {
