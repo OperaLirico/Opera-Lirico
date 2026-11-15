@@ -1,0 +1,33 @@
+name: Newsletter capability probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Probe Buttondown capabilities
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: |
+          set -uo pipefail
+          probe () {
+            local path="$1"
+            local code
+            code="$(curl -sS -o /tmp/out.json -w '%{http_code}' \
+              -H "Authorization: Token $BUTTONDOWN_API_KEY" \
+              "https://api.buttondown.com/v1${path}")”
+            echo "### GET ${path} -> HTTP ${code}"
+            head -c 900 /tmp/out.json || true
+            echo
+            echo
+          }
+          probe "/newsletters"
+          probe "/tags"
+          probe "/subscribers?page=1"
+          probe "/emails?status=draft&excluded_fields=body"
+          echo "### done"
