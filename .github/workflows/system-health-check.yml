@@ -5,6 +5,8 @@ on:
     branches: [main]
     paths:
       - "system_health_check.py"
+      - "analytics_watchdog.py"
+      - ".github/workflows/system-health-check.yml"
   schedule:
     - cron: "0 9 * * *"
   workflow_dispatch:
@@ -31,10 +33,18 @@ jobs:
           python-version: "3.12"
       - name: Install project dependencies
         run: python -m pip install -r requirements.txt
+      # One retry per gate. A single flaky network call used to turn the whole
+      # daily check red, which then had to be triaged by hand every morning.
       - name: Run full automated test suite
-        run: python -m unittest discover -s tests -v
+        run: |
+          set -o pipefail
+          python -m unittest discover -s tests -v \
+            || (echo "::warning::test suite failed once; retrying in 45s" && sleep 45 && python -m unittest discover -s tests -v)
       - name: Validate local data and deployed public endpoints
-        run: python system_health_check.py
+        run: |
+          set -o pipefail
+          python system_health_check.py \
+            || (echo "::warning::health check failed once; retrying in 45s" && sleep 45 && python system_health_check.py)
       - name: Publish health report
         if: always()
         run: |
@@ -42,5 +52,6 @@ jobs:
             echo "## Opera Lirico system health"
             echo "- Trigger: ${{ github.event_name }}"
             echo "- Commit: ${{ github.sha }}"
+            echo "- Retry policy: each gate is attempted twice before the run is marked failed."
             echo "- This check is read-only; it does not publish candidates or modify data."
           } >> "$GITHUB_STEP_SUMMARY"

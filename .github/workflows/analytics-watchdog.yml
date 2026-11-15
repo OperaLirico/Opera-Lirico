@@ -1,0 +1,40 @@
+name: Analytics watchdog
+
+# L4 layer 4: the dashboard once showed "—" for a week and nothing alerted,
+# because "no data" looked identical to "no visitors". This check treats an
+# empty or frozen Web Analytics window as a failure, so the pipeline reports it
+# on its own instead of waiting for someone to notice a dash.
+
+on:
+  schedule:
+    - cron: "45 9 * * *"
+    - cron: "45 21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-lirico-analytics-watchdog
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out main
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Prove the analytics window still has data
+        env:
+          CF_ANALYTICS_API_TOKEN: ${{ secrets.CF_ANALYTICS_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CF_WEB_ANALYTICS_SITE_TAG: e6657aea01794d4295506abb40a09e99
+          OPS_HEALTH_URL: https://opera-lirico-ops.wl19971007.workers.dev/api/health
+        run: python analytics_watchdog.py

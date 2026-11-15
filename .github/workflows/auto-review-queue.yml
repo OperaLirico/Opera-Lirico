@@ -1,0 +1,40 @@
+name: Auto-review content queue
+
+# L4 layer 3: replace the blanket "a human approves everything" gate with rules.
+# Drafts are still written by generate-social-drafts.yml; this job re-checks them
+# and approves only the ones whose evidence is machine-verifiable. Everything
+# ambiguous stays pending_review with a note, so the queue only contains real
+# decisions instead of everything.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: opera-lirico-auto-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out main
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Validate the review script
+        run: python -m py_compile content_engine/auto_review.py
+      - name: Approve machine-verifiable drafts and annotate the rest
+        env:
+          OPS_DASHBOARD_PASSWORD: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
+          OPS_DASHBOARD_URL: https://opera-lirico-ops.wl19971007.workers.dev
+        run: python content_engine/auto_review.py

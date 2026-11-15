@@ -1,0 +1,92 @@
+name: Self-heal failed automations
+
+# L4 layer 2 (part 1): the digest only reports failures; this workflow retries
+# them. Only scheduled production jobs are in scope, each run is retried at most
+# twice, and the job never touches itself. A retry is cheap; a silent week of
+# stale data is not.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: opera-lirico-self-heal
+  cancel-in-progress: false
+
+jobs:
+  heal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Retry failed scheduled workflows within the last 6 hours
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const WINDOW_HOURS = 6;
+            const MAX_ATTEMPTS = 3;      // original run + 2 automatic retries
+            const MAX_RERUNS_PER_SWEEP = 4;
+            const SAFE = new Set([
+              "System health check",
+              "Daily source refresh",
+              "Discover masterclasses",
+              "Generate social content drafts",
+              "KV backup",
+              "Weekly source coverage",
+              "Weekly source discovery",
+              "Weekly email digest (draft only)",
+              "Analytics watchdog",
+              "Deploy private operations dashboard",
+            ]);
+
+            const since = new Date(Date.now() - WINDOW_HOURS * 60 * 60 * 1000).toISOString();
+            const { data } = await github.rest.actions.listWorkflowRunsForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              created: `>=${since}`,
+              per_page: 100,
+            });
+
+            const failed = (data.workflow_runs || []).filter(run =>
+              run.conclusion === "failure" && SAFE.has(run.name)
+            );
+            core.info(`Failures in the last ${WINDOW_HOURS}h: ${failed.length}.`);
+
+            const lines = [];
+            let rerun = 0;
+            for (const run of failed) {
+              if (rerun >= MAX_RERUNS_PER_SWEEP) {
+                lines.push(`- skipped **${run.name}** #${run.run_number}: sweep budget reached`);
+                continue;
+              }
+              if ((run.run_attempt || 1) >= MAX_ATTEMPTS) {
+                lines.push(`- gave up on **${run.name}** #${run.run_number}: attempt ${run.run_attempt} already`);
+                continue;
+              }
+              try {
+                await github.rest.actions.reRunWorkflowFailedJobs({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  run_id: run.id,
+                });
+                rerun += 1;
+                lines.push(`- re-ran **${run.name}** #${run.run_number} (attempt ${run.run_attempt || 1} → ${(run.run_attempt || 1) + 1})`);
+              } catch (error) {
+                lines.push(`- could not re-run **${run.name}** #${run.run_number}: ${String(error.message || error).slice(0, 120)}`);
+              }
+            }
+
+            const summary = [
+              `## Self-heal sweep`,
+              `- Failures found: **${failed.length}**`,
+              `- Re-run attempts: **${rerun}**`,
+              lines.length ? lines.join("\n") : "- Nothing to heal.",
+              "",
+              "Retries are capped at two per run; anything still red lands in the daily failure-digest issue.",
+            ].join("\n");
+            await core.summary.addRaw(summary).write();
+            core.info(summary);
