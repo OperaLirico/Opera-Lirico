@@ -42,6 +42,18 @@ jobs:
               run.status === "completed" && run.conclusion === "failure" &&
               new Date(run.created_at).getTime() >= since
             );
+            const failedRunDetails = await Promise.all(failedRuns.map(async run => {
+              const response = await github.rest.actions.listJobsForWorkflowRun({
+                owner, repo, run_id: run.id, per_page: 100
+              });
+              const failedJobs = (response.data.jobs || []).filter(job => job.conclusion === "failure");
+              const failedSteps = failedJobs.flatMap(job =>
+                (job.steps || [])
+                  .filter(step => step.conclusion === "failure")
+                  .map(step => `${job.name} / ${step.name}`)
+              );
+              return { run, failedJobs, failedSteps };
+            }));
             const stalePrs = prsResponse.data.filter(pr =>
               !pr.draft && new Date(pr.updated_at).getTime() < now - 7 * 24 * 60 * 60 * 1000
             );
@@ -61,9 +73,14 @@ jobs:
               ""
             ];
             const tasks = [];
-            for (const run of failedRuns) {
+            for (const detail of failedRunDetails) {
+              const { run, failedJobs, failedSteps } = detail;
               const task = `- **P1 — Investigate failed workflow:** [${run.name} #${run.run_number}](${run.html_url}) (branch: ${run.head_branch || "unknown"}; conclusion: ${run.conclusion})`;
               tasks.push(task);
+              for (const step of failedSteps) tasks.push(`  - Failed step: ${step}`);
+              if (!failedSteps.length && failedJobs.length) {
+                tasks.push(`  - Failed job(s): ${failedJobs.map(job => job.name).join(", ")}`);
+              }
             }
             for (const pr of stalePrs) {
               tasks.push(`- **P2 — Review stale pull request:** [#${pr.number} ${pr.title}](${pr.html_url}) (last updated: ${pr.updated_at})`);
@@ -95,11 +112,7 @@ jobs:
                 core.info(`Created project task queue issue #${created.data.number}`);
               }
             } else if (existing) {
-              await github.rest.issues.createComment({
-                owner, repo, issue_number: existing.number,
-                body: "Daily review found no new P1/P2 findings. Existing tasks remain open until manually reviewed and closed."
-              });
-              core.info(`Added clean daily review to issue #${existing.number}`);
+              core.info(`No new findings. Existing task queue #${existing.number} is left unchanged to avoid daily comment noise.`);
             } else {
               core.info("No actionable findings; no issue created.");
             }
