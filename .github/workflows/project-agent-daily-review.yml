@@ -1,0 +1,110 @@
+name: OperaLab project agent — daily review
+
+on:
+  schedule:
+    # Run after the daily source refresh, masterclass discovery, and health check.
+    - cron: "30 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: read
+  issues: write
+  pull-requests: read
+
+concurrency:
+  group: operalab-project-agent-daily-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    name: Read-only project review and task planning
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Inspect recent automation and open pull requests
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const now = Date.now();
+            const since = now - 24 * 60 * 60 * 1000;
+            const [runsResponse, prsResponse, issuesResponse] = await Promise.all([
+              github.rest.actions.listWorkflowRunsForRepo({
+                owner, repo, per_page: 100, created: `>=${new Date(since).toISOString()}`
+              }),
+              github.rest.pulls.list({ owner, repo, state: "open", per_page: 100, sort: "updated", direction: "asc" }),
+              github.rest.issues.listForRepo({ owner, repo, state: "open", per_page: 100 })
+            ]);
+
+            const runs = runsResponse.data.workflow_runs || [];
+            const failedRuns = runs.filter(run =>
+              run.status === "completed" && run.conclusion === "failure" &&
+              new Date(run.created_at).getTime() >= since
+            );
+            const stalePrs = prsResponse.data.filter(pr =>
+              !pr.draft && new Date(pr.updated_at).getTime() < now - 7 * 24 * 60 * 60 * 1000
+            );
+            const queueTitle = "OperaLab. — project agent task queue";
+            const existing = issuesResponse.data.find(issue =>
+              !issue.pull_request && issue.title === queueTitle
+            );
+
+            const lines = [
+              "## OperaLab. daily project review",
+              "",
+              `- Generated: ${new Date(now).toISOString()}`,
+              "- Mode: read-only monitoring and deterministic task prioritization",
+              "- Safety: this agent does not edit source code, merge PRs, publish records, or send messages.",
+              "",
+              "### Findings",
+              ""
+            ];
+            const tasks = [];
+            for (const run of failedRuns) {
+              const task = `- **P1 — Investigate failed workflow:** [${run.name} #${run.run_number}](${run.html_url}) (branch: ${run.head_branch || "unknown"}; conclusion: ${run.conclusion})`;
+              tasks.push(task);
+            }
+            for (const pr of stalePrs) {
+              tasks.push(`- **P2 — Review stale pull request:** [#${pr.number} ${pr.title}](${pr.html_url}) (last updated: ${pr.updated_at})`);
+            }
+            if (tasks.length) {
+              lines.push(...tasks, "");
+            } else {
+              lines.push("- No failed workflows in the last 24 hours and no non-draft PR inactive for more than 7 days.", "");
+            }
+            lines.push(
+              "### Evidence",
+              `- Workflow runs inspected in the last 24 hours: ${runs.length}`,
+              `- Failed completed runs: ${failedRuns.length}`,
+              `- Open non-draft PRs inactive for more than 7 days: ${stalePrs.length}`,
+              "",
+              "### Agent boundary",
+              "This is a deterministic first-stage project steward, not an LLM reasoning agent. Findings are based only on GitHub workflow metadata and PR timestamps. Review linked evidence before taking action."
+            );
+            const body = lines.join("\n");
+
+            if (tasks.length) {
+              if (existing) {
+                await github.rest.issues.update({ owner, repo, issue_number: existing.number, body });
+                core.info(`Updated project task queue issue #${existing.number}`);
+              } else {
+                const created = await github.rest.issues.create({
+                  owner, repo, title: queueTitle, body,
+                });
+                core.info(`Created project task queue issue #${created.data.number}`);
+              }
+            } else if (existing) {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: existing.number,
+                body: "Daily review found no new P1/P2 findings. Existing tasks remain open until manually reviewed and closed."
+              });
+              core.info(`Added clean daily review to issue #${existing.number}`);
+            } else {
+              core.info("No actionable findings; no issue created.");
+            }
+
+            await core.summary
+              .addHeading("OperaLab. project agent review")
+              .addRaw(body)
+              .write();
