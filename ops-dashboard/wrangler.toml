@@ -8,3 +8,4 @@ workers_dev = true
 # Using the beacon token here returns zero rows even though the dashboard shows traffic.
 CF_WEB_ANALYTICS_SITE_TAG = "e6657aea01794d4295506abb40a09e99"
 CF_WEB_ANALYTICS_HOST = "operalirico.github.io"
+# Redeploy so the rotated CF_ANALYTICS_API_TOKEN secret reaches the Worker.
