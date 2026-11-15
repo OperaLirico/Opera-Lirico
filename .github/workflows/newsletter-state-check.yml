@@ -1,0 +1,65 @@
+name: Newsletter state check
+
+# Manual, read-only. Prints subscriber metadata and draft titles so the voice-part
+# pipeline can be verified without opening the Buttondown admin. No write calls.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read subscribers and drafts
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request
+
+          KEY = os.environ["BUTTONDOWN_API_KEY"]
+          BASE = "https://api.buttondown.com/v1"
+
+          def get(path):
+              request = urllib.request.Request(BASE + path, headers={"Authorization": "Token " + KEY})
+              with urllib.request.urlopen(request, timeout=20) as response:
+                  return json.loads(response.read().decode("utf-8"))
+
+          def mask(address):
+              local, _, domain = address.partition("@")
+              return (local[:2] + "***@" + domain) if domain else "***"
+
+          subs = get("/subscribers")
+          print(f"subscribers: {subs.get('count')}")
+          for item in subs.get("results", []):
+              meta = item.get("metadata") or {}
+              print(
+                  "- {email} type={type} voice={voice!r} consent={consent} source={source}".format(
+                      email=mask(item.get("email_address", "")),
+                      type=item.get("type"),
+                      voice=meta.get("voice"),
+                      consent=meta.get("consent"),
+                      source=meta.get("source"),
+                  )
+              )
+
+          drafts = get("/emails?status=draft")
+          print(f"drafts: {drafts.get('count')}")
+          for item in drafts.get("results", []):
+              body = item.get("body") or ""
+              print(
+                  "- {subject} | slug={slug} | type={type} | guards={guards} | endif={endifs}".format(
+                      subject=item.get("subject", "")[:70],
+                      slug=item.get("slug"),
+                      type=item.get("email_type"),
+                      guards=body.count("{% if subscriber.metadata.voice"),
+                      endifs=body.count("{% endif %}"),
+                  )
+              )
+          PY
+      - name: Summarize
+        run: echo "Read-only check finished; no subscriber or draft was written by this workflow." >> "$GITHUB_STEP_SUMMARY"
