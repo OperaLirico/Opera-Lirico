@@ -311,7 +311,7 @@ async function getCloudflare(env) {
   const map = new Map();
   for (const row of rows) {
     const date = row.dimensions?.date;
-    if (!date || !/^\\d{4}-\\d{2}-\\d{2}$/.test(date)) throw new Error("Cloudflare returned an invalid date dimension");
+    if (!date || !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error("Cloudflare returned an invalid date dimension");
     const pageviews = Number(row.count);
     const visits = Number(row.sum?.visits ?? 0);
     if (!Number.isFinite(pageviews) || pageviews < 0 || !Number.isFinite(visits) || visits < 0) {
