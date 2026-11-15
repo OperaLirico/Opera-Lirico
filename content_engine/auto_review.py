@@ -106,6 +106,18 @@ def parse_created_at(value: object) -> datetime | None:
     return parsed.astimezone(timezone.utc)
 
 
+def creation_time_state(value: object, now: datetime, min_age_minutes: int = MIN_AGE_MINUTES) -> str:
+    """Classify creation timestamps without treating future dates as fresh drafts."""
+    created = parse_created_at(value)
+    if created is None:
+        return "invalid"
+    if created > now + timedelta(minutes=5):
+        return "future"
+    if created > now - timedelta(minutes=min_age_minutes):
+        return "fresh"
+    return "ready"
+
+
 def judge(draft: dict, allowed_hosts: set[str], approved_captions: set[str]) -> tuple[bool, list[str]]:
     reasons: list[str] = []
     title = str(draft.get("title") or "").strip()
@@ -168,7 +180,7 @@ def main() -> int:
         if item.get("status") in {"approved", "published"}
     }
 
-    cutoff = datetime.now(timezone.utc) - timedelta(minutes=MIN_AGE_MINUTES)
+    now = datetime.now(timezone.utc)
     approved = 0
     escalated = 0
     skipped = 0
@@ -183,10 +195,12 @@ def main() -> int:
             print("skipped draft with invalid identifier", file=sys.stderr)
             continue
 
-        created = parse_created_at(draft.get("created_at"))
-        if created is None:
+        created_state = creation_time_state(draft.get("created_at"), now)
+        if created_state == "invalid":
             ok, reasons = False, ["创建时间缺失、格式无效或未包含时区；禁止自动通过"]
-        elif created > cutoff:
+        elif created_state == "future":
+            ok, reasons = False, ["创建时间异常地位于未来；禁止自动通过"]
+        elif created_state == "fresh":
             skipped += 1  # too fresh: generator may still be writing this batch
             continue
         else:
