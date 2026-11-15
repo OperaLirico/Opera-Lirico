@@ -91,7 +91,6 @@ jobs:
               } else {
                 const created = await github.rest.issues.create({
                   owner, repo, title: queueTitle, body,
-                  labels: ["automation"]
                 });
                 core.info(`Created project task queue issue #${created.data.number}`);
               }
