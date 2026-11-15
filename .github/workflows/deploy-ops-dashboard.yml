@@ -113,6 +113,7 @@ jobs:
         if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[rollback-drill]') }}
         run: |
           echo "::error::Intentional failure to exercise the automatic rollback."
+          exit 1
 
       # L4 layer 2 (part 2): a failed deploy must not leave a broken Worker live.
       # Rolling back is automatic because the previous version is known-good by
