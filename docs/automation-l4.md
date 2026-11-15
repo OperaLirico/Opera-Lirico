@@ -28,7 +28,7 @@
 | 每周一 06:30 / 08:00 / 08:30 | 源发现 / 邮件草稿 / 覆盖率 | 周更物料 |
 | 每月 1 日 09:00 | PDF signature audit | 签名审计 |
 
-### 2. 自动审核（新增 `auto-review-queue.yml` + `content_engine/auto_review.py`）
+### 2. 自动审核（`auto-review-queue.yml` + `content_engine/auto_review.py`）
 
 每 6 小时跑一次，把"全部人工过一遍"改成"机器先判、人只判例外"。
 
@@ -37,13 +37,13 @@
 
 判定结果只写 `approved`，**不会自动发布到任何平台**；"发布"这一步仍然手上操作，因为对外投递不可撤回。
 
-### 3. 失败自愈（新增 `self-heal.yml`，改 `system-health-check.yml`、`deploy-ops-dashboard.yml`）
+### 3. 失败自愈（`self-heal.yml`，改 `system-health-check.yml`、`deploy-ops-dashboard.yml`）
 
 - `system-health-check.yml`：测试套件与健康检查各自失败后 45 秒重试一次，单次网络抖动不再把当天判成红的。
-- `self-heal.yml`：每 30 分钟扫描最近 6 小时的失败 run，只对白名单内的生产任务重跑，单个 run 最多 2 次，一轮最多 4 个，避免风暴。
+- `self-heal.yml`：每 30 分钟扫描最近 6 小时的失败 run，只对白名单内的生产任务重跑，单个 run 最多重跑 2 次，一轮最多 4 个，避免风暴。
 - `deploy-ops-dashboard.yml`：部署失败时自动 `wrangler rollback` 回上一版本，避免坏版本留在线上。
 
-### 4. 数据看门狗（新增 `analytics-watchdog.yml` + `analytics_watchdog.py`）
+### 4. 数据看门狗（`analytics-watchdog.yml` + `analytics_watchdog.py`）
 
 每天两次（09:45 / 21:45 UTC）验证：
 
@@ -84,3 +84,17 @@
 - Cloudflare `sum { visits }` 与 `count` 在早期数据里几乎相等，口径仍需观察，看门狗会以 warning 形式记录 `visits > pageviews`。
 - Workers Observability 未开启，Worker 内部异常只能通过接口表现推断；如需根因日志要先在 Cloudflare 打开日志。
 - `newsletterUrl` 仍指向旧的 Buttondown 用户名，刊名与站点品牌尚未统一，属内容侧待办，不阻塞 L4。
+
+## 七、验证记录（2026-11-15 实测）
+
+| 检查 | 结果 |
+| --- | --- |
+| Analytics watchdog 手动触发 | 成功；6 天有效数据，7 天浏览 68 / 访问 53，最近 48h 浏览 9 |
+| Auto-review content queue 手动触发 | 成功；自动通过 8 条（本轮上限），升级人工 9 条；后台队列 17 条 → 8 条「已审核，待手动发布」+ 9 条待审 |
+| Self-heal 手动触发 | 发现 2 个失败 run（System health check #29 / #30），各重跑一次，两次均转为成功 |
+| System health check | 转绿。根因是两个过期测试断言：曲库归档必须按需载入、失败汇总只看关键 workflow |
+| Deploy dashboard | 成功；Worker 已支持 `record.review` 字段，自动审核的理由会存在草稿记录上 |
+
+**未实测**：`wrangler rollback` 只在部署失败时触发，本次部署成功，所以自动回滚这条路径是「代码已就位、尚未触发」。
+
+**仍保留人工**：邮件真正发往订阅者（当前只有草稿），社交平台发布，大师班候选核实。
