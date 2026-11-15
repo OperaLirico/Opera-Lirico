@@ -1,0 +1,29 @@
+name: Newsletter draft from file
+
+# Manual. Creates a Buttondown draft from content/newsletter-announcement.md.
+# Draft only: this workflow never calls a send endpoint.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create draft
+        env:
+          BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
+        run: |
+          python3 content_engine/buttondown_draft.py content/newsletter-announcement.md --email-type public --archival-mode enabled
+      - name: Note
+        run: |
+          {
+            echo "## Announcement draft"
+            echo "- Source: content/newsletter-announcement.md"
+            echo "- Created as a draft only; press send inside Buttondown after reviewing."
+          } >> "$GITHUB_STEP_SUMMARY"
