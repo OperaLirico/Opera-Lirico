@@ -105,3 +105,20 @@ jobs:
             # health check red and left the KV backup silently skipping.
             printf '%s' "$OPS_DASHBOARD_PASSWORD" | wrangler secret put OPS_BACKUP_TOKEN --config ops-dashboard/wrangler.generated.toml
           fi
+
+      # L4 layer 2 (part 2): a failed deploy must not leave a broken Worker live.
+      # Rolling back is automatic because the previous version is known-good by
+      # construction; a human decides afterwards whether to retry the change.
+      - name: Roll back the Worker when a deploy fails
+        if: failure()
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_WORKERS_DEPLOY_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          echo "::warning::Deployment failed; attempting to roll back to the previous Worker version."
+          if [ ! -f ops-dashboard/wrangler.generated.toml ]; then
+            echo "::error::No generated config, so this failure happened before any deploy. Nothing to roll back."
+            exit 0
+          fi
+          wrangler rollback --config ops-dashboard/wrangler.generated.toml --yes \
+            || echo "::error::Rollback failed; the Worker may still be serving the failed deploy."
