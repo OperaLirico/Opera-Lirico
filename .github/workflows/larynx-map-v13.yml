@@ -1,0 +1,55 @@
+name: Larynx map v13 ta thickening
+
+on:
+  push:
+    paths:
+      - content/larynx-map-v13.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Give the TA state a visible thickening
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'scaleX(1.045)' in t:
+              print('already patched')
+              raise SystemExit(0)
+
+          old = '#mechMap[data-state="ta"] .fold-thick{opacity:1}'
+          if t.count(old) != 1:
+              sys.exit('ABORT: ta rule not found once')
+
+          new = ('#mechMap[data-state="ta"] #sideLeft{transform:scaleX(1.05)}\n'
+                 '#mechMap[data-state="ta"] #sideRight{transform:scaleX(1.05)}\n'
+                 '#mechMap[data-state="ta"] .fold-thick{opacity:1}')
+          t = t.replace(old, new, 1)
+
+          for token in ('scaleX(1.05)', 'data-version="12"'):
+              if token not in t:
+                  sys.exit('ABORT: missing ' + token)
+
+          p.write_text(t, encoding='utf-8')
+          print('patched,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "feat(anatomy): TA state widens the mucosa surface"
+            git push
+          fi
