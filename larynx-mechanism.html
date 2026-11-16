@@ -24,6 +24,7 @@
 .viewer-frame{position:relative;aspect-ratio:4/3;background:#e4e8e2;border-radius:12px;overflow:hidden}
 .viewer-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .viewer-caption{padding:11px 5px 2px;color:#68786e;font-size:11px;line-height:1.75}
+.model-switcher{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px}.model-switcher button{border:1px solid #cbd7ce;background:#fff;color:#365448;border-radius:99px;padding:8px 12px;font:inherit;font-size:11px;cursor:pointer}.model-switcher button[aria-pressed=true]{background:#23483c;color:#fff;border-color:#23483c}.mech-observation{margin:14px 0 2px;padding:14px 16px;border:1px solid #e2e9e1;border-radius:12px;background:#f4f7f3}.mech-observation strong{display:block;font-size:12px;color:#29463d;margin-bottom:6px}.mech-observation p{font-size:12px;line-height:1.8;color:#5d7067;margin:0}
 .credit{display:flex;gap:8px 14px;flex-wrap:wrap;padding:0 17px 16px;font-size:10px;color:#77867c}
 .credit a,.source a{color:#47695b}
 .interaction{padding:18px 20px 20px}
@@ -108,12 +109,19 @@
 <main class="mechanism">
 <p class="crumb"><a href="./">首页</a> / 学习实验室 / <a href="voice-anatomy.html">发声系统解剖</a> / 喉部发声机制</p>
 <section class="hero"><div class="eyebrow">LARYNGEAL MECHANICS · ANATOMY FIRST</div><h1>喉部发声机制实验室</h1><p>先看清真实结构，再理解它如何运动。这里聚焦杓状软骨、环状软骨、声带与喉内肌之间的关系，逐步学习声门开放、靠拢和张力调节。三维模型来自大学医学解剖教学项目，不用抽象几何体替代器官。</p></section>
-<div class="notice"><strong>重要说明：</strong>左侧三维模型是可旋转的真实解剖教学模型；右侧交互用于切换生理机制说明，不会伪装成模型正在发生真实的软骨运动或声带组织形变。真实发声的生物力学比单一开合动画复杂得多。</div>
+<div class="notice"><strong>重要说明：</strong>模型由大学医学教育团队制作或基于真实解剖标本/CT 数据建立，通过原平台官方播放器展示。机制按钮只更新生理说明和观察重点，不会伪装成模型正在发生真实的软骨运动或声带组织形变。第三方模型文件不在本站下载或重新分发。</div>
 <div class="layout">
 <section class="card" aria-label="真实喉部三维解剖与机制说明">
   <div class="card-head"><strong>喉部肌肉、软骨与韧带 · 三维解剖</strong><span class="tag">真实来源模型</span></div>
-  <div class="viewer"><div class="viewer-frame"><iframe title="University of Dundee 喉部肌肉、软骨与韧带三维解剖模型" src="https://sketchfab.com/models/3b247ff11b104e24acbb1c453f5bad46/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=0&amp;ui_watermark=1" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe></div><p class="viewer-caption">可在模型中拖动旋转、滚轮缩放，并使用模型自身的标注查看结构。建议先观察喉后部的杓状软骨与环杓关节，再转到前方观察甲状软骨和声带附着关系。</p></div>
-  <div class="credit"><span>医学插画：Eve Laws · University of Dundee / CAHID</span><span>模型依据 CT 数据并结合医学艺术雕塑制作</span><a href="https://sketchfab.com/3d-models/larynx-with-muscles-and-ligaments-3b247ff11b104e24acbb1c453f5bad46" target="_blank" rel="noopener">打开原始模型页面</a></div>
+  <div class="viewer">
+    <div class="model-switcher" role="group" aria-label="切换喉部真实解剖模型">
+      <button type="button" data-larynx-model="specimen" aria-pressed="true">真实人体标本 · UBC</button>
+      <button type="button" data-larynx-model="muscles" aria-pressed="false">肌肉与韧带 · Dundee</button>
+    </div>
+    <div class="viewer-frame"><iframe id="larynxModelFrame" title="UBC Medicine 人体喉部真实解剖标本三维模型" src="https://sketchfab.com/models/9cb56f0a20654072810a12959b812632/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=0" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe></div>
+    <p class="viewer-caption" id="larynxModelCaption">UBC Medicine 的人体喉部解剖标本数字模型，包含喉、咽、下颌、气管与食管。适合先建立真实组织和器官之间的空间关系；拖动旋转、缩放观察。</p>
+  </div>
+  <div class="credit" id="larynxModelCredit"><span>模型：UBC Medicine · Educational Media / HIVE；人体解剖标本数字化。</span><a href="https://sketchfab.com/3d-models/human-larynx-9cb56f0a20654072810a12959b812632" target="_blank" rel="noopener">查看原始模型与来源</a></div>
   <div class="interaction">
     <h2>选择一个机制，理解肌肉如何工作</h2><p>切换下列状态，右侧说明会更新。请同时旋转上方模型，寻找相应的软骨、肌肉和声带附着位置。</p>
     <div class="modes" role="group" aria-label="选择喉部肌肉机制">
@@ -123,25 +131,9 @@
       <button class="mode" type="button" data-mode="ta" aria-pressed="false"><strong>声带体调节 · TA</strong><span>甲杓肌 · 改变声带体的形态与力学性质</span></button>
       <button class="mode" type="button" data-mode="ct" aria-pressed="false"><strong>声带伸长 · CT</strong><span>环甲肌 · 使声带伸长并增加张力</span></button>
     </div>
-    <div class="mech-map" aria-label="声门形态随机制变化的示意图">
-      <div class="mech-map-head"><strong>机制联动 · 看声门怎么变</strong><span>AI 生成 · 非真实病例</span></div>
-      <div class="mech-frames" id="mechMap" data-state="pca" role="img" aria-label="喉镜下声门形态随喉内肌机制变化（AI 生成的示意图）">
-      <img class="mech-frame" data-f="pca" src="assets/anatomy/glottis-pca.jpg" alt="环杓后肌：声门最大外展">
-      <img class="mech-frame" data-f="lca" src="assets/anatomy/glottis-lca.jpg" alt="环杓侧肌：使声带突向中线靠近，参与声门内收" decoding="async">
-      <img class="mech-frame" data-f="ia" src="assets/anatomy/glottis-ia.jpg" alt="杓间肌：声门后部闭合" decoding="async">
-      <img class="mech-frame" data-f="ta" src="assets/anatomy/glottis-ta.jpg" alt="甲杓肌：声带增厚" decoding="async">
-      <img class="mech-frame" data-f="ct" src="assets/anatomy/glottis-ct.jpg" alt="环甲肌：声带拉长" decoding="async">
-      <svg class="mech-overlay" viewBox="0 0 1200 800" aria-hidden="true">
-        <text x="600" y="120" text-anchor="middle">前联合</text>
-        <path d="M600 132 L600 190"/>
-        <text x="990" y="300" text-anchor="end">声带（真声带）</text>
-        <path d="M982 312 L800 358"/>
-        <text x="296" y="654" text-anchor="middle">杓状软骨</text>
-        <path d="M374 662 L470 650"/>
-        <text x="600" y="756" text-anchor="middle">后联合</text>
-      </svg>
-    </div>
-      <p class="mech-map-note" id="mechMapNote">杓状软骨在环杓关节上外旋，声带突外移，声门开大——吸气时的主要形态。</p>
+    <div class="mech-observation" aria-live="polite" aria-atomic="true">
+      <strong>在真实模型中定位</strong>
+      <p id="mechanismObservationText">先观察后方左右杓状软骨、声带突与肌突，再沿声带突向前追踪声带韧带。切换下方机制时，这里会提示需要重点观察的真实结构；模型本身保持原始形态，不做未经验证的变形动画。</p>
     </div>
     <div class="readout" aria-live="polite" aria-atomic="true"><div class="readout-kicker">SELECTED MECHANISM</div><h3 id="modeTitle">后环杓肌 · 声带外展</h3><p id="modeDescription">后环杓肌是喉内肌中负责声带外展的唯一肌肉。它作用于杓状软骨的肌突，使杓状软骨在环杓关节上发生旋转，从而使声带突向外侧移动、声门开放。</p><ul id="modePoints"><li>观察杓状软骨及其肌突、声带突。</li><li>注意这是杓状软骨在环杓关节上的运动，不是整片声带向外平移。</li><li>主要生理作用：吸气时开放声门。</li></ul></div>
   </div>
@@ -194,30 +186,33 @@
 <script>
 (()=> {
  const modes={
-  pca:{title:'后环杓肌 · 声带外展',description:'后环杓肌是喉内肌中负责声带外展的唯一肌肉。它作用于杓状软骨的肌突，使杓状软骨在环杓关节上发生旋转，从而使声带突向外侧移动、声门开放。',points:['观察杓状软骨及其肌突、声带突。','这是杓状软骨在环杓关节上的运动，不是整片声带向外平移。','主要生理作用：吸气时开放声门。']},
-  lca:{title:'外侧环杓肌 · 声带内收',description:'外侧环杓肌从环状软骨弓外侧向后上方连接至杓状软骨肌突。收缩时使杓状软骨发生与后环杓肌相反方向的旋转，令声带突靠近中线，参与声带内收。',points:['重点观察环状软骨弓外侧与杓状软骨肌突之间的关系。','LCA 主要影响声带突与膜间部声门的靠拢。','声门后部闭合还需要杓间肌参与，不能只归因于 LCA。']},
-  ia:{title:'杓间肌 · 声门后部闭合',description:'杓间肌包括横杓肌与斜杓肌，连接左右杓状软骨。其主要作用是使两侧杓状软骨彼此靠近，参与声门后部（软骨间部）的闭合。',points:['横杓肌横跨两侧杓状软骨后面。','斜杓肌呈交叉走向，并与杓会厌肌连续。','它与 LCA 协同，但不能与 LCA 的旋转作用混为一谈。']},
-  ta:{title:'甲杓肌 · 声带体调节',description:'甲杓肌从甲状软骨内面向后连接杓状软骨，是声带体的重要组成部分。其活动可改变声带长度、厚度、刚度及内侧缘形态；具体效果取决于与环甲肌等其他肌肉的协同。',points:['声带不是一条独立的“绳子”，而是具有分层组织结构的复合体。','TA 对声带体的作用不能简化成“放松声带”或“压紧声带”。','肌肉活动与声带组织力学之间存在复杂的任务依赖关系。']},
-  ct:{title:'环甲肌 · 声带伸长与张力调节',description:'环甲肌连接环状软骨与甲状软骨。收缩时使两者之间产生相对倾斜或旋转，增加声带长度与纵向张力，是调节音高的重要机制之一。',points:['观察甲状软骨与环状软骨之间的相对运动关系。','CT 增加声带纵向张力，但音高不是由 CT 单独控制。','声带振动还受到 TA、声门下压力、组织特性与声道负载等因素影响。']}
+  pca:{title:'后环杓肌 · 声带外展',description:'后环杓肌是喉内肌中负责声带外展的唯一肌肉。它作用于杓状软骨的肌突，使杓状软骨在环杓关节上发生旋转，从而使声带突向外侧移动、声门开放。',points:['观察杓状软骨及其肌突、声带突。','这是杓状软骨在环杓关节上的运动，不是整片声带向外平移。','主要生理作用：吸气时开放声门。'],focus:'在模型后方定位杓状软骨、肌突与声带突；PCA 位于环状软骨板后面，收缩时使声带突外移。'},
+  lca:{title:'外侧环杓肌 · 声带内收',description:'外侧环杓肌从环状软骨弓外侧向后上方连接至杓状软骨肌突。收缩时使杓状软骨发生与后环杓肌相反方向的旋转，令声带突靠近中线，参与声带内收。',points:['重点观察环状软骨弓外侧与杓状软骨肌突之间的关系。','LCA 主要影响声带突与膜间部声门的靠拢。','声门后部闭合还需要杓间肌参与，不能只归因于 LCA。'],focus:'在模型外侧观察环状软骨弓与杓状软骨肌突的连接；LCA 使杓状软骨内旋，声带突向中线靠近。'},
+  ia:{title:'杓间肌 · 声门后部闭合',description:'杓间肌包括横杓肌与斜杓肌，连接左右杓状软骨。其主要作用是使两侧杓状软骨彼此靠近，参与声门后部（软骨间部）的闭合。',points:['横杓肌横跨两侧杓状软骨后面。','斜杓肌呈交叉走向，并与杓会厌肌连续。','它与 LCA 协同，但不能与 LCA 的旋转作用混为一谈。'],focus:'从喉后方观察两侧杓状软骨之间的横杓肌与斜杓肌；它们参与声门后部闭合。'},
+  ta:{title:'甲杓肌 · 声带体调节',description:'甲杓肌从甲状软骨内面向后连接杓状软骨，是声带体的重要组成部分。其活动可改变声带长度、厚度、刚度及内侧缘形态；具体效果取决于与环甲肌等其他肌肉的协同。',points:['声带不是一条独立的“绳子”，而是具有分层组织结构的复合体。','TA 对声带体的作用不能简化成“放松声带”或“压紧声带”。','肌肉活动与声带组织力学之间存在复杂的任务依赖关系。'],focus:'在肌肉与韧带模型中观察甲杓肌与声带体的连续关系；静态模型不代表 TA 收缩时的实时组织形变。'},
+  ct:{title:'环甲肌 · 声带伸长与张力调节',description:'环甲肌连接环状软骨与甲状软骨。收缩时使两者之间产生相对倾斜或旋转，增加声带长度与纵向张力，是调节音高的重要机制之一。',points:['观察甲状软骨与环状软骨之间的相对运动关系。','CT 增加声带纵向张力，但音高不是由 CT 单独控制。','声带振动还受到 TA、声门下压力、组织特性与声道负载等因素影响。'],focus:'从喉前外侧观察环甲肌连接甲状软骨与环状软骨的位置；CT 收缩会增加声带长度与纵向张力。'}
  };
- const title=document.getElementById('modeTitle'),description=document.getElementById('modeDescription'),points=document.getElementById('modePoints');
+ const title=document.getElementById('modeTitle'),description=document.getElementById('modeDescription'),points=document.getElementById('modePoints'),focus=document.getElementById('mechanismObservationText');
+ document.querySelectorAll('[data-larynx-model]').forEach(button=>button.addEventListener('click',()=>{
+  const models={
+   specimen:{src:'https://sketchfab.com/models/9cb56f0a20654072810a12959b812632/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',title:'UBC Medicine 人体喉部真实解剖标本三维模型',caption:'UBC Medicine 的人体喉部解剖标本数字模型，包含喉、咽、下颌、气管与食管。适合先建立真实组织和器官之间的空间关系；拖动旋转、缩放观察。',credit:'模型：UBC Medicine · Educational Media / HIVE；人体解剖标本数字化。',url:'https://sketchfab.com/3d-models/human-larynx-9cb56f0a20654072810a12959b812632'},
+   muscles:{src:'https://sketchfab.com/models/3b247ff11b104e24acbb1c453f5bad46/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0&ui_watermark=1',title:'University of Dundee 喉部肌肉、软骨与韧带三维解剖模型',caption:'University of Dundee 医学教学模型，依据 CT 数据并结合医学艺术雕塑制作，重点观察喉内肌、软骨与韧带的附着和空间关系。',credit:'医学插画：Eve Laws · University of Dundee / CAHID；CT 数据与医学艺术雕塑。',url:'https://sketchfab.com/3d-models/larynx-with-muscles-and-ligaments-3b247ff11b104e24acbb1c453f5bad46'}
+  };
+  const model=models[button.dataset.larynxModel];if(!model)return;
+  const frame=document.getElementById('larynxModelFrame');frame.src=model.src;frame.title=model.title;
+  document.getElementById('larynxModelCaption').textContent=model.caption;
+  const credit=document.getElementById('larynxModelCredit');credit.replaceChildren();
+  const label=document.createElement('span');label.textContent=model.credit;
+  const link=document.createElement('a');link.href=model.url;link.target='_blank';link.rel='noopener';link.textContent='查看原始模型与来源';
+  credit.append(label,link);
+  document.querySelectorAll('[data-larynx-model]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
+ }));
  document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{
   const item=modes[button.dataset.mode];if(!item)return;
   title.textContent=item.title;description.textContent=item.description;
+  if(focus)focus.textContent=item.focus;
   points.replaceChildren(...item.points.map(value=>{const li=document.createElement('li');li.textContent=value;return li}));
   document.querySelectorAll('[data-mode]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
- }));
-})();
-</script>
-<script>
-(()=>{
- const map=document.getElementById('mechMap');
- if(!map)return;
- const notes={pca:'杓状软骨在环杓关节上外旋，声带突外移，声门开大——吸气时的主要形态。',lca:'杓状软骨反向旋转，声带突靠近中线，膜间部声门收窄。',ia:'两侧杓状软骨彼此靠近，声门后部（软骨间部）先闭合，前部仍留缝。',ta:'声带体变厚、内侧缘形态改变。图上只表现变厚这一层，不代表真实刚度或振动方式。',ct:'环甲之间距离改变，声带被拉长，纵向张力增加，音高倾向升高。'};
- const note=document.getElementById('mechMapNote');
- document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{
-  const s=button.dataset.mode;if(!notes[s])return;
-  map.dataset.state=s;if(note)note.textContent=notes[s];
  }));
 })();
 </script>
