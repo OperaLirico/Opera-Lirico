@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#12352e"><meta name="description" content="交互式人体歌唱发声系统：点击鼻腔、舌头、软腭、咽部、喉头、肺部与横膈膜，探索器官结构、呼吸动态和发声机制。OperaLab."><link rel="canonical" href="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="OperaLab."><meta property="og:title" content="发声机制实验室｜OperaLab."><meta property="og:description" content="通过交互式示意图了解喉部结构、声带开合与发声振动。"><meta property="og:url" content="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="发声机制实验室｜OperaLab."><meta name="twitter:description" content="通过交互式示意图了解喉部结构、声带开合与发声振动。"><meta name="twitter:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><title>发声机制实验室｜OperaLab.</title><link rel="stylesheet" href="styles.css?v=ux18">
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#12352e"><meta name="description" content="交互式人体歌唱发声系统：点击鼻腔、舌头、软腭、咽部、喉头、肺部与横膈膜，探索器官结构、呼吸动态和发声机制。OperaLab."><link rel="canonical" href="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="OperaLab."><meta property="og:title" content="发声机制实验室｜OperaLab."><meta property="og:description" content="通过真实人体标本、三维解剖模型与生理机制说明学习发声器官。"><meta property="og:url" content="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="发声机制实验室｜OperaLab."><meta name="twitter:description" content="通过交互式示意图了解喉部结构、声带开合与发声振动。"><meta name="twitter:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><title>发声机制实验室｜OperaLab.</title><link rel="stylesheet" href="styles.css?v=ux18">
 <style>
 /* Anatomical reference workspace: real specimen and licensed 3D atlas embeds */
 .body-system{margin:32px 0 26px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:18px;align-items:start}
@@ -64,9 +64,9 @@
 
 </style></head><body>
 <header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./" aria-label="OperaLab. 首页"><span class="brand-mark" aria-hidden="true">♫</span><span class="brand-text">OperaLab.<small>OPERA · EDUCATION · OPPORTUNITIES</small></span></a><nav class="nav" aria-label="板块导航"><a href="./">首页</a><a href="masterclasses.html">大师班</a><a href="./#music-library">曲目资料</a></nav></div></header>
-<main class="lab-wrap"><div class="lab-crumb"><a href="./">首页</a> / 学习实验室 / 发声机制</div><section class="lab-hero"><div class="lab-kicker">VOICE SCIENCE · INTERACTIVE HUMAN ANATOMY</div><h1>声音，从这里开始。</h1><p>声带并不是主动“拍打”空气的两片肌肉。呼气形成的气流、声门下压力，以及声带组织本身的弹性共同参与振动。本页用简化的交互模型，帮助你观察喉部结构与声带开合之间的关系。</p></section>
+<main class="lab-wrap"><div class="lab-crumb"><a href="./">首页</a> / 学习实验室 / 发声机制</div><section class="lab-hero"><div class="lab-kicker">VOICE SCIENCE · INTERACTIVE HUMAN ANATOMY</div><h1>声音，从这里开始。</h1><p>声带并不是主动“拍打”空气的两片肌肉。呼气形成的气流、声门下压力，以及声带组织本身的弹性共同参与振动。本页以真实人体标本和可追溯来源的三维解剖模型为基础，帮助你观察发声器官的真实形态、空间关系与生理功能。</p></section>
 
-<section class="body-system" aria-label="基于真实解剖标本与三维模型的歌唱发声系统探索">
+<section class="body-system" id="head-airway" aria-label="基于真实解剖标本与三维模型的歌唱发声系统探索">
   <div class="body-figure">
     <div class="body-figure-head"><strong>头颈部真实解剖 · 可旋转三维观察</strong><span>ANATOMICAL REFERENCE</span></div>
     <div class="model-tabs" role="group" aria-label="选择解剖参考模型">
@@ -290,11 +290,29 @@
   abdomen:{title:'腹壁肌群',en:'Abdominal wall muscles',summary:'腹壁由腹直肌、腹斜肌和腹横肌等构成，参与躯干稳定、腹压调节和用力呼气。',role:'歌唱时腹壁肌群可参与精细调节呼气压力，但不应将其理解为持续强力收腹或僵硬挤压。',observe:['腹壁与横膈膜的协调','呼气时腹壁肌群逐步参与','不同乐句长度下的调节差异'],link:'#breath-title',linkText:'观察呼吸动态'}
  };
  const title=document.getElementById('organTitle'),en=document.getElementById('organEnglish'),summary=document.getElementById('organSummary'),role=document.getElementById('organRole'),observe=document.getElementById('organObserve'),link=document.getElementById('organLink'),map=document.getElementById('bodyMap');
+ const modelSources={
+  head:{src:'https://sketchfab.com/models/5c477a85bdf34ec6b66b20c02862360f/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',caption:'真实人体正中矢状面塑化标本。可旋转、缩放，观察鼻腔、口腔、舌、咽、喉与颈椎之间的空间关系。',credit:'模型：UBC Medicine · Educational Media',url:'https://sketchfab.com/3d-models/midsagittal-section-of-human-head-5c477a85bdf34ec6b66b20c02862360f'},
+  tract:{src:'https://sketchfab.com/models/e8ea29cddf2a460998bc5fa223c9bad0/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',caption:'分割式人体声道解剖模型，展示声道肌群、血管与软骨的空间关系。该模型基于可视人体资料，重点用于识别结构，不代表发声时组织实时运动。',credit:'模型：Articulate Instruments',url:'https://sketchfab.com/3d-models/vocal-tract-muscles-arteries-and-cartilage-e8ea29cddf2a460998bc5fa223c9bad0'},
+  larynx:{src:'https://sketchfab.com/models/a00bc73a303c46248db6a13a88b23404/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',caption:'喉部软骨三维模型，适合观察甲状软骨、环状软骨、杓状软骨及会厌之间的相互位置。该模型来源于 BodyParts3D 衍生作品。',credit:'模型：University of Dundee School of Medicine · BodyParts3D',url:'https://sketchfab.com/3d-models/anatomy-of-the-larynx-a00bc73a303c46248db6a13a88b23404'}
+ };
+ document.querySelectorAll('[data-model]').forEach(btn=>btn.addEventListener('click',()=>{
+  const model=modelSources[btn.dataset.model];if(!model)return;
+  const frame=document.getElementById('anatomyModelFrame');
+  frame.src=model.src;
+  frame.title=btn.textContent+' · 三维解剖模型';
+  document.getElementById('modelCaption').textContent=model.caption;
+  const credit=document.getElementById('modelCredit');
+  credit.replaceChildren();
+  const label=document.createElement('span');label.textContent=model.credit;
+  const a=document.createElement('a');a.href=model.url;a.target='_blank';a.rel='noopener';a.textContent='查看原始模型与来源';
+  credit.append(label,a);
+  document.querySelectorAll('[data-model]').forEach(b=>b.setAttribute('aria-pressed',b===btn?'true':'false'));
+ }));
  function select(id){const d=data[id];if(!d)return;title.textContent=d.title;en.textContent=d.en;summary.textContent=d.summary;role.textContent=d.role;observe.replaceChildren(...d.observe.map(t=>{const li=document.createElement('li');li.textContent=t;return li}));link.href=d.link;link.innerHTML=d.linkText+' <span aria-hidden="true">↗</span>';document.querySelectorAll('[data-organ]').forEach(el=>el.setAttribute('aria-pressed',el.dataset.organ===id?'true':'false'));document.querySelectorAll('[data-organ-select]').forEach(el=>el.setAttribute('aria-pressed',el.dataset.organSelect===id?'true':'false'));}
  document.querySelectorAll('.hotspot').forEach(el=>{el.addEventListener('click',()=>select(el.dataset.organ));el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(el.dataset.organ)}})});
  document.querySelectorAll('[data-organ-select]').forEach(el=>el.addEventListener('click',()=>select(el.dataset.organSelect)));
  const breathText={rest:'静息状态：横膈膜呈穹隆状，肺部保持基础充气状态。歌唱呼吸会在此基础上形成更有控制的吸气与呼气协调。',inhale:'吸气：横膈膜收缩并向下移动，胸腔容积增大；胸廓扩张，肺部随之扩张，空气进入肺部。',exhale:'呼气：横膈膜逐渐放松并回升，肺和胸廓弹性回缩；呼气肌群可根据需要参与调节。',phonate:'歌唱：气流受控地经过声门，声带在气流与组织力学相互作用下振动。呼吸肌群需要协调调节气流，而不是突然挤压肺部。'};
- document.querySelectorAll('[data-breath]').forEach(btn=>btn.addEventListener('click',()=>{const state=btn.dataset.breath;map.classList.remove('inhaling','exhaling','phonating');if(state==='inhale')map.classList.add('inhaling');if(state==='exhale')map.classList.add('exhaling');if(state==='phonate')map.classList.add('exhaling','phonating');document.getElementById('breathReadout').textContent=breathText[state];document.querySelectorAll('[data-breath]').forEach(b=>b.setAttribute('aria-pressed',b===btn?'true':'false'));if(state==='inhale'||state==='exhale'||state==='phonate')select(state==='phonate'?'larynx':'diaphragm')}));
+ document.querySelectorAll('[data-breath]').forEach(btn=>btn.addEventListener('click',()=>{const state=btn.dataset.breath;if(map){map.classList.remove('inhaling','exhaling','phonating');if(state==='inhale')map.classList.add('inhaling');if(state==='exhale')map.classList.add('exhaling');if(state==='phonate')map.classList.add('exhaling','phonating');}document.getElementById('breathReadout').textContent=breathText[state];document.querySelectorAll('[data-breath]').forEach(b=>b.setAttribute('aria-pressed',b===btn?'true':'false'));if(state==='inhale'||state==='exhale'||state==='phonate')select(state==='phonate'?'larynx':'diaphragm')}));
  select('larynx');
 })();
 </script>
