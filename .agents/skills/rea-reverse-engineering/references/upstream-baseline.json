@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "upstream_repository": "morluto/rea",
+  "npm_package": "rea-agents",
+  "mcp_registry": "io.github.morluto/rea",
+  "release_tag": "rea-agents-6.9.0",
+  "npm_version": "6.9.0",
+  "skill_metadata_version": "62",
+  "reviewed_at": "2026-11-16",
+  "release_url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.9.0",
+  "skill_url": "https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything",
+  "update_policy": "Detect upstream drift daily; review before updating project files or local MCP/plugin/CLI registrations."
+}

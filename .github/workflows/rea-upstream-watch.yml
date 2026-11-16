@@ -1,0 +1,91 @@
+name: REA upstream maintenance watch
+
+on:
+  schedule:
+    # Daily at 09:15 UTC (10:15 Europe/Rome during CET).
+    - cron: "15 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: rea-upstream-maintenance-watch
+  cancel-in-progress: false
+
+jobs:
+  compare-upstream:
+    name: Compare REA release, npm package, and Skill metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Compare official upstream state with reviewed baseline
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const baselinePath = ".agents/skills/rea-reverse-engineering/references/upstream-baseline.json";
+            const skillPath = ".agents/skills/rea-reverse-engineering/SKILL.md";
+            const [baselineResponse, skillResponse, releaseResponse, npmResponse, issuesResponse] = await Promise.all([
+              github.rest.repos.getContent({ owner, repo, path: baselinePath }),
+              github.rest.repos.getContent({ owner, repo, path: skillPath }),
+              github.rest.repos.getLatestRelease({ owner: "morluto", repo: "rea" }),
+              fetch("https://registry.npmjs.org/rea-agents/latest").then(async response => {
+                if (!response.ok) throw new Error(`npm registry returned HTTP ${response.status}`);
+                return response.json();
+              }),
+              github.rest.issues.listForRepo({ owner, repo, state: "open", per_page: 100 })
+            ]);
+
+            const decode = item => Buffer.from(item.content, "base64").toString("utf8");
+            const baseline = JSON.parse(decode(baselineResponse.data));
+            const skillText = decode(skillResponse.data);
+            const metadataMatch = skillText.match(/^metadata:\s*\n(?:[ \t]+.*\n)*?[ \t]+version:\s*["']?([^\s"'#]+)["']?/m);
+            if (!metadataMatch) throw new Error("Could not read upstream Skill metadata version from the official Skill file.");
+            const upstreamSkillVersion = metadataMatch[1];
+            const releaseTag = releaseResponse.data.tag_name;
+            const npmVersion = npmResponse.version;
+            const drift = [];
+            if (releaseTag !== baseline.release_tag) drift.push(`GitHub release: ${baseline.release_tag} → ${releaseTag}`);
+            if (npmVersion !== baseline.npm_version) drift.push(`npm package: ${baseline.npm_version} → ${npmVersion}`);
+            if (upstreamSkillVersion !== baseline.skill_metadata_version) drift.push(`Skill metadata: ${baseline.skill_metadata_version} → ${upstreamSkillVersion}`);
+            if (releaseTag !== `rea-agents-${npmVersion}`) drift.push(`Release/npm boundary differs: ${releaseTag} vs rea-agents-${npmVersion}`);
+
+            const summary = [
+              "## REA upstream maintenance check",
+              "",
+              `- Checked: ${new Date().toISOString()}`,
+              `- Reviewed baseline: ${baseline.release_tag} / npm ${baseline.npm_version} / Skill ${baseline.skill_metadata_version}`,
+              `- Current upstream: ${releaseTag} / npm ${npmVersion} / Skill ${upstreamSkillVersion}`,
+              `- Official release: https://github.com/morluto/rea/releases/tag/${releaseTag}`,
+              `- Official Skill: https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything`,
+              ""
+            ];
+
+            const title = "REA upstream maintenance — review required";
+            const existing = issuesResponse.data.find(issue => !issue.pull_request && issue.title === title);
+            if (drift.length) {
+              summary.push("### Drift detected", "", ...drift.map(item => `- ${item}`), "");
+              summary.push(
+                "### Required review",
+                "- Read the official release notes and changed Skill guidance.",
+                "- Check the npm package/release boundary and host/runtime requirements.",
+                "- Compare the actual MCP tool catalog and schemas after a local update/reconnect.",
+                "- Update the reviewed baseline and project Skill only after compatibility review.",
+                "- Do not auto-run setup, change local MCP configuration, install providers, or merge/deploy."
+              );
+              const body = summary.join("\n");
+              if (existing) {
+                await github.rest.issues.update({ owner, repo, issue_number: existing.number, body });
+                core.info(`Updated REA maintenance issue #${existing.number}`);
+              } else {
+                const created = await github.rest.issues.create({ owner, repo, title, body });
+                core.info(`Created REA maintenance issue #${created.data.number}`);
+              }
+            } else {
+              summary.push("### Result", "", "- No release/package/Skill metadata drift detected.", "- The current baseline remains aligned; no issue or update was created.", "");
+              summary.push("This check does not verify the user's local MCP/plugin/CLI runtime.");
+            }
+
+            await core.summary.addHeading("REA upstream maintenance").addRaw(summary.join("\n")).write();
