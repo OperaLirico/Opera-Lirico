@@ -48,7 +48,11 @@ jobs:
           ENC="$RUNNER_TEMP/opera-lirico-backup.gpg"
           VERIFY="$RUNNER_TEMP/opera-lirico-verify.json"
           trap 'rm -f "$RAW" "$ENC" "$VERIFY"' EXIT
-          curl --fail --silent --show-error --retry 3 --retry-all-errors             -H "Authorization: Bearer $BACKUP_TOKEN"             -H "Accept: application/json"             "https://opera-lirico-ops.wl19971007.workers.dev/api/admin/backup"             -o "$RAW"
+          curl --fail --silent --show-error --retry 3 --retry-all-errors \
+            -H "Authorization: Bearer $BACKUP_TOKEN" \
+            -H "Accept: application/json" \
+            "https://opera-lirico-ops.wl19971007.workers.dev/api/admin/backup" \
+            -o "$RAW"
           jq -e '.format == "opera-lirico-kv-backup-v1" and (.items | type == "array") and (.key_count == (.items | length))' "$RAW" >/dev/null
           printf '%s' "$ENCRYPTION_KEY" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --symmetric --cipher-algo AES256 --output "$ENC" "$RAW"
           printf '%s' "$ENCRYPTION_KEY" | gpg --batch --yes --pinentry-mode loopback --passphrase-fd 0 --decrypt --output "$VERIFY" "$ENC"
@@ -56,7 +60,8 @@ jobs:
           echo "KEY_COUNT=$(jq -r '.key_count' "$RAW")" >> "$GITHUB_ENV"
           echo "EXPORTED_AT=$(jq -r '.exported_at' "$RAW")" >> "$GITHUB_ENV"
           rm -f "$RAW" "$VERIFY"
-          mv "$ENC" "$RUNNER_TEMP/opera-lirico-backup.gpg"
+          # ENC is already in RUNNER_TEMP; moving it to the same path fails.
+          test -s "$ENC"
       - name: Upload encrypted backup
         if: steps.config.outputs.configured == 'true'
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
