@@ -27,6 +27,7 @@ on:
       - "data/masterclasses.json"
       - "data/masterclass.schema.json"
       - "masterclasses.html"
+      - "voice-anatomy.html"
       - "content_engine/**"
       - ".github/workflows/generate-social-drafts.yml"
       - ".github/workflows/check-site-copy.yml"
