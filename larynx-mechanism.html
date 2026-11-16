@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#12352e">
+<meta name="description" content="基于真实医学解剖模型，交互学习杓状软骨、声带与喉内肌的发声机制。">
+<link rel="canonical" href="https://operalirico.github.io/Opera-Lirico/larynx-mechanism.html">
+<link rel="stylesheet" href="styles.css?v=ux18">
+<title>喉部发声机制实验室｜OperaLab.</title>
+<style>
+:root{--ink:#203b34;--muted:#64766d;--line:#dce5dd;--paper:#f5f7f2;--green:#23483c;--rust:#a96150}
+.mechanism{max-width:1180px;margin:auto;padding:34px 24px 84px;color:var(--ink)}
+.crumb{font-size:12px;color:#7b8980;margin:0 0 22px}.crumb a{color:inherit}
+.hero{max-width:800px;margin-bottom:28px}.eyebrow{font-size:10px;letter-spacing:.17em;color:#9a6c58;font-weight:750}
+.hero h1{font:500 clamp(32px,5vw,52px)/1.12 Georgia,serif;margin:12px 0;color:#183b34}
+.hero p{max-width:760px;color:#586b63;font-size:15px;line-height:1.85;margin:0}
+.notice{margin:20px 0 26px;padding:14px 17px;border:1px solid #e4d8c8;border-radius:12px;background:#fbf8f1;color:#6d5b49;font-size:12px;line-height:1.8}
+.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(310px,.85fr);gap:18px;align-items:start}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 12px 34px #1c49300a}
+.card-head{padding:17px 20px;border-bottom:1px solid #e7ede8;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.card-head strong{font-size:14px}.tag{font-size:10px;color:#557165;background:#edf3ed;padding:6px 9px;border-radius:99px;white-space:nowrap}
+.viewer{background:#eef1ec;padding:12px}
+.viewer-frame{position:relative;aspect-ratio:4/3;background:#e4e8e2;border-radius:12px;overflow:hidden}
+.viewer-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.viewer-caption{padding:11px 5px 2px;color:#68786e;font-size:11px;line-height:1.75}
+.credit{display:flex;gap:8px 14px;flex-wrap:wrap;padding:0 17px 16px;font-size:10px;color:#77867c}
+.credit a,.source a{color:#47695b}
+.interaction{padding:18px 20px 20px}
+.interaction h2,.section-title{font:500 23px Georgia,serif;color:#183b34;margin:0 0 8px}
+.interaction>p{font-size:12px;line-height:1.75;color:var(--muted);margin:0 0 14px}
+.modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.mode{border:1px solid #d2ded5;background:#fff;color:#365448;border-radius:11px;padding:11px 12px;text-align:left;font:inherit;cursor:pointer;min-height:68px}
+.mode strong{display:block;font-size:12px;margin-bottom:4px}.mode span{display:block;font-size:10px;color:#7a8981;line-height:1.5}
+.mode[aria-pressed=true]{border-color:#23483c;background:#edf3ed;box-shadow:inset 0 0 0 1px #23483c}
+.readout{margin-top:13px;padding:15px;background:#f4f7f3;border-radius:12px}
+.readout .readout-kicker{font-size:9px;letter-spacing:.14em;color:#9a6c58;font-weight:750}
+.readout h3{font:500 20px Georgia,serif;margin:7px 0;color:#183b34}
+.readout p{font-size:12px;line-height:1.8;color:#566a60;margin:0}
+.readout ul{font-size:11px;line-height:1.8;color:#566a60;padding-left:18px;margin:8px 0 0}
+.side{display:grid;gap:14px}
+.info{padding:19px 20px}
+.info h2{font:500 21px Georgia,serif;margin:0 0 10px;color:#183b34}
+.info p,.info li{font-size:12px;line-height:1.8;color:#5d7067}
+.info p{margin:0}.info ul{padding-left:18px;margin:8px 0 0}
+.structure-list{display:grid;gap:0}
+.structure{padding:12px 0;border-top:1px solid #edf1ed}
+.structure:first-child{border-top:0;padding-top:0}
+.structure strong{display:block;font-size:12px;color:#29463d;margin-bottom:4px}
+.structure p{font-size:11px;line-height:1.7;color:#65766c;margin:0}
+.section{margin-top:26px}.section-intro{font-size:12px;color:#697a70;line-height:1.8;margin:0 0 14px;max-width:800px}
+.muscle-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.muscle{padding:15px 14px;background:#fff;border:1px solid var(--line);border-radius:13px}
+.muscle .abbr{font:500 21px Georgia,serif;color:#9a6c58}
+.muscle h3{font-size:12px;margin:7px 0 5px;color:#29463d}
+.muscle p{font-size:10px;line-height:1.7;color:#66776e;margin:0}
+.source{margin-top:24px;padding:18px 20px;background:#f4f7f3;border:1px solid var(--line);border-radius:14px}
+.source h2{font:500 20px Georgia,serif;margin:0 0 9px}
+.source p,.source li{font-size:11px;line-height:1.8;color:#63746a}
+.source ul{padding-left:18px;margin:7px 0}
+.disclaimer{font-size:10px;line-height:1.8;color:#87948b;margin:16px 2px 0}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.mechanism{padding:24px 15px 60px}.viewer-frame{aspect-ratio:1/1}.modes{grid-template-columns:1fr}.muscle-grid{grid-template-columns:1fr 1fr}.card-head{padding:14px}.interaction,.info{padding:16px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./" aria-label="OperaLab. 首页"><span class="brand-mark" aria-hidden="true">♫</span><span class="brand-text">OperaLab.<small>OPERA · EDUCATION · OPPORTUNITIES</small></span></a><nav class="nav" aria-label="板块导航"><a href="./">首页</a><a href="masterclasses.html">大师班</a><a href="./#music-library">曲目资料</a></nav></div></header>
+<main class="mechanism">
+<p class="crumb"><a href="./">首页</a> / 学习实验室 / <a href="voice-anatomy.html">发声系统解剖</a> / 喉部发声机制</p>
+<section class="hero"><div class="eyebrow">LARYNGEAL MECHANICS · ANATOMY FIRST</div><h1>喉部发声机制实验室</h1><p>先看清真实结构，再理解它如何运动。这里聚焦杓状软骨、环状软骨、声带与喉内肌之间的关系，逐步学习声门开放、靠拢和张力调节。三维模型来自大学医学解剖教学项目，不用抽象几何体替代器官。</p></section>
+<div class="notice"><strong>重要说明：</strong>左侧三维模型是可旋转的真实解剖教学模型；右侧交互用于切换生理机制说明，不会伪装成模型正在发生真实的软骨运动或声带组织形变。真实发声的生物力学比单一开合动画复杂得多。</div>
+<div class="layout">
+<section class="card" aria-label="真实喉部三维解剖与机制说明">
+  <div class="card-head"><strong>喉部肌肉、软骨与韧带 · 三维解剖</strong><span class="tag">真实来源模型</span></div>
+  <div class="viewer"><div class="viewer-frame"><iframe title="University of Dundee 喉部肌肉、软骨与韧带三维解剖模型" src="https://sketchfab.com/models/3b247ff11b104e24acbb1c453f5bad46/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=0&amp;ui_watermark=1" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe></div><p class="viewer-caption">可在模型中拖动旋转、滚轮缩放，并使用模型自身的标注查看结构。建议先观察喉后部的杓状软骨与环杓关节，再转到前方观察甲状软骨和声带附着关系。</p></div>
+  <div class="credit"><span>医学插画：Eve Laws · University of Dundee / CAHID</span><span>模型依据 CT 数据并结合医学艺术雕塑制作</span><a href="https://sketchfab.com/3d-models/larynx-with-muscles-and-ligaments-3b247ff11b104e24acbb1c453f5bad46" target="_blank" rel="noopener">打开原始模型页面</a></div>
+  <div class="interaction">
+    <h2>选择一个机制，理解肌肉如何工作</h2><p>切换下列状态，右侧说明会更新。请同时旋转上方模型，寻找相应的软骨、肌肉和声带附着位置。</p>
+    <div class="modes" role="group" aria-label="选择喉部肌肉机制">
+      <button class="mode" type="button" data-mode="pca" aria-pressed="true"><strong>声带外展 · PCA</strong><span>后环杓肌 · 打开声门</span></button>
+      <button class="mode" type="button" data-mode="lca" aria-pressed="false"><strong>声带内收 · LCA</strong><span>外侧环杓肌 · 使声带靠拢</span></button>
+      <button class="mode" type="button" data-mode="ia" aria-pressed="false"><strong>后部闭合 · IA</strong><span>杓间肌 · 使杓状软骨彼此靠近</span></button>
+      <button class="mode" type="button" data-mode="ta" aria-pressed="false"><strong>声带体调节 · TA</strong><span>甲杓肌 · 改变声带体的形态与力学性质</span></button>
+      <button class="mode" type="button" data-mode="ct" aria-pressed="false"><strong>声带伸长 · CT</strong><span>环甲肌 · 使声带伸长并增加张力</span></button>
+    </div>
+    <div class="readout" aria-live="polite" aria-atomic="true"><div class="readout-kicker">SELECTED MECHANISM</div><h3 id="modeTitle">后环杓肌 · 声带外展</h3><p id="modeDescription">后环杓肌是喉内肌中负责声带外展的唯一肌肉。它作用于杓状软骨的肌突，使杓状软骨在环杓关节上发生旋转，从而使声带突向外侧移动、声门开放。</p><ul id="modePoints"><li>观察杓状软骨及其肌突、声带突。</li><li>注意这是杓状软骨在环杓关节上的运动，不是整片声带向外平移。</li><li>主要生理作用：吸气时开放声门。</li></ul></div>
+  </div>
+</section>
+<aside class="side">
+  <section class="card info"><h2>先认清这几个结构</h2><div class="structure-list">
+    <div class="structure"><strong>杓状软骨 · Arytenoid cartilages</strong><p>一对位于喉后部的锥形软骨，坐落于环状软骨板上方。声带突和肌突是理解内收、外展运动的关键。</p></div>
+    <div class="structure"><strong>环状软骨 · Cricoid cartilage</strong><p>完整环形软骨，构成喉骨架下部；其上方与杓状软骨形成环杓关节。</p></div>
+    <div class="structure"><strong>声带韧带 · Vocal ligament</strong><p>位于声带游离缘深层，是声带组织结构的一部分，不等同于整条声带。</p></div>
+    <div class="structure"><strong>甲杓肌 · Thyroarytenoid</strong><p>构成声带体的重要部分，可改变声带长度、厚度、刚度及内侧缘形态，作用受具体发声任务影响。</p></div>
+    <div class="structure"><strong>环甲肌 · Cricothyroid</strong><p>通过甲状软骨与环状软骨之间的相对运动，使声带伸长并增加张力，是调节音高的重要肌肉之一。</p></div>
+  </div></section>
+  <section class="card info"><h2>模型观察顺序</h2><ul><li>从后上方找左右杓状软骨。</li><li>辨认每侧的声带突与肌突。</li><li>沿声带突向前追踪声带韧带的走向。</li><li>观察外侧环杓肌与后环杓肌相对环杓关节的位置。</li><li>最后观察甲状软骨、环状软骨及环甲肌的关系。</li></ul></section>
+  <section class="card info"><h2>一个重要区别</h2><p>“声带靠拢”不是一个肌肉单独完成的动作。LCA 主要使杓状软骨旋转、声带突靠近中线；杓间肌有助于两侧杓状软骨靠近，尤其影响声门后部闭合。不同肌肉的作用不能混为一谈。</p></section>
+</aside>
+</div>
+<section class="section"><h2 class="section-title">五组喉内肌，各自承担不同任务</h2><p class="section-intro">下列内容描述主要作用，不代表肌肉在歌唱时单独工作。喉部运动来自多组肌肉的协同，且会随音高、响度、元音和发声方式变化。</p>
+<div class="muscle-grid">
+  <article class="muscle"><div class="abbr">PCA</div><h3>后环杓肌</h3><p>唯一主要声带外展肌。使声带突向外侧移动，开放声门。</p></article>
+  <article class="muscle"><div class="abbr">LCA</div><h3>外侧环杓肌</h3><p>使杓状软骨旋转，声带突向中线靠近，参与声带内收。</p></article>
+  <article class="muscle"><div class="abbr">IA</div><h3>杓间肌</h3><p>横杓肌与斜杓肌使两侧杓状软骨靠近，参与声门后部闭合。</p></article>
+  <article class="muscle"><div class="abbr">TA</div><h3>甲杓肌</h3><p>构成声带体的重要部分，影响声带长度、厚度、刚度和内侧缘形态。</p></article>
+  <article class="muscle"><div class="abbr">CT</div><h3>环甲肌</h3><p>使声带伸长、增加张力，参与音高调节；并非唯一的音高控制因素。</p></article>
+</div></section>
+<section class="source"><h2>模型来源与科学依据</h2><ul>
+<li><a href="https://sketchfab.com/3d-models/larynx-with-muscles-and-ligaments-3b247ff11b104e24acbb1c453f5bad46" target="_blank" rel="noopener">Larynx with Muscles and Ligaments · University of Dundee School of Medicine</a>：Eve Laws 为 Dundee Centre for Anatomy and Human Identification 制作；学校说明该模型用于 ENT 教学，模型由 CT 数据导入并结合医学艺术雕塑制作。</li>
+<li><a href="https://www.dundee.ac.uk/tilt/medical-illustration/parapharyngeal-space" target="_blank" rel="noopener">University of Dundee · Medical illustration project</a>：项目背景、医学艺术家与教学用途。</li>
+<li><a href="https://masterclass.morgavi.fr/mentions-legales" target="_blank" rel="noopener">Model credit and licence reference</a>：第三方版权声明将 Dundee 的该模型列为 CC BY-NC-SA 4.0。当前页面仅通过 Sketchfab 官方嵌入播放器展示，不下载、改造或重新分发模型文件。</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/books/NBK538202/" target="_blank" rel="noopener">NCBI Bookshelf · Anatomy of the Larynx</a>：喉部软骨、关节及解剖关系。</li>
+<li><a href="https://www.ncbi.nlm.nih.gov/books/NBK545265/" target="_blank" rel="noopener">NCBI Bookshelf · Laryngeal Muscles</a>：喉内肌的附着与主要作用。</li>
+</ul><p>模型形态用于结构识别；肌肉功能说明以解剖学文献为依据。若模型标注与权威解剖资料存在差异，应以可靠医学资料为准并记录修订。</p></section>
+<p class="disclaimer">本实验室为歌唱教育用途，不提供医疗诊断。当前交互切换的是肌肉功能说明，不是经验证的三维生物力学仿真；模型中的肌肉不会随按钮改变形状或位置。声带真实振动涉及黏膜波、组织分层、气流与声道声学负载，后续只有在获得可验证的生物力学依据后才会加入相应模拟。</p>
+</main>
+<script>
+(()=> {
+ const modes={
+  pca:{title:'后环杓肌 · 声带外展',description:'后环杓肌是喉内肌中负责声带外展的唯一肌肉。它作用于杓状软骨的肌突，使杓状软骨在环杓关节上发生旋转，从而使声带突向外侧移动、声门开放。',points:['观察杓状软骨及其肌突、声带突。','这是杓状软骨在环杓关节上的运动，不是整片声带向外平移。','主要生理作用：吸气时开放声门。']},
+  lca:{title:'外侧环杓肌 · 声带内收',description:'外侧环杓肌从环状软骨弓外侧向后上方连接至杓状软骨肌突。收缩时使杓状软骨发生与后环杓肌相反方向的旋转，令声带突靠近中线，参与声带内收。',points:['重点观察环状软骨弓外侧与杓状软骨肌突之间的关系。','LCA 主要影响声带突与膜间部声门的靠拢。','声门后部闭合还需要杓间肌参与，不能只归因于 LCA。']},
+  ia:{title:'杓间肌 · 声门后部闭合',description:'杓间肌包括横杓肌与斜杓肌，连接左右杓状软骨。其主要作用是使两侧杓状软骨彼此靠近，参与声门后部（软骨间部）的闭合。',points:['横杓肌横跨两侧杓状软骨后面。','斜杓肌呈交叉走向，并与杓会厌肌连续。','它与 LCA 协同，但不能与 LCA 的旋转作用混为一谈。']},
+  ta:{title:'甲杓肌 · 声带体调节',description:'甲杓肌从甲状软骨内面向后连接杓状软骨，是声带体的重要组成部分。其活动可改变声带长度、厚度、刚度及内侧缘形态；具体效果取决于与环甲肌等其他肌肉的协同。',points:['声带不是一条独立的“绳子”，而是具有分层组织结构的复合体。','TA 对声带体的作用不能简化成“放松声带”或“压紧声带”。','肌肉活动与声带组织力学之间存在复杂的任务依赖关系。']},
+  ct:{title:'环甲肌 · 声带伸长与张力调节',description:'环甲肌连接环状软骨与甲状软骨。收缩时使两者之间产生相对倾斜或旋转，增加声带长度与纵向张力，是调节音高的重要机制之一。',points:['观察甲状软骨与环状软骨之间的相对运动关系。','CT 增加声带纵向张力，但音高不是由 CT 单独控制。','声带振动还受到 TA、声门下压力、组织特性与声道负载等因素影响。']}
+ };
+ const title=document.getElementById('modeTitle'),description=document.getElementById('modeDescription'),points=document.getElementById('modePoints');
+ document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{
+  const item=modes[button.dataset.mode];if(!item)return;
+  title.textContent=item.title;description.textContent=item.description;
+  points.replaceChildren(...item.points.map(value=>{const li=document.createElement('li');li.textContent=value;return li}));
+  document.querySelectorAll('[data-mode]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
+ }));
+})();
+</script>
+</body>
+</html>
