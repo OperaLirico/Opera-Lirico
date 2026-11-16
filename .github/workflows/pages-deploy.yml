@@ -18,6 +18,7 @@ on:
       - "service-worker.js"
       - "data/conservatori.json"
       - "masterclasses.html"
+      - "voice-anatomy.html"
       - "data/masterclasses.json"
       - "data/masterclass.schema.json"
       - "data/opportunities.json"
