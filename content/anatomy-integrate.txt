@@ -1,0 +1,13 @@
+# 解剖图版接入 · 触发凭证
+
+本文件被推送时，anatomy-plates-integrate 工作流会把 assets/anatomy/ 下的三张线描图
+接入 voice-anatomy.html 与 larynx-mechanism.html，并在 docs/larynx-model-provenance.md
+里补一节图版来源。
+
+工作流自带断言：每个锚点必须恰好命中一次，否则整次运行失败、不提交。
+
+改动位置：
+
+1. voice-anatomy.html：可交互上面观卡片下新增一张静态线描对照图；侧面卡片里的彩色简图替换为正中矢状切面线描图；图注与科学说明同步改写。
+2. larynx-mechanism.html：在「五组喉内肌」之前新增「线描对照」一节，放上面观与喉内肌两张图。
+3. docs/larynx-model-provenance.md：追加图版来源与免责一节。

@@ -1,0 +1,173 @@
+name: Anatomy plates integrate
+
+on:
+  push:
+    paths:
+      - content/anatomy-integrate.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Wire the line-art plates into the two anatomy pages
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+
+          ROOT = pathlib.Path('.')
+          VOICE = ROOT / 'voice-anatomy.html'
+          LARYNX = ROOT / 'larynx-mechanism.html'
+          PROV = ROOT / 'docs' / 'larynx-model-provenance.md'
+
+          def read(p):
+              return p.read_text(encoding='utf-8')
+
+          def write(p, t):
+              p.write_text(t, encoding='utf-8')
+              print('wrote', p.name, len(t), 'chars')
+
+          def swap(t, old, new, label):
+              n = t.count(old)
+              if n != 1:
+                  sys.exit('ABORT: %s expected 1 match, got %d' % (label, n))
+              return t.replace(old, new, 1)
+
+          # ---------- voice-anatomy.html ----------
+          v = read(VOICE)
+
+          v = swap(
+              v,
+              '.side-caption{padding:0 20px 18px;color:#77867c;font-size:11px;line-height:1.7}',
+              '.side-caption{padding:0 20px 18px;color:#77867c;font-size:11px;line-height:1.7}\n'
+              '.plate-block{margin:16px 0 0;padding-top:14px;border-top:1px solid #e3eae2}\n'
+              '.plate-img{width:100%;height:auto;display:block;background:#fff;border-radius:8px}\n'
+              '.plate-note{margin:10px 2px 0;font-size:11px;line-height:1.75;color:#6f8078}\n'
+              '.plate-note b{color:#2f4a3f;font-weight:650}',
+              'voice css')
+
+          superior_block = (
+              '<span class="caption-note">上方视角 · 示意比例，非手术解剖图</span></div>\n'
+              '    <div class="plate-block">\n'
+              '      <img class="plate-img" src="assets/anatomy/larynx-superior.png" width="960" height="640" loading="lazy" decoding="async" alt="喉的上面观线描图：上方两侧为杓状软骨与声带突，中央为声门裂隙，左右为真声带，下方 V 形为甲状软骨前角。">\n'
+              '      <p class="plate-note"><b>上面观线描对照</b>　可交互图用来观察声带靠拢与外展，这张图用来确认结构位置：上方两侧是杓状软骨，中央是声门裂隙，左右两条带状结构为真声带，下方 V 形为甲状软骨前角。两张图的比例都经过简化。</p>\n'
+              '    </div>'
+          )
+          v = swap(
+              v,
+              '<span class="caption-note">上方视角 · 示意比例，非手术解剖图</span></div>',
+              superior_block,
+              'voice superior plate')
+
+          marker = '<svg viewBox="0 0 780 390"'
+          if v.count(marker) != 1:
+              sys.exit('ABORT: side svg marker count != 1')
+          start = v.index(marker)
+          end = v.index('</svg>', start) + len('</svg>')
+          sagittal_img = (
+              '<img class="side-svg" src="assets/anatomy/larynx-sagittal.png" '
+              'width="960" height="640" loading="lazy" decoding="async" '
+              'alt="喉的正中矢状切面线描图：自上而下可见会厌、假声带、喉室、真声带、声门下腔、环状软骨与气管软骨环，后方为杓状软骨与环杓关节。">'
+          )
+          v = v[:start] + sagittal_img + v[end:]
+
+          v = swap(
+              v,
+              '<div class="side-caption">侧面剖视帮助理解喉部在气道中的位置。图中结构为教学概括，比例与组织层次均有简化。</div>',
+              '<div class="side-caption">正中矢状切面线描图：自上而下可见会厌、假声带、喉室、真声带、声门下腔、环状软骨与气管软骨环，后方为杓状软骨与环杓关节。图版按解剖学文献重绘，用于辨认结构位置，不作为临床或诊断依据。</div>',
+              'voice side caption')
+
+          v = swap(
+              v,
+              '科学说明：本页包含上方视角与矢状面侧视两种教学示意，不是医学影像或临床诊断工具。',
+              '科学说明：本页上方视角为可交互示意，侧面与添附的上面观为按解剖文献重绘的线描图版，同一结构在两种表达里互为对照；本页不是医学影像或临床诊断工具。',
+              'voice lab note')
+
+          for token in ('assets/anatomy/larynx-superior.png', 'assets/anatomy/larynx-sagittal.png', '.plate-block{'):
+              if token not in v:
+                  sys.exit('ABORT: voice-anatomy missing ' + token)
+          if '<svg viewBox="0 0 780 390"' in v:
+              sys.exit('ABORT: side svg still present')
+          write(VOICE, v)
+
+          # ---------- larynx-mechanism.html ----------
+          l = read(LARYNX)
+
+          l = swap(
+              l,
+              '.readout ul{font-size:11px;line-height:1.8;color:#566a60;padding-left:18px;margin:8px 0 0}',
+              '.readout ul{font-size:11px;line-height:1.8;color:#566a60;padding-left:18px;margin:8px 0 0}\n'
+              '.plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:16px}\n'
+              '.plate{margin:0;background:#fff;border:1px solid #e2e9e1;border-radius:14px;overflow:hidden}\n'
+              '.plate img{width:100%;height:auto;display:block;background:#fff}\n'
+              '.plate figcaption{padding:12px 16px 16px;font-size:12px;line-height:1.8;color:#566a60}\n'
+              '.plate figcaption b{display:block;margin-bottom:5px;color:#183b34;font-size:13px}\n'
+              '@media(max-width:820px){.plate-grid{grid-template-columns:1fr}}',
+              'larynx css')
+
+          plate_section = (
+              '<section class="section" aria-label="喉部线描对照图">\n'
+              '  <h2 class="section-title">线描对照：上面观与喉内肌</h2>\n'
+              '  <p class="section-intro">上面的三维模型负责真实形态与空间关系，这两张静态线描负责把位置关系一次看清。先在模型里旋转找到结构，再回到图上确认。</p>\n'
+              '  <div class="plate-grid">\n'
+              '    <figure class="plate">\n'
+              '      <img src="assets/anatomy/larynx-superior.png" width="960" height="640" loading="lazy" decoding="async" alt="喉的上面观线描图：上方两侧为杓状软骨与声带突，中央为声门裂隙，左右为真声带，下方 V 形为甲状软骨前角。">\n'
+              '      <figcaption><b>喉的上面观</b>上方两侧是杓状软骨，中央是声门裂隙，左右两条带状结构为真声带，下方 V 形为甲状软骨前角。这张图看的是声门区的相对位置，不是声带振动的动态。</figcaption>\n'
+              '    </figure>\n'
+              '    <figure class="plate">\n'
+              '      <img src="assets/anatomy/larynx-intrinsic-muscles.png" width="960" height="640" loading="lazy" decoding="async" alt="喉内肌线描图：显示环甲肌、甲杓肌、环杓后肌、环杓侧肌与杓间肌的位置关系。">\n'
+              '      <figcaption><b>喉内肌的关系</b>环甲肌在环状软骨与甲状软骨之间；甲杓肌从甲状软骨内面走向杓状软骨；环杓后肌自环状软骨板后面斜向肌突；环杓侧肌在环状软骨外侧上缘；杓间肌位于两块杓状软骨之间。图上没有编号，按区域辨认，具体附着点以三维模型为准。</figcaption>\n'
+              '    </figure>\n'
+              '  </div>\n'
+              '</section>\n'
+          )
+          l = swap(
+              l,
+              '<section class="section"><h2 class="section-title">五组喉内肌，各自承担不同任务</h2>',
+              plate_section + '<section class="section"><h2 class="section-title">五组喉内肌，各自承担不同任务</h2>',
+              'larynx plate section')
+
+          for token in ('assets/anatomy/larynx-superior.png', 'assets/anatomy/larynx-intrinsic-muscles.png', '.plate-grid{'):
+              if token not in l:
+                  sys.exit('ABORT: larynx-mechanism missing ' + token)
+          write(LARYNX, l)
+
+          # ---------- provenance ----------
+          if PROV.exists():
+              p = read(PROV)
+              if '线描图版' not in p:
+                  p = p.rstrip('\n') + (
+                      '\n\n## 线描图版\n\n'
+                      '`assets/anatomy/` 下的三张线描图按解剖学文献的体位与结构关系重绘，为单色墨线教学图，不含图内文字，标注由页面承担。'
+                      '图版不是从三维模型导出的：模型页面不提供几何导出，线描与模型互为对照。图版用于结构辨认，不作为临床、手术或诊断依据。\n\n'
+                      '- `larynx-superior.png`：喉的上面观，用于 `voice-anatomy.html` 的声门对照与 `larynx-mechanism.html` 的线描对照一节。\n'
+                      '- `larynx-sagittal.png`：正中矢状切面，替换 `voice-anatomy.html` 原有的侧面简图。\n'
+                      '- `larynx-intrinsic-muscles.png`：喉内肌关系，用于 `larynx-mechanism.html` 的五组肌肉一节。\n'
+                      '- 登记与来源见 `content/anatomy-plates.txt`。\n'
+                  )
+                  write(PROV, p)
+              else:
+                  print('provenance already has the plate section, skipped')
+          else:
+              print('provenance doc missing, skipped')
+
+          print('PATCH OK')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "feat(anatomy): wire the line-art plates into the two anatomy pages"
+            git push
+          fi
