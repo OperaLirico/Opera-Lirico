@@ -120,6 +120,16 @@ jobs:
 
           voice_page = Path("voice-anatomy.html").read_text(encoding="utf-8")
           required_voice_features = [
+              'id="bodyMap"',
+              'data-organ="nose"',
+              'data-organ="palate"',
+              'data-organ="tongue"',
+              'data-organ="pharynx"',
+              'data-organ="larynx"',
+              'data-organ="lungs"',
+              'data-organ="diaphragm"',
+              'data-breath="inhale"',
+              'id="breathReadout"',
               'id="glottis"',
               'id="leftFold"',
               'id="rightFold"',
