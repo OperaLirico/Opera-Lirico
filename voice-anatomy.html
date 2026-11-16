@@ -1,23 +1,22 @@
 <!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#12352e"><meta name="description" content="交互式人体歌唱发声系统：点击鼻腔、舌头、软腭、咽部、喉头、肺部与横膈膜，探索器官结构、呼吸动态和发声机制。OperaLab."><link rel="canonical" href="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="OperaLab."><meta property="og:title" content="发声机制实验室｜OperaLab."><meta property="og:description" content="通过交互式示意图了解喉部结构、声带开合与发声振动。"><meta property="og:url" content="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="发声机制实验室｜OperaLab."><meta name="twitter:description" content="通过交互式示意图了解喉部结构、声带开合与发声振动。"><meta name="twitter:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><title>发声机制实验室｜OperaLab.</title><link rel="stylesheet" href="styles.css?v=ux18">
 <style>
-/* Interactive whole-body singing anatomy */
-.body-system{margin:34px 0 30px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);gap:18px;align-items:stretch}
-.body-figure{background:radial-gradient(ellipse at 48% 35%,#fffdf8 0,#f4f1e8 58%,#e9eee7 100%);padding:14px;border:1px solid #d9e3dc;border-radius:18px;overflow:hidden}
-.body-figure-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:5px 8px 12px}
-.body-figure-head strong{font-size:14px}.body-figure-head span{font-size:10px;letter-spacing:.12em;color:#87958b}
-.body-map{width:100%;height:auto;display:block;max-height:760px}
-.body-map .hotspot{cursor:pointer;outline:none}
-.body-map .hotspot .hit{fill:#fffdf8;stroke:#a96150;stroke-width:3;transition:all .2s}
-.body-map .hotspot text{font:600 12px system-ui,sans-serif;fill:#29463d;pointer-events:none}
-.body-map .hotspot:hover .hit,.body-map .hotspot:focus .hit,.body-map .hotspot[aria-pressed=true] .hit{fill:#a96150;stroke:#fff;stroke-width:4;r:13}
-.body-map .organ{transition:transform .55s ease,opacity .35s ease;transform-box:fill-box;transform-origin:center}
-.body-map.inhaling #lungL,.body-map.inhaling #lungR{transform:scale(1.07,1.06)}
-.body-map.inhaling #diaphragmShape{transform:translateY(20px) scaleY(.78)}
-.body-map.exhaling #lungL,.body-map.exhaling #lungR{transform:scale(.96,.95)}
-.body-map.exhaling #diaphragmShape{transform:translateY(-10px) scaleY(1.12)}
-.body-map.phonating #vocalSource{animation:sourcePulse .16s ease-in-out infinite alternate}
-@keyframes sourcePulse{to{opacity:.55;transform:scale(1.13)}}
+/* Anatomical reference workspace: real specimen and licensed 3D atlas embeds */
+.body-system{margin:32px 0 26px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:18px;align-items:start}
+.body-figure{background:#f4f3ef;border:1px solid #d9e0da;border-radius:18px;padding:14px;overflow:hidden}
+.body-figure-head{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:4px 6px 12px}
+.body-figure-head strong{font-size:14px;color:#203b34}.body-figure-head span{font-size:10px;letter-spacing:.12em;color:#87958b}
+.model-tabs{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 10px}
+.model-tab{border:1px solid #cbd7ce;background:#fff;color:#365448;border-radius:99px;padding:8px 11px;font:inherit;font-size:11px;cursor:pointer}
+.model-tab[aria-pressed=true]{background:#23483c;color:#fff;border-color:#23483c}
+.model-frame-wrap{position:relative;width:100%;aspect-ratio:4/3;background:#e8e9e5;border:1px solid #d5ddd6;border-radius:12px;overflow:hidden}
+.model-frame-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.model-caption{font-size:11px;line-height:1.75;color:#75837b;margin:10px 2px 0}
+.model-credit{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:10px;color:#7a8981;margin-top:8px}
+.model-credit a{color:#47695b}
+.organ-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.organ-chip{border:1px solid #d2ded5;background:#fff;color:#365448;border-radius:99px;padding:8px 11px;font:inherit;font-size:11px;cursor:pointer}
+.organ-chip[aria-pressed=true]{background:#23483c;color:white;border-color:#23483c}
 .body-detail{background:#fff;border:1px solid #d9e3dc;border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:14px;min-height:100%}
 .body-detail .detail-kicker{font-size:10px;letter-spacing:.15em;color:#a16b58;font-weight:750}
 .body-detail h2{font:500 27px/1.2 Georgia,serif;color:#183b34;margin:0}
@@ -26,18 +25,14 @@
 .body-detail h3{font-size:12px;margin:4px 0 0;color:#29463d}
 .body-detail ul{margin:0;padding-left:18px;color:#586b63;font-size:12px;line-height:1.85}
 .body-detail .detail-link{display:inline-flex;align-items:center;gap:8px;color:#23483c;font-weight:700;font-size:12px;text-decoration:none;border-bottom:1px solid #a9b9ad;padding:0 0 5px;width:max-content;margin-top:auto}
-.organ-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
-.organ-chip{border:1px solid #d2ded5;background:#fff;color:#365448;border-radius:99px;padding:8px 11px;font:inherit;font-size:11px;cursor:pointer}
-.organ-chip[aria-pressed=true]{background:#23483c;color:white;border-color:#23483c}
 .breath-lab{margin:18px 0 34px;padding:22px;background:#f4f7f3;border:1px solid #d9e3dc;border-radius:18px}
 .breath-lab h2{font:500 25px Georgia,serif;margin:0 0 6px;color:#183b34}
 .breath-lab>p{font-size:12px;line-height:1.8;color:#66776e;margin:0 0 16px}
 .breath-controls{display:flex;gap:8px;flex-wrap:wrap}
 .breath-readout{margin-top:12px;padding:12px 14px;border-radius:10px;background:#fff;color:#53685e;font-size:12px;line-height:1.8}
 .body-system-note{font-size:11px;line-height:1.8;color:#7a8981;margin:0 2px 28px}
-@media(max-width:850px){.body-system{grid-template-columns:1fr}.body-map{max-height:none}.body-detail{min-height:300px}}
-@media(max-width:600px){.body-figure{padding:8px}.body-detail{padding:18px}.body-detail h2{font-size:24px}.breath-lab{padding:18px}}
-
+@media(max-width:850px){.body-system{grid-template-columns:1fr}.body-detail{min-height:300px}}
+@media(max-width:600px){.body-figure{padding:9px}.body-detail{padding:18px}.body-detail h2{font-size:24px}.breath-lab{padding:18px}.model-frame-wrap{aspect-ratio:1/1}}
 .lab-wrap{max-width:1120px;margin:auto;padding:38px 24px 80px;color:#203b34}.lab-crumb{font-size:13px;color:#65756f;margin-bottom:22px}.lab-crumb a{color:inherit}.lab-hero{max-width:760px;margin-bottom:28px}.lab-kicker{font-size:11px;letter-spacing:.16em;color:#9a6c58;font-weight:700}.lab-hero h1{font:500 clamp(32px,5vw,54px)/1.12 Georgia,serif;margin:12px 0;color:#183b34}.lab-hero p{font-size:16px;line-height:1.8;color:#586b63}.lab-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.8fr);gap:20px;align-items:start}.lab-card{background:#fff;border:1px solid #d9e3dc;border-radius:18px;overflow:hidden;box-shadow:0 12px 34px #1c49300a}.lab-card-head{padding:18px 22px;border-bottom:1px solid #e7ede8;display:flex;justify-content:space-between;gap:12px;align-items:center}.lab-card-head strong{font-size:14px}.lab-tag{font-size:11px;color:#557165;background:#edf3ed;padding:5px 9px;border-radius:99px}.lab-stage{padding:16px;background:linear-gradient(145deg,#f8faf6,#edf3ed)}.lab-svg{width:100%;height:auto;display:block;max-height:470px}.lab-controls{padding:20px 22px}.lab-controls label{display:flex;justify-content:space-between;font-size:13px;font-weight:650}.lab-controls input{width:100%;accent-color:#a96150;margin:16px 0 10px}.lab-actions{display:flex;gap:8px;flex-wrap:wrap}.lab-btn{border:1px solid #cddbd1;background:#fff;color:#23483c;border-radius:999px;padding:9px 14px;font:inherit;font-size:12px;cursor:pointer}.lab-btn[aria-pressed=true],.lab-btn.primary{background:#23483c;color:#fff;border-color:#23483c}.lab-readout{font-size:13px;line-height:1.7;color:#5e7168;background:#f4f7f3;border-radius:10px;padding:11px 13px;margin-top:14px}.lab-side{display:grid;gap:14px}.lab-info{padding:20px 21px}.lab-info h2{font:500 22px Georgia,serif;margin:0 0 10px;color:#183b34}.lab-info p,.lab-info li{font-size:13px;line-height:1.8;color:#5d7067}.lab-info p{margin:0}.lab-info ul{padding-left:18px;margin:12px 0 0}.lab-steps{display:grid;gap:10px}.lab-step{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:13px;line-height:1.65;color:#5d7067}.lab-step b{display:grid;place-items:center;width:25px;height:25px;background:#edf3ed;color:#315e50;border-radius:50%}.lab-note{font-size:11px;line-height:1.7;color:#7a8981;margin:20px 2px 0}.lab-svg .fold{transition:transform .35s ease}.lab-svg.is-vibrating .fold{animation:foldPulse .12s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:center}@keyframes foldPulse{to{filter:brightness(1.18)}}@media(max-width:800px){.lab-grid{grid-template-columns:1fr}.lab-wrap{padding:26px 16px 60px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
 
 /* Figure 02 visual system */
@@ -67,105 +62,30 @@
 @media(max-width:900px){.anatomy-workspace{grid-template-columns:1fr}.anatomy-primary,.side-anatomy,.anatomy-notes{grid-column:1;grid-row:auto}.anatomy-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.anatomy-notes{grid-template-columns:1fr}.anatomy-canvas{padding:10px 4px 8px}.anatomy-svg .anatomy-labels{font-size:18px}.figure-caption{gap:8px 12px}.figure-caption .caption-note{margin-left:0;width:100%}}
 
-/* Head and vocal-tract articulation explorer */
-.head-tract{margin:30px 0;padding:24px;background:#fbfcf8;border:1px solid #d9e3dc;border-radius:20px}
-.head-tract-intro{max-width:760px;margin-bottom:18px}
-.head-tract-intro h2{font:500 27px/1.2 Georgia,serif;color:#183b34;margin:0 0 8px}
-.head-tract-intro p{font-size:13px;line-height:1.8;color:#64756b;margin:0}
-.tract-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(270px,.7fr);gap:16px;align-items:start}
-.tract-stage{background:radial-gradient(ellipse at 46% 40%,#fff 0,#f2f5ef 72%,#e9eee7 100%);border:1px solid #e0e7df;border-radius:15px;padding:12px;overflow:hidden}
-.tract-svg{width:100%;height:auto;display:block}
-.tract-svg .tract-tissue{stroke-linejoin:round;stroke-linecap:round}
-.tract-svg .airflow{opacity:0;transition:opacity .25s ease}
-.tract-svg.show-airflow .airflow{opacity:1}
-.tract-svg .airflow path{stroke-dasharray:7 9;animation:airPath 1.2s linear infinite}
-@keyframes airPath{to{stroke-dashoffset:-32}}
-.tract-side{display:grid;gap:12px}
-.tract-control{padding:14px 15px;background:#fff;border:1px solid #e1e8e1;border-radius:12px}
-.tract-control label{display:flex;justify-content:space-between;gap:10px;font-size:12px;font-weight:700;color:#29463d}
-.tract-control output{font-variant-numeric:tabular-nums;color:#9b6658}
-.tract-control input{width:100%;accent-color:#a96150;margin:12px 0 3px}
-.tract-presets{display:flex;flex-wrap:wrap;gap:7px}
-.tract-preset{border:1px solid #d2ded5;background:#fff;color:#365448;border-radius:99px;padding:8px 12px;font:inherit;font-size:11px;cursor:pointer}
-.tract-preset[aria-pressed=true]{background:#23483c;color:#fff;border-color:#23483c}
-.tract-readout{padding:15px;background:#f1f5f0;border-radius:12px;color:#52685d;font-size:12px;line-height:1.8}
-.tract-readout strong{display:block;color:#23483c;margin-bottom:5px}
-.tract-footnote{font-size:11px;line-height:1.8;color:#7a8981;margin:14px 2px 0}
-@media(max-width:850px){.tract-layout{grid-template-columns:1fr}.head-tract{padding:18px}}
-@media(prefers-reduced-motion:reduce){.tract-svg .airflow path{animation:none}}
-
 </style></head><body>
 <header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./" aria-label="OperaLab. 首页"><span class="brand-mark" aria-hidden="true">♫</span><span class="brand-text">OperaLab.<small>OPERA · EDUCATION · OPPORTUNITIES</small></span></a><nav class="nav" aria-label="板块导航"><a href="./">首页</a><a href="masterclasses.html">大师班</a><a href="./#music-library">曲目资料</a></nav></div></header>
 <main class="lab-wrap"><div class="lab-crumb"><a href="./">首页</a> / 学习实验室 / 发声机制</div><section class="lab-hero"><div class="lab-kicker">VOICE SCIENCE · INTERACTIVE HUMAN ANATOMY</div><h1>声音，从这里开始。</h1><p>声带并不是主动“拍打”空气的两片肌肉。呼气形成的气流、声门下压力，以及声带组织本身的弹性共同参与振动。本页用简化的交互模型，帮助你观察喉部结构与声带开合之间的关系。</p></section>
 
-<section class="body-system" aria-label="可交互的人体歌唱发声系统">
+<section class="body-system" aria-label="基于真实解剖标本与三维模型的歌唱发声系统探索">
   <div class="body-figure">
-    <div class="body-figure-head"><strong>人体发声系统 · 点击器官探索</strong><span>INTERACTIVE BODY MAP</span></div>
-    <svg class="body-map" id="bodyMap" viewBox="0 0 620 790" role="group" aria-labelledby="bodyMapTitle bodyMapDesc">
-      <title id="bodyMapTitle">人体歌唱发声系统可点击总览</title>
-      <desc id="bodyMapDesc">展示头颈部声道、喉头、气管、肺部、横膈膜及呼吸相关结构。点击标记可查看器官说明。</desc>
-      <defs>
-        <linearGradient id="skinBody" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4e5d6"/><stop offset="1" stop-color="#c9ad98"/></linearGradient>
-        <linearGradient id="lungTint" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e8a59b"/><stop offset="1" stop-color="#b96564"/></linearGradient>
-        <linearGradient id="airwayTint" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#a6c8b8"/><stop offset="1" stop-color="#5e9584"/></linearGradient>
-      </defs>
-      <!-- Head and torso silhouette -->
-      <path d="M245 38 Q310 8 365 44 Q407 75 395 139 Q388 177 359 204 L360 238 Q405 246 452 270 Q490 292 505 348 L540 650 Q543 684 510 694 L110 694 Q77 684 80 650 L115 348 Q130 292 168 270 Q207 246 260 238 L260 204 Q221 182 210 139 Q195 76 245 38Z" fill="url(#skinBody)" opacity=".34" stroke="#b89e89" stroke-width="3"/>
-      <!-- Head sagittal inset -->
-      <path d="M228 56 Q280 20 340 48 Q385 70 374 126 Q368 164 333 183 L310 205 L268 192 Q228 171 218 130 Q207 84 228 56Z" fill="#f8f1e8" stroke="#b99f8b" stroke-width="3"/>
-      <path d="M239 83 Q271 57 319 68 Q350 78 349 109 Q348 134 326 148 L303 169 L273 158 Q244 143 235 119Z" fill="#ead5c6" stroke="#c3a793" stroke-width="2"/>
-      <!-- Nasal cavity and oral cavity (sagittal inset) -->
-      <path d="M243 91 Q270 76 306 84 Q319 89 311 102 Q291 108 269 107 L246 116Z" fill="#b7d1c7" stroke="#6c9888" stroke-width="2"/>
-      <path d="M251 125 Q278 112 314 120 Q326 129 313 139 Q286 147 263 140Z" fill="#d98f82" stroke="#a65d56" stroke-width="2"/>
-      <path d="M260 120 Q283 111 309 116" fill="none" stroke="#8d514d" stroke-width="5" stroke-linecap="round"/>
-      <path d="M306 116 Q315 119 316 128" fill="none" stroke="#a65d56" stroke-width="4" stroke-linecap="round"/>
-      <path d="M271 139 Q289 131 306 137 Q293 149 276 147Z" fill="#bb6e69"/>
-      <!-- Pharyngeal airway -->
-      <path d="M324 101 Q339 126 329 151 L321 213 Q318 236 308 257" fill="none" stroke="#7da99a" stroke-width="13" stroke-linecap="round" opacity=".8"/>
-      <!-- Larynx -->
-      <path d="M293 214 Q312 202 333 215 L338 248 Q316 260 292 246Z" fill="#d2bba1" stroke="#927a66" stroke-width="3"/>
-      <path d="M300 232 Q315 225 330 233" stroke="#a85f59" stroke-width="6" stroke-linecap="round"/>
-      <circle id="vocalSource" cx="315" cy="236" r="8" fill="#b75e59"/>
-      <!-- Trachea -->
-      <path d="M310 252 L310 397" stroke="url(#airwayTint)" stroke-width="22" stroke-linecap="round"/>
-      <path d="M310 260 L310 395" stroke="#e8f2eb" stroke-width="3" stroke-dasharray="7 8"/>
-      <g fill="none" stroke="#d6e5dc" stroke-width="5"><path d="M300 275h20M300 294h20M300 313h20M300 332h20M300 351h20M300 370h20M300 389h20"/></g>
-      <!-- Bronchi -->
-      <path d="M310 390 Q274 410 245 442 M310 390 Q346 410 375 442" fill="none" stroke="#6e9d8c" stroke-width="16" stroke-linecap="round"/>
-      <!-- Lungs -->
-      <path id="lungL" class="organ" d="M285 411 Q251 391 220 419 Q183 455 185 535 Q187 607 234 621 Q273 627 292 582 L300 455Z" fill="url(#lungTint)" stroke="#995b58" stroke-width="3"/>
-      <path id="lungR" class="organ" d="M335 411 Q369 391 400 419 Q437 455 435 535 Q433 607 386 621 Q347 627 328 582 L320 455Z" fill="url(#lungTint)" stroke="#995b58" stroke-width="3"/>
-      <g fill="none" stroke="#f5d0c5" stroke-width="3" opacity=".8"><path d="M292 440Q250 462 226 520M292 465Q257 490 244 565M328 440Q370 462 394 520M328 465Q363 490 376 565"/></g>
-      <!-- Rib cage suggestion -->
-      <g fill="none" stroke="#b89c83" stroke-width="4" opacity=".7"><path d="M169 427Q245 366 301 430M151 470Q232 404 299 462M146 516Q224 452 296 495M451 427Q375 366 319 430M469 470Q388 404 321 462M474 516Q396 452 324 495"/></g>
-      <!-- Diaphragm dome -->
-      <path id="diaphragmShape" class="organ" d="M178 601 Q236 543 310 581 Q384 543 442 601 Q430 641 310 651 Q190 641 178 601Z" fill="#d9a36e" stroke="#9b704d" stroke-width="4"/>
-      <path d="M200 606Q254 574 310 602Q366 574 420 606" fill="none" stroke="#f5d5a8" stroke-width="4"/>
-      <!-- Abdominal wall -->
-      <path d="M175 628 Q310 681 445 628 L456 681 Q310 721 164 681Z" fill="#d9a99a" opacity=".24" stroke="#b98577" stroke-width="2"/>
-      <!-- Legend / labels -->
-      <g font-family="system-ui,sans-serif" fill="#405b50" font-size="11" font-weight="600">
-        <text x="25" y="73">头颈部声道</text><text x="25" y="90" fill="#829087" font-size="9">HEAD &amp; VOCAL TRACT</text>
-        <text x="466" y="424">肺部</text><text x="466" y="440" fill="#829087" font-size="9">LUNGS</text>
-        <text x="456" y="620">横膈膜</text><text x="456" y="636" fill="#829087" font-size="9">DIAPHRAGM</text>
-      </g>
-      <!-- Clickable hotspots -->
-      <g class="hotspot" role="button" tabindex="0" aria-label="鼻腔 Nasal cavity" aria-pressed="false" data-organ="nose"><circle class="hit" cx="250" cy="91" r="10"/><text x="184" y="83">鼻腔</text></g>
-      <g class="hotspot" role="button" tabindex="0" aria-label="软腭与小舌头 Soft palate and uvula" aria-pressed="false" data-organ="palate"><circle class="hit" cx="306" cy="116" r="10"/><text x="332" y="111">软腭 / 小舌头</text></g>
-      <g class="hotspot" role="button" tabindex="0" aria-label="舌头 Tongue" aria-pressed="false" data-organ="tongue"><circle class="hit" cx="282" cy="139" r="10"/><text x="198" y="158">舌头</text></g>
-      <g class="hotspot" role="button" tabindex="0" aria-label="咽部 Pharynx" aria-pressed="false" data-organ="pharynx"><circle class="hit" cx="329" cy="174" r="10"/><text x="355" y="177">咽部</text></g>
-      <g class="hotspot" role="button" tabindex="0" aria-label="喉头与声带 Larynx and vocal folds" aria-pressed="false" data-organ="larynx"><circle class="hit" cx="315" cy="237" r="10"/><text x="350" y="240">喉头 / 声带</text></g>
-      <g class="hotspot" role="button" tabindex="0" aria-label="气管 Trachea" aria-pressed="false" data-organ="trachea"><circle class="hit" cx="310" cy="330" r="10"/><text x="340" y="333">气管</text></g>
-      <g class="hotspot" role="button" tabindex="0" aria-label="肺部 Lungs" aria-pressed="false" data-organ="lungs"><circle class="hit" cx="395" cy="501" r="10"/><text x="420" y="505">肺部</text></g>
-      <g class="hotspot" role="button" tabindex="0" aria-label="横膈膜 Diaphragm" aria-pressed="false" data-organ="diaphragm"><circle class="hit" cx="310" cy="615" r="10"/><text x="250" y="670">横膈膜</text></g>
-      <g class="hotspot" role="button" tabindex="0" aria-label="肋间肌与胸廓 Rib cage and intercostal muscles" aria-pressed="false" data-organ="ribs"><circle class="hit" cx="169" cy="470" r="10"/><text x="42" y="464">胸廓 / 肋间肌</text></g>
-      <g class="hotspot" role="button" tabindex="0" aria-label="腹壁肌群 Abdominal wall" aria-pressed="false" data-organ="abdomen"><circle class="hit" cx="440" cy="668" r="10"/><text x="460" y="674">腹壁肌群</text></g>
-    </svg>
-    <div class="figure-caption"><span><i class="key-dot cartilage"></i>结构示意</span><span><i class="key-dot muscle"></i>肌肉与软组织</span><span class="caption-note">点击圆点或右侧器官名称查看说明</span></div>
-    <div class="organ-chips" aria-label="器官快捷选择">
+    <div class="body-figure-head"><strong>头颈部真实解剖 · 可旋转三维观察</strong><span>ANATOMICAL REFERENCE</span></div>
+    <div class="model-tabs" role="group" aria-label="选择解剖参考模型">
+      <button class="model-tab" type="button" data-model="head" aria-pressed="true">头部正中矢状标本</button>
+      <button class="model-tab" type="button" data-model="tract" aria-pressed="false">声道肌肉与软骨</button>
+      <button class="model-tab" type="button" data-model="larynx" aria-pressed="false">喉部三维解剖</button>
+    </div>
+    <div class="model-frame-wrap">
+      <iframe id="anatomyModelFrame" title="真实人体头颈部解剖三维模型，可旋转和缩放" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen src="https://sketchfab.com/models/5c477a85bdf34ec6b66b20c02862360f/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=0"></iframe>
+    </div>
+    <p class="model-caption" id="modelCaption">真实人体正中矢状面塑化标本。可旋转、缩放，观察鼻腔、口腔、舌、咽、喉与颈椎之间的空间关系。该模型是标本数字化，不是示意性手绘。</p>
+    <div class="model-credit" id="modelCredit">
+      <span>模型：UBC Medicine · Educational Media</span>
+      <a href="https://sketchfab.com/3d-models/midsagittal-section-of-human-head-5c477a85bdf34ec6b66b20c02862360f" target="_blank" rel="noopener">查看原始模型与来源</a>
+    </div>
+    <div class="organ-chips" aria-label="选择器官查看结构与功能">
       <button class="organ-chip" data-organ-select="nose" aria-pressed="false">鼻腔</button>
-      <button class="organ-chip" data-organ-select="palate" aria-pressed="false">软腭 / 小舌头</button>
-      <button class="organ-chip" data-organ-select="tongue" aria-pressed="false">舌头</button>
+      <button class="organ-chip" data-organ-select="palate" aria-pressed="false">硬腭 / 软腭</button>
+      <button class="organ-chip" data-organ-select="tongue" aria-pressed="false">舌体与舌肌</button>
       <button class="organ-chip" data-organ-select="pharynx" aria-pressed="false">咽部</button>
       <button class="organ-chip" data-organ-select="larynx" aria-pressed="true">喉头 / 声带</button>
       <button class="organ-chip" data-organ-select="trachea" aria-pressed="false">气管</button>
@@ -176,90 +96,13 @@
     </div>
   </div>
   <aside class="body-detail" aria-live="polite" aria-atomic="true">
-    <div class="detail-kicker">ORGAN EXPLORER · 01</div>
+    <div class="detail-kicker">ANATOMY &amp; PHYSIOLOGY · REFERENCE NOTES</div>
     <div><h2 id="organTitle">喉头与声带</h2><div class="organ-en" id="organEnglish">Larynx &amp; Vocal folds</div></div>
-    <p id="organSummary">喉头位于咽部下方、气管上方。声带位于喉腔内，在呼气气流与组织力学相互作用下产生振动，是声源形成的关键环节。</p>
-    <div><h3>在歌唱中的作用</h3><p id="organRole">调节声带内收、外展与张力，并与呼吸压力和声道声学负载共同影响发声。</p></div>
-    <div><h3>可以观察什么</h3><ul id="organObserve"><li>声带开放与靠拢</li><li>杓状软骨运动</li><li>声门下气流与声源振动</li></ul></div>
+    <p id="organSummary">喉由软骨骨架、关节、韧带、内在肌与黏膜构成。真正声带位于声门区；上方的前庭襞（假声带）不是发声时主要振动的声带。</p>
+    <div><h3>在歌唱中的作用</h3><p id="organRole">声带内收、张力与厚度等状态由喉内肌协同调节；呼气气流、声门下压力与声带组织的黏弹性共同参与自激振动。</p></div>
+    <div><h3>解剖观察重点</h3><ul id="organObserve"><li>甲状软骨、环状软骨与杓状软骨</li><li>声带与上方前庭襞的层次区别</li><li>喉室、声门及声门下腔</li></ul></div>
     <a class="detail-link" id="organLink" href="#larynx-detail">进入喉部精细实验室 <span aria-hidden="true">↗</span></a>
   </aside>
-</section>
-
-<section class="head-tract" id="head-airway" aria-labelledby="head-tract-title">
-  <div class="head-tract-intro">
-    <div class="lab-kicker">ARTICULATION · RESONANCE · VOWEL SHAPING</div>
-    <h2 id="head-tract-title">头颈部声道 · 观察发音器官如何协同</h2>
-    <p>在侧面剖视图中调整软腭、舌位和下颌开度，观察口腔、鼻咽与咽腔空间如何改变。选择意大利语元音，可比较不同元音的大致构形。</p>
-  </div>
-  <div class="tract-layout">
-    <div class="tract-stage">
-      <svg id="tractSvg" class="tract-svg" viewBox="0 0 820 500" role="img" aria-labelledby="tractTitle tractDesc">
-        <title id="tractTitle">头颈部声道侧面剖视交互示意</title>
-        <desc id="tractDesc">展示鼻腔、硬腭、软腭、小舌头、口腔、舌头、咽腔、会厌、喉头和声带。滑块可改变软腭、舌位和下颌开度。</desc>
-        <defs>
-          <linearGradient id="tractSkin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4e4d5"/><stop offset="1" stop-color="#d0b39d"/></linearGradient>
-          <linearGradient id="tractMucosa" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e8b4a5"/><stop offset="1" stop-color="#ad6660"/></linearGradient>
-          <linearGradient id="tractTongue" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e69b91"/><stop offset="1" stop-color="#b65f60"/></linearGradient>
-          <linearGradient id="tractAir" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#a8cdbd" stop-opacity=".3"/><stop offset=".5" stop-color="#6b9d8b" stop-opacity=".7"/><stop offset="1" stop-color="#a8cdbd" stop-opacity=".3"/></linearGradient>
-        </defs>
-        <!-- Profile and craniofacial outline -->
-        <path d="M170 92 Q230 35 346 48 Q462 50 520 115 Q555 154 552 205 Q548 240 574 261 Q596 282 592 320 L572 382 Q555 414 516 430 L454 444 L405 424 L386 373 Q362 346 320 334 L250 306 Q212 291 190 263 Q163 230 144 203 Q122 174 143 144Z" fill="url(#tractSkin)" opacity=".28" stroke="#b89e89" stroke-width="3"/>
-        <!-- Nasal cavity -->
-        <path d="M160 169 Q186 132 251 126 Q307 119 352 145 Q374 157 383 181 L367 201 Q332 183 292 186 L225 199 Q188 205 160 190Z" fill="#d9e9e1" stroke="#719989" stroke-width="3"/>
-        <path d="M190 166 Q239 145 285 151 Q323 154 350 171 M203 183Q254 163 304 172" fill="none" stroke="#9dbfb1" stroke-width="5" stroke-linecap="round"/>
-        <!-- Hard palate / upper jaw -->
-        <path d="M204 215 Q298 202 408 211 Q451 215 480 236" fill="none" stroke="#d0b99e" stroke-width="19" stroke-linecap="round"/>
-        <path d="M206 209 Q303 197 408 205" fill="none" stroke="#fff5e7" stroke-width="5" stroke-linecap="round"/>
-        <!-- Oral cavity -->
-        <path d="M212 222 Q307 216 407 226 Q467 235 488 273 Q465 303 413 315 L294 317 Q244 298 212 263Z" fill="#fffaf3" stroke="#d8c8b7" stroke-width="2"/>
-        <!-- Soft palate adjustable -->
-        <path id="softPalateShape" class="tract-tissue" d="M405 210 Q449 209 482 235 Q501 251 488 270 Q476 277 468 261 Q459 242 405 229Z" fill="url(#tractMucosa)" stroke="#9b625a" stroke-width="3"/>
-        <path id="uvulaShape" d="M485 253 Q499 264 493 282 Q490 292 483 285 Q477 277 485 253Z" fill="#c87b70" stroke="#965a55" stroke-width="2"/>
-        <!-- Pharyngeal cavity -->
-        <path d="M505 175 Q541 209 538 261 Q537 315 517 357 Q502 381 485 393" fill="none" stroke="#75a391" stroke-width="27" stroke-linecap="round" opacity=".72"/>
-        <path d="M505 175 Q541 209 538 261 Q537 315 517 357 Q502 381 485 393" fill="none" stroke="#e8f2eb" stroke-width="4" stroke-dasharray="6 9"/>
-        <!-- Tongue adjustable -->
-        <path id="tongueShape" d="M245 295 Q296 267 350 272 Q405 278 453 305 Q476 319 468 335 Q426 353 355 345 Q288 337 245 314Z" fill="url(#tractTongue)" stroke="#995a58" stroke-width="3"/>
-        <path d="M277 309 Q349 297 430 324" fill="none" stroke="#f5c3b4" stroke-width="3" opacity=".8"/>
-        <!-- Lower jaw and teeth -->
-        <path id="jawShape" d="M202 270 Q220 334 286 369 Q368 414 463 385 Q497 374 515 344" fill="none" stroke="#b99e82" stroke-width="20" stroke-linecap="round"/>
-        <path id="lowerTeeth" d="M240 285 Q277 305 319 307" fill="none" stroke="#fffdf6" stroke-width="14" stroke-linecap="round"/>
-        <!-- Epiglottis and larynx -->
-        <path d="M503 307 Q481 328 490 354 Q499 371 514 351 Q524 334 520 316Z" fill="url(#tractMucosa)" stroke="#965a55" stroke-width="3"/>
-        <path d="M488 352 Q523 342 549 365 L551 421 Q520 438 488 417Z" fill="#d8c3a8" stroke="#8e7964" stroke-width="3"/>
-        <path d="M496 382 Q519 372 541 382" fill="none" stroke="#a65d56" stroke-width="7" stroke-linecap="round"/>
-        <path d="M517 420 L517 474" stroke="#80a997" stroke-width="18" stroke-linecap="round"/>
-        <path d="M507 430h20M507 446h20M507 462h20" stroke="#e5efe8" stroke-width="3"/>
-        <!-- Airflow overlay -->
-        <g class="airflow" fill="none" stroke="#4d907a" stroke-width="4" stroke-linecap="round">
-          <path d="M170 181 Q252 166 354 178 Q436 186 491 218"/>
-          <path d="M210 246 Q300 234 397 247 Q464 256 510 285"/>
-          <path d="M515 298 Q536 333 521 372 L518 456"/>
-        </g>
-        <!-- Labels -->
-        <g font-family="system-ui,sans-serif" font-size="13" font-weight="650" fill="#355448">
-          <text x="90" y="105">鼻腔</text><path d="M120 110L205 148" stroke="#7a9184" fill="none"/>
-          <text x="320" y="112">硬腭</text><path d="M350 118L350 198" stroke="#7a9184" fill="none"/>
-          <text x="540" y="135">软腭 / 小舌头</text><path d="M545 142L490 245" stroke="#7a9184" fill="none"/>
-          <text x="655" y="235">咽腔</text><path d="M646 241L540 272" stroke="#7a9184" fill="none"/>
-          <text x="350" y="390">舌体</text><path d="M382 380L380 339" stroke="#7a9184" fill="none"/>
-          <text x="635" y="382">会厌</text><path d="M625 387L513 341" stroke="#7a9184" fill="none"/>
-          <text x="610" y="445">喉头 / 声带</text><path d="M605 449L540 397" stroke="#7a9184" fill="none"/>
-        </g>
-        <g fill="#b46e5f" stroke="#fff8ed" stroke-width="2"><circle cx="205" cy="148" r="4"/><circle cx="350" cy="198" r="4"/><circle cx="490" cy="245" r="4"/><circle cx="540" cy="272" r="4"/><circle cx="380" cy="339" r="4"/><circle cx="513" cy="341" r="4"/><circle cx="540" cy="397" r="4"/></g>
-      </svg>
-      <div class="figure-caption"><span><i class="key-dot cartilage"></i>骨性支撑</span><span><i class="key-dot muscle"></i>软组织与肌肉</span><span class="caption-note">正中矢状面 · 教学示意</span></div>
-    </div>
-    <div class="tract-side">
-      <div class="tract-control"><label for="palateControl"><span>软腭位置</span><output id="palateValue">抬高</output></label><input id="palateControl" type="range" min="0" max="100" value="85"></div>
-      <div class="tract-control"><label for="tongueControl"><span>舌背高度</span><output id="tongueValue">中高</output></label><input id="tongueControl" type="range" min="0" max="100" value="55"></div>
-      <div class="tract-control"><label for="jawControl"><span>下颌开度</span><output id="jawValue">中等</output></label><input id="jawControl" type="range" min="0" max="100" value="40"></div>
-      <div class="tract-control"><strong style="display:block;font-size:12px;color:#29463d;margin-bottom:9px">元音构形预设 · 意大利语</strong><div class="tract-presets"><button class="tract-preset" data-vowel="a" aria-pressed="true">/a/</button><button class="tract-preset" data-vowel="e">/e/</button><button class="tract-preset" data-vowel="i">/i/</button><button class="tract-preset" data-vowel="o">/o/</button><button class="tract-preset" data-vowel="u">/u/</button></div></div>
-      <div class="tract-control"><button class="lab-btn" id="airflowToggle" type="button" aria-pressed="false">显示气流路径</button></div>
-      <div class="tract-readout" id="tractReadout" aria-live="polite"><strong id="tractState">/a/ · 开口元音</strong><span id="tractExplanation">舌位相对较低，下颌开度较大；软腭通常抬高，使口腔成为主要的声道出口。不同歌者的实际构形会随音高、音量和语境变化。</span></div>
-    </div>
-  </div>
-  <p class="tract-footnote">科学边界：该图是简化的正中矢状面教学模型，不是医学影像或三维扫描。元音预设只展示常见构形趋势，不代表所有歌者的固定舌位；真实声道是三维、可变形结构，舌体两侧、咽壁及喉位也会参与调节。</p>
 </section>
 
 <section class="breath-lab" aria-labelledby="breath-title">
@@ -273,7 +116,7 @@
   </div>
   <div class="breath-readout" id="breathReadout" aria-live="polite">静息状态：横膈膜呈穹隆状，肺部保持基础充气状态。歌唱呼吸会在此基础上形成更有控制的吸气与呼气协调。</div>
 </section>
-<p class="body-system-note">解剖学说明：人体总览为教学用概念示意，并非临床影像或精确比例模型。鼻腔、口腔、咽部和喉部在真实人体中具有复杂的三维结构；呼吸时肺部随胸腔容积变化而扩张，横膈膜收缩下降，呼气时则在肌肉活动与弹性回缩共同作用下回升。歌唱呼气通常需要精细调节，并非简单“挤压肺部”。</p>
+<p class="body-system-note">解剖学说明：本页优先采用真实人体塑化标本与可追溯来源的三维解剖模型，不再用自绘轮廓代替真实器官形态。三维模型用于观察空间关系；生理变化的说明另以文字和机制图呈现，不把组织形变简化成随意拉伸。呼吸状态演示仍为方向性教学说明，不是个体生理测量。</p>
 
 <section id="larynx-detail" aria-label="喉部精细解剖实验室"><div class="lab-card-head"><div><strong>喉部精细解剖实验室</strong><div class="figure-subtitle">DETAILED LARYNGEAL ANATOMY</div></div><span class="lab-tag">进阶学习</span></div></section>
 <div class="anatomy-workspace">
