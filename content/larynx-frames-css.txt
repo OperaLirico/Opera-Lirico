@@ -1,0 +1,4 @@
+# 帧 CSS 作用域修正 · 触发凭证
+
+前提锚点 `.mech-map svg{max-height:360px}` 其实在 `@media (max-width:640px)` 里，新规则被插到了手机端区块内，桌面端整段失效（只有默认的 pca 帧看得见）。
+修：把这段规则从 media 块里抽出来，放回样式表末尾，加注释标记 `/* frames:global */`。

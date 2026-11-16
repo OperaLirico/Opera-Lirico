@@ -1,0 +1,62 @@
+name: Larynx frames css scope
+
+on:
+  push:
+    paths:
+      - content/larynx-frames-css.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Move the frame rules out of the responsive media query
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if '/* frames:global */' in t:
+              print('already moved')
+              raise SystemExit(0)
+
+          chunk = re.compile(r'\n\.mech-frames\{position:relative[\s\S]*?\.mech-overlay path\{[^}]*\}', re.S)
+          found = chunk.findall(t)
+          if len(found) != 1:
+              sys.exit('ABORT: frame css chunk -> %d' % len(found))
+          rules = found[0].strip('\n')
+          t = chunk.sub('', t, count=1)
+
+          if rules.count('mech-frame') < 2:
+              sys.exit('ABORT: chunk does not look like the frame rules')
+
+          pos = t.rfind('</style>')
+          if pos == -1:
+              sys.exit('ABORT: no style block')
+          inject = '\n/* frames:global */\n' + rules + '\n'
+          t = t[:pos] + inject + t[pos:]
+
+          for token in ('/* frames:global */', '.mech-frames[data-state="lca"]'):
+              if token not in t:
+                  sys.exit('ABORT: missing ' + token)
+
+          p.write_text(t, encoding='utf-8')
+          print('moved,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "fix(anatomy): hoist the frame css out of the media query"
+            git push
+          fi
