@@ -19,6 +19,8 @@ on:
       - "data/conservatori.json"
       - "masterclasses.html"
       - "voice-anatomy.html"
+      - "larynx-mechanism.html"
+      - "assets/anatomy/**"
       - "data/masterclasses.json"
       - "data/masterclass.schema.json"
       - "data/opportunities.json"
