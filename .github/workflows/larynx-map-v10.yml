@@ -1,0 +1,98 @@
+name: Larynx map v10 mucosa surface
+
+on:
+  push:
+    paths:
+      - content/larynx-map-v10.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repaint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Repaint v10 — curved mucosa edges, covered cavity, softer bulges
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'data-version="10"' in t:
+              print('already v10')
+              raise SystemExit(0)
+
+          pattern = re.compile('<svg id="mechMap"[\\s\\S]*?</svg>')
+          svg = pattern.findall(t)
+          if len(svg) != 1:
+              sys.exit('ABORT: mechMap svg not uniquely found')
+          old = svg[0]
+
+          def swap(old_s, new_s, label):
+              global old
+              if old.count(old_s) != 1:
+                  sys.exit('ABORT: %s -> %d' % (label, old.count(old_s)))
+              old = old.replace(old_s, new_s, 1)
+
+          swap('data-version="9"', 'data-version="10"', 'version')
+
+          # 腔体变窄，让黏膜把它盖住，只露出裂隙
+          swap('M380 60 C332 142 300 236 268 328 Q380 376 492 328 C460 236 428 142 380 60 Z',
+               'M380 76 C350 158 322 244 300 332 Q380 366 460 332 C438 244 410 158 380 76 Z', 'cavity')
+
+          # 左半黏膜：外缘鼓出、底部圆角，内缘轻微 S 弯曲
+          swap('M380 74 C352 152 322 236 286 320 Q330 352 372 340 L380 74 Z',
+               'M380 70 C346 148 310 242 278 330 Q326 368 372 344 C374 254 376 160 380 70 Z', 'left surface')
+          swap('M377 88 C354 160 330 238 300 314 L306 316 C336 240 360 162 380 92 Z',
+               'M377 84 C348 158 320 244 296 322 L302 324 C330 248 356 162 380 90 Z', 'left wet edge')
+
+          # 右半镜像
+          swap('M380 74 C408 152 438 236 474 320 Q430 352 388 340 L380 74 Z',
+               'M380 70 C414 148 450 242 482 330 Q434 368 388 344 C386 254 384 160 380 70 Z', 'right surface')
+          swap('M383 88 C406 160 430 238 460 314 L454 316 C424 240 400 162 380 92 Z',
+               'M383 84 C412 158 440 244 464 322 L458 324 C430 248 404 162 380 90 Z', 'right wet edge')
+
+          # 后联合黏膜：贴住底部圆弧
+          swap('M268 328 Q380 384 492 328 Q380 354 268 328 Z',
+               'M280 326 Q380 384 480 326 Q380 358 280 326 Z', 'posterior wall')
+
+          # 隆起减淡，去掉太明显的白色斑
+          swap('<ellipse cx="318" cy="300" rx="58" ry="44" fill="url(#aryBulge)"/>',
+               '<ellipse cx="316" cy="302" rx="52" ry="40" fill="url(#aryBulge)" opacity="0.72"/>', 'left bulge')
+          swap('<ellipse cx="442" cy="300" rx="58" ry="44" fill="url(#aryBulge)"/>',
+               '<ellipse cx="444" cy="302" rx="52" ry="40" fill="url(#aryBulge)" opacity="0.72"/>', 'right bulge')
+          swap('<ellipse cx="330" cy="290" rx="20" ry="12" fill="#ffffff" opacity="0.16"/>',
+               '<ellipse cx="328" cy="292" rx="26" ry="15" fill="#ffffff" opacity="0.1"/>', 'left specular')
+          swap('<ellipse cx="430" cy="290" rx="20" ry="12" fill="#ffffff" opacity="0.16"/>',
+               '<ellipse cx="432" cy="292" rx="26" ry="15" fill="#ffffff" opacity="0.1"/>', 'right specular')
+
+          # 引线对位
+          swap('<path d="M190 218 L330 232" stroke="#cdbdb4"', '<path d="M190 218 L322 230" stroke="#cdbdb4"', 'fold leader')
+          swap('<path d="M174 312 L272 304" stroke="#cdbdb4"', '<path d="M174 312 L268 306" stroke="#cdbdb4"', 'ary leader')
+          swap('<path d="M562 314 L478 306" stroke="#cdbdb4"', '<path d="M562 314 L484 306" stroke="#cdbdb4"', 'process leader')
+
+          for token in ('data-version="10"', 'M380 76 C350 158', 'C346 148 310 242 278 330'):
+              if token not in old:
+                  sys.exit('ABORT: missing ' + token)
+
+          t = pattern.sub(lambda m: old, t, count=1)
+          if t.count('<svg') != t.count('</svg>'):
+              sys.exit('ABORT: unbalanced svg tags')
+          p.write_text(t, encoding='utf-8')
+          print('v10 written,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "feat(anatomy): v10 curved mucosal surface, closed cavity edges"
+            git push
+          fi
