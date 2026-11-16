@@ -1,0 +1,69 @@
+name: Larynx map polish
+
+on:
+  push:
+    paths:
+      - content/larynx-map-polish.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  polish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Polish the glottis field and label leaders
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'data-version="3"' in t:
+              print('already polished')
+              raise SystemExit(0)
+
+          def swap(old, new, label):
+              global t
+              if t.count(old) != 1:
+                  sys.exit('ABORT: %s expected 1 match, got %d' % (label, t.count(old)))
+              t = t.replace(old, new, 1)
+
+          swap('data-version="2"', 'data-version="3"', 'version flag')
+
+          # 把气流通道做宽，压在两侧声带下方：声门开大时露出更多绿色，不会出现白缝
+          swap(
+              '<path d="M380 84 C352 170 342 250 338 298 L422 298 C418 250 408 170 380 84 Z" fill="#cfe0d8"/>',
+              '<path d="M380 84 C346 168 330 248 322 300 L438 300 C430 248 414 168 380 84 Z" fill="#cfe0d8"/>',
+              'glottis field')
+
+          swap('<text x="196" y="212" text-anchor="end">声带</text>',
+               '<text x="196" y="236" text-anchor="end">声带</text>', 'label 声带')
+          swap('<path d="M200 208 L322 214" stroke="#d8e2db" stroke-width="1.4" fill="none"/>',
+               '<path d="M200 232 L324 238" stroke="#d8e2db" stroke-width="1.4" fill="none"/>', 'leader 声带')
+          swap('<text x="200" y="344" text-anchor="end">杓状软骨</text>',
+               '<text x="196" y="372" text-anchor="end">杓状软骨</text>', 'label 杓状软骨')
+          swap('<path d="M204 340 L292 338" stroke="#d8e2db" stroke-width="1.4" fill="none"/>',
+               '<path d="M200 368 L290 342" stroke="#d8e2db" stroke-width="1.4" fill="none"/>', 'leader 杓状软骨')
+
+          if 'data-version="3"' not in t:
+              sys.exit('ABORT: version flag missing after patch')
+          p.write_text(t, encoding='utf-8')
+          print('polished, now', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "polish(anatomy): widen the air channel under the folds and tidy the label leaders"
+            git push
+          fi
