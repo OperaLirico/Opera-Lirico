@@ -80,7 +80,7 @@
 <div class="notice"><strong>重要说明：</strong>模型由大学医学教育团队制作或基于真实解剖标本/CT 数据建立，通过原平台官方播放器展示。机制按钮只更新生理说明和观察重点，不会伪装成模型正在发生真实的软骨运动或声带组织形变。第三方模型文件不在本站下载或重新分发。</div>
 <div class="layout">
 <section class="card" aria-label="真实喉部三维解剖与机制说明">
-  <div class="card-head"><strong>喉部肌肉、软骨与韧带 · 三维解剖</strong><span class="tag">真实来源模型</span></div>
+  <div class="card-head"><strong>喉部真实标本与肌肉解剖 · 三维模型</strong><span class="tag">真实来源模型</span></div>
   <div class="viewer">
     <div class="model-switcher" role="group" aria-label="切换喉部真实解剖模型">
       <button type="button" data-larynx-model="specimen" aria-pressed="true">真实人体标本 · UBC</button>
@@ -89,9 +89,9 @@
     <div class="viewer-frame"><iframe id="larynxModelFrame" title="UBC Medicine 人体喉部真实解剖标本三维模型" src="https://sketchfab.com/models/9cb56f0a20654072810a12959b812632/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=0" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe></div>
     <p class="viewer-caption" id="larynxModelCaption">UBC Medicine 的人体喉部解剖标本数字模型，包含喉、咽、下颌、气管与食管。适合先建立真实组织和器官之间的空间关系；拖动旋转、缩放观察。</p>
   </div>
-  <div class="credit" id="larynxModelCredit"><span>模型：UBC Medicine · Educational Media / HIVE；人体解剖标本数字化。</span><a href="https://sketchfab.com/3d-models/human-larynx-9cb56f0a20654072810a12959b812632" target="_blank" rel="noopener">查看原始模型与来源</a></div>
+  <div class="credit" id="larynxModelCredit"><span>模型：UBC Medicine · Educational Media / HIVE；人体解剖标本数字化。NoAI；本站仅使用原平台官方嵌入。</span><a href="https://sketchfab.com/3d-models/human-larynx-9cb56f0a20654072810a12959b812632" target="_blank" rel="noopener">查看原始模型与来源</a></div>
   <div class="interaction">
-    <h2>选择一个机制，理解肌肉如何工作</h2><p>切换下列状态，右侧说明会更新。请同时旋转上方模型，寻找相应的软骨、肌肉和声带附着位置。</p>
+    <h2>选择一个机制，理解肌肉如何工作</h2><p>切换下列机制，右侧说明和观察重点会更新。可旋转模型查看空间关系；涉及肌肉附着的细节，可切换到 Dundee 肌肉与韧带模型。</p>
     <div class="modes" role="group" aria-label="选择喉部肌肉机制">
       <button class="mode" type="button" data-mode="pca" aria-pressed="true"><strong>声带外展 · PCA</strong><span>后环杓肌 · 打开声门</span></button>
       <button class="mode" type="button" data-mode="lca" aria-pressed="false"><strong>声带内收 · LCA</strong><span>外侧环杓肌 · 使声带靠拢</span></button>
@@ -101,7 +101,7 @@
     </div>
     <div class="mech-observation" aria-live="polite" aria-atomic="true">
       <strong>在真实模型中定位</strong>
-      <p id="mechanismObservationText">先观察后方左右杓状软骨、声带突与肌突，再沿声带突向前追踪声带韧带。切换下方机制时，这里会提示需要重点观察的真实结构；模型本身保持原始形态，不做未经验证的变形动画。</p>
+      <p id="mechanismObservationText">先观察后方左右杓状软骨、声带突与肌突，再沿声带突向前追踪声带韧带。若要辨认肌肉附着，请切换到 Dundee 肌肉与韧带模型。机制切换只更新观察重点，不改变真实模型。</p>
     </div>
     <div class="readout" aria-live="polite" aria-atomic="true"><div class="readout-kicker">SELECTED MECHANISM</div><h3 id="modeTitle">后环杓肌 · 声带外展</h3><p id="modeDescription">后环杓肌是喉内肌中负责声带外展的唯一肌肉。它作用于杓状软骨的肌突，使杓状软骨在环杓关节上发生旋转，从而使声带突向外侧移动、声门开放。</p><ul id="modePoints"><li>观察杓状软骨及其肌突、声带突。</li><li>注意这是杓状软骨在环杓关节上的运动，不是整片声带向外平移。</li><li>主要生理作用：吸气时开放声门。</li></ul></div>
   </div>
@@ -163,7 +163,7 @@
  const title=document.getElementById('modeTitle'),description=document.getElementById('modeDescription'),points=document.getElementById('modePoints'),focus=document.getElementById('mechanismObservationText');
  document.querySelectorAll('[data-larynx-model]').forEach(button=>button.addEventListener('click',()=>{
   const models={
-   specimen:{src:'https://sketchfab.com/models/9cb56f0a20654072810a12959b812632/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',title:'UBC Medicine 人体喉部真实解剖标本三维模型',caption:'UBC Medicine 的人体喉部解剖标本数字模型，包含喉、咽、下颌、气管与食管。适合先建立真实组织和器官之间的空间关系；拖动旋转、缩放观察。',credit:'模型：UBC Medicine · Educational Media / HIVE；人体解剖标本数字化。',url:'https://sketchfab.com/3d-models/human-larynx-9cb56f0a20654072810a12959b812632'},
+   specimen:{src:'https://sketchfab.com/models/9cb56f0a20654072810a12959b812632/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',title:'UBC Medicine 人体喉部真实解剖标本三维模型',caption:'UBC Medicine 的人体喉部解剖标本数字模型，包含喉、咽、下颌、气管与食管。适合先建立真实组织和器官之间的空间关系；拖动旋转、缩放观察。',credit:'模型：UBC Medicine · Educational Media / HIVE；人体解剖标本数字化。NoAI；本站仅使用原平台官方嵌入。',url:'https://sketchfab.com/3d-models/human-larynx-9cb56f0a20654072810a12959b812632'},
    muscles:{src:'https://sketchfab.com/models/3b247ff11b104e24acbb1c453f5bad46/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0&ui_watermark=1',title:'University of Dundee 喉部肌肉、软骨与韧带三维解剖模型',caption:'University of Dundee 医学教学模型，依据 CT 数据并结合医学艺术雕塑制作，重点观察喉内肌、软骨与韧带的附着和空间关系。',credit:'医学插画：Eve Laws · University of Dundee / CAHID；CT 数据与医学艺术雕塑。',url:'https://sketchfab.com/3d-models/larynx-with-muscles-and-ligaments-3b247ff11b104e24acbb1c453f5bad46'}
   };
   const model=models[button.dataset.larynxModel];if(!model)return;
