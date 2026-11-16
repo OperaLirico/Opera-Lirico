@@ -106,8 +106,8 @@
 </section>
 
 <section class="breath-lab" aria-labelledby="breath-title">
-  <h2 id="breath-title">呼吸与发声 · 动态观察</h2>
-  <p>切换状态，观察胸腔、肺部与横膈膜的概念性位置变化。动画用于理解方向和协同关系，不是实时生理测量。</p>
+  <h2 id="breath-title">呼吸与发声 · 生理状态说明</h2>
+  <p>切换静息、吸气、呼气与歌唱状态，查看呼吸肌群、胸廓、肺弹性回缩与声门之间的生理关系。本模块不对器官形状做虚构的拉伸动画。</p>
   <div class="breath-controls">
     <button class="lab-btn" type="button" data-breath="rest" aria-pressed="true">静息</button>
     <button class="lab-btn" type="button" data-breath="inhale" aria-pressed="false">吸气 · 横膈膜下降</button>
@@ -278,16 +278,16 @@
 <script>
 (()=> {
  const data={
-  nose:{title:'鼻腔',en:'Nasal cavity',summary:'鼻腔是上呼吸道的一部分，具有复杂的鼻甲与黏膜结构。它与咽部相通，也会影响声道的声学特性。',role:'在特定语音和发声条件下，鼻腔可参与共鸣；但歌唱中的“前置”感觉不能简单等同于气流必须大量通过鼻腔。',observe:['鼻腔与鼻咽的通道关系','鼻腔黏膜与鼻甲的空间结构','软腭改变口鼻通道时的影响'],link:'#head-airway',linkText:'查看声道结构'},
-  palate:{title:'软腭与小舌头',en:'Soft palate & Uvula',summary:'软腭位于硬腭后方，小舌头悬垂于软腭后缘。软腭可抬高或降低，参与调节口腔与鼻咽之间的通道。',role:'在多数非鼻音元音中，软腭通常抬高以减少鼻腔通气；鼻音则需要开放鼻咽通道。小舌头随软腭运动，并非独立开关。',observe:['软腭抬高与降低','口腔和鼻咽通道的变化','鼻音与口腔元音的差异'],link:'#head-airway',linkText:'查看声道结构'},
-  tongue:{title:'舌头',en:'Tongue',summary:'舌头由内在肌和外在肌组成，可改变舌体形状、前后位置和高度。它是口腔中最重要的发音调节器官之一。',role:'舌位会影响元音音色、咬字清晰度和口腔共鸣空间。歌唱时要避免不必要的舌根僵硬或过度后缩。',observe:['舌尖、舌背与舌根的分工','高元音与低元音的舌位差异','舌根紧张对咽腔形态的影响'],link:'#head-airway',linkText:'查看口腔与咽部'},
-  pharynx:{title:'咽部',en:'Pharynx',summary:'咽部是位于鼻腔、口腔后方的肌性通道，分为鼻咽、口咽和喉咽，并连接喉部与食管入口区域。',role:'咽腔形态与软组织状态会影响声道共鸣和声音音色。咽部不是一个需要持续“撑开”的固定空腔。',observe:['鼻咽、口咽、喉咽的分区','咽壁肌肉与软组织','吞咽和发声时的不同协调'],link:'#head-airway',linkText:'查看声道结构'},
-  larynx:{title:'喉头与声带',en:'Larynx & Vocal folds',summary:'喉头位于咽部下方、气管上方。声带位于喉腔内，在呼气气流与组织力学相互作用下产生振动，是声源形成的关键环节。',role:'调节声带内收、外展与张力，并与呼吸压力和声道声学负载共同影响发声。',observe:['声带开放与靠拢','杓状软骨运动','声门下气流与声源振动'],link:'#larynx-detail',linkText:'进入喉部精细实验室'},
-  trachea:{title:'气管',en:'Trachea',summary:'气管连接喉部与左右主支气管，由软骨环支撑管腔，保持空气通道开放。',role:'吸气时空气经气管进入支气管和肺部；歌唱呼气时，气流沿相反方向经过气管并到达声门。',observe:['气管软骨环','左右主支气管分叉','呼吸气流的方向'],link:'#breath-title',linkText:'观察呼吸动态'},
-  lungs:{title:'肺部',en:'Lungs',summary:'肺是具有弹性和复杂分支气道的呼吸器官。肺本身没有主动扩张的肌肉，吸气时主要随胸腔容积增加而扩张。',role:'为歌唱提供呼出气流。持续歌唱需要根据乐句长度和发声需求，协调吸气准备与呼气控制。',observe:['吸气时肺容积增加','胸廓与肺的耦合关系','呼气时肺组织弹性回缩'],link:'#breath-title',linkText:'启动呼吸动态演示'},
-  diaphragm:{title:'横膈膜',en:'Diaphragm',summary:'横膈膜是分隔胸腔与腹腔的穹隆状骨骼肌，也是安静吸气的重要肌肉。收缩时穹隆变平并下降，胸腔容积增加。',role:'吸气时横膈膜主动收缩下降；呼气时通常逐渐放松回升。歌唱时呼气控制依靠多组呼吸肌协同，而不是主动把横膈膜向上推。',observe:['吸气时横膈膜下降、变平','呼气时逐渐恢复穹隆形态','腹壁与肋廓如何配合控制气流'],link:'#breath-title',linkText:'启动横膈膜动态演示'},
-  ribs:{title:'胸廓与肋间肌',en:'Rib cage & Intercostal muscles',summary:'胸廓由肋骨、胸骨和胸椎构成，肋间肌参与胸廓运动。吸气时胸廓可向外、向上扩张。',role:'歌唱呼吸需要保持胸廓弹性和适当的扩张管理，让呼气过程保持可调节性。',observe:['肋骨外展与回落','胸廓前后径和横径变化','肋间肌参与呼吸的方式'],link:'#breath-title',linkText:'观察呼吸动态'},
-  abdomen:{title:'腹壁肌群',en:'Abdominal wall muscles',summary:'腹壁由腹直肌、腹斜肌和腹横肌等构成，参与躯干稳定、腹压调节和用力呼气。',role:'歌唱时腹壁肌群可参与精细调节呼气压力，但不应将其理解为持续强力收腹或僵硬挤压。',observe:['腹壁与横膈膜的协调','呼气时腹壁肌群逐步参与','不同乐句长度下的调节差异'],link:'#breath-title',linkText:'观察呼吸动态'}
+  nose:{title:'鼻腔',en:'Nasal cavity',summary:'鼻腔由鼻中隔分隔为左右两腔，外侧壁有上、中、下鼻甲及相应鼻道，表面覆盖呼吸黏膜。后方经后鼻孔通向鼻咽。',role:'鼻腔是否与口腔声道耦合，主要取决于腭咽口的开放程度。鼻音或特定发声状态下鼻腔参与声学耦合；主观的面部振动感不等于大量气流必须从鼻孔排出。',observe:['鼻甲、鼻道、鼻中隔与后鼻孔的关系','鼻腔黏膜与鼻甲的空间结构','软腭改变口鼻通道时的影响'],link:'#head-airway',linkText:'查看声道结构'},
+  palate:{title:'软腭与小舌头',en:'Soft palate & Uvula',summary:'硬腭是骨性前部，软腭是其后方的肌性延续；悬雍垂（小舌）位于软腭后缘。软腭运动由腭帆提肌、腭帆张肌、腭舌肌、腭咽肌及悬雍垂肌等协同完成。',role:'口腔元音通常伴随腭咽闭合或显著缩小；鼻音需要开放腭咽通道。悬雍垂随软腭整体运动，不是独立控制鼻腔的阀门。',observe:['软腭肌群与腭咽闭合','口腔和鼻咽通道的变化','鼻音与口腔元音的差异'],link:'#head-airway',linkText:'查看声道结构'},
+  tongue:{title:'舌头',en:'Tongue',summary:'舌是由内在肌（上、下纵肌，横肌，垂直肌）和外在肌（颏舌肌、舌骨舌肌、茎突舌肌、腭舌肌）构成的肌性器官，可改变舌尖、舌背与舌根的形状和位置。',role:'舌体高度、前后位置及形状与下颌、唇形共同决定元音声道构形。不能把舌头理解成整体上下平移的单一结构；舌根过度紧张也会改变咽腔形态。',observe:['舌内在肌与外在肌的作用差异','高元音与低元音的舌位差异','舌根紧张对咽腔形态的影响'],link:'#head-airway',linkText:'查看口腔与咽部'},
+  pharynx:{title:'咽部',en:'Pharynx',summary:'咽是位于鼻腔、口腔及喉腔后方的肌性管道，分为鼻咽、口咽和喉咽；其后方邻近颈椎，前方分别与鼻腔、口腔及喉入口相通。',role:'咽腔由咽缩肌群及茎突咽肌、腭咽肌等协同改变形态。歌唱中的咽部不是固定的空腔，也不应被描述成必须持续撑开的管子。',observe:['鼻咽、口咽、喉咽的分区','咽壁肌肉与软组织','吞咽和发声时的不同协调'],link:'#head-airway',linkText:'查看声道结构'},
+  larynx:{title:'喉头与声带',en:'Larynx & Vocal folds',summary:'喉位于喉咽前方、气管上方，由甲状软骨、环状软骨、会厌及成对杓状、角状、楔状软骨等构成。真正声带位于声门区，前连甲状软骨、后连杓状软骨的声带突。',role:'环杓关节与喉内肌调节声带内收/外展及张力；气流、声门下压力、组织黏弹性与声道声学负载共同影响发声。后环杓肌是声带外展的主要肌肉。',observe:['真声带与上方前庭襞的区别','杓状软骨运动','声门下气流与声源振动'],link:'#larynx-detail',linkText:'进入喉部精细实验室'},
+  trachea:{title:'气管',en:'Trachea',summary:'气管从环状软骨下缘延续至隆嵴并分为左右主支气管。气管壁由透明软骨构成的C形软骨环支撑，后壁由膜性壁及气管肌连接。',role:'吸气时空气经气管进入支气管和肺部；歌唱呼气时，气流沿相反方向经过气管并到达声门。',observe:['气管软骨环','左右主支气管分叉','呼吸气流的方向'],link:'#breath-title',linkText:'观察呼吸动态'},
+  lungs:{title:'肺部',en:'Lungs',summary:'肺由肺叶、支气管树、肺泡及包绕肺的脏层胸膜构成。肺实质本身没有主动扩张的骨骼肌；吸气时胸腔容积增加，胸膜耦合使肺随之扩张。',role:'肺与胸廓的弹性回缩提供呼气驱动力；歌唱时呼气流量与声门下压力需随乐句、音高和强度调节。',observe:['吸气时肺容积增加','胸廓与肺的耦合关系','呼气时肺组织弹性回缩'],link:'#breath-title',linkText:'启动呼吸动态演示'},
+  diaphragm:{title:'横膈膜',en:'Diaphragm',summary:'膈肌是胸腔与腹腔之间的穹隆状骨骼肌，由周边肌性部分与中央腱组成。收缩时穹隆下降并趋于变平，增加胸腔容积，是吸气的主要动力之一。',role:'吸气时膈肌主动收缩下降；安静呼气时膈肌通常放松，肺与胸廓弹性回缩使其回升。歌唱呼气可由呼气肌群参与调节，不宜简化成把膈肌主动向上推。',observe:['吸气时横膈膜下降、变平','呼气时逐渐恢复穹隆形态','腹壁与肋廓如何配合控制气流'],link:'#breath-title',linkText:'启动横膈膜动态演示'},
+  ribs:{title:'胸廓与肋间肌',en:'Rib cage & Intercostal muscles',summary:'胸廓由胸椎、肋骨、肋软骨与胸骨构成。肋间肌群参与肋骨运动；吸气时胸廓可增加前后径与横径，具体运动取决于呼吸深度和肌群协同。',role:'歌唱呼吸需要保持胸廓弹性和适当的扩张管理，让呼气过程保持可调节性。',observe:['肋骨外展与回落','胸廓前后径和横径变化','肋间肌参与呼吸的方式'],link:'#breath-title',linkText:'观察呼吸动态'},
+  abdomen:{title:'腹壁肌群',en:'Abdominal wall muscles',summary:'腹壁肌群包括腹直肌、腹外斜肌、腹内斜肌和腹横肌，参与躯干稳定及腹内压调节；在用力或受控呼气时可参与呼气肌活动。',role:'歌唱时腹壁肌群可参与精细调节呼气压力，但不应将其理解为持续强力收腹或僵硬挤压。',observe:['腹壁与横膈膜的协调','呼气时腹壁肌群逐步参与','不同乐句长度下的调节差异'],link:'#breath-title',linkText:'观察呼吸动态'}
  };
  const title=document.getElementById('organTitle'),en=document.getElementById('organEnglish'),summary=document.getElementById('organSummary'),role=document.getElementById('organRole'),observe=document.getElementById('organObserve'),link=document.getElementById('organLink'),map=document.getElementById('bodyMap');
  const modelSources={
