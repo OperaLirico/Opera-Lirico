@@ -1,0 +1,44 @@
+name: voice lab entry
+
+on:
+  push:
+    paths:
+      - content/voice-lab-entry.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  link:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link the structure layer from the mechanism page
+        run: |
+          python3 - <<'PY'
+          import pathlib
+
+          page = pathlib.Path('larynx-mechanism.html')
+          t = page.read_text(encoding='utf-8')
+          anchor = '<section class="hero">'
+          assert t.count(anchor) == 1, 'hero anchor count ' + str(t.count(anchor))
+          print('anchor found')
+          if 'voice-lab.html' not in t:
+              block = ('<p class="lab-entry" style="margin:12px 0 0;font-size:14px;line-height:1.7">'
+                       '<a href="voice-lab.html" style="color:#183b34;text-decoration:none;border-bottom:1px solid #c9714f;padding-bottom:2px">'
+                       '→ 声乐科学实验室：发声通路结构层（鼻腔→膈，可点）</a>'
+                       '<span style="color:#80958c;font-size:12px;margin-left:8px">每个结构带位置、功能、歌唱作用与神经支配，全部有出处</span></p>')
+              t = t.replace(anchor, block + anchor, 1)
+              page.write_text(t, encoding='utf-8')
+              print('linked')
+          else:
+              print('already linked')
+          PY
+      - name: Commit
+        run: |
+          git config user.name "OperaLab Bot"
+          git config user.email "bot@operalirico.github.io"
+          git add larynx-mechanism.html
+          git diff --cached --quiet && echo "nothing to commit" || git commit -m "chore(lab): entry link to the structure layer"
+          git push
