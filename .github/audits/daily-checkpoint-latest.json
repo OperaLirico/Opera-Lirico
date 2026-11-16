@@ -1,15 +1,111 @@
 {
   "schema_version": 1,
-  "checked_at": "2026-11-11T11:48:20+01:00",
+  "checked_at": "2026-11-16T13:04:58+01:00",
   "repository_full_name": "OperaLirico/Opera-Lirico",
   "repository_alias": "wl19971007-lgtm/leo",
   "main_commit_checked": {
-    "sha": "ad4add178eb4d0c866220999245a092a515ce397",
-    "message": "Update source audit after 46-source coverage pass (#42)",
-    "committed_at": "2026-11-11T10:48:01Z"
+    "sha": "6ebd8efa3987f6fbcb4e2a2845a6815876f1487d",
+    "message": "chore(seo): add the laryngeal mechanics page to the sitemap",
+    "committed_at": "2026-11-16T12:14:27Z"
   },
   "pull_requests": {
-    "open": [],
+    "open": [
+      {
+        "number": 109,
+        "title": "Fix weekly source discovery staging and refresh audit checkpoint",
+        "state": "open",
+        "draft": false,
+        "head": "fix/weekly-source-discovery-stage-merged-snapshot-2026-11-16",
+        "base": "main",
+        "head_sha": "44028527f432f074826a4951f5111f40531dcd74",
+        "checks": "Source quality tests in progress",
+        "mergeable": true
+      },
+      {
+        "number": 107,
+        "title": "Add changedetection.io monitoring and Modern Web Guidance skill",
+        "state": "open",
+        "draft": false,
+        "head": "feat/changedetection-modern-web-guidance",
+        "base": "main",
+        "head_sha": "6a14dbcfa89e652c7646eacb717125cf0425ee82",
+        "checks": "no checks reported",
+        "decision": "hold: existing hash coverage works; no evidence justifies a persistent changedetection service."
+      },
+      {
+        "number": 105,
+        "title": "Define anatomically grounded voice mechanism lab",
+        "state": "open",
+        "draft": true,
+        "head": "research/voice-mechanism-lab-spec-2026-11-16",
+        "base": "main",
+        "head_sha": "a21ec875db728f1a53047f2ef86e1c5a23defb9b",
+        "checks": "no checks reported"
+      },
+      {
+        "number": 101,
+        "title": "Add interactive singing anatomy atlas",
+        "state": "open",
+        "draft": false,
+        "head": "feature/interactive-singing-anatomy-overview",
+        "base": "main",
+        "head_sha": "a2e46e67256edb63c3549cc708b1b877810e037d",
+        "checks": "2/2 success",
+        "behind_main": 11,
+        "ahead_of_main": 6,
+        "decision": "not merged; branch is 11 commits behind main, update/revalidate before merge."
+      },
+      {
+        "number": 95,
+        "title": "Add OperaLab public-brand health-check tests",
+        "state": "open",
+        "draft": true,
+        "head": "tests/public-brand-health-regression-2026-11-15",
+        "base": "main",
+        "head_sha": "7e7d916a979ded280ee688734cc66fc8ebbb6644",
+        "checks": "1/1 success"
+      },
+      {
+        "number": 94,
+        "title": "Improve opportunity quality observability",
+        "state": "open",
+        "draft": true,
+        "head": "quality/opportunity-quality-observability-2026-11-15",
+        "base": "main",
+        "head_sha": "90602d6d2f26270b54a4d51ac952bdec62d2cd0f",
+        "checks": "2/2 success"
+      },
+      {
+        "number": 93,
+        "title": "Make social content auto-review fail closed",
+        "state": "open",
+        "draft": true,
+        "head": "hardening/auto-review-fail-closed-2026-11-15",
+        "base": "main",
+        "head_sha": "ef67a0bf9588cb584a17a72e75281d3f93d94562",
+        "checks": "2/2 success"
+      },
+      {
+        "number": 48,
+        "title": "Document safe migration from newsletter subscribers to optional singer profiles",
+        "state": "open",
+        "draft": true,
+        "head": "docs/subscriber-profile-migration",
+        "base": "main",
+        "head_sha": "c02894480e35e3ca5479be5019c128da835158e5",
+        "checks": "no checks reported"
+      },
+      {
+        "number": 46,
+        "title": "Add personalized voice and age opportunity matching",
+        "state": "open",
+        "draft": true,
+        "head": "feature/personalized-opportunity-matching",
+        "base": "main",
+        "head_sha": "b0af011d7bf8e38cb3372c849f262f08d67280e4",
+        "checks": "3/3 success"
+      }
+    ],
     "reviewed": [
       {
         "number": 41,
@@ -44,183 +140,222 @@
           "coverage_checkpoint": "46/46 complete"
         }
       }
+    ],
+    "checked_today": [
+      109,
+      107,
+      105,
+      101,
+      95,
+      94,
+      93,
+      48,
+      46
     ]
   },
   "recent_actions": [
     {
-      "id": 43005908500,
-      "name": "Weekly source coverage",
-      "event": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43005908500"
-    },
-    {
-      "id": 43005784369,
+      "id": 43866296703,
       "name": "Source quality tests",
       "event": "pull_request",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43005784369"
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43866296703"
     },
     {
-      "id": 43002888094,
+      "id": 43864768016,
+      "name": "Deploy GitHub Pages",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43864768016"
+    },
+    {
+      "id": 43860307345,
+      "name": "OperaLab project agent — daily review",
+      "event": "schedule",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43860307345"
+    },
+    {
+      "id": 43856952619,
+      "name": "Self-heal failed automations",
+      "event": "schedule",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43856952619"
+    },
+    {
+      "id": 43855100393,
+      "name": "Workflow failure digest",
+      "event": "schedule",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43855100393"
+    },
+    {
+      "id": 43854136516,
+      "name": "Analytics watchdog",
+      "event": "schedule",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43854136516"
+    },
+    {
+      "id": 43849791077,
+      "name": "System health check",
+      "event": "schedule",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43849791077"
+    },
+    {
+      "id": 43848095590,
       "name": "Weekly source coverage",
-      "event": "push",
+      "event": "schedule",
       "status": "completed",
       "conclusion": "success",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43002888094"
-    },
-    {
-      "id": 43002753673,
-      "name": "Source quality tests",
-      "event": "pull_request",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43002753673"
-    },
-    {
-      "id": 43001750581,
-      "name": "Weekly source coverage",
-      "event": "workflow_run",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43001750581"
-    },
-    {
-      "id": 43001129074,
-      "name": "Daily source refresh",
-      "event": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43001129074"
-    },
-    {
-      "id": 43000981302,
-      "name": "Source quality tests",
-      "event": "pull_request",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43000981302"
-    },
-    {
-      "id": 43000479957,
-      "name": "PDF signature evidence audit",
-      "event": "push",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43000479957"
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43848095590"
     }
   ],
   "older_action_notes": [
     {
-      "id": 42980502399,
-      "name": "Weekly source coverage",
-      "conclusion": "skipped",
-      "reason": "workflow_run guard did not start a job; not a failed scan."
+      "id": 43837798178,
+      "name": "Weekly source discovery",
+      "run_attempt": 3,
+      "conclusion": "failure",
+      "reason": "grow_sources.py rewrites data/sources.json but the workflow omitted it from git add; git rebase origin/main failed because the worktree remained dirty. Fix proposed in PR #109."
     },
     {
-      "id": 42925288682,
-      "name": "Deploy GitHub Pages",
-      "conclusion": "cancelled",
-      "jobs_started": 0,
-      "followed_by_successful_deploys": [
-        42925297156,
-        42925535558
-      ]
+      "id": 43836443398,
+      "name": "Weekly source discovery guard",
+      "conclusion": "skipped",
+      "reason": "Workflow guard skipped job startup; not a failed scan."
+    },
+    {
+      "id": 43835815636,
+      "name": "Daily source refresh",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43835815636",
+      "note": "All build, source refresh, PDF mirror, quality audit and Pages deploy steps succeeded."
+    },
+    {
+      "id": 43839333697,
+      "name": "Discover masterclasses",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43839333697",
+      "note": "Candidate review queue refreshed successfully."
     }
   ],
   "website": {
-    "url": "https://wl19971007-lgtm.github.io/leo/",
+    "url": "https://operalirico.github.io/Opera-Lirico/",
     "direct_live_check": "not_verified",
-    "direct_check_note": "The web page inspection tool returned DisabledError; this is not evidence that the website is down.",
+    "direct_check_note": "Web page inspection returned an internal error and container curl could not resolve the hostname. Neither result proves the site is down.",
     "latest_pages_deploy": {
-      "run_id": 42925535558,
+      "run_id": 43864768016,
       "conclusion": "success",
-      "updated_at": "2026-11-10T23:42:54Z",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/42925535558"
+      "updated_at": "2026-11-16T12:14:56Z",
+      "head_sha": "6ebd8efa3987f6fbcb4e2a2845a6815876f1487d",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43864768016"
     },
-    "site_facing_files_changed": false,
-    "note": "PR #41 and #42 changed source/audit/test files only; no Pages deployment was expected."
+    "site_facing_files_changed": true,
+    "note": "Latest confirmed Pages deployment built main commit 6ebd8efa (laryngeal mechanics sitemap update); direct live availability remains unverified."
   },
   "change_scope": {
-    "pr41": [
-      ".github/audits/source-audit-latest.json",
-      ".github/audits/source-audit-latest.md",
-      "data/source_candidates.json",
-      "tests/test_source_policy_registry.py"
-    ],
-    "pr42": [
-      ".github/audits/source-audit-latest.json",
-      ".github/audits/source-audit-latest.md"
-    ],
-    "coverage_bot_commit": [
+    "previous_checkpoint_commit": "7105a3c1b57f288702650fd5b84cc9098e8c5af9",
+    "compared_main_commit": "6ebd8efa3987f6fbcb4e2a2845a6815876f1487d",
+    "commits_ahead": 84,
+    "commits_behind": 0,
+    "inspected_files": [
+      ".github/workflows/weekly-source-discovery.yml",
+      "grow_sources.py",
+      "grow_conservatori.py",
+      "tests/test_workflow_trigger_safety.py",
+      ".github/audits/source-coverage-latest.md",
       ".github/audits/source-coverage-checkpoint.json",
-      ".github/audits/source-coverage-latest.md"
+      ".github/audits/opportunity-quality-latest.md",
+      ".github/audits/source-audit-latest.md",
+      ".github/audits/source-audit-latest.json",
+      ".github/audits/daily-checkpoint-latest.json",
+      "data/source_candidates.json",
+      "data/masterclass_candidates.json",
+      "data/masterclasses.json",
+      "data/opportunities.json",
+      "data/source_fetch_policies.json",
+      "data/sources_extra.json"
     ],
-    "production_code_changed": false,
-    "production_source_registry_changed": false,
-    "production_fetch_methods_changed": false
+    "production_code_changed_on_main": false,
+    "production_fetch_method_changed": false,
+    "proposed_branch": "fix/weekly-source-discovery-stage-merged-snapshot-2026-11-16",
+    "proposed_fix": "Stage data/sources.json, the merged registry snapshot written by grow_sources.py, and add a regression test to prevent the weekly source discovery rebase failure.",
+    "pull_request_number": 109,
+    "pull_request_head_sha": "44028527f432f074826a4951f5111f40531dcd74",
+    "note": "PR #109 targets current main 6ebd8efa; source-quality test was still in progress when this checkpoint was refreshed."
   },
   "weekly_source_coverage": {
-    "cycle": "2026-W46",
+    "cycle": "2026-W47",
     "status": "completed",
-    "checked_at": "2026-11-11T11:44:59+01:00",
+    "checked_at": "2026-11-16T11:23:56+01:00",
     "inventory_count": 46,
     "checked_count": 46,
     "remaining": 0,
     "failed": 0,
     "restricted": 0,
     "extraction_errors": 0,
-    "anomalies": 0,
+    "anomalies": 15,
     "inventory_sha256": "3830ac0c9ca41cf14b119aaf2376dfd86c357fc05588afd3ab2d1aa1acc17cd8",
-    "note": "SHA-256 identifies this inventory snapshot; it does not authenticate source identity or publisher signatures."
+    "note": "15 normalized text hashes changed; these are change signals, not confirmed new opportunities or publisher signatures."
   },
   "source_audit": {
     "registered_sources": 44,
+    "candidate_queue_entries": 2,
+    "legacy_extra_exact_duplicates": 15,
     "registered_classifications": {
       "auto_approved_official": 26,
-      "auto_approved_third_party": 4,
-      "needs_review": 1,
-      "irrelevant_candidate": 13
+      "auto_approved_third_party": 6,
+      "duplicate_candidate": 1,
+      "irrelevant_candidate": 9,
+      "needs_review": 4
     },
-    "exact_duplicate_sources_extra_records": 15,
-    "new_candidates": [
-      {
-        "id": "candidate-1",
-        "name": "Provinispettacolo — Musica",
-        "classification": "auto_approved_third_party",
-        "confidence": "high",
-        "production_activation": false,
-        "note": "Discovery-only; its Opera e Lirica audition lead remains third-party-only."
-      },
-      {
-        "id": "candidate-2",
-        "name": "Teatro Lirico Sperimentale di Spoleto — 81st International Singing Competition",
-        "classification": "auto_approved_official",
-        "confidence": "high",
-        "queue_status": "pending_manual_review",
-        "production_activation": false,
-        "access_policy_status": "not_independently_verified_for_child_path",
-        "coverage_http_status": 200,
-        "note": "Official page says bando/details coming soon; HTML title says 80° while visible body says 81ª. Wait for official bando before resolving edition number or creating an opportunity."
-      }
-    ],
-    "source121": "needs_review; mixed musical-theatre casting with named voice roles, not promoted or deleted."
+    "audited_today": 8,
+    "audited_today_classifications": {
+      "auto_approved_official": 1,
+      "auto_approved_third_party": 2,
+      "needs_review": 3,
+      "duplicate_candidate": 0,
+      "irrelevant_candidate": 2,
+      "unavailable_temporary": 0,
+      "retired_candidate": 0
+    },
+    "report_file": ".github/audits/source-auto-review-2026-11-16.md",
+    "no_production_activation": true
   },
   "p2_strategy_assessment": {
     "total_registered_sources": 44,
     "evidence_assessed": 15,
     "baseline_only": 29,
-    "completed_batches": [
-      "batch-1-2026-11-10",
-      "batch-2-2026-11-10",
-      "batch-3-2026-11-10"
+    "assessed_ids": [
+      "source-1",
+      "source-2",
+      "source-3",
+      "source-4",
+      "source-5",
+      "source-6",
+      "source-7",
+      "source-8",
+      "source-9",
+      "source-10",
+      "source-15",
+      "source-16",
+      "source-17",
+      "source-18",
+      "source-20"
     ],
     "note": "Production fetch method remains Scrapling for assessed sources; no broad parser replacement."
   },
   "opportunity_quality": {
-    "report_generated_at": "2026-11-11T11:12:45+01:00",
+    "report_generated_at": "2026-11-16T10:03:38+01:00",
     "records": 7,
     "published": 7,
     "currently_open_and_eligible": 7,
@@ -231,19 +366,29 @@
     "missing_official_pdf": 0,
     "pending_or_non_official": 0,
     "invalid_timezone_offsets": 0,
-    "duplicate_ids": 0
+    "duplicate_ids": 0,
+    "additional_official_opportunity_gap": 1,
+    "gap_note": "Teatro Massimo's official 1 Bass choir artist selection (deadline 2026-12-04 12:00; audition 2026-12-19 10:00) is not yet present in data/opportunities.json. Keep unreviewed and unpublished."
   },
   "known_risks": [
-    "The Opera e Lirica 17 November audition and 13 November deadline are only reported by third-party sources; official site confirms the email is used for a different vacancy but does not publish this audition. Do not publish it.",
-    "The Spoleto 2027 competition page has a title/body edition-number conflict and no bando yet; its exact child-path robots/terms status is not independently verified; keep it inactive.",
-    "Publisher digital signatures remain not_verified; file hashes do not establish official origin.",
-    "Live website availability was not directly confirmed during this run."
+    "Weekly source discovery run 43837798178 failed at rebase because data/sources.json was omitted from git add; fix is proposed on a branch.",
+    "Teatro Massimo's new official Basso choir-position call is missing from the 7-record opportunities dataset; keep as an unreviewed candidate, not published.",
+    "The 2 Contralti notice still has a website/PDF audition-date conflict; structured audition_start_at remains blank.",
+    "AsLiCo's 2027 official PDF returned 403 through the current web reader; third-party pages corroborate dates/fee but official eligibility details remain unverified in this run.",
+    "Live website availability could not be directly verified; latest Pages deployment succeeded.",
+    "Publisher digital signatures remain not_verified; SHA-256 proves byte consistency only."
   ],
   "next_run_guidance": [
-    "Read this checkpoint first, then compare current main with main_commit_checked.sha; ignore this checkpoint-only commit when identifying substantive changes.",
-    "Check current open PRs, latest 5–8 Actions, and Pages deployment; do not rerun full coverage unless the weekly schedule is due, inventory changes, or an anomaly triggers it.",
-    "Continue P2 from the 29 baseline_only sources, selecting the next high-value batch without repeating the 15 already assessed.",
-    "Check the official Spoleto bando when it appears; verify robots.txt/terms for the child path before production activation.",
-    "Keep the Opera e Lirica lead outside opportunities until a first-party announcement is found."
-  ]
+    "Read this checkpoint first and compare current main with main_commit_checked.sha; review only new/changed files and relevant workflows.",
+    "After the staging fix is merged, let the next scheduled Weekly source discovery run verify the cursor and merged snapshot persistence; do not rerun the full discovery job solely for inspection.",
+    "Recheck the Teatro Massimo Basso call and move it through the independent manual-review gate before any opportunity publication.",
+    "Check the official Spoleto bando when it appears; keep the 80°/81ª edition conflict unresolved until the bando clarifies it.",
+    "Continue P2 with the next high-value baseline_only sources; 29/44 remain unassessed.",
+    "Complete the November institution-coverage review in a separate monthly pass; it is not yet recorded."
+  ],
+  "monthly_coverage_review": {
+    "status": "not_yet_recorded",
+    "latest_report": null,
+    "note": "No standalone monthly institution-coverage review file is present in .github/audits; do not claim the November review is complete."
+  }
 }
