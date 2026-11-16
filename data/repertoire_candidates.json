@@ -599,10 +599,110 @@
       "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
       "collected_at": "2026-11-15T08:26:28+01:00",
       "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-ea15ce77275f5c44",
+      "title": "La traviata · Atto III · Scena V",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Detta ed Annina che torna frettolosa.\nAnnina Signora... (esitando)\nVioletta Che t’accadde?\nAnnina Quest’oggi, è vero?.. vi sentite meglio?..\nVioletta Sì, perchè?\nAnnina D’esser calma promettete?..\nVioletta Sì, che vuoi dirmi?...\nAnnina Prevenir vi volli...\nUna gioia improvvisa...\nVioletta Una gioia!.. dicesti?...\nAnnina Sì, o signora...\nVioletta Alfredo!... Ah tu il vedesti!.. ei vien!.. l’affretta...\nAnnina (afferma col capo, e va ad aprire la porta.)",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_terzo",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Francesco Maria Piave",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-16T10:03:57+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-848432d4ed04d651",
+      "title": "La traviata · Atto III · Scena VI",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Violetta, Alfredo, Annina.\nVioletta Alfredo?... (andando verso l’uscio.)\nAlfredo (comparisce pallido pella commozione, ed ambidue gettandosi le braccia al collo esclamano:)\nVioletta Amato Alfredo!..\nAlfredo Mia Violetta!..\nColpevole sono... so tutto, o cara...\nVioletta Io so che alfine reso mi sei!...\nAlfredo Da questo palpito s’io t’ami impara,\nSenza te esistere più non potrei.\nVioletta Ah s’anco in vita m’hai ritrovata,\nCredi che uccidere non può il dolor.\nAlfredo Scorda l’affanno, donna adorata,\nA me perdona e al genitor.\nVioletta Ch’io ti perdoni?.. la rea son io;\nMa solo amore tal mi rendè...\na 2 Null’uomo o damone, angelo mio,\nMai più staccarti potrà da me.\nParigi, o cara, noi lascieremo,\nLa vita uniti trascorreremo:\nDe’ corsi affanni compenso avrai,\nLa tua (mia) salute rifiorirà.\nSospiro e luce tu mi sarai,\nTutto il futuro ne arriderà.\nVioletta Ah non più... a un tempio... Alfredo andiamo,\nDel tuo ritorno grazie rendiamo... (vacilla)\nAlfredo Tu impallidisci!...\nVioletta È nulla, sai...\nGioia improvvisa non entra mai\nSenza turbarlo un mesto core... (si abbandona come sfinita sopra una sedia col capo cadente all’indietro)\nAlfredo Gran Dio!... Violetta!... (spaventato sorreggendola)\nVioletta È il mio malore... (sforzandosi)\nFu debolezza... ora son forte...\nVedi?... sorrido... (sforzandosi)\nAlfredo (desolato) (Ahi cruda sorte!...)\nVioletta Fu nulla... Annina, dammi a vestire...\nAlfredo Adesso!... Attendi...\nVioletta (alzandosi) No... voglio uscire.\nAnnina (le presenta una veste ch’ella fa per indossare, e impeditane dalla debolezza esclama:)\nVioletta Gran Dio non posso!... (getta con dispetto la veste e ricade sulla sedia)\nAlfredo (Cielo!... che vedo!...)\nVa pel dottore... (ad Annina)\nVioletta (ad Annina) Digli... che Alfredo\nÈ ritornato all’amor mio...\nDigli che vivere ancor vogl’io...\nAnnina (parte.)\nVioletta Ma se tornando non m’hai salvato, (ad Alfredo)\nA niuno in terra salvarmi è dato.",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_terzo",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Francesco Maria Piave",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-16T10:03:57+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-7f4d7ff3ca4b792f",
+      "title": "La traviata · Atto III · Scena VII",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Violetta e Alfredo.\nVioletta Gran Dio!... morir sì giovane,\nIo che penato ho tanto!...\nMorir sì presso a tergere\nIl mio sì lungo pianto!\nAh dunque fu delirio\nLa credula speranza;\nInvano di costanza\nArmato avrò il mio cor!...\nAlfredo... oh il crudo termine\nSerbato al nostro amor!...\nAlfredo Oh mio sospiro, oh palpito\nDiletto del cor mio!...\nLe mie colle tue lacrime\nConfondere degg’io...\nOr più che mai, nostr’anime\nHan duopo di costanza...\nAh tutto alla speranza\nNon chiudere il tuo cor!\nVioletta mia, deh calmati,\nM’uccide il tuo dolor.\n(Violetta s’abbandona sul canapè.)",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_terzo",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Francesco Maria Piave",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-16T10:03:57+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-8a1297cc752090cc",
+      "title": "La traviata · Atto III · Scena ULTIMA",
+      "aliases": [
+        "La traviata"
+      ],
+      "composer": "Giuseppe Verdi",
+      "work": "La traviata",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Detti, Annina, il signore Germont ed il Dottore.\nGermont Ah Violetta!... (entrando)\nVioletta Voi signor!...\nAlfredo Mio padre!...\nVioletta Non mi scordaste?\nGermont La promessa adempio...\nA stringervi qual figlia vengo al seno,\nO generosa.\nVioletta Oimè, tardi giungeste!...\nPure, grata ven sono... (lo abbraccia)\nGrenvil, vedete?... tra le braccia io spiro\nDi quanti ho cari al mondo...\nGermont Che mai dite!\n(Oh cielo!... è ver!) (la osserva)\nAlfredo La vedi, padre mio?\nGermont Di più non lacerarmi...\nTroppo rimorso l’alma mi divora...\nQuasi fulmin m’atterra ogni suo detto...\nOh malcauto vegliardo!...\nAh tutto il mal ch’io feci ora sol vedo!\nVioletta (frattanto avrà aperto a stento un ripostiglio della toilette e toltone un medaglione dice:)\nPrendi, quest’è l’immagine\nDe’ miei passati giorni,\nA rammentar ti torni\nColei che sì t’amò.\nSe una pudica vergine\nDegli anni suoi nel fiore\nA te donasse il core...\nSposa ti sia,... io vo’\nLe porgi questa effigie,\nDille che dono ell’è\nDi chi nel ciel tra gli angeli\nPrega per lei, per te.\nAlfredo No, non morrai, non dirmelo,\nDèi vivere, amor mio...\nA strazio così orribile\nQui non mi trasse Iddio.\nSì presto, ah no, dividerti\nMorte non può da me...\nAh vivi, o un solo feretro\nM’accoglierà con te.\nGermont Cara, sublime vittima\nD’un generoso amore,\nPerdonami lo strazio\nRecato al tuo bel core.\nGermont,\nDottore,\nAnnina Finché avrà il ciglio lacrime\nIo piangerò per te;\nVola a’ beati spiriti;\nIddio ti chiama a se.\nVioletta È strano!!... (alzandosi rianimata)\nTutti Che!\nVioletta Cessarono\nGli spasmi del dolore,\nIn me rinasce... m’anima\nInsolito vigore!...\nAh! io ritorno a vivere!... (trasalendo)\nOh gio... ia!... (ricade sul canapè)\nTutti Oh cielo!... muor!...\nAlfredo Violetta?...\nTutti Oh Dio, soccorrasi...\nDottore È spenta!... (dopo averle toccato il polso)\nTutti Oh mio (rio) dolor!\n(Quadro e cade la tela.)\nFINE.",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/La_traviata/Atto_terzo",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Francesco Maria Piave",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-16T10:03:57+01:00",
+      "collection_source": "it.wikisource.org"
     }
   ],
-  "generated_at": "2026-11-15T08:26:28+01:00",
+  "generated_at": "2026-11-16T10:03:57+01:00",
   "source": "Italian Wikisource opera libretti; candidate-only, human review required",
-  "aria_opera": 0,
-  "aria_scene": 24
+  "aria_opera": 1,
+  "aria_scene": 0
 }
