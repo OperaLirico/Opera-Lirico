@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from datetime import datetime, timedelta
 from pathlib import Path
+from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parent
@@ -20,15 +21,52 @@ DATE_FIELDS = (
 
 
 def parse_dt(value):
-    if not value:
+    if not isinstance(value, str) or not value.strip():
         return None
     try:
-        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
     except (TypeError, ValueError):
         return None
     if parsed.tzinfo is None or parsed.utcoffset() is None:
         return None
     return parsed
+
+
+URL_FIELDS = ("source_url", "announcement_url", "application_url", "official_pdf_url")
+
+
+def missing_verification_timestamp(records):
+    return [
+        item for item in records
+        if not parse_dt(item.get("last_verified_at") or item.get("checked_at"))
+    ]
+
+
+def invalid_urls(records):
+    findings = []
+    for item in records:
+        for field in URL_FIELDS:
+            value = item.get(field)
+            if not value:
+                continue
+            try:
+                parsed = urlparse(value) if isinstance(value, str) else None
+            except ValueError:
+                parsed = None
+            if (
+                not parsed
+                or parsed.scheme != "https"
+                or not parsed.hostname
+                or parsed.username
+                or parsed.password
+            ):
+                findings.append({
+                    "id": item.get("id"),
+                    "title": item.get("title"),
+                    "field": field,
+                    "value": str(value)[:300],
+                })
+    return findings
 
 
 def main() -> None:
@@ -51,6 +89,9 @@ def main() -> None:
         and parse_dt(item["application_deadline_at"]) <= now
     ]
     missing_deadline = [item for item in published if not item.get("application_deadline_at")]
+    missing_source = [item for item in published if not item.get("source_url")]
+    missing_verification = missing_verification_timestamp(published)
+    bad_urls = invalid_urls(published)
     missing_application = [item for item in published if not item.get("application_url")]
     missing_pdf = [item for item in published if not item.get("official_pdf_url")]
     missing_both = [item for item in published if not item.get("application_url") and not item.get("official_pdf_url")]
@@ -80,9 +121,10 @@ def main() -> None:
             "id": item.get("id"),
             "title": item.get("title"),
             "deadline": item.get("application_deadline_at"),
+            "source_url_missing": not bool(item.get("source_url")),
             "application_url_missing": not bool(item.get("application_url")),
             "official_pdf_missing": not bool(item.get("official_pdf_url")),
-            "last_verified_at": item.get("last_verified_at"),
+            "verification_timestamp": item.get("last_verified_at") or item.get("checked_at"),
         } for item in records]
 
     result = {
@@ -98,6 +140,9 @@ def main() -> None:
         "published_missing_official_pdf_url": compact(missing_pdf),
         "published_missing_both_application_and_pdf": compact(missing_both),
         "published_missing_deadline": compact(missing_deadline),
+        "published_missing_source_url": compact(missing_source),
+        "published_missing_verification_timestamp": compact(missing_verification),
+        "published_invalid_urls": bad_urls,
         "pending_or_non_official_records": compact(pending),
         "stale_verification_over_7_days": compact(stale),
         "invalid_or_non_rome_timezone_dates": invalid_dates,
@@ -123,6 +168,9 @@ def main() -> None:
         f"- Missing official PDF: {len(missing_pdf)}",
         f"- Missing both application URL and PDF: {len(missing_both)}",
         f"- Missing deadline: {len(missing_deadline)}",
+        f"- Missing source URL: {len(missing_source)}",
+        f"- Missing/invalid verification timestamp: {len(missing_verification)}",
+        f"- Invalid HTTPS URLs: {len(bad_urls)}",
         f"- Pending/non-official: {len(pending)}",
         f"- Verification older than 7 days: {len(stale)}",
         f"- Invalid/non-Europe-Rome offsets: {len(invalid_dates)}",
@@ -137,6 +185,8 @@ def main() -> None:
         ("Expired records still in file", "expired_but_still_published_in_file"),
         ("Records missing both application URL and PDF", "published_missing_both_application_and_pdf"),
         ("Invalid dates", "invalid_or_non_rome_timezone_dates"),
+        ("Missing/invalid verification timestamp", "published_missing_verification_timestamp"),
+        ("Invalid HTTPS URLs", "published_invalid_urls"),
         ("Stale verification", "stale_verification_over_7_days"),
     ):
         lines.extend([f"## {title}", ""])
@@ -158,6 +208,9 @@ def main() -> None:
         "missing_application": len(missing_application),
         "missing_pdf": len(missing_pdf),
         "missing_both": len(missing_both),
+        "missing_source": len(missing_source),
+        "missing_verification_timestamp": len(missing_verification),
+        "invalid_urls": len(bad_urls),
         "pending": len(pending),
         "invalid_dates": len(invalid_dates),
     }, ensure_ascii=False))
