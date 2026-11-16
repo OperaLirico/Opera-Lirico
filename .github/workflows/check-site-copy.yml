@@ -12,6 +12,7 @@ on:
       - "data/masterclasses.json"
       - "data/masterclass.schema.json"
       - "masterclasses.html"
+      - "voice-anatomy.html"
       - "content_engine/**"
       - ".github/workflows/generate-social-drafts.yml"
       - ".github/workflows/check-site-copy.yml"
@@ -26,6 +27,7 @@ on:
       - "data/masterclasses.json"
       - "data/masterclass.schema.json"
       - "masterclasses.html"
+      - "voice-anatomy.html"
       - "content_engine/**"
       - ".github/workflows/generate-social-drafts.yml"
       - ".github/workflows/check-site-copy.yml"
@@ -116,6 +118,22 @@ jobs:
           if "cleanName" not in app:
               raise SystemExit("app.js lost cleanName(); scraped field noise may leak into the UI")
 
+          voice_page = Path("voice-anatomy.html").read_text(encoding="utf-8")
+          required_voice_features = [
+              'id="glottis"',
+              'id="leftFold"',
+              'id="rightFold"',
+              'id="side-svg-title"',
+              'id="adduction"',
+              'id="vibrate"',
+              "杓状软骨",
+              "前庭襞",
+          ]
+          missing_voice = [item for item in required_voice_features if item not in voice_page]
+          if missing_voice:
+              raise SystemExit(f"Voice anatomy page is missing expected anatomy/interaction elements: {missing_voice}")
+
           print(f"Tiles: {tile_titles}")
+          print("Voice anatomy structure checks passed.")
           print("Page structure checks passed.")
           PY
