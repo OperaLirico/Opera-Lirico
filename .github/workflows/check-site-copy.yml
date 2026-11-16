@@ -138,11 +138,36 @@ jobs:
               'id="vibrate"',
               "杓状软骨",
               "前庭襞",
+              'id="head-airway"',
+              'id="tractSvg"',
+              'id="softPalateShape"',
+              'id="tongueShape"',
+              'id="palateControl"',
+              'id="tongueControl"',
+              'id="jawControl"',
+              'data-vowel="a"',
+              'data-vowel="e"',
+              'data-vowel="i"',
+              'data-vowel="o"',
+              'data-vowel="u"',
+              'id="airflowToggle"',
+              'id="tractReadout"',
           ]
           missing_voice = [item for item in required_voice_features if item not in voice_page]
           if missing_voice:
               raise SystemExit(f"Voice anatomy page is missing expected anatomy/interaction elements: {missing_voice}")
 
+          # Parse every inline script on the anatomy page, not only the main app bundle.
+          import subprocess
+          scripts = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', voice_page, re.S | re.I)
+          if not scripts:
+              raise SystemExit("Voice anatomy page has no inline interaction scripts")
+          for number, script in enumerate(scripts):
+              script_path = Path(f"/tmp/voice-anatomy-inline-{number}.js")
+              script_path.write_text(script, encoding="utf-8")
+              subprocess.run(["node", "--check", str(script_path)], check=True)
+
+          print(f"Validated {len(scripts)} inline anatomy script(s).")
           print(f"Tiles: {tile_titles}")
           print("Voice anatomy structure checks passed.")
           print("Page structure checks passed.")
