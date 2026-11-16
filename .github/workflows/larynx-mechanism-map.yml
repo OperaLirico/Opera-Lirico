@@ -106,10 +106,6 @@ jobs:
               '})();\n'
               '</script>\n'
           )
-          swap('</script>\n</body>', '</script>\n', '__SCRIPT_MARK__')
-          t = t.replace('</script>\n', '</script>\n' + script, 1) if False else t
-
-          # insert the new script right before the closing body tag
           swap('</body>', script + '</body>', 'append script')
 
           swap(
