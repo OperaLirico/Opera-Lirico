@@ -13,6 +13,8 @@ on:
       - "data/masterclass.schema.json"
       - "masterclasses.html"
       - "voice-anatomy.html"
+      - "larynx-mechanism.html"
+      - "assets/anatomy/**"
       - "content_engine/**"
       - ".github/workflows/generate-social-drafts.yml"
       - ".github/workflows/check-site-copy.yml"
@@ -28,6 +30,8 @@ on:
       - "data/masterclass.schema.json"
       - "masterclasses.html"
       - "voice-anatomy.html"
+      - "larynx-mechanism.html"
+      - "assets/anatomy/**"
       - "content_engine/**"
       - ".github/workflows/generate-social-drafts.yml"
       - ".github/workflows/check-site-copy.yml"
@@ -123,6 +127,7 @@ jobs:
               'id="anatomyModelFrame"',
               'id="head-airway"',
               'data-model="head"',
+              'data-model="pharynx"',
               'data-model="respiratory"',
               'data-model="diaphragm"',
               'data-model="larynx"',
@@ -137,14 +142,11 @@ jobs:
               'data-organ-select="diaphragm"',
               'data-breath="inhale"',
               'id="breathReadout"',
-              'id="glottis"',
-              'id="leftFold"',
-              'id="rightFold"',
-              'id="side-svg-title"',
-              'id="adduction"',
-              'id="vibrate"',
               'id="anatomy-sources-title"',
+              'href="larynx-mechanism.html"',
               "NCBI Bookshelf",
+              "Lions Voice Clinic",
+              "Pharynx and Floor of Mouth",
               "杓状软骨",
               "前庭襞",
           ]
@@ -157,17 +159,42 @@ jobs:
           if present_obsolete:
               raise SystemExit(f"Obsolete hand-drawn anatomy controls remain on the page: {present_obsolete}")
 
-          # Parse every inline script on the anatomy page, not only the main app bundle.
-          import subprocess
-          scripts = re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>', voice_page, re.S | re.I)
-          if not scripts:
-              raise SystemExit("Voice anatomy page has no inline interaction scripts")
-          for number, script in enumerate(scripts):
-              script_path = Path(f"/tmp/voice-anatomy-inline-{number}.js")
-              script_path.write_text(script, encoding="utf-8")
-              subprocess.run(["node", "--check", str(script_path)], check=True)
+          larynx_page = Path("larynx-mechanism.html").read_text(encoding="utf-8")
+          required_larynx_features = [
+              'id="larynxModelFrame"',
+              'data-larynx-model="specimen"',
+              'data-larynx-model="muscles"',
+              'id="larynxModelCaption"',
+              'id="mechanismObservationText"',
+              'data-mode="pca"',
+              'data-mode="lca"',
+              'data-mode="ia"',
+              'data-mode="ta"',
+              'data-mode="ct"',
+              "喉内肌的神经支配",
+              "UBC Medicine",
+              "University of Dundee",
+          ]
+          missing_larynx = [item for item in required_larynx_features if item not in larynx_page]
+          if missing_larynx:
+              raise SystemExit(f"Larynx mechanism page is missing expected model/interaction elements: {missing_larynx}")
+          if 'id="mechMap"' in larynx_page or "AI 生成 · 非真实病例" in larynx_page:
+              raise SystemExit("Unverified generated laryngoscopy mockups must not return to the anatomy lab")
 
-          print(f"Validated {len(scripts)} inline anatomy script(s).")
+          # Parse every inline script on both anatomy pages.
+          import subprocess
+          inline_total = 0
+          for page_name, page_html in (("voice-anatomy", voice_page), ("larynx-mechanism", larynx_page)):
+              scripts = re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>', page_html, re.S | re.I)
+              if not scripts:
+                  raise SystemExit(f"{page_name} page has no inline interaction scripts")
+              for number, script in enumerate(scripts):
+                  script_path = Path(f"/tmp/{page_name}-inline-{number}.js")
+                  script_path.write_text(script, encoding="utf-8")
+                  subprocess.run(["node", "--check", str(script_path)], check=True)
+              inline_total += len(scripts)
+
+          print(f"Validated {inline_total} inline anatomy script(s) across both pages.")
           print(f"Tiles: {tile_titles}")
           print("Voice anatomy structure checks passed.")
           print("Page structure checks passed.")
