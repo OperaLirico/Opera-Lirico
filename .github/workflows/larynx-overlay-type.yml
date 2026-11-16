@@ -1,0 +1,46 @@
+name: Larynx overlay type
+
+on:
+  push:
+    paths:
+      - content/larynx-overlay-type.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scale the label type to the photo coordinate space
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          old = '.mech-overlay text{font:600 13px/1 system-ui,sans-serif'
+          if old not in t:
+              print('already scaled')
+              raise SystemExit(0)
+          if t.count(old) != 1:
+              sys.exit('ABORT: overlay text rule -> %d' % t.count(old))
+          new = '.mech-overlay text{font:600 22px/1 system-ui,sans-serif'
+          t = t.replace(old, new, 1)
+          p.write_text(t, encoding='utf-8')
+          print('type scaled,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "style(anatomy): scale overlay labels for the photo coordinate space"
+            git push
+          fi
