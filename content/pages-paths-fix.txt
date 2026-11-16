@@ -1,7 +1,0 @@
-# 部署触发路径修正
-
-推送本文件时，pages-paths-fix 工作流会在 .github/workflows/pages-deploy.yml 的
-触发路径里补上 larynx-mechanism.html 与 assets/**，并用 yaml.safe_load 验证文件仍可解析。
-
-背景：解剖线描图存放在 assets/anatomy/ 下，原有热门路径列表不含该目录，
-资源单独提交时不会重建站点，图会在页面上 404。
