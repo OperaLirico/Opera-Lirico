@@ -1,0 +1,21 @@
+name: REA data gate
+
+on:
+  push:
+    paths:
+      - data/voice-structures.json
+      - research/evidence.json
+      - research/**
+  pull_request:
+    paths:
+      - data/voice-structures.json
+      - research/**
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate the fact store
+        run: python3 research/validate.py

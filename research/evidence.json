@@ -1,0 +1,15 @@
+{
+  "sources": [
+    {"id": "E1", "kind": "review", "title": "StatPearls: Anatomy, Head and Neck: Laryngeal Muscles (2024-07-17)", "url": "https://www.ncbi.nlm.nih.gov/books/NBK545265/"},
+    {"id": "E2", "kind": "review", "title": "StatPearls: Larynx Recurrent Laryngeal Nerve", "url": "https://www.ncbi.nlm.nih.gov/books/NBK470179/"},
+    {"id": "E3", "kind": "review", "title": "StatPearls: Cervical, Respiratory, Larynx, and Cricoarytenoid", "url": "https://www.ncbi.nlm.nih.gov/books/NBK538307/"},
+    {"id": "E4", "kind": "paper", "title": "Activation of upper airway muscles during breathing and swallowing", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3921357/"},
+    {"id": "E5", "kind": "paper", "title": "Speech acoustics: How much science? (source-filter theory)", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3361773/"},
+    {"id": "E6", "kind": "paper", "title": "Vocal tract resonances in speech, singing, and playing musical instruments", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2689615/"},
+    {"id": "E7", "kind": "paper", "title": "Modeling source-filter interaction in belting and high-pitched operatic male singing", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2757425/"},
+    {"id": "E9", "kind": "paper", "title": "The Utility of Stroboscopy in Evaluating Patients with Benign Vocal Fold Lesions", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10674122/"},
+    {"id": "E10", "kind": "paper", "title": "Parameters and Scales Used to Assess and Report Findings From Stroboscopy: A Systematic Review", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7008980/"},
+    {"id": "E12", "kind": "paper", "title": "Nasalance, Nasal Airflow and Perceived Nasality in Carnatic Singers and Non-singers", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10909053/"},
+    {"id": "E13", "kind": "paper", "title": "Resonance Effects and the Vocalization of Speech", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7591156/"}
+  ]
+}
