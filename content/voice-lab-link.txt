@@ -1,0 +1,2 @@
+link voice-lab.html from larynx-mechanism.html and add sitemap entry
+run: 2026-11-17

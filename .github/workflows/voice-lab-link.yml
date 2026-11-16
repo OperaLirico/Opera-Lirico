@@ -1,0 +1,57 @@
+name: voice lab link
+
+on:
+  push:
+    paths:
+      - content/voice-lab-link.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  link:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wire the lab entry point and sitemap
+        run: |
+          python3 - <<'PY'
+          import pathlib
+
+          page = pathlib.Path('larynx-mechanism.html')
+          t = page.read_text(encoding='utf-8')
+          anchor = '<div class="mech-map">'
+          assert t.count(anchor) >= 1, 'anchor missing: ' + str(t.count(anchor))
+          if 'voice-lab.html' not in t:
+              link = ('<p style="margin:0 0 14px;font-size:14px;line-height:1.7">'
+                      '<a href="voice-lab.html" style="color:#183b34;text-decoration:none;border-bottom:1px solid #c9714f;padding-bottom:2px">'
+                      '→ 进入声乐科学实验室：发声通路结构层（鼻腔到膈，可点）</a>'
+                      '<span style="color:#80958c;font-size:12px;margin-left:8px">需要看起止点与神经支配时用</span></p>')
+              t = t.replace(anchor, link + anchor, 1)
+              page.write_text(t, encoding='utf-8')
+              print('larynx page linked')
+          else:
+              print('link already present')
+
+          sm = pathlib.Path('sitemap.xml')
+          s = sm.read_text(encoding='utf-8')
+          assert s.count('</urlset>') == 1, 'urlset count ' + str(s.count('</urlset>'))
+          loc = 'https://operalirico.github.io/Opera-Lirico/voice-lab.html'
+          if loc not in s:
+              entry = ('  <url><loc>' + loc + '</loc>'
+                       '<lastmod>2026-11-17</lastmod>'
+                       '<changefreq>monthly</changefreq><priority>0.8</priority></url>\n')
+              s = s.replace('</urlset>', entry + '</urlset>', 1)
+              sm.write_text(s, encoding='utf-8')
+              print('sitemap updated')
+          else:
+              print('sitemap already present')
+          PY
+      - name: Commit
+        run: |
+          git config user.name "OperaLab Bot"
+          git config user.email "bot@operalirico.github.io"
+          git add -A
+          git diff --cached --quiet || git commit -m "chore(lab): link the structure layer from the mechanism page"
+          git push
