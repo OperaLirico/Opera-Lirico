@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
-"""REA 数据门：解剖事实入库前的强制校验。
-
-规则
-1. id 唯一；group / review_status 在枚举内；parent、related 必须存在
-2. verified 条目必须有 evidence，且 evidence id 必须存在于 research/evidence.json
-3. verified 条目必须有 function 与 singing_role
-4. pending_fields 必须是合法字段名
-5. 口径红线：三类混淆机制的表述一律拒绝
-"""
+"""REA 数据门：解剖事实入库前的强制校验。"""
 
 import json
 import re
@@ -24,18 +16,14 @@ GROUPS = {
     "respiratory",
 }
 STATUS = {"verified", "pending"}
-FIELDS = {"name", "location", "function", "singing_role", "innervation", "evidence"}
+# layers = 声带分层等子结构细节，允许先于其他字段待核
+FIELDS = {"name", "location", "function", "singing_role", "innervation", "evidence", "layers"}
 
 RED_LINES = [
     (r"越紧[^。]*越亮", "混淆闭合与滤波：闭合紧不决定亮度"),
     (r"肌肉[^。]*主动[^。]*振动", "混淆驱动与自激振动"),
     (r"打开喉咙[^。]*压低喉位", "把喉位当唯一变量"),
 ]
-
-
-def fail(msg):
-    print("FAIL:", msg)
-    globals()["errors"] = globals().get("errors", 0) + 1
 
 
 def main():

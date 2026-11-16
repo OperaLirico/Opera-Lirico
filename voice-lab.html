@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>声乐科学实验室 · 发声通路结构层｜OperaLab</title>
+<meta name="description" content="从鼻腔到膈的发声通路结构索引：每个结构都有位置、功能、歌唱作用与神经支配，全部带文献出处与审核状态。">
+<link rel="stylesheet" href="styles.css">
+<style>
+  :root{--ink:#183b34;--ink2:#3f5a52;--line:#dde7e1;--bg:#f6f9f7;--card:#ffffff;--accent:#c9714f;--accent-soft:#fff2ea}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,"PingFang SC","Hiragino Sans GB",system-ui,sans-serif}
+  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 64px}
+  header.top{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;margin-bottom:6px}
+  header.top h1{font-size:22px;margin:0;letter-spacing:.02em}
+  header.top nav a{color:var(--ink2);text-decoration:none;font-size:13px;border-bottom:1px solid var(--line)}
+  .lede{color:var(--ink2);font-size:14px;margin:6px 0 16px;max-width:760px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .chip{font-size:12px;color:var(--ink2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+  .chip b{color:var(--ink)}
+  .layout{display:grid;grid-template-columns:minmax(300px,42%) 1fr;gap:22px;align-items:start}
+  @media(max-width:880px){.layout{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .panel h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:0 0 10px}
+  .mapwrap{position:relative;background:linear-gradient(180deg,#fbfdfc,#f1f6f3);border-radius:12px;border:1px solid var(--line);padding:6px}
+  svg.map{width:100%;height:auto;display:block}
+  .hot{cursor:pointer}
+  .hot rect,.hot ellipse,.hot path{fill:#eef4f0;stroke:#b7ccc3;stroke-width:1.2;transition:fill .18s ease,stroke .18s ease}
+  .hot:hover rect,.hot:hover ellipse,.hot:hover path{fill:#e2eee7}
+  .hot.on rect,.hot.on ellipse,.hot.on path{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.8}
+  .hot text{font:600 12px/1 -apple-system,"PingFang SC",system-ui;fill:#33534b;pointer-events:none}
+  .hot.on text{fill:#a2532f}
+  .zone{fill:#dbe7e1;stroke:#c8d8d0}
+  .zone-t{font:600 10px/1 system-ui;fill:#6f8a80}
+  .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .tab{font:13px/1.4 inherit;background:#fff;border:1px solid var(--line);color:var(--ink2);border-radius:8px;padding:5px 10px;cursor:pointer}
+  .tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .search{width:100%;box-sizing:border-box;margin-bottom:10px;padding:8px 11px;border:1px solid var(--line);border-radius:9px;font:14px inherit;background:#fff;color:var(--ink)}
+  .list{display:flex;flex-direction:column;gap:4px;max-height:520px;overflow:auto}
+  .item{display:flex;justify-content:space-between;gap:8px;align-items:center;text-align:left;width:100%;background:none;border:0;border-radius:8px;padding:8px 10px;cursor:pointer;font:14px/1.5 inherit;color:var(--ink)}
+  .item:hover{background:#f0f5f2}
+  .item.on{background:var(--accent-soft);color:#9c4a2a}
+  .item small{color:#8095 8c;color:#80958c;font-size:11px;white-space:nowrap}
+  .badge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:999px;background:#f4efe6;color:#8a6b3d;border:1px solid #e8dcc8}
+  .card h3{font-size:17px;margin:0 0 2px}
+  .card .tri{font-size:12px;color:#80958c;margin-bottom:12px}
+  .row{margin:0 0 12px}
+  .row .k{font-size:11px;letter-spacing:.06em;color:#80958c;text-transform:uppercase;display:block;margin-bottom:2px}
+  .row .v{font-size:14.5px;line-height:1.72;color:#25443c}
+  .pending{background:#faf7f0;border:1px dashed #e0d2b4;border-radius:9px;padding:8px 11px;font-size:12.5px;color:#8a6b3d;margin:0 0 12px}
+  .rel{display:flex;flex-wrap:wrap;gap:6px}
+  .rel button{font:12.5px inherit;background:#f2f7f4;border:1px solid var(--line);border-radius:7px;padding:3px 9px;cursor:pointer;color:#3f5a52}
+  .rel button:hover{background:#e8f1ec}
+  .src{list-style:none;margin:6px 0 0;padding:0;font-size:12.5px}
+  .src li{margin:0 0 5px}
+  .src a{color:#4a6b8a;text-decoration:none;border-bottom:1px solid #d7e2ea}
+  details.ev{margin-top:10px}
+  details.ev summary{cursor:pointer;font-size:12px;color:#80958c}
+  footer.note{margin-top:26px;font-size:12.5px;line-height:1.8;color:#6f8580;border-top:1px solid var(--line);padding-top:14px}
+  .msg{color:#8a6b3d;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>声乐科学实验室 · 发声通路结构层</h1>
+    <nav><a href="larynx-mechanism.html">机制联动 →</a> &nbsp;·&nbsp; <a href="voice-anatomy.html">解剖概览 →</a></nav>
+  </header>
+  <p class="lede">从鼻腔到膈，把发声通路拆成可点的结构。每条事实都带出处与审核状态：未核定的字段不展示。这是「知道为什么这样唱」的第一层。</p>
+  <div class="chips" id="meta"></div>
+
+  <div class="layout">
+    <section class="panel">
+      <h2>发声通路</h2>
+      <div class="mapwrap">
+        <svg class="map" viewBox="0 0 700 900" role="img" aria-label="发声通路示意图：鼻腔、口腔、舌、软腭、咽、喉、气管、肺、膈">
+          <rect x="150" y="40" width="430" height="800" rx="54" fill="#fbfdfc" stroke="#e6eee9"/>
+
+          <g class="hot" data-sid="nasal_cavity" tabindex="0" role="button" aria-label="鼻腔">
+            <rect x="410" y="66" width="158" height="96" rx="18"/>
+            <text x="489" y="120" text-anchor="middle">鼻腔</text>
+          </g>
+          <g class="hot" data-sid="soft_palate" tabindex="0" role="button" aria-label="软腭">
+            <rect x="420" y="176" width="138" height="46" rx="16"/>
+            <text x="489" y="204" text-anchor="middle">软腭</text>
+          </g>
+          <g class="hot" data-sid="oral_cavity" tabindex="0" role="button" aria-label="口腔">
+            <rect x="196" y="146" width="200" height="124" rx="20"/>
+            <text x="240" y="172">口腔</text>
+          </g>
+          <g class="hot" data-sid="tongue_body" tabindex="0" role="button" aria-label="舌体">
+            <rect x="212" y="212" width="158" height="44" rx="20"/>
+            <text x="291" y="239" text-anchor="middle">舌体</text>
+          </g>
+          <g class="hot" data-sid="tongue_root" tabindex="0" role="button" aria-label="舌根">
+            <rect x="372" y="226" width="54" height="76" rx="12"/>
+            <text x="399" y="266" text-anchor="middle" font-size="11">舌根</text>
+          </g>
+          <g class="hot" data-sid="pharynx" tabindex="0" role="button" aria-label="咽">
+            <rect x="432" y="236" width="128" height="152" rx="18"/>
+            <text x="496" y="316" text-anchor="middle">咽</text>
+          </g>
+
+          <rect x="424" y="392" width="142" height="196" rx="14" fill="none" stroke="#dbe7e1" stroke-dasharray="4 4"/>
+          <text class="zone-t" x="424" y="386">喉</text>
+
+          <g class="hot" data-sid="epiglottis" tabindex="0" role="button" aria-label="会厌">
+            <rect x="440" y="398" width="112" height="42" rx="13"/>
+            <text x="496" y="424" text-anchor="middle" font-size="11">会厌</text>
+          </g>
+          <g class="hot" data-sid="false_vocal_fold" tabindex="0" role="button" aria-label="室襞（假声带）">
+            <rect x="440" y="446" width="112" height="38" rx="11"/>
+            <text x="496" y="470" text-anchor="middle" font-size="11">室襞</text>
+          </g>
+          <g class="hot" data-sid="true_vocal_fold" tabindex="0" role="button" aria-label="真声带">
+            <rect x="440" y="490" width="112" height="44" rx="12"/>
+            <text x="496" y="517" text-anchor="middle">真声带</text>
+          </g>
+          <g class="hot" data-sid="subglottis" tabindex="0" role="button" aria-label="声门下腔">
+            <rect x="452" y="540" width="88" height="40" rx="10"/>
+            <text x="496" y="564" text-anchor="middle" font-size="11">声门下</text>
+          </g>
+          <g class="hot" data-sid="trachea" tabindex="0" role="button" aria-label="气管">
+            <rect x="452" y="588" width="88" height="104" rx="12"/>
+            <text x="496" y="644" text-anchor="middle">气管</text>
+          </g>
+          <g class="hot" data-sid="lungs" tabindex="0" role="button" aria-label="肺">
+            <ellipse cx="366" cy="750" rx="68" ry="72"/>
+            <ellipse cx="628" cy="750" rx="68" ry="72"/>
+            <text x="366" y="756" text-anchor="middle" font-size="11">肺</text>
+            <text x="628" y="756" text-anchor="middle" font-size="11">肺</text>
+          </g>
+          <g class="hot" data-sid="diaphragm" tabindex="0" role="button" aria-label="膈">
+            <path d="M300 846 Q500 800 690 846 L690 862 Q500 818 300 862 Z"/>
+            <text x="500" y="848" text-anchor="middle" font-size="11">膈</text>
+          </g>
+        </svg>
+      </div>
+      <p class="msg" style="margin:10px 4px 0">示意图：只表示结构与相对位置，不是解剖图谱。可点的块与右侧卡片一一对应。</p>
+    </section>
+
+    <section class="panel card" id="side">
+      <h2>结构索引</h2>
+      <div class="tabs" id="tabs"></div>
+      <input class="search" id="q" type="search" placeholder="搜索：中文 / 拉丁 / 英文，例如 环甲肌、arytenoid">
+      <div class="list" id="list"></div>
+      <div id="detail"></div>
+    </section>
+  </div>
+
+  <footer class="note">
+    数据门槛：本页只渲染 <code>review_status=verified</code> 的字段；标为待核的字段显示「待核（暂不展示）」而不是用推测填满。<br>
+    机制分层：闭合（位置）、振动（力学）、张力（音高）、滤波（共振）是四件事——对照 <a href="larynx-mechanism.html">机制联动</a>。<br>
+    内容不构成医学建议；如有嗓音问题请就诊耳鼻喉科或嗓音治疗师。
+  </footer>
+</div>
+
+<script>
+const GROUPS=[['all','全部'],['airway','通路'],['larynx_cartilage','软骨'],['larynx_mucosa','喉黏膜'],['intrinsic_muscle','喉内肌'],['extrinsic_muscle','喉外肌'],['velar_muscle','软腭'],['tongue','舌'],['tongue_muscle','舌肌'],['respiratory','呼吸']];
+const FIELD_ZH={innervation:'神经支配',layers:'声带分层',function:'功能',singing_role:'歌唱中的作用',location:'位置'};
+let DATA=null, SRC={}, group='all', active=null;
+
+const el=id=>document.getElementById(id);
+
+function chip(t,b){return '<span class="chip">'+t+' <b>'+b+'</b></span>';}
+
+function init(){ 
+  Promise.all([
+    fetch('data/voice-structures.json').then(r=>r.json()),
+    fetch('research/evidence.json').then(r=>r.json()).catch(()=>({sources:[]}))
+  ]).then(([d,e])=>{
+    DATA=d.structures; e.sources.forEach(s=>SRC[s.id]=s);
+    const verified=DATA.filter(x=>x.review_status==='verified').length;
+    const fieldPending=DATA.filter(x=>(x.pending_fields||[]).length).length;
+    el('meta').innerHTML=chip('结构条目',DATA.length)+chip('已核定',verified)+chip('字段待核',fieldPending)+chip('文献',Object.keys(SRC).length)+chip('门槛','CI 强制');
+    renderTabs(); renderList(); renderDetail(DATA.find(x=>x.id==='true_vocal_fold')||DATA[0]);
+    document.querySelectorAll('.hot').forEach(g=>{
+      const sid=g.dataset.sid;
+      g.addEventListener('click',()=>select(sid));
+      g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();select(sid);}});
+    });
+    el('q').addEventListener('input',renderList);
+  }).catch(err=>{
+    el('detail').innerHTML='<p class="msg">结构数据加载失败：'+err.message+'</p>';
+  });
+}
+
+function renderTabs(){
+  el('tabs').innerHTML=GROUPS.map(([k,label])=>{
+    const n=k==='all'?DATA.length:DATA.filter(x=>x.group===k).length;
+    if(k!=='all'&&n===0) return '';
+    return '<button class="tab'+(group===k?' on':'')+'" data-g="'+k+'">'+label+' <span style="opacity:.6">'+n+'</span></button>';
+  }).join('');
+  el('tabs').querySelectorAll('.tab').forEach(b=>b.onclick=()=>{group=b.dataset.g;renderTabs();renderList();});
+}
+
+function renderList(){
+  const q=(el('q').value||'').trim().toLowerCase();
+  const items=DATA.filter(x=>{
+    if(group!=='all'&&x.group!==group) return false;
+    if(!q) return true;
+    return [x.name.zh,x.name.la,x.name.en,x.id].join(' ').toLowerCase().includes(q);
+  });
+  el('list').innerHTML=items.length?items.map(x=>{
+    const pend=(x.pending_fields||[]).length?' <span class="badge">待核</span>':'';
+    return '<button class="item'+(active&&active.id===x.id?' on':'')+'" data-id="'+x.id+'"><span>'+x.name.zh+pend+'</span><small>'+x.name.en+'</small></button>';
+  }).join(''):'<p class="msg">没有匹配的结构。</p>';
+  el('list').querySelectorAll('.item').forEach(b=>b.onclick=()=>select(b.dataset.id));
+}
+
+function select(id){
+  const item=DATA.find(x=>x.id===id);
+  if(!item) return;
+  active=item;
+  renderList();
+  document.querySelectorAll('.hot').forEach(g=>g.classList.toggle('on',g.dataset.sid===id));
+  renderDetail(item);
+  el('side').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function row(k,v){ if(v===undefined||v===null||v==='') return ''; return '<div class="row"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>'; }
+
+function renderDetail(item){
+  if(!item) return;
+  const pending=(item.pending_fields||[]);
+  const pendList=pending.map(f=>FIELD_ZH[f]||f).join('、');
+  const rel=(item.related||[]).map(r=>{const o=DATA.find(x=>x.id===r);return o?'<button data-id="'+r+'">'+o.name.zh+'</button>':'';}).join('');
+  const ev=(item.evidence||[]).map(e=>{const s=SRC[e];return s?'<li><a href="'+s.url+'" target="_blank" rel="noopener">'+s.title+'</a></li>':'<li>'+e+'</li>';}).join('');
+  el('detail').innerHTML=
+    '<div style="height:18px"></div><h3>'+item.name.zh+(pending.length?' <span class="badge">字段待核</span>':'')+'</h3>'+
+    '<div class="tri">'+item.name.la+' · '+item.name.en+'</div>'+
+    (pending.length?'<div class="pending">以下字段尚未逐条核定，暂不展示：'+pendList+'</div>':'')+
+    row('位置',item.location)+
+    row('功能',item.function)+
+    row('歌唱中的作用',item.singing_role)+
+    row('神经支配',pending.includes('innervation')?'':item.innervation)+
+    (rel?'<div class="row"><span class="k">相关结构</span><div class="rel">'+rel+'</div></div>':'')+
+    (ev?'<details class="ev"><summary>出处（'+ (item.evidence||[]).length +'）</summary><ul class="src">'+ev+'</ul></details>':'');
+  el('detail').querySelectorAll('.rel button').forEach(b=>b.onclick=()=>select(b.dataset.id));
+}
+
+init();
+</script>
+</body>
+</html>
