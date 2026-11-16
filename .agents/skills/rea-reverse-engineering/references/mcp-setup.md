@@ -63,6 +63,18 @@ npx skills add morluto/rea --skill reverse-engineer-anything
 
 This does not register the MCP server or install analysis engines.
 
+## Updating an existing REA installation
+
+Use the update path that matches how REA was installed; do not mix installation owners.
+
+- Global npm/bun CLI: run `rea update`, then follow the setup command printed by the updater to refresh the agent registration and bundled skill.
+- npx-based setup: run `npx -y rea-agents@latest setup`, review the proposed configuration changes, and apply only the intended client changes.
+- Codex Marketplace plugin: update the plugin through the supported Codex plugin/marketplace flow; do not also create a second setup-owned REA registration.
+- After updating, restart/reconnect the agent and verify the live tool catalog. A successful package update or GitHub Skill commit alone does not prove that the active MCP session loaded the new tools.
+- Keep backups and preserve unrelated MCP servers, approval settings, and execution boundaries. Do not run setup repeatedly as a daily check; first compare the installed/upstream versions and repair only an observed mismatch.
+
+For this project, the daily maintenance review checks upstream releases and documentation. It can update the GitHub project Skill, but it cannot remotely update the user's local Codex runtime or restart the local agent.
+
 ## Provider requirements
 
 - Static JavaScript/Electron analysis and passive capture inspection can work without a native decompiler.
