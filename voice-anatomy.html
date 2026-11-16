@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#12352e"><meta name="description" content="交互式人体歌唱发声系统：点击鼻腔、舌头、软腭、咽部、喉头、肺部与横膈膜，探索器官结构、呼吸动态和发声机制。OperaLab."><link rel="canonical" href="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="OperaLab."><meta property="og:title" content="发声机制实验室｜OperaLab."><meta property="og:description" content="通过真实人体标本、三维解剖模型与生理机制说明学习发声器官。"><meta property="og:url" content="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="发声机制实验室｜OperaLab."><meta name="twitter:description" content="通过交互式示意图了解喉部结构、声带开合与发声振动。"><meta name="twitter:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><title>发声机制实验室｜OperaLab.</title><link rel="stylesheet" href="styles.css?v=ux18">
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#12352e"><meta name="description" content="交互式人体歌唱发声系统：点击鼻腔、舌头、软腭、咽部、喉头、肺部与横膈膜，探索器官结构、呼吸动态和发声机制。OperaLab."><link rel="canonical" href="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="OperaLab."><meta property="og:title" content="发声机制实验室｜OperaLab."><meta property="og:description" content="通过真实人体标本、三维解剖模型与生理机制说明学习发声器官。"><meta property="og:url" content="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="发声机制实验室｜OperaLab."><meta name="twitter:description" content="通过真实人体三维模型了解喉部结构、声带开合与发声机制。"><meta name="twitter:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><title>发声机制实验室｜OperaLab.</title><link rel="stylesheet" href="styles.css?v=ux18">
 <style>
 /* Anatomical reference workspace: real specimen and licensed 3D atlas embeds */
 .body-system{margin:32px 0 26px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:18px;align-items:start}
@@ -131,143 +131,14 @@
   <ul>
     <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK538202/" target="_blank" rel="noopener">NCBI Bookshelf · Anatomy of the Larynx</a>：喉软骨、喉腔分区、声带与前庭襞。</li>
     <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK545265/" target="_blank" rel="noopener">NCBI Bookshelf · Laryngeal Muscles</a>：喉内肌及声带内收、外展与张力调节。</li>
+    <li><a href="https://med.umn.edu/ent/patient-care/lions-voice-clinic/about-the-voice/how-it-works/anatomy" target="_blank" rel="noopener">University of Minnesota · Lions Voice Clinic: Anatomy</a>：喉软骨、喉内肌、声带组织分层及发声相关说明。</li>
     <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK553185/" target="_blank" rel="noopener">NCBI Bookshelf · Larynx Cartilage</a>：喉软骨骨架及杓状软骨结构。</li>
     <li><a href="https://commons.wikimedia.org/wiki/File:EB1911_Pharynx_-_Sagittal_Section_through_Mouth,_Tongue,_Larynx,_Pharynx_and_Nasal_Cavity.jpg" target="_blank" rel="noopener">Cunningham / Encyclopædia Britannica 1911 · 正中矢状面解剖图</a>：公有领域历史解剖图，可作为二维结构对照。</li>
   </ul>
   <p class="source-note">第三方三维模型的署名与许可分别遵循原作者和 Sketchfab 页面声明：UBC Medicine 模型由原平台托管；University of Dundee 喉部模型为 CC BY-SA 4.0；Vikrama Raghuraman 呼吸系统模型及 Devden 横膈膜模型为 CC BY。请在原模型页面查看完整署名与许可条款。</p>
 </section>
 
-<section id="larynx-detail" aria-label="喉部精细解剖实验室"><div class="lab-card-head"><div><strong>喉部精细解剖实验室</strong><div class="figure-subtitle">DETAILED LARYNGEAL ANATOMY</div></div><span class="lab-tag">进阶学习</span></div></section>
-<div class="anatomy-workspace">
-<section class="lab-card anatomy-primary" aria-labelledby="model-title">
-  <div class="lab-card-head"><div><strong id="model-title">喉部精细解剖 · 上方视角</strong><div class="figure-subtitle">SUPERIOR VIEW · LARYNGEAL INLET</div></div><span class="lab-tag">交互解剖模型</span></div>
-  <div class="anatomy-canvas">
-    <svg id="glottis" class="anatomy-svg" viewBox="0 0 900 650" role="img" aria-labelledby="svg-title svg-desc">
-      <title id="svg-title">喉部上方视角精细解剖示意</title>
-      <desc id="svg-desc">展示甲状软骨框架、前联合、左右声带及声韧带、前庭襞、杓状软骨、声带突和杓间肌。滑块用于概念性观察声带靠拢与外展。</desc>
-      <defs>
-        <linearGradient id="cartilageMain" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f1e4d2"/><stop offset=".42" stop-color="#cbb69c"/><stop offset="1" stop-color="#927d68"/></linearGradient>
-        <linearGradient id="cartilageLit" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#fff5e7"/><stop offset=".5" stop-color="#dfcbb1"/><stop offset="1" stop-color="#a58d75"/></linearGradient>
-        <linearGradient id="mucosa" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e9a99b"/><stop offset=".48" stop-color="#c97870"/><stop offset="1" stop-color="#914e4d"/></linearGradient>
-        <linearGradient id="vocalFold" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#f0c1b0"/><stop offset=".35" stop-color="#c96f68"/><stop offset=".75" stop-color="#9c4e4c"/><stop offset="1" stop-color="#e4a294"/></linearGradient>
-        <linearGradient id="muscle" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c87869"/><stop offset=".5" stop-color="#9d514d"/><stop offset="1" stop-color="#6e3d40"/></linearGradient>
-        <radialGradient id="cavity"><stop stop-color="#402f32"/><stop offset=".72" stop-color="#725052"/><stop offset="1" stop-color="#a16f68"/></radialGradient>
-        <filter id="softShadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur stdDeviation="9"/></filter>
-        <pattern id="cartilageGrain" width="18" height="18" patternUnits="userSpaceOnUse"><path d="M2 5l5-2M11 13l4-2M4 17l3-1" stroke="#fff8ec" stroke-opacity=".28" stroke-width="1.2" stroke-linecap="round"/></pattern>
-      </defs>
-      <ellipse cx="450" cy="330" rx="302" ry="270" fill="#6c4c43" opacity=".12" filter="url(#softShadow)"/>
-      <!-- Thyroid cartilage frame -->
-      <path d="M450 58 C330 57 230 105 185 188 C146 260 155 378 217 478 C269 562 354 598 450 610 C546 598 631 562 683 478 C745 378 754 260 715 188 C670 105 570 57 450 58Z" fill="url(#cartilageMain)" stroke="#806e5d" stroke-width="5"/>
-      <path d="M450 72 C344 72 253 116 210 193 C174 258 184 369 239 458 C287 535 365 573 450 585 C535 573 613 535 661 458 C716 369 726 258 690 193 C647 116 556 72 450 72Z" fill="url(#cartilageGrain)" opacity=".75"/>
-      <path d="M450 84 C350 84 270 125 232 196 C198 259 211 358 258 437 C301 508 372 544 450 555 C528 544 599 508 642 437 C689 358 702 259 668 196 C630 125 550 84 450 84Z" fill="#f7f0e7" stroke="#b29c84" stroke-width="3"/>
-      <path d="M450 84 C450 84 450 126 450 159" stroke="#bca68e" stroke-width="3" stroke-linecap="round"/>
-      <path d="M232 196 Q270 164 306 155 M668 196 Q630 164 594 155" fill="none" stroke="#fff6e9" stroke-width="5" opacity=".75"/>
-      <!-- Inner laryngeal cavity -->
-      <path d="M450 142 C365 142 299 185 279 255 C260 326 294 411 355 469 C387 499 420 518 450 527 C480 518 513 499 545 469 C606 411 640 326 621 255 C601 185 535 142 450 142Z" fill="url(#cavity)" stroke="#876d62" stroke-width="3"/>
-      <path d="M450 157 C376 157 319 196 301 260 C283 323 315 397 367 449" fill="none" stroke="#d8bca5" stroke-width="2" opacity=".55"/>
-      <path d="M450 157 C524 157 581 196 599 260 C617 323 585 397 533 449" fill="none" stroke="#d8bca5" stroke-width="2" opacity=".55"/>
-      <!-- Lateral cricoarytenoid / thyroarytenoid muscle masses -->
-      <path d="M300 279 C324 248 357 240 383 260 C405 277 407 320 390 350 C370 383 331 393 306 369 C284 348 282 305 300 279Z" fill="url(#muscle)" stroke="#754447" stroke-width="2.5"/>
-      <path d="M600 279 C576 248 543 240 517 260 C495 277 493 320 510 350 C530 383 569 393 594 369 C616 348 618 305 600 279Z" fill="url(#muscle)" stroke="#754447" stroke-width="2.5"/>
-      <g fill="none" stroke="#e6a18e" stroke-width="2" opacity=".65"><path d="M303 296q32-25 68-8M296 315q39-22 79-2M304 338q35-16 70 5M597 296q-32-25-68-8M604 315q-39-22-79-2M596 338q-35-16-70 5"/></g>
-      <!-- Vestibular folds -->
-      <path d="M340 210 C372 192 410 198 432 222 C440 233 444 250 443 270 C414 259 385 263 357 281 C336 294 322 286 320 267 C317 244 323 222 340 210Z" fill="url(#mucosa)" stroke="#824d4c" stroke-width="3"/>
-      <path d="M560 210 C528 192 490 198 468 222 C460 233 456 250 457 270 C486 259 515 263 543 281 C564 294 578 286 580 267 C583 244 577 222 560 210Z" fill="url(#mucosa)" stroke="#824d4c" stroke-width="3"/>
-      <path d="M335 232 Q380 205 424 239 M565 232 Q520 205 476 239" fill="none" stroke="#f2c1b1" stroke-width="4" stroke-linecap="round" opacity=".8"/>
-      <!-- Ventricles -->
-      <path d="M361 285 Q399 264 438 287 Q423 308 395 312 Q371 311 361 285Z" fill="#4d3438" stroke="#bd887b" stroke-width="2"/>
-      <path d="M539 285 Q501 264 462 287 Q477 308 505 312 Q529 311 539 285Z" fill="#4d3438" stroke="#bd887b" stroke-width="2"/>
-      <!-- Vocal folds: paired layered tissue -->
-      <g id="leftFold" class="fold">
-        <path d="M442 206 C424 235 403 271 389 316 C376 359 371 402 384 439 C395 467 416 482 438 476 C445 443 447 405 447 364 L447 222Z" fill="url(#vocalFold)" stroke="#733d42" stroke-width="3"/>
-        <path d="M440 222 C420 263 405 306 396 350 C389 389 390 423 401 450" fill="none" stroke="#f7d5c7" stroke-width="6" stroke-linecap="round" opacity=".82"/>
-        <path d="M435 232 C416 276 405 318 400 359" fill="none" stroke="#8d4c4c" stroke-width="2" opacity=".55"/>
-        <path d="M443 220 C427 269 414 320 409 367" fill="none" stroke="#fff0df" stroke-width="2.5" stroke-linecap="round" opacity=".75"/>
-      </g>
-      <g id="rightFold" class="fold">
-        <path d="M458 206 C476 235 497 271 511 316 C524 359 529 402 516 439 C505 467 484 482 462 476 C455 443 453 405 453 364 L453 222Z" fill="url(#vocalFold)" stroke="#733d42" stroke-width="3"/>
-        <path d="M460 222 C480 263 495 306 504 350 C511 389 510 423 499 450" fill="none" stroke="#f7d5c7" stroke-width="6" stroke-linecap="round" opacity=".82"/>
-        <path d="M465 232 C484 276 495 318 500 359" fill="none" stroke="#8d4c4c" stroke-width="2" opacity=".55"/>
-        <path d="M457 220 C473 269 486 320 491 367" fill="none" stroke="#fff0df" stroke-width="2.5" stroke-linecap="round" opacity=".75"/>
-      </g>
-      <!-- Anterior commissure -->
-      <path d="M450 187 L450 221" stroke="#f8e6d7" stroke-width="5" stroke-linecap="round"/>
-      <circle cx="450" cy="189" r="7" fill="#8b4e4b" stroke="#f3c5b4" stroke-width="3"/>
-      <!-- Arytenoid cartilages and vocal processes -->
-      <g id="leftArytenoid">
-        <path d="M366 438 C352 424 348 397 357 375 C365 353 387 344 411 351 C430 357 441 374 437 395 C433 420 412 447 391 456 C381 460 373 451 366 438Z" fill="url(#cartilageLit)" stroke="#806b58" stroke-width="3"/>
-        <path d="M366 438 Q389 416 411 351 M377 448 Q403 424 426 382" fill="none" stroke="#fff7e9" stroke-width="3" opacity=".7"/>
-        <path d="M410 365 L443 348 L450 357 L425 383Z" fill="url(#cartilageMain)" stroke="#806b58" stroke-width="2.5"/>
-        <circle cx="369" cy="424" r="5" fill="#8e7b67"/>
-      </g>
-      <g id="rightArytenoid">
-        <path d="M534 438 C548 424 552 397 543 375 C535 353 513 344 489 351 C470 357 459 374 463 395 C467 420 488 447 509 456 C519 460 527 451 534 438Z" fill="url(#cartilageLit)" stroke="#806b58" stroke-width="3"/>
-        <path d="M534 438 Q511 416 489 351 M523 448 Q497 424 474 382" fill="none" stroke="#fff7e9" stroke-width="3" opacity=".7"/>
-        <path d="M490 365 L457 348 L450 357 L475 383Z" fill="url(#cartilageMain)" stroke="#806b58" stroke-width="2.5"/>
-        <circle cx="531" cy="424" r="5" fill="#8e7b67"/>
-      </g>
-      <!-- Interarytenoid muscle -->
-      <path d="M421 389 Q450 371 479 389 Q476 420 450 427 Q424 420 421 389Z" fill="url(#muscle)" stroke="#6f4143" stroke-width="2.5"/>
-      <path d="M430 395q20-12 40 0M433 405q17-9 34 0" fill="none" stroke="#e5a08d" stroke-width="2" opacity=".7"/>
-      <!-- Posterior cricoarytenoid muscle -->
-      <path d="M342 457 Q375 439 403 461 Q408 484 389 502 Q356 500 336 481Z" fill="#a75d54" stroke="#79484a" stroke-width="2"/>
-      <path d="M558 457 Q525 439 497 461 Q492 484 511 502 Q544 500 564 481Z" fill="#a75d54" stroke="#79484a" stroke-width="2"/>
-      <g fill="none" stroke="#e7aa97" stroke-width="2" opacity=".7"><path d="M348 469l38 21m-28-28l38 21m166-14l-38 21m28-28l-38 21"/></g>
-      <!-- Glottic opening and airflow cue -->
-      <path id="glotticGap" d="M450 227 C447 280 447 337 450 382 C453 337 453 280 450 227Z" fill="#261e24" opacity=".85"/>
-      <path d="M450 505 L450 554" stroke="#a96b5e" stroke-width="2" stroke-dasharray="5 7"/>
-      <path d="M440 543l10 13 10-13" fill="none" stroke="#a96b5e" stroke-width="2"/>
-      <!-- Label leaders -->
-      <g class="anatomy-leaders" fill="none" stroke="#6f8277" stroke-width="1.6" stroke-linecap="round">
-        <path d="M140 120 L245 120 L302 182"/><path d="M760 140 L650 140 L580 238"/>
-        <path d="M88 300 L230 300 L386 326"/><path d="M812 324 L670 324 L520 332"/>
-        <path d="M108 495 L255 495 L374 434"/><path d="M790 498 L640 498 L528 432"/>
-        <path d="M450 28 L450 180"/><path d="M450 605 L450 574"/>
-      </g>
-      <g class="anatomy-labels" font-family="system-ui,sans-serif" font-size="16" fill="#29463d">
-        <text x="42" y="105">甲状软骨</text><text x="42" y="125" class="label-en">Thyroid cartilage</text>
-        <text x="766" y="124" text-anchor="end">前庭襞</text><text x="766" y="144" text-anchor="end" class="label-en">Vestibular fold</text>
-        <text x="40" y="285">声带 / 声韧带</text><text x="40" y="305" class="label-en">Vocal fold / ligament</text>
-        <text x="860" y="310" text-anchor="end">喉室</text><text x="860" y="330" text-anchor="end" class="label-en">Laryngeal ventricle</text>
-        <text x="42" y="485">杓状软骨</text><text x="42" y="505" class="label-en">Arytenoid cartilage</text>
-        <text x="860" y="485" text-anchor="end">杓间肌</text><text x="860" y="505" text-anchor="end" class="label-en">Interarytenoid muscle</text>
-        <text x="450" y="22" text-anchor="middle">前联合 · Anterior commissure</text>
-        <text x="450" y="634" text-anchor="middle">后方 · Posterior</text>
-      </g>
-      <g fill="#b46e5f" stroke="#fff6e8" stroke-width="2"><circle cx="302" cy="182" r="5"/><circle cx="580" cy="238" r="5"/><circle cx="386" cy="326" r="5"/><circle cx="520" cy="332" r="5"/><circle cx="374" cy="434" r="5"/><circle cx="528" cy="432" r="5"/></g>
-    </svg>
-    <div class="figure-caption"><span><i class="key-dot cartilage"></i>软骨框架</span><span><i class="key-dot muscle"></i>喉内肌</span><span><i class="key-dot foldkey"></i>声带与黏膜</span><span class="caption-note">上方视角 · 示意比例，非手术解剖图</span></div>
-    <div class="plate-block">
-      <img class="plate-img" src="assets/anatomy/larynx-superior.png" width="960" height="640" loading="lazy" decoding="async" alt="喉的上面观线描图：上方两侧为杓状软骨与声带突，中央为声门裂隙，左右为真声带，下方 V 形为甲状软骨前角。">
-      <p class="plate-note"><b>上面观线描对照</b>　可交互图用来观察声带靠拢与外展，这张图用来确认结构位置：上方两侧是杓状软骨，中央是声门裂隙，左右两条带状结构为真声带，下方 V 形为甲状软骨前角。两张图的比例都经过简化。</p>
-    </div>
-  </div>
-  <div class="lab-controls">
-    <label for="adduction"><span>声带靠拢程度</span><output id="adductionValue">50%</output></label>
-    <input id="adduction" type="range" min="0" max="100" value="50" step="1">
-    <div class="lab-actions"><button class="lab-btn" data-preset="0">吸气 · 外展</button><button class="lab-btn" data-preset="50" aria-pressed="true">轻度靠拢</button><button class="lab-btn" data-preset="100">完全靠拢</button><button class="lab-btn primary" id="vibrate" aria-pressed="false">观察振动</button></div>
-    <div class="lab-readout" id="readout" aria-live="polite">当前显示中等靠拢状态。声带向中线移动，声门间隙缩小；真实发声还取决于气流、组织弹性和喉内肌协调。</div>
-  </div>
-</section>
-<section class="lab-card side-anatomy" aria-labelledby="side-title">
-  <div class="lab-card-head"><div><strong id="side-title">喉部矢状面 · 侧面剖视</strong><div class="figure-subtitle">SAGITTAL SECTION · MIDLINE</div></div><span class="lab-tag">结构定位</span></div>
-  <div class="side-canvas">
-    <img class="side-svg" src="assets/anatomy/larynx-sagittal.png" width="960" height="640" loading="lazy" decoding="async" alt="喉的正中矢状切面线描图：自上而下可见会厌、假声带、喉室、真声带、声门下腔、环状软骨与气管软骨环，后方为杓状软骨与环杓关节。">
-  </div>
-  <div class="side-caption">正中矢状切面线描图：自上而下可见会厌、假声带、喉室、真声带、声门下腔、环状软骨与气管软骨环，后方为杓状软骨与环杓关节。图版按解剖学文献重绘，用于辨认结构位置，不作为临床或诊断依据。</div>
-</section>
-<aside class="lab-side anatomy-notes">
-  <section class="lab-card lab-info"><h2>解剖结构图例</h2><div class="lab-steps">
-    <div class="lab-step"><b>1</b><div><strong>甲状软骨</strong><br>构成喉部前外侧框架，为声带前端附着提供结构基础。</div></div>
-    <div class="lab-step"><b>2</b><div><strong>声带与声韧带</strong><br>声带覆盖声韧带及声带肌等组织，不是两条简单的肌肉带。</div></div>
-    <div class="lab-step"><b>3</b><div><strong>前庭襞与喉室</strong><br>位于声带上方，参与喉部保护；喉室位于两者之间。</div></div>
-    <div class="lab-step"><b>4</b><div><strong>杓状软骨</strong><br>位于喉后部，通过关节运动改变声带后端位置。</div></div>
-    <div class="lab-step"><b>5</b><div><strong>喉内肌</strong><br>不同肌群协同调节声带的靠拢、外展与张力。</div></div>
-  </div></section>
-  <section class="lab-card lab-info"><h2>不要把靠拢等同于挤压</h2><p>发声需要声带边缘形成适当的接触与气流条件。过度挤压不是高效发声的目标；声门状态也不能单独说明一个人的发声质量。</p></section>
-</aside>
-</div>
-<p class="lab-note">科学说明：本页上方视角为可交互示意，侧面与添附的上面观为按解剖文献重绘的线描图版，同一结构在两种表达里互为对照；本页不是医学影像或临床诊断工具。为便于学习，部分比例、组织层次与运动范围经过简化；真实发声涉及声带分层组织、黏膜波、喉内肌活动、声门下压力及声道声学负载等因素。</p></main>
+</main>
 
 <script>
 (()=> {
@@ -311,7 +182,6 @@
  select('larynx');
 })();
 </script>
-<script>(()=>{const slider=document.getElementById('adduction'),left=document.getElementById('leftFold'),right=document.getElementById('rightFold'),gap=document.getElementById('glotticGap'),out=document.getElementById('adductionValue'),read=document.getElementById('readout'),svg=document.getElementById('glottis'),toggle=document.getElementById('vibrate');let moving=false;function stop(){moving=false;svg.classList.remove('is-vibrating');toggle.setAttribute('aria-pressed','false');toggle.textContent='观察振动'}function update(value){const n=Number(value),spread=22*(1-n/100);out.value=n+'%';out.textContent=n+'%';left.style.transform='translateX(-'+spread+'px)';right.style.transform='translateX('+spread+'px)';gap.style.transformBox='fill-box';gap.style.transformOrigin='center';gap.style.transform='scaleX('+(0.35+1.3*(1-n/100))+')';read.textContent=n<25?'外展状态：声带向两侧打开，声门扩大，为吸气提供通道。':n<75?'靠拢过程：杓状软骨与声带后端位置变化，声门间隙逐渐缩小。此处只展示几何关系。':'接近闭合：两侧声带边缘靠近中线。真实发声并非持续挤压，而是气流与组织振动的动态平衡。';document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.preset)===n?'true':'false'))}slider.addEventListener('input',()=>{stop();update(slider.value)});document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{stop();slider.value=b.dataset.preset;update(slider.value)}));toggle.addEventListener('click',()=>{if(moving){stop();return}if(Number(slider.value)<35){slider.value=55;update(55)}moving=true;svg.classList.add('is-vibrating');toggle.setAttribute('aria-pressed','true');toggle.textContent='停止演示';read.textContent='概念动画：声带边缘出现微小周期性运动。真实振动具有黏膜波、垂直相位差与复杂的组织形变，本动画不模拟这些生物力学细节。'});update(slider.value)})();</script>
 <script>
 (()=> {
  const svg=document.getElementById('tractSvg');if(!svg)return;

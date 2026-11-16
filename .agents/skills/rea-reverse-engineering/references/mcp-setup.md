@@ -1,47 +1,67 @@
 # REA MCP setup for OperaLab
 
-This guide is for the local coding-agent environment used to work on this repository. The project skill lives at `.agents/skills/rea-reverse-engineering/SKILL.md`; it does not itself install or connect the REA MCP server.
+This guide connects the official REA MCP server to the local coding agent. The OperaLab-specific workflow lives at `.agents/skills/rea-reverse-engineering/SKILL.md`; keep that project skill alongside REA's upstream `reverse-engineer-anything` skill.
 
 ## Official sources
 
 - Repository: https://github.com/morluto/rea
 - Installation guide: https://github.com/morluto/rea/blob/main/docs/getting-started/installation.md
-- Client configuration: https://github.com/morluto/rea/blob/main/docs/getting-started/client-configuration.md
 - Official package: `rea-agents`
+- MCP Registry identifier: `io.github.morluto/rea`
 
-## Recommended Codex setup
+## Recommended Codex installation: official plugin
 
-Prerequisites: Node.js and npm are already installed, and Codex is installed locally.
+Use the official Codex plugin route when working in Codex CLI:
 
-From a trusted directory outside the OperaLab repository, run:
+```bash
+codex plugin marketplace add morluto/rea
+codex plugin add rea@rea
+codex plugin list
+```
+
+Then restart/reconnect Codex and verify that its live tool list contains the `rea` MCP server and its tools. The official plugin bundles the upstream REA skill and MCP server. It does not install native analysis engines such as Ghidra, IDA, Hopper, JADX, Binwalk, or Unblob.
+
+Do not also register a second REA server with `rea setup` in the same Codex profile. Choose the plugin route or the direct setup route below, not both, to avoid duplicate MCP servers.
+
+If Codex is not the CLI build or plugin commands are unavailable, use the client configuration method documented by the current upstream installation guide. Do not assume a CLI plugin command is available in every Codex surface.
+
+## Alternative: direct MCP registration
+
+Prerequisites: a supported Node.js runtime and npm. Current upstream documentation lists Node.js 22.x (>=22.23.4), 24.x (>=24.22.1), or 26.12.1+.
+
+From a trusted directory outside the OperaLab repository, preview the scoped Codex setup:
+
+```bash
+npx -y rea-agents@latest setup --client codex --skill=false --dry-run --json
+```
+
+Review the proposed destination and changes. If they target the intended Codex profile, apply the same scoped setup:
 
 ```bash
 npx -y rea-agents@latest setup --client codex --skill=false
 ```
 
-Why `--skill=false`: OperaLab already carries its own project-specific skill. This command is intended to register the official REA MCP server without replacing or duplicating the project's tailored instructions.
+The `--skill=false` flag avoids installing a second copy of workflow instructions because OperaLab already has its own project-specific skill. Do not use `--all-detected` for this project-specific setup.
 
-The setup process previews the exact configuration paths and proposed changes. Review the plan and approve it only if it targets the intended Codex profile. Do not use `--all-detected` for this project-specific setup.
-
-Then restart/reconnect Codex and check the registration:
+For direct setup-owned registrations, the doctor command can check the local registration and prerequisites:
 
 ```bash
 npx -y rea-agents@latest doctor --client codex --json
 ```
 
-A successful doctor result checks local registration and prerequisites; it does not prove that the currently running agent session has loaded the tools. Confirm that the live agent tool list includes the REA server and its operations.
+Important: `doctor` does not prove that the currently running agent session has loaded the tools. Restart/reconnect Codex and confirm the live tool catalog. Plugin-owned state is not visible to `rea doctor --client codex`; use `codex plugin list` and the live MCP tool list for the plugin route.
 
-## If the project uses another agent
+## Other agents and skill-only installation
 
-Use the official setup guide and select only the actual client in use. Do not guess the client identifier or manually edit a global configuration file without first reading the current client configuration guide.
+For another agent, follow the official setup guide and select only the actual client in use. Do not guess a client identifier or manually edit a global configuration file without first reading the current client configuration guide.
 
-For skill-only installation (instructions without MCP registration), the upstream documented command is:
+To install only upstream instructions without MCP registration:
 
 ```bash
 npx skills add morluto/rea --skill reverse-engineer-anything
 ```
 
-This is not a substitute for MCP setup.
+This does not register the MCP server or install analysis engines.
 
 ## Provider requirements
 
@@ -49,17 +69,19 @@ This is not a substitute for MCP setup.
 - Native decompilation and some Android/firmware workflows require separately installed providers or tools.
 - REA setup does not automatically install or upgrade Node.js, npm, Java, Ghidra, IDA, JADX, Hopper, Binwalk, or Unblob.
 - Install optional providers only when the selected task requires them and after reviewing the installation plan.
+- REA analyzes targets locally, but investigation results are returned to the connected agent; consider the model provider's data policy before analyzing confidential material.
 
 ## Recovery
 
-1. If REA tools are missing in the active session, first determine whether the setup-owned MCP registration exists.
-2. If registration is aligned but the current session has no tools, restart/reconnect the agent.
-3. If setup or launch failed, read the current official connection/recovery guide and use the exact remediation for the observed error.
-4. Do not repeatedly run setup, install unrelated providers, disable the client's sandbox, or broaden permissions as a generic fix.
-5. Keep client configuration backups and preserve unrelated MCP servers and approval settings.
+1. If REA tools are missing in the active session, determine whether the plugin or setup-owned MCP registration exists.
+2. If a plugin is installed but tools are absent, inspect the plugin launch error and restart/reconnect the client.
+3. If a setup-owned registration is aligned but the current session has no tools, restart/reconnect the agent.
+4. If setup or launch failed, read the current official connection/recovery guide and use the exact remediation for the observed error.
+5. Do not repeatedly run setup, install unrelated providers, disable the client's sandbox, or broaden permissions as a generic fix.
+6. Keep client configuration backups and preserve unrelated MCP servers and approval settings.
 
 ## Current project integration status
 
 - Project skill: committed under `.agents/skills/rea-reverse-engineering/`.
-- MCP setup: documented here, but local client registration must be run on the user's machine. A GitHub repository write cannot modify the local Codex/Claude/Cursor configuration or restart the local agent.
+- Official MCP/plugin setup: documented here; local installation must be performed in the user's Codex environment.
 - MCP runtime verification: pending until the local agent is restarted and its live tool catalog is checked.
