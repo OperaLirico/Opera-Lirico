@@ -57,6 +57,10 @@
 .side-canvas{padding:18px 16px 8px;background:linear-gradient(145deg,#f8faf6,#edf2eb)}
 .side-svg{width:100%;height:auto;display:block}
 .side-caption{padding:0 20px 18px;color:#77867c;font-size:11px;line-height:1.7}
+.plate-block{margin:16px 0 0;padding-top:14px;border-top:1px solid #e3eae2}
+.plate-img{width:100%;height:auto;display:block;background:#fff;border-radius:8px}
+.plate-note{margin:10px 2px 0;font-size:11px;line-height:1.75;color:#6f8078}
+.plate-note b{color:#2f4a3f;font-weight:650}
 .anatomy-notes .lab-info{background:#fff}
 .anatomy-notes .lab-info h2{font-size:20px}
 @media(max-width:900px){.anatomy-workspace{grid-template-columns:1fr}.anatomy-primary,.side-anatomy,.anatomy-notes{grid-column:1;grid-row:auto}.anatomy-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -233,6 +237,10 @@
       <g fill="#b46e5f" stroke="#fff6e8" stroke-width="2"><circle cx="302" cy="182" r="5"/><circle cx="580" cy="238" r="5"/><circle cx="386" cy="326" r="5"/><circle cx="520" cy="332" r="5"/><circle cx="374" cy="434" r="5"/><circle cx="528" cy="432" r="5"/></g>
     </svg>
     <div class="figure-caption"><span><i class="key-dot cartilage"></i>软骨框架</span><span><i class="key-dot muscle"></i>喉内肌</span><span><i class="key-dot foldkey"></i>声带与黏膜</span><span class="caption-note">上方视角 · 示意比例，非手术解剖图</span></div>
+    <div class="plate-block">
+      <img class="plate-img" src="assets/anatomy/larynx-superior.png" width="960" height="640" loading="lazy" decoding="async" alt="喉的上面观线描图：上方两侧为杓状软骨与声带突，中央为声门裂隙，左右为真声带，下方 V 形为甲状软骨前角。">
+      <p class="plate-note"><b>上面观线描对照</b>　可交互图用来观察声带靠拢与外展，这张图用来确认结构位置：上方两侧是杓状软骨，中央是声门裂隙，左右两条带状结构为真声带，下方 V 形为甲状软骨前角。两张图的比例都经过简化。</p>
+    </div>
   </div>
   <div class="lab-controls">
     <label for="adduction"><span>声带靠拢程度</span><output id="adductionValue">50%</output></label>
@@ -244,38 +252,9 @@
 <section class="lab-card side-anatomy" aria-labelledby="side-title">
   <div class="lab-card-head"><div><strong id="side-title">喉部矢状面 · 侧面剖视</strong><div class="figure-subtitle">SAGITTAL SECTION · MIDLINE</div></div><span class="lab-tag">结构定位</span></div>
   <div class="side-canvas">
-    <svg viewBox="0 0 780 390" class="side-svg" role="img" aria-labelledby="side-svg-title">
-      <title id="side-svg-title">喉部侧面矢状剖视图</title>
-      <defs><linearGradient id="sideCart" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f3e5d2"/><stop offset="1" stop-color="#9b856e"/></linearGradient><linearGradient id="sideTissue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8b5a2"/><stop offset="1" stop-color="#a45651"/></linearGradient></defs>
-      <path d="M95 75 Q180 22 280 45 Q352 62 389 117 Q412 150 404 196 Q395 243 350 271 Q308 298 264 315 L210 340 L164 318 Q205 280 228 240 Q251 198 231 164 Q205 119 95 75Z" fill="#eadfd0" opacity=".55"/>
-      <path d="M135 55 Q222 28 303 65 Q355 91 373 142 Q387 182 363 222" fill="none" stroke="#b59f88" stroke-width="4"/>
-      <!-- Hyoid and epiglottis -->
-      <path d="M175 100 Q226 68 280 93 Q300 105 300 118" fill="none" stroke="url(#sideCart)" stroke-width="18" stroke-linecap="round"/>
-      <path d="M300 112 C330 85 349 66 363 51 C379 37 393 45 390 64 C383 104 363 137 347 161 C335 178 321 180 313 162 C305 148 304 130 300 112Z" fill="url(#sideTissue)" stroke="#874e4b" stroke-width="3"/>
-      <!-- Thyroid cartilage shield -->
-      <path d="M291 126 Q368 105 438 142 L463 222 Q427 274 355 282 L298 246 Q321 205 291 126Z" fill="url(#sideCart)" stroke="#806c59" stroke-width="4"/>
-      <path d="M309 145 Q372 127 425 151 L443 215 Q409 252 361 261 L326 238 Q343 199 309 145Z" fill="#f8f2e9" stroke="#c0aa91" stroke-width="2"/>
-      <!-- Arytenoid / cricoid -->
-      <path d="M422 204 Q453 186 477 208 L484 248 Q465 269 437 258 L414 239Z" fill="url(#sideCart)" stroke="#806c59" stroke-width="3"/>
-      <path d="M355 266 Q424 250 489 272 Q520 284 516 308 Q509 332 476 334 L354 326 Q326 311 335 289Z" fill="url(#sideCart)" stroke="#806c59" stroke-width="4"/>
-      <path d="M360 282 Q421 270 486 289" fill="none" stroke="#fff7e8" stroke-width="4" opacity=".7"/>
-      <!-- Vocal fold / vestibular fold in section -->
-      <path d="M310 193 Q367 184 430 211 Q404 224 352 220 Q324 217 310 193Z" fill="url(#sideTissue)" stroke="#874e4b" stroke-width="2.5"/>
-      <path d="M318 222 Q375 222 430 234 Q399 250 351 245 Q325 241 318 222Z" fill="#c76e66" stroke="#874e4b" stroke-width="2.5"/>
-      <path d="M327 232 Q374 237 421 239" fill="none" stroke="#f7d6c5" stroke-width="3"/>
-      <!-- Trachea rings -->
-      <path d="M380 326 L380 365 M413 328 L413 365 M446 331 L446 365 M479 332 L479 365" stroke="#b89f85" stroke-width="12" stroke-linecap="round"/>
-      <path d="M380 326 L380 365 M413 328 L413 365 M446 331 L446 365 M479 332 L479 365" stroke="#f7eddf" stroke-width="3" stroke-linecap="round"/>
-      <!-- Air column -->
-      <path d="M475 188 Q530 218 550 266 L550 350" fill="none" stroke="#7fa99a" stroke-width="3" stroke-dasharray="7 8"/>
-      <path d="M540 338l10 14 10-14" fill="none" stroke="#7fa99a" stroke-width="3"/>
-      <!-- Leader labels -->
-      <g fill="none" stroke="#72877b" stroke-width="1.5"><path d="M82 72 L170 72 L302 112"/><path d="M65 190 L220 190 L324 228"/><path d="M580 100 L470 100 L390 58"/><path d="M590 210 L505 210 L460 231"/><path d="M588 302 L510 302 L478 310"/></g>
-      <g fill="#29463d" font-family="system-ui,sans-serif" font-size="14"><text x="28" y="60">舌骨</text><text x="28" y="178">甲状软骨</text><text x="596" y="91">会厌</text><text x="596" y="201">声带</text><text x="596" y="293">环状软骨</text><text x="390" y="385" text-anchor="middle">气管软骨环</text></g>
-      <g fill="#b46e5f" stroke="#fff6e8" stroke-width="2"><circle cx="302" cy="112" r="4"/><circle cx="324" cy="228" r="4"/><circle cx="390" cy="58" r="4"/><circle cx="460" cy="231" r="4"/><circle cx="478" cy="310" r="4"/></g>
-    </svg>
+    <img class="side-svg" src="assets/anatomy/larynx-sagittal.png" width="960" height="640" loading="lazy" decoding="async" alt="喉的正中矢状切面线描图：自上而下可见会厌、假声带、喉室、真声带、声门下腔、环状软骨与气管软骨环，后方为杓状软骨与环杓关节。">
   </div>
-  <div class="side-caption">侧面剖视帮助理解喉部在气道中的位置。图中结构为教学概括，比例与组织层次均有简化。</div>
+  <div class="side-caption">正中矢状切面线描图：自上而下可见会厌、假声带、喉室、真声带、声门下腔、环状软骨与气管软骨环，后方为杓状软骨与环杓关节。图版按解剖学文献重绘，用于辨认结构位置，不作为临床或诊断依据。</div>
 </section>
 <aside class="lab-side anatomy-notes">
   <section class="lab-card lab-info"><h2>解剖结构图例</h2><div class="lab-steps">
@@ -288,7 +267,7 @@
   <section class="lab-card lab-info"><h2>不要把靠拢等同于挤压</h2><p>发声需要声带边缘形成适当的接触与气流条件。过度挤压不是高效发声的目标；声门状态也不能单独说明一个人的发声质量。</p></section>
 </aside>
 </div>
-<p class="lab-note">科学说明：本页包含上方视角与矢状面侧视两种教学示意，不是医学影像或临床诊断工具。为便于学习，部分比例、组织层次与运动范围经过简化；真实发声涉及声带分层组织、黏膜波、喉内肌活动、声门下压力及声道声学负载等因素。</p></main>
+<p class="lab-note">科学说明：本页上方视角为可交互示意，侧面与添附的上面观为按解剖文献重绘的线描图版，同一结构在两种表达里互为对照；本页不是医学影像或临床诊断工具。为便于学习，部分比例、组织层次与运动范围经过简化；真实发声涉及声带分层组织、黏膜波、喉内肌活动、声门下压力及声道声学负载等因素。</p></main>
 
 <script>
 (()=> {

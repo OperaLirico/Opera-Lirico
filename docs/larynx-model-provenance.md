@@ -22,3 +22,12 @@
 ## Editorial rule
 
 Do not describe this asset as a calibrated life-size specimen or a patient-specific reconstruction. Do not infer exact dimensions from the viewer. If future interactive movement is added, use independently validated joint axes, attachment data, motion ranges, and a review by a qualified anatomist or laryngologist. Keep static anatomical truth visually distinct from explanatory motion graphics.
+
+## 线描图版
+
+`assets/anatomy/` 下的三张线描图按解剖学文献的体位与结构关系重绘，为单色墨线教学图，不含图内文字，标注由页面承担。图版不是从三维模型导出的：模型页面不提供几何导出，线描与模型互为对照。图版用于结构辨认，不作为临床、手术或诊断依据。
+
+- `larynx-superior.png`：喉的上面观，用于 `voice-anatomy.html` 的声门对照与 `larynx-mechanism.html` 的线描对照一节。
+- `larynx-sagittal.png`：正中矢状切面，替换 `voice-anatomy.html` 原有的侧面简图。
+- `larynx-intrinsic-muscles.png`：喉内肌关系，用于 `larynx-mechanism.html` 的五组肌肉一节。
+- 登记与来源见 `content/anatomy-plates.txt`。

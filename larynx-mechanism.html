@@ -38,6 +38,12 @@
 .readout h3{font:500 20px Georgia,serif;margin:7px 0;color:#183b34}
 .readout p{font-size:12px;line-height:1.8;color:#566a60;margin:0}
 .readout ul{font-size:11px;line-height:1.8;color:#566a60;padding-left:18px;margin:8px 0 0}
+.plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:16px}
+.plate{margin:0;background:#fff;border:1px solid #e2e9e1;border-radius:14px;overflow:hidden}
+.plate img{width:100%;height:auto;display:block;background:#fff}
+.plate figcaption{padding:12px 16px 16px;font-size:12px;line-height:1.8;color:#566a60}
+.plate figcaption b{display:block;margin-bottom:5px;color:#183b34;font-size:13px}
+@media(max-width:820px){.plate-grid{grid-template-columns:1fr}}
 .side{display:grid;gap:14px}
 .info{padding:19px 20px}
 .info h2{font:500 21px Georgia,serif;margin:0 0 10px;color:#183b34}
@@ -99,6 +105,20 @@
   <section class="card info"><h2>一个重要区别</h2><p>“声带靠拢”不是一个肌肉单独完成的动作。LCA 主要使杓状软骨旋转、声带突靠近中线；杓间肌有助于两侧杓状软骨靠近，尤其影响声门后部闭合。不同肌肉的作用不能混为一谈。</p></section>
 </aside>
 </div>
+<section class="section" aria-label="喉部线描对照图">
+  <h2 class="section-title">线描对照：上面观与喉内肌</h2>
+  <p class="section-intro">上面的三维模型负责真实形态与空间关系，这两张静态线描负责把位置关系一次看清。先在模型里旋转找到结构，再回到图上确认。</p>
+  <div class="plate-grid">
+    <figure class="plate">
+      <img src="assets/anatomy/larynx-superior.png" width="960" height="640" loading="lazy" decoding="async" alt="喉的上面观线描图：上方两侧为杓状软骨与声带突，中央为声门裂隙，左右为真声带，下方 V 形为甲状软骨前角。">
+      <figcaption><b>喉的上面观</b>上方两侧是杓状软骨，中央是声门裂隙，左右两条带状结构为真声带，下方 V 形为甲状软骨前角。这张图看的是声门区的相对位置，不是声带振动的动态。</figcaption>
+    </figure>
+    <figure class="plate">
+      <img src="assets/anatomy/larynx-intrinsic-muscles.png" width="960" height="640" loading="lazy" decoding="async" alt="喉内肌线描图：显示环甲肌、甲杓肌、环杓后肌、环杓侧肌与杓间肌的位置关系。">
+      <figcaption><b>喉内肌的关系</b>环甲肌在环状软骨与甲状软骨之间；甲杓肌从甲状软骨内面走向杓状软骨；环杓后肌自环状软骨板后面斜向肌突；环杓侧肌在环状软骨外侧上缘；杓间肌位于两块杓状软骨之间。图上没有编号，按区域辨认，具体附着点以三维模型为准。</figcaption>
+    </figure>
+  </div>
+</section>
 <section class="section"><h2 class="section-title">五组喉内肌，各自承担不同任务</h2><p class="section-intro">下列内容描述主要作用，不代表肌肉在歌唱时单独工作。喉部运动来自多组肌肉的协同，且会随音高、响度、元音和发声方式变化。</p>
 <div class="muscle-grid">
   <article class="muscle"><div class="abbr">PCA</div><h3>后环杓肌</h3><p>唯一主要声带外展肌。使声带突向外侧移动，开放声门。</p></article>
