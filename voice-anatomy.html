@@ -79,6 +79,7 @@
     <div class="body-figure-head"><strong>头颈部真实解剖 · 可旋转三维观察</strong><span>ANATOMICAL REFERENCE</span></div>
     <div class="model-tabs" role="group" aria-label="选择解剖参考模型">
       <button class="model-tab" type="button" data-model="head" aria-pressed="true">头部正中矢状标本</button>
+      <button class="model-tab" type="button" data-model="pharynx" aria-pressed="false">咽部与口底肌肉</button>
       <button class="model-tab" type="button" data-model="respiratory" aria-pressed="false">肺 / 支气管系统</button><button class="model-tab" type="button" data-model="diaphragm" aria-pressed="false">横膈膜</button>
       <button class="model-tab" type="button" data-model="larynx" aria-pressed="false">喉部三维解剖</button>
     </div>
@@ -132,6 +133,7 @@
     <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK538202/" target="_blank" rel="noopener">NCBI Bookshelf · Anatomy of the Larynx</a>：喉软骨、喉腔分区、声带与前庭襞。</li>
     <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK545265/" target="_blank" rel="noopener">NCBI Bookshelf · Laryngeal Muscles</a>：喉内肌及声带内收、外展与张力调节。</li>
     <li><a href="https://med.umn.edu/ent/patient-care/lions-voice-clinic/about-the-voice/how-it-works/anatomy" target="_blank" rel="noopener">University of Minnesota · Lions Voice Clinic: Anatomy</a>：喉软骨、喉内肌、声带组织分层及发声相关说明。</li>
+    <li><a href="https://www.dundee.ac.uk/tilt/medical-illustration/parapharyngeal-space" target="_blank" rel="noopener">University of Dundee · Pharynx and Floor of Mouth teaching models</a>：咽部与口底肌肉的医学教学模型项目。</li>
     <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK553185/" target="_blank" rel="noopener">NCBI Bookshelf · Larynx Cartilage</a>：喉软骨骨架及杓状软骨结构。</li>
     <li><a href="https://commons.wikimedia.org/wiki/File:EB1911_Pharynx_-_Sagittal_Section_through_Mouth,_Tongue,_Larynx,_Pharynx_and_Nasal_Cavity.jpg" target="_blank" rel="noopener">Cunningham / Encyclopædia Britannica 1911 · 正中矢状面解剖图</a>：公有领域历史解剖图，可作为二维结构对照。</li>
   </ul>
@@ -159,6 +161,7 @@
   head:{src:'https://sketchfab.com/models/5c477a85bdf34ec6b66b20c02862360f/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',caption:'真实人体正中矢状面塑化标本。可旋转、缩放，观察鼻腔、口腔、舌、咽、喉与颈椎之间的空间关系。',credit:'模型：UBC Medicine · Educational Media',url:'https://sketchfab.com/3d-models/midsagittal-section-of-human-head-5c477a85bdf34ec6b66b20c02862360f'},
   respiratory:{src:'https://sketchfab.com/models/a7ac43a140644662a9b896b8a8a10f57/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',caption:'呼吸系统三维模型，可旋转观察左右肺、气管及支气管树的整体关系。模型用于结构识别，不应把静态网格理解为真实呼吸时的肺组织形变。',credit:'模型：Vikrama Raghuraman · CC BY',url:'https://sketchfab.com/3d-models/respiratory-system-a7ac43a140644662a9b896b8a8a10f57'},
   diaphragm:{src:'https://sketchfab.com/models/b62b76467c6948fbb735c78c0c428d65/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',caption:'横膈膜独立三维模型。可观察其穹隆形态与肌性结构；模型本身不演示吸气时双侧膈肌收缩、中央腱下降及胸腔容积变化。',credit:'模型：Devden · CC BY',url:'https://sketchfab.com/3d-models/human-diaphragm-b62b76467c6948fbb735c78c0c428d65'},
+  pharynx:{src:'https://sketchfab.com/models/b262c70bf9bd49c2a5428581b754f24b/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',caption:'University of Dundee 为 ENT 医学教学制作的咽部与口底三维模型。可旋转并查看带标注的咽部、口底及其周围结构；它是医学艺术教学模型，不是人体标本扫描。',credit:'模型：Eve Laws · University of Dundee School of Medicine / CAHID · ENT teaching model',url:'https://sketchfab.com/3d-models/pharynx-and-floor-of-mouth-b262c70bf9bd49c2a5428581b754f24b'},
   larynx:{src:'https://sketchfab.com/models/a00bc73a303c46248db6a13a88b23404/embed?autostart=0&ui_controls=1&ui_infos=1&ui_inspector=0',caption:'喉部软骨三维模型，适合观察甲状软骨、环状软骨、杓状软骨及会厌之间的相互位置。该模型来源于 BodyParts3D 衍生作品。',credit:'模型：University of Dundee School of Medicine · BodyParts3D',url:'https://sketchfab.com/3d-models/anatomy-of-the-larynx-a00bc73a303c46248db6a13a88b23404'}
  };
  document.querySelectorAll('[data-model]').forEach(btn=>btn.addEventListener('click',()=>{
