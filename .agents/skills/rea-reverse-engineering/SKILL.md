@@ -1,5 +1,9 @@
 ---
 name: rea-reverse-engineering
+metadata:
+  upstream_release: "rea-agents-6.9.0"
+  upstream_skill_version: "62"
+  last_reviewed: "2026-11-16"
 description: Use REA (Reverse Engineer Anything) to investigate behavior that cannot be established from OperaLab source alone, inspect authorized web/app artifacts, capture browser workflows, preserve evidence and limitations, and turn verified findings into scoped OperaLab implementations. Do not use for ordinary source-code analysis when repository code already answers the question.
 ---
 
@@ -14,7 +18,7 @@ Official site and guides: https://rea.tools
 Official package: `rea-agents`  
 Upstream skill: https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything
 
-This project skill is an OperaLab-specific operating guide. It does not replace the official REA MCP server, its current tool schemas, or the upstream technical references.
+This project skill is an OperaLab-specific operating guide. It does not replace the official REA MCP server, its current tool schemas, or the upstream technical references. The cross-project method is maintained separately in [REA Research Lab](../rea-research-lab/SKILL.md); keep universal methodology there and OperaLab-specific rules here.
 
 ## Upstream compatibility baseline
 
