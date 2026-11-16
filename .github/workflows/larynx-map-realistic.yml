@@ -1,0 +1,153 @@
+name: Larynx map realistic
+
+on:
+  push:
+    paths:
+      - content/larynx-map-realistic.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repaint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Repaint the diagram as a medical illustration
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'data-version="4"' in t:
+              print('already repainted')
+              raise SystemExit(0)
+
+          new_svg = '''<svg id="mechMap" data-version="4" viewBox="0 0 760 460" data-state="pca" role="img" aria-labelledby="mechMapTitle mechMapDesc">
+              <title id="mechMapTitle">声门形态随喉内肌机制变化的示意图</title>
+              <desc id="mechMapDesc">上方为前联合，下方为两侧杓状软骨的声门示意图。选择机制时，声带与杓状软骨整体转动，箭头标出运动方向；为示意性质，不是真实组织形变。</desc>
+              <defs>
+                <radialGradient id="bgGrad" cx="380" cy="230" r="360" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#fdf8f4"/>
+                  <stop offset="1" stop-color="#efe5de"/>
+                </radialGradient>
+                <radialGradient id="airGrad" cx="380" cy="250" r="200" gradientUnits="userSpaceOnUse">
+                  <stop offset="0" stop-color="#33443f"/>
+                  <stop offset="0.75" stop-color="#1d2b27"/>
+                  <stop offset="1" stop-color="#131d1a"/>
+                </radialGradient>
+                <linearGradient id="foldL" x1="1" y1="0" x2="0" y2="0">
+                  <stop offset="0" stop-color="#c98a7c"/>
+                  <stop offset="0.45" stop-color="#e8b6a8"/>
+                  <stop offset="1" stop-color="#f6dcd3"/>
+                </linearGradient>
+                <linearGradient id="foldR" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0" stop-color="#c98a7c"/>
+                  <stop offset="0.45" stop-color="#e8b6a8"/>
+                  <stop offset="1" stop-color="#f6dcd3"/>
+                </linearGradient>
+                <radialGradient id="cartGrad" cx="0.42" cy="0.36" r="0.72">
+                  <stop offset="0" stop-color="#fdfaf1"/>
+                  <stop offset="0.6" stop-color="#efe7d5"/>
+                  <stop offset="1" stop-color="#d9cdb3"/>
+                </radialGradient>
+                <filter id="softShadow" x="-25%" y="-25%" width="150%" height="150%">
+                  <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#8a6a5c" flood-opacity="0.2"/>
+                </filter>
+                <filter id="edgeShadow" x="-15%" y="-15%" width="130%" height="130%">
+                  <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#6e4f44" flood-opacity="0.22"/>
+                </filter>
+                <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M0 0 L10 5 L0 10 z" fill="#b07a5f"/>
+                </marker>
+              </defs>
+              <rect x="0" y="0" width="760" height="460" fill="url(#bgGrad)"/>
+              <path d="M290 380 Q380 430 470 380 L470 402 Q380 452 290 402 Z" fill="url(#cartGrad)" stroke="#c9bfa9" stroke-width="1.6"/>
+              <path d="M380 80 C350 168 328 250 318 306 L442 306 C432 250 410 168 380 80 Z" fill="url(#airGrad)"/>
+              <g id="sideLeft" class="side">
+                <path d="M380 78 C350 166 326 248 316 304 L298 304 C310 246 336 160 374 74 Z" fill="url(#foldL)" stroke="#a9705f" stroke-width="1.2" filter="url(#edgeShadow)"/>
+                <path d="M380 78 C350 166 326 248 316 304" stroke="#fff6ef" stroke-width="2.6" opacity="0.55" fill="none"/>
+                <g id="aryLeft" class="ary" filter="url(#softShadow)">
+                  <path d="M320 286 C300 288 288 308 292 330 C296 354 318 366 336 358 C356 350 362 326 352 308 C344 292 332 286 320 286 Z" fill="url(#cartGrad)" stroke="#b9ad95" stroke-width="1.8"/>
+                  <path d="M336 300 L360 292 L344 318 Z" fill="#f0e9d8" stroke="#b9ad95" stroke-width="1.5"/>
+                  <ellipse cx="284" cy="332" rx="11" ry="7.5" fill="#e8dfca" stroke="#b9ad95" stroke-width="1.5"/>
+                  <circle cx="318" cy="284" r="7" fill="#f6f0e2" stroke="#c0b49d" stroke-width="1.3"/>
+                  <ellipse cx="316" cy="322" rx="14" ry="10" fill="#ffffff" opacity="0.35"/>
+                </g>
+              </g>
+              <g id="sideRight" class="side">
+                <path d="M380 78 C410 166 434 248 444 304 L462 304 C450 246 424 160 386 74 Z" fill="url(#foldR)" stroke="#a9705f" stroke-width="1.2" filter="url(#edgeShadow)"/>
+                <path d="M380 78 C410 166 434 248 444 304" stroke="#fff6ef" stroke-width="2.6" opacity="0.55" fill="none"/>
+                <g id="aryRight" class="ary" filter="url(#softShadow)">
+                  <path d="M440 286 C460 288 472 308 468 330 C464 354 442 366 424 358 C404 350 398 326 408 308 C416 292 428 286 440 286 Z" fill="url(#cartGrad)" stroke="#b9ad95" stroke-width="1.8"/>
+                  <path d="M424 300 L400 292 L416 318 Z" fill="#f0e9d8" stroke="#b9ad95" stroke-width="1.5"/>
+                  <ellipse cx="476" cy="332" rx="11" ry="7.5" fill="#e8dfca" stroke="#b9ad95" stroke-width="1.5"/>
+                  <circle cx="442" cy="284" r="7" fill="#f6f0e2" stroke="#c0b49d" stroke-width="1.3"/>
+                  <ellipse cx="444" cy="322" rx="14" ry="10" fill="#ffffff" opacity="0.35"/>
+                </g>
+              </g>
+              <g id="arrowsOpen" class="arrow-g">
+                <path d="M336 250 L284 240" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+                <path d="M424 250 L476 240" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+              </g>
+              <g id="arrowsClose" class="arrow-g">
+                <path d="M288 252 L334 260" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+                <path d="M472 252 L426 260" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+              </g>
+              <g id="arrowsMid" class="arrow-g">
+                <path d="M296 346 L344 346" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+                <path d="M464 346 L416 346" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+              </g>
+              <g id="arrowsThick" class="arrow-g">
+                <path d="M340 196 L304 196" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+                <path d="M352 196 L388 196" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+              </g>
+              <g id="arrowsLong" class="arrow-g">
+                <path d="M380 148 L380 238" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+              </g>
+              <g font-family="system-ui,sans-serif" font-size="13" fill="#5d6b62">
+                <text x="380" y="40" text-anchor="middle">前联合</text>
+                <text x="196" y="242" text-anchor="end">声带</text>
+                <path d="M200 238 L318 244" stroke="#d6cec4" stroke-width="1.4" fill="none"/>
+                <text x="192" y="378" text-anchor="end">杓状软骨</text>
+                <path d="M196 374 L288 352" stroke="#d6cec4" stroke-width="1.4" fill="none"/>
+                <text x="566" y="338" text-anchor="start" fill="#a35f4c">肌突</text>
+                <path d="M562 334 L488 334" stroke="#d6cec4" stroke-width="1.4" fill="none"/>
+                <text x="380" y="442" text-anchor="middle">后方 · 声门后部</text>
+              </g>
+            </svg>'''
+
+          pattern = re.compile('<svg id="mechMap"[\\s\\S]*?</svg>')
+          found = pattern.findall(t)
+          if len(found) != 1:
+              sys.exit('ABORT: expected 1 mechMap svg, got %d' % len(found))
+          t = pattern.sub(lambda m: new_svg, t, count=1)
+
+          old_css = 'transform-origin:380px 72px'
+          if t.count(old_css) != 1:
+              sys.exit('ABORT: transform-origin anchor missing')
+          t = t.replace(old_css, 'transform-origin:380px 76px', 1)
+
+          for token in ('data-version="4"', 'url(#airGrad)', 'filter="url(#softShadow)"', 'transform-origin:380px 76px'):
+              if token not in t:
+                  sys.exit('ABORT: missing ' + token)
+
+          p.write_text(t, encoding='utf-8')
+          print('repainted, now', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "feat(anatomy): repaint the glottis diagram with airway shading, mucosa gradients and cartilage shadows"
+            git push
+          fi
