@@ -1,0 +1,60 @@
+name: Larynx overlay align
+
+on:
+  push:
+    paths:
+      - content/larynx-overlay.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Align the label layer with the photo
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'viewBox="0 0 1200 800"' in t:
+              print('already aligned')
+              raise SystemExit(0)
+
+          pattern = re.compile(r'<svg class="mech-overlay"[\\s\\S]*?</svg>')
+          found = pattern.findall(t)
+          if len(found) != 1:
+              sys.exit('ABORT: overlay -> %d' % len(found))
+
+          overlay = '''<svg class="mech-overlay" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
+                  <text x="600" y="118" text-anchor="middle">前联合</text>
+                  <path d="M600 130 L600 188"/>
+                  <text x="985" y="300" text-anchor="end">声带（真声带）</text>
+                  <path d="M980 312 L800 356"/>
+                  <text x="300" y="652" text-anchor="middle">栍状软骨</text>
+                  <path d="M375 660 L470 648"/>
+                  <text x="600" y="762" text-anchor="middle">后联合</text>
+                </svg>'''
+          t = pattern.sub(lambda m: overlay, t, count=1)
+
+          if t.count('viewBox="0 0 1200 800"') != 1:
+              sys.exit('ABORT: overlay viewbox not single')
+          p.write_text(t, encoding='utf-8')
+          print('overlay aligned,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "fix(anatomy): align label overlay with the 3:2 photo frame"
+            git push
+          fi
