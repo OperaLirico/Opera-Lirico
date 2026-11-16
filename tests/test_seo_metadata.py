@@ -32,6 +32,14 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertIn('property="og:site_name" content="OperaLab."', page)
         self.assertIn('name="twitter:card" content="summary_large_image"', page)
 
+
+    def test_singing_anatomy_page_has_page_specific_share_metadata(self):
+        page = (ROOT / "singing-anatomy.html").read_text(encoding="utf-8")
+        self.assertIn('<title>人体歌唱系统｜Singing Anatomy · OperaLab.</title>', page)
+        self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/singing-anatomy.html"', page)
+        self.assertIn('property="og:site_name" content="OperaLab."', page)
+        self.assertIn('name="twitter:card" content="summary_large_image"', page)
+
     def test_source_evidence_is_not_exposed_in_public_footer(self):
         self.assertNotIn('id="sourcesLink"', HOME)
         self.assertNotIn('id="sources-note"', HOME)
@@ -51,6 +59,7 @@ class SeoAndSharingTests(unittest.TestCase):
             "https://operalirico.github.io/Opera-Lirico/masterclasses.html",
             "https://operalirico.github.io/Opera-Lirico/privacy.html",
             "https://operalirico.github.io/Opera-Lirico/voice-anatomy.html",
+            "https://operalirico.github.io/Opera-Lirico/singing-anatomy.html",
         ])
 
 
