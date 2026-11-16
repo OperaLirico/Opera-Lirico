@@ -66,6 +66,34 @@
 .anatomy-notes .lab-info h2{font-size:20px}
 @media(max-width:900px){.anatomy-workspace{grid-template-columns:1fr}.anatomy-primary,.side-anatomy,.anatomy-notes{grid-column:1;grid-row:auto}.anatomy-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.anatomy-notes{grid-template-columns:1fr}.anatomy-canvas{padding:10px 4px 8px}.anatomy-svg .anatomy-labels{font-size:18px}.figure-caption{gap:8px 12px}.figure-caption .caption-note{margin-left:0;width:100%}}
+
+/* Head and vocal-tract articulation explorer */
+.head-tract{margin:30px 0;padding:24px;background:#fbfcf8;border:1px solid #d9e3dc;border-radius:20px}
+.head-tract-intro{max-width:760px;margin-bottom:18px}
+.head-tract-intro h2{font:500 27px/1.2 Georgia,serif;color:#183b34;margin:0 0 8px}
+.head-tract-intro p{font-size:13px;line-height:1.8;color:#64756b;margin:0}
+.tract-layout{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(270px,.7fr);gap:16px;align-items:start}
+.tract-stage{background:radial-gradient(ellipse at 46% 40%,#fff 0,#f2f5ef 72%,#e9eee7 100%);border:1px solid #e0e7df;border-radius:15px;padding:12px;overflow:hidden}
+.tract-svg{width:100%;height:auto;display:block}
+.tract-svg .tract-tissue{stroke-linejoin:round;stroke-linecap:round}
+.tract-svg .airflow{opacity:0;transition:opacity .25s ease}
+.tract-svg.show-airflow .airflow{opacity:1}
+.tract-svg .airflow path{stroke-dasharray:7 9;animation:airPath 1.2s linear infinite}
+@keyframes airPath{to{stroke-dashoffset:-32}}
+.tract-side{display:grid;gap:12px}
+.tract-control{padding:14px 15px;background:#fff;border:1px solid #e1e8e1;border-radius:12px}
+.tract-control label{display:flex;justify-content:space-between;gap:10px;font-size:12px;font-weight:700;color:#29463d}
+.tract-control output{font-variant-numeric:tabular-nums;color:#9b6658}
+.tract-control input{width:100%;accent-color:#a96150;margin:12px 0 3px}
+.tract-presets{display:flex;flex-wrap:wrap;gap:7px}
+.tract-preset{border:1px solid #d2ded5;background:#fff;color:#365448;border-radius:99px;padding:8px 12px;font:inherit;font-size:11px;cursor:pointer}
+.tract-preset[aria-pressed=true]{background:#23483c;color:#fff;border-color:#23483c}
+.tract-readout{padding:15px;background:#f1f5f0;border-radius:12px;color:#52685d;font-size:12px;line-height:1.8}
+.tract-readout strong{display:block;color:#23483c;margin-bottom:5px}
+.tract-footnote{font-size:11px;line-height:1.8;color:#7a8981;margin:14px 2px 0}
+@media(max-width:850px){.tract-layout{grid-template-columns:1fr}.head-tract{padding:18px}}
+@media(prefers-reduced-motion:reduce){.tract-svg .airflow path{animation:none}}
+
 </style></head><body>
 <header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./" aria-label="OperaLab. 首页"><span class="brand-mark" aria-hidden="true">♫</span><span class="brand-text">OperaLab.<small>OPERA · EDUCATION · OPPORTUNITIES</small></span></a><nav class="nav" aria-label="板块导航"><a href="./">首页</a><a href="masterclasses.html">大师班</a><a href="./#music-library">曲目资料</a></nav></div></header>
 <main class="lab-wrap"><div class="lab-crumb"><a href="./">首页</a> / 学习实验室 / 发声机制</div><section class="lab-hero"><div class="lab-kicker">VOICE SCIENCE · INTERACTIVE HUMAN ANATOMY</div><h1>声音，从这里开始。</h1><p>声带并不是主动“拍打”空气的两片肌肉。呼气形成的气流、声门下压力，以及声带组织本身的弹性共同参与振动。本页用简化的交互模型，帮助你观察喉部结构与声带开合之间的关系。</p></section>
@@ -156,6 +184,84 @@
     <a class="detail-link" id="organLink" href="#larynx-detail">进入喉部精细实验室 <span aria-hidden="true">↗</span></a>
   </aside>
 </section>
+
+<section class="head-tract" id="head-airway" aria-labelledby="head-tract-title">
+  <div class="head-tract-intro">
+    <div class="lab-kicker">ARTICULATION · RESONANCE · VOWEL SHAPING</div>
+    <h2 id="head-tract-title">头颈部声道 · 观察发音器官如何协同</h2>
+    <p>在侧面剖视图中调整软腭、舌位和下颌开度，观察口腔、鼻咽与咽腔空间如何改变。选择意大利语元音，可比较不同元音的大致构形。</p>
+  </div>
+  <div class="tract-layout">
+    <div class="tract-stage">
+      <svg id="tractSvg" class="tract-svg" viewBox="0 0 820 500" role="img" aria-labelledby="tractTitle tractDesc">
+        <title id="tractTitle">头颈部声道侧面剖视交互示意</title>
+        <desc id="tractDesc">展示鼻腔、硬腭、软腭、小舌头、口腔、舌头、咽腔、会厌、喉头和声带。滑块可改变软腭、舌位和下颌开度。</desc>
+        <defs>
+          <linearGradient id="tractSkin" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4e4d5"/><stop offset="1" stop-color="#d0b39d"/></linearGradient>
+          <linearGradient id="tractMucosa" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e8b4a5"/><stop offset="1" stop-color="#ad6660"/></linearGradient>
+          <linearGradient id="tractTongue" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e69b91"/><stop offset="1" stop-color="#b65f60"/></linearGradient>
+          <linearGradient id="tractAir" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#a8cdbd" stop-opacity=".3"/><stop offset=".5" stop-color="#6b9d8b" stop-opacity=".7"/><stop offset="1" stop-color="#a8cdbd" stop-opacity=".3"/></linearGradient>
+        </defs>
+        <!-- Profile and craniofacial outline -->
+        <path d="M170 92 Q230 35 346 48 Q462 50 520 115 Q555 154 552 205 Q548 240 574 261 Q596 282 592 320 L572 382 Q555 414 516 430 L454 444 L405 424 L386 373 Q362 346 320 334 L250 306 Q212 291 190 263 Q163 230 144 203 Q122 174 143 144Z" fill="url(#tractSkin)" opacity=".28" stroke="#b89e89" stroke-width="3"/>
+        <!-- Nasal cavity -->
+        <path d="M160 169 Q186 132 251 126 Q307 119 352 145 Q374 157 383 181 L367 201 Q332 183 292 186 L225 199 Q188 205 160 190Z" fill="#d9e9e1" stroke="#719989" stroke-width="3"/>
+        <path d="M190 166 Q239 145 285 151 Q323 154 350 171 M203 183Q254 163 304 172" fill="none" stroke="#9dbfb1" stroke-width="5" stroke-linecap="round"/>
+        <!-- Hard palate / upper jaw -->
+        <path d="M204 215 Q298 202 408 211 Q451 215 480 236" fill="none" stroke="#d0b99e" stroke-width="19" stroke-linecap="round"/>
+        <path d="M206 209 Q303 197 408 205" fill="none" stroke="#fff5e7" stroke-width="5" stroke-linecap="round"/>
+        <!-- Oral cavity -->
+        <path d="M212 222 Q307 216 407 226 Q467 235 488 273 Q465 303 413 315 L294 317 Q244 298 212 263Z" fill="#fffaf3" stroke="#d8c8b7" stroke-width="2"/>
+        <!-- Soft palate adjustable -->
+        <path id="softPalateShape" class="tract-tissue" d="M405 210 Q449 209 482 235 Q501 251 488 270 Q476 277 468 261 Q459 242 405 229Z" fill="url(#tractMucosa)" stroke="#9b625a" stroke-width="3"/>
+        <path id="uvulaShape" d="M485 253 Q499 264 493 282 Q490 292 483 285 Q477 277 485 253Z" fill="#c87b70" stroke="#965a55" stroke-width="2"/>
+        <!-- Pharyngeal cavity -->
+        <path d="M505 175 Q541 209 538 261 Q537 315 517 357 Q502 381 485 393" fill="none" stroke="#75a391" stroke-width="27" stroke-linecap="round" opacity=".72"/>
+        <path d="M505 175 Q541 209 538 261 Q537 315 517 357 Q502 381 485 393" fill="none" stroke="#e8f2eb" stroke-width="4" stroke-dasharray="6 9"/>
+        <!-- Tongue adjustable -->
+        <path id="tongueShape" d="M245 295 Q296 267 350 272 Q405 278 453 305 Q476 319 468 335 Q426 353 355 345 Q288 337 245 314Z" fill="url(#tractTongue)" stroke="#995a58" stroke-width="3"/>
+        <path d="M277 309 Q349 297 430 324" fill="none" stroke="#f5c3b4" stroke-width="3" opacity=".8"/>
+        <!-- Lower jaw and teeth -->
+        <path id="jawShape" d="M202 270 Q220 334 286 369 Q368 414 463 385 Q497 374 515 344" fill="none" stroke="#b99e82" stroke-width="20" stroke-linecap="round"/>
+        <path id="lowerTeeth" d="M240 285 Q277 305 319 307" fill="none" stroke="#fffdf6" stroke-width="14" stroke-linecap="round"/>
+        <!-- Epiglottis and larynx -->
+        <path d="M503 307 Q481 328 490 354 Q499 371 514 351 Q524 334 520 316Z" fill="url(#tractMucosa)" stroke="#965a55" stroke-width="3"/>
+        <path d="M488 352 Q523 342 549 365 L551 421 Q520 438 488 417Z" fill="#d8c3a8" stroke="#8e7964" stroke-width="3"/>
+        <path d="M496 382 Q519 372 541 382" fill="none" stroke="#a65d56" stroke-width="7" stroke-linecap="round"/>
+        <path d="M517 420 L517 474" stroke="#80a997" stroke-width="18" stroke-linecap="round"/>
+        <path d="M507 430h20M507 446h20M507 462h20" stroke="#e5efe8" stroke-width="3"/>
+        <!-- Airflow overlay -->
+        <g class="airflow" fill="none" stroke="#4d907a" stroke-width="4" stroke-linecap="round">
+          <path d="M170 181 Q252 166 354 178 Q436 186 491 218"/>
+          <path d="M210 246 Q300 234 397 247 Q464 256 510 285"/>
+          <path d="M515 298 Q536 333 521 372 L518 456"/>
+        </g>
+        <!-- Labels -->
+        <g font-family="system-ui,sans-serif" font-size="13" font-weight="650" fill="#355448">
+          <text x="90" y="105">鼻腔</text><path d="M120 110L205 148" stroke="#7a9184" fill="none"/>
+          <text x="320" y="112">硬腭</text><path d="M350 118L350 198" stroke="#7a9184" fill="none"/>
+          <text x="540" y="135">软腭 / 小舌头</text><path d="M545 142L490 245" stroke="#7a9184" fill="none"/>
+          <text x="655" y="235">咽腔</text><path d="M646 241L540 272" stroke="#7a9184" fill="none"/>
+          <text x="350" y="390">舌体</text><path d="M382 380L380 339" stroke="#7a9184" fill="none"/>
+          <text x="635" y="382">会厌</text><path d="M625 387L513 341" stroke="#7a9184" fill="none"/>
+          <text x="610" y="445">喉头 / 声带</text><path d="M605 449L540 397" stroke="#7a9184" fill="none"/>
+        </g>
+        <g fill="#b46e5f" stroke="#fff8ed" stroke-width="2"><circle cx="205" cy="148" r="4"/><circle cx="350" cy="198" r="4"/><circle cx="490" cy="245" r="4"/><circle cx="540" cy="272" r="4"/><circle cx="380" cy="339" r="4"/><circle cx="513" cy="341" r="4"/><circle cx="540" cy="397" r="4"/></g>
+      </svg>
+      <div class="figure-caption"><span><i class="key-dot cartilage"></i>骨性支撑</span><span><i class="key-dot muscle"></i>软组织与肌肉</span><span class="caption-note">正中矢状面 · 教学示意</span></div>
+    </div>
+    <div class="tract-side">
+      <div class="tract-control"><label for="palateControl"><span>软腭位置</span><output id="palateValue">抬高</output></label><input id="palateControl" type="range" min="0" max="100" value="85"></div>
+      <div class="tract-control"><label for="tongueControl"><span>舌背高度</span><output id="tongueValue">中高</output></label><input id="tongueControl" type="range" min="0" max="100" value="55"></div>
+      <div class="tract-control"><label for="jawControl"><span>下颌开度</span><output id="jawValue">中等</output></label><input id="jawControl" type="range" min="0" max="100" value="40"></div>
+      <div class="tract-control"><strong style="display:block;font-size:12px;color:#29463d;margin-bottom:9px">元音构形预设 · 意大利语</strong><div class="tract-presets"><button class="tract-preset" data-vowel="a" aria-pressed="true">/a/</button><button class="tract-preset" data-vowel="e">/e/</button><button class="tract-preset" data-vowel="i">/i/</button><button class="tract-preset" data-vowel="o">/o/</button><button class="tract-preset" data-vowel="u">/u/</button></div></div>
+      <div class="tract-control"><button class="lab-btn" id="airflowToggle" type="button" aria-pressed="false">显示气流路径</button></div>
+      <div class="tract-readout" id="tractReadout" aria-live="polite"><strong id="tractState">/a/ · 开口元音</strong><span id="tractExplanation">舌位相对较低，下颌开度较大；软腭通常抬高，使口腔成为主要的声道出口。不同歌者的实际构形会随音高、音量和语境变化。</span></div>
+    </div>
+  </div>
+  <p class="tract-footnote">科学边界：该图是简化的正中矢状面教学模型，不是医学影像或三维扫描。元音预设只展示常见构形趋势，不代表所有歌者的固定舌位；真实声道是三维、可变形结构，舌体两侧、咽壁及喉位也会参与调节。</p>
+</section>
+
 <section class="breath-lab" aria-labelledby="breath-title">
   <h2 id="breath-title">呼吸与发声 · 动态观察</h2>
   <p>切换状态，观察胸腔、肺部与横膈膜的概念性位置变化。动画用于理解方向和协同关系，不是实时生理测量。</p>
@@ -349,4 +455,46 @@
  select('larynx');
 })();
 </script>
-<script>(()=>{const slider=document.getElementById('adduction'),left=document.getElementById('leftFold'),right=document.getElementById('rightFold'),gap=document.getElementById('glotticGap'),out=document.getElementById('adductionValue'),read=document.getElementById('readout'),svg=document.getElementById('glottis'),toggle=document.getElementById('vibrate');let moving=false;function stop(){moving=false;svg.classList.remove('is-vibrating');toggle.setAttribute('aria-pressed','false');toggle.textContent='观察振动'}function update(value){const n=Number(value),spread=22*(1-n/100);out.value=n+'%';out.textContent=n+'%';left.style.transform='translateX(-'+spread+'px)';right.style.transform='translateX('+spread+'px)';gap.style.transformBox='fill-box';gap.style.transformOrigin='center';gap.style.transform='scaleX('+(0.35+1.3*(1-n/100))+')';read.textContent=n<25?'外展状态：声带向两侧打开，声门扩大，为吸气提供通道。':n<75?'靠拢过程：杓状软骨与声带后端位置变化，声门间隙逐渐缩小。此处只展示几何关系。':'接近闭合：两侧声带边缘靠近中线。真实发声并非持续挤压，而是气流与组织振动的动态平衡。';document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.preset)===n?'true':'false'))}slider.addEventListener('input',()=>{stop();update(slider.value)});document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{stop();slider.value=b.dataset.preset;update(slider.value)}));toggle.addEventListener('click',()=>{if(moving){stop();return}if(Number(slider.value)<35){slider.value=55;update(55)}moving=true;svg.classList.add('is-vibrating');toggle.setAttribute('aria-pressed','true');toggle.textContent='停止演示';read.textContent='概念动画：声带边缘出现微小周期性运动。真实振动具有黏膜波、垂直相位差与复杂的组织形变，本动画不模拟这些生物力学细节。'});update(slider.value)})();</script></body></html>
+<script>(()=>{const slider=document.getElementById('adduction'),left=document.getElementById('leftFold'),right=document.getElementById('rightFold'),gap=document.getElementById('glotticGap'),out=document.getElementById('adductionValue'),read=document.getElementById('readout'),svg=document.getElementById('glottis'),toggle=document.getElementById('vibrate');let moving=false;function stop(){moving=false;svg.classList.remove('is-vibrating');toggle.setAttribute('aria-pressed','false');toggle.textContent='观察振动'}function update(value){const n=Number(value),spread=22*(1-n/100);out.value=n+'%';out.textContent=n+'%';left.style.transform='translateX(-'+spread+'px)';right.style.transform='translateX('+spread+'px)';gap.style.transformBox='fill-box';gap.style.transformOrigin='center';gap.style.transform='scaleX('+(0.35+1.3*(1-n/100))+')';read.textContent=n<25?'外展状态：声带向两侧打开，声门扩大，为吸气提供通道。':n<75?'靠拢过程：杓状软骨与声带后端位置变化，声门间隙逐渐缩小。此处只展示几何关系。':'接近闭合：两侧声带边缘靠近中线。真实发声并非持续挤压，而是气流与组织振动的动态平衡。';document.querySelectorAll('[data-preset]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.preset)===n?'true':'false'))}slider.addEventListener('input',()=>{stop();update(slider.value)});document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{stop();slider.value=b.dataset.preset;update(slider.value)}));toggle.addEventListener('click',()=>{if(moving){stop();return}if(Number(slider.value)<35){slider.value=55;update(55)}moving=true;svg.classList.add('is-vibrating');toggle.setAttribute('aria-pressed','true');toggle.textContent='停止演示';read.textContent='概念动画：声带边缘出现微小周期性运动。真实振动具有黏膜波、垂直相位差与复杂的组织形变，本动画不模拟这些生物力学细节。'});update(slider.value)})();</script>
+<script>
+(()=> {
+ const svg=document.getElementById('tractSvg');if(!svg)return;
+ const palate=document.getElementById('palateControl'),tongue=document.getElementById('tongueControl'),jaw=document.getElementById('jawControl');
+ const palateShape=document.getElementById('softPalateShape'),uvula=document.getElementById('uvulaShape'),tongueShape=document.getElementById('tongueShape'),jawShape=document.getElementById('jawShape'),teeth=document.getElementById('lowerTeeth');
+ const vowelInfo={
+  a:{values:[88,18,78],name:'/a/ · 开口元音',copy:'舌位相对较低，下颌开度较大；软腭通常抬高，使口腔成为主要的声道出口。不同歌者的实际构形会随音高、音量和语境变化。'},
+  e:{values:[88,66,48],name:'/e/ · 半闭前元音',copy:'舌体前部相对抬高，下颌开度通常小于 /a/。注意舌尖和舌根不必僵硬，元音仍需保持清晰而灵活。'},
+  i:{values:[90,94,24],name:'/i/ · 闭前元音',copy:'舌体前部明显抬高，口腔开度较小。歌唱高音时，实际构形可能出现适度调整，不能机械固定舌位。'},
+  o:{values:[88,32,38],name:'/o/ · 半闭后元音',copy:'舌体相对后缩并保持一定高度，唇形常伴随圆唇。模型只呈现舌体趋势，没有模拟唇部三维形变。'},
+  u:{values:[90,22,20],name:'/u/ · 闭后元音',copy:'舌体相对后部抬高，口腔通道较窄，常伴随圆唇。发声时应避免为了圆唇而造成舌根僵硬。'}
+ };
+ function update(){
+  const p=Number(palate.value),t=Number(tongue.value),j=Number(jaw.value);
+  const drop=(100-p)*.42,arch=(t-50)*.55,open=j*.34;
+  palateShape.setAttribute('d',`M405 210 Q449 ${209+drop*.25} 482 ${235+drop} Q501 ${251+drop} 488 ${270+drop*.7} Q476 ${277+drop*.65} 468 ${261+drop*.35} Q459 ${242+drop*.2} 405 ${229+drop*.1}Z`);
+  uvula.setAttribute('d',`M485 ${253+drop*.55} Q499 ${264+drop*.65} 493 ${282+drop*.8} Q490 ${292+drop*.8} 483 ${285+drop*.7} Q477 ${277+drop*.6} 485 ${253+drop*.55}Z`);
+  tongueShape.setAttribute('d',`M245 ${295+open*.2} Q296 ${267-arch} 350 ${272-arch*.85} Q405 ${278-arch*.45} 453 ${305+open*.4} Q476 ${319+open*.6} 468 ${335+open*.6} Q426 ${353+open*.6} 355 ${345+open*.45} Q288 ${337+open*.3} 245 ${314+open*.2}Z`);
+  jawShape.setAttribute('transform',`translate(0 ${open*.42})`);teeth.setAttribute('transform',`translate(0 ${open*.42})`);
+  document.getElementById('palateValue').textContent=p>70?'抬高':p>35?'中间位置':'降低';
+  document.getElementById('tongueValue').textContent=t>75?'较高':t>40?'中等':'较低';
+  document.getElementById('jawValue').textContent=j>70?'较大':j>35?'中等':'较小';
+  document.getElementById('tractState').textContent='自定义声道形态';
+  document.getElementById('tractExplanation').textContent=(p>70?'软腭抬高，鼻咽通道通常较少开放；':p<35?'软腭降低，鼻咽通道可开放；':'软腭处于中间位置，口鼻通道关系随实际动作变化；')+(t>70?'舌背较高。':t<30?'舌背较低。':'舌背处于中间高度。')+(j>70?'下颌开度较大。':j<30?'下颌开度较小。':'下颌开度适中。')+'这些滑块用于观察相对趋势，不是精确生理测量。';
+  document.querySelectorAll('[data-vowel]').forEach(b=>b.setAttribute('aria-pressed','false'));
+ }
+ [palate,tongue,jaw].forEach(el=>el.addEventListener('input',update));
+ document.querySelectorAll('[data-vowel]').forEach(btn=>btn.addEventListener('click',()=>{
+  const d=vowelInfo[btn.dataset.vowel];if(!d)return;
+  palate.value=d.values[0];tongue.value=d.values[1];jaw.value=d.values[2];update();
+  document.getElementById('tractState').textContent=d.name;document.getElementById('tractExplanation').textContent=d.copy;
+  btn.setAttribute('aria-pressed','true');document.querySelectorAll('[data-vowel]').forEach(b=>{if(b!==btn)b.setAttribute('aria-pressed','false')});
+ }));
+ document.getElementById('airflowToggle').addEventListener('click',e=>{
+  const on=svg.classList.toggle('show-airflow');e.currentTarget.setAttribute('aria-pressed',String(on));e.currentTarget.textContent=on?'隐藏气流路径':'显示气流路径';
+  if(on){document.getElementById('tractState').textContent='气流路径 · 概念显示';document.getElementById('tractExplanation').textContent='绿色虚线表示空气可能经过的通道。软腭抬高时鼻咽通道通常关闭或显著减小；降低时可允许鼻腔参与气流通路。'}
+ });
+ update();
+})();
+</script>
+
+</body></html>
