@@ -1,0 +1,77 @@
+name: Larynx map v12 mucosa surface
+
+on:
+  push:
+    paths:
+      - content/larynx-map-v12.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repaint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Repaint v12 — narrowed cavity plus mucosal commissure bridge
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'data-version="12"' in t:
+              print('already v12')
+              raise SystemExit(0)
+          if 'data-version="10"' not in t:
+              sys.exit('ABORT: expected the v10 diagram as base')
+
+          pattern = re.compile('<svg id="mechMap"[\\s\\S]*?</svg>')
+          svg = pattern.findall(t)
+          if len(svg) != 1:
+              sys.exit('ABORT: mechMap svg not uniquely found')
+          old = svg[0]
+
+          def swap(old_s, new_s, label):
+              global old
+              c = old.count(old_s)
+              if c != 1:
+                  sys.exit('ABORT: %s -> %d' % (label, c))
+              old = old.replace(old_s, new_s, 1)
+
+          swap('data-version="10"', 'data-version="12"', 'version')
+
+          swap('M380 76 C350 158 322 244 300 332 Q380 366 460 332 C438 244 410 158 380 76 Z',
+               'M380 74 C370 152 356 248 332 344 Q380 358 428 344 C404 248 390 152 380 74 Z', 'cavity')
+
+          swap('M280 326 Q380 384 480 326 Q380 358 280 326 Z',
+               'M286 322 Q380 388 474 322 Q380 350 286 322 Z', 'posterior wall')
+
+          anchor = '<g font-family="system-ui,sans-serif" font-size="13" fill="#5a504b">'
+          swap(anchor,
+               '<path d="M332 336 Q380 362 428 336 Q380 372 332 336 Z" fill="#dc9f92" opacity="0.95"/>' + '\n              ' + anchor,
+               'commissure bridge anchor')
+
+          for token in ('data-version="12"', 'M380 74 C370 152 356 248 332 344', 'M332 336 Q380 362'):
+              if token not in old:
+                  sys.exit('ABORT: missing ' + token)
+
+          t = pattern.sub(lambda m: old, t, count=1)
+          if t.count('<svg') != t.count('</svg>'):
+              sys.exit('ABORT: unbalanced svg tags')
+          p.write_text(t, encoding='utf-8')
+          print('v12 written,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "feat(anatomy): v12 cavity narrowed, mucosal commissure bridge"
+            git push
+          fi
