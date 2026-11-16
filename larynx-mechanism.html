@@ -115,7 +115,7 @@
     </div>
     <div class="mech-map" aria-label="声门形态随机制变化的示意图">
       <div class="mech-map-head"><strong>机制联动 · 看声门怎么变</strong><span>示意图 · 非生物力学仿真</span></div>
-      <svg id="mechMap" data-version="5" viewBox="0 0 760 460" data-state="pca" role="img" aria-labelledby="mechMapTitle mechMapDesc">
+      <svg id="mechMap" data-version="6" viewBox="0 0 760 460" data-state="pca" role="img" aria-labelledby="mechMapTitle mechMapDesc">
     <title id="mechMapTitle">声门形态随喉内肌机制变化的示意图</title>
     <desc id="mechMapDesc">上方为前联合，下方为两侧杓状软骨的声门示意图。选择机制时声带与杓状软骨绕前联合转动，箭头标出运动方向；为示意性质，不是真实组织形变。</desc>
     <defs>
@@ -123,10 +123,10 @@
         <stop offset="0" stop-color="#fbf3ee"/>
         <stop offset="1" stop-color="#ece0d7"/>
       </radialGradient>
-      <radialGradient id="airGrad" cx="380" cy="250" r="150" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#3b4c46"/>
-        <stop offset="0.6" stop-color="#22302c"/>
-        <stop offset="1" stop-color="#141d1a"/>
+      <radialGradient id="airGrad" cx="380" cy="250" r="160" gradientUnits="userSpaceOnUse">
+        <stop offset="0" stop-color="#3d4e48"/>
+        <stop offset="0.55" stop-color="#23312d"/>
+        <stop offset="1" stop-color="#151f1c"/>
       </radialGradient>
       <linearGradient id="foldLGrad" x1="1" y1="0" x2="0" y2="0.2">
         <stop offset="0" stop-color="#b9705f"/>
@@ -149,71 +149,71 @@
         <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#8a6a5c" flood-opacity="0.22"/>
       </filter>
       <filter id="foldShadow" x="-20%" y="-20%" width="140%" height="140%">
-        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#5f4238" flood-opacity="0.3"/>
+        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#5f4238" flood-opacity="0.28"/>
       </filter>
       <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
         <path d="M0 0 L10 5 L0 10 z" fill="#b07a5f"/>
       </marker>
     </defs>
     <rect x="0" y="0" width="760" height="460" fill="url(#bgGrad)"/>
-    <path d="M300 366 Q380 410 460 366 L474 392 Q380 438 286 392 Z" fill="url(#cartGrad)" stroke="#c6bba2" stroke-width="1.4"/>
-    <path d="M380 84 C366 158 356 236 352 298 L408 298 C404 236 394 158 380 84 Z" fill="url(#airGrad)"/>
+    <path d="M300 348 Q380 394 460 348 L474 376 Q380 422 286 376 Z" fill="url(#cartGrad)" stroke="#c6bba2" stroke-width="1.4"/>
+    <path d="M380 84 C366 158 356 236 352 316 L408 316 C404 236 394 158 380 84 Z" fill="url(#airGrad)"/>
     <g id="sideLeft" class="side">
       <g filter="url(#foldShadow)">
-        <path d="M380 80 C362 162 350 238 346 300" stroke="url(#foldLGrad)" stroke-width="23" stroke-linecap="round" fill="none"/>
+        <path d="M380 80 C362 160 350 230 346 286" stroke="url(#foldLGrad)" stroke-width="23" stroke-linecap="round" fill="none"/>
       </g>
-      <path d="M379 92 C364 166 355 234 351 292" stroke="#fff4ec" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <path d="M379 92 C364 164 355 230 351 280" stroke="#fff4ec" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
       <g id="aryLeft" class="ary" filter="url(#softShadow)">
-        <path d="M322 300 C300 298 286 316 288 338 C290 360 310 372 330 364 C352 356 358 334 348 316 C340 302 332 300 322 300 Z" fill="url(#cartGrad)" stroke="#b9ad95" stroke-width="1.6"/>
-        <path d="M320 300 L348 290 L330 316 Z" fill="#f3ecdb" stroke="#b9ad95" stroke-width="1.3"/>
-        <path d="M292 336 L274 344 L292 354 Z" fill="#eae1cd" stroke="#b9ad95" stroke-width="1.3"/>
-        <circle cx="318" cy="298" r="6.5" fill="#f8f2e4" stroke="#c0b49d" stroke-width="1.2"/>
-        <ellipse cx="316" cy="330" rx="15" ry="11" fill="#ffffff" opacity="0.32"/>
-        <circle cx="278" cy="344" r="3.4" fill="#a35f4c"/>
+        <path d="M328 272 C306 270 292 288 294 310 C296 332 316 344 336 336 C358 328 364 306 354 288 C346 274 338 272 328 272 Z" fill="url(#cartGrad)" stroke="#b9ad95" stroke-width="1.6"/>
+        <path d="M326 272 L354 262 L336 290 Z" fill="#f3ecdb" stroke="#b9ad95" stroke-width="1.3"/>
+        <path d="M298 308 L280 316 L298 326 Z" fill="#eae1cd" stroke="#b9ad95" stroke-width="1.3"/>
+        <circle cx="324" cy="272" r="6.5" fill="#f8f2e4" stroke="#c0b49d" stroke-width="1.2"/>
+        <ellipse cx="322" cy="300" rx="15" ry="11" fill="#ffffff" opacity="0.3"/>
+        <circle cx="284" cy="316" r="3.4" fill="#a35f4c"/>
       </g>
     </g>
     <g id="sideRight" class="side">
       <g filter="url(#foldShadow)">
-        <path d="M380 80 C398 162 410 238 414 300" stroke="url(#foldRGrad)" stroke-width="23" stroke-linecap="round" fill="none"/>
+        <path d="M380 80 C398 160 410 230 414 286" stroke="url(#foldRGrad)" stroke-width="23" stroke-linecap="round" fill="none"/>
       </g>
-      <path d="M381 92 C396 166 405 234 409 292" stroke="#fff4ec" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
+      <path d="M381 92 C396 164 405 230 409 280" stroke="#fff4ec" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
       <g id="aryRight" class="ary" filter="url(#softShadow)">
-        <path d="M438 300 C460 298 474 316 472 338 C470 360 450 372 430 364 C408 356 402 334 412 316 C420 302 428 300 438 300 Z" fill="url(#cartGrad)" stroke="#b9ad95" stroke-width="1.6"/>
-        <path d="M440 300 L412 290 L430 316 Z" fill="#f3ecdb" stroke="#b9ad95" stroke-width="1.3"/>
-        <path d="M468 336 L486 344 L468 354 Z" fill="#eae1cd" stroke="#b9ad95" stroke-width="1.3"/>
-        <circle cx="442" cy="298" r="6.5" fill="#f8f2e4" stroke="#c0b49d" stroke-width="1.2"/>
-        <ellipse cx="444" cy="330" rx="15" ry="11" fill="#ffffff" opacity="0.32"/>
-        <circle cx="482" cy="344" r="3.4" fill="#a35f4c"/>
+        <path d="M432 272 C454 270 468 288 466 310 C464 332 444 344 424 336 C402 328 396 306 406 288 C414 274 422 272 432 272 Z" fill="url(#cartGrad)" stroke="#b9ad95" stroke-width="1.6"/>
+        <path d="M434 272 L406 262 L424 290 Z" fill="#f3ecdb" stroke="#b9ad95" stroke-width="1.3"/>
+        <path d="M462 308 L480 316 L462 326 Z" fill="#eae1cd" stroke="#b9ad95" stroke-width="1.3"/>
+        <circle cx="436" cy="272" r="6.5" fill="#f8f2e4" stroke="#c0b49d" stroke-width="1.2"/>
+        <ellipse cx="438" cy="300" rx="15" ry="11" fill="#ffffff" opacity="0.3"/>
+        <circle cx="476" cy="316" r="3.4" fill="#a35f4c"/>
       </g>
     </g>
     <g id="arrowsOpen" class="arrow-g">
-      <path d="M338 250 L288 240" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
-      <path d="M422 250 L472 240" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M338 236 L288 226" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M422 236 L472 226" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
     </g>
     <g id="arrowsClose" class="arrow-g">
-      <path d="M290 254 L336 262" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
-      <path d="M470 254 L424 262" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M290 240 L336 248" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M470 240 L424 248" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
     </g>
     <g id="arrowsMid" class="arrow-g">
-      <path d="M298 348 L348 348" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
-      <path d="M462 348 L412 348" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M300 300 L348 300" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M460 300 L412 300" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
     </g>
     <g id="arrowsThick" class="arrow-g">
-      <path d="M338 196 L302 196" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
-      <path d="M422 196 L458 196" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M336 186 L298 186" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M424 186 L462 186" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
     </g>
     <g id="arrowsLong" class="arrow-g">
-      <path d="M380 150 L380 240" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M380 146 L380 236" stroke="#b07a5f" stroke-width="3" fill="none" marker-end="url(#ah)"/>
     </g>
     <g font-family="system-ui,sans-serif" font-size="13" fill="#5b6860">
       <text x="380" y="44" text-anchor="middle">前联合</text>
-      <text x="190" y="244" text-anchor="end">声带</text>
-      <path d="M194 240 L318 246" stroke="#d3c9be" stroke-width="1.4" fill="none"/>
-      <text x="186" y="386" text-anchor="end">杓状软骨</text>
-      <path d="M190 382 L286 360" stroke="#d3c9be" stroke-width="1.4" fill="none"/>
-      <text x="566" y="348" text-anchor="start" fill="#a35f4c">肌突</text>
-      <path d="M562 344 L490 344" stroke="#d3c9be" stroke-width="1.4" fill="none"/>
-      <text x="380" y="448" text-anchor="middle">后方 · 声门后部</text>
+      <text x="190" y="232" text-anchor="end">声带</text>
+      <path d="M194 228 L318 234" stroke="#d3c9be" stroke-width="1.4" fill="none"/>
+      <text x="184" y="352" text-anchor="end">杓状软骨</text>
+      <path d="M188 348 L290 322" stroke="#d3c9be" stroke-width="1.4" fill="none"/>
+      <text x="566" y="320" text-anchor="start" fill="#a35f4c">肌突</text>
+      <path d="M562 316 L486 316" stroke="#d3c9be" stroke-width="1.4" fill="none"/>
+      <text x="380" y="440" text-anchor="middle">后方 · 声门后部</text>
     </g>
   </svg>
       <p class="mech-map-note" id="mechMapNote">杓状软骨在环杓关节上外旋，声带突外移，声门开大——吸气时的主要形态。</p>
