@@ -115,35 +115,35 @@
     </div>
     <div class="mech-map" aria-label="声门形态随机制变化的示意图">
       <div class="mech-map-head"><strong>机制联动 · 看声门怎么变</strong><span>示意图 · 非生物力学仿真</span></div>
-      <svg id="mechMap" data-version="6" viewBox="0 0 760 460" data-state="pca" role="img" aria-labelledby="mechMapTitle mechMapDesc">
+      <svg id="mechMap" data-version="8" viewBox="0 0 760 460" data-state="pca" role="img" aria-labelledby="mechMapTitle mechMapDesc">
     <title id="mechMapTitle">声门形态随喉内肌机制变化的示意图</title>
     <desc id="mechMapDesc">上方为前联合，下方为两侧杓状软骨的声门示意图。选择机制时声带与杓状软骨绕前联合转动，箭头标出运动方向；为示意性质，不是真实组织形变。</desc>
     <defs>
       <radialGradient id="bgGrad" cx="380" cy="240" r="330" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#fbf3ee"/>
-        <stop offset="1" stop-color="#ece0d7"/>
+        <stop offset="0" stop-color="#f7efe9"/>
+        <stop offset="1" stop-color="#e4d2c9"/>
       </radialGradient>
       <radialGradient id="airGrad" cx="380" cy="250" r="160" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="#3d4e48"/>
-        <stop offset="0.55" stop-color="#23312d"/>
-        <stop offset="1" stop-color="#151f1c"/>
+        <stop offset="0" stop-color="#33302f"/>
+        <stop offset="0.55" stop-color="#1a1e1f"/>
+        <stop offset="1" stop-color="#0d1011"/>
       </radialGradient>
       <linearGradient id="foldLGrad" x1="1" y1="0" x2="0" y2="0.2">
-        <stop offset="0" stop-color="#b9705f"/>
-        <stop offset="0.35" stop-color="#d99e8d"/>
-        <stop offset="0.75" stop-color="#eec4b6"/>
-        <stop offset="1" stop-color="#f8e2d8"/>
+        <stop offset="0" stop-color="#ad6a5c"/>
+        <stop offset="0.3" stop-color="#d29486"/>
+        <stop offset="0.7" stop-color="#eab9ac"/>
+        <stop offset="1" stop-color="#f9e2d8"/>
       </linearGradient>
       <linearGradient id="foldRGrad" x1="0" y1="0" x2="1" y2="0.2">
-        <stop offset="0" stop-color="#b9705f"/>
-        <stop offset="0.35" stop-color="#d99e8d"/>
-        <stop offset="0.75" stop-color="#eec4b6"/>
-        <stop offset="1" stop-color="#f8e2d8"/>
+        <stop offset="0" stop-color="#ad6a5c"/>
+        <stop offset="0.3" stop-color="#d29486"/>
+        <stop offset="0.7" stop-color="#eab9ac"/>
+        <stop offset="1" stop-color="#f9e2d8"/>
       </linearGradient>
       <radialGradient id="cartGrad" cx="0.4" cy="0.34" r="0.75">
-        <stop offset="0" stop-color="#fdfaf2"/>
-        <stop offset="0.55" stop-color="#eee6d4"/>
-        <stop offset="1" stop-color="#d5c8ae"/>
+        <stop offset="0" stop-color="#f7d3c8"/>
+        <stop offset="0.55" stop-color="#e2a89b"/>
+        <stop offset="1" stop-color="#c7857a"/>
       </radialGradient>
       <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
         <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#8a6a5c" flood-opacity="0.22"/>
@@ -156,7 +156,7 @@
       </marker>
     </defs>
     <rect x="0" y="0" width="760" height="460" fill="url(#bgGrad)"/>
-    <path d="M300 348 Q380 394 460 348 L474 376 Q380 422 286 376 Z" fill="url(#cartGrad)" stroke="#c6bba2" stroke-width="1.4"/>
+    <path d="M300 348 Q380 394 460 348 L474 376 Q380 422 286 376 Z" fill="url(#cartGrad)" stroke="#b8837a" stroke-width="1"/>
     <path d="M380 84 C366 158 356 236 352 316 L408 316 C404 236 394 158 380 84 Z" fill="url(#airGrad)"/>
     <g id="sideLeft" class="side">
       <g filter="url(#foldShadow)">
@@ -164,10 +164,10 @@
       </g>
       <path d="M379 92 C364 164 355 230 351 280" stroke="#fff4ec" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
       <g id="aryLeft" class="ary" filter="url(#softShadow)">
-        <path d="M328 272 C306 270 292 288 294 310 C296 332 316 344 336 336 C358 328 364 306 354 288 C346 274 338 272 328 272 Z" fill="url(#cartGrad)" stroke="#b9ad95" stroke-width="1.6"/>
-        <path d="M326 272 L354 262 L336 290 Z" fill="#f3ecdb" stroke="#b9ad95" stroke-width="1.3"/>
-        <path d="M298 308 L280 316 L298 326 Z" fill="#eae1cd" stroke="#b9ad95" stroke-width="1.3"/>
-        <circle cx="324" cy="272" r="6.5" fill="#f8f2e4" stroke="#c0b49d" stroke-width="1.2"/>
+        <path d="M328 272 C306 270 292 288 294 310 C296 332 316 344 336 336 C358 328 364 306 354 288 C346 274 338 272 328 272 Z" fill="url(#cartGrad)" stroke="#b9837a" stroke-width="1.2"/>
+        <path d="M326 272 L354 262 L336 290 Z" fill="#efc7bc" stroke="#b9837a" stroke-width="1.2"/>
+        <path d="M298 308 L280 316 L298 326 Z" fill="#e6b3a7" stroke="#b9837a" stroke-width="1.2"/>
+        <circle cx="324" cy="272" r="6.5" fill="#f5d9cf" stroke="#bf8b81" stroke-width="1.1"/>
         <ellipse cx="322" cy="300" rx="15" ry="11" fill="#ffffff" opacity="0.3"/>
         <circle cx="284" cy="316" r="3.4" fill="#a35f4c"/>
       </g>
@@ -178,10 +178,10 @@
       </g>
       <path d="M381 92 C396 164 405 230 409 280" stroke="#fff4ec" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.5"/>
       <g id="aryRight" class="ary" filter="url(#softShadow)">
-        <path d="M432 272 C454 270 468 288 466 310 C464 332 444 344 424 336 C402 328 396 306 406 288 C414 274 422 272 432 272 Z" fill="url(#cartGrad)" stroke="#b9ad95" stroke-width="1.6"/>
-        <path d="M434 272 L406 262 L424 290 Z" fill="#f3ecdb" stroke="#b9ad95" stroke-width="1.3"/>
-        <path d="M462 308 L480 316 L462 326 Z" fill="#eae1cd" stroke="#b9ad95" stroke-width="1.3"/>
-        <circle cx="436" cy="272" r="6.5" fill="#f8f2e4" stroke="#c0b49d" stroke-width="1.2"/>
+        <path d="M432 272 C454 270 468 288 466 310 C464 332 444 344 424 336 C402 328 396 306 406 288 C414 274 422 272 432 272 Z" fill="url(#cartGrad)" stroke="#b9837a" stroke-width="1.2"/>
+        <path d="M434 272 L406 262 L424 290 Z" fill="#efc7bc" stroke="#b9837a" stroke-width="1.2"/>
+        <path d="M462 308 L480 316 L462 326 Z" fill="#e6b3a7" stroke="#b9837a" stroke-width="1.2"/>
+        <circle cx="436" cy="272" r="6.5" fill="#f5d9cf" stroke="#bf8b81" stroke-width="1.1"/>
         <ellipse cx="438" cy="300" rx="15" ry="11" fill="#ffffff" opacity="0.3"/>
         <circle cx="476" cy="316" r="3.4" fill="#a35f4c"/>
       </g>
