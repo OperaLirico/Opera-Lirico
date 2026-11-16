@@ -1,0 +1,51 @@
+name: Larynx note fix
+
+on:
+  push:
+    paths:
+      - content/larynx-note-fix.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fix the disclaimer wording typos
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if '是示意性的黏膜色块' in t:
+              print('already fixed')
+              raise SystemExit(0)
+
+          bad = '是示意性的号肉（黏膜）色块'
+          good = '是示意性的黏膜色块'
+          if t.count(bad) != 1:
+              sys.exit('ABORT: typo sentence not found once, got %d' % t.count(bad))
+          t = t.replace(bad, good, 1)
+
+          if '号肉' in t:
+              sys.exit('ABORT: 号肉 still present elsewhere')
+
+          p.write_text(t, encoding='utf-8')
+          print('fixed,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "fix(anatomy): correct the disclaimer wording"
+            git push
+          fi
