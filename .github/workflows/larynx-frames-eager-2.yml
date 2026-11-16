@@ -1,0 +1,67 @@
+name: Larynx frames eager 2
+
+on:
+  push:
+    paths:
+      - content/larynx-frames-eager-2.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Strip lazy only inside the mech-frame tags
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+
+          marker = '<img class="mech-frame"'
+          count = t.count(marker)
+          if count != 5:
+              sys.exit('ABORT: mech-frame imgs -> %d' % count)
+          if 'loading="lazy"' not in t.split(marker)[1].split('>')[0] and 'decoding="async"' in t.split(marker)[1].split('>')[0]:
+              print('already eager')
+              raise SystemExit(0)
+
+          out = []
+          rest = t
+          changed = 0
+          while True:
+              i = rest.find(marker)
+              if i == -1:
+                  out.append(rest)
+                  break
+              out.append(rest[:i])
+              j = rest.find('>', i)
+              tag = rest[i:j]
+              if ' loading="lazy"' in tag:
+                  tag = tag.replace(' loading="lazy"', ' decoding="async"')
+                  changed += 1
+              out.append(tag)
+              rest = rest[j:]
+          t = ''.join(out)
+
+          if changed != 4:
+              sys.exit('ABORT: changed %d tags' % changed)
+          p.write_text(t, encoding='utf-8')
+          print('eager applied to', changed, 'frames,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "perf(anatomy): preload the four state frames"
+            git push
+          fi
