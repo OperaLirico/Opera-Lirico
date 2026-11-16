@@ -2,17 +2,17 @@
 
 - Cycle: 2026-W47
 - Started: 2026-11-16T11:21:39+01:00
-- Last updated: 2026-11-16T11:22:13+01:00
+- Last updated: 2026-11-16T11:22:47+01:00
 - Status: **in_progress**
-- Coverage: **12/46** checked; 34 remaining
+- Coverage: **24/46** checked; 22 remaining
 - Failed/restricted/extraction errors: 0 (restricted: 0)
-- Changed normalized text hashes: 5
-- Sources with anomalies: 5
-- Registered sources: 10; candidate queue entries: 2
-- Source review classifications: auto_approved_official=4, auto_approved_third_party=2, duplicate_candidate=1, irrelevant_candidate=5
-- Official + relevant: 3
-- Third-party + relevant: 1
-- Needs review / irrelevant / unclassified: 5
+- Changed normalized text hashes: 8
+- Sources with anomalies: 8
+- Registered sources: 22; candidate queue entries: 2
+- Source review classifications: auto_approved_official=11, auto_approved_third_party=3, duplicate_candidate=1, irrelevant_candidate=7, needs_review=2
+- Official + relevant: 10
+- Third-party + relevant: 2
+- Needs review / irrelevant / unclassified: 9
 - Duplicate candidates (registered): 1
 - Inventory SHA-256: 3830ac0c9ca41cf14b119aaf2376dfd86c357fc05588afd3ab2d1aa1acc17cd8 (inventory identity only)
 
@@ -49,6 +49,24 @@ Keyword/vocal signals are discovery clues only. Source identity and relevance ar
 - URL: https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/
 - Status: ok / HTTP 200
 - Last success: 2026-11-16T11:21:39+01:00
+- Anomalies: normalized_page_text_changed
+
+### Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacol (source-121)
+- URL: https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/
+- Status: ok / HTTP 200
+- Last success: 2026-11-16T11:22:16+01:00
+- Anomalies: normalized_page_text_changed
+
+### Concorso Francesco Morlacchi (source-15)
+- URL: https://www.concorsomorlacchi.it/
+- Status: ok / HTTP 200
+- Last success: 2026-11-16T11:22:16+01:00
+- Anomalies: normalized_page_text_changed
+
+### Teatro La Fenice - 招募与选拔 (source-16)
+- URL: https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/
+- Status: ok / HTTP 200
+- Last success: 2026-11-16T11:22:16+01:00
 - Anomalies: normalized_page_text_changed
 
 ## Coverage limitations
