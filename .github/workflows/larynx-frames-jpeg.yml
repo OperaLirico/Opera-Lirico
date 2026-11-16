@@ -1,0 +1,65 @@
+name: Larynx frames jpeg
+
+on:
+  push:
+    paths:
+      - content/larynx-frames-jpeg.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  shrink:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Drop in the 1200px JPEGs
+        run: |
+          set -e
+          curl -fsSL "https://aka.doubaocdn.com/s/kVTI5yhOeg" -o assets/anatomy/glottis-pca.jpg
+          curl -fsSL "https://aka.doubaocdn.com/s/5D8VI1ikiq" -o assets/anatomy/glottis-lca.jpg
+          curl -fsSL "https://aka.doubaocdn.com/s/RU4g3yOM52" -o assets/anatomy/glottis-ia.jpg
+          curl -fsSL "https://aka.doubaocdn.com/s/mpwOUWsYVk" -o assets/anatomy/glottis-ta.jpg
+          curl -fsSL "https://aka.doubaocdn.com/s/5V6AJFuCv5" -o assets/anatomy/glottis-ct.jpg
+          python3 - <<'PY'
+          from pathlib import Path
+          for n in ('pca','lca','ia','ta','ct'):
+              p = Path('assets/anatomy/glottis-%s.jpg' % n)
+              size = p.stat().st_size
+              if size < 80000 or size > 260000:
+                  raise SystemExit('ABORT: %s unexpected size %d' % (p.name, size))
+              print(p.name, round(size/1024), 'KB')
+          PY
+          rm -f assets/anatomy/glottis-pca.png assets/anatomy/glottis-lca.png assets/anatomy/glottis-ia.png assets/anatomy/glottis-ta.png assets/anatomy/glottis-ct.png
+
+      - name: Point the page at the JPEGs
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'glottis-pca.jpg' in t:
+              print('already jpg')
+              raise SystemExit(0)
+          for n in ('pca', 'lca', 'ia', 'ta', 'ct'):
+              old = 'assets/anatomy/glottis-%s.png' % n
+              if t.count(old) != 1:
+                  sys.exit('ABORT: %s -> %d' % (old, t.count(old)))
+              t = t.replace(old, 'assets/anatomy/glottis-%s.jpg' % n, 1)
+          p.write_text(t, encoding='utf-8')
+          print('jpgs wired,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "perf(anatomy): swap in 1200px jpeg glottis frames"
+            git push
+          fi
