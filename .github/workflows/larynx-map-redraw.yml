@@ -23,13 +23,13 @@ jobs:
 
           p = pathlib.Path('larynx-mechanism.html')
           t = p.read_text(encoding='utf-8')
-          if 'id="mechMapV2"' in t:
+          if 'data-version="2"' in t:
               print('already redrawn')
               raise SystemExit(0)
 
-          new_svg = '''<svg id="mechMap" id2="mechMapV2" viewBox="0 0 760 460" data-state="pca" role="img" aria-labelledby="mechMapTitle mechMapDesc">
+          new_svg = '''<svg id="mechMap" data-version="2" viewBox="0 0 760 460" data-state="pca" role="img" aria-labelledby="mechMapTitle mechMapDesc">
               <title id="mechMapTitle">声门形态随喉内肌机制变化的示意图</title>
-              <desc id="mechMapDesc">一支上方为前联合、下方为两侧杓状软骨的声门示意图。选机制时拉住声带的枢轴转动，同时用箭头标出运动方向；这是示意，不是真实组织形变。</desc>
+              <desc id="mechMapDesc">上方为前联合、下方为两侧杓状软骨。选机制时声带与杓状软骨整体转动，箭头标出运动方向；这是示意图，不是真实组织形变。</desc>
               <defs>
                 <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                   <path d="M0 0 L10 5 L0 10 z" fill="#9a6c58"/>
@@ -87,7 +87,7 @@ jobs:
               </g>
             </svg>'''
 
-          pattern = re.compile(r'<svg id="mechMap"[^\\n]*?</svg>', re.S)
+          pattern = re.compile('<svg id="mechMap"[\\s\\S]*?</svg>')
           found = pattern.findall(t)
           if len(found) != 1:
               sys.exit('ABORT: expected 1 mechMap svg, got %d' % len(found))
@@ -112,7 +112,7 @@ jobs:
           )
           t = t.replace(note_css, arrows_css + note_css, 1)
 
-          for token in ('id2="mechMapV2"', '#arrowsOpen', 'marker id="ah"', 'transform-origin:380px 72px'):
+          for token in ('data-version="2"', '#arrowsOpen', 'marker id="ah"', 'transform-origin:380px 72px'):
               if token not in t:
                   sys.exit('ABORT: missing ' + token)
 
