@@ -42,7 +42,7 @@
 .mech-map-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:0 4px 4px;font-size:11px;color:#7a8981}
 .mech-map-head strong{font-size:12px;color:#183b34}
 .mech-map svg{width:100%;height:auto;display:block}
-.mech-map .side{transform-box:view-box;transform-origin:380px 64px;transition:transform .34s cubic-bezier(.2,.7,.2,1)}
+.mech-map .side{transform-box:view-box;transform-origin:380px 72px;transition:transform .34s cubic-bezier(.2,.7,.2,1)}
 .mech-map .ary{transform-box:view-box;transition:transform .34s cubic-bezier(.2,.7,.2,1)}
 .mech-map .fold-thick{transition:opacity .3s ease}
 #mechMap[data-state="pca"] #sideLeft{transform:rotate(9deg)}
@@ -53,6 +53,13 @@
 #mechMap[data-state="ia"] #aryRight{transform:translateX(-12px)}
 #mechMap[data-state="ta"] .fold-thick{opacity:1}
 #mechMap[data-state="ct"] #sideLeft,#mechMap[data-state="ct"] #sideRight{transform:scaleY(1.06)}
+.mech-map .arrow-g{opacity:0;transition:opacity .3s ease}
+#mechMap[data-state="pca"] #arrowsOpen{opacity:1}
+#mechMap[data-state="lca"] #arrowsClose{opacity:1}
+#mechMap[data-state="ia"] #arrowsMid{opacity:1}
+#mechMap[data-state="ta"] #arrowsThick{opacity:1}
+#mechMap[data-state="ct"] #arrowsLong{opacity:1}
+@media(max-width:640px){.mech-map svg{max-height:360px}}
 .mech-map-note{margin:8px 4px 2px;font-size:11px;line-height:1.7;color:#5d7067}
 .plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:16px}
 .plate{margin:0;background:#fff;border:1px solid #e2e9e1;border-radius:14px;overflow:hidden}
@@ -108,34 +115,65 @@
     </div>
     <div class="mech-map" aria-label="声门形态随机制变化的示意图">
       <div class="mech-map-head"><strong>机制联动 · 看声门怎么变</strong><span>示意图 · 非生物力学仿真</span></div>
-      <svg id="mechMap" viewBox="0 0 760 420" data-state="pca" role="img" aria-labelledby="mechMapTitle mechMapDesc">
-        <title id="mechMapTitle">声门形态随喉内肌机制变化的示意图</title>
-        <desc id="mechMapDesc">上方为前联合，下方为两侧杓状软骨。选择机制时，两侧声带与杓状软骨的位置相应改变，用于说明开合与张力调节的方向，不是真实组织形变。</desc>
-        <g><path d="M248 332 Q380 376 512 332" fill="none" stroke="#c8d5cc" stroke-width="12"/><path d="M232 298 Q380 350 528 298" fill="none" stroke="#e2ebe4" stroke-width="7"/></g>
-        <g id="sideLeft" class="side">
-          <path class="fold" d="M380 58 L322 244 L322 264 L380 74 Z" fill="#e7c9bd" stroke="#a4645a" stroke-width="2"/>
-          <path class="fold-thick" d="M380 54 L310 240 L310 268 L380 80 Z" fill="#c97870" stroke="#a4645a" stroke-width="2" opacity="0"/>
-          <g id="aryLeft" class="ary">
-            <path d="M300 236 C278 236 264 256 268 276 C272 300 294 312 312 304 C332 296 340 272 332 254 C326 240 314 236 300 236 Z" fill="#edf3ed" stroke="#23483c" stroke-width="2.5"/>
-            <path d="M322 250 L344 244 L328 268 Z" fill="#dfe8e1" stroke="#23483c" stroke-width="2"/>
-            <circle cx="272" cy="286" r="4" fill="#9a6c58"/>
-          </g>
-        </g>
-        <g id="sideRight" class="side">
-          <path class="fold" d="M380 58 L438 244 L438 264 L380 74 Z" fill="#e7c9bd" stroke="#a4645a" stroke-width="2"/>
-          <path class="fold-thick" d="M380 54 L450 240 L450 268 L380 80 Z" fill="#c97870" stroke="#a4645a" stroke-width="2" opacity="0"/>
-          <g id="aryRight" class="ary">
-            <path d="M460 236 C482 236 496 256 492 276 C488 300 466 312 448 304 C428 296 420 272 428 254 C434 240 446 236 460 236 Z" fill="#edf3ed" stroke="#23483c" stroke-width="2.5"/>
-            <path d="M438 250 L416 244 L432 268 Z" fill="#dfe8e1" stroke="#23483c" stroke-width="2"/>
-            <circle cx="488" cy="286" r="4" fill="#9a6c58"/>
-          </g>
-        </g>
-        <g font-family="system-ui,sans-serif" font-size="13" fill="#557165">
-          <text x="380" y="34" text-anchor="middle">前联合</text>
-          <text x="150" y="300">杓状软骨</text><text x="610" y="300" text-anchor="end">肌突</text>
-          <text x="380" y="398" text-anchor="middle">后方 · 声门后部</text>
-        </g>
-      </svg>
+      <svg id="mechMap" data-version="2" viewBox="0 0 760 460" data-state="pca" role="img" aria-labelledby="mechMapTitle mechMapDesc">
+    <title id="mechMapTitle">声门形态随喉内肌机制变化的示意图</title>
+    <desc id="mechMapDesc">上方为前联合、下方为两侧杓状软骨。选机制时声带与杓状软骨整体转动，箭头标出运动方向；这是示意图，不是真实组织形变。</desc>
+    <defs>
+      <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M0 0 L10 5 L0 10 z" fill="#9a6c58"/>
+      </marker>
+    </defs>
+    <g>
+      <path d="M300 396 Q380 434 460 396" fill="none" stroke="#c8d5cc" stroke-width="13"/>
+      <path d="M330 368 Q380 394 430 368" fill="none" stroke="#e2ebe4" stroke-width="9"/>
+    </g>
+    <path d="M380 84 C352 170 342 250 338 298 L422 298 C418 250 408 170 380 84 Z" fill="#cfe0d8"/>
+    <g id="sideLeft" class="side">
+      <path d="M380 80 C354 162 342 242 338 298 L316 298 C320 238 338 158 372 78 Z" fill="#e3bcb0" stroke="#a4645a" stroke-width="2" stroke-linejoin="round"/>
+      <g id="aryLeft" class="ary">
+        <path d="M326 280 C304 278 290 300 292 326 C294 352 316 368 336 360 C356 352 364 328 356 308 C350 290 338 280 326 280 Z" fill="#edf3ed" stroke="#23483c" stroke-width="2.5"/>
+        <path d="M338 292 L358 284 L342 312 Z" fill="#dfe8e1" stroke="#23483c" stroke-width="2"/>
+        <circle cx="292" cy="322" r="5" fill="#9a6c58"/>
+      </g>
+    </g>
+    <g id="sideRight" class="side">
+      <path d="M380 80 C406 162 418 242 422 298 L444 298 C440 238 422 158 380 78 Z" fill="#e3bcb0" stroke="#a4645a" stroke-width="2" stroke-linejoin="round"/>
+      <g id="aryRight" class="ary">
+        <path d="M434 280 C456 278 470 300 468 326 C466 352 444 368 424 360 C404 352 396 328 404 308 C410 290 422 280 434 280 Z" fill="#edf3ed" stroke="#23483c" stroke-width="2.5"/>
+        <path d="M422 292 L402 284 L418 312 Z" fill="#dfe8e1" stroke="#23483c" stroke-width="2"/>
+        <circle cx="468" cy="322" r="5" fill="#9a6c58"/>
+      </g>
+    </g>
+    <g id="arrowsOpen" class="arrow-g">
+      <path d="M332 244 L282 236" stroke="#9a6c58" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M428 244 L478 236" stroke="#9a6c58" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+    </g>
+    <g id="arrowsClose" class="arrow-g">
+      <path d="M286 248 L330 256" stroke="#9a6c58" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M474 248 L430 256" stroke="#9a6c58" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+    </g>
+    <g id="arrowsMid" class="arrow-g">
+      <path d="M296 336 L342 336" stroke="#9a6c58" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M464 336 L418 336" stroke="#9a6c58" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+    </g>
+    <g id="arrowsThick" class="arrow-g">
+      <path d="M336 206 L300 206" stroke="#9a6c58" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+      <path d="M352 206 L388 206" stroke="#9a6c58" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+    </g>
+    <g id="arrowsLong" class="arrow-g">
+      <path d="M380 150 L380 240" stroke="#9a6c58" stroke-width="3" fill="none" marker-end="url(#ah)"/>
+    </g>
+    <g font-family="system-ui,sans-serif" font-size="13" fill="#557165">
+      <text x="380" y="36" text-anchor="middle">前联合</text>
+      <text x="196" y="212" text-anchor="end">声带</text>
+      <path d="M200 208 L322 214" stroke="#d8e2db" stroke-width="1.4" fill="none"/>
+      <text x="200" y="344" text-anchor="end">杓状软骨</text>
+      <path d="M204 340 L292 338" stroke="#d8e2db" stroke-width="1.4" fill="none"/>
+      <text x="560" y="326" text-anchor="start" fill="#9a6c58">肌突</text>
+      <path d="M556 322 L476 322" stroke="#d8e2db" stroke-width="1.4" fill="none"/>
+      <text x="380" y="432" text-anchor="middle">后方 · 声门后部</text>
+    </g>
+  </svg>
       <p class="mech-map-note" id="mechMapNote">杓状软骨在环杓关节上外旋，声带突外移，声门开大——吸气时的主要形态。</p>
     </div>
     <div class="readout" aria-live="polite" aria-atomic="true"><div class="readout-kicker">SELECTED MECHANISM</div><h3 id="modeTitle">后环杓肌 · 声带外展</h3><p id="modeDescription">后环杓肌是喉内肌中负责声带外展的唯一肌肉。它作用于杓状软骨的肌突，使杓状软骨在环杓关节上发生旋转，从而使声带突向外侧移动、声门开放。</p><ul id="modePoints"><li>观察杓状软骨及其肌突、声带突。</li><li>注意这是杓状软骨在环杓关节上的运动，不是整片声带向外平移。</li><li>主要生理作用：吸气时开放声门。</li></ul></div>
