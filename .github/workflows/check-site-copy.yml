@@ -159,7 +159,7 @@ jobs:
 
           # Parse every inline script on the anatomy page, not only the main app bundle.
           import subprocess
-          scripts = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', voice_page, re.S | re.I)
+          scripts = re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>', voice_page, re.S | re.I)
           if not scripts:
               raise SystemExit("Voice anatomy page has no inline interaction scripts")
           for number, script in enumerate(scripts):
