@@ -1,0 +1,138 @@
+name: Larynx mechanism map
+
+on:
+  push:
+    paths:
+      - content/larynx-mechanism-map.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Add the mechanism-linked glottis map
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'id="mechMap"' in t:
+              print('already patched, nothing to do')
+              raise SystemExit(0)
+
+          def swap(old, new, label):
+              global t
+              n = t.count(old)
+              if n != 1:
+                  sys.exit('ABORT: %s expected 1 match, got %d' % (label, n))
+              t = t.replace(old, new, 1)
+
+          swap(
+              '.readout ul{font-size:11px;line-height:1.8;color:#566a60;padding-left:18px;margin:8px 0 0}',
+              '.readout ul{font-size:11px;line-height:1.8;color:#566a60;padding-left:18px;margin:8px 0 0}\n'
+              '.mech-map{margin:14px 0 2px;padding:12px 12px 6px;border:1px solid #e2e9e1;border-radius:12px;background:#fff}\n'
+              '.mech-map-head{display:flex;justify-content:space-between;gap:10px;align-items:center;margin:0 4px 4px;font-size:11px;color:#7a8981}\n'
+              '.mech-map-head strong{font-size:12px;color:#183b34}\n'
+              '.mech-map svg{width:100%;height:auto;display:block}\n'
+              '.mech-map .side{transform-box:view-box;transform-origin:380px 64px;transition:transform .34s cubic-bezier(.2,.7,.2,1)}\n'
+              '.mech-map .ary{transform-box:view-box;transition:transform .34s cubic-bezier(.2,.7,.2,1)}\n'
+              '.mech-map .fold-thick{transition:opacity .3s ease}\n'
+              '#mechMap[data-state="pca"] #sideLeft{transform:rotate(9deg)}\n'
+              '#mechMap[data-state="pca"] #sideRight{transform:rotate(-9deg)}\n'
+              '#mechMap[data-state="lca"] #sideLeft{transform:rotate(-6deg)}\n'
+              '#mechMap[data-state="lca"] #sideRight{transform:rotate(6deg)}\n'
+              '#mechMap[data-state="ia"] #aryLeft{transform:translateX(12px)}\n'
+              '#mechMap[data-state="ia"] #aryRight{transform:translateX(-12px)}\n'
+              '#mechMap[data-state="ta"] .fold-thick{opacity:1}\n'
+              '#mechMap[data-state="ct"] #sideLeft,#mechMap[data-state="ct"] #sideRight{transform:scaleY(1.06)}\n'
+              '.mech-map-note{margin:8px 4px 2px;font-size:11px;line-height:1.7;color:#5d7067}',
+              'css')
+
+          diagram = (
+              '<div class="mech-map" aria-label="声门形态随机制变化的示意图">\n'
+              '      <div class="mech-map-head"><strong>机制联动 · 看声门怎么变</strong><span>示意图 · 非生物力学仿真</span></div>\n'
+              '      <svg id="mechMap" viewBox="0 0 760 420" data-state="pca" role="img" aria-labelledby="mechMapTitle mechMapDesc">\n'
+              '        <title id="mechMapTitle">声门形态随喉内肌机制变化的示意图</title>\n'
+              '        <desc id="mechMapDesc">上方为前联合，下方为两侧杓状软骨。选择机制时，两侧声带与杓状软骨的位置相应改变，用于说明开合与张力调节的方向，不是真实组织形变。</desc>\n'
+              '        <g><path d="M248 332 Q380 376 512 332" fill="none" stroke="#c8d5cc" stroke-width="12"/>'
+              '<path d="M232 298 Q380 350 528 298" fill="none" stroke="#e2ebe4" stroke-width="7"/></g>\n'
+              '        <g id="sideLeft" class="side">\n'
+              '          <path class="fold" d="M380 58 L322 244 L322 264 L380 74 Z" fill="#e7c9bd" stroke="#a4645a" stroke-width="2"/>\n'
+              '          <path class="fold-thick" d="M380 54 L310 240 L310 268 L380 80 Z" fill="#c97870" stroke="#a4645a" stroke-width="2" opacity="0"/>\n'
+              '          <g id="aryLeft" class="ary">\n'
+              '            <path d="M300 236 C278 236 264 256 268 276 C272 300 294 312 312 304 C332 296 340 272 332 254 C326 240 314 236 300 236 Z" fill="#edf3ed" stroke="#23483c" stroke-width="2.5"/>\n'
+              '            <path d="M322 250 L344 244 L328 268 Z" fill="#dfe8e1" stroke="#23483c" stroke-width="2"/>\n'
+              '            <circle cx="272" cy="286" r="4" fill="#9a6c58"/>\n'
+              '          </g>\n'
+              '        </g>\n'
+              '        <g id="sideRight" class="side">\n'
+              '          <path class="fold" d="M380 58 L438 244 L438 264 L380 74 Z" fill="#e7c9bd" stroke="#a4645a" stroke-width="2"/>\n'
+              '          <path class="fold-thick" d="M380 54 L450 240 L450 268 L380 80 Z" fill="#c97870" stroke="#a4645a" stroke-width="2" opacity="0"/>\n'
+              '          <g id="aryRight" class="ary">\n'
+              '            <path d="M460 236 C482 236 496 256 492 276 C488 300 466 312 448 304 C428 296 420 272 428 254 C434 240 446 236 460 236 Z" fill="#edf3ed" stroke="#23483c" stroke-width="2.5"/>\n'
+              '            <path d="M438 250 L416 244 L432 268 Z" fill="#dfe8e1" stroke="#23483c" stroke-width="2"/>\n'
+              '            <circle cx="488" cy="286" r="4" fill="#9a6c58"/>\n'
+              '          </g>\n'
+              '        </g>\n'
+              '        <g font-family="system-ui,sans-serif" font-size="13" fill="#557165">\n'
+              '          <text x="380" y="34" text-anchor="middle">前联合</text>\n'
+              '          <text x="150" y="300">杓状软骨</text><text x="610" y="300" text-anchor="end">肌突</text>\n'
+              '          <text x="380" y="398" text-anchor="middle">后方 · 声门后部</text>\n'
+              '        </g>\n'
+              '      </svg>\n'
+              '      <p class="mech-map-note" id="mechMapNote">杓状软骨在环杓关节上外旋，声带突外移，声门开大——吸气时的主要形态。</p>\n'
+              '    </div>\n    '
+          )
+          swap('<div class="readout" aria-live="polite" aria-atomic="true">', diagram + '<div class="readout" aria-live="polite" aria-atomic="true">', 'insert diagram')
+
+          script = (
+              '<script>\n'
+              '(()=>{\n'
+              ' const map=document.getElementById(\'mechMap\');\n'
+              ' if(!map)return;\n'
+              ' const notes={pca:\'杓状软骨在环杓关节上外旋，声带突外移，声门开大——吸气时的主要形态。\',lca:\'杓状软骨反向旋转，声带突靠近中线，膜间部声门收窄。\',ia:\'两侧杓状软骨彼此靠近，声门后部（软骨间部）先闭合，前部仍留缝。\',ta:\'声带体变厚、内侧缘形态改变。图上只表现变厚这一层，不代表真实刚度或振动方式。\',ct:\'环甲之间距离改变，声带被拉长，纵向张力增加，音高倾向升高。\'};\n'
+              ' const note=document.getElementById(\'mechMapNote\');\n'
+              ' document.querySelectorAll(\'[data-mode]\').forEach(button=>button.addEventListener(\'click\',()=>{\n'
+              '  const s=button.dataset.mode;if(!notes[s])return;\n'
+              '  map.dataset.state=s;if(note)note.textContent=notes[s];\n'
+              ' }));\n'
+              '})();\n'
+              '</script>\n'
+          )
+          swap('</script>\n</body>', '</script>\n', '__SCRIPT_MARK__')
+          t = t.replace('</script>\n', '</script>\n' + script, 1) if False else t
+
+          # insert the new script right before the closing body tag
+          swap('</body>', script + '</body>', 'append script')
+
+          swap(
+              '当前交互切换的是肌肉功能说明，不是经验证的三维生物力学仿真；',
+              '当前交互切换的是肌肉功能说明，联动的声门示意图只表示开合与张力的方向，不是经验证的三维生物力学仿真；',
+              'disclaimer')
+
+          for token in ('id="mechMap"', '#mechMap[data-state="pca"]', 'mechMapNote', 'const map=document.getElementById'):
+              if token not in t:
+                  sys.exit('ABORT: missing ' + token)
+
+          p.write_text(t, encoding='utf-8')
+          print('patched larynx-mechanism.html, now', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "feat(anatomy): link the mechanism tabs to a glottis shape diagram"
+            git push
+          fi
