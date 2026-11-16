@@ -32,6 +32,13 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertIn('property="og:site_name" content="OperaLab."', page)
         self.assertIn('name="twitter:card" content="summary_large_image"', page)
 
+    def test_larynx_mechanism_page_has_page_specific_share_metadata(self):
+        page = (ROOT / "larynx-mechanism.html").read_text(encoding="utf-8")
+        self.assertIn('<title>喉部发声机制实验室｜OperaLab.</title>', page)
+        self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/larynx-mechanism.html"', page)
+        self.assertIn('property="og:site_name" content="OperaLab."', page)
+        self.assertIn('name="twitter:card" content="summary_large_image"', page)
+
     def test_source_evidence_is_not_exposed_in_public_footer(self):
         self.assertNotIn('id="sourcesLink"', HOME)
         self.assertNotIn('id="sources-note"', HOME)
@@ -51,6 +58,7 @@ class SeoAndSharingTests(unittest.TestCase):
             "https://operalirico.github.io/Opera-Lirico/masterclasses.html",
             "https://operalirico.github.io/Opera-Lirico/privacy.html",
             "https://operalirico.github.io/Opera-Lirico/voice-anatomy.html",
+            "https://operalirico.github.io/Opera-Lirico/larynx-mechanism.html",
         ])
 
 
