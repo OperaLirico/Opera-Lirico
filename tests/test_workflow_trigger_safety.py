@@ -27,7 +27,6 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
         self.assertNotIn('"reports/source-audit-baseline-2026-11-10.json"', workflow)
         self.assertNotIn('".github/workflows/p2-p4-extraction-pilot.yml"', workflow)
 
-
     def test_system_health_runs_on_schedule_not_every_upstream_completion(self):
         workflow = (ROOT / ".github" / "workflows" / "system-health-check.yml").read_text(encoding="utf-8")
         self.assertIn("  schedule:", workflow)
@@ -54,7 +53,22 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
         workflow = (ROOT / ".github" / "workflows" / "weekly-source-coverage.yml").read_text(encoding="utf-8")
         self.assertIn('workflows: ["Daily source refresh"]', workflow)
         self.assertIn('"audit_source_coverage.py"', workflow)
-        self.assertIn('group: weekly-source-coverage', workflow)
+        self.assertIn("group: weekly-source-coverage", workflow)
+
+    def test_weekly_source_discovery_stages_its_merged_registry_snapshot(self):
+        workflow = (ROOT / ".github" / "workflows" / "weekly-source-discovery.yml").read_text(encoding="utf-8")
+        stage_line = next(
+            (line for line in workflow.splitlines() if line.strip().startswith("git add ")),
+            "",
+        )
+        for path in (
+            "data/conservatori_extra.json",
+            "data/sources_extra.json",
+            "data/source_candidates.json",
+            "data/source_fetch_policies.json",
+            "data/sources.json",
+        ):
+            self.assertIn(path, stage_line)
 
 
 if __name__ == "__main__":
