@@ -1,0 +1,64 @@
+name: Larynx overlay align 2
+
+on:
+  push:
+    paths:
+      - content/larynx-overlay-2.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Rebuild the label layer in photo coordinates
+        run: |
+          python3 - <<'PY'
+          import pathlib, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'viewBox="0 0 1200 800"' in t:
+              print('already aligned')
+              raise SystemExit(0)
+
+          start = t.find('<svg class="mech-overlay"')
+          if start == -1:
+              sys.exit('ABORT: overlay start not found')
+          end = t.find('</svg>', start)
+          if end == -1:
+              sys.exit('ABORT: overlay end not found')
+          end += len('</svg>')
+
+          overlay = '''<svg class="mech-overlay" viewBox="0 0 1200 800" aria-hidden="true">
+                  <text x="600" y="120" text-anchor="middle">前联合</text>
+                  <path d="M600 132 L600 190"/>
+                  <text x="990" y="300" text-anchor="end">声带（真声带）</text>
+                  <path d="M982 312 L800 358"/>
+                  <text x="296" y="654" text-anchor="middle">栍状软骨</text>
+                  <path d="M374 662 L470 650"/>
+                  <text x="600" y="756" text-anchor="middle">后联合</text>
+                </svg>'''
+          t = t[:start] + overlay + t[end:]
+
+          for token in ('viewBox="0 0 1200 800"', '前联合', '后联合', '栍状软骨'):
+              if token not in t:
+                  sys.exit('ABORT: missing ' + token)
+          p.write_text(t, encoding='utf-8')
+          print('overlay rebuilt,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "fix(anatomy): rebuild label overlay in photo coordinates"
+            git push
+          fi
