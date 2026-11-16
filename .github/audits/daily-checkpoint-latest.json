@@ -4,12 +4,23 @@
   "repository_full_name": "OperaLirico/Opera-Lirico",
   "repository_alias": "wl19971007-lgtm/leo",
   "main_commit_checked": {
-    "sha": "5e85bc84075cd2d511159f87e191073bf9ad1391",
-    "message": "Record weekly source coverage checkpoint",
-    "committed_at": "2026-11-16T10:23:56Z"
+    "sha": "6ebd8efa3987f6fbcb4e2a2845a6815876f1487d",
+    "message": "chore(seo): add the laryngeal mechanics page to the sitemap",
+    "committed_at": "2026-11-16T12:14:27Z"
   },
   "pull_requests": {
     "open": [
+      {
+        "number": 109,
+        "title": "Fix weekly source discovery staging and refresh audit checkpoint",
+        "state": "open",
+        "draft": false,
+        "head": "fix/weekly-source-discovery-stage-merged-snapshot-2026-11-16",
+        "base": "main",
+        "head_sha": "44028527f432f074826a4951f5111f40531dcd74",
+        "checks": "Source quality tests in progress",
+        "mergeable": true
+      },
       {
         "number": 107,
         "title": "Add changedetection.io monitoring and Modern Web Guidance skill",
@@ -131,6 +142,7 @@
       }
     ],
     "checked_today": [
+      109,
       107,
       105,
       101,
@@ -142,6 +154,22 @@
     ]
   },
   "recent_actions": [
+    {
+      "id": 43866296703,
+      "name": "Source quality tests",
+      "event": "pull_request",
+      "status": "in_progress",
+      "conclusion": null,
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43866296703"
+    },
+    {
+      "id": 43864768016,
+      "name": "Deploy GitHub Pages",
+      "event": "push",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43864768016"
+    },
     {
       "id": 43860307345,
       "name": "OperaLab project agent — daily review",
@@ -160,15 +188,15 @@
     },
     {
       "id": 43855100393,
-      "name": "Source quality tests",
-      "event": "pull_request",
+      "name": "Workflow failure digest",
+      "event": "schedule",
       "status": "completed",
       "conclusion": "success",
       "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43855100393"
     },
     {
       "id": 43854136516,
-      "name": "Daily source refresh",
+      "name": "Analytics watchdog",
       "event": "schedule",
       "status": "completed",
       "conclusion": "success",
@@ -176,7 +204,7 @@
     },
     {
       "id": 43849791077,
-      "name": "Discover masterclasses",
+      "name": "System health check",
       "event": "schedule",
       "status": "completed",
       "conclusion": "success",
@@ -189,22 +217,6 @@
       "status": "completed",
       "conclusion": "success",
       "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43848095590"
-    },
-    {
-      "id": 43846111664,
-      "name": "System health check",
-      "event": "schedule",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43846111664"
-    },
-    {
-      "id": 43844678134,
-      "name": "System health check",
-      "event": "schedule",
-      "status": "completed",
-      "conclusion": "success",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43844678134"
     }
   ],
   "older_action_notes": [
@@ -213,7 +225,7 @@
       "name": "Weekly source discovery",
       "run_attempt": 3,
       "conclusion": "failure",
-      "reason": "The job committed selected discovery files, then git rebase origin/main failed because data/sources.json had been modified by grow_sources.py but was omitted from git add. This is a deterministic worktree-staging issue, not a network failure."
+      "reason": "grow_sources.py rewrites data/sources.json but the workflow omitted it from git add; git rebase origin/main failed because the worktree remained dirty. Fix proposed in PR #109."
     },
     {
       "id": 43836443398,
@@ -222,11 +234,18 @@
       "reason": "Workflow guard skipped job startup; not a failed scan."
     },
     {
-      "id": 43831283901,
-      "name": "Deploy GitHub Pages",
+      "id": 43835815636,
+      "name": "Daily source refresh",
       "conclusion": "success",
-      "updated_at": "2026-11-16T08:27:32Z",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43831283901"
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43835815636",
+      "note": "All build, source refresh, PDF mirror, quality audit and Pages deploy steps succeeded."
+    },
+    {
+      "id": 43839333697,
+      "name": "Discover masterclasses",
+      "conclusion": "success",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43839333697",
+      "note": "Candidate review queue refreshed successfully."
     }
   ],
   "website": {
@@ -234,19 +253,19 @@
     "direct_live_check": "not_verified",
     "direct_check_note": "Web page inspection returned an internal error and container curl could not resolve the hostname. Neither result proves the site is down.",
     "latest_pages_deploy": {
-      "run_id": 43831283901,
+      "run_id": 43864768016,
       "conclusion": "success",
-      "updated_at": "2026-11-16T08:27:32Z",
-      "head_sha": "236058995710049416819a5d20c391165b53df62",
-      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43831283901"
+      "updated_at": "2026-11-16T12:14:56Z",
+      "head_sha": "6ebd8efa3987f6fbcb4e2a2845a6815876f1487d",
+      "url": "https://github.com/OperaLirico/Opera-Lirico/actions/runs/43864768016"
     },
     "site_facing_files_changed": true,
-    "note": "Latest confirmed Pages deployment built the source-backed laryngeal mechanism lab; direct live availability remains unverified."
+    "note": "Latest confirmed Pages deployment built main commit 6ebd8efa (laryngeal mechanics sitemap update); direct live availability remains unverified."
   },
   "change_scope": {
     "previous_checkpoint_commit": "7105a3c1b57f288702650fd5b84cc9098e8c5af9",
-    "compared_main_commit": "5e85bc84075cd2d511159f87e191073bf9ad1391",
-    "commits_ahead": 83,
+    "compared_main_commit": "6ebd8efa3987f6fbcb4e2a2845a6815876f1487d",
+    "commits_ahead": 84,
     "commits_behind": 0,
     "inspected_files": [
       ".github/workflows/weekly-source-discovery.yml",
@@ -269,7 +288,10 @@
     "production_code_changed_on_main": false,
     "production_fetch_method_changed": false,
     "proposed_branch": "fix/weekly-source-discovery-stage-merged-snapshot-2026-11-16",
-    "proposed_fix": "Stage data/sources.json, the merged registry snapshot written by grow_sources.py, and add a regression test to prevent the weekly source discovery rebase failure."
+    "proposed_fix": "Stage data/sources.json, the merged registry snapshot written by grow_sources.py, and add a regression test to prevent the weekly source discovery rebase failure.",
+    "pull_request_number": 109,
+    "pull_request_head_sha": "44028527f432f074826a4951f5111f40531dcd74",
+    "note": "PR #109 targets current main 6ebd8efa; source-quality test was still in progress when this checkpoint was refreshed."
   },
   "weekly_source_coverage": {
     "cycle": "2026-W47",
