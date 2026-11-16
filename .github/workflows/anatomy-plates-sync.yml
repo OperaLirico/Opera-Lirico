@@ -1,0 +1,38 @@
+name: Anatomy plates sync
+
+on:
+  push:
+    paths:
+      - content/anatomy-plates.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download line-art plates
+        run: |
+          set -euo pipefail
+          mkdir -p assets/anatomy
+          curl -fsSL "https://aka.doubaocdn.com/s/c82onXral8" -o assets/anatomy/larynx-superior.png
+          curl -fsSL "https://aka.doubaocdn.com/s/i5ZwbCzSjh" -o assets/anatomy/larynx-sagittal.png
+          curl -fsSL "https://aka.doubaocdn.com/s/llj2saBeu3" -o assets/anatomy/larynx-intrinsic-muscles.png
+          ls -l assets/anatomy
+
+      - name: Commit plates
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add assets/anatomy
+          if git diff --staged --quiet; then
+            echo "no change"
+          else
+            git commit -m "assets(anatomy): add line-art plates for the anatomy lab"
+            git push
+          fi
