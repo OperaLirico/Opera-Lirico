@@ -1,0 +1,75 @@
+name: Larynx map v11 mucosa surface
+
+on:
+  push:
+    paths:
+      - content/larynx-map-v11.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repaint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Repaint v11 — centralised cavity, mucosal posterior commissure
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'data-version="11"' in t:
+              print('already v11')
+              raise SystemExit(0)
+
+          pattern = re.compile('<svg id="mechMap"[\\s\\S]*?</svg>')
+          svg = pattern.findall(t)
+          if len(svg) != 1:
+              sys.exit('ABORT: mechMap svg not uniquely found')
+          old = svg[0]
+
+          def swap(old_s, new_s, label):
+              global old
+              if old.count(old_s) != 1:
+                  sys.exit('ABORT: %s -> %d' % (label, old.count(old_s)))
+              old = old.replace(old_s, new_s, 1)
+
+          swap('data-version="10"', 'data-version="11"', 'version')
+
+          # 黑色腔体只保留中轴那一条：开得最大时刚好填满裂隙，闭合时完全被黏膜盖住
+          swap('M380 76 C350 158 322 244 300 332 Q380 366 460 332 C438 244 410 158 380 76 Z',
+               'M380 74 C370 152 356 248 332 344 Q380 358 428 344 C404 248 390 152 380 74 Z', 'cavity')
+
+          # 后联合黏膜：把裂隙底端收成黏膜，不再是一道黑色平底
+          swap('M280 326 Q380 384 480 326 Q380 358 280 326 Z',
+               'M286 322 Q380 388 474 322 Q380 350 286 322 Z', 'posterior wall')
+
+          # 后联合再加一层盖在裂隙底部的黏膜桥（画在最上层）
+          swap('</g>\n              <g font-family="system-ui,sans-serif"',
+               '</g>\n              <path d="M332 336 Q380 362 428 336 Q380 372 332 336 Z" fill="#dc9f92" opacity="0.95"/>\n              <g font-family="system-ui,sans-serif"', 'commissure bridge')
+
+          for token in ('data-version="11"', 'M380 74 C370 152 356 248 332 344', 'M332 336 Q380 362'):
+              if token not in old:
+                  sys.exit('ABORT: missing ' + token)
+
+          t = pattern.sub(lambda m: old, t, count=1)
+          if t.count('<svg') != t.count('</svg>'):
+              sys.exit('ABORT: unbalanced svg tags')
+          p.write_text(t, encoding='utf-8')
+          print('v11 written,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add larynx-mechanism.html
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "feat(anatomy): v11 cavity narrowed, mucosal posterior commissure"
+            git push
+          fi
