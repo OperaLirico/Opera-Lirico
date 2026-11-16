@@ -1,0 +1,106 @@
+name: Larynx map v14 photo frames
+
+on:
+  push:
+    paths:
+      - content/larynx-map-v14.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  repaint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch the five endoscopic frames
+        run: |
+          mkdir -p assets/anatomy
+          curl -fsSL "https://aka.doubaocdn.com/s/UnZpDwcVJB" -o /tmp/pca.png
+          curl -fsSL "https://aka.doubaocdn.com/s/SM4MwdrHYh" -o /tmp/lca.png
+          curl -fsSL "https://aka.doubaocdn.com/s/1PGuPP7Fb8" -o /tmp/ia.png
+          curl -fsSL "https://aka.doubaocdn.com/s/tKloNwcg82" -o /tmp/ta.png
+          curl -fsSL "https://aka.doubaocdn.com/s/Ch5zodSm3X" -o /tmp/ct.png
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          names = {'pca':'glottis-pca','lca':'glottis-lca','ia':'glottis-ia','ta':'glottis-ta','ct':'glottis-ct'}
+          for src, dst in names.items():
+              p = Path('/tmp/%s.png' % src)
+              if not p.exists() or p.stat().st_size < 100000:
+                  raise SystemExit('ABORT: frame %s missing or too small' % src)
+              shutil.copy(p, Path('assets/anatomy/%s.jpg' % dst).with_suffix('.png'))
+              print(dst, p.stat().st_size)
+          PY
+
+      - name: Swap the schematic for the photo frames
+        run: |
+          python3 - <<'PY'
+          import pathlib, re, sys
+
+          p = pathlib.Path('larynx-mechanism.html')
+          t = p.read_text(encoding='utf-8')
+          if 'mech-frames' in t:
+              print('already converted')
+              raise SystemExit(0)
+
+          frames = '''<div class="mech-frames" id="mechMap" data-state="pca" role="img" aria-label="喉镜下声门形态随喉内肌机制变化（AI 生成的示意图）">
+                <img class="mech-frame" data-f="pca" src="assets/anatomy/glottis-pca.png" alt="环杓后肌：声门最大外展">
+                <img class="mech-frame" data-f="lca" src="assets/anatomy/glottis-lca.png" alt="环杓侧肌：声门完全闭合" loading="lazy">
+                <img class="mech-frame" data-f="ia" src="assets/anatomy/glottis-ia.png" alt="杓间肌：声门后部闭合" loading="lazy">
+                <img class="mech-frame" data-f="ta" src="assets/anatomy/glottis-ta.png" alt="甲杓肌：声带增厚" loading="lazy">
+                <img class="mech-frame" data-f="ct" src="assets/anatomy/glottis-ct.png" alt="环甲肌：声带拉长" loading="lazy">
+                <svg class="mech-overlay" viewBox="0 0 760 460" aria-hidden="true">
+                  <text x="380" y="46" text-anchor="middle">前联合</text>
+                  <path d="M380 56 L380 108"/>
+                  <text x="636" y="150" text-anchor="start">声带（真声带）</text>
+                  <path d="M630 158 L468 186"/>
+                  <text x="120" y="360" text-anchor="middle">栍状软骨</text>
+                  <path d="M180 344 L278 330"/>
+                  <text x="380" y="438" text-anchor="middle">后联合</text>
+                </svg>
+              </div>'''
+
+          pattern = re.compile('<svg id="mechMap"[\\s\\S]*?</svg>')
+          if len(pattern.findall(t)) != 1:
+              sys.exit('ABORT: mechMap svg not uniquely found')
+          t = pattern.sub(lambda m: frames, t, count=1)
+
+          css_anchor = '.mech-map svg{max-height:360px}'
+          if t.count(css_anchor) != 1:
+              sys.exit('ABORT: css anchor not found')
+          css_new = css_anchor + '\n' + '.mech-frames{position:relative;width:100%;aspect-ratio:3/2;border-radius:10px;overflow:hidden;background:#0f1414}' + '\n' + '.mech-frame{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .34s ease}' + '\n' + '.mech-frames[data-state="pca"] .mech-frame[data-f="pca"],.mech-frames[data-state="lca"] .mech-frame[data-f="lca"],.mech-frames[data-state="ia"] .mech-frame[data-f="ia"],.mech-frames[data-state="ta"] .mech-frame[data-f="ta"],.mech-frames[data-state="ct"] .mech-frame[data-f="ct"]{opacity:1}' + '\n' + '.mech-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}' + '\n' + '.mech-overlay text{font:600 13px/1 system-ui,sans-serif;fill:#fff;paint-order:stroke;stroke:rgba(10,20,18,.55);stroke-width:3.4px}' + '\n' + '.mech-overlay path{stroke:rgba(255,255,255,.8);stroke-width:1.3;fill:none}'
+          t = t.replace(css_anchor, css_new, 1)
+
+          old_note = '是示意性的黏膜色块、不是解剖图谱'
+          if t.count(old_note) != 1:
+              sys.exit('ABORT: disclaimer phrase not found once')
+          t = t.replace(old_note, '是 AI 生成的喉镜观感示意图（非真实病例）、不是解剖图谱', 1)
+
+          old_tag = '<span>示意图 · 非生物力学仿真</span>'
+          if t.count(old_tag) != 1:
+              sys.exit('ABORT: head tagline not found once')
+          t = t.replace(old_tag, '<span>AI 生成 · 非真实病例</span>', 1)
+
+          for token in ('data-f="pca"', 'mech-overlay', 'glottis-ct.png', 'AI 生成 · 非真实病例'):
+              if token not in t:
+                  sys.exit('ABORT: missing ' + token)
+          if t.count('<div') != t.count('</div>'):
+              sys.exit('ABORT: unbalanced div tags')
+
+          p.write_text(t, encoding='utf-8')
+          print('v14 written,', len(t), 'chars')
+          PY
+
+      - name: Commit
+        run: |
+          git config user.name "opera-lirico-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then echo "no change"; else
+            git commit -m "feat(anatomy): v14 endoscopic photo frames with state cross-fade"
+            git push
+          fi
