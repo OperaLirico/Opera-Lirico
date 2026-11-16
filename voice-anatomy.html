@@ -246,7 +246,7 @@
           <text x="635" y="382">会厌</text><path d="M625 387L513 341" stroke="#7a9184" fill="none"/>
           <text x="610" y="445">喉头 / 声带</text><path d="M605 449L540 397" stroke="#7a9184" fill="none"/>
         </g>
-        <g fill="#b46e5f" stroke="#fff8ed" stroke-width="2"><circle cx="205" cy="148" r="4"/><circle cx="350" cy="198" r="4"/><circle cx="490" cy="245" r="4"/><circle cx="540" cy="272" r="4"/><circle cx="380" cy="339" r="4/><circle cx="513" cy="341" r="4"/><circle cx="540" cy="397" r="4"/></g>
+        <g fill="#b46e5f" stroke="#fff8ed" stroke-width="2"><circle cx="205" cy="148" r="4"/><circle cx="350" cy="198" r="4"/><circle cx="490" cy="245" r="4"/><circle cx="540" cy="272" r="4"/><circle cx="380" cy="339" r="4"/><circle cx="513" cy="341" r="4"/><circle cx="540" cy="397" r="4"/></g>
       </svg>
       <div class="figure-caption"><span><i class="key-dot cartilage"></i>骨性支撑</span><span><i class="key-dot muscle"></i>软组织与肌肉</span><span class="caption-note">正中矢状面 · 教学示意</span></div>
     </div>
@@ -478,12 +478,13 @@
   document.getElementById('palateValue').textContent=p>70?'抬高':p>35?'中间位置':'降低';
   document.getElementById('tongueValue').textContent=t>75?'较高':t>40?'中等':'较低';
   document.getElementById('jawValue').textContent=j>70?'较大':j>35?'中等':'较小';
+  document.getElementById('tractState').textContent='自定义声道形态';
+  document.getElementById('tractExplanation').textContent=(p>70?'软腭抬高，鼻咽通道通常较少开放；':p<35?'软腭降低，鼻咽通道可开放；':'软腭处于中间位置，口鼻通道关系随实际动作变化；')+(t>70?'舌背较高。':t<30?'舌背较低。':'舌背处于中间高度。')+(j>70?'下颌开度较大。':j<30?'下颌开度较小。':'下颌开度适中。')+'这些滑块用于观察相对趋势，不是精确生理测量。';
   document.querySelectorAll('[data-vowel]').forEach(b=>b.setAttribute('aria-pressed','false'));
  }
  [palate,tongue,jaw].forEach(el=>el.addEventListener('input',update));
  document.querySelectorAll('[data-vowel]').forEach(btn=>btn.addEventListener('click',()=>{
   const d=vowelInfo[btn.dataset.vowel];if(!d)return;
-  [palate.value,tongue.value,jaw.value]=d.values;
   palate.value=d.values[0];tongue.value=d.values[1];jaw.value=d.values[2];update();
   document.getElementById('tractState').textContent=d.name;document.getElementById('tractExplanation').textContent=d.copy;
   btn.setAttribute('aria-pressed','true');document.querySelectorAll('[data-vowel]').forEach(b=>{if(b!==btn)b.setAttribute('aria-pressed','false')});
