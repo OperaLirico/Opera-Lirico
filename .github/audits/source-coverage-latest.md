@@ -2,17 +2,17 @@
 
 - Cycle: 2026-W47
 - Started: 2026-11-16T11:21:39+01:00
-- Last updated: 2026-11-16T11:23:32+01:00
-- Status: **in_progress**
-- Coverage: **36/46** checked; 10 remaining
+- Last updated: 2026-11-16T11:23:56+01:00
+- Status: **completed**
+- Coverage: **46/46** checked; 0 remaining
 - Failed/restricted/extraction errors: 0 (restricted: 0)
-- Changed normalized text hashes: 13
-- Sources with anomalies: 13
-- Registered sources: 34; candidate queue entries: 2
-- Source review classifications: auto_approved_official=20, auto_approved_third_party=6, duplicate_candidate=1, irrelevant_candidate=7, needs_review=2
-- Official + relevant: 19
+- Changed normalized text hashes: 15
+- Sources with anomalies: 15
+- Registered sources: 44; candidate queue entries: 2
+- Source review classifications: auto_approved_official=26, auto_approved_third_party=6, duplicate_candidate=1, irrelevant_candidate=9, needs_review=4
+- Official + relevant: 25
 - Third-party + relevant: 5
-- Needs review / irrelevant / unclassified: 9
+- Needs review / irrelevant / unclassified: 13
 - Duplicate candidates (registered): 1
 - Inventory SHA-256: 3830ac0c9ca41cf14b119aaf2376dfd86c357fc05588afd3ab2d1aa1acc17cd8 (inventory identity only)
 
@@ -97,6 +97,18 @@ Keyword/vocal signals are discovery clues only. Source identity and relevance ar
 - URL: https://www.teatromassimo.it/audizioni/
 - Status: ok / HTTP 200
 - Last success: 2026-11-16T11:22:50+01:00
+- Anomalies: normalized_page_text_changed
+
+### Teatro Regio Torino (source-4)
+- URL: https://www.teatroregio.torino.it/selezione-personale
+- Status: ok / HTTP 200
+- Last success: 2026-11-16T11:23:34+01:00
+- Anomalies: normalized_page_text_changed
+
+### Partecipa al Festival – Fondazione Campania dei Festival (source-98)
+- URL: https://contact.fondazionecampaniadeifestival.it/partecipa-al-festival/
+- Status: ok / HTTP 200
+- Last success: 2026-11-16T11:23:34+01:00
 - Anomalies: normalized_page_text_changed
 
 ## Coverage limitations
