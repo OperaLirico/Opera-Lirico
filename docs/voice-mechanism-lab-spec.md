@@ -193,3 +193,50 @@ Do not merge this into the first mechanism. It is a separate follow-on figure:
 ## Implementation note
 
 The Anatomy skill requires a working coding-agent environment with the submodule initialized, Node.js 20.10+, and Chrome/Chromium for its build and verification scripts. GitHub file-editing operations alone cannot execute the skill or its geometry/browser audits. Do not claim the skill was run until those commands have actually completed and their output has been reviewed.
+
+
+## Critical visual-fidelity requirement (user-approved)
+
+The user explicitly requires that organs must not be represented by abstract geometric primitives. A learner must be able to recognize the actual anatomical structure. “1:1” means faithful anatomical morphology, topology, spatial relationships, and relative proportions against a documented anatomical reference; it does not mean claiming life-size physical dimensions unless the source provides calibrated measurements.
+
+### Required representation
+
+- Use anatomically faithful, sourced organ meshes, segmented medical imaging, plastinated-specimen photography, or atlas plates.
+- Use realistic anatomical surface form and correct neighboring structures. Do not replace the tongue with an ellipsoid, lungs with balloons, larynx with boxes/cylinders, or vocal folds with two generic curved lines.
+- Provide correct view orientation and, where helpful, multiple views: anterior, posterior, lateral, superior, inferior, and midsagittal/coronal/axial section.
+- For internal structures that are hidden in an external view, use a documented cutaway, transparent overlay, exploded layer view, or a separate anatomical plate. Do not imply that a cutaway is the intact external surface.
+- If a source is a photograph or atlas plate rather than a 3D mesh, retain it as a high-fidelity 2D view and layer clickable labels/regions over it. A truthful 2D anatomical plate is better than an invented 3D organ.
+- Interactive hotspots must be anchored to the real anatomical reference. Do not use decorative approximate coordinates that point to the wrong structure.
+- Do not claim “1:1 exact dimensions” unless the source has calibrated scale data. State whether the view is true scale, proportional, or schematic.
+
+### Asset acceptance
+
+For every anatomical asset, record:
+- author / institution / model title;
+- source URL and retrieval/version date;
+- licence and permitted use (including commercial redistribution and derivative works);
+- anatomy coverage and missing structures;
+- view orientation and coordinate convention;
+- scale metadata, if any;
+- whether it is a segmented scan, atlas reconstruction, plastinated specimen, or artist-built mesh;
+- known inaccuracies or simplifications.
+
+Reject any asset with unclear provenance/licence, misleading anatomy, or no usable view/orientation metadata. Prefer open, redistributable assets with clear attribution and licences. Embedding an externally hosted viewer is not a substitute for securing a stable source, usage rights, and a reliable experience.
+
+### Anatomy skill boundary
+
+The official Anatomy project describes itself as an isometric technical-figure toolkit. Its primitives are its own illustrated geometry; its beta 3D mode reprojects/re-shades those primitives. It is not a medical mesh pipeline and must never be used to generate the organ surfaces themselves. Use it only for separate explanatory apparatus, labels, force indicators, and readouts surrounding or annotating the sourced anatomical reference.
+
+Official capability references:
+- https://github.com/wheresryan22/anatomy
+- https://github.com/wheresryan22/anatomy/blob/main/SKILL.md
+
+### Revised acceptance gate
+
+- [ ] Every organ shown is recognizably and anatomically faithful to a cited reference asset.
+- [ ] No abstract primitive is used as a substitute for an organ or tissue.
+- [ ] Every interactive label/hotspot maps to the correct visible structure.
+- [ ] Cutaway/transparent/exploded views are explicitly identified as such.
+- [ ] Scale claims match the source metadata; otherwise say “proportional reference”.
+- [ ] Asset licence permits the intended use and is recorded.
+- [ ] If no acceptable 3D mesh exists, use a real anatomical plate/specimen image rather than fabricate geometry.
