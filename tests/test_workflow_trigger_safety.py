@@ -1,3 +1,4 @@
+import json
 import unittest
 from pathlib import Path
 
@@ -74,6 +75,17 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
         self.assertIn("baseline.upstream_main_commit", workflow)
         self.assertIn("mcp_contracts_blob_sha", workflow)
         self.assertNotIn('path: ".agents/skills/rea-reverse-engineering/SKILL.md"', workflow)
+
+    def test_rea_skill_baseline_matches_reviewed_upstream_commit(self):
+        baseline = json.loads(
+            (ROOT / ".agents" / "skills" / "rea-reverse-engineering" / "references" / "upstream-baseline.json")
+            .read_text(encoding="utf-8")
+        )
+        skill = (ROOT / ".agents" / "skills" / "rea-reverse-engineering" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn(baseline["upstream_main_commit"], skill)
+        self.assertIn(baseline["release_tag"], skill)
+        self.assertIn(baseline["skill_metadata_version"], skill)
+
 
 if __name__ == "__main__":
     unittest.main()
