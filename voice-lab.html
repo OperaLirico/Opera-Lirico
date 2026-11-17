@@ -233,6 +233,7 @@ function renderDetail(item){
     row('功能',item.function)+
     row('歌唱中的作用',item.singing_role)+
     row('神经支配',pending.includes('innervation')?'':item.innervation)+
+    row('分层',pending.includes('layers')?'':item.layers)+
     (rel?'<div class="row"><span class="k">相关结构</span><div class="rel">'+rel+'</div></div>':'')+
     (ev?'<details class="ev"><summary>出处（'+ (item.evidence||[]).length +'）</summary><ul class="src">'+ev+'</ul></details>':'');
   el('detail').querySelectorAll('.rel button').forEach(b=>b.onclick=()=>select(b.dataset.id));
