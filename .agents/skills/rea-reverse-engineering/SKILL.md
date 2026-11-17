@@ -73,6 +73,7 @@ Do not invoke REA merely because a task involves code. For OperaLab's own comple
 
 4. **Preserve evidence**
    - Read the complete structured Evidence result, especially authority, source identity/digests, coverage, limitations, and unknowns.
+   - For MCP tool results, read `structuredContent.normalized_result` as the operation result and `structuredContent.evidence_id` as its identity; `raw_result` is a separate provider representation. Preserve `parent_evidence_id`, coverage, limitations, and `next_offset`; follow pagination and never infer source completeness from an exhausted retained page.
    - Separate statements into **Observed**, **Inferred**, and **Unknown**.
    - An endpoint candidate is not a confirmed live API. Static code is not proof of runtime reachability. A missing item in partial coverage is not proof of absence.
    - Keep parent Evidence IDs and source digests. Reuse retained Evidence/views rather than rerunning expensive analysis.
