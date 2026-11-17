@@ -26,8 +26,7 @@ jobs:
               raise SystemExit(0)
 
           CSS_ANCHOR = '  .msg{color:#8a6b3d;font-size:13px}'
-          CSS_ADD = '''
-            .msg{color:#8a6b3d;font-size:13px}
+          CSS_ADD = CSS_ANCHOR + '''
             .quiz{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
             .quiz-h{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#80958c}
             .quiz-q{font-size:14px;color:#25443c;margin:6px 0 8px;min-height:22px}
@@ -86,12 +85,18 @@ jobs:
           for name, anchor in [('css', CSS_ANCHOR), ('html', HTML_ANCHOR), ('click', CLICK_ANCHOR), ('js', JS_ANCHOR)]:
               assert t.count(anchor) == 1, name + ' anchor count ' + str(t.count(anchor))
 
+          hotspots = t.count('class="hot"')
+          print('hotspots before', hotspots)
+
           t = t.replace(CSS_ANCHOR, CSS_ADD, 1)
           t = t.replace(HTML_ANCHOR, HTML_ADD, 1)
           t = t.replace(CLICK_ANCHOR, CLICK_ADD, 1)
           t = t.replace(JS_ANCHOR, JS_ADD, 1)
-          assert t.count('id="quiz"') == 2, 'quiz blocks ' + str(t.count('id="quiz"'))
+
+          assert t.count('id="quiz"') == 1, 'quiz block ' + str(t.count('id="quiz"'))
+          assert t.count('class="hot"') == hotspots, 'hotspots changed'
           assert t.count('function quizNext') == 1
+          assert t.count('quizAnswer(sid)') == 2, 'call sites ' + str(t.count('quizAnswer(sid)'))
           p.write_text(t, encoding='utf-8')
           print('quiz panel added, chars', len(t))
           PY
@@ -104,23 +109,7 @@ jobs:
           if 'Visible Body' in t:
               print('observation already logged')
           else:
-              add = '''
-
-          ## 外部站点观察 · Visible Body（官方帮助中心）· 2026-11-17
-
-          来源：https://support.visiblebody.com/hc/en-us/articles/360045539374-Getting-Started
-
-          1. **选中即出信息面板**：点结构→Info box，定义、发音、起止点、相关病理分图标分栏，不一整段堆。
-          2. **Hide / Isolate / Dissect 三件套**：把一个结构从周围「剥」出来是回答「它到底在哪」的最短路径。
-          3. **双击设旋转中心**：把焦点钉死在目标结构上，而不是自由旋转。
-          4. **黄剖测验（dissection quiz）**：给名字，让你在模型上点出结构，必要时先旋转、先隐藏遮挡。
-          5. **Review checklist**：学员自己勾「我掌握了」，用来做进度。
-          6. **三维切片配 CT/MRI/尸体片对照**：和本站「喉镜帧对示意图」是同一逻辑。
-
-          本轮落地的那一条：在结构层加了一个「发声通路小测」——随机报一个结构名，用户在 SVG 上点热区作答，答错直接标出正确块。对应上面第 4 条，也补上了之前指出的「纯阅读缺出口」。
-
-          待办（按性价比排序）：面包屑（通路 › 分组 › 名称）；自评勾选入 localStorage；每张卡片加「只看它」；三维模型的 isolate 留到 P3。
-          '''
+              add = pathlib.Path('content/visible-body-note.md').read_text(encoding='utf-8')
               p.write_text(t + add, encoding='utf-8')
               print('observation appended')
           PY
