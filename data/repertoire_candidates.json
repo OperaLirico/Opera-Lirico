@@ -699,10 +699,35 @@
       "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
       "collected_at": "2026-11-16T10:03:57+01:00",
       "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-18d6c00de2df1868",
+      "title": "La Bohème · Introduzione · 整幕",
+      "aliases": [
+        "La Bohème"
+      ],
+      "composer": "Giacomo Puccini",
+      "work": "La Bohème",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Questo testo è da formattare.\nLa Bohème Luigi Illica/Giuseppe Giacosa1896\nLuigi Illica, Giuseppe Giacosa - La Bohème (1896)\nIntroduzione\nLa bohème\n...pioggia o polvere, freddo o solleone, nulla arresta questi arditi avventurieri...\nLa loro esistenza è un’opera di genio di ogni giorno, un problema quotidiano che essi pervengono sempre a risolvere con l’aiuto di audaci matematiche... Quando il bisogno ve li costringe, astinenti come anacoreti - ma, se nelle loro mani cade un po’ di fortuna, eccoli cavalcare in groppa alle piú fantasiose matteríe, amando le piú belle donne e le piú giovani, bevendo i vini migliori ed i piú vecchi e non trovando mai abbastanza aperte le finestre onde gittar quattrini; poi - l’ultimo scudo morto e sepolto - eccoli ancora desinare alla tavola rotonda del caso ove la loro posata è sempre pronta; contrabbandieri di tutte le industrie che derivano dall’arte, a caccia da mattina a sera di quell’animale feroce che si chiama: lo scudo.\nLa Bohème ha un parlare suo speciale, un gergo... Il suo vocabolario è l’inferno de la retorica e il paradiso del neologismo...\n................\nVita gaia e terribile!...\n(H. Murger, prefazione alla Vie de Bohème)[1].\nNote\n↑ Gli autori del presente libretto, meglio che seguire a passo a passo il libro di Murger - (anche per ragioni di opportunità teatrali e sopratutto musicali) - hanno voluto ispirarsi alla sua essenza racchiusa in questa mirabile prefazione.\nSe stettero fedeli ai caratteri dei personaggi, se furono a volte quasi meticolosi nel riprodurre certi particolari di ambiente, se nello svolgimento si attennero al fare del Murger suddividendo il libretto in “quadri ben distinti”, negli episodi drammatici e comici essi vollero procedere con quell’ampia libertà che - a torto o a ragione - stimarono necessaria alla interpretazione scenica del libro più libero forse della moderna letteratura. Però, in questo bizzarro libro, se de’ diversi personaggi sono e balzano fuori vivi, veri e nettissimi i singoli caratteri, s’incontra spesso che uno stesso carattere prenda diversi nomi, s’incarni quasi in due persone diverse.\nChi può non confondere nel delicato profilo di una sola donna quelli di Mimì e di Francine? Chi, quando legge delle “ manine” di Mimì piú “bianche di quelle della dea dell’ozio” non pensa al manicotto di Francine?\nGli autori stimarono di dover rilevare una tale identità di caratteri. Parve ad essi che quelle due gaie, delicate ed infelici creature rappresentassero nella commedia della Bohème un solo personaggio cui si potrebbe benissimo, in luogo dei nomi di Mimì e Francine, dare quello di: Ideale.\nG. G. – L. I.",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/La_boh%C3%A8me/Introduzione",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Luigi Illica/Giuseppe Giacosa",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-17T08:36:38+01:00",
+      "collection_source": "it.wikisource.org"
     }
   ],
-  "generated_at": "2026-11-16T10:03:57+01:00",
+  "generated_at": "2026-11-17T08:36:38+01:00",
   "source": "Italian Wikisource opera libretti; candidate-only, human review required",
-  "aria_opera": 1,
+  "aria_opera": 2,
   "aria_scene": 0
 }
