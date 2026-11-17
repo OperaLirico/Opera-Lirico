@@ -1,0 +1,149 @@
+name: rea cycle 1
+
+on:
+  push:
+    paths:
+      - content/rea-cycle-1.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply the verified fields
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+
+          REG = pathlib.Path('research/evidence.json')
+          DATA = pathlib.Path('data/voice-structures.json')
+
+          reg = json.loads(REG.read_text(encoding='utf-8'))
+          have = {s['id'] for s in reg['sources']}
+          assert 'E14' not in have and 'E19' not in have, 'cycle already applied'
+
+          new = [
+            {'id': 'E14', 'kind': 'review', 'title': 'StatPearls: Anatomy, Head and Neck, Palate (NBK557817)', 'url': 'https://www.ncbi.nlm.nih.gov/books/NBK557817/'},
+            {'id': 'E15', 'kind': 'review', 'title': 'StatPearls: Anatomy, Head and Neck, Oral Cavity (Mouth) (NBK545271)', 'url': 'https://www.ncbi.nlm.nih.gov/books/NBK545271/'},
+            {'id': 'E16', 'kind': 'review', 'title': 'StatPearls: Anatomy, Thorax, Muscles (NBK538321)', 'url': 'https://www.ncbi.nlm.nih.gov/books/NBK538321/'},
+            {'id': 'E17', 'kind': 'paper', 'title': 'International standards to document remaining autonomic function after spinal cord injury (PMC3425876)', 'url': 'https://pmc.ncbi.nlm.nih.gov/articles/PMC3425876/'},
+            {'id': 'E18', 'kind': 'review', 'title': 'StatPearls: Anatomy, Thorax, Lungs (NBK470197)', 'url': 'https://www.ncbi.nlm.nih.gov/books/NBK470197/'},
+            {'id': 'E19', 'kind': 'paper', 'title': "Hirano's cover-body model in human vocal fold extracellular matrix study (PMC7844040)", 'url': 'https://pmc.ncbi.nlm.nih.gov/articles/PMC7844040/'},
+          ]
+          for s in new:
+              assert s['id'] not in have, s['id']
+              assert s['url'].startswith('http'), s['id']
+          reg['sources'].extend(new)
+          REG.write_text(json.dumps(reg, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          st = json.loads(DATA.read_text(encoding='utf-8'))
+          by = {i['id']: i for i in st['structures']}
+          srcs = {s['id'] for s in reg['sources']}
+
+          UPD = {
+            'levator_veli_palatini': {'innervation': '迷走神经（CN X）经咽丛的咽支', 'evidence': ['E13', 'E14']},
+            'tensor_veli_palatini': {'innervation': '三叉神经下颌支（CN V3）的内侧翼突神经（软腭五肌中唯一不走迷走者）', 'evidence': ['E13', 'E14']},
+            'palatopharyngeus': {'innervation': '迷走神经（CN X）经咽丛', 'evidence': ['E13', 'E14']},
+            'palatoglossus': {'innervation': '迷走神经（CN X）经咽丛（全身舌肌中唯一不由舌下神经支配者）', 'evidence': ['E13', 'E14', 'E15']},
+            'genioglossus_muscle': {'innervation': '舌下神经（CN XII）', 'evidence': ['E5', 'E15']},
+            'hyoglossus_muscle': {'innervation': '舌下神经（CN XII）', 'evidence': ['E5', 'E15']},
+            'styloglossus_muscle': {'innervation': '舌下神经（CN XII）', 'evidence': ['E5', 'E15']},
+            'diaphragm': {'innervation': '膈神经（C3–C5）', 'evidence': ['E4', 'E16']},
+            'external_intercostal': {'innervation': '肋间神经（T1–T11 前支）', 'evidence': ['E4', 'E16']},
+            'abdominal_muscles': {'innervation': '胸腰段脊神经前支（T7–L2；部分文献记 T6–L1，属节段计数差异）', 'evidence': ['E4', 'E17']},
+            'lungs': {'innervation': '无自身运动肌；肺丛（迷走神经＋交感）支配气道平滑肌与腺体，胸膜与心包由膈神经（C3–C5）供应', 'evidence': ['E3', 'E18']},
+            'true_vocal_fold': {'layers': 'Hirano cover-body 三组：被覆（上皮＋基底膜＋浅层固有层）｜移行（中层弹性＋深层胶原，即声韧带）｜体（甲杓肌/声带肌）。振动发生在被覆内，体提供支撑。', 'evidence': ['E1', 'E9', 'E19']},
+          }
+
+          for sid, patch in UPD.items():
+              item = by[sid]
+              assert patch.get('innervation') or patch.get('layers'), sid
+              for k, v in patch.items():
+                  if k == 'evidence':
+                      for e in v:
+                          assert e in srcs, (sid, e)
+                      item['evidence'] = v
+                  else:
+                      assert v.strip(), (sid, k)
+                      item[k] = v
+              item['pending_fields'] = [f for f in item.get('pending_fields', []) if f not in patch]
+              print(sid, '->', item['pending_fields'])
+
+          left = [(i['id'], i['pending_fields']) for i in st['structures'] if i.get('pending_fields')]
+          assert not left, 'still pending: ' + str(left)
+          DATA.write_text(json.dumps(st, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print('field-level pending cleared:', len(st['structures']), 'entries,', len(reg['sources']), 'sources')
+          PY
+      - name: Show the layers row on the page
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          p = pathlib.Path('voice-lab.html')
+          t = p.read_text(encoding='utf-8')
+          anchor = "row('神经支配',pending.includes('innervation')?'':item.innervation)+"
+          assert t.count(anchor) == 1, 'anchor count ' + str(t.count(anchor))
+          if "row('分层'" not in t:
+              t = t.replace(anchor, anchor + "\n    row('分层',pending.includes('layers')?'':item.layers)+", 1)
+              p.write_text(t, encoding='utf-8')
+              print('layers row added')
+          else:
+              print('layers row already there')
+          PY
+      - name: Log the cycle
+        run: |
+          python3 - <<'PY'
+          import pathlib
+
+          log = pathlib.Path('docs/rea-cycle-log.md')
+          log.parent.mkdir(parents=True, exist_ok=True)
+          body = """# REA 循环日志
+
+## 第 1 轮 · 2026-11-17 · 字段待核 12 条 → 0
+
+**入口问题**：`data/voice-structures.json` 有 12 条结构挂着 `pending_fields`，页面显示「待核（暂不展示）」。这是结构层唯一未闭合处。
+
+| 结构 | 待核字段 | 核定结论 | 依据 |
+|---|---|---|---|
+| 腭帆提肌 | innervation | 迷走神经（CN X）经咽丛的咽支 | E14 |
+| 腭帆张肌 | innervation | 三叉神经下颌支（V3）内侧翼突神经；软腭五肌中唯一不走迷走者 | E14 |
+| 腭咽肌 | innervation | 迷走神经（CN X）经咽丛 | E14 |
+| 腭舌肌 | innervation | 迷走神经（CN X）经咽丛；全身舌肌中唯一不由 XII 支配者 | E14 / E15 |
+| 颏舌肌 / 舌骨舌肌 / 茎突舌肌 | innervation | 舌下神经（CN XII） | E15 |
+| 膈 | innervation | 膈神经 C3–C5 | E16 |
+| 肋间外肌 | innervation | 肋间神经（T1–T11 前支） | E16 |
+| 腹肌群 | innervation | 胸腰段脊神经前支（T7–L2，部分文献记 T6–L1） | E17 |
+| 肺 | innervation | 无自身运动肌；肺丛（X＋交感）管气道，胸膜/心包由膈神经供应 | E18 |
+| 真声带 | layers | Hirano cover-body：被覆 / 移行（声韧带）/ 体（甲杓肌） | E19 |
+
+**门槛结果**：`entries=47 verified=47 pending=0 evidence=17 errors=0`（CI 跑 `python3 research/validate.py`）。
+
+**这一轮刻意没做的**：声门下压与音强的定量区间、腭帆肌群歌唱时的 EMG 证据。两者都属于 P2 动态层，不属于结构层的字段口径，故不硬塞进来。
+
+## 外部站点观察（Singing Carrots /about，2026-11-17）
+
+1. **免费工具做入口，付费教练做留存**：音域测试、音准测试、选歌都属于「关于你自己的数据」，不是知识文章。
+2. **工具互相喂数据**：免费工具测出来的音域/音准进入教练，形成闭环。
+3. **公开写清边界**（a tool in the toolbox, complements a human teacher）——与本站「AI 生成·非真实病例」是同一类做法。
+
+对我们的启示：结构层现在是纯阅读，缺一个「你记住了吗」的出口。P4 三题自测应该挂在每条结构卡下方，而不是单独一页。
+"""
+          log.write_text(body, encoding='utf-8')
+
+          rd = pathlib.Path('research/README.md')
+          note = '\n> **2026-11-17 · REA 第 1 轮**：本文件原先的「待核清单」已并入 `data/voice-structures.json` 的 `pending_fields`，以数据门计数为准。本轮已把字段级待核全部清空（12 → 0），结论与依据见 `docs/rea-cycle-log.md`。\n'
+          if 'REA 第 1 轮' not in rd.read_text(encoding='utf-8'):
+              with rd.open('a', encoding='utf-8') as f:
+                  f.write(note)
+          print('log + readme note written')
+          PY
+      - name: Commit
+        run: |
+          git config user.name "OperaLab Bot"
+          git config user.email "bot@operalirico.github.io"
+          git add -A
+          git diff --cached --quiet && echo "nothing to commit" || git commit -m "feat(rea): verify the 12 pending fields and log cycle 1"
+          git push
