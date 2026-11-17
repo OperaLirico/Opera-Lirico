@@ -50,3 +50,5 @@ REA（Research–Evidence–Audit）是本仓库的研究循环。它不是口�
 - 腭帆肌群、舌肌群、呼吸肌群神经支配的逐条核对（现为教科书通行口径，字段级标 pending）
 - 呼吸组条目需精读 E3 全文逐句核对
 - 声门下压与音强的定量关系
+
+> **2026-11-17 · REA 第 1 轮**：本文件原先的「待核清单」已并入 `data/voice-structures.json` 的 `pending_fields`，以数据门计数为准。本轮把字段级待核清空（12 → 0），结论与依据见 `docs/rea-cycle-log.md`。
