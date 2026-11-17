@@ -1,10 +1,19 @@
 {
-  "generated_at": "2026-11-16T10:03:38+01:00",
+  "generated_at": "2026-11-17T12:10:08+01:00",
   "source_file": "data/opportunities.json",
   "total_records": 7,
   "published_records_in_file": 7,
   "currently_open_public_records": 7,
-  "deadlines_within_7_days": [],
+  "deadlines_within_7_days": [
+    {
+      "id": "carlofelice-choir-tenors-2026",
+      "title": "Audizione per Artisti del Coro – Tenori",
+      "deadline": "2026-11-23T23:59:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-12T11:49:52+01:00"
+    }
+  ],
   "deadlines_within_30_days": [
     {
       "id": "aslico-2027-78th-young-singers",
