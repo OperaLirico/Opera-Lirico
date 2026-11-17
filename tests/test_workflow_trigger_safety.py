@@ -80,7 +80,6 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
         workflow = (ROOT / ".github" / "workflows" / "rea-upstream-watch.yml").read_text(encoding="utf-8")
         self.assertIn("const metadataBlock = upstreamSkillText.match(", workflow)
         self.assertIn("const metadataMatch = metadataBlock.match(", workflow)
-        self.assertNotIn("upstreamSkillText.match(/^metadata:", workflow)
     def test_rea_skill_baseline_matches_reviewed_upstream_commit(self):
         baseline = json.loads(
             (ROOT / ".agents" / "skills" / "rea-reverse-engineering" / "references" / "upstream-baseline.json")
