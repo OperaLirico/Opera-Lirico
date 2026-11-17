@@ -1,0 +1,2 @@
+log cycle 2 of the structure layer rewrite
+run: 2026-11-17f

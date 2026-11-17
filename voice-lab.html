@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>声乐科学实验室 · 发声通路结构层｜OperaLab</title>
-<meta name="description" content="从鼻腔到膈的发声通路结构索引：每个结构都有位置、功能、歌唱作用与神经支配，全部带文献出处与审核状态。">
+<meta name="description" content="从鼻腔到膈的发声通路结构索引：每个结构都有位置、功能、歌唱作用与神经支配，全部带文献出处与审核状态；图上可点、可测、可标记掌握。">
 <link rel="stylesheet" href="styles.css">
 <style>
-  :root{--ink:#183b34;--ink2:#3f5a52;--line:#dde7e1;--bg:#f6f9f7;--card:#ffffff;--accent:#c9714f;--accent-soft:#fff2ea}
+  :root{--ink:#183b34;--ink2:#3f5a52;--line:#dde7e1;--bg:#f6f9f7;--card:#ffffff;--accent:#c9714f;--accent-soft:#fff2ea;--ok:#2f6b47;--ok-soft:#eef7f0}
   body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,"PingFang SC","Hiragino Sans GB",system-ui,sans-serif}
-  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 64px}
+  .wrap{max-width:1140px;margin:0 auto;padding:28px 20px 64px}
   header.top{display:flex;flex-wrap:wrap;gap:12px;align-items:baseline;justify-content:space-between;margin-bottom:6px}
   header.top h1{font-size:22px;margin:0;letter-spacing:.02em}
-  header.top nav a{color:var(--ink2);text-decoration:none;font-size:13px;border-bottom:1px solid var(--line)}
-  .lede{color:var(--ink2);font-size:14px;margin:6px 0 16px;max-width:760px}
+  header.top nav a{color:var(--ink2);text-decoration:none;font-size:13px;border-bottom:1px solid var(--line);margin-left:10px}
+  .lede{color:var(--ink2);font-size:14px;margin:6px 0 16px;max-width:780px}
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
   .chip{font-size:12px;color:var(--ink2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
   .chip b{color:var(--ink)}
@@ -23,26 +23,39 @@
   .panel h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);margin:0 0 10px}
   .mapwrap{position:relative;background:linear-gradient(180deg,#fbfdfc,#f1f6f3);border-radius:12px;border:1px solid var(--line);padding:6px}
   svg.map{width:100%;height:auto;display:block}
-  .hot{cursor:pointer}
+  .hot{cursor:pointer;transition:opacity .18s ease}
   .hot rect,.hot ellipse,.hot path{fill:#eef4f0;stroke:#b7ccc3;stroke-width:1.2;transition:fill .18s ease,stroke .18s ease}
   .hot:hover rect,.hot:hover ellipse,.hot:hover path{fill:#e2eee7}
   .hot.on rect,.hot.on ellipse,.hot.on path{fill:var(--accent-soft);stroke:var(--accent);stroke-width:1.8}
   .hot text{font:600 12px/1 -apple-system,"PingFang SC",system-ui;fill:#33534b;pointer-events:none}
   .hot.on text{fill:#a2532f}
+  .hot.dim{opacity:.3}
+  .hot.right rect,.hot.right ellipse,.hot.right path{fill:#dff2e4;stroke:#4f9b6a;stroke-width:2}
+  .hot.wrong rect,.hot.wrong ellipse,.hot.wrong path{fill:#fbe6e2;stroke:#c0573f;stroke-width:2}
+  .hot.right text{fill:#2f6b47}
+  .hot.wrong text{fill:#9d4630}
   .zone{fill:#dbe7e1;stroke:#c8d8d0}
   .zone-t{font:600 10px/1 system-ui;fill:#6f8a80}
+  .toolrow{display:flex;flex-wrap:wrap;gap:6px;margin:10px 4px 0}
+  .btn{font:12.5px inherit;background:#fff;border:1px solid var(--line);border-radius:8px;padding:4px 10px;cursor:pointer;color:var(--ink2)}
+  .btn:hover{background:#f0f5f2}
+  .btn.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .btn.ok{background:var(--ok-soft);border-color:#bcd9c6;color:var(--ok)}
   .tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
   .tab{font:13px/1.4 inherit;background:#fff;border:1px solid var(--line);color:var(--ink2);border-radius:8px;padding:5px 10px;cursor:pointer}
   .tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .count{font-size:12px;color:#80958c;margin:0 0 6px}
   .search{width:100%;box-sizing:border-box;margin-bottom:10px;padding:8px 11px;border:1px solid var(--line);border-radius:9px;font:14px inherit;background:#fff;color:var(--ink)}
-  .list{display:flex;flex-direction:column;gap:4px;max-height:520px;overflow:auto}
+  .list{display:flex;flex-direction:column;gap:4px;max-height:480px;overflow:auto}
   .item{display:flex;justify-content:space-between;gap:8px;align-items:center;text-align:left;width:100%;background:none;border:0;border-radius:8px;padding:8px 10px;cursor:pointer;font:14px/1.5 inherit;color:var(--ink)}
   .item:hover{background:#f0f5f2}
   .item.on{background:var(--accent-soft);color:#9c4a2a}
-  .item small{color:#8095 8c;color:#80958c;font-size:11px;white-space:nowrap}
+  .item small{color:#80958c;font-size:11px;white-space:nowrap}
   .badge{display:inline-block;font-size:10px;padding:1px 6px;border-radius:999px;background:#f4efe6;color:#8a6b3d;border:1px solid #e8dcc8}
   .card h3{font-size:17px;margin:0 0 2px}
   .card .tri{font-size:12px;color:#80958c;margin-bottom:12px}
+  .crumb{font-size:12px;color:#80958c;margin:0 0 6px}
+  .crumb button{background:none;border:0;color:#4a6b8a;cursor:pointer;font:inherit;padding:0;border-bottom:1px solid #d7e2ea}
   .row{margin:0 0 12px}
   .row .k{font-size:11px;letter-spacing:.06em;color:#80958c;text-transform:uppercase;display:block;margin-bottom:2px}
   .row .v{font-size:14.5px;line-height:1.72;color:#25443c}
@@ -55,6 +68,7 @@
   .src a{color:#4a6b8a;text-decoration:none;border-bottom:1px solid #d7e2ea}
   details.ev{margin-top:10px}
   details.ev summary{cursor:pointer;font-size:12px;color:#80958c}
+  .hint{font-size:12px;color:#80958c;margin:8px 0 0}
   footer.note{margin-top:26px;font-size:12.5px;line-height:1.8;color:#6f8580;border-top:1px solid var(--line);padding-top:14px}
   .msg{color:#8a6b3d;font-size:13px}
   .quiz{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
@@ -62,19 +76,19 @@
   .quiz-q{font-size:14px;color:#25443c;margin:6px 0 8px;min-height:22px}
   .qbtn{font:13px inherit;background:var(--ink);color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
   .qbtn.ghost{background:#fff;color:var(--ink2);border:1px solid var(--line);margin-left:6px}
-  .hot.right rect,.hot.right ellipse,.hot.right path{fill:#dff2e4;stroke:#4f9b6a;stroke-width:2}
-  .hot.wrong rect,.hot.wrong ellipse,.hot.wrong path{fill:#fbe6e2;stroke:#c0573f;stroke-width:2}
-  .hot.right text{fill:#2f6b47}
-  .hot.wrong text{fill:#9d4630}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="top">
     <h1>声乐科学实验室 · 发声通路结构层</h1>
-    <nav><a href="larynx-mechanism.html">机制联动 →</a> &nbsp;·&nbsp; <a href="voice-anatomy.html">解剖概览 →</a></nav>
+    <nav>
+      <a href="larynx-mechanism.html">机制联动 →</a>
+      <a href="voice-anatomy.html">解剖概览 →</a>
+      <a href="index.html">回首页 →</a>
+    </nav>
   </header>
-  <p class="lede">从鼻腔到膈，把发声通路拆成可点的结构。每条事实都带出处与审核状态：未核定的字段不展示。这是「知道为什么这样唱」的第一层。</p>
+  <p class="lede">从鼻腔到膈，把发声通路拆成可点的结构。每条事实都带出处与审核状态：未核定的字段不展示。看懂结构之后再往前一步，是知道唱一个音时身体内部发生了什么。</p>
   <div class="chips" id="meta"></div>
 
   <div class="layout">
@@ -144,19 +158,30 @@
           </g>
         </svg>
       </div>
-      <p class="msg" style="margin:10px 4px 0">示意图：只表示结构与相对位置，不是解剖图谱。可点的块与右侧卡片一一对应。</p>
-        <div class="quiz" id="quiz">
-          <div class="quiz-h"><span>发声通路小测</span><span id="quizScore">0 / 0</span></div>
-          <p class="quiz-q" id="quizQ">在图上点出被问到的结构。答错会标出正确位置。</p>
-          <button class="qbtn" id="quizStart">开始</button>
-          <button class="qbtn ghost" id="quizSkip">跳过</button>
-        </div>
+      <div class="toolrow">
+        <button class="btn" id="iso" type="button">只看选中：关</button>
+        <button class="btn" id="showAll" type="button">显示全部</button>
+        <button class="btn" id="pickRandom" type="button">随便看一个</button>
+      </div>
+      <p class="msg" style="margin:10px 4px 0">示意图：只表示结构与相对位置，不是解剖图谱。图上有 13 个可点的块，其余结构从右侧索引进入。</p>
+
+      <div class="quiz" id="quiz">
+        <div class="quiz-h"><span>发声通路小测</span><span id="quizScore">0 / 0</span></div>
+        <p class="quiz-q" id="quizQ">在图上点出被问到的结构。答错会标出正确位置。</p>
+        <button class="qbtn" id="quizStart" type="button">开始</button>
+        <button class="qbtn ghost" id="quizSkip" type="button">跳过</button>
+      </div>
     </section>
 
     <section class="panel card" id="side">
       <h2>结构索引</h2>
       <div class="tabs" id="tabs"></div>
+      <div class="toolrow" style="margin:0 0 10px">
+        <button class="btn" id="unmastered" type="button">只看未掌握</button>
+        <button class="btn" id="resetMastered" type="button">清空掌握记录</button>
+      </div>
       <input class="search" id="q" type="search" placeholder="搜索：中文 / 拉丁 / 英文，例如 环甲肌、arytenoid">
+      <p class="count" id="count"></p>
       <div class="list" id="list"></div>
       <div id="detail"></div>
     </section>
@@ -165,71 +190,117 @@
   <footer class="note">
     数据门槛：本页只渲染 <code>review_status=verified</code> 的字段；标为待核的字段显示「待核（暂不展示）」而不是用推测填满。<br>
     机制分层：闭合（位置）、振动（力学）、张力（音高）、滤波（共振）是四件事——对照 <a href="larynx-mechanism.html">机制联动</a>。<br>
+    掌握记录只存在你自己的浏览器（localStorage），不上传、不统计。<br>
     内容不构成医学建议；如有嗓音问题请就诊耳鼻喉科或嗓音治疗师。
   </footer>
 </div>
 
 <script>
 const GROUPS=[['all','全部'],['airway','通路'],['larynx_cartilage','软骨'],['larynx_mucosa','喉黏膜'],['intrinsic_muscle','喉内肌'],['extrinsic_muscle','喉外肌'],['velar_muscle','软腭'],['tongue','舌'],['tongue_muscle','舌肌'],['respiratory','呼吸']];
+const GROUP_ZH={};
+GROUPS.forEach(g=>{GROUP_ZH[g[0]]=g[1];});
 const FIELD_ZH={innervation:'神经支配',layers:'声带分层',function:'功能',singing_role:'歌唱中的作用',location:'位置'};
-let DATA=null, SRC={}, group='all', active=null;
+const MKEY='operalab-mastered';
 
-const el=id=>document.getElementById(id);
+let DATA=[], SRC={}, group='all', active=null, isolate=false, unmasteredOnly=false;
+let mastered=readMastered();
 
+function el(id){return document.getElementById(id);}
+function readMastered(){try{const v=JSON.parse(localStorage.getItem(MKEY)||'[]');return Array.isArray(v)?v:[];}catch(e){return [];}}
+function saveMastered(){try{localStorage.setItem(MKEY,JSON.stringify(mastered));}catch(e){}}
+function isMastered(id){return mastered.indexOf(id)>=0;}
+function toggleMastered(id){const i=mastered.indexOf(id);if(i>=0){mastered.splice(i,1);}else{mastered.push(id);}saveMastered();paintMeta();renderList();if(active)renderDetail(active);}
 function chip(t,b){return '<span class="chip">'+t+' <b>'+b+'</b></span>';}
 
-function init(){ 
+function paintMeta(){
+  const verified=DATA.filter(x=>x.review_status==='verified').length;
+  const pending=DATA.filter(x=>(x.pending_fields||[]).length).length;
+  el('meta').innerHTML=chip('结构条目',DATA.length)+chip('已核定',verified)+chip('字段待核',pending)+chip('文献',Object.keys(SRC).length)+chip('已掌握',mastered.length);
+}
+
+function init(){
+  const params=new URLSearchParams(location.search);
+  const wantId=params.get('id');
   Promise.all([
     fetch('data/voice-structures.json').then(r=>r.json()),
     fetch('research/evidence.json').then(r=>r.json()).catch(()=>({sources:[]}))
-  ]).then(([d,e])=>{
-    DATA=d.structures; e.sources.forEach(s=>SRC[s.id]=s);
-    const verified=DATA.filter(x=>x.review_status==='verified').length;
-    const fieldPending=DATA.filter(x=>(x.pending_fields||[]).length).length;
-    el('meta').innerHTML=chip('结构条目',DATA.length)+chip('已核定',verified)+chip('字段待核',fieldPending)+chip('文献',Object.keys(SRC).length)+chip('门槛','CI 强制');
-    renderTabs(); renderList(); renderDetail(DATA.find(x=>x.id==='true_vocal_fold')||DATA[0]);
+  ]).then(pair=>{
+    DATA=pair[0].structures; pair[1].sources.forEach(s=>{SRC[s.id]=s;});
+    paintMeta(); renderTabs(); renderList();
+    const target=(wantId&&DATA.find(x=>x.id===wantId))||DATA.find(x=>x.id==='true_vocal_fold')||DATA[0];
+    select(target.id,{silent:true});
     document.querySelectorAll('.hot').forEach(g=>{
       const sid=g.dataset.sid;
       g.addEventListener('click',()=>{ if(quizOn&&quizId) quizAnswer(sid); select(sid); });
-      g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();select(sid);}});
+      g.addEventListener('keydown',ev=>{ if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();select(sid);} });
     });
     el('q').addEventListener('input',renderList);
+    el('iso').onclick=()=>{isolate=!isolate;applyHotState();};
+    el('showAll').onclick=()=>{isolate=false;applyHotState();};
+    el('pickRandom').onclick=()=>{ const pool=visible(); if(pool.length) select(pool[Math.floor(Math.random()*pool.length)].id); };
+    el('unmastered').onclick=()=>{ unmasteredOnly=!unmasteredOnly; el('unmastered').classList.toggle('on',unmasteredOnly); renderList(); };
+    el('resetMastered').onclick=()=>{ mastered=[]; saveMastered(); paintMeta(); renderList(); if(active)renderDetail(active); };
+    el('quizStart').onclick=quizNext;
+    el('quizSkip').onclick=quizNext;
   }).catch(err=>{
     el('detail').innerHTML='<p class="msg">结构数据加载失败：'+err.message+'</p>';
   });
 }
 
 function renderTabs(){
-  el('tabs').innerHTML=GROUPS.map(([k,label])=>{
+  el('tabs').innerHTML=GROUPS.map(g=>{
+    const k=g[0], label=g[1];
     const n=k==='all'?DATA.length:DATA.filter(x=>x.group===k).length;
     if(k!=='all'&&n===0) return '';
-    return '<button class="tab'+(group===k?' on':'')+'" data-g="'+k+'">'+label+' <span style="opacity:.6">'+n+'</span></button>';
+    return '<button class="tab'+(group===k?' on':'')+'" type="button" data-g="'+k+'">'+label+' <span style="opacity:.6">'+n+'</span></button>';
   }).join('');
-  el('tabs').querySelectorAll('.tab').forEach(b=>b.onclick=()=>{group=b.dataset.g;renderTabs();renderList();});
+  el('tabs').querySelectorAll('.tab').forEach(b=>{ b.onclick=()=>{ group=b.dataset.g; renderTabs(); renderList(); }; });
 }
 
-function renderList(){
+function visible(){
   const q=(el('q').value||'').trim().toLowerCase();
-  const items=DATA.filter(x=>{
+  return DATA.filter(x=>{
     if(group!=='all'&&x.group!==group) return false;
+    if(unmasteredOnly&&isMastered(x.id)) return false;
     if(!q) return true;
     return [x.name.zh,x.name.la,x.name.en,x.id].join(' ').toLowerCase().includes(q);
   });
-  el('list').innerHTML=items.length?items.map(x=>{
-    const pend=(x.pending_fields||[]).length?' <span class="badge">待核</span>':'';
-    return '<button class="item'+(active&&active.id===x.id?' on':'')+'" data-id="'+x.id+'"><span>'+x.name.zh+pend+'</span><small>'+x.name.en+'</small></button>';
-  }).join(''):'<p class="msg">没有匹配的结构。</p>';
-  el('list').querySelectorAll('.item').forEach(b=>b.onclick=()=>select(b.dataset.id));
 }
 
-function select(id){
+function renderList(){
+  const items=visible();
+  el('count').textContent=items.length+' / '+DATA.length+(unmasteredOnly?'（仅未掌握）':'');
+  el('list').innerHTML=items.length?items.map(x=>{
+    const pend=(x.pending_fields||[]).length?' <span class="badge">待核</span>':'';
+    const dot=isMastered(x.id)?' <span class="dot"></span>':'';
+    return '<button class="item'+(active&&active.id===x.id?' on':'')+'" type="button" data-id="'+x.id+'"><span>'+x.name.zh+pend+dot+'</span><small>'+x.name.en+'</small></button>';
+  }).join(''):'<p class="msg">没有匹配的结构。</p>';
+  el('list').querySelectorAll('.item').forEach(b=>{ b.onclick=()=>select(b.dataset.id); });
+}
+
+function hasHot(id){ return Boolean(document.querySelector('.hot[data-sid="'+id+'"]')); }
+
+function applyHotState(){
+  const on=isolate&&active&&hasHot(active.id);
+  document.querySelectorAll('.hot').forEach(g=>{
+    g.classList.toggle('on', Boolean(active)&&g.dataset.sid===active.id);
+    g.classList.toggle('dim', Boolean(on)&&g.dataset.sid!==active.id);
+  });
+  el('iso').classList.toggle('on',isolate);
+  el('iso').textContent='只看选中：'+(isolate?'开':'关');
+}
+
+function select(id,opts){
+  const o=opts||{};
   const item=DATA.find(x=>x.id===id);
   if(!item) return;
+  if(group!=='all'&&item.group!==group){ group='all'; renderTabs(); }
   active=item;
   renderList();
-  document.querySelectorAll('.hot').forEach(g=>g.classList.toggle('on',g.dataset.sid===id));
+  applyHotState();
   renderDetail(item);
-  el('side').scrollIntoView({behavior:'smooth',block:'start'});
+  try{ history.replaceState(null,'','?id='+id+(group==='all'?'':'&g='+group)); }catch(e){}
+  if(!o.silent) el('side').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 function row(k,v){ if(v===undefined||v===null||v==='') return ''; return '<div class="row"><span class="k">'+k+'</span><span class="v">'+v+'</span></div>'; }
@@ -238,11 +309,24 @@ function renderDetail(item){
   if(!item) return;
   const pending=(item.pending_fields||[]);
   const pendList=pending.map(f=>FIELD_ZH[f]||f).join('、');
-  const rel=(item.related||[]).map(r=>{const o=DATA.find(x=>x.id===r);return o?'<button data-id="'+r+'">'+o.name.zh+'</button>':'';}).join('');
+  const rel=(item.related||[]).map(r=>{const o=DATA.find(x=>x.id===r);return o?'<button type="button" data-id="'+r+'">'+o.name.zh+'</button>':'';}).join('');
   const ev=(item.evidence||[]).map(e=>{const s=SRC[e];return s?'<li><a href="'+s.url+'" target="_blank" rel="noopener">'+s.title+'</a></li>':'<li>'+e+'</li>';}).join('');
+  const items=visible();
+  const idx=items.findIndex(x=>x.id===item.id);
+  const prev=idx>0?items[idx-1]:null;
+  const next=idx>=0&&idx<items.length-1?items[idx+1]:null;
+  const m=isMastered(item.id);
   el('detail').innerHTML=
-    '<div style="height:18px"></div><h3>'+item.name.zh+(pending.length?' <span class="badge">字段待核</span>':'')+'</h3>'+
+    '<div style="height:16px"></div>'+
+    '<div class="crumb"><button type="button" data-g="all">发声通路</button> › <button type="button" data-g="'+item.group+'">'+(GROUP_ZH[item.group]||item.group)+'</button> › '+item.name.zh+'</div>'+
+    '<h3>'+item.name.zh+(pending.length?' <span class="badge">字段待核</span>':'')+'</h3>'+
     '<div class="tri">'+item.name.la+' · '+item.name.en+'</div>'+
+    '<div class="toolrow" style="margin:0 0 12px">'+
+      '<button class="btn'+(m?' ok':'')+'" type="button" id="markBtn">'+(m?'已掌握 ✓':'标记为已掌握')+'</button>'+
+      (hasHot(item.id)?'<button class="btn" type="button" id="focusBtn">在图上定位</button>':'')+
+      (prev?'<button class="btn" type="button" id="prevBtn">← '+prev.name.zh+'</button>':'')+
+      (next?'<button class="btn" type="button" id="nextBtn">'+next.name.zh+' →</button>':'')+
+    '</div>'+
     (pending.length?'<div class="pending">以下字段尚未逐条核定，暂不展示：'+pendList+'</div>':'')+
     row('位置',item.location)+
     row('功能',item.function)+
@@ -250,21 +334,32 @@ function renderDetail(item){
     row('神经支配',pending.includes('innervation')?'':item.innervation)+
     row('分层',pending.includes('layers')?'':item.layers)+
     (rel?'<div class="row"><span class="k">相关结构</span><div class="rel">'+rel+'</div></div>':'')+
-    (ev?'<details class="ev"><summary>出处（'+ (item.evidence||[]).length +'）</summary><ul class="src">'+ev+'</ul></details>':'');
-  el('detail').querySelectorAll('.rel button').forEach(b=>b.onclick=()=>select(b.dataset.id));
+    (hasHot(item.id)?'':'<p class="hint">该结构在图上没有独立块，可从相邻结构的位置推断。</p>')+
+    (ev?'<details class="ev"><summary>出处（'+(item.evidence||[]).length+'）</summary><ul class="src">'+ev+'</ul></details>':'');
+
+  el('detail').querySelectorAll('.rel button').forEach(b=>{ b.onclick=()=>select(b.dataset.id); });
+  el('detail').querySelectorAll('.crumb button').forEach(b=>{ b.onclick=()=>{ group=b.dataset.g; renderTabs(); renderList(); }; });
+  const mb=el('markBtn');
+  if(mb) mb.onclick=()=>toggleMastered(item.id);
+  const fb=el('focusBtn');
+  if(fb) fb.onclick=()=>{ isolate=true; applyHotState(); };
+  const pb=el('prevBtn');
+  if(pb) pb.onclick=()=>select(prev.id);
+  const nb=el('nextBtn');
+  if(nb) nb.onclick=()=>select(next.id);
 }
 
 let quizOn=false, quizId=null, quizDone=0, quizAsk=0;
-function quizPool(){return Array.from(document.querySelectorAll('.hot')).map(g=>g.dataset.sid);}
-function quizName(id){const o=DATA&&DATA.find(x=>x.id===id);return o?o.name.zh:id;}
-function quizPaint(){document.getElementById('quizScore').textContent=quizDone+' / '+quizAsk;}
+function quizPool(){ return Array.from(document.querySelectorAll('.hot')).map(g=>g.dataset.sid); }
+function quizName(id){ const o=DATA&&DATA.find(x=>x.id===id); return o?o.name.zh:id; }
+function quizPaint(){ el('quizScore').textContent=quizDone+' / '+quizAsk; }
 function quizNext(){
   const pool=quizPool().filter(x=>x!==quizId);
   quizId=pool[Math.floor(Math.random()*pool.length)];
   quizAsk++; quizOn=true;
-  document.getElementById('quizQ').innerHTML='请在图上点出：<b>'+quizName(quizId)+'</b>';
+  el('quizQ').innerHTML='请在图上点出：<b>'+quizName(quizId)+'</b>';
   document.querySelectorAll('.hot').forEach(g=>g.classList.remove('right','wrong'));
-  document.getElementById('quizStart').textContent='下一题';
+  el('quizStart').textContent='下一题';
   quizPaint();
 }
 function quizAnswer(sid){
@@ -274,16 +369,15 @@ function quizAnswer(sid){
   if(sid===quizId){
     quizDone++; quizOn=false;
     if(tapped) tapped.classList.add('right');
-    document.getElementById('quizQ').innerHTML='对：<b>'+quizName(quizId)+'</b>。点「下一题」继续。';
+    el('quizQ').innerHTML='对：<b>'+quizName(quizId)+'</b>。点「下一题」继续。';
     quizPaint();
     return;
   }
   if(tapped) tapped.classList.add('wrong');
   if(asked) asked.classList.add('right');
-  document.getElementById('quizQ').innerHTML='你点的是「'+quizName(sid)+'」，正确答案是标绿的那块。';
+  el('quizQ').innerHTML='你点的是「'+quizName(sid)+'」，正确答案是标绿的那块。';
 }
-document.getElementById('quizStart').onclick=quizNext;
-document.getElementById('quizSkip').onclick=quizNext;
+
 init();
 </script>
 </body>
