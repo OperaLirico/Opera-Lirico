@@ -57,13 +57,13 @@ jobs:
             const projectSkillText = decode(projectSkillResponse.data);
             const upstreamSkillText = decode(skillResponse.data);
             const packageManifest = JSON.parse(decode(packageResponse.data));
-            const metadataMatch = upstreamSkillText.match(/^metadata:\\s*\\n(?:[ \\t]+.*\\n)*?[ \\t]+version:\\s*["']?([^\\s"'#]+)/m);
+            const metadataMatch = upstreamSkillText.match(/^metadata:\s*\n(?:[ \t]+.*\n)*?[ \t]+version:\s*["']?([^\s"'#]+)/m);
             if (!metadataMatch) throw new Error("Could not read metadata.version from the official upstream Skill file.");
             const upstreamSkillVersion = metadataMatch[1];
 
             const stableTags = tagsResponse.data
               .map(tag => {
-                const match = tag.name.match(/^rea-agents-(\\d+)\\.(\\d+)\\.(\\d+)$/);
+                const match = tag.name.match(/^rea-agents-(\d+)\.(\d+)\.(\d+)$/);
                 return match ? { name: tag.name, sha: tag.commit.sha, version: match.slice(1).map(Number) } : null;
               })
               .filter(Boolean)
@@ -78,9 +78,9 @@ jobs:
             const mcpRegistry = packageManifest.mcpName ?? null;
             const mainCommit = mainResponse.data.sha;
 
-            const localRelease = projectSkillText.match(/^\\s+upstream_release:\\s*["']?([^"' \\r\\n]+)/m)?.[1] ?? null;
-            const localSkillVersion = projectSkillText.match(/^\\s+upstream_skill_version:\\s*["']?([^"' \\r\\n]+)/m)?.[1] ?? null;
-            const localMainCommit = projectSkillText.match(/^\\s+upstream_main_commit:\\s*["']?([^"' \\r\\n]+)/m)?.[1] ?? null;
+            const localRelease = projectSkillText.match(/^\s+upstream_release:\s*["']?([^"' \r\n]+)/m)?.[1] ?? null;
+            const localSkillVersion = projectSkillText.match(/^\s+upstream_skill_version:\s*["']?([^"' \r\n]+)/m)?.[1] ?? null;
+            const localMainCommit = projectSkillText.match(/^\s+upstream_main_commit:\s*["']?([^"' \r\n]+)/m)?.[1] ?? null;
 
             const observed = {
               upstream_main_commit: mainCommit,
@@ -129,7 +129,7 @@ jobs:
               "## REA upstream maintenance check",
               "",
               `- Checked: ${new Date().toISOString()}`,
-              `- Upstream main: ${mainCommit} (${mainResponse.data.commit.message.split("\\n")[0]})`,
+              `- Upstream main: ${mainCommit} (${mainResponse.data.commit.message.split("\n")[0]})`,
               `- Latest stable tag: ${latestTag.name} @ ${latestTag.sha}`,
               `- GitHub release: ${releaseTag} (published ${releaseResponse.data.published_at})`,
               `- npm registry latest: ${npmVersion}`,
@@ -157,7 +157,7 @@ jobs:
                 "- Update the reviewed baseline and project Skill only after compatibility review.",
                 "- Do not auto-run setup, change local MCP configuration, install providers, or merge/deploy."
               );
-              const body = summary.join("\\n");
+              const body = summary.join("\n");
               if (existing) {
                 await github.rest.issues.update({ owner, repo, issue_number: existing.number, body });
                 core.info(`Updated REA maintenance issue #${existing.number}`);
@@ -170,4 +170,4 @@ jobs:
               summary.push("This check does not verify the user's local MCP/plugin/CLI runtime.");
             }
 
-            await core.summary.addHeading("REA upstream maintenance").addRaw(summary.join("\\n")).write();
+            await core.summary.addHeading("REA upstream maintenance").addRaw(summary.join("\n")).write();
