@@ -59,6 +59,7 @@ class SeoAndSharingTests(unittest.TestCase):
             "https://operalirico.github.io/Opera-Lirico/privacy.html",
             "https://operalirico.github.io/Opera-Lirico/voice-anatomy.html",
             "https://operalirico.github.io/Opera-Lirico/larynx-mechanism.html",
+            "https://operalirico.github.io/Opera-Lirico/voice-lab.html",
         ])
 
 
