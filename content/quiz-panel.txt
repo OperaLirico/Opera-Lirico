@@ -1,0 +1,2 @@
+add the hotspot quiz panel
+run: 2026-11-17d

@@ -1,0 +1,133 @@
+name: quiz panel
+
+on:
+  push:
+    paths:
+      - content/quiz-panel.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add the hotspot quiz
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          p = pathlib.Path('voice-lab.html')
+          t = p.read_text(encoding='utf-8')
+
+          if 'id="quiz"' in t:
+              print('quiz already there')
+              raise SystemExit(0)
+
+          CSS_ANCHOR = '  .msg{color:#8a6b3d;font-size:13px}'
+          CSS_ADD = '''
+            .msg{color:#8a6b3d;font-size:13px}
+            .quiz{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+            .quiz-h{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#80958c}
+            .quiz-q{font-size:14px;color:#25443c;margin:6px 0 8px;min-height:22px}
+            .qbtn{font:13px inherit;background:var(--ink);color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+            .qbtn.ghost{background:#fff;color:var(--ink2);border:1px solid var(--line);margin-left:6px}
+            .hot.right rect,.hot.right ellipse,.hot.right path{fill:#dff2e4;stroke:#4f9b6a;stroke-width:2}
+            .hot.wrong rect,.hot.wrong ellipse,.hot.wrong path{fill:#fbe6e2;stroke:#c0573f;stroke-width:2}
+            .hot.right text{fill:#2f6b47}
+            .hot.wrong text{fill:#9d4630}'''
+
+          HTML_ANCHOR = '      <p class="msg" style="margin:10px 4px 0">示意图：只表示结构与相对位置，不是解剖图谱。可点的块与右侧卡片一一对应。</p>'
+          HTML_ADD = HTML_ANCHOR + '''
+                  <div class="quiz" id="quiz">
+                    <div class="quiz-h"><span>发声通路小测</span><span id="quizScore">0 / 0</span></div>
+                    <p class="quiz-q" id="quizQ">在图上点出被问到的结构。答错会标出正确位置。</p>
+                    <button class="qbtn" id="quizStart">开始</button>
+                    <button class="qbtn ghost" id="quizSkip">跳过</button>
+                  </div>'''
+
+          CLICK_ANCHOR = "      g.addEventListener('click',()=>select(sid));"
+          CLICK_ADD = "      g.addEventListener('click',()=>{ if(quizOn&&quizId) quizAnswer(sid); select(sid); });"
+
+          JS_ANCHOR = 'init();'
+          JS_ADD = '''let quizOn=false, quizId=null, quizDone=0, quizAsk=0;
+          function quizPool(){return Array.from(document.querySelectorAll('.hot')).map(g=>g.dataset.sid);}
+          function quizName(id){const o=DATA&&DATA.find(x=>x.id===id);return o?o.name.zh:id;}
+          function quizPaint(){document.getElementById('quizScore').textContent=quizDone+' / '+quizAsk;}
+          function quizNext(){
+            const pool=quizPool().filter(x=>x!==quizId);
+            quizId=pool[Math.floor(Math.random()*pool.length)];
+            quizAsk++; quizOn=true;
+            document.getElementById('quizQ').innerHTML='请在图上点出：<b>'+quizName(quizId)+'</b>';
+            document.querySelectorAll('.hot').forEach(g=>g.classList.remove('right','wrong'));
+            document.getElementById('quizStart').textContent='下一题';
+            quizPaint();
+          }
+          function quizAnswer(sid){
+            if(!quizOn||!quizId) return;
+            const asked=document.querySelector('.hot[data-sid="'+quizId+'"]');
+            const tapped=document.querySelector('.hot[data-sid="'+sid+'"]');
+            if(sid===quizId){
+              quizDone++; quizOn=false;
+              if(tapped) tapped.classList.add('right');
+              document.getElementById('quizQ').innerHTML='对：<b>'+quizName(quizId)+'</b>。点「下一题」继续。';
+              quizPaint();
+              return;
+            }
+            if(tapped) tapped.classList.add('wrong');
+            if(asked) asked.classList.add('right');
+            document.getElementById('quizQ').innerHTML='你点的是「'+quizName(sid)+'」，正确答案是标绿的那块。';
+          }
+          document.getElementById('quizStart').onclick=quizNext;
+          document.getElementById('quizSkip').onclick=quizNext;
+          init();'''
+
+          for name, anchor in [('css', CSS_ANCHOR), ('html', HTML_ANCHOR), ('click', CLICK_ANCHOR), ('js', JS_ANCHOR)]:
+              assert t.count(anchor) == 1, name + ' anchor count ' + str(t.count(anchor))
+
+          t = t.replace(CSS_ANCHOR, CSS_ADD, 1)
+          t = t.replace(HTML_ANCHOR, HTML_ADD, 1)
+          t = t.replace(CLICK_ANCHOR, CLICK_ADD, 1)
+          t = t.replace(JS_ANCHOR, JS_ADD, 1)
+          assert t.count('id="quiz"') == 2, 'quiz blocks ' + str(t.count('id="quiz"'))
+          assert t.count('function quizNext') == 1
+          p.write_text(t, encoding='utf-8')
+          print('quiz panel added, chars', len(t))
+          PY
+      - name: Append the second observation
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          p = pathlib.Path('docs/rea-cycle-log.md')
+          t = p.read_text(encoding='utf-8')
+          if 'Visible Body' in t:
+              print('observation already logged')
+          else:
+              add = '''
+
+          ## 外部站点观察 · Visible Body（官方帮助中心）· 2026-11-17
+
+          来源：https://support.visiblebody.com/hc/en-us/articles/360045539374-Getting-Started
+
+          1. **选中即出信息面板**：点结构→Info box，定义、发音、起止点、相关病理分图标分栏，不一整段堆。
+          2. **Hide / Isolate / Dissect 三件套**：把一个结构从周围「剥」出来是回答「它到底在哪」的最短路径。
+          3. **双击设旋转中心**：把焦点钉死在目标结构上，而不是自由旋转。
+          4. **黄剖测验（dissection quiz）**：给名字，让你在模型上点出结构，必要时先旋转、先隐藏遮挡。
+          5. **Review checklist**：学员自己勾「我掌握了」，用来做进度。
+          6. **三维切片配 CT/MRI/尸体片对照**：和本站「喉镜帧对示意图」是同一逻辑。
+
+          本轮落地的那一条：在结构层加了一个「发声通路小测」——随机报一个结构名，用户在 SVG 上点热区作答，答错直接标出正确块。对应上面第 4 条，也补上了之前指出的「纯阅读缺出口」。
+
+          待办（按性价比排序）：面包屑（通路 › 分组 › 名称）；自评勾选入 localStorage；每张卡片加「只看它」；三维模型的 isolate 留到 P3。
+          '''
+              p.write_text(t + add, encoding='utf-8')
+              print('observation appended')
+          PY
+      - name: Commit
+        run: |
+          git config user.name "OperaLab Bot"
+          git config user.email "bot@operalirico.github.io"
+          git add voice-lab.html docs/rea-cycle-log.md
+          git diff --cached --quiet || git commit -m "feat(lab): hotspot quiz on the pathway map, log Visible Body patterns"
+          git push
