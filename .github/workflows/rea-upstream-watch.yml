@@ -57,7 +57,8 @@ jobs:
             const projectSkillText = decode(projectSkillResponse.data);
             const upstreamSkillText = decode(skillResponse.data);
             const packageManifest = JSON.parse(decode(packageResponse.data));
-            const metadataMatch = upstreamSkillText.match(/^metadata:\s*\n(?:[ \t]+.*\n)*?[ \t]+version:\s*["']?([^\s"'#]+)/m);
+            const metadataBlock = upstreamSkillText.match(/^metadata:\r?\n((?:[ \t]+[^\r\n]*(?:\r?\n|$))*)/m)?.[1] ?? "";
+            const metadataMatch = metadataBlock.match(/^[ \t]+version:\s*["']?([^\s"'#]+)/m);
             if (!metadataMatch) throw new Error("Could not read metadata.version from the official upstream Skill file.");
             const upstreamSkillVersion = metadataMatch[1];
 
