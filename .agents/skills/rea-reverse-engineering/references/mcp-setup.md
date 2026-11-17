@@ -8,6 +8,14 @@ This guide connects the official REA MCP server to the local coding agent. The O
 - Installation guide: https://github.com/morluto/rea/blob/main/docs/getting-started/installation.md
 - Official package: `rea-agents`
 - MCP Registry identifier: `io.github.morluto/rea`
+- MCP runtime contracts: https://github.com/morluto/rea/blob/main/docs/reference/mcp-contracts.md
+- Connection and recovery guide: https://github.com/morluto/rea/blob/main/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md
+
+## MCP tool contracts and readiness
+
+The upstream [MCP runtime contracts](https://github.com/morluto/rea/blob/main/docs/reference/mcp-contracts.md) explain Evidence result semantics and retained references. The live MCP `tools/list` response is the canonical source for complete tool input/output schemas; this guide and a release note do not prove that a particular tool is loaded in the active session. Always use the actual advertised tool names and schemas.
+
+For native or artifact workflows, if the connected catalog advertises `binary_session`, call it with `{}` before choosing an operation and inspect `result.tool_availability` and client requirements. This is a task-scoped capability check, not a generic check that browser-only REA workflows need.
 
 ## Recommended Codex installation: official plugin
 

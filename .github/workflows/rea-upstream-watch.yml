@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   compare-upstream:
-    name: Compare REA release, npm package, and Skill metadata
+    name: Compare REA main, release, npm, Skill and MCP contracts
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -25,41 +25,124 @@ jobs:
         with:
           script: |
             const { owner, repo } = context.repo;
+            const upstream = { owner: "morluto", repo: "rea" };
             const baselinePath = ".agents/skills/rea-reverse-engineering/references/upstream-baseline.json";
-            const skillPath = ".agents/skills/rea-reverse-engineering/SKILL.md";
-            const [baselineResponse, skillResponse, releaseResponse, npmResponse, issuesResponse] = await Promise.all([
+            const projectSkillPath = ".agents/skills/rea-reverse-engineering/SKILL.md";
+            const upstreamSkillPath = ".agents/skills/reverse-engineer-anything/SKILL.md";
+            const installationPath = "docs/getting-started/installation.md";
+            const recoveryPath = ".agents/skills/reverse-engineer-anything/references/connection-and-recovery.md";
+            const contractsPath = "docs/reference/mcp-contracts.md";
+
+            const [baselineResponse, projectSkillResponse, mainResponse, releaseResponse, tagsResponse, npmResponse, packageResponse, skillResponse, installationResponse, recoveryResponse, contractsResponse, installScriptResponse, issuesResponse] = await Promise.all([
               github.rest.repos.getContent({ owner, repo, path: baselinePath }),
-              github.rest.repos.getContent({ owner, repo, path: skillPath }),
-              github.rest.repos.getLatestRelease({ owner: "morluto", repo: "rea" }),
+              github.rest.repos.getContent({ owner, repo, path: projectSkillPath }),
+              github.rest.repos.getCommit({ ...upstream, ref: "main" }),
+              github.rest.repos.getLatestRelease(upstream),
+              github.rest.repos.listTags({ ...upstream, per_page: 100 }),
               fetch("https://registry.npmjs.org/rea-agents/latest").then(async response => {
                 if (!response.ok) throw new Error(`npm registry returned HTTP ${response.status}`);
                 return response.json();
               }),
+              github.rest.repos.getContent({ ...upstream, path: "package.json" }),
+              github.rest.repos.getContent({ ...upstream, path: upstreamSkillPath }),
+              github.rest.repos.getContent({ ...upstream, path: installationPath }),
+              github.rest.repos.getContent({ ...upstream, path: recoveryPath }),
+              github.rest.repos.getContent({ ...upstream, path: contractsPath }),
+              github.rest.repos.getContent({ ...upstream, path: "install.sh" }),
               github.rest.issues.listForRepo({ owner, repo, state: "open", per_page: 100 })
             ]);
 
             const decode = item => Buffer.from(item.content, "base64").toString("utf8");
             const baseline = JSON.parse(decode(baselineResponse.data));
-            const skillText = decode(skillResponse.data);
-            const metadataMatch = skillText.match(/^metadata:\s*\n(?:[ \t]+.*\n)*?[ \t]+version:\s*["']?([^\s"'#]+)["']?/m);
-            if (!metadataMatch) throw new Error("Could not read upstream Skill metadata version from the official Skill file.");
+            const projectSkillText = decode(projectSkillResponse.data);
+            const upstreamSkillText = decode(skillResponse.data);
+            const packageManifest = JSON.parse(decode(packageResponse.data));
+            const metadataBlock = upstreamSkillText.match(/^metadata:\r?\n((?:[ \t]+[^\r\n]*(?:\r?\n|$))*)/m)?.[1] ?? "";
+            const metadataMatch = metadataBlock.match(/^[ \t]+version:\s*["']?([^\s"'#]+)/m);
+            if (!metadataMatch) throw new Error("Could not read metadata.version from the official upstream Skill file.");
             const upstreamSkillVersion = metadataMatch[1];
+
+            const stableTags = tagsResponse.data
+              .map(tag => {
+                const match = tag.name.match(/^rea-agents-(\d+)\.(\d+)\.(\d+)$/);
+                return match ? { name: tag.name, sha: tag.commit.sha, version: match.slice(1).map(Number) } : null;
+              })
+              .filter(Boolean)
+              .sort((a, b) => b.version[0] - a.version[0] || b.version[1] - a.version[1] || b.version[2] - a.version[2]);
+            if (!stableTags.length) throw new Error("No stable rea-agents semver tag was returned by the official repository.");
+            const latestTag = stableTags[0];
+
             const releaseTag = releaseResponse.data.tag_name;
             const npmVersion = npmResponse.version;
+            const packageVersion = packageManifest.version;
+            const nodeEngineRange = packageManifest.engines?.node ?? null;
+            const mcpRegistry = packageManifest.mcpName ?? null;
+            const mainCommit = mainResponse.data.sha;
+
+            const localRelease = projectSkillText.match(/^\s+upstream_release:\s*["']?([^"' \r\n]+)/m)?.[1] ?? null;
+            const localSkillVersion = projectSkillText.match(/^\s+upstream_skill_version:\s*["']?([^"' \r\n]+)/m)?.[1] ?? null;
+            const localMainCommit = projectSkillText.match(/^\s+upstream_main_commit:\s*["']?([^"' \r\n]+)/m)?.[1] ?? null;
+
+            const observed = {
+              upstream_main_commit: mainCommit,
+              latest_tag: latestTag.name,
+              latest_tag_commit: latestTag.sha,
+              release_tag: releaseTag,
+              npm_version: npmVersion,
+              package_manifest_version: packageVersion,
+              node_engine_range: nodeEngineRange,
+              mcp_registry: mcpRegistry,
+              skill_metadata_version: upstreamSkillVersion,
+              upstream_skill_blob_sha: skillResponse.data.sha,
+              package_json_blob_sha: packageResponse.data.sha,
+              installation_doc_blob_sha: installationResponse.data.sha,
+              connection_recovery_blob_sha: recoveryResponse.data.sha,
+              mcp_contracts_blob_sha: contractsResponse.data.sha,
+              install_script_blob_sha: installScriptResponse.data.sha
+            };
+            const labels = {
+              upstream_main_commit: "Upstream main commit",
+              latest_tag: "Latest stable tag",
+              latest_tag_commit: "Latest stable tag commit",
+              release_tag: "GitHub latest release",
+              npm_version: "npm registry latest",
+              package_manifest_version: "package.json version",
+              node_engine_range: "Node.js engine range",
+              mcp_registry: "Declared MCP Registry identifier",
+              skill_metadata_version: "Official Skill metadata version",
+              upstream_skill_blob_sha: "Official Skill content",
+              package_json_blob_sha: "package.json content",
+              installation_doc_blob_sha: "Installation guide",
+              connection_recovery_blob_sha: "Connection/recovery guide",
+              mcp_contracts_blob_sha: "MCP contracts",
+              install_script_blob_sha: "Install script"
+            };
             const drift = [];
-            if (releaseTag !== baseline.release_tag) drift.push(`GitHub release: ${baseline.release_tag} → ${releaseTag}`);
-            if (npmVersion !== baseline.npm_version) drift.push(`npm package: ${baseline.npm_version} → ${npmVersion}`);
-            if (upstreamSkillVersion !== baseline.skill_metadata_version) drift.push(`Skill metadata: ${baseline.skill_metadata_version} → ${upstreamSkillVersion}`);
+            for (const [key, value] of Object.entries(observed)) {
+              if (baseline[key] !== value) drift.push(`${labels[key]}: ${baseline[key] ?? "(not recorded)"} → ${value ?? "(unavailable)"}`);
+            }
             if (releaseTag !== `rea-agents-${npmVersion}`) drift.push(`Release/npm boundary differs: ${releaseTag} vs rea-agents-${npmVersion}`);
+            if (localRelease !== releaseTag) drift.push(`OperaLab Skill release baseline: ${localRelease ?? "(missing)"} → ${releaseTag}`);
+            if (localSkillVersion !== upstreamSkillVersion) drift.push(`OperaLab Skill metadata baseline: ${localSkillVersion ?? "(missing)"} → ${upstreamSkillVersion}`);
+            if (localMainCommit !== baseline.upstream_main_commit) drift.push(`OperaLab Skill reviewed main commit: ${localMainCommit ?? "(missing)"} → ${baseline.upstream_main_commit}`);
 
             const summary = [
               "## REA upstream maintenance check",
               "",
               `- Checked: ${new Date().toISOString()}`,
-              `- Reviewed baseline: ${baseline.release_tag} / npm ${baseline.npm_version} / Skill ${baseline.skill_metadata_version}`,
-              `- Current upstream: ${releaseTag} / npm ${npmVersion} / Skill ${upstreamSkillVersion}`,
-              `- Official release: https://github.com/morluto/rea/releases/tag/${releaseTag}`,
-              `- Official Skill: https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything`,
+              `- Upstream main: ${mainCommit} (${mainResponse.data.commit.message.split("\n")[0]})`,
+              `- Latest stable tag: ${latestTag.name} @ ${latestTag.sha}`,
+              `- GitHub release: ${releaseTag} (published ${releaseResponse.data.published_at})`,
+              `- npm registry latest: ${npmVersion}`,
+              `- package.json: ${packageVersion}`,
+              `- Node.js engine: ${nodeEngineRange}`,
+              `- MCP Registry identifier: ${mcpRegistry}`,
+              `- Official Skill metadata: ${upstreamSkillVersion} (blob ${skillResponse.data.sha})`,
+              `- Installation guide blob: ${installationResponse.data.sha}`,
+              `- Connection/recovery guide blob: ${recoveryResponse.data.sha}`,
+              `- MCP contracts blob: ${contractsResponse.data.sha}`,
+              `- Install script blob: ${installScriptResponse.data.sha}`,
+              `- Reviewed baseline date: ${baseline.reviewed_at}`,
               ""
             ];
 
@@ -70,7 +153,7 @@ jobs:
               summary.push(
                 "### Required review",
                 "- Read the official release notes and changed Skill guidance.",
-                "- Check the npm package/release boundary and host/runtime requirements.",
+                "- Review installation, connection/recovery, Node.js requirements, and MCP contract changes.",
                 "- Compare the actual MCP tool catalog and schemas after a local update/reconnect.",
                 "- Update the reviewed baseline and project Skill only after compatibility review.",
                 "- Do not auto-run setup, change local MCP configuration, install providers, or merge/deploy."
@@ -84,7 +167,7 @@ jobs:
                 core.info(`Created REA maintenance issue #${created.data.number}`);
               }
             } else {
-              summary.push("### Result", "", "- No release/package/Skill metadata drift detected.", "- The current baseline remains aligned; no issue or update was created.", "");
+              summary.push("### Result", "", "No drift detected across upstream main, stable tag/release, npm/package/runtime metadata, official Skill, installation/recovery docs, and MCP contracts.", "");
               summary.push("This check does not verify the user's local MCP/plugin/CLI runtime.");
             }
 

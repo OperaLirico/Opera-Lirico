@@ -1,3 +1,4 @@
+import json
 import unittest
 from pathlib import Path
 
@@ -55,6 +56,39 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
         self.assertIn('workflows: ["Daily source refresh"]', workflow)
         self.assertIn('"audit_source_coverage.py"', workflow)
         self.assertIn('group: weekly-source-coverage', workflow)
+
+
+    def test_rea_upstream_watch_tracks_official_upstream_and_mcp_contracts(self):
+        workflow = (ROOT / ".github" / "workflows" / "rea-upstream-watch.yml").read_text(encoding="utf-8")
+        self.assertIn('const upstream = { owner: "morluto", repo: "rea" };', workflow)
+        self.assertIn('github.rest.repos.getCommit({ ...upstream, ref: "main" })', workflow)
+        self.assertIn('github.rest.repos.listTags({ ...upstream, per_page: 100 })', workflow)
+        for path in (
+            ".agents/skills/reverse-engineer-anything/SKILL.md",
+            "docs/getting-started/installation.md",
+            ".agents/skills/reverse-engineer-anything/references/connection-and-recovery.md",
+            "docs/reference/mcp-contracts.md",
+            "install.sh",
+            "package.json",
+        ):
+            self.assertIn(path, workflow)
+        self.assertIn("baseline.upstream_main_commit", workflow)
+        self.assertIn("mcp_contracts_blob_sha", workflow)
+        self.assertNotIn('path: ".agents/skills/rea-reverse-engineering/SKILL.md"', workflow)
+
+    def test_rea_upstream_watch_parses_nested_skill_metadata(self):
+        workflow = (ROOT / ".github" / "workflows" / "rea-upstream-watch.yml").read_text(encoding="utf-8")
+        self.assertIn("const metadataBlock = upstreamSkillText.match(", workflow)
+        self.assertIn("const metadataMatch = metadataBlock.match(", workflow)
+    def test_rea_skill_baseline_matches_reviewed_upstream_commit(self):
+        baseline = json.loads(
+            (ROOT / ".agents" / "skills" / "rea-reverse-engineering" / "references" / "upstream-baseline.json")
+            .read_text(encoding="utf-8")
+        )
+        skill = (ROOT / ".agents" / "skills" / "rea-reverse-engineering" / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn(baseline["upstream_main_commit"], skill)
+        self.assertIn(baseline["release_tag"], skill)
+        self.assertIn(baseline["skill_metadata_version"], skill)
 
 
 if __name__ == "__main__":
