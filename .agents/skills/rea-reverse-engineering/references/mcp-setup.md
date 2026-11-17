@@ -9,6 +9,7 @@ This guide connects the official REA MCP server to the local coding agent. The O
 - Official package: `rea-agents`
 - MCP Registry identifier: `io.github.morluto/rea`
 - MCP runtime contracts: https://github.com/morluto/rea/blob/main/docs/reference/mcp-contracts.md
+- Connection and recovery guide: https://github.com/morluto/rea/blob/main/.agents/skills/reverse-engineer-anything/references/connection-and-recovery.md
 
 ## MCP tool contracts and readiness
 
