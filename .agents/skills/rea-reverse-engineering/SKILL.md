@@ -29,7 +29,7 @@ This project skill is an OperaLab-specific operating guide. It does not replace 
 - Upstream release notes added/expanded desktop-task capture and AgentEnv build-computer workflows, offline inspection of additional shipped artifacts (including standalone bundles, firmware, NTFS acquisitions, API contracts, and V8 code-cache containers), and retained Evidence with pagination, explicit coverage, and recoverable resource limits.
 - These are upstream capabilities, not proof that this project's local MCP runtime exposes them. Before using a capability, inspect the active REA tool catalog and use its actual schemas. Do not infer runtime availability from this document or from the npm release alone.
 - For OperaLab, prioritize website/browser behavior, reproducible interaction capture, JavaScript/Electron analysis, API-contract comparison, and evidence-backed UI reconstruction. Desktop/native/firmware providers are not project prerequisites and must not be installed unless a concrete authorized task requires them.
-- Recheck the upstream release, skill metadata, installation/recovery guide, and relevant MCP contracts during the daily REA maintenance review. Update this baseline only when the upstream source confirms a material change.
+- Recheck upstream main, stable tag/release, npm/package/runtime metadata, Skill, installation/recovery docs, and relevant MCP contracts during the daily REA maintenance review. Update this baseline only when the upstream source confirms a material change.
 
 ## When to use REA
 
