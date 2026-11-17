@@ -3,7 +3,8 @@ name: rea-reverse-engineering
 metadata:
   upstream_release: "rea-agents-6.9.0"
   upstream_skill_version: "62"
-  last_reviewed: "2026-11-16"
+  upstream_main_commit: "54e3918d1c09991970aadf8f0eb1ab6bcf6f83fb"
+  last_reviewed: "2026-11-17"
 description: Use REA (Reverse Engineer Anything) to investigate behavior that cannot be established from OperaLab source alone, inspect authorized web/app artifacts, capture browser workflows, preserve evidence and limitations, and turn verified findings into scoped OperaLab implementations. Do not use for ordinary source-code analysis when repository code already answers the question.
 ---
 
@@ -22,8 +23,8 @@ This project skill is an OperaLab-specific operating guide. It does not replace 
 
 ## Upstream compatibility baseline
 
-- Last reviewed against official upstream `rea-agents-6.9.0`, released 2026-11-11.
-- Upstream skill metadata version at review: `62`.
+- Last reviewed against official upstream `rea-agents-6.9.0`, released 2026-11-11; upstream `main` commit checked on 2026-11-17: `54e3918d1c09991970aadf8f0eb1ab6bcf6f83fb`.
+- Upstream skill metadata version at review: `62` (unchanged). The post-release `main` changes checked today include ELF separate-debug linkage and candidate verification; this native-only addition is not required by OperaLab's current website, browser, repertoire, or anatomy work, so no native provider or new dependency is added.
 - Upstream release notes added/expanded desktop-task capture and AgentEnv build-computer workflows, offline inspection of additional shipped artifacts (including standalone bundles, firmware, NTFS acquisitions, API contracts, and V8 code-cache containers), and retained Evidence with pagination, explicit coverage, and recoverable resource limits.
 - These are upstream capabilities, not proof that this project's local MCP runtime exposes them. Before using a capability, inspect the active REA tool catalog and use its actual schemas. Do not infer runtime availability from this document or from the npm release alone.
 - For OperaLab, prioritize website/browser behavior, reproducible interaction capture, JavaScript/Electron analysis, API-contract comparison, and evidence-backed UI reconstruction. Desktop/native/firmware providers are not project prerequisites and must not be installed unless a concrete authorized task requires them.
@@ -57,6 +58,8 @@ Do not invoke REA merely because a task involves code. For OperaLab's own comple
    - If MCP is unavailable, use an authorized installed `rea` CLI. For a supplied JavaScript tree/ASAR, the upstream static fallback is:
      `npx -y rea-agents@latest analyze-javascript-application /absolute/path/to/app --json`
    - Never claim that a CLI fallback proves MCP is connected.
+   - If an MCP call fails because the connection dropped, retry it at most once and only when it is safe to repeat or known not to have started. If the target may already have changed, or the retry also fails, stop rather than replaying the operation and ask for the MCP client to be restarted.
+   - Distinguish client approval, shell `PATH`, registration ownership, and provider availability. Follow the upstream connection/recovery guide for the observed failure only. Do not mix plugin-managed registration with `rea setup`, and do not repeat setup as a generic daily health check.
 
 3. **Choose the narrowest analysis route**
    - Live website / browser actions: use the browser-target and scenario-capture tools that the connected catalog actually exposes.
