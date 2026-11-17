@@ -76,6 +76,11 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
         self.assertIn("mcp_contracts_blob_sha", workflow)
         self.assertNotIn('path: ".agents/skills/rea-reverse-engineering/SKILL.md"', workflow)
 
+    def test_rea_upstream_watch_parses_nested_skill_metadata(self):
+        workflow = (ROOT / ".github" / "workflows" / "rea-upstream-watch.yml").read_text(encoding="utf-8")
+        self.assertIn("const metadataBlock = upstreamSkillText.match(", workflow)
+        self.assertIn("const metadataMatch = metadataBlock.match(", workflow)
+        self.assertNotIn("upstreamSkillText.match(/^metadata:", workflow)
     def test_rea_skill_baseline_matches_reviewed_upstream_commit(self):
         baseline = json.loads(
             (ROOT / ".agents" / "skills" / "rea-reverse-engineering" / "references" / "upstream-baseline.json")
