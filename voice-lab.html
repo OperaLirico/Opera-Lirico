@@ -57,6 +57,15 @@
   details.ev summary{cursor:pointer;font-size:12px;color:#80958c}
   footer.note{margin-top:26px;font-size:12.5px;line-height:1.8;color:#6f8580;border-top:1px solid var(--line);padding-top:14px}
   .msg{color:#8a6b3d;font-size:13px}
+  .quiz{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px}
+  .quiz-h{display:flex;justify-content:space-between;align-items:baseline;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#80958c}
+  .quiz-q{font-size:14px;color:#25443c;margin:6px 0 8px;min-height:22px}
+  .qbtn{font:13px inherit;background:var(--ink);color:#fff;border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+  .qbtn.ghost{background:#fff;color:var(--ink2);border:1px solid var(--line);margin-left:6px}
+  .hot.right rect,.hot.right ellipse,.hot.right path{fill:#dff2e4;stroke:#4f9b6a;stroke-width:2}
+  .hot.wrong rect,.hot.wrong ellipse,.hot.wrong path{fill:#fbe6e2;stroke:#c0573f;stroke-width:2}
+  .hot.right text{fill:#2f6b47}
+  .hot.wrong text{fill:#9d4630}
 </style>
 </head>
 <body>
@@ -136,6 +145,12 @@
         </svg>
       </div>
       <p class="msg" style="margin:10px 4px 0">示意图：只表示结构与相对位置，不是解剖图谱。可点的块与右侧卡片一一对应。</p>
+        <div class="quiz" id="quiz">
+          <div class="quiz-h"><span>发声通路小测</span><span id="quizScore">0 / 0</span></div>
+          <p class="quiz-q" id="quizQ">在图上点出被问到的结构。答错会标出正确位置。</p>
+          <button class="qbtn" id="quizStart">开始</button>
+          <button class="qbtn ghost" id="quizSkip">跳过</button>
+        </div>
     </section>
 
     <section class="panel card" id="side">
@@ -175,7 +190,7 @@ function init(){
     renderTabs(); renderList(); renderDetail(DATA.find(x=>x.id==='true_vocal_fold')||DATA[0]);
     document.querySelectorAll('.hot').forEach(g=>{
       const sid=g.dataset.sid;
-      g.addEventListener('click',()=>select(sid));
+      g.addEventListener('click',()=>{ if(quizOn&&quizId) quizAnswer(sid); select(sid); });
       g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();select(sid);}});
     });
     el('q').addEventListener('input',renderList);
@@ -239,6 +254,36 @@ function renderDetail(item){
   el('detail').querySelectorAll('.rel button').forEach(b=>b.onclick=()=>select(b.dataset.id));
 }
 
+let quizOn=false, quizId=null, quizDone=0, quizAsk=0;
+function quizPool(){return Array.from(document.querySelectorAll('.hot')).map(g=>g.dataset.sid);}
+function quizName(id){const o=DATA&&DATA.find(x=>x.id===id);return o?o.name.zh:id;}
+function quizPaint(){document.getElementById('quizScore').textContent=quizDone+' / '+quizAsk;}
+function quizNext(){
+  const pool=quizPool().filter(x=>x!==quizId);
+  quizId=pool[Math.floor(Math.random()*pool.length)];
+  quizAsk++; quizOn=true;
+  document.getElementById('quizQ').innerHTML='请在图上点出：<b>'+quizName(quizId)+'</b>';
+  document.querySelectorAll('.hot').forEach(g=>g.classList.remove('right','wrong'));
+  document.getElementById('quizStart').textContent='下一题';
+  quizPaint();
+}
+function quizAnswer(sid){
+  if(!quizOn||!quizId) return;
+  const asked=document.querySelector('.hot[data-sid="'+quizId+'"]');
+  const tapped=document.querySelector('.hot[data-sid="'+sid+'"]');
+  if(sid===quizId){
+    quizDone++; quizOn=false;
+    if(tapped) tapped.classList.add('right');
+    document.getElementById('quizQ').innerHTML='对：<b>'+quizName(quizId)+'</b>。点「下一题」继续。';
+    quizPaint();
+    return;
+  }
+  if(tapped) tapped.classList.add('wrong');
+  if(asked) asked.classList.add('right');
+  document.getElementById('quizQ').innerHTML='你点的是「'+quizName(sid)+'」，正确答案是标绿的那块。';
+}
+document.getElementById('quizStart').onclick=quizNext;
+document.getElementById('quizSkip').onclick=quizNext;
 init();
 </script>
 </body>
