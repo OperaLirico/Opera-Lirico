@@ -1,0 +1,25 @@
+name: rea cycle
+
+on:
+  push:
+    paths:
+      - content/rea-cycle-2.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply the verified fields
+        run: python3 research/cycle01.py
+      - name: Commit
+        run: |
+          git config user.name "OperaLab Bot"
+          git config user.email "bot@operalirico.github.io"
+          git add -A
+          git diff --cached --quiet || git commit -m "feat(rea): verify the pending fields (cycle 01)"
+          git push

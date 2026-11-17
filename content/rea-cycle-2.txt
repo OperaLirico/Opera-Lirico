@@ -1,0 +1,2 @@
+cycle 01 apply: verify the 12 pending fields
+run: 2026-11-17b
