@@ -1,0 +1,39 @@
+name: field render
+
+on:
+  push:
+    paths:
+      - content/field-render.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Render the layers row
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          p = pathlib.Path('voice-lab.html')
+          t = p.read_text(encoding='utf-8')
+          anchor = "row('神经支配',pending.includes('innervation')?'':item.innervation)+"
+          print('anchor count', t.count(anchor))
+          assert t.count(anchor) == 1
+          if "row('分层'" not in t:
+              t = t.replace(anchor, anchor + "\n    row('分层',pending.includes('layers')?'':item.layers)+", 1)
+              p.write_text(t, encoding='utf-8')
+              print('patched')
+          else:
+              print('already patched')
+          PY
+      - name: Commit
+        run: |
+          git config user.name "OperaLab Bot"
+          git config user.email "bot@operalirico.github.io"
+          git add voice-lab.html
+          git diff --cached --quiet || git commit -m "feat(lab): render the vocal fold layers row"
+          git push
