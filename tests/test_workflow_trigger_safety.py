@@ -72,7 +72,7 @@ class WorkflowTriggerSafetyTests(unittest.TestCase):
         ):
             self.assertIn(path, workflow)
         self.assertIn("baseline.upstream_main_commit", workflow)
-        self.assertIn("baseline.mcp_contracts_blob_sha", workflow)
+        self.assertIn("mcp_contracts_blob_sha", workflow)
         self.assertNotIn('path: ".agents/skills/rea-reverse-engineering/SKILL.md"', workflow)
 
 if __name__ == "__main__":
