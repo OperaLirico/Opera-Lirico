@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-17T12:10:08+01:00",
+  "generated_at": "2026-11-18T08:36:53+01:00",
   "algorithm": "SHA-256",
   "purpose": "Local byte-integrity manifest for mirrored PDF files",
   "publisher_signature_verification": "not_implemented",
-  "referenced_pdf_count": 7,
-  "valid_pdf_count": 7,
+  "referenced_pdf_count": 8,
+  "valid_pdf_count": 8,
   "invalid_or_missing_pdf_count": 0,
   "unreferenced_pdf_count": 1,
   "files": [
@@ -27,6 +27,17 @@
       "integrity_status": "valid_pdf_bytes",
       "size_bytes": 2865012,
       "sha256": "e4d2a7e36155e6fbd7190ad96b03a87de494f9eb80e915d6262a6d3d12719fe7",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
+    },
+    {
+      "institution": 44,
+      "source_record_number": 44,
+      "local_path": "data/pdfs/44-dd-649-prot.-12043-bando-dottorato-di-ricerca-42-ciclo_musica-perseguitata-e-pat",
+      "source_url": "https://conservatoriorovigo.it/wp-content/uploads/2026/10/DD-649-prot.-12043-Bando-dottorato-di-ricerca-42-ciclo_Musica-Perseguitata-e-Patrimoni-Musicali-a.a.-2026-27_signed.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 509975,
+      "sha256": "f1136a934c2e0ee09d55d651119b13d8442c185374649043fa59d4c388a7d607",
       "publisher_signature_status": "not_verified",
       "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
     },
