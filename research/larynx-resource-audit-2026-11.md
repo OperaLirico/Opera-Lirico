@@ -17,7 +17,7 @@ This audit does not authorize deletion of existing pages. Replace and verify the
 | ID | Asset | Evidence / rights | Intended use | Decision |
 |---|---|---|---|---|
 | A01 | Dundee — Anatomy of the Larynx | Sketchfab page states CC BY-SA 4.0; derivative of BodyParts3D, whose source attribution is CC BY-SA 2.1 Japan. Credit University of Dundee and BodyParts3D / Database Center for Life Science; adaptations must retain compatible share-alike terms. | Main laryngeal cartilage / structure model; downloadable source candidate. | **Approved in principle**, verify downloaded archive, exact file format, attribution, and any embedded texture credits before bundling. |
-| A02 | Dundee — Larynx with Muscles and Ligaments | Dundee TILT collection lists this as a downloadable model. Individual model-page licence and exact anatomy still need direct verification. | Potentially the best model for intrinsic/extrinsic muscle and ligament teaching. | **Pending**; do not download/reuse until its own licence is confirmed. |
+| A02 | Dundee — Larynx with Muscles and Ligaments | Dundee confirms this was created for ENT teaching. A rights notice on a separate teaching site credits the Dundee model under CC BY-NC-SA 4.0; because the Sketchfab model's own licence badge could not be directly inspected in this session, treat the asset conservatively as non-commercial pending confirmation from the original rights holder. | Strong anatomical reference for laryngeal muscles and ligaments. | **Reference only for now**; no commercial self-hosting or modification until written clarification / compatible licence is obtained. |
 | A03 | Dundee — Pharynx and Floor of Mouth | Individual page states CC BY-NC-SA 4.0. Model was made using CT data and sculpting; anatomical content approved by an anatomist. | Pharynx / tongue-base spatial reference. | **Do not bundle into a commercial/publicly monetized site** without separate permission; may be linked as an external reference. |
 | A04 | Complete Anatomy (Elsevier) | Official terms grant limited personal, non-commercial use; content may not be copied, modified, distributed, reverse-engineered, or made available to multiple users. Commercial/public use of images and videos requires permission. | Research anatomy, compare spatial relationships, study UI/teaching patterns. | **Reference only**. No model extraction, scraping, screenshot harvesting, or republishing. Request a written licence if specific media are needed. |
 | A05 | GIRAFE high-speed videoendoscopy dataset | 65 recordings from 50 patients, captured at 4,000 fps; 15 healthy controls, 26 with diagnosed voice disorders, 24 unknown health status. CC BY-NC 4.0. | Scientific study of true vocal-fold vibration, onset/offset, mucosal wave and derived playbacks. | **Research-only / non-commercial restriction**. Do not republish raw patient clips on OperaLab without additional permission and privacy review. |
@@ -73,7 +73,7 @@ Never present a schematic animation as real tissue motion or a static anatomical
 
 ## Immediate next actions
 
-1. Verify the individual Sketchfab page and licence for **Larynx with Muscles and Ligaments**.
+1. Request written confirmation from Dundee / the model rights holder for the exact licence of **Larynx with Muscles and Ligaments**. A separate attribution record identifies CC BY-NC-SA 4.0, so do not assume commercial reuse is permitted.
 2. Download A01 through Sketchfab's official download flow; inspect the archive locally and record its exact format and checksum. Sketchfab's Download API requires user authentication; do not bypass it.
 3. Test the Dundee model in a local GLB/glTF viewer before integrating it into the site.
 4. Identify a small number of healthy-function high-speed clips with explicit public display rights. GIRAFE is useful evidence and research data, but its CC BY-NC licence is not suitable for assuming commercial public reuse.
@@ -83,6 +83,8 @@ Never present a schematic animation as real tissue motion or a static anatomical
 
 - Dundee, Anatomy of the Larynx (CC BY-SA 4.0): https://sketchfab.com/3d-models/anatomy-of-the-larynx-a00bc73a303c46248db6a13a88b23404
 - Dundee TILT model collection (includes Larynx with Muscles and Ligaments): https://sketchfab.com/tilt/models
+- Dundee project description for the larynx muscles / ligaments model: https://www.dundee.ac.uk/tilt/medical-illustration/parapharyngeal-space
+- Independent attribution record identifying CC BY-NC-SA 4.0 for the Dundee larynx model: https://masterclass.morgavi.fr/mentions-legales
 - Dundee, Pharynx and Floor of Mouth (CC BY-NC-SA 4.0): https://sketchfab.com/3d-models/pharynx-and-floor-of-mouth-b262c70bf9bd49c2a5428581b754f24b
 - Sketchfab Download API licensing / authentication guidance: https://sketchfab.com/developers/download-api/guidelines
 - Complete Anatomy Terms of Use: https://3d4medical.com/terms
@@ -93,6 +95,6 @@ Never present a schematic animation as real tissue motion or a static anatomical
 
 ## Audit limitations
 
-- Sketchfab pages were discoverable through public search, but direct page opening returned access denial in this research session. Therefore A02's exact individual licence remains unverified.
+- Sketchfab pages were discoverable through public search, but direct page opening returned access denial in this research session. A separate attribution notice identifies A02 as CC BY-NC-SA 4.0; the exact current licence should still be confirmed with Dundee before any reuse.
 - No binary model file was downloaded in this step. The repository currently contains this research record only; it does not yet contain a new 3D asset or a deployed page.
 - A medical professional should review anatomical labelling and explanatory claims before publication.
