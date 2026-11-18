@@ -54,7 +54,7 @@
         <a href="#conservatori" data-open="conservatori">音乐学院招生</a>
         <a href="#opera-academies" data-open="opera-academies">剧院 Accademia</a>
         <a href="masterclasses.html">大师班</a>
-        <a href="#music-library" data-open="music-library">咏叹调与艺术歌曲</a>
+        <a href="#music-library" data-open="music-library">咏叹调及艺术歌曲汇总</a>
         <a href="voice-anatomy.html">发声机制实验室</a>
       </nav>
       <button id="installButton" class="install-button" hidden>安装到主屏幕</button>
@@ -92,8 +92,8 @@
       </button>
       <button class="tile" type="button" data-open="music-library">
         <span class="tile-index">04</span>
-        <span class="tile-title">咏叹调与艺术歌曲</span>
-        <span class="tile-desc">按作品名称、作曲家或歌词搜索，查看作品原文、中文大意及发音参考。</span>
+        <span class="tile-title">咏叹调及艺术歌曲汇总</span>
+        <span class="tile-desc">汇集歌剧咏叹调、艺术歌曲及其他古典声乐作品，持续扩充并支持按作品、作曲家、声部和歌词搜索。</span>
         <span class="tile-stat"><b id="statSongs">—</b><span>首作品</span></span>
       </button>
       <a class="tile" href="masterclasses.html"><span class="tile-index">05</span><span class="tile-title">大师班与进修课程</span><span class="tile-desc">发现声乐大师班、歌剧工作坊及专业进修项目，了解导师、课程安排与申请方式。</span><span class="tile-stat"><b id="statMasterclasses">—</b><span>个已核验项目</span></span></a>
@@ -110,13 +110,13 @@
     <section class="shell section music-section panel" id="music-library" hidden>
       <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
       <div class="section-head">
-        <div><div class="eyebrow">Aria · Lieder</div><h2>搜索咏叹调与艺术歌曲</h2><p>可用作品名称、作曲家或歌词搜索，支持意大利语、英语和中文。点击作品卡片可展开完整歌词。</p></div>
+        <div><div class="eyebrow">Vocal Repertoire</div><h2>咏叹调及艺术歌曲汇总</h2><p>持续汇集歌剧咏叹调、各国艺术歌曲及其他古典声乐作品。可按作品名称、作曲家、歌词和声部搜索；曲目资料持续整理与更新。</p></div>
         <span id="repertoireCount" class="count-pill">读取曲目…</span>
       </div>
       <form id="musicSearchForm" class="music-search" role="search">
         <label class="music-search-field">
           <span aria-hidden="true">⌕</span>
-          <input id="musicSearchInput" type="search" placeholder="例如 Nessun dorma / 今夜无人入睡" autocomplete="off" aria-label="搜索咏叹调或艺术歌曲">
+          <input id="musicSearchInput" type="search" placeholder="搜索作品、作曲家或歌词，例如 An die Musik" autocomplete="off" aria-label="搜索声乐曲目">
         </label>
         <button type="submit">搜索</button>
       </form>
