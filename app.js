@@ -26,6 +26,10 @@ let archiveLoaded = false;
 let archiveLoading = false;
 let archiveFailed = false;
 let archiveCount = 0;
+let repertoireCandidates = [];
+let candidatesLoaded = false;
+let candidatesLoading = false;
+let candidatesFailed = false;
 let masterclassCount = null;
 let conservatoriData = [];
 let manualNotes = {};
@@ -250,7 +254,7 @@ function renderMusicSearch(rawQuery){
   const query=rawQuery.trim();
   const voiceFilter=$('#musicVoiceFilter')?.value||'all';
   const visibleRepertoire=repertoire.filter(item=>matchesVoiceFilter(item,voiceFilter));
-  if(query)ensureArchive();
+  if(query){ensureArchive();ensureCandidates();}
   if(!query){
     if(!visibleRepertoire.length){target.innerHTML='<div class="music-empty">这个声部暂时没有收录曲目。可以切换到“全部声部”查看完整曲库。</div>';return;}
     const groups=[...new Set(visibleRepertoire.filter(item=>item.section).map(item=>item.section))];
@@ -267,11 +271,15 @@ function renderMusicSearch(rawQuery){
   }
   const terms=query.split(/[\/,，、;；|]+/).map(normalizeSearch).filter(Boolean);
   const evaluated=visibleRepertoire.map(item=>matchItem(item,terms)).filter(Boolean);
+  const candidateMatches=repertoireCandidates.filter(item=>{
+    const names=[item.title,item.work,item.composer,...(Array.isArray(item.aliases)?item.aliases:[])].map(normalizeSearch).filter(Boolean);
+    return terms.every(term=>names.some(name=>name.includes(term)||term.includes(name)));
+  }).slice(0,8);
   const main=evaluated.filter(entry=>entry.nameScore>0)
     .sort((a,b)=>b.nameScore-a.nameScore||(a.item.priority||9999)-(b.item.priority||9999)||a.item.title.localeCompare(b.item.title));
   const extra=evaluated.filter(entry=>!entry.nameScore)
     .sort((a,b)=>((b.text&&b.text.count)||0)-((a.text&&a.text.count)||0)||a.item.title.localeCompare(b.item.title));
-  if(!evaluated.length){
+  if(!evaluated.length&&!candidateMatches.length){
     const near=visibleRepertoire.map(item=>({item,sim:editDistance(normalizeSearch(query),itemNorm(item).title,6)}))
       .filter(entry=>entry.sim<=6).sort((a,b)=>a.sim-b.sim).slice(0,5);
     target.innerHTML=`<div class="music-empty"><strong>未找到“${esc(query)}”</strong><p>${near.length?'你可能想找：'+near.map(entry=>`<button type="button" class="search-chip" data-suggest="${esc(entry.item.title)}">${esc(entry.item.title)}</button>`).join(' '):'请尝试缩短关键词，或使用作品名称、作曲家姓名进行搜索。'}</p></div>`;
@@ -284,6 +292,8 @@ function renderMusicSearch(rawQuery){
   bits.push(main.length?`作品名称或别名匹配 ${main.length} 首`:(extra.length?`歌词中匹配 ${extra.length} 首`:'未匹配到作品名称或别名'));
   if(main.length>shown.length)bits.push(`先看前 ${shown.length} 首`);
   if(main.length&&extra.length)bits.push(`另有 ${extra.length} 首在歌词中匹配`);
+  if(candidateMatches.length)bits.push(`${candidateMatches.length} 条自动发现候选待核实`);
+  if(candidatesLoading)bits.push('正在载入自动发现候选');
   const head=`<p class="result-meta">${bits.join(' · ')}${chips.length&&shown.length?' · 接着搜：':''}${shown.length?chips.map(value=>`<button type="button" class="search-chip" data-suggest="${esc(value)}">${esc(value)}</button>`).join(' '):''}</p>`;
   const cards=shown.map(entry=>{
     const item=entry.item;
@@ -305,7 +315,8 @@ function renderMusicSearch(rawQuery){
  </article>`;
   }).join('');
   const extraBlock=(main.length&&extra.length)?`<details class="music-extra"><summary>歌词中也有匹配：${extra.length} 首（展开查看对应句子）</summary><div class="music-extra-body">${extra.slice(0,12).map(entry=>{const item=entry.item;const line=entry.text?entry.text.line:'';return `<div class="music-extra-row"><strong>${esc(item.title)}</strong><span class="music-byline">${esc(bylineOf(item))}</span><p class="music-match-line">${esc(line)}</p><button type="button" class="search-chip" data-suggest="${esc(item.title)}" >查看完整文本</button></div>`;}).join('')}${extra.length>12?`<p class="music-match-line">另有 ${extra.length-12} 首未显示。可增加关键词缩小范围。</p>`:''}</div></details>`:'';
-  target.innerHTML=head+cards+extraBlock;
+  const candidateBlock=candidateMatches.length?'<section class="music-extra"><h3>自动发现 · 待核实候选（'+candidateMatches.length+'条）</h3><p class="music-match-line">以下是系统抓取到的作品或剧本线索，尚未确认为独立咏叹调/艺术歌曲，不计入正式曲目数量。</p>'+candidateMatches.map(item=>'<article class="music-extra-row"><strong>'+esc(item.title||item.work||'未命名候选')+'</strong><span class="music-byline">'+esc([cleanName(item.composer),cleanName(item.work)].filter(Boolean).join(' · '))+'</span><p class="music-match-line">'+esc(item.kind||'声乐曲目候选')+' · '+esc(item.review_status||'pending')+'</p>'+(item.candidate_reason?'<p class="music-match-line">'+esc(item.candidate_reason)+'</p>':'')+(item.textSource?'<a class="reading-link" href="'+esc(item.textSource)+'" target="_blank" rel="noopener noreferrer">查看原始来源 ↗</a>':'')+'</article>').join('')+'</section>':'';
+  target.innerHTML=head+cards+extraBlock+candidateBlock;
 }
 async function loadRepertoire(){
   try{
@@ -315,7 +326,7 @@ async function loadRepertoire(){
     repertoire=data.items||[];
     repertoireCuratedCount=repertoire.length;
     repertoireLoaded=true;
-    $('#repertoireCount').textContent=`${repertoire.length} 首精选`;
+    $('#repertoireCount').textContent='正在载入完整曲库…';
     renderTiles();
     renderMusicSearch($('#musicSearchInput').value);
   }catch(error){
@@ -324,8 +335,25 @@ async function loadRepertoire(){
     $('#musicSearchResults').innerHTML='<div class="music-empty">暂时无法载入曲目资料，请稍后重新载入。</div>';
   }
 }
-/* 归档曲目体积较大（约 800 KB），只在真正开始搜索时按需载入，
-   首页首屏仍然只拉 16 首精选。载入一次后合并进 repertoire，后续搜索直接命中。 */
+/* 归档曲目在进入曲库板块时自动载入；首页首屏仍保持轻量，完整曲库按需展示。 */
+function ensureCandidates(){
+  if(candidatesLoaded||candidatesLoading||candidatesFailed)return;
+  loadRepertoireCandidates();
+}
+async function loadRepertoireCandidates(){
+  candidatesLoading=true;
+  try{
+    const response=await fetch(new URL('data/repertoire_candidates.json',sourceRoot),{cache:'no-store'});
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    const data=await response.json();
+    repertoireCandidates=Array.isArray(data.items)?data.items:[];
+    candidatesLoaded=true;
+    renderMusicSearch($('#musicSearchInput').value);
+  }catch(error){
+    candidatesFailed=true;
+    console.warn('[repertoire candidates] load failed',error);
+  }finally{candidatesLoading=false;}
+}
 function ensureArchive(){
   if(archiveLoaded||archiveLoading||archiveFailed||!repertoireLoaded)return;
   loadArchive();
@@ -346,7 +374,7 @@ async function loadArchive(){
     archiveCount=merged.length;
     repertoire=repertoire.concat(merged);
     archiveLoaded=true;
-    $('#repertoireCount').textContent=`${repertoire.length} 首`;
+    $('#repertoireCount').textContent=`${repertoireCuratedCount} 首精选 · ${archiveCount} 首归档`;
     renderTiles();
     renderMusicSearch($('#musicSearchInput').value);
   }catch(error){
@@ -366,6 +394,7 @@ function openPanel(name,{scroll=true}={}){
   if(!target)return;
   closePanels();
   target.hidden=false;
+  if(name==='music-library'){ensureArchive();ensureCandidates();}
   if(scroll)target.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function backToTiles(){
@@ -608,7 +637,7 @@ function renderTiles(){
   set('statCalls',callsCount?String(callsCount):'0');
   set('statSchools',schools.length?String(readable):'—');
   set('statAcademies',academyCount?String(academyCount):'—');
-  set('statSongs',repertoireLoaded?String(repertoire.length):'—');
+  set('statSongs',archiveLoaded?String(repertoire.length):(repertoireLoaded?'持续更新':'—'));
   set('statMasterclasses',masterclassCount===null?'—':String(masterclassCount));
 }
 
