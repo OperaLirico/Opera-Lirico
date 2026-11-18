@@ -1,0 +1,36 @@
+name: cycle 7 log
+
+on:
+  push:
+    paths:
+      - content/cycle7-trigger.txt
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Append the cycle 7 entry
+        run: |
+          python3 - <<'PY'
+          import pathlib
+          p = pathlib.Path('docs/rea-cycle-log.md')
+          t = p.read_text(encoding='utf-8')
+          marker = '第 7 轮 · 2026-11-18'
+          if marker in t:
+              print('already logged')
+          else:
+              p.write_text(t + pathlib.Path('content/cycle7-note.md').read_text(encoding='utf-8'), encoding='utf-8')
+              print('appended')
+          PY
+      - name: Commit
+        run: |
+          git config user.name "OperaLab Bot"
+          git config user.email "bot@operalirico.github.io"
+          git add docs/rea-cycle-log.md
+          git diff --cached --quiet || git commit -m "docs(rea): log cycle 7 (membership payment flow)"
+          git push
