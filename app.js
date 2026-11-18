@@ -315,7 +315,7 @@ async function loadRepertoire(){
     repertoire=data.items||[];
     repertoireCuratedCount=repertoire.length;
     repertoireLoaded=true;
-    $('#repertoireCount').textContent=`${repertoire.length} 首精选`;
+    $('#repertoireCount').textContent='正在载入完整曲库…';
     renderTiles();
     renderMusicSearch($('#musicSearchInput').value);
   }catch(error){
@@ -324,8 +324,7 @@ async function loadRepertoire(){
     $('#musicSearchResults').innerHTML='<div class="music-empty">暂时无法载入曲目资料，请稍后重新载入。</div>';
   }
 }
-/* 归档曲目体积较大（约 800 KB），只在真正开始搜索时按需载入，
-   首页首屏仍然只拉 16 首精选。载入一次后合并进 repertoire，后续搜索直接命中。 */
+/* 归档曲目在进入曲库板块时自动载入；首页首屏仍保持轻量，完整曲库按需展示。 */
 function ensureArchive(){
   if(archiveLoaded||archiveLoading||archiveFailed||!repertoireLoaded)return;
   loadArchive();
@@ -346,7 +345,7 @@ async function loadArchive(){
     archiveCount=merged.length;
     repertoire=repertoire.concat(merged);
     archiveLoaded=true;
-    $('#repertoireCount').textContent=`${repertoire.length} 首`;
+    $('#repertoireCount').textContent=`${repertoireCuratedCount} 首精选 · ${archiveCount} 首归档`;
     renderTiles();
     renderMusicSearch($('#musicSearchInput').value);
   }catch(error){
@@ -366,6 +365,7 @@ function openPanel(name,{scroll=true}={}){
   if(!target)return;
   closePanels();
   target.hidden=false;
+  if(name==='music-library')ensureArchive();
   if(scroll)target.scrollIntoView({behavior:'smooth',block:'start'});
 }
 function backToTiles(){
@@ -608,7 +608,7 @@ function renderTiles(){
   set('statCalls',callsCount?String(callsCount):'0');
   set('statSchools',schools.length?String(readable):'—');
   set('statAcademies',academyCount?String(academyCount):'—');
-  set('statSongs',repertoireLoaded?String(repertoire.length):'—');
+  set('statSongs',archiveLoaded?String(repertoire.length):(repertoireLoaded?'持续更新':'—'));
   set('statMasterclasses',masterclassCount===null?'—':String(masterclassCount));
 }
 
