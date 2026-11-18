@@ -102,3 +102,26 @@ Never present a schematic animation as real tissue motion or a static anatomical
 - Sketchfab pages were discoverable through public search, but direct page opening returned access denial in this research session. The A01 public search result exposes its model metadata and licence; actual download still requires the platform's official authenticated flow.
 - No binary model file was downloaded in this step. The repository currently contains this research record only; it does not yet contain a new 3D asset or a deployed page.
 - A medical professional should review anatomical labelling and explanatory claims before publication.
+
+
+## Existing OperaLab page inventory (read-only inspection, 2026-11-18)
+
+The current default-branch HTML already contains several third-party Sketchfab embeds. These are hosted by Sketchfab; they are not downloaded model files in the repository.
+
+| Current page | Embedded asset | Publicly visible source facts | Action before consolidation |
+|---|---|---|---|
+| `larynx-mechanism.html` | UBC Medicine — Human Larynx (model ID `9cb56f0a20654072810a12959b812632`) | Sketchfab describes it as a prosection of a human larynx, pharynx, mandible, trachea and esophagus; 399.9k triangles / 199.8k vertices; page has a NoAI notice. The search-visible page does not expose a Creative Commons licence badge. | Keep as a hosted specimen reference while checking the current platform terms and rights with UBC; do not download, re-host, or use as AI training material. |
+| `larynx-mechanism.html` | Dundee — Larynx with Muscles and Ligaments (model ID `3b247ff11b104e24acbb1c453f5bad46`) | Used by the page's model switcher. The current HTML links to Dundee's project page and an independent attribution notice that identifies CC BY-NC-SA 4.0. | Treat as non-commercial pending direct confirmation from Dundee. It is not a suitable self-hosted commercial asset on current evidence. |
+| `voice-anatomy.html` | UBC Medicine — Midsagittal Section of Human Head (model ID `5c477a85bdf34ec6b66b20c02862360f`) | Sketchfab describes it as a plastinated midsagittal section of the head; produced by UBC HIVE; page has a NoAI notice and no visible CC licence in the search result. | Hosted reference only pending direct reuse/licence confirmation. |
+| `voice-anatomy.html` | Dundee — Pharynx and Floor of Mouth (model ID `b262c70bf9bd49c2a5428581b754f24b`) | Sketchfab explicitly states CC BY-NC-SA 4.0; model is CT-derived plus sculpting and content was approved by an anatomist. | Keep external embed only after reviewing whether the existing public display is compatible with its non-commercial terms; do not self-host for commercial use without permission. |
+| `voice-anatomy.html` | Dundee — Anatomy of the Larynx (model ID `a00bc73a303c46248db6a13a88b23404`) | Sketchfab explicitly states CC BY-SA 4.0, derived from BodyParts3D CC BY-SA 2.1 Japan; 34.7k triangles / 17.4k vertices. | Best current candidate for a lawful self-hosting test, subject to download and archive inspection. |
+
+This inventory reveals that the current pages already use several credible external models. The main issue is not that every existing visual is synthetic; it is that the two pages overlap, some embedded models have non-commercial or unclear reuse terms, and the interaction layer does not alter the underlying 3D anatomy. The consolidation should preserve the strongest existing reference models, clearly label their provenance, and avoid claiming that mechanism buttons simulate muscle action.
+
+### Important distinction: NoAI notice
+
+The NoAI notice on the two UBC Sketchfab models prohibits use in AI training/development datasets or as AI inputs under the model page's stated restriction. It does not by itself establish permission to download, modify, or self-host the model. Those rights must be checked separately. This audit does not propose using these models for AI training.
+
+### High-speed study availability correction
+
+The 2024 vocal-onset paper reports six healthy volunteers and high-speed recording at 2,000 frames per second. Its Data Availability Statement says the underlying data are available by contacting the author. The article page provides still-image montages/figures, not a publicly downloadable raw-video archive. The study is useful evidence, but it is not yet a ready-to-embed video source.
