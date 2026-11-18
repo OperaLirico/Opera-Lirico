@@ -292,6 +292,8 @@ function renderMusicSearch(rawQuery){
   bits.push(main.length?`作品名称或别名匹配 ${main.length} 首`:(extra.length?`歌词中匹配 ${extra.length} 首`:'未匹配到作品名称或别名'));
   if(main.length>shown.length)bits.push(`先看前 ${shown.length} 首`);
   if(main.length&&extra.length)bits.push(`另有 ${extra.length} 首在歌词中匹配`);
+  if(candidateMatches.length)bits.push(`${candidateMatches.length} 条自动发现候选待核实`);
+  if(candidatesLoading)bits.push('正在载入自动发现候选');
   const head=`<p class="result-meta">${bits.join(' · ')}${chips.length&&shown.length?' · 接着搜：':''}${shown.length?chips.map(value=>`<button type="button" class="search-chip" data-suggest="${esc(value)}">${esc(value)}</button>`).join(' '):''}</p>`;
   const cards=shown.map(entry=>{
     const item=entry.item;
