@@ -40,6 +40,15 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertTrue((ROOT / "assets/moments/word-highlight/moment.css").is_file())
         self.assertNotIn("taste-home.js?v=1", HOME)
 
+    def test_taste_moment_runtime_modules_have_valid_javascript_syntax(self):
+        import subprocess
+        for relative in (
+            "assets/moments/moments.js",
+            "assets/moments/lib.js",
+            "assets/moments/word-highlight/moment.js",
+        ):
+            subprocess.run(["node", "--check", str(ROOT / relative)], check=True)
+
     def test_masterclass_page_has_page_specific_share_metadata(self):
         self.assertIn('<title>大师班与专业进修｜OperaLab.</title>', MASTER)
         self.assertIn('property="og:site_name" content="OperaLab."', MASTER)
