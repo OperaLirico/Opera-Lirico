@@ -1,0 +1,9 @@
+# 上游技能全量副本（用 skills/taste-skill/sync.sh 现拉，不提交）
+skills/taste-skill/upstream/
+
+# tasteskill 的运行记录与临时 Chrome 配置
+taste-skill/
+.claude/skills/
+
+# 本地临时
+.DS_Store
