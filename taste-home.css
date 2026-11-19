@@ -36,7 +36,7 @@ body.taste-home .install-button{border-radius:8px;background:transparent;border-
 .home-proof-number span{font-size:13px}
 .home-proof-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
 .home-proof-copy b{font-size:13px;font-weight:600}
-.home-proof-copy span{font-size:12px;color:var(--ink-soft)}
+.home-proof-copy span{font-size:13px;color:var(--ink-soft)}
 .home-refresh{margin-left:auto;padding:5px 0;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink-soft);font:13px var(--sans);cursor:pointer;white-space:nowrap}
 .home-refresh:hover{color:var(--brand);border-color:var(--brand)}
 .home-app{width:100%;max-width:510px;justify-self:end;padding:24px 26px 18px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2);box-shadow:var(--shadow)}
@@ -49,7 +49,7 @@ body.taste-home .install-button{border-radius:8px;background:transparent;border-
 .home-app-list{display:flex;flex-direction:column}
 .home-app-row{display:grid;grid-template-columns:34px minmax(0,1fr) 20px;align-items:center;gap:13px;width:100%;min-height:76px;padding:13px 2px;border:0;border-bottom:1px solid var(--line);background:transparent;color:inherit;text-align:left;text-decoration:none;cursor:pointer;transition:transform .15s ease,color .15s ease}
 .home-app-row:hover{transform:translateY(-2px);color:var(--brand)}
-.home-app-number{color:var(--gold);font-size:11px;font-variant-numeric:tabular-nums}
+.home-app-number{color:var(--gold);font-size:13px;font-variant-numeric:tabular-nums}
 .home-app-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
 .home-app-copy strong{font-size:15px;font-weight:600}
 .home-app-copy small{color:var(--ink-soft);font-size:13px;line-height:1.5}
@@ -130,7 +130,7 @@ body.taste-home .opportunity-card:hover,body.taste-home .pdf-card:hover{transfor
   .home-app-head{padding-bottom:12px}.home-app-head strong{font-size:17px}
   .home-app-row{min-height:54px;padding:8px 2px;grid-template-columns:28px minmax(0,1fr) 18px;gap:9px}
   .home-app-copy strong{font-size:14px}
-  .home-app-copy small{font-size:11px}
+  .home-app-copy small{font-size:13px}
   .home-app-foot{font-size:13px;padding-top:10px}
   .home-section{padding-top:54px;padding-bottom:54px}
   .home-section-head{display:block;margin-bottom:24px}
@@ -142,9 +142,9 @@ body.taste-home .opportunity-card:hover,body.taste-home .pdf-card:hover{transfor
   .home-card-grid .tile-desc{font-size:14px}
   .home-resource{grid-template-columns:30px minmax(0,1fr) 20px;gap:10px;min-height:94px;padding:15px 0}
   .home-resource-main strong{font-size:17px}
-  .home-resource-main small{font-size:12px}
+  .home-resource-main small{font-size:13px}
   .home-resource-count{display:none}
-  .home-process-line{gap:8px;margin-top:28px;font-size:11px}
+  .home-process-line{gap:8px;margin-top:28px;font-size:13px}
   .home-process-line i{width:12px}
   body.taste-home .newsletter-panel{margin:12px 18px 36px;padding:22px 18px}
   body.taste-home footer{padding:24px 18px 36px}
