@@ -22,6 +22,24 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertIn('name="twitter:card" content="summary_large_image"', HOME)
         self.assertIn('"@type": "WebSite"', HOME)
 
+    def test_every_redesigned_page_uses_taste_hero_entry_and_real_moment_runtime(self):
+        pages = [
+            "index.html",
+            "masterclasses.html",
+            "voice-anatomy.html",
+            "larynx-mechanism.html",
+            "voice-lab.html",
+        ]
+        for name in pages:
+            page = (ROOT / name).read_text(encoding="utf-8")
+            self.assertIn("data-enter", page, name)
+            self.assertIn('data-moment="word-highlight"', page, name)
+            self.assertIn('assets/moments/moments.js', page, name)
+        self.assertTrue((ROOT / "assets/moments/lib.js").is_file())
+        self.assertTrue((ROOT / "assets/moments/word-highlight/moment.js").is_file())
+        self.assertTrue((ROOT / "assets/moments/word-highlight/moment.css").is_file())
+        self.assertNotIn("taste-home.js?v=1", HOME)
+
     def test_masterclass_page_has_page_specific_share_metadata(self):
         self.assertIn('<title>大师班与专业进修｜OperaLab.</title>', MASTER)
         self.assertIn('property="og:site_name" content="OperaLab."', MASTER)
