@@ -1524,10 +1524,110 @@
       "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
       "collected_at": "2026-11-18T08:37:16+01:00",
       "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-10ce8b4ad2f25539",
+      "title": "Le nozze di Figaro · Terzo/Scena decima · Scena X",
+      "aliases": [
+        "Le nozze di Figaro"
+      ],
+      "composer": "Wolfgang Amadeus Mozart",
+      "work": "Le nozze di Figaro",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Atto Terzo - Scena nona\nAtto Terzo - Scena undicesima\nLa Contessa e Susanna\nContessa\nCosa mi narri! E che ne disse, il Conte?\nSusanna\nGli si leggeva in fronte\nIl dispetto e la rabbia.\nContessa\nPiano: ché meglio or lo porremo in gabbia.\nDov’è l’appuntamento\nChe tu gli proponesti?\nSusanna\nIn giardino.\nContessa\nFissiamgli un loco. Scrivi.\nSusanna\nCh’io scriva… Ma, signora…\nContessa\nEh, scrivi, dico; e tutto\nIo prendo su me stessa.\n(Susanna siede e scrive)\nCanzonetta sull’aria…\nSusanna\nSull’aria…\nN. 20 - Duettino Archi, 1 Oboe, 1 Fagotto.\nAllegretto\nContessa (detta)\n“Che soave zeffiretto…”\nSusanna (ripete le parole della Contessa)\nZeffiretto…\nContessa (c. s.)\n“Questa sera spirerà…”\nSusanna (c. s.)\nQuesta sera spirerà…\nContessa (c. s.)\n“Sotto i pini del boschetto”.\nSusanna (domandando)\nSotto i pini?\n(scrivendo)\nSotto i pini del boschetto.\nContessa\nEi già il resto capirà.\nSusanna\nCerto, certo: il capirà.\n(rileggono insieme lo scritto)\nRecitativo secco\nSusanna\nPiegato è il foglio… Or come si sigilla?\nContessa (si cava una spilla e gliela dà)\nEcco, prendi una spilla:\nServirà di sigillo. Attendi… scrivi\nSul riverso del foglio:\n“Rimandate il sigillo”.\nSusanna\nÈ più bizzarro\nDi quel della patente.\nContessa\nPresto, nascondi… Io sento venir gente.\n(Susanna si mette il biglietto in seno)",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Le_nozze_di_Figaro/Atto_Terzo/Scena_decima",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Lorenzo Da Ponte",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-19T08:40:52+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-7a64f469fabae025",
+      "title": "Le nozze di Figaro · Terzo/Scena dodicesima · Scena XII",
+      "aliases": [
+        "Le nozze di Figaro"
+      ],
+      "composer": "Wolfgang Amadeus Mozart",
+      "work": "Le nozze di Figaro",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Atto Terzo - Scena undicesima\nAtto Terzo - Scena tredicesima\nLa Contessa, Susanna, Barbarina, Cherubino, il Conte e Antonio\nEntrano il Conte e Antonio. Questi ha il cappello di Cherubino: entra in scena pian piano, gli cava la cuffia di donna e gli mette in testa il cappello stesso.\nAntonio\nEh, cospettaccio!\nÈ questi l’uffiziale.\nContessa (fra sé)\nOh, stelle!\nSusanna (fra sé)\nMalandrino!\nConte (alla Contessa)\nEbben! Madama…\nContessa\nIo sono, o signor mio,\nIrritata e sorpresa al par di voi.\nConte\nMa stamane?\nContessa\nStamane…\nPer l’odierna festa\nVolevam travestirlo al modo stesso\nChe l’han vestito adesso.\nConte (a Cherubino)\nE perché non partiste?\nCherubino (cavandosi il cappello bruscamente)\nSignor…\nConte\nSaprò punire\nLa sua disobbedienza.\nBarbarina\nEccellenza, Eccellenza,\nVoi mi dite sì spesso,\nQual volta m’abbracciate e mi baciate:\n“Barbarina, se m’ami,\nTi darò quel che brami”.\nConte\nIo, dissi questo?\nBarbarina\nVoi.\nOr datemi, padrone,\nIn sposo Cherubino,\nE v’amerò com’amo il mio gattino.\nContessa (al Conte)\nEbbene: or tocca a voi…\nAntonio (a Barbarina)\nBrava figliuola!\nHai buon maestro che ti fa scuola.\nConte (fra sé)\nNon so qual uom, qual demone, qual Dio\nRivolga tutto quanto a torto mio.",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Le_nozze_di_Figaro/Atto_Terzo/Scena_dodicesima",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Lorenzo Da Ponte",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-19T08:40:52+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-f268642c43ddcbde",
+      "title": "Le nozze di Figaro · Terzo/Scena nona · Scena IX",
+      "aliases": [
+        "Le nozze di Figaro"
+      ],
+      "composer": "Wolfgang Amadeus Mozart",
+      "work": "Le nozze di Figaro",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Atto Terzo - Scena ottava\nAtto Terzo - Scena decima\nIl Conte e Antonio\nRecitativo secco\nAntonio (con un cappello in mano)\nIo vi dico, signor, che Cherubino\nÈ ancora nel castello:\nE vedete per prova il suo cappello.\nConte\nMa come, se a quest’ora\nEsser giunto a Siviglia egli dovria?\nAntonio\nScusate, oggi Siviglia è a casa mia.\nLà vestissi da donna, e là lasciati\nHa gli altri abiti suoi.\nConte\nPerfidi!\nAntonio\nAndiam, e li vedrete voi.\n(partono)’",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Le_nozze_di_Figaro/Atto_Terzo/Scena_nona",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Lorenzo Da Ponte",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-19T08:40:52+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-07fce4d41e5267c1",
+      "title": "Le nozze di Figaro · Terzo/Scena ottava · Scena VIII",
+      "aliases": [
+        "Le nozze di Figaro"
+      ],
+      "composer": "Wolfgang Amadeus Mozart",
+      "work": "Le nozze di Figaro",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Atto Terzo - Scena settima\nAtto Terzo - Scena nona\nLa Contessa sola\nN. 19 - Recitativo e aria\nRecitativo Archi soli.\nAndante\nContessa\nE Susanna non vien! Son ansiosa\nDi saper come il Conte\nAccolse la proposta. Alquanto ardito\nIl progetto mi par; e ad uno sposo\nSì vivace e geloso…\nAllegretto\nMa che mal c’è?\nAllegretto\nCangiando i miei vestiti\nCon quelli di Susanna, e i suoi co’ miei…\nAl favor della notte… O cielo! A quale\nUmil stato fatale io son ridotta\nDa un consorte crudel; che, dopo avermi,\nCon un misto inaudito\nD’infedeltà, di gelosie, di sdegni,\nPrima amata, indi offesa, e alfin tradita,\nFammi or cercar da una mia serva aita!\nAria Archi, 2 Oboi, 2 Fagotti, 2 Corni in do.\nAndantino\nDove sono i bei momenti\nDi dolcezza e di piacer,\nDove andaro i giuramenti\nDi quel labbro menzogner?\nPerché mai, se in pianti e in pene\nPer me tutto si cangiò,\nLa memoria di quel bene\nDal mio sen non trapassò?\nAllegro\nAh! Se almen la mia costanza\nNel languire amando ognor\nMi portasse una speranza\nDi cangiar l’ingrato cor.\n(parte)",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Le_nozze_di_Figaro/Atto_Terzo/Scena_ottava",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Lorenzo Da Ponte",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-19T08:40:52+01:00",
+      "collection_source": "it.wikisource.org"
     }
   ],
-  "generated_at": "2026-11-18T08:37:16+01:00",
+  "generated_at": "2026-11-19T08:40:52+01:00",
   "source": "Italian Wikisource opera libretti; candidate-only, human review required",
-  "aria_opera": 2,
-  "aria_scene": 32
+  "aria_opera": 3,
+  "aria_scene": 0
 }
