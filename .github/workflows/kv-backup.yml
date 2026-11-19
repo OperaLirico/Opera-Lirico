@@ -47,7 +47,7 @@ jobs:
           RAW="$RUNNER_TEMP/opera-lirico-backup.json"
           ENC="$RUNNER_TEMP/opera-lirico-backup.gpg"
           VERIFY="$RUNNER_TEMP/opera-lirico-verify.json"
-          trap 'rm -f "$RAW" "$ENC" "$VERIFY"' EXIT
+          trap 'rm -f "$RAW" "$VERIFY"' EXIT
           curl --fail --silent --show-error --retry 3 --retry-all-errors \
             -H "Authorization: Bearer $BACKUP_TOKEN" \
             -H "Accept: application/json" \
@@ -113,5 +113,6 @@ jobs:
             echo "- KV keys: $KEY_COUNT"
             echo "- Retention: 90 days"
             echo "- Encryption: GPG symmetric AES-256 with OPS_DASHBOARD_PASSWORD"
+            echo "- Restore verification: downloaded artifact decrypted and validated"
             echo "- Plaintext backup removed from runner."
           } >> "$GITHUB_STEP_SUMMARY"
