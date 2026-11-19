@@ -16,7 +16,7 @@
 3. Opportunity cards and the learning-resource list keep existing application IDs and \`data-open\` actions. Data loading, search, filtering and newsletter behavior remain in existing scripts.
 4. The information-review section uses one restrained word-highlight moment. The statement remains fully readable without JavaScript and under reduced motion.
 5. Interior learning pages keep their existing real 3D anatomy embeds, source credits, SVG learning interactions and page scripts. This change adjusts presentation only; it does not replace anatomical assets or alter scientific claims.
-6. The masterclass page keeps its existing official-record filter and source links; only layout, typography, surfaces and responsive spacing change.
+6. The masterclass page keeps its official-record filter and source links, and now also hides past events when no explicit end date is recorded by falling back to the start date.
 
 ## Motion and accessibility
 
@@ -29,5 +29,7 @@
 ## Validation status
 
 - Source/markup preservation checks: passed during branch construction for the principal panel IDs and anatomy interaction targets.
+- Pages deployment path filters now include the new Taste assets, repertoire archive/candidates, conservatory supplements, voice structures and the voice-lab page; triggers were not broadened beyond relevant public files.
 - JavaScript syntax and existing project CI: pending.
 - Taste Skill's upstream browser gate and visual screenshots at all four widths: pending. The repository contains the Chinese method card but not the full upstream checker/assets. Do not describe the redesign as visually verified until those checks have run.
+- The masterclass expiry filter and Pages path changes are covered by PR CI, but the live page has not yet been browser-verified.
