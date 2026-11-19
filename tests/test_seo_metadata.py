@@ -66,6 +66,12 @@ class SeoAndSharingTests(unittest.TestCase):
         ])
 
 
+    def test_homepage_masterclass_count_excludes_past_events(self):
+        app = (ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertIn("const eventEnd=item.end_at||item.start_at", app)
+        self.assertIn("const eventNotPast", app)
+        self.assertIn("const applicationNotClosed", app)
+
     def test_repertoire_quick_search_chips_are_unique(self):
         import re
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
