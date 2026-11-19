@@ -99,7 +99,7 @@ body.voice-lab-page .row .k,
 body.voice-lab-page .crumb,
 body.voice-lab-page .quiz-h,
 body.voice-lab-page .chip,
-body.voice-lab-page .chip b{color:#59675f}
+body.voice-lab-page .chip b{color:#47554d}
 body.voice-lab-page .search-label{display:block;margin:0 0 6px;color:#46544c;font-size:13px;font-weight:600}
 body.voice-lab-page .crumb{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
 body.voice-lab-page .crumb button,
@@ -120,7 +120,7 @@ body.voice-lab-page .btn,
 body.voice-lab-page .tab{background:#fff;color:var(--ink);border:1px solid var(--line)}
 body.voice-lab-page #detail{position:relative;z-index:1;clear:both;margin-top:14px}
 body.voice-lab-page #list{position:relative;z-index:0}
-body.voice-lab-page .item small{color:#59675f}
+body.voice-lab-page .item small{color:#47554d}
 body.voice-lab-page .item.on small{color:#fff}
 body.anatomy-page .model-caption,
 body.anatomy-page .model-credit,
@@ -129,11 +129,11 @@ body.anatomy-page .body-detail .organ-en,
 body.anatomy-page .body-detail p,
 body.anatomy-page .body-detail ul,
 body.anatomy-page .breath-lab>p,
-body.anatomy-page .body-system-note{color:#536158}
+body.anatomy-page .body-system-note{color:#47554d}
 body.anatomy-page .model-credit a,
 body.anatomy-page .body-detail .detail-link{min-height:44px;display:inline-flex;align-items:center}
 
-.page-h1-en{display:block;margin-top:10px;color:#59675f;font:500 11px/1.5 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.page-h1-en{display:block;margin-top:10px;color:#47554d;font:500 11px/1.5 var(--sans);letter-spacing:.1em;text-transform:uppercase}
 
 body.voice-lab-page .hero-cta{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 14px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-size:12px;font-weight:650}
 body.voice-lab-page .section-icon{width:17px;height:17px;margin-right:8px;vertical-align:-3px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -152,7 +152,7 @@ body.anatomy-page .lab-hero .lab-crumb{margin-bottom:28px}
 body.anatomy-page .lab-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 body.anatomy-page .lab-hero-actions a{display:inline-flex;align-items:center;min-height:44px;padding:9px 15px;border-radius:999px;background:#23483c;color:#fff;text-decoration:none;font-size:12px;font-weight:650}
 body.anatomy-page .lab-hero-actions a+ a{background:#e8efea;color:#23483c}
-body.anatomy-page .lab-hero-note{color:#536158;font-size:13px;line-height:1.7}
+body.anatomy-page .lab-hero-note{color:#47554d;font-size:13px;line-height:1.7}
 body.anatomy-page .body-system{min-height:100svh;box-sizing:border-box;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);align-items:start;gap:22px}
 body.anatomy-page .body-detail .detail-link{margin-top:12px}
 body.anatomy-page .breath-lab{min-height:100svh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
@@ -169,7 +169,7 @@ body.mechanism-page .mechanism{width:calc(100% - 48px);max-width:1280px;margin:0
 body.mechanism-page .hero{min-height:calc(100svh - 72px);box-sizing:border-box;max-width:860px;display:flex;flex-direction:column;justify-content:center;padding:32px 0;margin:0 0 30px}
 body.mechanism-page .lab-entry{display:flex;flex-wrap:wrap;gap:8px 12px;margin:0 0 20px;font-size:13px;line-height:1.7}
 body.mechanism-page .lab-entry a{color:#23483c;text-decoration:none;border-bottom:1px solid #c9714f;padding-bottom:2px}
-body.mechanism-page .lab-entry span{color:#536158;font-size:12px}
+body.mechanism-page .lab-entry span{color:#47554d;font-size:12px}
 body.mechanism-page .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 body.mechanism-page .hero-actions a{display:inline-flex;align-items:center;min-height:44px;padding:9px 15px;border-radius:999px;background:#23483c;color:#fff;text-decoration:none;font-size:12px;font-weight:650}
 body.mechanism-page .hero-actions a+a{background:#e8efea;color:#23483c}
@@ -178,7 +178,7 @@ body.mechanism-page .notice{margin:12px 0;padding:12px 14px;border:1px solid #d5
 body.mechanism-page .card{min-width:0}
 body.mechanism-page .viewer-caption,
 body.mechanism-page .credit,
-body.mechanism-page .structure p{color:#536158}
+body.mechanism-page .structure p{color:#47554d}
 body.mechanism-page :where(button,a):focus-visible{outline:3px solid #a85f3d;outline-offset:3px}
 @media(max-width:850px){body.mechanism-page .layout{grid-template-columns:1fr}}
 @media(max-width:600px){body.mechanism-page .mechanism{width:calc(100% - 32px);padding:16px 0 48px}body.mechanism-page .hero{min-height:calc(100svh - 64px);padding:20px 0}}
