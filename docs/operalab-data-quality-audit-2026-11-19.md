@@ -95,7 +95,7 @@
 |---|---|---|
 | #127 | REA 上游 Skill v63 同步 | 待审核，未合并 |
 | #128 | KV 备份文件生命周期、上传重试、下载解密验证；固定6个旧 workflow 的 checkout SHA | Source quality tests 通过；实际 workflow_dispatch 备份/恢复运行仍待验证 |
-| #129 | Taste 页面重设计、大师班过期过滤、Pages 路径覆盖修复 | CI 仍在运行；真实浏览器截图与四种视口验收未完成 |
+| #129 | Taste 页面重设计、大师班过期过滤、Pages 路径覆盖修复 | Source quality tests 与 website-copy/syntax check 通过；真实浏览器截图与四种视口验收未完成 |
 
 ## 6. 推荐执行顺序
 
