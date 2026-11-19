@@ -647,7 +647,7 @@ async function loadMasterclassCount(){
     const response=await fetch(new URL('data/masterclasses.json',sourceRoot),{cache:'no-store'});
     if(!response.ok)throw new Error('HTTP '+response.status);
     const data=await response.json();
-    masterclassCount=(data.items||[]).filter(item=>item.publication_status==='published'&&item.review_status==='verified'&&item.publisher_status==='official').length;
+    masterclassCount=(data.items||[]).filter(item=>{if(item.publication_status!=='published'||item.review_status!=='verified'||item.publisher_status!=='official')return false;const eventEnd=item.end_at||item.start_at;const eventNotPast=!eventEnd||!Number.isFinite(Date.parse(eventEnd))||Date.parse(eventEnd)>=Date.now();const applicationNotClosed=!item.application_deadline_at||!Number.isFinite(Date.parse(item.application_deadline_at))||Date.parse(item.application_deadline_at)>=Date.now();return eventNotPast&&applicationNotClosed;}).length;
   }catch(error){masterclassCount=null;}
   renderTiles();
 }
