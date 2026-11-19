@@ -134,3 +134,10 @@ body.anatomy-page .model-credit a,
 body.anatomy-page .body-detail .detail-link{min-height:44px;display:inline-flex;align-items:center}
 
 .page-h1-en{display:block;margin-top:10px;color:#59675f;font:500 11px/1.5 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+
+body.voice-lab-page .hero-cta{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 14px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-size:12px;font-weight:650}
+body.voice-lab-page .section-icon{width:17px;height:17px;margin-right:8px;vertical-align:-3px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+body.voice-lab-page .panel h2{font-size:17px;letter-spacing:.02em}
+body.voice-lab-page .card h3{font-size:15px;line-height:1.35}
+body.voice-lab-page .detail-link,
+body.voice-lab-page .hero-cta{min-height:44px}
