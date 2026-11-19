@@ -418,13 +418,13 @@ body.taste-home .home-verification .home-process-line{max-width:100%}
 /* Taste 2.5.1 final composition: full-screen hero, consistent wrap and real product visuals. */
 body.taste-home main#main-content{width:100%;max-width:none;margin:0;padding:0}
 body.taste-home .topbar-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto}
-header.topbar.nav{position:absolute!important;inset:0 0 auto;z-index:80;width:100%;max-width:none;min-height:72px;margin:0;padding:0;display:block;background:rgba(246,241,230,.92);border-bottom:1px solid #d9dfd8;backdrop-filter:blur(14px);box-sizing:border-box}
-header.topbar.nav .topbar-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;min-height:72px;margin:0 auto;padding:0;display:flex;align-items:center;justify-content:space-between;gap:24px}
-header.topbar.nav .brand{flex:0 0 auto;min-width:0;max-width:none;white-space:nowrap;flex-wrap:nowrap}
-header.topbar.nav .brand-text{display:block;white-space:nowrap}
-header.topbar.nav .brand-text small{display:none!important}
-header.topbar.nav nav.nav-links{display:flex;flex:0 0 auto;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:16px;margin-left:auto;white-space:nowrap}
-header.topbar.nav nav.nav-links a{flex:0 0 auto;white-space:nowrap}
+header.topbar{position:absolute!important;inset:0 0 auto;z-index:80;width:100%;max-width:none;min-height:72px;margin:0;padding:0;display:block;background:rgba(246,241,230,.92);border-bottom:1px solid #d9dfd8;backdrop-filter:blur(14px);box-sizing:border-box}
+header.topbar .topbar-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;min-height:72px;margin:0 auto;padding:0;display:flex;align-items:center;justify-content:space-between;gap:24px}
+header.topbar .brand{flex:0 0 auto;min-width:0;max-width:none;white-space:nowrap;flex-wrap:nowrap}
+header.topbar .brand-text{display:block;white-space:nowrap}
+header.topbar .brand-text small{display:none!important}
+header.topbar nav.nav-links{display:flex;flex:0 0 auto;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:16px;margin-left:auto;white-space:nowrap}
+header.topbar nav.nav-links a{flex:0 0 auto;white-space:nowrap}
 .skip-link{position:absolute;left:16px;top:-100px;z-index:1000;padding:10px 14px;background:#fff;color:#17483c;border:2px solid var(--action);border-radius:8px}
 .skip-link:focus{top:10px}
 body.taste-home .home-hero{width:min(calc(100% - 128px),1240px);max-width:1240px;min-height:100svh;margin:0 auto;padding:calc(72px + clamp(36px,5vh,56px)) 0 clamp(48px,6vh,72px);box-sizing:border-box}
@@ -468,7 +468,7 @@ body.taste-home :is(.home-btn,.home-action,.tile,.newsletter-panel button):focus
 body.taste-home footer.closing{width:min(calc(100% - 128px),1240px);max-width:1240px;min-height:100svh;margin:0 auto;padding:64px 0;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
 body.taste-home footer.closing .footer-inner{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
 @media(max-width:900px){
- header.topbar.nav .topbar-inner{width:calc(100% - 32px)}
+ header.topbar .topbar-inner{width:calc(100% - 32px)}
  body.taste-home .home-hero,body.taste-home .home-section,body.taste-home .newsletter-panel,body.taste-home footer.closing{width:calc(100% - 32px)}
  body.taste-home .home-card-grid{grid-template-columns:1fr;gap:12px}
  body.taste-home .home-card-grid .tile{min-height:170px}
@@ -482,11 +482,11 @@ body.taste-home footer.closing .footer-inner{width:100%;display:flex;align-items
  body.taste-home .home-tiles-art{width:72px;height:72px}
 }
 @media(max-width:680px){
- header.topbar.nav{min-height:64px}
- header.topbar.nav .topbar-inner{min-height:64px;width:calc(100% - 32px);gap:10px}
- header.topbar.nav .brand-mark{width:26px;height:26px}
- header.topbar.nav nav.nav-links{gap:8px}
- header.topbar.nav nav.nav-links a{font-size:11px;line-height:1.2}
+ header.topbar{min-height:64px}
+ header.topbar .topbar-inner{min-height:64px;width:calc(100% - 32px);gap:10px}
+ header.topbar .brand-mark{width:26px;height:26px}
+ header.topbar nav.nav-links{gap:8px}
+ header.topbar nav.nav-links a{font-size:11px;line-height:1.2}
  body.taste-home .home-hero{min-height:100svh;padding-top:calc(64px + 30px);padding-bottom:40px}
  body.taste-home .home-section{min-height:100svh;padding:38px 0;gap:18px}
  body.taste-home .home-section-head{display:flex;flex-direction:column;gap:10px}

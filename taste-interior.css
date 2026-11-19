@@ -784,13 +784,13 @@ body.anatomy-page .body-figure-section .body-system{display:block;width:100%;max
 
 
 /* Taste 2.5.1 shared navigation, section grid and accessible controls. */
-header.topbar.nav{position:absolute!important;inset:0 0 auto;z-index:80;width:100%;max-width:none;min-height:72px;margin:0;padding:0;display:block;background:rgba(246,241,230,.92);border-bottom:1px solid #d9dfd8;backdrop-filter:blur(14px);box-sizing:border-box}
-header.topbar.nav .topbar-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;min-height:72px;margin:0 auto;padding:0;display:flex;align-items:center;justify-content:space-between;gap:24px}
-header.topbar.nav .brand{flex:0 0 auto;min-width:0;max-width:none;white-space:nowrap;flex-wrap:nowrap}
-header.topbar.nav .brand-text{display:block;white-space:nowrap}
-header.topbar.nav .brand-text small{display:none!important}
-header.topbar.nav nav.nav-links{display:flex;flex:0 0 auto;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:16px;margin-left:auto;white-space:nowrap}
-header.topbar.nav nav.nav-links a{flex:0 0 auto;white-space:nowrap}
+header.topbar{position:absolute!important;inset:0 0 auto;z-index:80;width:100%;max-width:none;min-height:72px;margin:0;padding:0;display:block;background:rgba(246,241,230,.92);border-bottom:1px solid #d9dfd8;backdrop-filter:blur(14px);box-sizing:border-box}
+header.topbar .topbar-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;min-height:72px;margin:0 auto;padding:0;display:flex;align-items:center;justify-content:space-between;gap:24px}
+header.topbar .brand{flex:0 0 auto;min-width:0;max-width:none;white-space:nowrap;flex-wrap:nowrap}
+header.topbar .brand-text{display:block;white-space:nowrap}
+header.topbar .brand-text small{display:none!important}
+header.topbar nav.nav-links{display:flex;flex:0 0 auto;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:16px;margin-left:auto;white-space:nowrap}
+header.topbar nav.nav-links a{flex:0 0 auto;white-space:nowrap}
 .skip-link{position:absolute;left:16px;top:-100px;z-index:1000;padding:10px 14px;background:#fff;color:#17483c;border:2px solid var(--action);border-radius:8px}
 .skip-link:focus{top:10px}
 :focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
@@ -889,7 +889,7 @@ body.voice-lab-page :is(.tab,.btn,.qbtn,#list .item){border:1px solid #b9c9be;ba
 body.voice-lab-page :is(.tab[aria-pressed="true"],.btn.primary,.qbtn.primary){background:#17483c;color:#fff;border-color:#17483c}
 body.voice-lab-page :is(button,a,input):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
 @media(max-width:900px){
- header.topbar.nav .topbar-inner{width:calc(100% - 32px)}
+ header.topbar .topbar-inner{width:calc(100% - 32px)}
  body.master-page .master-head-inner,body.master-page .master-list-inner{width:calc(100% - 32px)}
  body.master-page .master-list-section{min-height:100svh}
  body.master-page #masterCards{grid-template-columns:1fr}
@@ -906,11 +906,11 @@ body.voice-lab-page :is(button,a,input):focus-visible{outline:2px solid var(--ac
  body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{min-height:100svh}
 }
 @media(max-width:680px){
- header.topbar.nav{min-height:64px}
- header.topbar.nav .topbar-inner{min-height:64px;width:calc(100% - 32px);gap:10px}
- header.topbar.nav .brand-mark{width:26px;height:26px}
- header.topbar.nav nav.nav-links{gap:8px}
- header.topbar.nav nav.nav-links a{font-size:11px;line-height:1.2}
+ header.topbar{min-height:64px}
+ header.topbar .topbar-inner{min-height:64px;width:calc(100% - 32px);gap:10px}
+ header.topbar .brand-mark{width:26px;height:26px}
+ header.topbar nav.nav-links{gap:8px}
+ header.topbar nav.nav-links a{font-size:11px;line-height:1.2}
  body.master-page .master-head{min-height:100svh;padding-top:calc(64px + 30px)}
  body.master-page .master-head-inner,body.master-page .master-list-inner{width:calc(100% - 32px)}
  body.master-page .master-timeline-item{grid-template-columns:72px minmax(0,1fr)}
