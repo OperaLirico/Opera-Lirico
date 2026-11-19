@@ -397,3 +397,19 @@ body.taste-home footer.shell{width:min(100% - 48px,1240px);margin-inline:auto}
  body.taste-home .home-resource-no{display:none}
  body.taste-home .home-resource-count{grid-column:2}
 }
+
+
+/* Copy hierarchy and CTA consistency. */
+body.taste-home .home-hero-en{display:block;max-width:48ch;margin:16px 0 0;color:var(--ink-soft);font-size:clamp(15px,1.45vw,19px);line-height:1.55;letter-spacing:0}
+body.taste-home .home-text-link{min-height:48px;padding:0 16px;border:1px solid var(--brand);border-radius:8px;background:transparent;display:inline-flex;align-items:center;justify-content:center}
+body.taste-home .newsletter-link{min-height:48px;padding:0 18px;border:1px solid var(--brand);border-radius:8px;background:var(--brand);color:#fff;font-weight:650}
+body.taste-home .newsletter-link:hover{background:var(--brand-2)}
+body.taste-home .home-section-head h2{max-width:22ch}
+body.taste-home .home-resource-list{display:grid;gap:12px}
+body.taste-home .home-resource{min-height:112px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2);padding:18px 20px}
+body.taste-home .home-resource-icon{width:52px;height:52px}
+body.taste-home .home-verification .home-process-line{max-width:100%}
+@media(max-width:680px){
+ body.taste-home .home-hero-en{font-size:15px}
+ body.taste-home .home-text-link{min-height:48px}
+}
