@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-type="software" data-radius="soft">
+<html lang="zh-CN" data-type="software" data-radius="soft" data-motion>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -80,11 +80,13 @@
   .qbtn.ghost{background:#fff;color:var(--ink2);border:1px solid var(--line);margin-left:6px}
 </style>
 <link rel="stylesheet" href="taste-interior.css?v=1">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 </head>
 <body class="voice-lab-page">
 <div class="wrap">
   <main class="wrap">
-  <section class="voice-hero" data-enter>
+  <section class="voice-hero hero" data-enter>
   <header class="top">
     <h1>声乐科学实验室 · 发声通路结构层。<small class="page-h1-en">Interactive vocal science for classical singers</small></h1>
     <nav>
@@ -390,5 +392,6 @@ function quizAnswer(sid){
 init();
 </script>
   <script type="module" src="assets/moments/moments.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
 </body>
 </html>
