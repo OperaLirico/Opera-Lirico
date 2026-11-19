@@ -1,6 +1,6 @@
 :root{
   --ink:#17231f;--ink-soft:#52625a;--paper:#f6f7f4;--paper-2:#fff;--line:#dce3dd;
-  --brand:#17483c;--brand-2:#205b4c;--gold:#68786f;--gold-soft:#c5d0c8;
+  --brand:#17483c;--brand-2:#205b4c;--gold:#68786f;--gold-soft:#c5d0c8;--bg:var(--paper);--surface:var(--paper-2);--accent:var(--brand-2);--font-display:"Host Grotesk","PingFang SC","Microsoft YaHei",sans-serif;--display-weight:600;--display-tracking:-.03em;--t-h2:clamp(24px,3vw,34px);--r-lg:12px;
   --shadow:0 1px 2px rgba(20,38,30,.035),0 10px 28px rgba(20,38,30,.055);
 }
 body.master-page,body.anatomy-page,body.mechanism-page,body.voice-lab-page{background:var(--paper);color:var(--ink)}
@@ -64,4 +64,23 @@ body.voice-lab-page .btn:hover,body.voice-lab-page .tab:hover{transform:translat
 }
 @media(prefers-reduced-motion:reduce){
  body.master-page .master-card,body.voice-lab-page .btn,body.voice-lab-page .tab{transition:none}
+}
+/* Taste house rule: every redesigned page has one load-only hero entrance and one text-led moment. */
+body.master-page .master-head[data-enter],
+body.anatomy-page .lab-hero[data-enter],
+body.mechanism-page .hero[data-enter],
+body.voice-lab-page header.top[data-enter]{
+  opacity:0;transform:translateY(12px);
+  animation:tasteInteriorEnter .75s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes tasteInteriorEnter{to{opacity:1;transform:translateY(0)}}
+body.master-page .master-head .mo-wh__text{max-width:68ch;font-size:16px;line-height:1.85}
+body.anatomy-page .lab-hero .mo-wh__text,
+body.mechanism-page .hero .mo-wh__text,
+body.voice-lab-page .lede.mo-wh__text{max-width:70ch;font-size:16px;line-height:1.85}
+@media(prefers-reduced-motion:reduce){
+  body.master-page .master-head[data-enter],
+  body.anatomy-page .lab-hero[data-enter],
+  body.mechanism-page .hero[data-enter],
+  body.voice-lab-page header.top[data-enter]{opacity:1;transform:none;animation:none}
 }
