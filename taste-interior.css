@@ -460,8 +460,8 @@ body.master-page .topbar,body.anatomy-page .topbar,body.mechanism-page .topbar,b
 body.master-page .topbar-inner,body.anatomy-page .topbar-inner,body.mechanism-page .topbar-inner,body.voice-lab-page .topbar-inner{width:min(100% - 48px,1240px);margin-inline:auto;display:flex;align-items:center;gap:24px}
 body.master-page .brand,body.anatomy-page .brand,body.mechanism-page .brand,body.voice-lab-page .brand{display:flex;align-items:center;flex:0 0 auto;gap:10px;min-width:0}
 body.master-page .brand-text small,body.anatomy-page .brand-text small,body.mechanism-page .brand-text small,body.voice-lab-page .brand-text small{display:block;white-space:nowrap;font-size:8px;letter-spacing:.09em}
-body.master-page .nav,body.anatomy-page .nav,body.mechanism-page .nav,body.voice-lab-page .nav{margin-left:auto;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-body.master-page .nav a,body.anatomy-page .nav a,body.mechanism-page .nav a,body.voice-lab-page .nav a{white-space:nowrap}
+body.master-page nav.nav-links,body.anatomy-page nav.nav-links,body.mechanism-page nav.nav-links,body.voice-lab-page nav.nav-links{margin-left:auto;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+body.master-page nav.nav-links a,body.anatomy-page nav.nav-links a,body.mechanism-page nav.nav-links a,body.voice-lab-page nav.nav-links a{white-space:nowrap}
 body.master-page main,body.anatomy-page main,body.mechanism-page main,body.voice-lab-page main{width:100%;max-width:none;margin:0;padding-inline:0}
 body.master-page main>section,body.anatomy-page main>section,body.mechanism-page main>section,body.voice-lab-page main>section{box-sizing:border-box}
 body.master-page :is(button,a):focus-visible,body.anatomy-page :is(button,a,iframe):focus-visible,body.mechanism-page :is(button,a,iframe):focus-visible,body.voice-lab-page :is(button,a):focus-visible{outline:3px solid #17483c;outline-offset:3px}
@@ -542,8 +542,8 @@ body.voice-lab-page footer.note{border:0;padding:24px;margin:0 auto;min-height:1
 @media(max-width:680px){
  body.master-page .topbar-inner,body.anatomy-page .topbar-inner,body.mechanism-page .topbar-inner,body.voice-lab-page .topbar-inner{width:calc(100% - 32px);gap:10px}
  body.master-page .brand-text small,body.anatomy-page .brand-text small,body.mechanism-page .brand-text small,body.voice-lab-page .brand-text small{display:none}
- body.master-page .nav,body.anatomy-page .nav,body.mechanism-page .nav,body.voice-lab-page .nav{gap:9px}
- body.master-page .nav a,body.anatomy-page .nav a,body.mechanism-page .nav a,body.voice-lab-page .nav a{font-size:11px}
+ body.master-page nav.nav-links,body.anatomy-page nav.nav-links,body.mechanism-page nav.nav-links,body.voice-lab-page nav.nav-links{gap:9px}
+ body.master-page nav.nav-links a,body.anatomy-page nav.nav-links a,body.mechanism-page nav.nav-links a,body.voice-lab-page nav.nav-links a{font-size:11px}
  body.master-page .master-head,body.anatomy-page .lab-hero,body.mechanism-page .mechanism>.hero{width:calc(100% - 32px);min-height:calc(100svh - 64px);padding-block:42px}
  body.master-page #masterList,body.anatomy-page .body-system,body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources,body.mechanism-page .mechanism>.layout,body.mechanism-page .mechanism>.section,body.mechanism-page .mechanism>.source{width:calc(100% - 32px);padding-block:34px}
  body.master-page #masterList{grid-template-columns:1fr}
@@ -781,3 +781,158 @@ body.mechanism-page .source-cta:hover{background:var(--brand-2)}
 }
 
 body.anatomy-page .body-figure-section .body-system{display:block;width:100%;max-width:none;margin:0;padding:0}
+
+
+/* Taste 2.5.1 shared navigation, section grid and accessible controls. */
+header.topbar.nav{position:absolute!important;inset:0 0 auto;z-index:80;width:100%;max-width:none;min-height:72px;margin:0;padding:0;display:block;background:rgba(246,241,230,.92);border-bottom:1px solid #d9dfd8;backdrop-filter:blur(14px);box-sizing:border-box}
+header.topbar.nav .topbar-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;min-height:72px;margin:0 auto;padding:0;display:flex;align-items:center;justify-content:space-between;gap:24px}
+header.topbar.nav .brand{flex:0 0 auto;min-width:0;max-width:none;white-space:nowrap;flex-wrap:nowrap}
+header.topbar.nav .brand-text{display:block;white-space:nowrap}
+header.topbar.nav .brand-text small{display:none!important}
+header.topbar.nav nav.nav-links{display:flex;flex:0 0 auto;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:16px;margin-left:auto;white-space:nowrap}
+header.topbar.nav nav.nav-links a{flex:0 0 auto;white-space:nowrap}
+.skip-link{position:absolute;left:16px;top:-100px;z-index:1000;padding:10px 14px;background:#fff;color:#17483c;border:2px solid var(--action);border-radius:8px}
+.skip-link:focus{top:10px}
+:focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+iframe:focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.master-page main.master-wrap{width:100%;max-width:none;margin:0;padding:0}
+body.master-page .master-head{width:100%;min-height:100svh;margin:0;padding:calc(72px + clamp(36px,5vh,56px)) 0 clamp(48px,6vh,72px);display:flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box}
+body.master-page .master-head-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+body.master-page .master-head h1{max-width:18ch;font-size:clamp(40px,4.5vw,58px);line-height:1.12;overflow-wrap:anywhere}
+body.master-page .master-list-section{width:100%;min-height:200svh;margin:0;padding:clamp(44px,6vh,64px) 0;display:flex;align-items:center;justify-content:center;background:#edf2ed;box-sizing:border-box}
+body.master-page .master-list-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+body.master-page .master-list-head{width:100%;margin:0;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+body.master-page .master-timeline{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+body.master-page .master-timeline-item{min-width:0;min-height:86px;padding:14px;display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;align-items:center;border:1px solid #d4ddd5;border-radius:10px;background:#f9faf6}
+body.master-page .master-timeline-item time{font-size:13px;font-weight:700;color:#285b49}
+body.master-page .master-timeline-item>div{min-width:0;display:grid;gap:5px}
+body.master-page .master-timeline-item strong{font-size:13px;line-height:1.4}
+body.master-page .master-timeline-item small{font-size:11px;color:#52665a;overflow-wrap:anywhere}
+body.master-page #masterCards{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:16px;align-items:stretch}
+body.master-page .master-card{height:100%;min-width:0;display:flex;flex-direction:column;align-items:stretch}
+body.master-page .master-card-icon{width:54px;height:54px;flex:0 0 auto;display:grid;place-items:center}
+body.master-page .master-card-icon svg{width:30px;height:30px}
+body.master-page .master-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px;border:0}
+body.master-page .master-facts>*{min-width:0;border:0!important;padding:0!important;overflow-wrap:anywhere}
+body.master-page .master-pagination{width:100%;margin:0;padding:0;border:0!important;display:flex;align-items:center;justify-content:center;gap:12px}
+body.master-page .master-head .hero-cta,body.master-page .master-pagination button{min-height:44px;border-radius:8px}
+body.master-page :is(a,button):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.anatomy-page main.lab-wrap.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:0 20px;box-sizing:border-box}
+body.anatomy-page main.lab-wrap.wrap>.lab-hero,body.anatomy-page main.lab-wrap.wrap>.breath-lab,body.anatomy-page main.lab-wrap.wrap>.anatomy-sources{grid-column:1/-1;width:100%;max-width:none;margin:0}
+body.anatomy-page main.lab-wrap.wrap>.body-figure-section{grid-column:1;width:100%;max-width:none;margin:0}
+body.anatomy-page main.lab-wrap.wrap>.body-detail-section{grid-column:2;width:100%;max-width:none;margin:0}
+body.anatomy-page .lab-hero{min-height:100svh;padding:calc(72px + clamp(36px,5vh,56px)) 0 56px;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.anatomy-page .lab-hero h1{font-size:clamp(42px,4.5vw,58px);line-height:1.12;max-width:18ch}
+body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section{min-height:100svh;padding:clamp(42px,6vh,64px) 18px;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.anatomy-page .body-figure-section .body-system{display:block;width:100%;max-width:none;margin:0;padding:0}
+body.anatomy-page .detail-visual{display:block;width:100%;max-height:170px;object-fit:contain;margin:0 0 16px;border-radius:10px;background:#edf2ed}
+body.anatomy-page .source-visual{display:block;width:100%;max-height:150px;object-fit:contain;margin:0 0 18px;border-radius:10px;background:#edf2ed}
+body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources{min-height:100svh;padding:clamp(42px,6vh,64px) 0;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.anatomy-page .breath-diagram{max-height:240px;overflow:hidden}
+body.anatomy-page .breath-diagram svg{width:100%;max-height:220px}
+body.anatomy-page .source-list{display:grid;grid-template-columns:1fr;gap:8px}
+body.anatomy-page .source-list>*{min-height:40px;padding:10px 12px;border:1px solid #d9e0d9;border-radius:8px}
+body.anatomy-page :is(.organ-chip,.model-tab,.breath-controls button,.detail-link){min-height:44px;height:auto;padding:10px 14px;border-radius:8px;font-size:12px;line-height:1.35}
+body.anatomy-page :is(.organ-chip,.model-tab,.breath-controls button){border:1px solid #b9c9be;background:#f8faf6;color:#1d342b}
+body.anatomy-page :is(.organ-chip[aria-pressed="true"],.model-tab[aria-pressed="true"],.breath-controls button[aria-pressed="true"]){background:#17483c;color:#fff;border-color:#17483c}
+body.anatomy-page h1{font-size:clamp(42px,4.5vw,58px)}
+body.anatomy-page h2{font-size:clamp(24px,2.4vw,30px)}
+body.anatomy-page h3{font-size:17px}
+body.mechanism-page main.mechanism.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:0;box-sizing:border-box}
+body.mechanism-page main.mechanism.wrap>section{width:100%;max-width:none;margin:0}
+body.mechanism-page .hero{min-height:100svh;padding:calc(72px + clamp(36px,5vh,56px)) 0 clamp(48px,6vh,72px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .section,body.mechanism-page .source{min-height:100svh;padding:clamp(42px,6vh,64px) 0;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.mechanism-page .model-section .card{width:100%;max-width:none}
+body.mechanism-page .model-frame-wrap iframe{height:min(48vh,420px);min-height:300px}
+body.mechanism-page .interaction-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:24px}
+body.mechanism-page .interaction-visual img{width:100%;max-height:300px;object-fit:contain}
+body.mechanism-page .interaction-section>.interaction-visual,body.mechanism-page .interaction-section>.interaction{min-width:0;width:100%}
+body.mechanism-page .plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+body.mechanism-page .plate{min-width:0;display:flex;flex-direction:column;gap:12px}
+body.mechanism-page .plate-description{order:0;display:grid;gap:4px;line-height:1.55}
+body.mechanism-page .plate img{order:1;width:100%;max-height:340px;object-fit:contain}
+body.mechanism-page .muscle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:14px;align-items:stretch}
+body.mechanism-page .muscle{height:100%;min-width:0;display:flex;flex-direction:column;gap:10px}
+body.mechanism-page .muscle img{width:100%;max-height:180px;object-fit:contain}
+body.mechanism-page .muscle-section{min-height:100svh}
+body.mechanism-page h1{font-size:clamp(42px,4.5vw,58px)}
+body.mechanism-page h2{font-size:clamp(24px,2.4vw,30px)}
+body.mechanism-page h3{font-size:17px}
+body.voice-lab-page main.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:0 20px;box-sizing:border-box}
+body.voice-lab-page main.wrap>.hero{grid-column:1/-1;width:100%;min-height:100svh;padding:calc(72px + clamp(36px,5vh,56px)) 0 56px;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.voice-lab-page main.wrap>.map-section{grid-column:1;width:100%;min-width:0;min-height:100svh;margin:0;padding:clamp(36px,5vh,56px) 18px;display:flex;align-items:stretch;box-sizing:border-box}
+body.voice-lab-page main.wrap>.index-section{grid-column:2;width:100%;min-width:0;min-height:100svh;margin:0;padding:clamp(36px,5vh,56px) 18px;display:flex;align-items:stretch;box-sizing:border-box}
+body.voice-lab-page .panel{width:100%;min-width:0;display:flex;flex-direction:column;gap:14px}
+body.voice-lab-page .voice-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.75fr);align-items:center;gap:18px 28px}
+body.voice-lab-page .voice-hero-visual{grid-column:2;grid-row:1/3;width:100%;max-height:250px;object-fit:contain;border-radius:12px;background:#edf2ed}
+body.voice-lab-page .voice-hero .lede,body.voice-lab-page .voice-hero .meta{grid-column:1/-1}
+body.voice-lab-page .voice-map-reference{display:block;width:100%;max-height:140px;object-fit:contain;border-radius:10px;background:#edf2ed;margin:0 0 12px}
+body.voice-lab-page .structure-overview{display:grid;grid-template-columns:1fr;gap:7px;padding:12px 14px;border:1px solid #d8e0d9;border-radius:10px;background:#f2f5ef}
+body.voice-lab-page .overview-row{display:grid;grid-template-columns:90px minmax(0,1fr) 24px;gap:10px;align-items:center;font-size:11px;color:#294338}
+body.voice-lab-page .overview-track{height:7px;background:#dce5dd;border-radius:8px;overflow:hidden}
+body.voice-lab-page .overview-track i{display:block;height:100%;background:#47735e;border-radius:8px}
+body.voice-lab-page .overview-row b{text-align:right;font-variant-numeric:tabular-nums}
+body.voice-lab-page #list{max-height:220px;overflow:auto;min-width:0}
+body.voice-lab-page #detail{max-height:340px;overflow:auto;min-width:0;line-height:1.65;overflow-wrap:anywhere}
+body.voice-lab-page #detail .tri{float:none!important;position:static!important;display:inline-flex;clear:both;max-width:100%;margin:0 0 10px;white-space:normal;overflow-wrap:anywhere}
+body.voice-lab-page #list .item{width:100%;height:auto;min-height:48px;padding:10px 12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 8px;white-space:normal;overflow:visible;text-align:left}
+body.voice-lab-page #list .item>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+body.voice-lab-page #list .item small{display:block;white-space:normal;overflow-wrap:anywhere;color:#4b6256}
+body.voice-lab-page .data-note{margin-top:auto;padding:12px 14px;border-top:1px solid #d6dfd8;color:#465a50;font-size:11px;line-height:1.6;overflow-wrap:anywhere}
+body.voice-lab-page .closing{width:100%;min-height:100svh;margin:0;padding:64px 0;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+body.voice-lab-page .closing-inner{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+body.voice-lab-page h1{font-size:clamp(42px,4.5vw,58px)}
+body.voice-lab-page h2{font-size:22px}
+body.voice-lab-page h3{font-size:16px}
+body.voice-lab-page :is(.tab,.btn,.qbtn,#list .item){min-height:44px;height:auto;padding:10px 12px;border-radius:8px;font-size:12px;line-height:1.35}
+body.voice-lab-page :is(.tab,.btn,.qbtn,#list .item){border:1px solid #b9c9be;background:#f8faf6;color:#1d342b}
+body.voice-lab-page :is(.tab[aria-pressed="true"],.btn.primary,.qbtn.primary){background:#17483c;color:#fff;border-color:#17483c}
+body.voice-lab-page :is(button,a,input):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+@media(max-width:900px){
+ header.topbar.nav .topbar-inner{width:calc(100% - 32px)}
+ body.master-page .master-head-inner,body.master-page .master-list-inner{width:calc(100% - 32px)}
+ body.master-page .master-list-section{min-height:100svh}
+ body.master-page #masterCards{grid-template-columns:1fr}
+ body.master-page .master-timeline{grid-template-columns:1fr}
+ body.master-page .master-card{min-height:0}
+ body.anatomy-page main.lab-wrap.wrap{width:calc(100% - 32px);grid-template-columns:1fr}
+ body.anatomy-page main.lab-wrap.wrap>.lab-hero,body.anatomy-page main.lab-wrap.wrap>.body-figure-section,body.anatomy-page main.lab-wrap.wrap>.body-detail-section,body.anatomy-page main.lab-wrap.wrap>.breath-lab,body.anatomy-page main.lab-wrap.wrap>.anatomy-sources{grid-column:1}
+ body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section{min-height:100svh}
+ body.mechanism-page main.mechanism.wrap{width:calc(100% - 32px)}
+ body.mechanism-page .muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.mechanism-page .muscle-section{min-height:200svh}
+ body.voice-lab-page main.wrap{width:calc(100% - 32px);grid-template-columns:1fr}
+ body.voice-lab-page main.wrap>.hero,body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{grid-column:1}
+ body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{min-height:100svh}
+}
+@media(max-width:680px){
+ header.topbar.nav{min-height:64px}
+ header.topbar.nav .topbar-inner{min-height:64px;width:calc(100% - 32px);gap:10px}
+ header.topbar.nav .brand-mark{width:26px;height:26px}
+ header.topbar.nav nav.nav-links{gap:8px}
+ header.topbar.nav nav.nav-links a{font-size:11px;line-height:1.2}
+ body.master-page .master-head{min-height:100svh;padding-top:calc(64px + 30px)}
+ body.master-page .master-head-inner,body.master-page .master-list-inner{width:calc(100% - 32px)}
+ body.master-page .master-timeline-item{grid-template-columns:72px minmax(0,1fr)}
+ body.master-page .master-list-section{padding:34px 0}
+ body.anatomy-page .lab-hero{padding-top:calc(64px + 30px)}
+ body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section,body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources{padding:36px 14px}
+ body.anatomy-page .breath-diagram,body.anatomy-page .breath-diagram svg{max-height:190px}
+ body.anatomy-page .detail-visual{max-height:140px}
+ body.anatomy-page .source-visual{max-height:120px}
+ body.mechanism-page .hero{padding-top:calc(64px + 30px)}
+ body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .section,body.mechanism-page .source{padding:36px 0}
+ body.mechanism-page .interaction-section{grid-template-columns:1fr;gap:14px}
+ body.mechanism-page .interaction-visual img{max-height:220px}
+ body.mechanism-page .plate-grid{grid-template-columns:1fr}
+ body.mechanism-page .muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ body.mechanism-page .muscle img{max-height:120px}
+ body.voice-lab-page main.wrap>.hero{padding-top:calc(64px + 30px)}
+ body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{padding:30px 10px}
+ body.voice-lab-page .voice-hero{grid-template-columns:1fr}
+ body.voice-lab-page .voice-hero-visual{grid-column:1;grid-row:auto;max-height:170px}
+ body.voice-lab-page .voice-map-reference{max-height:110px}
+ body.voice-lab-page #list{max-height:190px}
+ body.voice-lab-page #detail{max-height:280px}
+ body.voice-lab-page .closing{min-height:100svh;padding:40px 0}
+}

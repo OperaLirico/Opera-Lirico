@@ -84,24 +84,24 @@
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 </head>
 <body class="voice-lab-page">
-<header class="topbar"><div class="shell wrap topbar-inner"><a class="brand" href="./" aria-label="OperaLab. 首页"><span class="brand-mark" aria-hidden="true">♫</span><span class="brand-text">OperaLab.<small>OPERA · VOICE · STUDY</small></span></a><nav class="nav" aria-label="主导航"><a href="./">首页</a><a href="masterclasses.html">大师班</a><a href="voice-anatomy.html">解剖概览</a><a href="larynx-mechanism.html">喉部机制</a></nav></div></header>
-<main class="wrap">
-  <section class="hero" data-enter aria-labelledby="voice-title">
+<header class="topbar nav"><a class="skip-link" href="#main-content">跳至主要内容</a><div class="wrap topbar-inner"><a class="brand" href="./" aria-label="OperaLab. 首页"><span class="brand-mark" aria-hidden="true">♫</span><span class="brand-text">OperaLab.</span></a><nav class="nav-links" aria-label="主导航"><a href="./">首页</a><a href="masterclasses.html">大师班</a><a href="voice-anatomy.html">解剖概览</a><a href="larynx-mechanism.html">喉部机制</a></nav></div></header>
+<main id="main-content" class="wrap">
+  <section class="hero wrap" data-enter aria-labelledby="voice-title">
   <div class="voice-hero">
   <div class="voice-heading">
     <p class="eyebrow">VOICE SCIENCE · INTERACTIVE REFERENCE</p>
-    <h1 id="voice-title">声乐科学实验室 · 发声通路结构层</h1>
+    <h1 id="voice-title">古典歌手发声解剖实验室</h1>
     <p class="page-h1-en">Interactive vocal science for classical singers</p>
     <a class="hero-cta" href="#workspace">开始浏览结构 <span aria-hidden="true">↓</span></a>
   </div>
-  <p class="lede mo-wh__text" data-moment="word-highlight">从鼻腔到膈，逐个查看发声通路结构。每条信息保留出处与审核状态，帮助你把器官位置、功能和歌唱中的作用联系起来。</p>
+  <img class="voice-hero-visual" src="assets/anatomy/larynx-intrinsic-muscles.png" width="960" height="640" loading="lazy" decoding="async" alt="喉内肌解剖线描参考图"><p class="lede mo-wh__text" data-moment="word-highlight">从鼻腔到膈，逐个查看发声通路结构。每条信息保留出处与审核状态，帮助你把器官位置、功能和歌唱中的作用联系起来。</p>
   <div class="chips" id="meta"></div>
   </div>
   </section>
 
-  <section class="layout" id="workspace" aria-label="发声通路交互图与结构索引">
+  <section class="map-section wrap" id="workspace" aria-label="发声通路交互图与结构索引">
     <section class="panel">
-      <h2>发声通路</h2>
+      <h2>发声通路</h2><img class="voice-map-reference" src="assets/anatomy/larynx-sagittal.png" width="960" height="640" loading="lazy" decoding="async" alt="喉部正中矢状面解剖参考图，辅助理解发声通路中的喉部位置">
       <div class="mapwrap">
         <svg class="map" viewBox="0 0 700 900" role="img" aria-label="发声通路示意图：鼻腔、口腔、舌、软腭、咽、喉、气管、肺、膈">
           <rect x="150" y="40" width="430" height="800" rx="54" fill="#fbfdfc" stroke="#e6eee9"/>
@@ -181,8 +181,9 @@
       </div>
     </section>
 
-    <section class="panel card" id="side">
-      <h2><svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>结构索引</h2>
+    </section><section class="index-section wrap" aria-labelledby="side-title"><section class="panel card" id="side">
+      <h2 id="side-title"><svg class="section-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>结构索引</h2>
+      <div id="sideVisual" class="structure-overview" aria-label="结构类别数量分布"></div>
       <div class="tabs" id="tabs"></div>
       <div class="toolrow" style="margin:0 0 10px">
         <button class="btn" id="unmastered" type="button">只看未掌握</button>
@@ -192,17 +193,12 @@
       <input class="search" id="q" type="search" placeholder="中文 / 拉丁 / 英文，例如 环甲肌、arytenoid">
       <p class="count" id="count"></p>
       <div class="list" id="list"></div>
-      <div id="detail"></div>
+      <div id="detail"></div><div class="data-note">数据门槛：本页只渲染 <code>review_status=verified</code> 的字段；标为待核的字段显示「待核（暂不展示）」而不是用推测填满。<br>机制分层：闭合（位置）、振动（力学）、张力（音高）、滤波（共振）是四件事——对照 <a href="larynx-mechanism.html">机制联动</a>。<br>掌握记录只存在你自己的浏览器（localStorage），不上传、不统计。<br>内容不构成医学建议；如有嗓音问题请就诊耳鼻喉科或嗓音治疗师。</div>
     </section>
-  </section>
+</section>
 </main>
 
-<footer class="note">
-    数据门槛：本页只渲染 <code>review_status=verified</code> 的字段；标为待核的字段显示「待核（暂不展示）」而不是用推测填满。<br>
-    机制分层：闭合（位置）、振动（力学）、张力（音高）、滤波（共振）是四件事——对照 <a href="larynx-mechanism.html">机制联动</a>。<br>
-    掌握记录只存在你自己的浏览器（localStorage），不上传、不统计。<br>
-    内容不构成医学建议；如有嗓音问题请就诊耳鼻喉科或嗓音治疗师。
-</footer>
+<footer class="closing wrap"><div class="closing-inner"><strong>OperaLab.</strong><span>理解结构，让练习更有依据。</span><a href="./">回到首页 ↗</a></div></footer>
 
 <script>
 const GROUPS=[['all','全部'],['airway','通路'],['larynx_cartilage','软骨'],['larynx_mucosa','喉黏膜'],['intrinsic_muscle','喉内肌'],['extrinsic_muscle','喉外肌'],['velar_muscle','软腭'],['tongue','舌'],['tongue_muscle','舌肌'],['respiratory','呼吸']];
@@ -225,6 +221,8 @@ function paintMeta(){
   const verified=DATA.filter(x=>x.review_status==='verified').length;
   const pending=DATA.filter(x=>(x.pending_fields||[]).length).length;
   el('meta').innerHTML=chip('结构条目',DATA.length)+chip('已核定',verified)+chip('字段待核',pending)+chip('文献',Object.keys(SRC).length)+chip('已掌握',mastered.length);
+  const visual=el('sideVisual');
+  if(visual){const stats=GROUPS.slice(1).map(g=>({name:g[1],count:DATA.filter(x=>x.group===g[0]).length})).filter(x=>x.count);const max=Math.max(1,...stats.map(x=>x.count));visual.innerHTML=stats.map(x=>'<div class="overview-row"><span>'+x.name+'</span><span class="overview-track"><i style="width:'+Math.round(x.count/max*100)+'%"></i></span><b>'+x.count+'</b></div>').join('');}
 }
 
 function init(){
