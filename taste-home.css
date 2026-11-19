@@ -289,3 +289,43 @@ body.taste-home .home-resource:hover .home-resource-main strong{color:var(--bran
 @media(prefers-reduced-motion:reduce){
  body.taste-home *,body.taste-home *::before,body.taste-home *::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
 }
+
+
+/* Final composition corrections: remove stagger, align the editorial grid and keep one nav row. */
+@media(min-width:621px){
+  body.taste-home .home-card-grid .tile:nth-child(3n+2),
+  body.taste-home .home-card-grid .tile:nth-child(3n+2):hover{transform:none}
+}
+body.taste-home .topbar-inner{display:flex;flex-wrap:nowrap;gap:clamp(12px,2vw,24px)}
+body.taste-home .brand{flex:0 0 auto;min-width:max-content}
+body.taste-home .nav{flex:1 1 auto;flex-wrap:nowrap;justify-content:flex-end;gap:clamp(10px,1.6vw,22px);min-width:0;white-space:nowrap}
+body.taste-home .nav a{white-space:nowrap}
+body.taste-home .install-button{flex:0 0 auto;white-space:nowrap}
+body.taste-home .home-section{min-height:900px;min-height:100svh;min-height:calc(100svh - 0px);padding-block:clamp(56px,8vh,88px)}
+body.taste-home .home-section-head{width:100%;align-items:flex-end}
+body.taste-home .home-card-grid{align-items:stretch}
+body.taste-home .home-card-grid .tile{height:100%;align-self:stretch}
+body.taste-home .home-resource-list{width:100%}
+body.taste-home .home-resource{grid-template-columns:42px minmax(0,1fr) 120px 24px;align-items:center}
+body.taste-home .home-resource-main{grid-column:auto}
+body.taste-home .home-resource-count{text-align:right}
+body.taste-home .newsletter-panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);align-items:center;gap:40px}
+body.taste-home .newsletter-icon{grid-column:1}
+body.taste-home .newsletter-form{grid-column:2;grid-row:1 / span 3}
+body.taste-home footer{min-height:100svh;display:flex;align-items:center;justify-content:space-between;gap:24px}
+body.taste-home :where(a,button,input,select,summary):focus-visible{outline:3px solid #17483c;outline-offset:4px;box-shadow:0 0 0 2px #fff}
+@media(max-width:900px){
+ body.taste-home .topbar-inner{flex-wrap:wrap;gap:8px 14px}
+ body.taste-home .nav{justify-content:flex-start;order:3;flex-basis:100%;overflow-x:auto;padding-bottom:8px}
+ body.taste-home .home-section{min-height:auto;padding-block:64px}
+ body.taste-home .newsletter-panel{display:block}
+ body.taste-home footer{min-height:auto}
+}
+@media(max-width:620px){
+ body.taste-home .home-resource{grid-template-columns:30px minmax(0,1fr) 20px}
+ body.taste-home .home-resource-icon{grid-column:1}
+ body.taste-home .home-resource-no{display:none}
+ body.taste-home .home-resource-count{display:none}
+ body.taste-home .home-resource-main{grid-column:2}
+ body.taste-home .home-resource-arrow{grid-column:3}
+}
