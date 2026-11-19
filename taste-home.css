@@ -500,3 +500,35 @@ body.taste-home footer.closing .footer-inner{width:100%;display:flex;align-items
  body.taste-home footer.closing{min-height:100svh;padding:40px 0}
  body.taste-home footer.closing .footer-inner{flex-direction:column;align-items:flex-start}
 }
+
+/* Final alignment and density corrections from the Taste browser report. */
+body.taste-home .home-hero{min-height:100svh}
+body.taste-home .home-section{min-height:100svh}
+body.taste-home #tiles .home-tiles-art{width:116px;height:116px;object-fit:contain}
+body.taste-home .home-process-line{min-height:150px}
+body.taste-home .home-process-step{min-height:150px}
+body.taste-home .home-proof-number strong{font-size:26px}
+body.taste-home .home-resource-visual{min-height:340px}
+body.taste-home .newsletter-panel{min-height:100svh}
+body.taste-home .newsletter-preview{min-height:380px}
+body.taste-home .nl-consent span{font-size:12px}
+body.taste-home .home-actions{align-self:flex-start;margin-left:0!important;padding-left:0!important}
+body.taste-home .home-actions :is(button,a){align-self:flex-start;margin-left:0!important}
+body.taste-home .home-resource-list :is(a,button){border-top:0!important}
+body.taste-home .home-resource-main>*{text-align:left}
+body.taste-home footer.closing{min-height:100svh}
+body.taste-home :is(button,a,input,select):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+@media(max-width:900px){
+ body.taste-home .home-tiles-art{width:88px;height:88px}
+ body.taste-home .home-resource-visual{min-height:190px}
+ body.taste-home .home-resource-visual img{max-height:160px}
+ body.taste-home .home-process-step{min-height:126px}
+ body.taste-home .newsletter-preview{min-height:0}
+}
+@media(max-width:680px){
+ body.taste-home .home-tiles-art{width:72px;height:72px}
+ body.taste-home .home-app-art{max-height:120px}
+ body.taste-home .home-hero{padding-top:calc(64px + 30px)}
+ body.taste-home .home-resource-visual{min-height:160px}
+ body.taste-home .newsletter-panel{padding:34px 0}
+}

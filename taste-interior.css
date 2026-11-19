@@ -936,3 +936,69 @@ body.voice-lab-page :is(button,a,input):focus-visible{outline:2px solid var(--ac
  body.voice-lab-page #detail{max-height:280px}
  body.voice-lab-page .closing{min-height:100svh;padding:40px 0}
 }
+
+/* Final refinements: data-led section lengths, shared alignment and mobile fit. */
+body.master-page .master-list-section{min-height:100svh}
+body.master-page #masterList[data-pages="2"]{min-height:200svh}
+body.master-page .master-card{min-height:320px}
+body.master-page .master-list-section .master-card:last-child{grid-column:auto}
+body.master-page .master-facts{align-content:start}
+body.master-page .master-facts dt{margin:0 0 4px}
+body.master-page .master-facts dd{margin:0;line-height:1.5;overflow-wrap:anywhere}
+body.master-page .master-pagination{border-top:0!important}
+body.master-page .master-list-head h2{font-size:clamp(24px,2.4vw,30px)}
+body.master-page .master-list-head p{max-width:58ch}
+body.master-page .master-head-inner>*{max-width:100%}
+body.anatomy-page main.lab-wrap.wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section{min-height:100svh}
+body.anatomy-page .anatomy-sources{min-height:100svh}
+body.anatomy-page .body-detail-section .detail-visual{max-height:150px}
+body.anatomy-page .anatomy-sources .source-visual{max-height:145px}
+body.anatomy-page .breath-lab{min-height:100svh}
+body.anatomy-page .breath-lab h2{font-size:clamp(24px,2.4vw,30px)}
+body.anatomy-page iframe:focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.mechanism-page .model-section{min-height:100svh}
+body.mechanism-page .model-section article.card{display:flex;flex-direction:column;gap:12px}
+body.mechanism-page .viewer{display:flex;flex-direction:column;gap:12px}
+body.mechanism-page .viewer-caption,body.mechanism-page .credit{order:0;display:flex;align-items:center;gap:12px;line-height:1.5}
+body.mechanism-page .viewer-frame{order:1}
+body.mechanism-page .interaction-visual figure{display:flex;flex-direction:column;gap:10px}
+body.mechanism-page .interaction-visual figcaption{order:0;line-height:1.4;color:#4e6559}
+body.mechanism-page .interaction-visual img{order:1}
+body.mechanism-page .plate-section{min-height:100svh}
+body.mechanism-page .muscle-section{min-height:100svh}
+body.mechanism-page .source{min-height:100svh}
+body.mechanism-page .muscle{min-width:0}
+body.mechanism-page .muscle p{overflow-wrap:anywhere;line-height:1.55}
+body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{min-height:100svh}
+body.voice-lab-page .mapwrap{max-height:470px;overflow:hidden}
+body.voice-lab-page .map{width:100%;max-height:460px;display:block}
+body.voice-lab-page .voice-hero-visual{align-self:center}
+body.voice-lab-page .overview-row{color:#233d31}
+body.voice-lab-page .count{color:#314b3e}
+body.voice-lab-page .data-note{color:#3c5147}
+body.voice-lab-page .closing{min-height:100svh}
+@media(max-width:900px){
+ body.master-page #masterList[data-pages="2"]{min-height:100svh}
+ body.master-page .master-card{min-height:0}
+ body.anatomy-page main.lab-wrap.wrap{grid-template-columns:1fr}
+ body.anatomy-page .anatomy-sources{min-height:200svh}
+ body.mechanism-page .plate-section,body.mechanism-page .source{min-height:200svh}
+ body.mechanism-page .muscle-section{min-height:100svh}
+ body.voice-lab-page .mapwrap{max-height:330px}
+ body.voice-lab-page .map{max-height:320px}
+}
+@media(max-width:680px){
+ body.master-page .master-card{min-height:0}
+ body.master-page .master-list-section{min-height:100svh}
+ body.master-page .master-list-inner{gap:14px}
+ body.master-page .master-timeline-item{min-height:68px;padding:10px}
+ body.anatomy-page .body-detail-section{min-height:100svh}
+ body.anatomy-page .anatomy-sources{min-height:200svh}
+ body.mechanism-page .plate-section,body.mechanism-page .source{min-height:200svh}
+ body.mechanism-page .muscle-section{min-height:100svh}
+ body.mechanism-page .muscle img{max-height:112px}
+ body.voice-lab-page .mapwrap{max-height:280px}
+ body.voice-lab-page .map{max-height:270px}
+ body.voice-lab-page .closing{min-height:100svh}
+}
