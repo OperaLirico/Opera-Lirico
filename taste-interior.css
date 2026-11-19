@@ -1229,3 +1229,87 @@ body.voice-lab-page .map-section .panel>h2,body.voice-lab-page .index-section .p
  body.voice-lab-page .data-note{max-height:72px;font-size:9px}
  body.voice-lab-page .closing{height:100svh;min-height:100svh;padding:36px 0}
 }
+
+/* Larynx page: a two-column visual hero, editorial muscle rows and clean image-only plates. */
+body.mechanism-page .hero{height:100vh;min-height:100vh;padding:calc(72px + 36px) 0 36px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);align-content:center;align-items:center;gap:18px 28px;box-sizing:border-box}
+body.mechanism-page .mechanism-hero-copy{width:100%;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+body.mechanism-page .mechanism-hero-copy>*{position:static!important;float:none!important;left:auto!important;right:auto!important;transform:none!important;width:100%;max-width:100%;min-width:0;margin-inline:0!important;overflow-wrap:anywhere;box-sizing:border-box}
+body.mechanism-page .mechanism-hero-visual{display:block;grid-column:2;grid-row:1;width:100%;max-height:420px;object-fit:contain;border-radius:14px;background:#edf2ed}
+body.mechanism-page .hero h1{font-size:clamp(40px,4.2vw,56px);line-height:1.1;max-width:17ch}
+body.mechanism-page .hero .page-h1-en{font-size:15px;line-height:1.4}
+body.mechanism-page .hero .lab-entry{display:flex;flex-direction:column;gap:6px}
+body.mechanism-page .hero .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .plate-section,body.mechanism-page .muscle-section,body.mechanism-page .source{height:100vh;min-height:100vh;--h:1}
+body.mechanism-page .model-section{padding:clamp(36px,5vh,52px) 0}
+body.mechanism-page .model-section article.card{display:flex;flex-direction:column;gap:12px}
+body.mechanism-page .viewer{display:flex;flex-direction:column;gap:12px}
+body.mechanism-page .viewer-frame{width:100%;height:min(42vh,360px);min-height:260px;overflow:visible}
+body.mechanism-page .viewer-frame iframe{width:100%;height:100%;min-height:260px}
+body.mechanism-page iframe:focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.mechanism-page .interaction-section{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:24px}
+body.mechanism-page .interaction-section>.interaction-visual,body.mechanism-page .interaction-section>.interaction{width:100%;min-width:0;margin:0;padding:0}
+body.mechanism-page .interaction-visual figure{width:100%;margin:0;display:block}
+body.mechanism-page .interaction-visual img{display:block;width:100%;max-height:270px;object-fit:contain}
+body.mechanism-page .interaction .readout{width:100%;max-width:none;margin:12px 0 0;padding:14px 16px;box-sizing:border-box}
+body.mechanism-page .interaction .readout-kicker,body.mechanism-page .interaction .mech-observation{margin-left:0!important;padding-left:0!important;float:none!important;position:static!important}
+body.mechanism-page .structure-section{padding:clamp(36px,5vh,52px) 0}
+body.mechanism-page .structure-section .side{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+body.mechanism-page .structure-section article.card.info{min-width:0;width:100%;height:100%;padding:18px;border-radius:10px}
+body.mechanism-page .plate-section{padding:clamp(36px,5vh,52px) 0}
+body.mechanism-page .plate-grid{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:20px}
+body.mechanism-page .plate{width:100%;min-width:0;margin:0;display:flex;align-items:stretch;justify-content:center}
+body.mechanism-page .plate img{display:block;width:100%;height:320px;max-height:320px;object-fit:contain}
+body.mechanism-page .muscle-section{height:200vh;min-height:200vh;padding:clamp(40px,5vh,56px) 0}
+body.mechanism-page .muscle-grid{width:100%;display:flex;flex-direction:column;gap:0}
+body.mechanism-page .muscle{width:100%;min-height:150px;height:auto;display:grid;grid-template-columns:160px minmax(0,1fr);align-items:center;gap:18px;padding:14px 0;border:0;border-bottom:1px solid #d7dfd8;border-radius:0;background:transparent;box-shadow:none}
+body.mechanism-page .muscle img{width:100%;height:120px;max-height:120px;object-fit:contain}
+body.mechanism-page .muscle h3{margin:0;font-size:18px;line-height:1.25}
+body.mechanism-page .muscle p{margin:6px 0 0;font-size:13px;line-height:1.55;overflow-wrap:anywhere}
+body.mechanism-page .source{padding:clamp(36px,5vh,52px) 0}
+body.mechanism-page .source-grid{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+body.mechanism-page .source-group{min-width:0}
+body.mechanism-page .source-group ul{display:grid;gap:10px}
+body.mechanism-page .source-group li{color:#263c31;line-height:1.6}
+body.mechanism-page .source-group a{color:#17483c;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+body.mechanism-page .source-cta{min-height:44px;padding:10px 14px;border-radius:8px;border:1px solid #17483c;color:#17483c}
+body.mechanism-page .closing{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid #d7dfd8;color:#3f5649;font-size:12px;line-height:1.5}
+body.mechanism-page :is(button,a[role="button"],.hero-actions a,.mode,.model-switcher button,.source-cta){min-height:44px;height:auto;padding:10px 14px;border-radius:8px!important;font-size:12px;line-height:1.35;box-shadow:none}
+body.mechanism-page :is(button,.hero-actions a,.source-cta){border:1px solid #b9c9be}
+body.mechanism-page :is(button[aria-pressed="true"],.hero-actions a:first-child,.source-cta){background:#17483c;color:#fff;border-color:#17483c}
+body.mechanism-page h1{font-size:clamp(40px,4.2vw,56px);line-height:1.1}
+body.mechanism-page h2{font-size:28px;line-height:1.2}
+body.mechanism-page h3{font-size:18px;line-height:1.25}
+body.mechanism-page :is(button,a):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+@media(max-width:900px){
+ body.mechanism-page main.mechanism.wrap{width:calc(100% - 32px)}
+ body.mechanism-page .hero{height:100vh;min-height:100vh;grid-template-columns:minmax(0,1fr) minmax(220px,.8fr);padding-top:calc(64px + 28px)}
+ body.mechanism-page .mechanism-hero-visual{max-height:300px}
+ body.mechanism-page .muscle-section{height:200vh;min-height:200vh}
+ body.mechanism-page .muscle{grid-template-columns:130px minmax(0,1fr);min-height:140px}
+ body.mechanism-page .source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+ body.mechanism-page .hero{height:100svh;min-height:100svh;grid-template-columns:1fr;grid-template-rows:auto;align-content:center;padding:calc(64px + 18px) 0 20px;gap:8px}
+ body.mechanism-page .mechanism-hero-visual{grid-column:1;grid-row:auto;width:100%;max-height:130px}
+ body.mechanism-page .hero h1{font-size:30px;max-width:14ch}
+ body.mechanism-page .hero .page-h1-en{font-size:12px}
+ body.mechanism-page .hero .mo-wh__text{font-size:12px;line-height:1.45}
+ body.mechanism-page .hero .lab-entry{font-size:11px;line-height:1.4}
+ body.mechanism-page .hero .hero-actions{gap:8px}
+ body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section{height:100vh;min-height:100vh}
+ body.mechanism-page .viewer-frame{height:300px;min-height:250px}
+ body.mechanism-page .interaction-section{grid-template-columns:1fr;gap:14px}
+ body.mechanism-page .interaction-visual img{max-height:180px}
+ body.mechanism-page .interaction .modes{grid-template-columns:1fr}
+ body.mechanism-page .structure-section .side{grid-template-columns:1fr}
+ body.mechanism-page .plate-section,body.mechanism-page .source{height:200vh;min-height:200vh}
+ body.mechanism-page .plate-grid{grid-template-columns:1fr;gap:12px}
+ body.mechanism-page .plate img{height:260px;max-height:260px}
+ body.mechanism-page .muscle-section{height:100vh;min-height:100vh;padding:30px 0}
+ body.mechanism-page .muscle{grid-template-columns:88px minmax(0,1fr);min-height:96px;gap:10px;padding:8px 0}
+ body.mechanism-page .muscle img{height:78px;max-height:78px}
+ body.mechanism-page .muscle h3{font-size:15px}
+ body.mechanism-page .muscle p{font-size:11px;line-height:1.4}
+ body.mechanism-page .source-grid{grid-template-columns:1fr}
+ body.mechanism-page .closing{width:calc(100% - 32px);flex-direction:column;align-items:flex-start}
+}
