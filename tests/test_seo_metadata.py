@@ -11,6 +11,9 @@ class SeoAndSharingTests(unittest.TestCase):
     def test_homepage_has_canonical_and_social_preview_metadata(self):
         self.assertIn('<title>OperaLab.｜欧洲声乐机会、音乐学院招生与曲目资料</title>', HOME)
         self.assertIn('property="og:site_name" content="OperaLab."', HOME)
+        self.assertIn('property="og:title" content="OperaLab.｜欧洲声乐机会与申请信息"', HOME)
+        self.assertIn('name="twitter:title" content="OperaLab.｜欧洲声乐机会、音乐学院招生与曲目资料"', HOME)
+        self.assertIn('name="page-type" content="software"', HOME)
         self.assertNotIn('Italia Audizioni', HOME)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/"', HOME)
         self.assertIn('property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"', HOME)
