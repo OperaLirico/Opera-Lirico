@@ -85,6 +85,7 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertNotIn('Italia Audizioni', MASTER)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/masterclasses.html"', MASTER)
         self.assertIn('property="og:title" content="欧洲声乐大师班与专业进修｜OperaLab."', MASTER)
+        self.assertIn('name="twitter:title" content="欧洲声乐大师班与专业进修｜OperaLab."', MASTER)
         self.assertIn('name="twitter:card" content="summary_large_image"', MASTER)
 
     def test_voice_anatomy_page_has_page_specific_share_metadata(self):
