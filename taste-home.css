@@ -329,3 +329,71 @@ body.taste-home :where(a,button,input,select,summary):focus-visible{outline:3px 
  body.taste-home .home-resource-main{grid-column:2}
  body.taste-home .home-resource-arrow{grid-column:3}
 }
+
+
+/* Taste 2.5.1 refinement: one measured grid, calm navigation and robust small screens. */
+body.taste-home .topbar{width:100%;min-height:72px}
+body.taste-home .topbar-inner{width:min(100% - 48px,1240px);margin-inline:auto;display:flex;align-items:center;flex-wrap:nowrap;gap:clamp(16px,2.4vw,32px)}
+body.taste-home .brand{display:flex;align-items:center;flex:0 0 auto;min-width:0;max-width:290px;gap:10px}
+body.taste-home .brand-text{white-space:nowrap}
+body.taste-home .brand-text small{display:block;white-space:nowrap;font-size:8px;letter-spacing:.09em}
+body.taste-home .nav{margin-left:auto;display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;min-width:0}
+body.taste-home .home-hero{width:min(100% - 48px,1240px);margin-inline:auto;min-height:calc(100svh - 72px);box-sizing:border-box;padding-block:clamp(36px,6vh,64px)}
+body.taste-home .home-hero h1 .home-hero-en{display:block;margin-top:14px;font-size:clamp(15px,1.45vw,19px);font-weight:500;line-height:1.5;letter-spacing:0;color:var(--ink-soft)}
+body.taste-home .home-section{width:min(100% - 48px,1240px);margin-inline:auto;min-height:100svh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding-block:clamp(56px,8vh,96px)}
+body.taste-home .home-section-head{align-items:flex-start}
+body.taste-home .home-card-grid .tile{min-width:0}
+body.taste-home .tile-icon,.home-resource-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:12px;background:#e9f0eb;color:var(--brand)}
+body.taste-home .tile-icon svg,.home-resource-icon svg{width:26px;height:26px}
+body.taste-home .home-verification .taste-statement{max-width:850px;padding:clamp(24px,4vw,48px);border:1px solid var(--line);border-radius:16px;background:var(--paper-2);font-size:clamp(20px,2.4vw,30px);line-height:1.55}
+body.taste-home .home-process-line{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:28px;padding:20px 22px;border-radius:12px;background:#edf2ed}
+body.taste-home .process-step{display:inline-flex;align-items:center;gap:9px;color:var(--ink);font-weight:600}
+body.taste-home .process-step svg{width:24px;height:24px;color:var(--brand)}
+body.taste-home .newsletter-panel{width:min(100% - 48px,1240px);min-height:100svh;margin-inline:auto;box-sizing:border-box;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,390px);align-content:center;align-items:center;gap:clamp(28px,6vw,80px);padding-block:clamp(56px,8vh,96px)}
+body.taste-home .newsletter-copy{max-width:680px}
+body.taste-home .newsletter-icon{width:54px;height:54px;display:grid;place-items:center;border-radius:14px;background:#e9f0eb;color:var(--brand)}
+body.taste-home .newsletter-icon svg{width:28px;height:28px}
+body.taste-home .nl-consent{align-items:flex-start;min-width:0}
+body.taste-home .nl-consent span{min-width:0;overflow-wrap:anywhere;word-break:normal}
+body.taste-home .newsletter-form{min-width:0}
+body.taste-home :is(button,a,input,select,textarea):focus-visible{outline:3px solid #17483c;outline-offset:3px}
+body.taste-home .home-refresh{min-height:44px;padding:10px 0}
+body.taste-home footer.shell{width:min(100% - 48px,1240px);margin-inline:auto}
+@media(max-width:900px){
+ body.taste-home .topbar-inner{width:calc(100% - 36px);gap:14px}
+ body.taste-home .brand-text small{display:none}
+ body.taste-home .nav{gap:12px}
+ body.taste-home .home-hero{grid-template-columns:minmax(0,1fr) minmax(300px,.9fr);gap:24px}
+ body.taste-home .home-section,body.taste-home .newsletter-panel{width:calc(100% - 36px)}
+ body.taste-home .home-card-grid{grid-template-columns:1fr}
+ body.taste-home .home-card-grid .tile{min-height:210px}
+}
+@media(max-width:680px){
+ body.taste-home .topbar-inner{width:calc(100% - 32px);min-height:64px}
+ body.taste-home .brand-mark{width:34px;height:34px}
+ body.taste-home .nav{gap:10px}
+ body.taste-home .nav a{font-size:12px}
+ body.taste-home .home-hero{width:calc(100% - 32px);min-height:auto;grid-template-columns:1fr;padding-block:44px 56px}
+ body.taste-home .home-hero h1{font-size:clamp(36px,10vw,48px)}
+ body.taste-home .home-app{max-width:none;justify-self:stretch;padding:18px}
+ body.taste-home .home-proof{gap:10px;flex-wrap:wrap}
+ body.taste-home .home-proof-number strong{font-size:34px}
+ body.taste-home .home-section,body.taste-home .newsletter-panel{width:calc(100% - 32px);min-height:100svh;padding-block:52px}
+ body.taste-home .home-section-head{display:block;margin-bottom:24px}
+ body.taste-home .home-section-head>p{margin-top:12px}
+ body.taste-home .home-resource{grid-template-columns:38px 22px minmax(0,1fr) 18px;gap:10px}
+ body.taste-home .home-resource-count{grid-column:3;grid-row:2}
+ body.taste-home .newsletter-panel{grid-template-columns:1fr;gap:24px}
+ body.taste-home .newsletter-form{width:100%;max-width:none}
+ body.taste-home .nl-consent{width:100%;font-size:12px}
+ body.taste-home .home-actions{gap:14px}
+ body.taste-home .home-button{min-height:48px}
+ body.taste-home footer.shell{width:calc(100% - 32px)}
+}
+@media(max-width:380px){
+ body.taste-home .nav a{font-size:11px}
+ body.taste-home .brand-mark{width:30px;height:30px}
+ body.taste-home .home-resource{grid-template-columns:30px minmax(0,1fr) 18px}
+ body.taste-home .home-resource-no{display:none}
+ body.taste-home .home-resource-count{grid-column:2}
+}
