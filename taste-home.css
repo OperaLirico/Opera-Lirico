@@ -1,6 +1,6 @@
 :root{
   --ink:#17231f;--ink-soft:#52625a;--paper:#f6f7f4;--paper-2:#fff;--line:#dce3dd;
-  --brand:#17483c;--brand-2:#205b4c;--gold:#8a6a3f;--gold-soft:#b08a58;
+  --brand:#17483c;--brand-2:#205b4c;--gold:#68786f;--gold-soft:#c5d0c8;
   --shadow:0 1px 2px rgba(20,38,30,.035),0 10px 28px rgba(20,38,30,.055);
   --serif:"Host Grotesk","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   --sans:"Host Grotesk","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
@@ -9,6 +9,7 @@ body.taste-home{background:var(--paper);color:var(--ink)}
 body.taste-home::before{display:none}
 body.taste-home .topbar{background:rgba(246,247,244,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 body.taste-home .topbar-inner{max-width:1240px;min-height:72px;gap:28px}
+body.taste-home .shell{max-width:1240px}
 body.taste-home .brand-mark{width:38px;height:38px;border:1px solid var(--line);border-radius:10px;background:var(--brand);color:#fff;font-size:18px}
 body.taste-home .brand-text{font-family:var(--sans);font-size:16px;font-weight:600;letter-spacing:-.02em}
 body.taste-home .brand-text small{font-size:9px;letter-spacing:.12em;color:var(--ink-soft)}
@@ -18,7 +19,7 @@ body.taste-home .nav a:hover,body.taste-home .nav a:focus-visible{background:tra
 body.taste-home .install-button{border-radius:8px;background:transparent;border-color:var(--line)}
 .home-hero{max-width:1240px;min-height:calc(100svh - 72px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.88fr);align-items:center;gap:clamp(36px,6vw,88px);padding-top:58px;padding-bottom:72px}
 .home-hero-copy{max-width:650px}
-.home-kicker,.home-section-index{display:inline-block;color:var(--gold);font-size:12px;font-weight:600;letter-spacing:.035em}
+.home-kicker,.home-section-index{display:inline-block;color:var(--gold);font-size:13px;font-weight:600;letter-spacing:0}
 .home-hero h1{max-width:12ch;margin:20px 0 0;font-family:var(--serif);font-size:clamp(42px,5.3vw,72px);font-weight:600;line-height:1.12;letter-spacing:-.045em}
 .home-hero h1 em{display:block;margin-top:4px;color:var(--brand-2);font-style:normal}
 .home-lede{max-width:54ch;margin-top:24px;color:var(--ink-soft);font-size:17px;line-height:1.8}
@@ -36,14 +37,14 @@ body.taste-home .install-button{border-radius:8px;background:transparent;border-
 .home-proof-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
 .home-proof-copy b{font-size:13px;font-weight:600}
 .home-proof-copy span{font-size:12px;color:var(--ink-soft)}
-.home-refresh{margin-left:auto;padding:5px 0;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink-soft);font:12px var(--sans);cursor:pointer;white-space:nowrap}
+.home-refresh{margin-left:auto;padding:5px 0;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink-soft);font:13px var(--sans);cursor:pointer;white-space:nowrap}
 .home-refresh:hover{color:var(--brand);border-color:var(--brand)}
 .home-app{width:100%;max-width:510px;justify-self:end;padding:24px 26px 18px;border:1px solid var(--line);border-radius:16px;background:var(--paper-2);box-shadow:var(--shadow)}
 .home-app-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:20px;border-bottom:1px solid var(--line)}
 .home-app-head>div{display:flex;flex-direction:column;gap:5px}
-.home-app-overline{color:var(--gold);font-size:11px}
+.home-app-overline{color:var(--gold);font-size:13px}
 .home-app-head strong{font-size:19px;font-weight:600;letter-spacing:-.02em}
-.home-app-state{display:inline-flex;align-items:center;gap:7px;color:var(--ink-soft);font-size:11px;white-space:nowrap}
+.home-app-state{display:inline-flex;align-items:center;gap:7px;color:var(--ink-soft);font-size:13px;white-space:nowrap}
 .home-app-state i{width:7px;height:7px;border-radius:50%;background:#3d8065}
 .home-app-list{display:flex;flex-direction:column}
 .home-app-row{display:grid;grid-template-columns:34px minmax(0,1fr) 20px;align-items:center;gap:13px;width:100%;min-height:76px;padding:13px 2px;border:0;border-bottom:1px solid var(--line);background:transparent;color:inherit;text-align:left;text-decoration:none;cursor:pointer;transition:transform .15s ease,color .15s ease}
@@ -51,9 +52,9 @@ body.taste-home .install-button{border-radius:8px;background:transparent;border-
 .home-app-number{color:var(--gold);font-size:11px;font-variant-numeric:tabular-nums}
 .home-app-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
 .home-app-copy strong{font-size:15px;font-weight:600}
-.home-app-copy small{color:var(--ink-soft);font-size:12px;line-height:1.5}
+.home-app-copy small{color:var(--ink-soft);font-size:13px;line-height:1.5}
 .home-app-arrow{color:var(--brand);font-size:18px;text-align:right}
-.home-app-foot{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding-top:16px;color:var(--ink-soft);font-size:10px}
+.home-app-foot{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding-top:16px;color:var(--ink-soft);font-size:13px}
 .home-section{max-width:1240px;min-height:calc(100svh - 72px);padding-top:78px;padding-bottom:78px;scroll-margin-top:84px}
 .home-section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:34px}
 .home-section-head>div{max-width:680px}
@@ -63,23 +64,23 @@ body.taste-home .install-button{border-radius:8px;background:transparent;border-
 .home-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .home-card-grid .tile{min-height:286px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:24px 23px 20px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2);box-shadow:none;text-align:left;cursor:pointer;transition:transform .15s ease,border-color .15s ease,background .15s ease}
 .home-card-grid .tile:hover,.home-card-grid .tile:focus-visible{transform:translateY(-2px);border-color:#9aafa4;box-shadow:none}
-.home-card-grid .tile-index{color:var(--gold);font-size:11px;letter-spacing:0}
+.home-card-grid .tile-index{color:var(--gold);font-size:13px;letter-spacing:0}
 .home-card-grid .tile-title{font:600 22px/1.3 var(--serif);letter-spacing:-.02em}
 .home-card-grid .tile-desc{min-height:0;color:var(--ink-soft);font-size:14px;line-height:1.75}
 .home-card-grid .tile-stat{width:100%;margin-top:auto;padding-top:15px;border-top:1px solid var(--line);gap:8px}
 .home-card-grid .tile-stat b{font:600 23px/1 var(--serif);color:var(--brand)}
-.home-card-grid .tile-stat span{font-size:12px;letter-spacing:0;color:var(--ink-soft)}
+.home-card-grid .tile-stat span{font-size:13px;letter-spacing:0;color:var(--ink-soft)}
 .home-resources{background:transparent}
 .home-resource-list{border-top:1px solid var(--line)}
 .home-resource{display:grid;grid-template-columns:48px minmax(0,1fr) 130px 24px;align-items:center;gap:18px;width:100%;min-height:104px;padding:18px 4px;border:0;border-bottom:1px solid var(--line);background:transparent;color:inherit;text-align:left;text-decoration:none;cursor:pointer;transition:background .15s ease,transform .15s ease}
 .home-resource:hover{background:rgba(23,72,60,.035);transform:translateY(-2px)}
-.home-resource-no{color:var(--gold);font-size:12px}
+.home-resource-no{color:var(--gold);font-size:13px}
 .home-resource-main{display:flex;flex-direction:column;gap:6px;min-width:0}
 .home-resource-main strong{font:600 19px/1.3 var(--serif)}
 .home-resource-main small{color:var(--ink-soft);font-size:13px;line-height:1.6}
 .home-resource-count{display:flex;flex-direction:column;gap:3px;text-align:right}
 .home-resource-count b{font:600 22px/1 var(--serif);color:var(--brand)}
-.home-resource-count small{color:var(--ink-soft);font-size:11px}
+.home-resource-count small{color:var(--ink-soft);font-size:13px}
 .home-resource-arrow{color:var(--brand);font-size:18px;text-align:right}
 .home-verification{display:flex;flex-direction:column;justify-content:center}
 .home-verification .home-section-head{margin-bottom:28px}
@@ -95,7 +96,7 @@ body.taste-home .newsletter-panel{max-width:1192px;margin:20px auto 64px;padding
 body.taste-home .newsletter-copy h2{font:600 26px/1.25 var(--serif)}
 body.taste-home .newsletter-copy p{font-size:14px;line-height:1.7}
 body.taste-home .newsletter-link{min-height:46px;border-radius:8px;background:var(--brand)}
-body.taste-home footer{max-width:1240px;margin:0 auto;padding:28px 24px 48px;border-top:1px solid var(--line);font-size:12px}
+body.taste-home footer{max-width:1240px;margin:0 auto;padding:28px 24px 48px;border-top:1px solid var(--line);font-size:13px}
 body.taste-home .panel-back{border-bottom:1px solid var(--line);padding-bottom:4px}
 body.taste-home .opportunity-card,body.taste-home .pdf-card,body.taste-home .music-result{border-radius:12px;box-shadow:none}
 body.taste-home .opportunity-card:hover,body.taste-home .pdf-card:hover{transform:translateY(-2px)}
@@ -114,7 +115,7 @@ body.taste-home .opportunity-card:hover,body.taste-home .pdf-card:hover{transfor
   body.taste-home .topbar-inner{min-height:58px;gap:10px;padding-top:7px}
   body.taste-home .nav{order:3;display:flex;flex:0 0 100%;width:100%;margin:0;gap:20px;overflow-x:auto;overflow-y:hidden;padding:0 0 9px;white-space:nowrap}
   body.taste-home .nav a{flex:0 0 auto;font-size:13px}
-  .home-hero{min-height:auto;gap:30px;padding-top:46px;padding-bottom:54px}
+  .home-hero{min-height:auto;gap:22px;padding-top:30px;padding-bottom:34px}
   .home-hero h1{max-width:10ch;margin-top:14px;font-size:clamp(38px,10vw,48px);line-height:1.16}
   .home-lede{margin-top:18px;font-size:15px;line-height:1.8}
   .home-actions{align-items:flex-start;gap:12px;margin-top:22px}
@@ -122,15 +123,15 @@ body.taste-home .opportunity-card:hover,body.taste-home .pdf-card:hover{transfor
   .home-text-link{font-size:13px}
   .home-proof{gap:10px;margin-top:30px;padding-top:16px}
   .home-proof-number strong{font-size:34px}
-  .home-proof-copy b{font-size:12px}
-  .home-proof-copy span{font-size:11px}
-  .home-refresh{font-size:11px}
-  .home-app{padding:18px 16px 14px;border-radius:12px}
-  .home-app-head strong{font-size:17px}
-  .home-app-row{min-height:70px;grid-template-columns:28px minmax(0,1fr) 18px;gap:9px}
+  .home-proof-copy b{font-size:13px}
+  .home-proof-copy span{font-size:13px}
+  .home-refresh{font-size:13px}
+  .home-app{padding:14px 16px 12px;border-radius:12px}
+  .home-app-head{padding-bottom:12px}.home-app-head strong{font-size:17px}
+  .home-app-row{min-height:54px;padding:8px 2px;grid-template-columns:28px minmax(0,1fr) 18px;gap:9px}
   .home-app-copy strong{font-size:14px}
   .home-app-copy small{font-size:11px}
-  .home-app-foot{font-size:9px}
+  .home-app-foot{font-size:13px;padding-top:10px}
   .home-section{padding-top:54px;padding-bottom:54px}
   .home-section-head{display:block;margin-bottom:24px}
   .home-section-head h2{font-size:29px}
