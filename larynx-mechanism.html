@@ -100,7 +100,7 @@
       <button type="button" data-larynx-model="specimen" aria-pressed="true">真实人体标本 · UBC</button>
       <button type="button" data-larynx-model="muscles" aria-pressed="false">肌肉与韧带 · Dundee</button>
     </div>
-    <div class="viewer-frame"><iframe id="larynxModelFrame" tabindex="0" title="UBC Medicine 人体喉部真实解剖标本三维模型" src="https://sketchfab.com/models/9cb56f0a20654072810a12959b812632/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=0" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe></div>
+    <p id="larynxModelCaption" class="sr-only" aria-live="polite">UBC Medicine 的人体喉部解剖标本数字模型，包含喉、咽、下颌、气管与食管。</p><div class="viewer-frame"><iframe id="larynxModelFrame" tabindex="0" title="UBC Medicine 人体喉部真实解剖标本三维模型" src="https://sketchfab.com/models/9cb56f0a20654072810a12959b812632/embed?autostart=0&amp;ui_controls=1&amp;ui_infos=1&amp;ui_inspector=0" loading="lazy" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen></iframe></div>
     
   </div>
   
@@ -184,6 +184,7 @@
   };
   const model=models[button.dataset.larynxModel];if(!model)return;
   const frame=document.getElementById('larynxModelFrame');frame.src=model.src;frame.title=model.title;
+  const modelCaption=document.getElementById('larynxModelCaption');if(modelCaption)modelCaption.textContent=model.caption;
   
   document.querySelectorAll('[data-larynx-model]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
  }));
