@@ -1,10 +1,10 @@
 # Daily opportunity data quality
 
-- Generated: 2026-11-18T08:36:53+01:00 (Europe/Rome)
+- Generated: 2026-11-19T08:40:26+01:00 (Europe/Rome)
 - Records in file: 7
 - Published records in file: 7
 - Currently open and publication-eligible: 7
-- Deadline within 7 days: 1
+- Deadline within 7 days: 2
 - Deadline within 30 days: 7
 - Expired but still present as published: 0
 - Missing application URL: 0
@@ -20,6 +20,7 @@ This is a read-only quality report. It does not change, archive, or publish oppo
 
 ## Deadlines within 7 days
 
+- 78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027 — 2026-11-25T18:00:00+01:00
 - Audizione per Artisti del Coro – Tenori — 2026-11-23T23:59:00+01:00
 
 ## Deadlines within 30 days

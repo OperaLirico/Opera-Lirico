@@ -1,10 +1,18 @@
 {
-  "generated_at": "2026-11-18T08:36:53+01:00",
+  "generated_at": "2026-11-19T08:40:26+01:00",
   "source_file": "data/opportunities.json",
   "total_records": 7,
   "published_records_in_file": 7,
   "currently_open_public_records": 7,
   "deadlines_within_7_days": [
+    {
+      "id": "aslico-2027-78th-young-singers",
+      "title": "78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027",
+      "deadline": "2026-11-25T18:00:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-12T11:49:52+01:00"
+    },
     {
       "id": "carlofelice-choir-tenors-2026",
       "title": "Audizione per Artisti del Coro – Tenori",
