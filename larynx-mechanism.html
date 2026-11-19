@@ -104,7 +104,10 @@
     <p class="viewer-caption" id="larynxModelCaption">UBC Medicine 的人体喉部解剖标本数字模型，包含喉、咽、下颌、气管与食管。适合先建立真实组织和器官之间的空间关系；拖动旋转、缩放观察。</p>
   </div>
   <div class="credit" id="larynxModelCredit"><span>模型：UBC Medicine · Educational Media / HIVE；人体解剖标本数字化。NoAI；本站仅使用原平台官方嵌入。</span><a href="https://sketchfab.com/3d-models/human-larynx-9cb56f0a20654072810a12959b812632" target="_blank" rel="noopener">查看原始模型与来源</a></div>
-  <div class="interaction">
+  
+</section>
+</section>
+<section class="interaction-section" aria-label="喉内肌机制交互"><div class="interaction-visual"><figure><img id="mechanismVisual" src="assets/anatomy/glottis-pca.jpg" width="640" height="420" alt="声门外展状态示意图"><figcaption id="mechanismVisualCaption">声门外展状态示意 · PCA</figcaption></figure></div><div class="interaction">
     <h2>选择一个机制，理解肌肉如何工作</h2><p>切换下列机制，右侧说明和观察重点会更新。可旋转模型查看空间关系；涉及肌肉附着的细节，可切换到 Dundee 肌肉与韧带模型。</p>
     <div class="modes" role="group" aria-label="选择喉部肌肉机制">
       <button class="mode" type="button" data-mode="pca" aria-pressed="true"><strong>声带外展 · PCA</strong><span>后环杓肌 · 打开声门</span></button>
@@ -118,9 +121,7 @@
       <p id="mechanismObservationText">先观察后方左右杓状软骨、声带突与肌突，再沿声带突向前追踪声带韧带。若要辨认肌肉附着，请切换到 Dundee 肌肉与韧带模型。机制切换只更新观察重点，不改变真实模型。</p>
     </div>
     <div class="readout" aria-live="polite" aria-atomic="true"><div class="readout-kicker">SELECTED MECHANISM</div><h3 id="modeTitle">后环杓肌 · 声带外展</h3><p id="modeDescription">后环杓肌是喉内肌中负责声带外展的唯一肌肉。它作用于杓状软骨的肌突，使杓状软骨在环杓关节上发生旋转，从而使声带突向外侧移动、声门开放。</p><ul id="modePoints"><li>观察杓状软骨及其肌突、声带突。</li><li>注意这是杓状软骨在环杓关节上的运动，不是整片声带向外平移。</li><li>主要生理作用：吸气时开放声门。</li></ul></div>
-  </div>
-</section>
-</section>
+  </div></section>
 <section class="structure-section" aria-labelledby="structure-guide-title">
   <div class="structure-intro"><span class="eyebrow">ANATOMY NOTES</span><h2 id="structure-guide-title">先认清结构，再理解动作</h2><p>以下结构说明用于对照三维模型，重点是软骨、附着点与肌肉作用之间的关系。</p></div>
   <aside class="side">
@@ -174,11 +175,11 @@
 <script>
 (()=> {
  const modes={
-  pca:{title:'后环杓肌 · 声带外展',description:'后环杓肌是喉内肌中负责声带外展的唯一肌肉。它作用于杓状软骨的肌突，使杓状软骨在环杓关节上发生旋转，从而使声带突向外侧移动、声门开放。',points:['观察杓状软骨及其肌突、声带突。','这是杓状软骨在环杓关节上的运动，不是整片声带向外平移。','主要生理作用：吸气时开放声门。'],focus:'在模型后方定位杓状软骨、肌突与声带突；PCA 位于环状软骨板后面，收缩时使声带突外移。'},
-  lca:{title:'外侧环杓肌 · 声带内收',description:'外侧环杓肌从环状软骨弓外侧向后上方连接至杓状软骨肌突。收缩时使杓状软骨发生与后环杓肌相反方向的旋转，令声带突靠近中线，参与声带内收。',points:['重点观察环状软骨弓外侧与杓状软骨肌突之间的关系。','LCA 主要影响声带突与膜间部声门的靠拢。','声门后部闭合还需要杓间肌参与，不能只归因于 LCA。'],focus:'在模型外侧观察环状软骨弓与杓状软骨肌突的连接；LCA 使杓状软骨内旋，声带突向中线靠近。'},
-  ia:{title:'杓间肌 · 声门后部闭合',description:'杓间肌包括横杓肌与斜杓肌，连接左右杓状软骨。其主要作用是使两侧杓状软骨彼此靠近，参与声门后部（软骨间部）的闭合。',points:['横杓肌横跨两侧杓状软骨后面。','斜杓肌呈交叉走向，并与杓会厌肌连续。','它与 LCA 协同，但不能与 LCA 的旋转作用混为一谈。'],focus:'从喉后方观察两侧杓状软骨之间的横杓肌与斜杓肌；它们参与声门后部闭合。'},
-  ta:{title:'甲杓肌 · 声带体调节',description:'甲杓肌从甲状软骨内面向后连接杓状软骨，是声带体的重要组成部分。其活动可改变声带长度、厚度、刚度及内侧缘形态；具体效果取决于与环甲肌等其他肌肉的协同。',points:['声带不是一条独立的“绳子”，而是具有分层组织结构的复合体。','TA 对声带体的作用不能简化成“放松声带”或“压紧声带”。','肌肉活动与声带组织力学之间存在复杂的任务依赖关系。'],focus:'在肌肉与韧带模型中观察甲杓肌与声带体的连续关系；静态模型不代表 TA 收缩时的实时组织形变。'},
-  ct:{title:'环甲肌 · 声带伸长与张力调节',description:'环甲肌连接环状软骨与甲状软骨。收缩时使两者之间产生相对倾斜或旋转，增加声带长度与纵向张力，是调节音高的重要机制之一。',points:['观察甲状软骨与环状软骨之间的相对运动关系。','CT 增加声带纵向张力，但音高不是由 CT 单独控制。','声带振动还受到 TA、声门下压力、组织特性与声道负载等因素影响。'],focus:'从喉前外侧观察环甲肌连接甲状软骨与环状软骨的位置；CT 收缩会增加声带长度与纵向张力。'}
+  pca:{visual:'assets/anatomy/glottis-pca.jpg',visualAlt:'声门外展状态示意图',visualCaption:'声门外展状态示意 · PCA',title:'后环杓肌 · 声带外展',description:'后环杓肌是喉内肌中负责声带外展的唯一肌肉。它作用于杓状软骨的肌突，使杓状软骨在环杓关节上发生旋转，从而使声带突向外侧移动、声门开放。',points:['观察杓状软骨及其肌突、声带突。','这是杓状软骨在环杓关节上的运动，不是整片声带向外平移。','主要生理作用：吸气时开放声门。'],focus:'在模型后方定位杓状软骨、肌突与声带突；PCA 位于环状软骨板后面，收缩时使声带突外移。'},
+  lca:{visual:'assets/anatomy/glottis-lca.jpg',visualAlt:'声带内收状态示意图',visualCaption:'声带内收状态示意 · LCA',title:'外侧环杓肌 · 声带内收',description:'外侧环杓肌从环状软骨弓外侧向后上方连接至杓状软骨肌突。收缩时使杓状软骨发生与后环杓肌相反方向的旋转，令声带突靠近中线，参与声带内收。',points:['重点观察环状软骨弓外侧与杓状软骨肌突之间的关系。','LCA 主要影响声带突与膜间部声门的靠拢。','声门后部闭合还需要杓间肌参与，不能只归因于 LCA。'],focus:'在模型外侧观察环状软骨弓与杓状软骨肌突的连接；LCA 使杓状软骨内旋，声带突向中线靠近。'},
+  ia:{visual:'assets/anatomy/glottis-ia.jpg',visualAlt:'声门后部闭合状态示意图',visualCaption:'声门后部闭合状态示意 · IA',title:'杓间肌 · 声门后部闭合',description:'杓间肌包括横杓肌与斜杓肌，连接左右杓状软骨。其主要作用是使两侧杓状软骨彼此靠近，参与声门后部（软骨间部）的闭合。',points:['横杓肌横跨两侧杓状软骨后面。','斜杓肌呈交叉走向，并与杓会厌肌连续。','它与 LCA 协同，但不能与 LCA 的旋转作用混为一谈。'],focus:'从喉后方观察两侧杓状软骨之间的横杓肌与斜杓肌；它们参与声门后部闭合。'},
+  ta:{visual:'assets/anatomy/glottis-ta.jpg',visualAlt:'声带体调节示意图',visualCaption:'声带体调节示意 · TA',title:'甲杓肌 · 声带体调节',description:'甲杓肌从甲状软骨内面向后连接杓状软骨，是声带体的重要组成部分。其活动可改变声带长度、厚度、刚度及内侧缘形态；具体效果取决于与环甲肌等其他肌肉的协同。',points:['声带不是一条独立的“绳子”，而是具有分层组织结构的复合体。','TA 对声带体的作用不能简化成“放松声带”或“压紧声带”。','肌肉活动与声带组织力学之间存在复杂的任务依赖关系。'],focus:'在肌肉与韧带模型中观察甲杓肌与声带体的连续关系；静态模型不代表 TA 收缩时的实时组织形变。'},
+  ct:{visual:'assets/anatomy/glottis-ct.jpg',visualAlt:'声带伸长与张力调节示意图',visualCaption:'声带伸长与张力调节示意 · CT',title:'环甲肌 · 声带伸长与张力调节',description:'环甲肌连接环状软骨与甲状软骨。收缩时使两者之间产生相对倾斜或旋转，增加声带长度与纵向张力，是调节音高的重要机制之一。',points:['观察甲状软骨与环状软骨之间的相对运动关系。','CT 增加声带纵向张力，但音高不是由 CT 单独控制。','声带振动还受到 TA、声门下压力、组织特性与声道负载等因素影响。'],focus:'从喉前外侧观察环甲肌连接甲状软骨与环状软骨的位置；CT 收缩会增加声带长度与纵向张力。'}
  };
  const title=document.getElementById('modeTitle'),description=document.getElementById('modeDescription'),points=document.getElementById('modePoints'),focus=document.getElementById('mechanismObservationText');
  document.querySelectorAll('[data-larynx-model]').forEach(button=>button.addEventListener('click',()=>{
@@ -198,6 +199,8 @@
  document.querySelectorAll('[data-mode]').forEach(button=>button.addEventListener('click',()=>{
   const item=modes[button.dataset.mode];if(!item)return;
   title.textContent=item.title;description.textContent=item.description;
+  const visual=document.getElementById('mechanismVisual');if(visual){visual.src=item.visual;visual.alt=item.visualAlt;}
+  const visualCaption=document.getElementById('mechanismVisualCaption');if(visualCaption)visualCaption.textContent=item.visualCaption;
   if(focus)focus.textContent=item.focus;
   points.replaceChildren(...item.points.map(value=>{const li=document.createElement('li');li.textContent=value;return li}));
   document.querySelectorAll('[data-mode]').forEach(other=>other.setAttribute('aria-pressed',String(other===button)));
