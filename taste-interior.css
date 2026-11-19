@@ -199,8 +199,7 @@ body.anatomy-page .model-tabs button,
 body.anatomy-page .lab-btn,
 body.mechanism-page .model-switcher button,
 body.mechanism-page .interaction button{min-height:44px}
-body.mechanism-page .model-switcher,
-body.mechanism-page .interaction{display:flex;flex-wrap:wrap;gap:8px}
+body.mechanism-page .model-switcher{display:flex;flex-wrap:wrap;gap:8px}
 body.voice-lab-page .top{flex-wrap:wrap;gap:14px}
 body.voice-lab-page .top nav{display:flex;flex-wrap:wrap;gap:8px}
 body.voice-lab-page .top nav a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap}
