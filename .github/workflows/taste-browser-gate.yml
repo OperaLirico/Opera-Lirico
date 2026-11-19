@@ -24,6 +24,9 @@ jobs:
   taste-browser-gate:
     runs-on: ubuntu-24.04
     timeout-minutes: 45
+    concurrency:
+      group: taste-browser-${{ github.event.pull_request.number }}-${{ matrix.page }}
+      cancel-in-progress: true
     strategy:
       fail-fast: false
       matrix:
