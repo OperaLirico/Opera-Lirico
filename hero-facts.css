@@ -1,0 +1,9 @@
+/* 首屏证据条：把已经算好的真实数字提到第一屏 */
+.hero-facts{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;column-gap:38px;row-gap:16px;margin-top:32px;padding-top:22px;border-top:1px solid var(--line)}
+.fact{display:flex;flex-direction:column;gap:3px;min-width:0}
+.fact b{font-family:var(--serif);font-size:31px;line-height:1.05;color:var(--brand);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.fact span{font-size:11px;letter-spacing:.06em;color:var(--ink-soft);line-height:1.45}
+@media (max-width:760px){
+  .hero-facts{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:24px}
+  .fact b{font-size:26px}
+}
