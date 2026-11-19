@@ -162,3 +162,7 @@ body.taste-home .opportunity-card:hover,body.taste-home .pdf-card:hover{transfor
   .home-button,.home-app-row,.home-card-grid .tile,.home-resource{transition:none}
   .taste-statement [data-word]{transition:none}
 }
+.home-resource.tile{display:grid;grid-template-columns:30px minmax(0,1fr) 20px;align-items:center;min-height:94px;padding:15px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none}
+.home-resource.tile:hover,.home-resource.tile:focus-visible{transform:translateY(-2px);border-color:var(--line);background:rgba(23,72,60,.035);box-shadow:none}
+.home-resource-main .tile-title{font:600 19px/1.3 var(--serif);letter-spacing:-.02em}
+@media(max-width:620px){.home-resource-main .tile-title{font-size:17px}}
