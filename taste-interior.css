@@ -437,3 +437,16 @@ body.mechanism-page .disclaimer{padding:18px 0;color:#46554d;font-size:13px}
  body.mechanism-page .muscle-visual{height:100px}
  body.master-page .master-card .master-facts{grid-template-columns:1fr}
 }
+
+/* Screen rhythm uses the real header and content offsets on each page. */
+body.master-page .master-head{min-height:calc(100svh - 120px)}
+body.anatomy-page .lab-hero{min-height:calc(100svh - 96px)}
+body.mechanism-page .hero{min-height:calc(100svh - 96px)}
+body.voice-lab-page .voice-hero{min-height:calc(100svh - 120px)}
+body.master-page .master-list{grid-template-columns:repeat(3,minmax(0,1fr));min-height:200svh;align-content:start}
+body.mechanism-page .layout{min-height:200svh}
+body.mechanism-page main>.section{min-height:calc(100svh - 26px);display:flex;flex-direction:column;justify-content:center}
+body.mechanism-page .source{min-height:calc(100svh - 24px)}
+body.mechanism-page .source .disclaimer{margin-top:22px;padding:14px 0;border-top:1px solid var(--line)}
+@media(max-width:1100px){body.master-page .master-list{grid-template-columns:repeat(2,minmax(0,1fr));min-height:auto}}
+@media(max-width:700px){body.master-page .master-list{grid-template-columns:minmax(0,1fr)}body.mechanism-page .layout{min-height:auto}body.mechanism-page main>.section,body.mechanism-page .source{min-height:auto}}
