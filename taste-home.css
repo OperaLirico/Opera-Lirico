@@ -1,6 +1,6 @@
 :root{
   --ink:#17231f;--ink-soft:#52625a;--paper:#f6f7f4;--paper-2:#fff;--line:#dce3dd;
-  --brand:#17483c;--brand-2:#205b4c;--gold:#68786f;--gold-soft:#c5d0c8;
+  --brand:#17483c;--brand-2:#205b4c;--gold:#68786f;--gold-soft:#c5d0c8;--bg:var(--paper);--surface:var(--paper-2);--accent:var(--brand-2);--font-display:"Host Grotesk","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;--display-weight:600;--display-tracking:-.03em;--t-h2:clamp(27px,4vw,48px);--r-lg:12px;
   --shadow:0 1px 2px rgba(20,38,30,.035),0 10px 28px rgba(20,38,30,.055);
   --serif:"Host Grotesk","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   --sans:"Host Grotesk","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
@@ -85,11 +85,8 @@ body.taste-home .install-button{border-radius:8px;background:transparent;border-
 .home-verification{display:flex;flex-direction:column;justify-content:center}
 .home-verification .home-section-head{margin-bottom:28px}
 .taste-statement{max-width:1000px;margin:0;padding:0;color:var(--ink);font:600 clamp(27px,4vw,48px)/1.35 var(--serif);letter-spacing:-.025em}
-.taste-statement [data-word]{transition:color .18s ease}
+body.taste-home .taste-statement.mo-wh__text{font-family:var(--font-display);font-weight:var(--display-weight);font-size:var(--t-h2);line-height:1.35;letter-spacing:var(--display-tracking)}
 .taste-statement strong{color:var(--brand);font-weight:700}
-html.taste-js .taste-statement [data-word]{color:color-mix(in srgb,var(--ink) 46%,var(--paper))}
-html.taste-js .taste-statement [data-word].is-on{color:var(--ink)}
-html.taste-js .taste-statement strong.is-on{color:var(--brand)}
 .home-process-line{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:42px;padding-top:22px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:13px}
 .home-process-line i{width:30px;height:1px;background:var(--gold-soft)}
 body.taste-home .newsletter-panel{max-width:1192px;margin:20px auto 64px;padding:30px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2);box-shadow:none}
