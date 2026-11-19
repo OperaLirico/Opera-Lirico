@@ -250,3 +250,64 @@ body.master-page .master-facts,body.master-page .master-facts>*{min-width:0;over
  body.anatomy-page .model-tabs,body.mechanism-page .model-switcher,body.voice-lab-page .tabs{gap:8px}
  body.anatomy-page .model-tabs button,body.mechanism-page .model-switcher button,body.voice-lab-page .tabs button{min-height:44px}
 }
+
+
+/* Taste composition pass: distinct editorial hierarchy for each product surface. */
+/* Masterclasses: an editorial programme index, not a generic dashboard. */
+body.master-page .master-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.42fr);align-items:end;column-gap:48px}
+body.master-page .master-head h1{max-width:12ch}
+body.master-page .master-head>p{max-width:44ch;justify-self:end}
+body.master-page .master-hero-cta{grid-column:1/-1}
+body.master-page .master-list{align-items:stretch}
+body.master-page .master-card{display:flex;flex-direction:column;min-height:310px}
+body.master-page .master-card h2,body.master-page .master-card h3{font-size:21px;line-height:1.25}
+body.master-page .master-card-top{padding-bottom:16px;border-bottom:1px solid var(--line)}
+body.master-page .master-card :where(a,button):focus-visible{outline:3px solid #8aa99a;outline-offset:3px}
+@media(max-width:700px){body.master-page .master-head{display:block}body.master-page .master-head>p{margin-top:12px}}
+
+/* Anatomy: the real model is the primary product surface. */
+body.anatomy-page .lab-hero{max-width:900px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+body.anatomy-page .lab-hero h1{max-width:14ch}
+body.anatomy-page .body-system{align-items:stretch}
+body.anatomy-page .body-figure{padding:18px;background:#eef1ed}
+body.anatomy-page .model-frame-wrap{aspect-ratio:16/10;background:#e3e8e2;border-color:#cbd6cd}
+body.anatomy-page .model-frame-wrap iframe{background:#e3e8e2}
+body.anatomy-page .body-detail{padding:26px;gap:18px}
+body.anatomy-page .body-detail .detail-kicker{letter-spacing:.12em;color:var(--brand)}
+body.anatomy-page .breath-lab{margin-top:26px;padding:26px;background:#edf2ed;border-radius:12px}
+body.anatomy-page :where(button,a,[tabindex]):focus-visible{outline:3px solid #8aa99a;outline-offset:3px}
+@media(max-width:620px){body.anatomy-page .body-figure{padding:10px}body.anatomy-page .model-frame-wrap{aspect-ratio:4/3}}
+
+/* Larynx mechanism: prioritize the specimen viewer, then guided interpretation. */
+body.mechanism-page .hero{max-width:920px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+body.mechanism-page .hero h1{max-width:14ch}
+body.mechanism-page .layout{grid-template-columns:minmax(0,1.42fr) minmax(300px,.78fr);align-items:start}
+body.mechanism-page .card{border-radius:12px}
+body.mechanism-page .viewer{padding:16px;background:#e9eee9}
+body.mechanism-page .viewer-frame{aspect-ratio:16/10;background:#dfe6df}
+body.mechanism-page .interaction{padding:24px}
+body.mechanism-page .mech-observation{border-left:3px solid var(--brand);border-radius:8px}
+body.mechanism-page .section{padding-top:20px;border-top:1px solid var(--line)}
+body.mechanism-page .muscle{border-radius:10px}
+body.mechanism-page :where(button,a,[tabindex]):focus-visible{outline:3px solid #8aa99a;outline-offset:3px}
+@media(max-width:820px){body.mechanism-page .layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:620px){body.mechanism-page .viewer{padding:9px}body.mechanism-page .interaction{padding:18px}}
+
+/* Voice Lab: an instrument-like research workspace with clear control hierarchy. */
+body.voice-lab-page .voice-hero{max-width:920px;padding:0 0 22px;border-bottom:1px solid var(--line)}
+body.voice-lab-page .voice-hero h1{max-width:15ch}
+body.voice-lab-page .layout{grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr);gap:18px}
+body.voice-lab-page .panel{border-radius:12px;padding:20px}
+body.voice-lab-page .mapwrap{background:#edf2ee;border-radius:9px}
+body.voice-lab-page .panel h2{font-size:12px;letter-spacing:.08em}
+body.voice-lab-page .list{scrollbar-color:#aabbb0 transparent;scrollbar-width:thin}
+body.voice-lab-page .item{min-height:44px}
+body.voice-lab-page .item:focus-visible,body.voice-lab-page .btn:focus-visible,body.voice-lab-page .tab:focus-visible,body.voice-lab-page .qbtn:focus-visible{outline:3px solid #8aa99a;outline-offset:2px}
+body.voice-lab-page .card{border-left:3px solid var(--brand)}
+body.voice-lab-page footer.note{max-width:920px;margin-inline:auto}
+@media(max-width:880px){body.voice-lab-page .layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:620px){body.voice-lab-page .panel{padding:14px}body.voice-lab-page .wrap{padding-top:28px}}
+@media(prefers-reduced-motion:reduce){
+ body.master-page *,body.anatomy-page *,body.mechanism-page *,body.voice-lab-page *,
+ body.master-page *::before,body.anatomy-page *::before,body.mechanism-page *::before,body.voice-lab-page *::before{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
