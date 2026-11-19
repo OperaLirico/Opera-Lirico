@@ -29,6 +29,7 @@ on:
       - "larynx-mechanism.html"
       - "assets/anatomy/**"
       - "assets/moments/**"
+      - "assets/motion/**"
       - "data/masterclasses.json"
       - "data/masterclass.schema.json"
       - "data/opportunities.json"
