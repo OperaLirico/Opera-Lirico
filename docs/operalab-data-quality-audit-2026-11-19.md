@@ -107,3 +107,58 @@
 6. 绘制63个工作流依赖图，再制定去重方案；在完成映射前不删除历史工作流。
 
 本报告是审计记录，不代表所有问题已修复。
+
+## 5. Workflow responsibility map (reviewed 2026-11-19)
+
+### Observed execution graph
+
+```text
+Daily source refresh (06:15 UTC / workflow_dispatch / selected push paths)
+  └─ build
+      ├─ unit tests
+      ├─ scrape_sources.py
+      ├─ grow_sources.py
+      ├─ run_conservatori.py
+      ├─ mirror_pdfs.py + PDF integrity audit
+      ├─ opportunity quality audit
+      ├─ commit source snapshots to main (when changed)
+      └─ upload Pages artifact from this checkout
+           ├─ repertoire-collection (needs build; commits candidate queue to main)
+           └─ deploy (needs build; deploys artifact created before candidate collection)
+
+Push to main (pages-deploy path filter)
+  └─ independent Pages deploy workflow
+
+Weekly source discovery (Monday 06:30 UTC)
+  ├─ grow_conservatori.py
+  ├─ grow_sources.py --discover
+  └─ commits source registry and candidate outputs to main
+
+System health check (daily 09:00 UTC)
+  └─ tests + read-only endpoint/data validation
+
+Self-heal (every 30 minutes)
+  └─ scans failed scheduled runs in a six-hour window
+     └─ retries an allowlist, max two retries / max four reruns per sweep
+```
+
+### Confirmed design risks
+
+1. **Two owners of Pages deployment.** Daily source refresh uploads and deploys a Pages artifact itself, while the separate Pages workflow also deploys after qualifying pushes. This creates two deployment paths and makes it harder to reason about which commit is live.
+2. **Artifact is created too early.** The Pages artifact is uploaded in `build`; `repertoire-collection` runs after `build` and can commit `data/repertoire_candidates.json`, while `deploy` also depends only on `build`. The daily deployment can therefore publish an artifact that predates the candidate commit.
+3. **The collection job is allowed to run after a failed build.** Its `if: always() && (needs.build.result == 'success' || needs.build.result == 'failure')` is explicit behavior. It may be useful for candidate collection resilience, but the deploy graph must not assume it has completed.
+4. **Self-heal retries workflow-level failures by name.** The allowlist and retry caps are sensible guardrails, but a deterministic test/data failure can be retried like a transient network issue. Reports should distinguish failure classes before adding more workflows to the allowlist.
+5. **Source discovery and daily refresh both write source registries.** They are separate schedules and use different concurrency groups. Both rebase/push to main, so they can race at the Git level even though they fetch/rebase before pushing.
+
+### Recommended target architecture (not yet applied)
+
+- Make `pages-deploy.yml` the **only** workflow that creates and deploys the Pages artifact.
+- Remove the Pages artifact upload and deploy job from `daily-scrape-and-publish.yml`; keep that workflow responsible for source refresh and data commits only.
+- Expand the Pages path filter to include every public runtime dependency, including `data/repertoire_candidates.json`, `data/repertoire_archive.json`, `voice-lab.html`, `data/voice-structures.json`, `data/conservatori_manual.json`, `data/conservatori_zh.json`, `taste-home.css`, `taste-interior.css`, `taste-home.js`, and `assets/moments/**`.
+- Keep the daily collector as a separate job, but ensure a candidate commit naturally triggers the single Pages workflow through the path filter.
+- Give source-registry writers one shared concurrency group (or serialize them behind one reusable refresh workflow) before adding more writers.
+- Keep self-heal limited to transient/infrastructure failures; do not automatically retry deterministic validation failures without classification.
+
+### Change boundary
+
+This is an evidence-based recommendation only. No workflow has been deleted, merged, or retargeted in this audit PR. Apply the deployment ownership change in a separate implementation PR with a workflow test that asserts one Pages deploy per source refresh and confirms the deployed artifact contains the latest candidate file.
