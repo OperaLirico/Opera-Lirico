@@ -28,6 +28,7 @@ on:
       - "voice-lab.html"
       - "larynx-mechanism.html"
       - "assets/anatomy/**"
+      - "assets/moments/**"
       - "data/masterclasses.json"
       - "data/masterclass.schema.json"
       - "data/opportunities.json"
