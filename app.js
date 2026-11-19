@@ -43,6 +43,14 @@ let installPrompt = null;
 let opportunities = [];
 
 function esc(text=''){return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+/* Public-facing excerpts retain their source record unchanged while omitting precise street numbers and postcodes. */
+function publicExcerpt(value){
+  return String(value||'')
+    .replace(/\\b(Via|Viale|Piazza|Piazzale|Corso|Largo|Strada|Vicolo|Rue|Street|Avenue)\\s+([^,;|]+?)\\s+\\d+[A-Za-z]?(?=[,;|]|$)/gi,'$1 $2')
+    .replace(/\\b\\d{5}\\b/g,'')
+    .replace(/\\s{2,}/g,' ')
+    .trim();
+}
 /* 抓下来的记录里，work 位置偶尔存的是目录路径、poet 位置存的是译者署名，都不是我们能展示的东西。 */
 function cleanName(value){
   const text=String(value||'')
@@ -553,10 +561,10 @@ function consCard(c){
     hasHiddenHistory?`<p><span class="zh-key">历史信息</span>检测到往年招生摘录，已从当前信息区隐藏；请以院校官网最新公告为准。</p>`:''
   ].filter(Boolean).join('');
   const origBlocks=[
-    deadlines.length?`<span class="orig-key">官方页面摘录 · 报名期限</span>${deadlines.map(esc).join('<br>')}`:'',
-    dates.length?`<span class="orig-key">官方页面摘录 · 考试日期</span>${dates.map(esc).join('<br>')}`:'',
-    reqs.length?`<span class="orig-key">官方页面摘录 · 申请要求</span>${reqs.map(esc).join('<br>')}`:'',
-    soft.length?`<span class="orig-key">官网页面其他信息</span>${soft.map(esc).join('<br>')}`:''
+    deadlines.length?`<span class="orig-key">官方页面摘录 · 报名期限</span>${deadlines.map(v=>esc(publicExcerpt(v))).join('<br>')}`:'',
+    dates.length?`<span class="orig-key">官方页面摘录 · 考试日期</span>${dates.map(v=>esc(publicExcerpt(v))).join('<br>')}`:'',
+    reqs.length?`<span class="orig-key">官方页面摘录 · 申请要求</span>${reqs.map(v=>esc(publicExcerpt(v))).join('<br>')}`:'',
+    soft.length?`<span class="orig-key">官网页面其他信息</span>${soft.map(v=>esc(publicExcerpt(v))).join('<br>')}`:''
   ].filter(Boolean).join('<br><br>');
   return `<details class="cons-card${c.number>=300?' cons-card--academy':''}">
    <summary>
