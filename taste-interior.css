@@ -132,3 +132,5 @@ body.anatomy-page .breath-lab>p,
 body.anatomy-page .body-system-note{color:#536158}
 body.anatomy-page .model-credit a,
 body.anatomy-page .body-detail .detail-link{min-height:44px;display:inline-flex;align-items:center}
+
+.page-h1-en{display:block;margin-top:10px;color:#59675f;font:500 11px/1.5 var(--sans);letter-spacing:.1em;text-transform:uppercase}
