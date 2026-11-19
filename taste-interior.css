@@ -182,3 +182,33 @@ body.mechanism-page .structure p{color:#536158}
 body.mechanism-page :where(button,a):focus-visible{outline:3px solid #a85f3d;outline-offset:3px}
 @media(max-width:850px){body.mechanism-page .layout{grid-template-columns:1fr}}
 @media(max-width:600px){body.mechanism-page .mechanism{width:calc(100% - 32px);padding:16px 0 48px}body.mechanism-page .hero{min-height:calc(100svh - 64px);padding:20px 0}}
+
+/* Keep brand navigation and touch targets consistent across interior pages. */
+body.master-page .brand-text small,
+body.anatomy-page .brand-text small,
+body.mechanism-page .brand-text small{white-space:nowrap}
+body.master-page .topbar-inner,
+body.anatomy-page .topbar-inner,
+body.mechanism-page .topbar-inner{gap:14px;min-width:0}
+body.master-page .topbar .nav,
+body.anatomy-page .topbar .nav,
+body.mechanism-page .topbar .nav{display:flex;flex-wrap:wrap;gap:8px}
+body.master-page .master-source a,
+body.master-page .master-actions a,
+body.anatomy-page .model-tabs button,
+body.anatomy-page .lab-btn,
+body.mechanism-page .model-switcher button,
+body.mechanism-page .interaction button{min-height:44px}
+body.mechanism-page .model-switcher,
+body.mechanism-page .interaction{display:flex;flex-wrap:wrap;gap:8px}
+body.voice-lab-page .top{flex-wrap:wrap;gap:14px}
+body.voice-lab-page .top nav{display:flex;flex-wrap:wrap;gap:8px}
+body.voice-lab-page .top nav a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap}
+@media(max-width:620px){
+  body.master-page .brand-text small,
+  body.anatomy-page .brand-text small,
+  body.mechanism-page .brand-text small{display:none}
+  body.master-page .topbar-inner,
+  body.anatomy-page .topbar-inner,
+  body.mechanism-page .topbar-inner{gap:8px}
+}
