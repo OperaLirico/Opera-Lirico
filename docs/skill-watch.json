@@ -1,0 +1,60 @@
+{
+  "updated_at": "2026-11-19T13:20:00+01:00",
+  "note": "本文件是 Skill 上游巡检的基线。定时任务每周一读取此文件，对比上游最新 commit；有变化才更新此处。",
+  "watch": [
+    {
+      "repo": "Leonxlnx/taste-skill",
+      "skill": "design-taste-frontend",
+      "license": "MIT",
+      "pinned": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
+      "pinned_date": "2026-11-07",
+      "version_hint": "v2.5.1",
+      "in_repo": "skills/taste-skill",
+      "priority": "high"
+    },
+    {
+      "repo": "JuliusBrussee/caveman",
+      "skill": "caveman",
+      "license": "Apache-2.0",
+      "pinned": "a192894723a8f47e7f504c7b5041967ff1f18e55",
+      "pinned_date": "2026-11-17",
+      "version_hint": "4.x",
+      "priority": "low"
+    },
+    {
+      "repo": "greensock/gsap-skills",
+      "skill": "gsap-skills",
+      "license": "MIT",
+      "pinned": "aed9cfd3277740755f6bfc1155c7aa645403b760",
+      "pinned_date": "2026-04-21",
+      "priority": "medium"
+    },
+    {
+      "repo": "hypit-ai/hypit",
+      "skill": "hypit",
+      "license": "NOASSERTION",
+      "pinned": "9a6f688c39829857d50dc596fa1218565585a9da",
+      "pinned_date": "2026-11-16",
+      "priority": "low",
+      "note": "许可证非标准开源许可，商用前需人工审阅"
+    },
+    {
+      "repo": "openai/skills",
+      "skill": "playwright (skills/.curated)",
+      "license": "见各家 LICENSE.txt",
+      "pinned": "49f948faa9258a0c61caceaf225e179651397431",
+      "pinned_date": "2026-06-24",
+      "priority": "high",
+      "note": "仓库已标 deprecated，迁移目标 openai/plugins"
+    },
+    {
+      "repo": "vercel-labs/agent-skills",
+      "skill": "npx skills CLI",
+      "license": "未固化",
+      "pinned": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
+      "pinned_date": "2026-10-27",
+      "priority": "medium",
+      "note": "安装命令依赖它的 CLI 行为"
+    }
+  ]
+}
