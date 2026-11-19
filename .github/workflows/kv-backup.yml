@@ -88,7 +88,7 @@ jobs:
         with:
           name: opera-lirico-kv-backup-${{ github.run_id }}
           path: ${{ runner.temp }}/opera-lirico-backup-restore-test
-      - name: Verify uploaded backup can be restored
+      - name: Verify uploaded backup decrypts and passes payload checks
         if: steps.upload.outcome == 'success' || steps.upload_retry.outcome == 'success'
         env:
           ENCRYPTION_KEY: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
@@ -113,6 +113,6 @@ jobs:
             echo "- KV keys: $KEY_COUNT"
             echo "- Retention: 90 days"
             echo "- Encryption: GPG symmetric AES-256 with OPS_DASHBOARD_PASSWORD"
-            echo "- Restore verification: downloaded artifact decrypted and validated"
+            echo "- Artifact integrity verification: downloaded artifact decrypted and payload structure validated"
             echo "- Plaintext backup removed from runner."
           } >> "$GITHUB_STEP_SUMMARY"
