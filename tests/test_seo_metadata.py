@@ -49,6 +49,30 @@ class SeoAndSharingTests(unittest.TestCase):
         ):
             subprocess.run(["node", "--check", str(ROOT / relative)], check=True)
 
+    def test_homepage_landmarks_and_section_markup_are_well_formed(self):
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        header_start = home.index('<header class="topbar">')
+        skip_link = home.index('<a class="skip-link"')
+        main_end = home.index("</main>")
+        footer = home.index("<footer")
+        self.assertLess(header_start, skip_link)
+        self.assertLess(main_end, footer)
+        self.assertEqual(home.count("<section"), home.count("</section>"))
+
+    def test_anatomy_and_voice_lab_navigation_accessibility(self):
+        anatomy = (ROOT / "voice-anatomy.html").read_text(encoding="utf-8")
+        voice_lab = (ROOT / "voice-lab.html").read_text(encoding="utf-8")
+        self.assertIn('id="organLink" href="larynx-mechanism.html"', anatomy)
+        self.assertIn('<label class="search-label" for="q">搜索结构</label>', voice_lab)
+        self.assertIn("<main class=\"wrap\">", voice_lab)
+
+    def test_masterclass_cards_keep_safe_location_display_and_hero_action(self):
+        page = (ROOT / "masterclasses.html").read_text(encoding="utf-8")
+        self.assertIn('class="master-wrap wrap"', page)
+        self.assertIn('class="master-hero-cta"', page)
+        self.assertIn("const formatLocation=", page)
+        self.assertIn('class="master-card-icon"', page)
+
     def test_masterclass_page_has_page_specific_share_metadata(self):
         self.assertIn('<title>大师班与专业进修｜OperaLab.</title>', MASTER)
         self.assertIn('property="og:site_name" content="OperaLab."', MASTER)
