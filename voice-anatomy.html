@@ -117,6 +117,7 @@
 <section class="breath-lab" aria-labelledby="breath-title">
   <h2 id="breath-title">呼吸与发声 · 生理状态说明</h2>
   <p>切换静息、吸气、呼气与歌唱状态，查看呼吸肌群、胸廓、肺弹性回缩与声门之间的生理关系。本模块不对器官形状做虚构的拉伸动画。</p>
+  <div class="breath-diagram" role="img" aria-label="呼吸系统示意：胸廓内的左右肺位于膈肌上方，吸气时膈肌下降，呼气时膈肌回升。"><svg viewBox="0 0 520 250" aria-hidden="true"><path d="M260 22v34M198 42c-25 15-48 42-58 77-8 28-3 58 18 74 15 14 38 10 51-5 14-16 18-44 18-71V58M322 42c25 15 48 42 58 77 8 28 3 58-18 74-15 14-38 10-51-5-14-16-18-44-18-71V58" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M260 55c-22 12-38 32-42 58-4 25 0 52 11 73 7 13 19 16 31 10 12 6 24 3 31-10 11-21 15-48 11-73-4-26-20-46-42-58Z" fill="#dce8df" stroke="#527565" stroke-width="2"/><path d="M260 54v142" stroke="#527565" stroke-width="2" stroke-dasharray="4 5"/><path d="M178 178q82 48 164 0" fill="none" stroke="#17483c" stroke-width="4" stroke-linecap="round"/><path d="M192 184q68 24 136 0" fill="none" stroke="#a85f3d" stroke-width="2" stroke-dasharray="5 5"/><path d="M160 105h-28m28 0-9-8m9 8-9 8M360 105h28m-28 0 9-8m-9 8 9 8" fill="none" stroke="#527565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><text x="260" y="18" text-anchor="middle" fill="currentColor" font-size="12">气管</text><text x="115" y="100" text-anchor="end" fill="currentColor" font-size="12">胸廓扩张</text><text x="405" y="100" fill="currentColor" font-size="12">肺</text><text x="260" y="232" text-anchor="middle" fill="currentColor" font-size="12">膈肌：吸气下降 · 呼气回升</text></svg></div>
   <div class="breath-controls">
     <button class="lab-btn" type="button" data-breath="rest" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/></svg>静息</button>
     <button class="lab-btn" type="button" data-breath="inhale" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6"/></svg>吸气 · 横膈膜下降</button>
@@ -129,6 +130,7 @@
   <p class="body-system-note">解剖学说明：本页优先采用真实人体塑化标本与可追溯来源的三维解剖模型，不再用自绘轮廓代替真实器官形态。三维模型用于观察空间关系；生理变化的说明另以文字和机制图呈现，不把组织形变简化成随意拉伸。呼吸状态演示仍为方向性教学说明，不是个体生理测量。</p>
   <h2 id="anatomy-sources-title"><svg class="source-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5z"/><path d="M4 18.5A2.5 2.5 0 0 1 6.5 16H20M8 7h8M8 11h8"/></svg>解剖学依据与模型来源</h2>
   <p>结构命名与生理说明以解剖学教材及医学文献为依据；三维模型均由原平台播放器加载，未下载或改造第三方模型文件。</p>
+  <div class="source-methods"><div><span aria-hidden="true">01</span><strong>医学文献</strong><small>解剖结构与生理依据</small></div><div><span aria-hidden="true">02</span><strong>大学教学资源</strong><small>真实标本与教学模型</small></div><div><span aria-hidden="true">03</span><strong>原始模型页面</strong><small>署名与许可可追溯</small></div></div>
   <ul>
     <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK538202/" target="_blank" rel="noopener">NCBI Bookshelf · Anatomy of the Larynx</a>：喉软骨、喉腔分区、声带与前庭襞。</li>
     <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK545265/" target="_blank" rel="noopener">NCBI Bookshelf · Laryngeal Muscles</a>：喉内肌及声带内收、外展与张力调节。</li>
@@ -137,7 +139,8 @@
     <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK553185/" target="_blank" rel="noopener">NCBI Bookshelf · Larynx Cartilage</a>：喉软骨骨架及杓状软骨结构。</li>
     <li><a href="https://commons.wikimedia.org/wiki/File:EB1911_Pharynx_-_Sagittal_Section_through_Mouth,_Tongue,_Larynx,_Pharynx_and_Nasal_Cavity.jpg" target="_blank" rel="noopener">Cunningham / Encyclopædia Britannica 1911 · 正中矢状面解剖图</a>：公有领域历史解剖图，可作为二维结构对照。</li>
   </ul>
-  <p class="source-note">第三方三维模型的署名与许可分别遵循原作者和 Sketchfab 页面声明：UBC Medicine 模型由原平台托管；University of Dundee 喉部模型为 CC BY-SA 4.0；Vikrama Raghuraman 呼吸系统模型及 Devden 横膈膜模型为 CC BY。请在原模型页面查看完整署名与许可条款。</p>
+  <p class="source-note">模型署名与许可：UBC Medicine（Sketchfab 原始页面）；University of Dundee / Eve Laws（CC BY-SA 4.0）；Vikrama Raghuraman 与 Devden（CC BY）。完整条款以各原始模型页面为准。</p>
+  <a class="source-cta" href="https://www.ncbi.nlm.nih.gov/books/NBK538202/" target="_blank" rel="noopener">查阅医学解剖依据 ↗</a>
 </section>
 
 </main>
@@ -149,7 +152,7 @@
   palate:{title:'软腭与小舌头',en:'Soft palate & Uvula',summary:'硬腭是骨性前部，软腭是其后方的肌性延续；悬雍垂（小舌）位于软腭后缘。软腭运动由腭帆提肌、腭帆张肌、腭舌肌、腭咽肌及悬雍垂肌等协同完成。',role:'口腔元音通常伴随腭咽闭合或显著缩小；鼻音需要开放腭咽通道。悬雍垂随软腭整体运动，不是独立控制鼻腔的阀门。',observe:['软腭肌群与腭咽闭合','口腔和鼻咽通道的变化','鼻音与口腔元音的差异'],link:'#head-airway',linkText:'查看声道结构'},
   tongue:{title:'舌头',en:'Tongue',summary:'舌是由内在肌（上、下纵肌，横肌，垂直肌）和外在肌（颏舌肌、舌骨舌肌、茎突舌肌、腭舌肌）构成的肌性器官，可改变舌尖、舌背与舌根的形状和位置。',role:'舌体高度、前后位置及形状与下颌、唇形共同决定元音声道构形。不能把舌头理解成整体上下平移的单一结构；舌根过度紧张也会改变咽腔形态。',observe:['舌内在肌与外在肌的作用差异','高元音与低元音的舌位差异','舌根紧张对咽腔形态的影响'],link:'#head-airway',linkText:'查看口腔与咽部'},
   pharynx:{title:'咽部',en:'Pharynx',summary:'咽是位于鼻腔、口腔及喉腔后方的肌性管道，分为鼻咽、口咽和喉咽；其后方邻近颈椎，前方分别与鼻腔、口腔及喉入口相通。',role:'咽腔由咽缩肌群及茎突咽肌、腭咽肌等协同改变形态。歌唱中的咽部不是固定的空腔，也不应被描述成必须持续撑开的管子。',observe:['鼻咽、口咽、喉咽的分区','咽壁肌肉与软组织','吞咽和发声时的不同协调'],link:'#head-airway',linkText:'查看声道结构'},
-  larynx:{title:'喉头与声带',en:'Larynx & Vocal folds',summary:'喉位于喉咽前方、气管上方，由甲状软骨、环状软骨、会厌及成对杓状、角状、楔状软骨等构成。真正声带位于声门区，前连甲状软骨、后连杓状软骨的声带突。',role:'环杓关节与喉内肌调节声带内收/外展及张力；气流、声门下压力、组织黏弹性与声道声学负载共同影响发声。后环杓肌是声带外展的主要肌肉。',observe:['真声带与上方前庭襞的区别','杓状软骨运动','声门下气流与声源振动'],link:'#larynx-detail',linkText:'进入喉部精细实验室'},
+  larynx:{title:'喉头与声带',en:'Larynx & Vocal folds',summary:'喉位于喉咽前方、气管上方，由甲状软骨、环状软骨、会厌及成对杓状、角状、楔状软骨等构成。真正声带位于声门区，前连甲状软骨、后连杓状软骨的声带突。',role:'环杓关节与喉内肌调节声带内收/外展及张力；气流、声门下压力、组织黏弹性与声道声学负载共同影响发声。后环杓肌是声带外展的主要肌肉。',observe:['真声带与上方前庭襞的区别','杓状软骨运动','声门下气流与声源振动'],link:'larynx-mechanism.html',linkText:'进入喉部精细实验室'},
   trachea:{title:'气管',en:'Trachea',summary:'气管从环状软骨下缘延续至隆嵴并分为左右主支气管。气管壁由透明软骨构成的C形软骨环支撑，后壁由膜性壁及气管肌连接。',role:'吸气时空气经气管进入支气管和肺部；歌唱呼气时，气流沿相反方向经过气管并到达声门。',observe:['气管软骨环','左右主支气管分叉','呼吸气流的方向'],link:'#breath-title',linkText:'观察呼吸动态'},
   lungs:{title:'肺部',en:'Lungs',summary:'肺由肺叶、支气管树、肺泡及包绕肺的脏层胸膜构成。肺实质本身没有主动扩张的骨骼肌；吸气时胸腔容积增加，胸膜耦合使肺随之扩张。',role:'肺与胸廓的弹性回缩提供呼气驱动力；歌唱时呼气流量与声门下压力需随乐句、音高和强度调节。',observe:['吸气时肺容积增加','胸廓与肺的耦合关系','呼气时肺组织弹性回缩'],link:'#breath-title',linkText:'启动呼吸动态演示'},
   diaphragm:{title:'横膈膜',en:'Diaphragm',summary:'膈肌是胸腔与腹腔之间的穹隆状骨骼肌，由周边肌性部分与中央腱组成。收缩时穹隆下降并趋于变平，增加胸腔容积，是吸气的主要动力之一。',role:'吸气时膈肌主动收缩下降；安静呼气时膈肌通常放松，肺与胸廓弹性回缩使其回升。歌唱呼气可由呼气肌群参与调节，不宜简化成把膈肌主动向上推。',observe:['吸气时横膈膜下降、变平','呼气时逐渐恢复穹隆形态','腹壁与肋廓如何配合控制气流'],link:'#breath-title',linkText:'启动横膈膜动态演示'},
