@@ -1,6 +1,6 @@
 :root{
-  --ink:#17231f;--ink-soft:#52625a;--paper:#f6f7f4;--paper-2:#fff;--line:#dce3dd;
-  --brand:#17483c;--brand-2:#205b4c;--gold:#68786f;--gold-soft:#c5d0c8;--bg:var(--paper);--surface:var(--paper-2);--accent:var(--brand-2);--font-display:"Host Grotesk","PingFang SC","Microsoft YaHei",sans-serif;--display-weight:600;--display-tracking:-.03em;--t-h2:clamp(24px,3vw,34px);--r-lg:12px;
+  --ink:#17231f;--ink-soft:#47554d;--paper:#f6f7f4;--paper-2:#fff;--line:#dce3dd;
+  --brand:#17483c;--brand-2:#205b4c;--gold:#59675f;--gold-soft:#c5d0c8;--bg:var(--paper);--surface:var(--paper-2);--accent:var(--brand-2);--font-display:"Host Grotesk","PingFang SC","Microsoft YaHei",sans-serif;--display-weight:600;--display-tracking:-.03em;--t-h2:clamp(24px,3vw,34px);--r-lg:12px;
   --shadow:0 1px 2px rgba(20,38,30,.035),0 10px 28px rgba(20,38,30,.055);
 }
 body.master-page,body.anatomy-page,body.mechanism-page,body.voice-lab-page{background:var(--paper);color:var(--ink)}
