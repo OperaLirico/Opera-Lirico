@@ -33,3 +33,22 @@
 - JavaScript syntax and source-quality tests: passed on the latest checked branch snapshot. Website-copy check and full Taste browser gate are still running for the newest UI changes.
 - CI fetches the full Taste checker from the pinned upstream commit using the repository sync script; the full checker is not copied wholesale into the project. Five-page browser checks at the required widths are in progress. Do not describe the redesign as visually verified until they pass.
 - The masterclass expiry filter and Pages path changes are covered by source-quality tests. Live production deployment and manual browser review remain pending.
+
+
+## Browser QA — first measured run (2026-11-19)
+
+The pinned Taste 2.5.1 Chromium gate ran against all five pages at 1440, 1024, 768 and 390 CSS px (with additional 320px checks on touch controls). The first run did **not** pass:
+
+- Home: 47 open gate findings, including 390/320px horizontal overflow, clipped newsletter consent text, a 29px refresh control, misaligned content edges, missing visual weight in several sections, and section/hero composition issues.
+- Voice anatomy: 39 open findings, including model-frame focus visibility, low-contrast metadata, sparse sections, and layout/section-height issues.
+- Masterclasses: 24 open findings, including hero-fold and section composition issues, card visual balance, and content layout.
+- Voice Lab: 38 open findings, including control overlap, low contrast, first-screen navigation, section structure and alignment.
+- Larynx mechanism: 65 open findings, including model focus visibility, card/section composition, text contrast, heading scale and hero layout.
+
+The four-width consistency checks completed successfully as a separate check, but the upstream finish gate failed on all five pages. A successful viewport run is not equivalent to a passing design gate.
+
+### Pass 2 changes
+
+- Added a shared narrow-screen baseline for the interior pages: box sizing, overflow containment, flexible grid children, 44px minimum interactive targets, and responsive single-column layouts.
+- Added homepage-specific safeguards for 390px and 320px widths, including newsletter wrapping, flexible resource rows and a 44px refresh target.
+- These are targeted baseline corrections, not a claim that all Taste findings are resolved. Re-run the browser gate and review remaining page-specific findings before marking the redesign ready.
