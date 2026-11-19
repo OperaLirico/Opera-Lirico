@@ -1013,7 +1013,7 @@ body.master-page .master-head h1{max-width:16ch;font-size:clamp(38px,4vw,54px);l
 body.master-page .master-head .master-intro-note{width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
 body.master-page .master-head .master-intro-note>*{min-width:0;margin:0;overflow-wrap:anywhere}
 body.master-page .master-head .master-hero-cta{min-height:44px;margin-top:10px;padding:10px 16px;border-radius:8px}
-body.master-page .master-list-section{width:min(calc(100% - 128px),1240px);max-width:1240px;height:calc(var(--h,1) * 100svh);min-height:calc(var(--h,1) * 100svh);margin:0 auto;padding:clamp(32px,5vh,52px) 0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;background:#edf2ed;box-shadow:0 0 0 100vmax #edf2ed;clip-path:inset(0 -100vmax)}
+body.master-page .master-list-section{width:min(calc(100% - 128px),1240px);max-width:1240px;height:calc(var(--h,1) * 100vh);min-height:calc(var(--h,1) * 100vh);margin:0 auto;padding:clamp(32px,5vh,52px) 0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;background:#edf2ed;box-shadow:0 0 0 100vmax #edf2ed;clip-path:inset(0 -100vmax)}
 body.master-page .master-list-inner{width:100%;max-width:none;margin:0;display:flex;flex-direction:column;gap:14px}
 body.master-page .master-list-visual{display:block;width:100%;height:130px;object-fit:cover;object-position:center 44%;border-radius:12px}
 body.master-page .master-timeline{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
@@ -1123,4 +1123,50 @@ body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section,bo
  body.anatomy-page .anatomy-sources{height:calc(2 * 100vh);min-height:calc(2 * 100vh);padding:36px 0}
  body.anatomy-page .source-visual{height:140px;max-height:140px}
  body.anatomy-page .source-methods{grid-template-columns:1fr}
+}
+
+/* Exact T-height bands and visual fit for the larynx mechanics page. */
+body.mechanism-page .hero{height:100svh;min-height:100svh}
+body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .plate-section,body.mechanism-page .muscle-section,body.mechanism-page .source{height:100vh;min-height:100vh;--h:1}
+body.mechanism-page .viewer-frame{width:100%;height:min(42vh,360px);min-height:260px;overflow:visible}
+body.mechanism-page .viewer-frame iframe{width:100%;height:100%;min-height:260px}
+body.mechanism-page .model-section .card{padding:clamp(18px,2vw,28px)}
+body.mechanism-page .model-section .notice{font-size:12px;line-height:1.55}
+body.mechanism-page .interaction-section .modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+body.mechanism-page .interaction-section .mode{min-height:52px;height:auto;padding:10px 12px;border-radius:8px;font-size:12px;line-height:1.3}
+body.mechanism-page .interaction-section .mode strong,body.mechanism-page .interaction-section .mode span{display:block;overflow-wrap:anywhere}
+body.mechanism-page .interaction-visual img{max-height:270px}
+body.mechanism-page .structure-section .side{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+body.mechanism-page .structure-section .side>.card{min-width:0;height:100%}
+body.mechanism-page .muscle-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;align-items:stretch}
+body.mechanism-page .muscle{height:100%;min-height:0}
+body.mechanism-page .muscle img{max-height:160px}
+body.mechanism-page .plate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+body.mechanism-page .plate img{max-height:300px}
+body.mechanism-page .source-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+body.mechanism-page .source-group{min-width:0}
+body.mechanism-page :is(button,a[role="button"],.mode,.model-switcher button,.source-cta){min-height:44px;height:auto;padding:10px 14px;border-radius:8px!important;font-size:12px;line-height:1.35}
+body.mechanism-page :is(button,.source-cta){border:1px solid #b9c9be}
+body.mechanism-page :is(button[aria-pressed="true"],.source-cta){background:#17483c;color:#fff;border-color:#17483c}
+body.mechanism-page :is(button,a):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.anatomy-page .anatomy-sources{--h:1;height:calc(var(--h,1) * 100vh);min-height:calc(var(--h,1) * 100vh)}
+body.anatomy-page .source-visual{height:180px;max-height:180px}
+@media(max-width:900px){
+ body.mechanism-page .structure-section .side{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.mechanism-page .source-grid{grid-template-columns:1fr}
+ body.anatomy-page .anatomy-sources{--h:2;height:calc(2 * 100vh);min-height:calc(2 * 100vh)}
+}
+@media(max-width:680px){
+ body.mechanism-page .hero{height:100svh;min-height:100svh}
+ body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .muscle-section{height:100vh;min-height:100vh}
+ body.mechanism-page .plate-section,body.mechanism-page .source{height:200vh;min-height:200vh}
+ body.mechanism-page .viewer-frame{height:300px;min-height:260px}
+ body.mechanism-page .interaction-section .modes{grid-template-columns:1fr}
+ body.mechanism-page .interaction-visual img{max-height:210px}
+ body.mechanism-page .structure-section .side{grid-template-columns:1fr}
+ body.mechanism-page .muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.mechanism-page .muscle img{max-height:112px}
+ body.mechanism-page .plate-grid{grid-template-columns:1fr}
+ body.mechanism-page .source-grid{grid-template-columns:1fr}
+ body.anatomy-page .anatomy-sources{--h:2;height:calc(2 * 100vh);min-height:calc(2 * 100vh)}
 }
