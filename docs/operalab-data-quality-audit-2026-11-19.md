@@ -85,7 +85,7 @@
 - 每日采集中的曲库候选收集 job 与 deploy job 在 build 之后并行运行；候选文件可能在 build 生成 Pages artifact 之后才提交。原 \`pages-deploy.yml\` 也没有监听 \`data/repertoire_candidates.json\` 和 \`data/repertoire_archive.json\`，可能造成候选/归档更新未及时进入线上页面。
 - 这个部署文件遗漏还包括 \`voice-lab.html\`、\`data/voice-structures.json\`、院校中文补充数据，以及新 Taste CSS/JS 资源。
 
-**已在 PR #129 做的低风险修复：** 扩展现有 Pages workflow 的 path filter，加入曲库归档/候选、院校补充数据、voice-lab、voice structures 和 Taste 资源。没有新增 workflow、没有改变权限或现有触发方式。
+**已在 PR #129 做的低风险修复：** 扩展现有 Pages workflow 的 path filter，加入曲库归档/候选、院校补充数据、voice-lab、voice structures 和 Taste 资源。没有新增 workflow，也没有改变事件类型、权限或定时策略；只扩展了现有 path filters。
 
 **后续建议：** 先画出每个 workflow 的触发条件、读写文件、提交行为、部署行为和依赖关系；再决定是否合并重复部署。不要直接删除29个 anatomy 相关工作流或6个历史 cycle 日志。
 
