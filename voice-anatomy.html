@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-type="software" data-radius="soft"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17483c">
+<html lang="zh-CN" data-type="software" data-radius="soft" data-motion><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17483c">
 <meta name="page-type" content="software">
 <meta name="site-kind" content="software"><meta name="description" content="交互式人体歌唱发声系统：点击鼻腔、舌头、软腭、咽部、喉头、肺部与横膈膜，探索器官结构、呼吸动态和发声机制。OperaLab."><link rel="canonical" href="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:type" content="article"><meta property="og:locale" content="zh_CN"><meta property="og:site_name" content="OperaLab."><meta property="og:title" content="发声机制实验室｜OperaLab."><meta property="og:description" content="通过真实人体标本、三维解剖模型与生理机制说明学习发声器官。"><meta property="og:url" content="https://operalirico.github.io/Opera-Lirico/voice-anatomy.html"><meta property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="发声机制实验室｜OperaLab."><meta name="twitter:description" content="通过真实人体三维模型了解喉部结构、声带开合与发声机制。"><meta name="twitter:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"><title>发声机制实验室｜OperaLab.</title><link rel="stylesheet" href="styles.css?v=ux18">
 <style>
@@ -69,9 +69,11 @@
 @media(max-width:600px){.anatomy-notes{grid-template-columns:1fr}.anatomy-canvas{padding:10px 4px 8px}.anatomy-svg .anatomy-labels{font-size:18px}.figure-caption{gap:8px 12px}.figure-caption .caption-note{margin-left:0;width:100%}}
 
 </style><link rel="stylesheet" href="taste-interior.css?v=1">
+<link rel="stylesheet" href="assets/motion/motion.css">
+<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 </head><body class="anatomy-page">
 <header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./" aria-label="OperaLab. 首页"><span class="brand-mark" aria-hidden="true">♫</span><span class="brand-text">OperaLab.<small>OPERA · EDUCATION · OPPORTUNITIES</small></span></a><nav class="nav" aria-label="板块导航"><a href="./">首页</a><a href="masterclasses.html">大师班</a><a href="./#music-library">曲目资料</a></nav></div></header>
-<main class="lab-wrap wrap"><section class="lab-hero" data-enter><div class="lab-crumb"><a href="./">首页</a> / 学习实验室 / 发声机制</div><div class="lab-kicker">VOICE SCIENCE · INTERACTIVE HUMAN ANATOMY</div><h1>声乐发声器官解剖概览。<small class="page-h1-en">Human vocal anatomy for singers</small></h1><p class="mo-wh__text" data-moment="word-highlight">声带振动并非两片肌肉主动拍打空气。气流、声门下压力与组织弹性共同参与发声。本页以真实标本和可追溯三维模型，帮助你观察发声器官的形态与空间关系。</p><p class="lab-hero-note">使用真实人体标本与大学医学解剖教学模型；未核实的结构信息不会用推测补齐。</p><div class="lab-hero-actions"><a href="#head-airway">查看真实解剖模型 ↓</a><a href="larynx-mechanism.html">喉部机制实验室 ↗</a></div></section>
+<main class="lab-wrap wrap"><section class="lab-hero hero" data-enter><div class="lab-crumb"><a href="./">首页</a> / 学习实验室 / 发声机制</div><div class="lab-kicker">VOICE SCIENCE · INTERACTIVE HUMAN ANATOMY</div><h1>声乐发声器官解剖概览。<small class="page-h1-en">Human vocal anatomy for singers</small></h1><p class="mo-wh__text" data-moment="word-highlight">声带振动并非两片肌肉主动拍打空气。气流、声门下压力与组织弹性共同参与发声。本页以真实标本和可追溯三维模型，帮助你观察发声器官的形态与空间关系。</p><p class="lab-hero-note">使用真实人体标本与大学医学解剖教学模型；未核实的结构信息不会用推测补齐。</p><div class="lab-hero-actions"><a href="#head-airway">查看真实解剖模型 ↓</a><a href="larynx-mechanism.html">喉部机制实验室 ↗</a></div></section>
 <section class="body-system split" id="head-airway" aria-label="基于真实解剖标本与三维模型的歌唱发声系统探索">
   <div class="body-figure">
     <div class="body-figure-head"><strong>头颈部真实解剖 · 可旋转三维观察</strong><span>ANATOMICAL REFERENCE</span></div>
@@ -225,4 +227,5 @@
 </script>
 
   <script type="module" src="assets/moments/moments.js"></script>
+<script type="module" src="assets/motion/motion.js"></script>
 </body></html>
