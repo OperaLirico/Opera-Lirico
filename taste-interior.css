@@ -211,3 +211,42 @@ body.voice-lab-page .top nav a{display:inline-flex;align-items:center;min-height
   body.anatomy-page .topbar-inner,
   body.mechanism-page .topbar-inner{gap:8px}
 }
+
+
+/* QA pass 2: shared responsive, contrast and touch-target baseline. */
+body.master-page,body.anatomy-page,body.mechanism-page,body.voice-lab-page{width:100%;max-width:100%;overflow-x:clip}
+body.master-page :where(*,*::before,*::after),
+body.anatomy-page :where(*,*::before,*::after),
+body.mechanism-page :where(*,*::before,*::after),
+body.voice-lab-page :where(*,*::before,*::after){box-sizing:border-box}
+body.master-page :where(img,svg,iframe,video),
+body.anatomy-page :where(img,svg,iframe,video),
+body.mechanism-page :where(img,svg,iframe,video),
+body.voice-lab-page :where(img,svg,iframe,video){max-width:100%}
+body.master-page :where(button,a,input,select,summary),
+body.anatomy-page :where(button,a,input,select,summary),
+body.mechanism-page :where(button,a,input,select,summary),
+body.voice-lab-page :where(button,a,input,select,summary){max-width:100%;min-height:44px}
+body.master-page :where(p,small,figcaption,.tag,.eyebrow,.muted),
+body.anatomy-page :where(p,small,figcaption,.tag,.eyebrow,.muted),
+body.mechanism-page :where(p,small,figcaption,.tag,.eyebrow,.muted),
+body.voice-lab-page :where(p,small,figcaption,.tag,.eyebrow,.muted){overflow-wrap:anywhere}
+body.voice-lab-page .wrap,body.voice-lab-page main.wrap{min-width:0;max-width:100%}
+body.voice-lab-page .layout,body.mechanism-page .layout,body.anatomy-page .body-system{min-width:0}
+body.voice-lab-page .layout>*,
+body.mechanism-page .layout>*,
+body.anatomy-page .body-system>*{min-width:0}
+body.voice-lab-page .panel,body.mechanism-page .card,body.anatomy-page .body-figure{min-width:0}
+body.master-page .master-card{min-width:0}
+body.master-page .master-facts,body.master-page .master-facts>*{min-width:0;overflow-wrap:anywhere}
+@media(max-width:850px){
+ body.master-page .master-wrap,body.anatomy-page .lab-wrap,body.mechanism-page .mechanism,body.voice-lab-page .wrap{width:calc(100% - 32px);max-width:100%;padding-left:0;padding-right:0}
+ body.voice-lab-page .layout,body.mechanism-page .layout,body.anatomy-page .body-system{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:620px){
+ body.master-page .master-wrap,body.anatomy-page .lab-wrap,body.mechanism-page .mechanism,body.voice-lab-page .wrap{width:calc(100% - 28px);padding-top:24px;padding-bottom:48px}
+ body.master-page .master-head h1,body.anatomy-page .lab-hero h1,body.mechanism-page .hero h1,body.voice-lab-page .voice-hero h1{font-size:clamp(28px,8vw,40px);line-height:1.16;overflow-wrap:anywhere}
+ body.anatomy-page .body-system,body.mechanism-page .layout,body.voice-lab-page .layout{gap:14px}
+ body.anatomy-page .model-tabs,body.mechanism-page .model-switcher,body.voice-lab-page .tabs{gap:8px}
+ body.anatomy-page .model-tabs button,body.mechanism-page .model-switcher button,body.voice-lab-page .tabs button{min-height:44px}
+}
