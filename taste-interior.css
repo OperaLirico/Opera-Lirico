@@ -1170,3 +1170,62 @@ body.anatomy-page .source-visual{height:180px;max-height:180px}
  body.mechanism-page .source-grid{grid-template-columns:1fr}
  body.anatomy-page .anatomy-sources{--h:2;height:calc(2 * 100vh);min-height:calc(2 * 100vh)}
 }
+
+/* Voice Lab: separate screen-sized map and index sections; preserve all interactive content. */
+body.voice-lab-page main.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 20px}
+body.voice-lab-page main.wrap>.hero{height:100svh;min-height:100svh;padding:calc(72px + 36px) 0 36px}
+body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{height:100vh;min-height:100vh;padding:clamp(36px,5vh,56px) 18px;display:flex;align-items:stretch;box-sizing:border-box}
+body.voice-lab-page .panel{width:100%;min-width:0;display:flex;flex-direction:column;gap:12px}
+body.voice-lab-page .voice-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.75fr);align-items:center;gap:14px 24px}
+body.voice-lab-page .voice-hero-visual{grid-column:2;grid-row:1/3;max-height:250px;object-fit:contain}
+body.voice-lab-page .voice-hero .lede,body.voice-lab-page .voice-hero .chips{grid-column:1/-1}
+body.voice-lab-page .map-section .panel{gap:10px}
+body.voice-lab-page .voice-map-reference{max-height:105px;object-fit:contain;margin:0 auto 4px}
+body.voice-lab-page .mapwrap{width:100%;height:320px;max-height:36vh;margin:0;overflow:hidden}
+body.voice-lab-page .map{width:100%;height:100%;max-height:320px;display:block}
+body.voice-lab-page .toolrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+body.voice-lab-page .quiz{width:100%;min-width:0;padding:12px 14px}
+body.voice-lab-page .quiz p,body.voice-lab-page .msg{margin:4px 0;line-height:1.45}
+body.voice-lab-page .structure-overview{max-height:150px;overflow:auto;grid-template-columns:1fr}
+body.voice-lab-page .overview-row{min-height:18px}
+body.voice-lab-page #tabs{display:flex;flex-wrap:wrap;gap:7px}
+body.voice-lab-page #list{max-height:150px;overflow:auto;min-width:0}
+body.voice-lab-page #list .item{width:100%;height:auto;min-height:56px;padding:9px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 8px;white-space:normal;overflow:visible;text-align:left}
+body.voice-lab-page #list .item>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+body.voice-lab-page #list .item small{display:block;white-space:normal;overflow-wrap:anywhere;color:#40594c}
+body.voice-lab-page #detail{max-height:230px;overflow:auto;min-width:0;line-height:1.55;overflow-wrap:anywhere}
+body.voice-lab-page #detail .tri{float:none!important;position:static!important;display:inline-flex;clear:both;max-width:100%;margin:0 0 8px;white-space:normal;overflow-wrap:anywhere}
+body.voice-lab-page .data-note{max-height:92px;overflow:auto;margin-top:auto;padding:10px 12px;border-top:1px solid #d6dfd8;color:#3c5147;font-size:10px;line-height:1.5;overflow-wrap:anywhere}
+body.voice-lab-page .closing{height:100svh;min-height:100svh;padding:48px 0}
+body.voice-lab-page .closing-inner{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+body.voice-lab-page h1{font-size:clamp(40px,4.3vw,56px);line-height:1.1}
+body.voice-lab-page h2{font-size:22px;line-height:1.2}
+body.voice-lab-page h3{font-size:16px;line-height:1.3}
+body.voice-lab-page :is(button,.tab,.btn,.qbtn,#list .item){min-height:44px;height:auto;padding:10px 12px;border-radius:8px!important;font-size:12px;line-height:1.35;box-shadow:none}
+body.voice-lab-page :is(button,.tab,.btn,.qbtn,#list .item){border:1px solid #b9c9be;background:#f8faf6;color:#1d342b}
+body.voice-lab-page :is(.tab[aria-pressed="true"],.btn.primary,.qbtn.primary,#list .item[aria-pressed="true"]){background:#17483c;color:#fff;border-color:#17483c}
+body.voice-lab-page :is(button,a,input):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.voice-lab-page .map-section .panel>h2,body.voice-lab-page .index-section .panel>h2{margin:0 0 4px;text-align:left}
+@media(max-width:900px){
+ body.voice-lab-page main.wrap{width:calc(100% - 32px);grid-template-columns:1fr}
+ body.voice-lab-page main.wrap>.hero,body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{grid-column:1}
+ body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{height:100vh;min-height:100vh}
+ body.voice-lab-page .mapwrap{height:300px;max-height:34vh}
+ body.voice-lab-page .map{max-height:300px}
+}
+@media(max-width:680px){
+ body.voice-lab-page main.wrap>.hero{height:100svh;min-height:100svh;padding:calc(64px + 24px) 0 24px}
+ body.voice-lab-page .voice-hero{grid-template-columns:1fr;gap:8px}
+ body.voice-lab-page .voice-hero-visual{grid-column:1;grid-row:auto;max-height:115px;width:100%}
+ body.voice-lab-page .voice-hero h1{font-size:30px;max-width:15ch}
+ body.voice-lab-page .voice-hero .lede{font-size:12px;line-height:1.45}
+ body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{height:100svh;min-height:100svh;padding:28px 10px}
+ body.voice-lab-page .voice-map-reference{max-height:86px}
+ body.voice-lab-page .mapwrap{height:255px;max-height:30vh}
+ body.voice-lab-page .map{max-height:255px}
+ body.voice-lab-page .structure-overview{max-height:120px}
+ body.voice-lab-page #list{max-height:132px}
+ body.voice-lab-page #detail{max-height:180px}
+ body.voice-lab-page .data-note{max-height:72px;font-size:9px}
+ body.voice-lab-page .closing{height:100svh;min-height:100svh;padding:36px 0}
+}
