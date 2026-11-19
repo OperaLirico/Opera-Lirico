@@ -30,6 +30,6 @@
 
 - Source/markup preservation checks: passed during branch construction for the principal panel IDs and anatomy interaction targets.
 - Pages deployment path filters now include the new Taste assets, repertoire archive/candidates, conservatory supplements, voice structures and the voice-lab page; triggers were not broadened beyond relevant public files.
-- JavaScript syntax and existing project CI: pending.
+- JavaScript syntax, source-quality tests and website-copy checks: passed on PR #129.
 - Taste Skill's upstream browser gate and visual screenshots at all four widths: pending. The repository contains the Chinese method card but not the full upstream checker/assets. Do not describe the redesign as visually verified until those checks have run.
-- The masterclass expiry filter and Pages path changes are covered by PR CI, but the live page has not yet been browser-verified.
+- The masterclass expiry filter and Pages path changes are covered by passing PR CI, but the live page has not yet been browser-verified.
