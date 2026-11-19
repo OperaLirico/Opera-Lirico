@@ -84,3 +84,51 @@ body.voice-lab-page .lede.mo-wh__text{max-width:70ch;font-size:16px;line-height:
   body.mechanism-page .hero[data-enter],
   body.voice-lab-page header.top[data-enter]{opacity:1;transform:none;animation:none}
 }
+
+/* Keyboard focus remains visible across the redesigned pages. */
+:where(a,button,input,summary,[role="button"]):focus-visible{
+  outline:3px solid #a85f3d!important;
+  outline-offset:3px!important;
+}
+
+/* Improve contrast and touch targets in the vocal-science index. */
+body.voice-lab-page .count,
+body.voice-lab-page .item small,
+body.voice-lab-page .card .tri,
+body.voice-lab-page .row .k,
+body.voice-lab-page .crumb,
+body.voice-lab-page .quiz-h,
+body.voice-lab-page .chip,
+body.voice-lab-page .chip b{color:#59675f}
+body.voice-lab-page .search-label{display:block;margin:0 0 6px;color:#46544c;font-size:13px;font-weight:600}
+body.voice-lab-page .crumb{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+body.voice-lab-page .crumb button,
+body.voice-lab-page details.ev>summary,
+body.voice-lab-page .note a{display:inline-flex;align-items:center;min-height:44px;padding:7px 8px}
+body.voice-lab-page .toolrow,
+body.voice-lab-page .tabs{gap:8px}
+body.voice-lab-page .btn,
+body.voice-lab-page .tab,
+body.voice-lab-page .qbtn,
+body.voice-lab-page .item{min-height:44px;border-radius:9px}
+body.voice-lab-page .btn.ok,
+body.voice-lab-page .tab.on,
+body.voice-lab-page .item.on,
+body.voice-lab-page .qbtn{background:var(--ink);border-color:var(--ink);color:#fff}
+body.voice-lab-page .qbtn.ghost,
+body.voice-lab-page .btn,
+body.voice-lab-page .tab{background:#fff;color:var(--ink);border:1px solid var(--line)}
+body.voice-lab-page #detail{position:relative;z-index:1;clear:both;margin-top:14px}
+body.voice-lab-page #list{position:relative;z-index:0}
+body.voice-lab-page .item small{color:#59675f}
+body.voice-lab-page .item.on small{color:#fff}
+body.anatomy-page .model-caption,
+body.anatomy-page .model-credit,
+body.anatomy-page .model-credit a,
+body.anatomy-page .body-detail .organ-en,
+body.anatomy-page .body-detail p,
+body.anatomy-page .body-detail ul,
+body.anatomy-page .breath-lab>p,
+body.anatomy-page .body-system-note{color:#536158}
+body.anatomy-page .model-credit a,
+body.anatomy-page .body-detail .detail-link{min-height:44px;display:inline-flex;align-items:center}
