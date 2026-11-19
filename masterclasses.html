@@ -73,10 +73,10 @@
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
 </head>
 <body class="master-page">
-<header class="topbar"><div class="shell topbar-inner"><a class="brand" href="./"><span class="brand-mark">♫</span><span class="brand-text">OperaLab.<small>OPERA · EDUCATION · OPPORTUNITIES</small></span></a><nav class="nav" aria-label="主导航"><a href="./">网站首页</a><a href="https://buttondown.com/wl19971007" target="_blank" rel="noopener noreferrer">每周简报</a></nav></div></header>
-<main class="master-wrap wrap">
-<section class="master-head hero" data-enter><div class="eyebrow">Masterclasses · Corsi</div><h1>欧洲声乐大师班与进修课程。<small class="page-h1-en">European vocal masterclasses for Chinese singers</small></h1><p class="mo-wh__text" data-moment="word-highlight">这里整理欧洲声乐大师班、歌剧工作坊和专业进修课程。我们会尽量用中文说明课程内容、导师、费用与申请要求，同时保留活动的原文名称，方便你核对主办方公告。</p><div class="master-intro-note"><span aria-hidden="true">✦</span><span><strong>信息核验说明：</strong>公开页面仅收录已核对主办方官方资料的项目。部分课程可能只公布了日期，尚未开放报名；未公布的费用或申请条件不会自行推测。</span></div><a class="master-hero-cta" href="#masterList">查看课程列表 <span aria-hidden="true">↓</span></a></section>
-<section id="masterList" class="master-list" aria-label="已核验的大师班项目" aria-live="polite"><div class="master-empty">正在载入已核验的大师班信息…</div></section>
+<header class="topbar"><div class="shell wrap topbar-inner"><a class="brand" href="./" aria-label="OperaLab. 首页"><span class="brand-mark" aria-hidden="true">♫</span><span class="brand-text">OperaLab.<small>OPERA · VOICE · STUDY</small></span></a><nav class="nav" aria-label="主导航"><a href="./">网站首页</a><a href="voice-anatomy.html">发声解剖</a><a href="https://buttondown.com/wl19971007" target="_blank" rel="noopener noreferrer">每周简报</a></nav></div></header>
+<main class="master-wrap">
+<section class="master-head hero" data-enter aria-labelledby="master-title"><div class="eyebrow">MASTERCLASSES · CORSI</div><h1 id="master-title">欧洲声乐大师班与进修课程</h1><p class="page-h1-en">European vocal masterclasses for Chinese singers</p><p class="mo-wh__text" data-moment="word-highlight">整理欧洲声乐大师班、歌剧工作坊与专业进修课程。用中文呈现导师、地点、费用和申请要求，同时保留主办方原始公告，方便逐项核对。</p><div class="master-hero-proof"><span class="master-proof-mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M32 7v24m-9-9a9 9 0 1 0 18 0V7a9 9 0 0 0-18 0v15Z" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M12 28v4a20 20 0 0 0 40 0v-4M32 52v7m-11 0h22" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><strong id="masterCountHero">正在核对课程数量…</strong><small>仅展示已核验且仍在有效期内的课程</small></span></div><div class="master-intro-note"><span aria-hidden="true">✓</span><span><strong>信息核验：</strong>仅收录主办方官方资料已核对的项目。未公布的费用、日期或申请条件会明确标注，不以推测补齐。</span></div><a class="master-hero-cta" href="#masterList">浏览已核验课程 <span aria-hidden="true">↓</span></a></section>
+<section id="masterList" class="master-list-section" aria-labelledby="master-list-title"><div class="master-list-head"><div><span class="eyebrow">VERIFIED PROGRAMMES</span><h2 id="master-list-title">近期课程</h2><p>按课程开始时间排列；每条记录均可回到主办方页面核对。</p></div><span id="masterCount" class="master-count">正在载入…</span></div><div id="masterCards" class="master-list" aria-live="polite"><div class="master-empty">正在载入已核验的大师班信息…</div></div><nav id="masterPagination" class="master-pagination" aria-label="课程分页" hidden><button id="masterPrev" type="button" disabled>← 上一页</button><span id="masterPageStatus" aria-live="polite">1 / 1</span><button id="masterNext" type="button" disabled>下一页 →</button></nav></section>
 </main>
 <script>
 "use strict";
@@ -103,14 +103,31 @@ function renderCard(x){
  return '<article class="master-card"><div class="master-card-top"><span class="master-kind-wrap"><span class="master-card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg></span><span class="master-kind">声乐大师班</span></span><span class="master-date">'+esc(dateLabel)+'</span></div><h3>大师班：'+esc(x.title_zh||x.title)+'</h3>'+(x.title_zh?'<p class="master-original">'+esc(x.title)+'</p>':'')+(x.focus_zh?'<span class="master-focus">'+esc(x.focus_zh)+'</span>':'')+'<p class="master-description">'+esc(x.description_zh||"课程详情请查看主办方公告。")+'</p><dl class="master-facts">'+factsHtml+'</dl><div class="master-source"><span class="master-source-mark">'+esc(initials)+'</span><span>主办机构：'+esc(x.source_name)+'</span><span class="master-verified">已核对官方资料</span></div><div class="master-checked">最近核验：'+esc(fmt(x.last_verified_at||x.checked_at)||"未记录")+' · '+esc(status)+'</div><div class="master-actions">'+(source?'<a class="master-link" href="'+esc(source)+'" target="_blank" rel="noopener noreferrer">官方课程介绍 ↗</a>':'')+(apply?'<a class="master-link master-link-primary" href="'+esc(apply)+'" target="_blank" rel="noopener noreferrer">报名表 / 申请详情 ↗</a>':'')+'</div></article>';
 }
 async function init(){
- const root=document.getElementById("masterList");
+ const root=document.getElementById("masterCards");
  try{
   const r=await fetch("data/masterclasses.json",{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);
   const data=await r.json(),today=Date.now();
   const items=(data.items||[]).filter(x=>{const eventEnd=x.end_at||x.start_at;const eventNotPast=!eventEnd||Date.parse(eventEnd)>=today;const applicationStillOpen=!x.application_deadline_at||Date.parse(x.application_deadline_at)>=today;return x.publisher_status==="official"&&x.review_status==="verified"&&x.publication_status==="published"&&eventNotPast&&applicationStillOpen;}).sort((a,b)=>{const da=Date.parse(a.start_at),db=Date.parse(b.start_at);if(!Number.isFinite(da))return Number.isFinite(db)?1:0;if(!Number.isFinite(db))return -1;return da-db;});
-  if(!items.length){root.innerHTML='<div class="master-empty">目前没有仍在有效期内的已核验课程。你可以查看主办方官网，或稍后再来查看更新。</div>';return;}
-  root.innerHTML=items.map(renderCard).join("");
- }catch(e){root.innerHTML='<div class="master-empty">暂时无法载入大师班资料。请稍后重试；这不会影响其他板块的使用。</div>';console.error("Masterclass page load failed:",e);}
+  document.getElementById("masterCountHero").textContent=items.length+" 个已核验课程";
+  if(!items.length){document.getElementById("masterCount").textContent="暂无有效课程";root.innerHTML='<div class="master-empty">目前没有仍在有效期内的已核验课程。你可以查看主办方官网，或稍后再来查看更新。</div>';return;}
+  let page=0;
+  const pageSize=()=>window.matchMedia("(max-width: 680px)").matches?1:4;
+  const pager=document.getElementById("masterPagination");
+  const draw=()=>{
+   const size=pageSize(),pages=Math.max(1,Math.ceil(items.length/size));
+   page=Math.min(page,pages-1);
+   root.innerHTML=items.slice(page*size,(page+1)*size).map(renderCard).join("");
+   document.getElementById("masterCount").textContent=items.length+" 个已核验课程";
+   document.getElementById("masterPageStatus").textContent=(page+1)+" / "+pages;
+   document.getElementById("masterPrev").disabled=page===0;
+   document.getElementById("masterNext").disabled=page>=pages-1;
+   pager.hidden=pages<=1;
+  };
+  document.getElementById("masterPrev").addEventListener("click",()=>{page=Math.max(0,page-1);draw();document.getElementById("masterList").scrollIntoView({behavior:"smooth",block:"start"});});
+  document.getElementById("masterNext").addEventListener("click",()=>{page++;draw();document.getElementById("masterList").scrollIntoView({behavior:"smooth",block:"start"});});
+  window.addEventListener("resize",draw,{passive:true});
+  draw();
+ }catch(e){document.getElementById("masterCountHero").textContent="课程数据暂时不可用";document.getElementById("masterCount").textContent="载入失败";root.innerHTML='<div class="master-empty">暂时无法载入大师班资料。请稍后重试；这不会影响其他板块的使用。</div>';console.error("Masterclass page load failed:",e);}
 }
 init();
 </script>
