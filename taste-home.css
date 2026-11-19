@@ -220,3 +220,38 @@ body.taste-home :where(a,button,input,select,summary):focus-visible{outline:3px 
   body.taste-home .home-hero-copy[data-enter],
   body.taste-home .home-app[data-enter]{opacity:1;transform:none;animation:none}
 }
+
+
+/* QA pass 2: prevent narrow-screen overflow and preserve usable touch targets. */
+body.taste-home{width:100%;max-width:100%;overflow-x:clip}
+body.taste-home :where(*,*::before,*::after){box-sizing:border-box}
+body.taste-home :where(img,svg,iframe,video){max-width:100%}
+body.taste-home :where(.shell,.home-hero,.home-section,.panel,.newsletter-panel){min-width:0;max-width:100%}
+body.taste-home .home-proof{min-width:0;flex-wrap:wrap;align-items:center}
+body.taste-home .home-proof-copy{min-width:0;overflow-wrap:anywhere}
+body.taste-home .home-refresh{min-height:44px;min-width:88px;display:inline-flex;align-items:center;justify-content:center}
+body.taste-home .newsletter-form,
+body.taste-home .newsletter-form>*,
+body.taste-home .newsletter-form label,
+body.taste-home .newsletter-form input,
+body.taste-home .newsletter-form select{min-width:0;max-width:100%}
+body.taste-home .newsletter-form label,
+body.taste-home .newsletter-consent,
+body.taste-home .nl-consent{overflow-wrap:anywhere;white-space:normal}
+body.taste-home :where(button,a,input,select,summary){max-width:100%}
+@media(max-width:620px){
+  body.taste-home .home-hero{width:calc(100% - 32px);padding:32px 0;gap:28px;grid-template-columns:minmax(0,1fr)}
+  body.taste-home .home-hero-copy,body.taste-home .home-app{min-width:0;width:100%}
+  body.taste-home .home-proof{gap:10px}
+  body.taste-home .home-resource{min-width:0;grid-template-columns:28px 26px minmax(0,1fr) 18px}
+  body.taste-home .home-resource-main{min-width:0;overflow-wrap:anywhere}
+  body.taste-home .home-resource .tile-title{overflow-wrap:anywhere}
+  body.taste-home .newsletter-panel{width:calc(100% - 32px);margin-inline:auto}
+  body.taste-home .newsletter-panel :where(input,select,button){min-height:44px}
+}
+@media(max-width:360px){
+  body.taste-home .shell,body.taste-home .topbar-inner,body.taste-home footer{width:calc(100% - 24px)}
+  body.taste-home .home-hero{width:calc(100% - 24px)}
+  body.taste-home .newsletter-panel{width:calc(100% - 24px);padding:14px}
+  body.taste-home .home-app-row{gap:8px}
+}
