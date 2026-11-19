@@ -14,6 +14,8 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertIn('property="og:title" content="OperaLab.｜欧洲声乐机会与申请信息"', HOME)
         self.assertIn('name="twitter:title" content="OperaLab.｜欧洲声乐机会、音乐学院招生与曲目资料"', HOME)
         self.assertIn('name="page-type" content="software"', HOME)
+        self.assertIn('当前开放报名的声乐机会', HOME)
+        self.assertIn('近期开放项目', HOME)
         self.assertNotIn('Italia Audizioni', HOME)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/"', HOME)
         self.assertIn('property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"', HOME)
