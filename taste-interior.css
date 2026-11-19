@@ -593,3 +593,61 @@ body.master-page .master-pagination span{color:#53645b;font-size:13px;font-varia
  body.master-page .master-pagination{width:calc(100% - 32px)}
  body.master-page .master-hero-proof{padding:14px}
 }
+
+
+/* Final interaction, contrast and section rhythm corrections. */
+body.master-page .master-hero-cta,body.master-page .master-link,body.master-page .master-link-primary{min-height:44px;padding:10px 16px;border:1px solid var(--brand)!important;border-radius:8px!important;background:var(--brand)!important;color:#fff!important;box-shadow:none!important}
+body.master-page .master-hero-cta:hover,body.master-page .master-link:hover,body.master-page .master-link-primary:hover{background:var(--brand-2)!important;border-color:var(--brand-2)!important}
+body.master-page .master-link:focus-visible,body.master-page .master-hero-cta:focus-visible{outline:3px solid #17483c!important;outline-offset:3px}
+body.anatomy-page .page-h1-en,body.mechanism-page .page-h1-en{display:block;margin:14px 0 0;color:#53645b;font-size:clamp(15px,1.5vw,19px);line-height:1.55;letter-spacing:0}
+body.anatomy-page .lab-hero .lab-crumb,body.mechanism-page .crumb{color:#53645b}
+body.anatomy-page .body-system,body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources,body.mechanism-page .mechanism>.layout,body.mechanism-page .mechanism>.section,body.mechanism-page .mechanism>.source{scroll-margin-top:72px}
+body.anatomy-page .body-figure-head span,body.anatomy-page .model-caption,body.anatomy-page .model-credit,body.anatomy-page .body-system-note{color:#53645b}
+body.anatomy-page .model-tab,body.anatomy-page .organ-chip,body.anatomy-page .lab-btn{min-height:44px;border-radius:8px}
+body.anatomy-page .body-detail .organ-en{color:#53645b}
+body.anatomy-page .source-methods small{color:#53645b}
+body.mechanism-page .eyebrow,body.mechanism-page .tag,body.mechanism-page .readout-kicker{color:#53645b}
+body.mechanism-page .model-switcher button,body.mechanism-page .mode,body.mechanism-page .hero-actions a{min-height:48px;border-radius:8px}
+body.mechanism-page .mode span{color:#53645b;font-size:11px;line-height:1.5}
+body.mechanism-page .readout{background:#edf2ed}
+body.mechanism-page .structure p,body.mechanism-page .card.info li{color:#43544b;line-height:1.75}
+body.mechanism-page .card-head{border-bottom:0}
+body.mechanism-page .credit{align-items:center;padding:12px 18px 18px;color:#53645b}
+body.mechanism-page .source a{color:#17483c;text-decoration:underline;text-underline-offset:3px}
+body.mechanism-page .source li{color:#43544b}
+body.voice-lab-page main.voice-page{width:min(100% - 48px,1240px);margin:0 auto}
+body.voice-lab-page .voice-heading{display:grid;gap:12px;max-width:780px}
+body.voice-lab-page .voice-heading h1{max-width:18ch;margin:0;font-size:clamp(36px,4.6vw,58px);line-height:1.1;letter-spacing:-.04em}
+body.voice-lab-page .voice-heading .eyebrow{color:#53645b;font-size:12px;letter-spacing:.12em}
+body.voice-lab-page .voice-heading .page-h1-en{margin:0;color:#53645b;font-size:clamp(15px,1.4vw,18px)}
+body.voice-lab-page .voice-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.7fr);gap:24px;align-items:center}
+body.voice-lab-page .voice-hero .lede{grid-column:1/-1;margin:0;max-width:70ch}
+body.voice-lab-page .chips{grid-column:1/-1;margin:0;gap:8px}
+body.voice-lab-page .chip{min-height:38px;display:inline-flex;align-items:center;border-radius:8px;color:#43544b}
+body.voice-lab-page .hero-cta{min-height:44px;display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid var(--brand);border-radius:8px;background:var(--brand);color:#fff;text-decoration:none}
+body.voice-lab-page .layout{min-height:calc(100svh - 72px);grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+body.voice-lab-page .map{max-height:560px}
+body.voice-lab-page .mapwrap{max-width:100%;overflow:hidden}
+body.voice-lab-page .panel{min-width:0;padding:22px}
+body.voice-lab-page .panel h2{display:flex;align-items:center;gap:10px;color:var(--ink)}
+body.voice-lab-page .section-icon{width:24px;height:24px;flex:0 0 24px;color:var(--brand)}
+body.voice-lab-page .card .tri{display:block;clear:both;margin:4px 0 16px;color:#53645b;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+body.voice-lab-page .card h3{font-size:20px;line-height:1.3;margin:0 0 4px}
+body.voice-lab-page .tabs{gap:7px}
+body.voice-lab-page .tab,body.voice-lab-page .btn,body.voice-lab-page .qbtn{min-height:40px;padding:8px 12px;border-radius:8px}
+body.voice-lab-page .item{min-height:42px;border-radius:8px}
+body.voice-lab-page .count,body.voice-lab-page .hint,body.voice-lab-page .row .k,body.voice-lab-page details.ev summary{color:#53645b}
+body.voice-lab-page .src a{color:#17483c;text-decoration:underline;text-underline-offset:3px}
+body.voice-lab-page footer.note{width:100%;max-width:none;min-height:0;margin:0;padding:24px max(24px,calc((100vw - 1240px)/2));border:0;background:#edf2ed;color:#43544b}
+@media(max-width:900px){
+ body.voice-lab-page .voice-hero{grid-template-columns:1fr}
+ body.voice-lab-page .layout{min-height:0}
+ body.voice-lab-page .map{max-height:none}
+}
+@media(max-width:680px){
+ body.voice-lab-page main.voice-page{width:calc(100% - 32px)}
+ body.voice-lab-page .voice-hero{padding:22px}
+ body.voice-lab-page .layout{padding-block:28px}
+ body.voice-lab-page .panel{padding:16px}
+ body.voice-lab-page footer.note{padding:22px 16px}
+}
