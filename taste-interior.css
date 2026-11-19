@@ -1313,3 +1313,6 @@ body.mechanism-page :is(button,a):focus-visible{outline:2px solid var(--action)!
  body.mechanism-page .source-grid{grid-template-columns:1fr}
  body.mechanism-page .closing{width:calc(100% - 32px);flex-direction:column;align-items:flex-start}
 }
+
+/* Accessible text remains available to assistive technology without becoming a visual caption. */
+body.mechanism-page .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
