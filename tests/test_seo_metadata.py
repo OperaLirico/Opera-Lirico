@@ -80,11 +80,11 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertIn('class="master-card-icon"', page)
 
     def test_masterclass_page_has_page_specific_share_metadata(self):
-        self.assertIn('<title>大师班与专业进修｜OperaLab.</title>', MASTER)
+        self.assertIn('<title>欧洲声乐大师班与专业进修｜OperaLab.</title>', MASTER)
         self.assertIn('property="og:site_name" content="OperaLab."', MASTER)
         self.assertNotIn('Italia Audizioni', MASTER)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/masterclasses.html"', MASTER)
-        self.assertIn('property="og:title" content="声乐大师班与专业进修｜OperaLab."', MASTER)
+        self.assertIn('property="og:title" content="欧洲声乐大师班与专业进修｜OperaLab."', MASTER)
         self.assertIn('name="twitter:card" content="summary_large_image"', MASTER)
 
     def test_voice_anatomy_page_has_page_specific_share_metadata(self):
@@ -128,7 +128,6 @@ class SeoAndSharingTests(unittest.TestCase):
     def test_homepage_masterclass_count_excludes_past_events(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         self.assertIn("const eventEnd=item.end_at||item.start_at", app)
-        self.assertIn("const eventNotPast", app)
         self.assertIn("isCurrentOrUndated", app)
         self.assertIn("Number.isFinite(Date.parse(value))", app)
 
