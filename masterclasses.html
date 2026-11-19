@@ -100,7 +100,7 @@ async function init(){
  try{
   const r=await fetch("data/masterclasses.json",{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);
   const data=await r.json(),today=Date.now();
-  const items=(data.items||[]).filter(x=>x.publisher_status==="official"&&x.review_status==="verified"&&x.publication_status==="published"&&(!x.end_at||Date.parse(x.end_at)>=today)&&(!x.application_deadline_at||Date.parse(x.application_deadline_at)>=today)).sort((a,b)=>{const da=Date.parse(a.start_at),db=Date.parse(b.start_at);if(!Number.isFinite(da))return Number.isFinite(db)?1:0;if(!Number.isFinite(db))return -1;return da-db;});
+  const items=(data.items||[]).filter(x=>{const eventEnd=x.end_at||x.start_at;const eventNotPast=!eventEnd||Date.parse(eventEnd)>=today;const applicationStillOpen=!x.application_deadline_at||Date.parse(x.application_deadline_at)>=today;return x.publisher_status==="official"&&x.review_status==="verified"&&x.publication_status==="published"&&eventNotPast&&applicationStillOpen;}).sort((a,b)=>{const da=Date.parse(a.start_at),db=Date.parse(b.start_at);if(!Number.isFinite(da))return Number.isFinite(db)?1:0;if(!Number.isFinite(db))return -1;return da-db;});
   if(!items.length){root.innerHTML='<div class="master-empty">目前没有仍在有效期内的已核验课程。你可以查看主办方官网，或稍后再来查看更新。</div>';return;}
   root.innerHTML=items.map(renderCard).join("");
  }catch(e){root.innerHTML='<div class="master-empty">暂时无法载入大师班资料。请稍后重试；这不会影响其他板块的使用。</div>';console.error("Masterclass page load failed:",e);}
