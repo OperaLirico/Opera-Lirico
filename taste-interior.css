@@ -1436,3 +1436,15 @@ body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main
  body.master-page footer.closing .footer-inner{grid-template-columns:1fr;gap:16px}
  body.master-page footer.closing small{grid-column:1}
 }
+
+/* Voice Lab after moving the .wrap containers onto each in-flow section. */
+body.voice-lab-page main#main-content>.hero.wrap{height:100svh;min-height:100svh;padding:calc(72px + 36px) 0 36px;box-sizing:border-box}
+body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{height:100vh;min-height:100vh;padding:clamp(36px,5vh,56px) 18px;display:flex;align-items:stretch;box-sizing:border-box}
+@media(max-width:900px){
+ body.voice-lab-page main#main-content>.hero.wrap{height:100svh;min-height:100svh;padding:calc(64px + 24px) 0 24px}
+ body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{height:100vh;min-height:100vh;padding:32px 12px}
+}
+@media(max-width:680px){
+ body.voice-lab-page main#main-content>.hero.wrap{height:100svh;min-height:100svh;padding:calc(64px + 24px) 0 24px}
+ body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{height:100svh;min-height:100svh;padding:28px 10px}
+}
