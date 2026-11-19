@@ -1,4 +1,5 @@
 import unittest
+import re
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
@@ -32,6 +33,7 @@ class SeoAndSharingTests(unittest.TestCase):
         ]
         for name in pages:
             page = (ROOT / name).read_text(encoding="utf-8")
+            self.assertIn('<header class="topbar nav">', page, name)
             self.assertIn("data-enter", page, name)
             self.assertIn('data-moment="word-highlight"', page, name)
             self.assertIn('assets/moments/moments.js', page, name)
@@ -51,7 +53,7 @@ class SeoAndSharingTests(unittest.TestCase):
 
     def test_homepage_landmarks_and_section_markup_are_well_formed(self):
         home = (ROOT / "index.html").read_text(encoding="utf-8")
-        header_start = home.index('<header class="topbar">')
+        header_start = home.index('<header class="topbar nav">')
         skip_link = home.index('<a class="skip-link"')
         main_end = home.index("</main>")
         footer = home.index("<footer")
@@ -64,17 +66,17 @@ class SeoAndSharingTests(unittest.TestCase):
         voice_lab = (ROOT / "voice-lab.html").read_text(encoding="utf-8")
         larynx = (ROOT / "larynx-mechanism.html").read_text(encoding="utf-8")
         self.assertIn('id="organLink" href="larynx-mechanism.html"', anatomy)
-        self.assertIn('class="lab-wrap wrap"', anatomy)
+        self.assertIn('<main class="lab-wrap" id="main-content">', anatomy)
         self.assertIn('class="body-system split"', anatomy)
         self.assertIn('<label class="search-label" for="q">搜索结构</label>', voice_lab)
         self.assertIn('class="voice-hero"', voice_lab)
-        self.assertIn("<main class=\"wrap\">", voice_lab)
-        self.assertIn('class="mechanism wrap"', larynx)
+        self.assertIn('<main id="main-content">', voice_lab)
+        self.assertIn('<main class="mechanism" id="main-content">', larynx)
         self.assertIn('class="hero-actions"', larynx)
 
     def test_masterclass_cards_keep_safe_location_display_and_hero_action(self):
         page = (ROOT / "masterclasses.html").read_text(encoding="utf-8")
-        self.assertIn('class="master-wrap wrap"', page)
+        self.assertIn('<main class="master-wrap" id="main-content">', page)
         self.assertIn('class="master-hero-cta"', page)
         self.assertIn("const formatLocation=", page)
         self.assertIn('class="master-card-icon"', page)
