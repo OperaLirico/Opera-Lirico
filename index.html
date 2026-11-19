@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN" data-type="software" data-radius="soft">
+<html lang="zh-CN" data-type="software" data-radius="soft" data-motion>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -43,6 +43,8 @@
   <link rel="stylesheet" href="styles.css?v=ux19">
   <link rel="stylesheet" href="hero-facts.css?v=1">
   <link rel="stylesheet" href="taste-home.css?v=1">
+  <link rel="stylesheet" href="assets/motion/motion.css">
+  <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
   <title>OperaLab.｜欧洲声乐机会、音乐学院招生与曲目资料</title>
 </head>
 <body class="taste-home">
@@ -63,8 +65,8 @@
     </div>
   </header>
   <main id="top">
-    <section class="shell wrap home-hero" aria-labelledby="home-title">
-      <div class="home-hero-copy" data-enter>
+    <section class="shell wrap home-hero hero" data-enter aria-labelledby="home-title">
+      <div class="home-hero-copy">
         <div class="home-kicker">OperaLab. / 欧洲声乐信息平台</div>
         <h1 id="home-title">欧洲声乐机会与<em>申请信息。</em><small class="home-hero-en">European vocal opportunities for Chinese singers</small></h1>
         <p class="home-lede">为计划赴欧学习或发展的中国声乐学习者，整理欧洲音乐学院招生、歌剧院招募、比赛与大师班信息。每条正式项目都保留原始公告入口，方便你核对要求。</p>
@@ -78,7 +80,7 @@
           <button id="refreshButton" class="home-refresh" type="button">重新载入</button>
         </div>
       </div>
-      <div class="home-app" data-enter aria-label="OperaLab 主要资料入口">
+      <div class="home-app" aria-label="OperaLab 主要资料入口">
         <div class="home-app-head">
           <div class="home-app-title"><span class="home-app-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><span class="home-app-overline">资料入口</span><strong>欧洲声乐机会目录</strong></span></div>
           <span class="home-app-state"><i aria-hidden="true"></i>持续整理</span>
@@ -255,5 +257,6 @@
   <script src="app.js?v=ux15" defer></script>
   <script src="hero-facts.js?v=1" defer></script>
   <script type="module" src="assets/moments/moments.js"></script>
+  <script type="module" src="assets/motion/motion.js"></script>
 </body>
 </html>
