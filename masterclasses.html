@@ -115,6 +115,7 @@ async function init(){
   const pager=document.getElementById("masterPagination");
   const draw=()=>{
    const size=pageSize(),pages=Math.max(1,Math.ceil(items.length/size));
+   const listSection=document.getElementById("masterList");if(listSection)listSection.dataset.pages=pages>1?"2":"1";
    page=Math.min(page,pages-1);
    root.innerHTML=items.slice(page*size,(page+1)*size).map(renderCard).join("");
    const timeline=document.getElementById("masterTimeline");
