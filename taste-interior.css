@@ -1448,3 +1448,64 @@ body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main
  body.voice-lab-page main#main-content>.hero.wrap{height:100svh;min-height:100svh;padding:calc(64px + 24px) 0 24px}
  body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{height:100svh;min-height:100svh;padding:28px 10px}
 }
+
+/* Voice Lab: independent, top-level learning bands with aligned visual and text groups. */
+body.voice-lab-page main#main-content{grid-template-columns:minmax(0,1fr);gap:0}
+body.voice-lab-page main#main-content>section.wrap{grid-column:1;width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto}
+body.voice-lab-page #workspace{height:100vh;min-height:100vh;padding:clamp(40px,6vh,64px) 18px;display:flex;flex-direction:column;align-items:stretch;gap:12px}
+body.voice-lab-page #workspace>*{width:100%;max-width:none;margin-left:0;margin-right:0}
+body.voice-lab-page #workspace .mapwrap{height:300px;max-height:34vh}
+body.voice-lab-page #workspace .map{height:100%;max-height:300px}
+body.voice-lab-page .index-overview,body.voice-lab-page .index-detail{height:100vh;min-height:100vh;padding:clamp(36px,5vh,52px) 18px;display:flex;flex-direction:column;align-items:stretch;gap:10px}
+body.voice-lab-page .index-overview h2,body.voice-lab-page .index-detail h2{margin:0;text-align:left}
+body.voice-lab-page .index-overview .voice-map-reference{width:100%;height:110px;max-height:110px;object-fit:contain;margin:0}
+body.voice-lab-page .structure-overview{width:100%;max-height:130px;overflow:auto;display:grid;grid-template-columns:1fr;gap:4px}
+body.voice-lab-page .overview-row{width:100%;min-width:0;min-height:22px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;overflow:visible}
+body.voice-lab-page .overview-row span{min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+body.voice-lab-page .overview-row b{white-space:nowrap}
+body.voice-lab-page #tabs{width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+body.voice-lab-page #tabs .tab{position:static!important;float:none!important;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+body.voice-lab-page #tabs .tab span{position:static!important;display:inline-block;color:#263c31!important;font-size:11px;line-height:1}
+body.voice-lab-page .index-overview #list{max-height:150px;overflow:auto}
+body.voice-lab-page .index-overview #list .item{height:44px;min-height:44px;max-height:44px;display:flex;align-items:center;justify-content:space-between;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.voice-lab-page .index-detail-intro{margin:0;max-width:70ch;line-height:1.55;color:#263c31}
+body.voice-lab-page .voice-detail-visual{width:100%;height:180px;max-height:180px;object-fit:contain;margin:0;background:#edf2ed}
+body.voice-lab-page #detail{width:100%;max-width:none;max-height:220px;overflow:auto;min-width:0;line-height:1.55;overflow-wrap:anywhere}
+body.voice-lab-page #detail h3{font-size:16px!important;line-height:1.3!important;margin:0 0 8px}
+body.voice-lab-page #detail .crumb{position:static!important;display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 10px}
+body.voice-lab-page #detail .crumb button{position:static!important;float:none!important;display:inline-flex;align-items:center;justify-content:center;min-height:44px;height:44px;padding:8px 12px;border-radius:8px}
+body.voice-lab-page .data-note{width:100%;max-height:none;overflow:visible;white-space:normal;overflow-wrap:anywhere;word-break:break-word;padding:10px 12px;border-top:1px solid #d6dfd8;color:#263c31;font-size:11px;line-height:1.55}
+body.voice-lab-page .data-note code{white-space:normal;overflow-wrap:anywhere;color:#263c31;background:#e7eee8}
+body.voice-lab-page .closing{height:100svh;min-height:100svh;padding:clamp(36px,5vh,52px) 18px;display:flex;align-items:center;justify-content:center}
+body.voice-lab-page .closing-inner{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:center;gap:28px}
+body.voice-lab-page .closing-brand{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+body.voice-lab-page .closing-brand strong{font-size:clamp(30px,3vw,42px)}
+body.voice-lab-page .closing-brand p{max-width:50ch;margin:0;line-height:1.65;color:#263c31}
+body.voice-lab-page .closing-brand nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+body.voice-lab-page .closing-brand nav a{min-width:0;min-height:44px;padding:10px 12px;display:flex;align-items:center;border:1px solid #cbd7ce;border-radius:8px;color:#17483c;overflow-wrap:anywhere}
+body.voice-lab-page .closing-note{margin:0;padding-top:14px;border-top:1px solid #d8e0d9;color:#465b50;font-size:12px;line-height:1.6}
+body.voice-lab-page .closing-visual{width:100%;height:280px;max-height:280px;object-fit:contain}
+body.voice-lab-page :is(button,.tab,.btn,.qbtn,#list .item,#detail .rel button,#detail .crumb button){height:44px;min-height:44px;max-height:44px;padding:8px 12px;border-radius:8px!important;font-size:12px;line-height:1.25}
+body.voice-lab-page :is(button,.tab,.btn,.qbtn,#list .item,#detail .rel button,#detail .crumb button){color:#1d342b;border-color:#b9c9be}
+body.voice-lab-page :is(.tab span,.count,#detail details.ev summary,.data-note,.data-note code){color:#263c31!important}
+@media(max-width:900px){
+ body.voice-lab-page main#main-content>section.wrap{width:calc(100% - 32px)}
+ body.voice-lab-page #workspace,body.voice-lab-page .index-overview,body.voice-lab-page .index-detail{height:100vh;min-height:100vh;padding:30px 12px}
+ body.voice-lab-page .closing{width:calc(100% - 32px)}
+}
+@media(max-width:680px){
+ body.voice-lab-page #workspace,body.voice-lab-page .index-overview,body.voice-lab-page .index-detail{height:100svh;min-height:100svh;padding:24px 10px}
+ body.voice-lab-page #workspace .mapwrap{height:250px;max-height:30vh}
+ body.voice-lab-page #workspace .map{max-height:250px}
+ body.voice-lab-page .index-overview .voice-map-reference{height:76px;max-height:76px}
+ body.voice-lab-page .structure-overview{max-height:100px}
+ body.voice-lab-page .index-overview #list{max-height:112px}
+ body.voice-lab-page .voice-detail-visual{height:120px;max-height:120px}
+ body.voice-lab-page #detail{max-height:180px}
+ body.voice-lab-page .data-note{font-size:10px;padding:8px}
+ body.voice-lab-page .closing{height:100svh;min-height:100svh;padding:24px 10px}
+ body.voice-lab-page .closing-inner{grid-template-columns:1fr;gap:14px}
+ body.voice-lab-page .closing-visual{height:120px;max-height:120px;grid-row:1}
+ body.voice-lab-page .closing-brand{grid-row:2}
+ body.voice-lab-page .closing-brand nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
