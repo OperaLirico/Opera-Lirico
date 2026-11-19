@@ -255,3 +255,37 @@ body.taste-home :where(button,a,input,select,summary){max-width:100%}
   body.taste-home .newsletter-panel{width:calc(100% - 24px);padding:14px}
   body.taste-home .home-app-row{gap:8px}
 }
+
+
+/* Taste composition pass: section rhythm, alignment and explicit focus states. */
+body.taste-home :where(.home-hero,.home-section,.newsletter-panel){scroll-margin-top:88px}
+body.taste-home .home-hero{min-height:min(828px,calc(100svh - 72px));align-content:center}
+body.taste-home .home-hero-copy{padding-block:28px}
+body.taste-home .home-app{align-self:center}
+body.taste-home .home-section{display:flex;flex-direction:column;justify-content:center;min-height:min(820px,calc(100svh - 72px));}
+body.taste-home .home-section-head{align-items:flex-end}
+body.taste-home .home-card-grid .tile{position:relative;overflow:hidden}
+body.taste-home .home-card-grid .tile:focus-visible,
+body.taste-home .home-resource:focus-visible,
+body.taste-home .home-app-row:focus-visible,
+body.taste-home .home-button:focus-visible,
+body.taste-home .home-text-link:focus-visible,
+body.taste-home .home-refresh:focus-visible{outline:3px solid #8aa99a;outline-offset:3px}
+body.taste-home .home-card-grid .tile:hover .tile-title{color:var(--brand-2)}
+body.taste-home .home-resource-main strong{transition:color .15s ease}
+body.taste-home .home-resource:hover .home-resource-main strong{color:var(--brand-2)}
+@media(min-width:621px){
+ body.taste-home .home-card-grid .tile:nth-child(3n+2){transform:translateY(12px)}
+ body.taste-home .home-card-grid .tile:nth-child(3n+2):hover{transform:translateY(10px)}
+}
+@media(max-width:620px){
+ body.taste-home .home-hero{min-height:auto;padding-top:42px;padding-bottom:44px}
+ body.taste-home .home-section{min-height:auto;padding-top:54px;padding-bottom:54px}
+ body.taste-home .home-section-head{display:block;margin-bottom:22px}
+ body.taste-home .home-section-head>p{margin-top:12px}
+ body.taste-home .home-card-grid{grid-template-columns:minmax(0,1fr);gap:10px}
+ body.taste-home .home-card-grid .tile{min-height:0;padding:20px}
+}
+@media(prefers-reduced-motion:reduce){
+ body.taste-home *,body.taste-home *::before,body.taste-home *::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
