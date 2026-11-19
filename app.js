@@ -46,9 +46,9 @@ function esc(text=''){return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<
 /* Public-facing excerpts retain their source record unchanged while omitting precise street numbers and postcodes. */
 function publicExcerpt(value){
   return String(value||'')
-    .replace(/\\b(Via|Viale|Piazza|Piazzale|Corso|Largo|Strada|Vicolo|Rue|Street|Avenue)\\s+([^,;|]+?)\\s+\\d+[A-Za-z]?(?=[,;|]|$)/gi,'$1 $2')
-    .replace(/\\b\\d{5}\\b/g,'')
-    .replace(/\\s{2,}/g,' ')
+    .replace(/\b(Via|Viale|Piazza|Piazzale|Corso|Largo|Strada|Vicolo|Rue|Street|Avenue)\s+([^,;|]+?)\s+\d+[A-Za-z]?(?=[,;|]|$)/gi,'$1 $2')
+    .replace(/\b\d{5}\b/g,'')
+    .replace(/\s{2,}/g,' ')
     .trim();
 }
 /* 抓下来的记录里，work 位置偶尔存的是目录路径、poet 位置存的是译者署名，都不是我们能展示的东西。 */
