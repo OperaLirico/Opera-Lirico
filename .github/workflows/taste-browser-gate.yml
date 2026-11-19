@@ -23,7 +23,26 @@ permissions:
 jobs:
   taste-browser-gate:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - page: index.html
+            category: "European vocal opportunities and application information for Chinese singers"
+            primary: "Explore verified opportunities"
+          - page: masterclasses.html
+            category: "European vocal masterclasses and advanced study for Chinese singers"
+            primary: "View verified masterclasses"
+          - page: voice-anatomy.html
+            category: "Anatomy and vocal production learning resources for classical singers"
+            primary: "Explore vocal anatomy"
+          - page: larynx-mechanism.html
+            category: "Laryngeal anatomy and phonation learning resources for classical singers"
+            primary: "Explore laryngeal mechanisms"
+          - page: voice-lab.html
+            category: "Interactive vocal science and anatomy learning resources for classical singers"
+            primary: "Explore vocal structures"
     steps:
       - name: Check out repository
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
@@ -47,34 +66,40 @@ jobs:
       - name: Sync the pinned upstream Taste Skill
         run: bash skills/taste-skill/sync.sh
 
-      - name: Run the full Taste finish gate on every redesigned page
-        shell: bash
+      - name: Arm the Taste finish gate
         run: |
-          set -uo pipefail
-          SKILL="skills/taste-skill/upstream/skills/taste-skill"
-          FAILED=0
-          while IFS='|' read -r PAGE CATEGORY PRIMARY; do
-            echo "::group::Taste gate — $PAGE"
-            node "$SKILL/scripts/gate.mjs" --start "$PAGE" --root . --kind software --category "$CATEGORY" --primary "$PRIMARY" --rounds 1 --new
-            START_CODE=$?
-            if [ "$START_CODE" -ne 0 ]; then
-              echo "Could not arm Taste gate for $PAGE (exit $START_CODE)."
-              FAILED=1
-              echo "::endgroup::"
-              continue
-            fi
-            node "$SKILL/scripts/gate.mjs" "$PAGE" --root . --kind software --category "$CATEGORY" --primary "$PRIMARY"
-            GATE_CODE=$?
-            if [ "$GATE_CODE" -ne 0 ]; then
-              echo "Taste gate failed for $PAGE (exit $GATE_CODE)."
-              FAILED=1
-            fi
-            echo "::endgroup::"
-          done <<'PAGES'
-          index.html|European vocal opportunities and application information for Chinese singers|Explore verified opportunities
-          masterclasses.html|European vocal masterclasses and advanced study for Chinese singers|View verified masterclasses
-          voice-anatomy.html|Anatomy and vocal production learning resources for classical singers|Explore vocal anatomy
-          larynx-mechanism.html|Laryngeal anatomy and phonation learning resources for classical singers|Explore laryngeal mechanisms
-          voice-lab.html|Interactive vocal science and anatomy learning resources for classical singers|Explore vocal structures
-          PAGES
-          exit "$FAILED"
+          node skills/taste-skill/upstream/skills/taste-skill/scripts/gate.mjs \
+            --start "${{ matrix.page }}" --root . --kind software \
+            --category "${{ matrix.category }}" --primary "${{ matrix.primary }}" \
+            --rounds 1 --new
+
+      - name: Check the page at all four required widths
+        id: four-widths
+        continue-on-error: true
+        run: |
+          node skills/taste-skill/upstream/skills/taste-skill/scripts/consistency.mjs \
+            "${{ matrix.page }}" --widths 1440,1024,768,390 --json \
+            --out ".taste-skill/consistency/${{ matrix.page }}" --root . --page software \
+            --category "${{ matrix.category }}" --primary "${{ matrix.primary }}"
+
+      - name: Run the upstream Taste finish gate
+        id: finish-gate
+        continue-on-error: true
+        run: |
+          node skills/taste-skill/upstream/skills/taste-skill/scripts/gate.mjs \
+            "${{ matrix.page }}" --root . --kind software \
+            --category "${{ matrix.category }}" --primary "${{ matrix.primary }}"
+
+      - name: Summarize visual QA result
+        if: always()
+        env:
+          WIDTHS_OUTCOME: ${{ steps.four-widths.outcome }}
+          GATE_OUTCOME: ${{ steps.finish-gate.outcome }}
+          PAGE: ${{ matrix.page }}
+        run: |
+          {
+            echo "## Taste browser QA — $PAGE"
+            echo "- Four viewport check (1440 / 1024 / 768 / 390): $WIDTHS_OUTCOME"
+            echo "- Upstream finish gate: $GATE_OUTCOME"
+          } >> "$GITHUB_STEP_SUMMARY"
+          test "$WIDTHS_OUTCOME" = "success" && test "$GATE_OUTCOME" = "success"
