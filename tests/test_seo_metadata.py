@@ -62,9 +62,15 @@ class SeoAndSharingTests(unittest.TestCase):
     def test_anatomy_and_voice_lab_navigation_accessibility(self):
         anatomy = (ROOT / "voice-anatomy.html").read_text(encoding="utf-8")
         voice_lab = (ROOT / "voice-lab.html").read_text(encoding="utf-8")
+        larynx = (ROOT / "larynx-mechanism.html").read_text(encoding="utf-8")
         self.assertIn('id="organLink" href="larynx-mechanism.html"', anatomy)
+        self.assertIn('class="lab-wrap wrap"', anatomy)
+        self.assertIn('class="body-system split"', anatomy)
         self.assertIn('<label class="search-label" for="q">搜索结构</label>', voice_lab)
+        self.assertIn('class="voice-hero"', voice_lab)
         self.assertIn("<main class=\"wrap\">", voice_lab)
+        self.assertIn('class="mechanism wrap"', larynx)
+        self.assertIn('class="hero-actions"', larynx)
 
     def test_masterclass_cards_keep_safe_location_display_and_hero_action(self):
         page = (ROOT / "masterclasses.html").read_text(encoding="utf-8")
