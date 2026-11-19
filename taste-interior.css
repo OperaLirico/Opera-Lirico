@@ -1591,3 +1591,76 @@ body.master-page .footer-visual svg{width:100%;height:100%;display:block}
  header.topbar.nav nav.nav-links{gap:2px}
  header.topbar.nav nav.nav-links a{font-size:9px;padding:4px 2px}
 }
+
+
+/* Responsive repair pass — measured overflow, section collision and thumb targets. */
+html,body{max-width:100%;overflow-x:clip}
+body.master-page,body.anatomy-page,body.mechanism-page,body.voice-lab-page{min-width:0;max-width:100%;overflow-x:clip}
+body.master-page :is(main,section,article,header,footer,nav,div,ul,ol,dl){min-width:0}
+body.anatomy-page :is(main,section,article,header,footer,nav,div,ul,ol,dl){min-width:0}
+body.mechanism-page :is(main,section,article,header,footer,nav,div,ul,ol,dl){min-width:0}
+body.voice-lab-page :is(main,section,article,header,footer,nav,div,ul,ol,dl){min-width:0}
+body.master-page :is(h1,h2,h3,p,a,button,small,strong,span,dd,dt,li){overflow-wrap:anywhere}
+body.anatomy-page :is(h1,h2,h3,p,a,button,small,strong,span,dd,dt,li){overflow-wrap:anywhere}
+body.mechanism-page :is(h1,h2,h3,p,a,button,small,strong,span,dd,dt,li){overflow-wrap:anywhere}
+body.voice-lab-page :is(h1,h2,h3,p,a,button,small,strong,span,dd,dt,li){overflow-wrap:anywhere}
+header.topbar.nav .topbar-inner{width:100%;max-width:100%;box-sizing:border-box;flex-wrap:wrap}
+header.topbar.nav nav.nav-links{min-width:0;max-width:100%;flex-wrap:wrap}
+header.topbar.nav nav.nav-links a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:8px 9px;box-sizing:border-box}
+body.master-page .master-list-inner,body.master-page .master-list-head,body.master-page #masterCards{min-width:0;width:100%;max-width:100%}
+body.master-page .master-list-head{align-items:flex-start}
+body.master-page .master-list-head>div{min-width:0;max-width:100%}
+body.master-page .master-list-head .master-count{white-space:normal;overflow-wrap:anywhere}
+body.master-page .master-timeline{align-items:stretch}
+body.master-page .master-timeline-item{min-width:0}
+body.anatomy-page .body-system{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+body.anatomy-page .body-system>*{min-width:0;max-width:100%}
+body.anatomy-page .body-detail-section,body.anatomy-page .body-detail-section>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+body.anatomy-page .body-detail-section ul{padding-left:1.25rem}
+body.mechanism-page .mechanism{width:min(calc(100% - 48px),1280px);max-width:1280px;min-width:0}
+body.mechanism-page .layout{grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr)}
+body.mechanism-page .layout>*{min-width:0;max-width:100%}
+body.voice-lab-page main#main-content{min-width:0;max-width:100%;grid-template-columns:minmax(0,1fr)}
+body.voice-lab-page main#main-content>*{min-width:0;max-width:100%}
+@media(max-width:900px){
+ body.anatomy-page .body-system,body.mechanism-page .layout{grid-template-columns:minmax(0,1fr)}
+ body.master-page .master-list-inner{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:680px){
+ header.topbar.nav .topbar-inner{gap:8px;padding-left:16px;padding-right:16px}
+ header.topbar.nav .brand{flex:0 0 auto}
+ header.topbar.nav nav.nav-links{flex:1 1 100%;justify-content:flex-start;gap:4px}
+ header.topbar.nav nav.nav-links a{font-size:12px;padding:8px 9px;min-height:44px}
+ body.master-page .master-head{height:auto!important;min-height:calc(100svh - 64px)!important;padding:28px 16px!important}
+ body.master-page .master-list-section{height:auto!important;min-height:0;padding:24px 16px!important}
+ body.master-page .master-list-inner{height:auto!important;min-height:0}
+ body.master-page .master-list-overview,body.master-page .master-list-results{height:auto!important;min-height:0}
+ body.master-page .master-list-head{display:grid;grid-template-columns:minmax(0,1fr);align-items:start}
+ body.master-page .master-timeline{display:none!important}
+ body.master-page #masterCards{grid-template-columns:minmax(0,1fr)!important;grid-auto-rows:auto}
+ body.master-page .master-card{min-height:0!important;height:auto!important}
+ body.master-page .master-card :is(h3,p,dd,dt){min-width:0;overflow-wrap:anywhere}
+ body.master-page .master-actions{flex-wrap:wrap}
+ body.anatomy-page .lab-wrap{width:calc(100% - 32px);max-width:100%;padding:20px 0 48px}
+ body.anatomy-page .lab-hero{height:auto!important;min-height:calc(100svh - 64px)!important;padding:24px 0!important}
+ body.anatomy-page .body-system,body.anatomy-page .breath-lab,body.anatomy-page .lab-info{height:auto!important;min-height:0!important}
+ body.anatomy-page .body-detail-section{height:auto!important;min-height:0!important;padding-left:16px;padding-right:16px}
+ body.anatomy-page .body-detail-section ul{padding-left:1.15rem}
+ body.mechanism-page .mechanism{width:calc(100% - 32px);padding:20px 0 48px}
+ body.mechanism-page .hero{height:auto!important;min-height:calc(100svh - 64px)!important;padding:24px 0!important;margin-bottom:20px}
+ body.mechanism-page .layout{grid-template-columns:minmax(0,1fr);gap:14px}
+ body.mechanism-page .viewer-frame{aspect-ratio:4/3}
+ body.voice-lab-page main#main-content>.hero.wrap{height:auto!important;min-height:calc(100svh - 64px)!important;padding:24px 0!important}
+ body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{height:auto!important;min-height:0!important}
+ body.voice-lab-page .layout{grid-template-columns:minmax(0,1fr)}
+ body.voice-lab-page .panel,body.voice-lab-page .mapwrap{min-width:0;max-width:100%}
+ body.voice-lab-page .toolrow{flex-wrap:wrap}
+ body.voice-lab-page .toolrow button,body.voice-lab-page .tab,body.voice-lab-page .item{min-height:44px}
+}
+@media(max-width:380px){
+ header.topbar.nav .topbar-inner{padding-left:12px;padding-right:12px}
+ header.topbar.nav nav.nav-links{gap:2px}
+ header.topbar.nav nav.nav-links a{padding:8px 6px;font-size:11px}
+ body.mechanism-page .mechanism{width:calc(100% - 24px)}
+ body.master-page .master-head h1{font-size:27px}
+}
