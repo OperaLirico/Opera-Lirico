@@ -9,7 +9,7 @@ MASTER = (ROOT / "masterclasses.html").read_text(encoding="utf-8")
 
 class SeoAndSharingTests(unittest.TestCase):
     def test_homepage_has_canonical_and_social_preview_metadata(self):
-        self.assertIn('<title>OperaLab.｜意大利声乐机会、音乐学院招生与曲目资料</title>', HOME)
+        self.assertIn('<title>OperaLab.｜欧洲声乐机会、音乐学院招生与曲目资料</title>', HOME)
         self.assertIn('property="og:site_name" content="OperaLab."', HOME)
         self.assertNotIn('Italia Audizioni', HOME)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/"', HOME)
@@ -70,15 +70,16 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertEqual(len(chips), len(set(chips)))
         self.assertEqual(len(chips), 12)
 
-    def test_repertoire_archive_is_only_merged_after_the_reader_starts_a_search(self):
-        # The archive holds unreviewed entries, so it must never be part of the first
-        # paint. It may be merged into search only when the reader actually searches.
+    def test_repertoire_archive_and_candidates_load_when_library_is_opened(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         self.assertIn("function ensureArchive()", app)
-        archive_start = app.index("async function loadArchive(")
-        self.assertIn("repertoire_archive.json", app[archive_start:])
-        first_paint = app[app.index("async function loadRepertoire("):archive_start]
-        self.assertNotIn("repertoire_archive.json", first_paint)
+        self.assertIn("function ensureCandidates()", app)
+        self.assertIn("repertoire_archive.json", app)
+        self.assertIn("repertoire_candidates.json", app)
+        open_panel_start = app.index("function openPanel(")
+        back_to_tiles_start = app.index("function backToTiles(", open_panel_start)
+        open_panel = app[open_panel_start:back_to_tiles_start]
+        self.assertIn("if(name==='music-library'){ensureArchive();ensureCandidates();}", open_panel)
 
     def test_404_page_exists_and_returns_home_link(self):
         page = (ROOT / "404.html").read_text(encoding="utf-8")
