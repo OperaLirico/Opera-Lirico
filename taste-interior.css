@@ -163,3 +163,22 @@ body.anatomy-page .lab-info{min-height:100svh;box-sizing:border-box;display:flex
 body.anatomy-page .source-icon{width:18px;height:18px;margin-right:8px;vertical-align:-3px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:850px){body.anatomy-page .body-system{grid-template-columns:1fr}}
 @media(max-width:600px){body.anatomy-page .lab-wrap{width:calc(100% - 32px);padding:16px 0 48px}body.anatomy-page .lab-hero{min-height:calc(100svh - 64px);padding:20px 0}body.anatomy-page .body-system,body.anatomy-page .breath-lab,body.anatomy-page .lab-info{min-height:auto}}
+
+/* Laryngeal mechanism page: full-screen entry, model-led split and accessible controls. */
+body.mechanism-page .mechanism{width:calc(100% - 48px);max-width:1280px;margin:0 auto;padding:24px 0 72px;box-sizing:border-box}
+body.mechanism-page .hero{min-height:calc(100svh - 72px);box-sizing:border-box;max-width:860px;display:flex;flex-direction:column;justify-content:center;padding:32px 0;margin:0 0 30px}
+body.mechanism-page .lab-entry{display:flex;flex-wrap:wrap;gap:8px 12px;margin:0 0 20px;font-size:13px;line-height:1.7}
+body.mechanism-page .lab-entry a{color:#23483c;text-decoration:none;border-bottom:1px solid #c9714f;padding-bottom:2px}
+body.mechanism-page .lab-entry span{color:#536158;font-size:12px}
+body.mechanism-page .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+body.mechanism-page .hero-actions a{display:inline-flex;align-items:center;min-height:44px;padding:9px 15px;border-radius:999px;background:#23483c;color:#fff;text-decoration:none;font-size:12px;font-weight:650}
+body.mechanism-page .hero-actions a+a{background:#e8efea;color:#23483c}
+body.mechanism-page .layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);align-items:start;gap:22px}
+body.mechanism-page .notice{margin:12px 0;padding:12px 14px;border:1px solid #d5e1d7;border-radius:12px;background:#edf3ed;color:#46544c;font-size:12px;line-height:1.7}
+body.mechanism-page .card{min-width:0}
+body.mechanism-page .viewer-caption,
+body.mechanism-page .credit,
+body.mechanism-page .structure p{color:#536158}
+body.mechanism-page :where(button,a):focus-visible{outline:3px solid #a85f3d;outline-offset:3px}
+@media(max-width:850px){body.mechanism-page .layout{grid-template-columns:1fr}}
+@media(max-width:600px){body.mechanism-page .mechanism{width:calc(100% - 32px);padding:16px 0 48px}body.mechanism-page .hero{min-height:calc(100svh - 64px);padding:20px 0}}
