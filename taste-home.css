@@ -532,3 +532,51 @@ body.taste-home :is(button,a,input,select):focus-visible{outline:2px solid var(-
  body.taste-home .home-resource-visual{min-height:160px}
  body.taste-home .newsletter-panel{padding:34px 0}
 }
+
+/* Home: true one-screen bands, visual anchors and consistent action controls. */
+body.taste-home .home-hero{height:100svh;min-height:100svh}
+body.taste-home .home-section{height:100vh;min-height:100vh}
+body.taste-home .newsletter-panel{height:100vh;min-height:100vh}
+body.taste-home footer.closing{height:100svh;min-height:100svh}
+body.taste-home .home-static-fact{display:block;font-size:12px;font-weight:650;color:#315b48;line-height:1.4}
+body.taste-home .home-proof-copy{display:grid;gap:5px;align-content:center}
+body.taste-home .home-tiles-art{width:150px;height:150px;object-fit:contain}
+body.taste-home .home-app-art{max-height:170px;object-fit:cover}
+body.taste-home .home-resource-visual img{height:220px;min-height:180px;object-fit:contain}
+body.taste-home .home-process-line{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;align-items:stretch}
+body.taste-home .home-process-line>i{display:none}
+body.taste-home .home-process-line .process-step{min-width:0;min-height:140px;padding:18px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:12px;border:1px solid #d7e0d8;border-radius:8px;background:#f5f6f1;line-height:1.45}
+body.taste-home .home-process-line .process-step svg{width:32px;height:32px;flex:0 0 auto}
+body.taste-home .newsletter-preview-mark{display:block;width:64px;height:64px;object-fit:contain;margin:0 0 2px}
+body.taste-home .footer-inner{width:100%;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:24px;align-items:center}
+body.taste-home .footer-brand{max-width:56ch;display:grid;gap:14px}
+body.taste-home .footer-brand strong{font-size:clamp(28px,3vw,40px);letter-spacing:-.04em}
+body.taste-home .footer-brand p{max-width:50ch;line-height:1.7;color:#465b50}
+body.taste-home footer.closing nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+body.taste-home footer.closing nav a{min-height:44px;padding:12px 14px;display:flex;align-items:center;border:1px solid #cbd7ce;border-radius:8px;color:#17483c}
+body.taste-home .footer-note{grid-column:1/-1;padding-top:18px;border-top:1px solid #d8e0d9;color:#52665a;font-size:12px}
+body.taste-home :is(.home-button,.home-text-link,.home-refresh,.home-app-row,.tile,.newsletter-link,.ghost-toggle,.home-resource){min-height:44px;height:auto;padding:10px 14px;border-radius:8px!important;font-size:12px;line-height:1.35}
+body.taste-home :is(.home-button,.home-text-link,.home-refresh,.newsletter-link,.ghost-toggle){border:1px solid #b9c9be}
+body.taste-home .home-button--primary,body.taste-home .newsletter-link{background:#17483c;color:#fff;border-color:#17483c}
+body.taste-home :is(.home-text-link,.home-refresh,.ghost-toggle){background:#f8faf6;color:#17483c}
+body.taste-home .home-app-row{width:100%;border:1px solid #d8e0d9;background:#f8faf6}
+body.taste-home .tile{border:1px solid #d8e0d9;background:#f8faf6}
+body.taste-home :is(.home-button,.home-text-link,.home-refresh,.home-app-row,.tile,.newsletter-link,.ghost-toggle,.home-resource):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+@media(max-width:900px){
+ body.taste-home .home-process-line{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.taste-home .home-process-line .process-step{min-height:120px;padding:14px}
+ body.taste-home .footer-inner{grid-template-columns:1fr}
+ body.taste-home .footer-note{grid-column:1}
+}
+@media(max-width:680px){
+ body.taste-home .home-hero{height:100svh;min-height:100svh}
+ body.taste-home .home-section{height:100vh;min-height:100vh}
+ body.taste-home .home-tiles-art{width:88px;height:88px}
+ body.taste-home .home-process-line{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.taste-home .home-process-line .process-step{min-height:112px;padding:10px}
+ body.taste-home .home-resource-visual img{height:140px;min-height:120px}
+ body.taste-home .newsletter-panel{height:100vh;min-height:100vh}
+ body.taste-home .newsletter-preview-mark{width:48px;height:48px}
+ body.taste-home footer.closing{height:100svh;min-height:100svh}
+ body.taste-home footer.closing nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

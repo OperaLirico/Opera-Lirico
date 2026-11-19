@@ -49,6 +49,7 @@ function publicExcerpt(value){
     .replace(/\b(Via|Viale|Piazza|Piazzale|Corso|Largo|Strada|Vicolo|Rue|Street|Avenue)\s+([^,;|]+?)\s+\d+[A-Za-z]?(?=[,;|]|$)/gi,'$1 $2')
     .replace(/\b\d{5}\b/g,'')
     .replace(/\s{2,}/g,' ')
+    .replace(/[\s,;:·–—-]+$/g,'')
     .trim();
 }
 /* 抓下来的记录里，work 位置偶尔存的是目录路径、poet 位置存的是译者署名，都不是我们能展示的东西。 */
@@ -568,8 +569,8 @@ function consCard(c){
   ].filter(Boolean).join('<br><br>');
   return `<details class="cons-card${c.number>=300?' cons-card--academy':''}">
    <summary>
-     <span class="cons-city">${esc(c.city)}</span>
-     <span class="cons-school">${esc(c.school)}</span>
+     <span class="cons-city">${esc(publicExcerpt(c.city))}</span>
+     <span class="cons-school">${esc(publicExcerpt(c.school))}</span>
      <span class="cons-state ${stateClass(state)}">${esc(stateLabel(state))}</span>
      <span class="cons-line">${esc(consLine(c))}</span>
      <span class="cons-caret" aria-hidden="true">›</span>
