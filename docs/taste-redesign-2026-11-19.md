@@ -52,3 +52,16 @@ The four-width consistency checks completed successfully as a separate check, bu
 - Added a shared narrow-screen baseline for the interior pages: box sizing, overflow containment, flexible grid children, 44px minimum interactive targets, and responsive single-column layouts.
 - Added homepage-specific safeguards for 390px and 320px widths, including newsletter wrapping, flexible resource rows and a 44px refresh target.
 - These are targeted baseline corrections, not a claim that all Taste findings are resolved. Re-run the browser gate and review remaining page-specific findings before marking the redesign ready.
+
+
+## Taste composition pass 3 — page-specific art direction
+
+Applied a distinct hierarchy to each page rather than one generic skin:
+
+- Home: section rhythm, content-edge alignment, focus visibility, restrained card variation and reduced-motion handling.
+- Masterclasses: editorial programme header and information-led course cards.
+- Voice anatomy: larger primary real-model viewport, stronger model/detail hierarchy and clearer breathing-lab grouping.
+- Larynx mechanism: specimen/viewer-first layout with a secondary guided interpretation column and structured anatomy sections.
+- Voice Lab: instrument-like research workspace with clear map/control/detail hierarchy, keyboard focus and mobile stacking.
+
+No synthetic testimonials, invented programme counts, stock imagery presented as OperaLab evidence, or replacement anatomy illustrations were introduced. Existing interactive models and their source credits remain in place. This pass is design-system CSS only; it must pass the Taste browser finish gate before merge.
