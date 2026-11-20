@@ -37,6 +37,10 @@ on:
       - ".github/workflows/check-site-copy.yml"
   workflow_dispatch:
 
+concurrency:
+  group: site-copy-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 

@@ -12,6 +12,10 @@ class MasterclassUnderlineTests(unittest.TestCase):
         self.assertIn('styles.css?v=ux17', PAGE)
         self.assertIn('<body class="master-page">', PAGE)
 
+    def test_masterclass_page_hides_past_events_without_an_end_date(self):
+        self.assertIn('const eventEnd=x.end_at||x.start_at', PAGE)
+        self.assertIn('eventNotPast', PAGE)
+
     def test_all_masterclass_page_text_and_link_states_disable_underlines(self):
         self.assertIn('.master-page,.master-page *', PAGE)
         self.assertIn('-webkit-text-decoration:none!important', PAGE)
@@ -21,11 +25,13 @@ class MasterclassUnderlineTests(unittest.TestCase):
 
 
     def test_homepage_masterclass_tile_has_no_underline_in_all_link_states(self):
-        self.assertIn('styles.css?v=ux18', HOME)
-        self.assertIn('.tiles > a.tile:link', CSS)
-        self.assertIn('.tiles > a.tile:-webkit-any-link:visited', CSS)
-        self.assertIn('text-decoration-line: none !important', CSS)
-        self.assertIn('-webkit-text-decoration: none !important', CSS)
+        self.assertIn('styles.css?v=ux19', HOME)
+        self.assertIn('taste-home.css?v=1', HOME)
+        taste_css = (ROOT / 'taste-home.css').read_text(encoding='utf-8')
+        self.assertIn('.home-resource{', taste_css)
+        self.assertIn('text-decoration:none', taste_css)
+        self.assertIn('.home-resource:hover', taste_css)
+        self.assertIn('home-resource', HOME)
 
 
 if __name__ == "__main__":

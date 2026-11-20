@@ -1,0 +1,1765 @@
+:root{
+  --ink:#17231f;--ink-soft:#47554d;--paper:#f6f7f4;--paper-2:#fff;--line:#dce3dd;
+  --brand:#17483c;--brand-2:#205b4c;--gold:#59675f;--gold-soft:#c5d0c8;--bg:var(--paper);--surface:var(--paper-2);--accent:var(--brand-2);--font-display:"Host Grotesk","PingFang SC","Microsoft YaHei",sans-serif;--display-weight:600;--display-tracking:-.03em;--t-h2:clamp(24px,3vw,34px);--r-lg:12px;
+  --shadow:0 1px 2px rgba(20,38,30,.035),0 10px 28px rgba(20,38,30,.055);
+}
+body.master-page,body.anatomy-page,body.mechanism-page,body.voice-lab-page{background:var(--paper);color:var(--ink)}
+body.master-page::before,body.anatomy-page::before,body.mechanism-page::before,body.voice-lab-page::before{display:none}
+body.master-page .topbar,body.anatomy-page .topbar,body.mechanism-page .topbar{background:rgba(246,247,244,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+body.master-page .topbar-inner,body.anatomy-page .topbar-inner,body.mechanism-page .topbar-inner{max-width:1240px;min-height:72px}
+body.master-page .brand-mark,body.anatomy-page .brand-mark,body.mechanism-page .brand-mark{width:38px;height:38px;border:1px solid var(--line);border-radius:10px;background:var(--brand);color:#fff}
+body.master-page .master-wrap{max-width:1240px;padding:58px 24px 90px}
+body.master-page .master-head{padding:0 0 30px;margin:0 0 34px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:transparent;box-shadow:none}
+body.master-page .master-head h1{max-width:16ch;margin:12px 0 14px;font:600 clamp(38px,5vw,58px)/1.12 "Host Grotesk","PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:-.04em;color:var(--ink)}
+body.master-page .master-head p{max-width:64ch;color:var(--ink-soft);font-size:15px;line-height:1.8}
+body.master-page .master-intro-note{margin-top:22px;padding:14px 16px;border:1px solid var(--line);border-left:3px solid var(--brand);border-radius:8px;background:var(--paper-2);font-size:13px}
+body.master-page .master-intro-note strong{color:var(--brand)}
+body.master-page .master-list{grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:16px}
+body.master-page .master-card{border:1px solid var(--line);border-radius:12px;background:var(--paper-2);box-shadow:none;padding:22px;transition:transform .15s ease,border-color .15s ease}
+body.master-page .master-card:before{display:none}
+body.master-page .master-card:hover{transform:translateY(-2px);border-color:#9aafa4;box-shadow:none}
+body.master-page .master-card h2,body.master-page .master-card h3{font-family:"Host Grotesk","PingFang SC","Microsoft YaHei",sans-serif;font-weight:600;color:var(--ink)}
+body.master-page .master-back{margin-bottom:26px;color:var(--brand);font-size:13px}
+body.master-page .master-empty{border:1px solid var(--line);border-radius:12px;background:var(--paper-2);padding:24px;color:var(--ink-soft)}
+body.anatomy-page .lab-wrap{max-width:1240px;padding:48px 24px 90px}
+body.anatomy-page .lab-hero{max-width:850px;margin-bottom:32px}
+body.anatomy-page .lab-hero h1{font:600 clamp(36px,4.8vw,56px)/1.12 "Host Grotesk","PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:-.04em;color:var(--ink)}
+body.anatomy-page .lab-hero p{max-width:70ch;color:var(--ink-soft);font-size:15px;line-height:1.8}
+body.anatomy-page .body-system{grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:16px}
+body.anatomy-page .body-figure,body.anatomy-page .body-detail{border:1px solid var(--line);border-radius:12px;background:var(--paper-2);box-shadow:none}
+body.anatomy-page .model-frame-wrap{border-radius:8px}
+body.anatomy-page .model-tab,body.anatomy-page .organ-chip{border-radius:7px;border-color:var(--line);color:var(--brand);font-size:12px}
+body.anatomy-page .model-tab[aria-pressed=true],body.anatomy-page .organ-chip[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:#fff}
+body.anatomy-page .body-detail h2{font-family:"Host Grotesk","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink)}
+body.anatomy-page .body-detail p{color:var(--ink-soft);font-size:14px}
+body.mechanism-page .mechanism{max-width:1240px;padding:48px 24px 90px}
+body.mechanism-page .hero{max-width:850px;margin:28px 0 34px}
+body.mechanism-page .hero h1{font:600 clamp(36px,4.8vw,56px)/1.12 "Host Grotesk","PingFang SC","Microsoft YaHei",sans-serif;letter-spacing:-.04em;color:var(--ink)}
+body.mechanism-page .hero p{max-width:70ch;color:var(--ink-soft);font-size:15px;line-height:1.8}
+body.mechanism-page .notice{border:1px solid var(--line);border-radius:10px;background:var(--paper-2);color:var(--ink-soft)}
+body.mechanism-page .layout{gap:16px}
+body.mechanism-page .card{border:1px solid var(--line);border-radius:12px;background:var(--paper-2);box-shadow:none}
+body.mechanism-page .viewer{background:#f0f2ef}
+body.mechanism-page .viewer-frame{border-radius:8px}
+body.mechanism-page .model-switcher button{border-radius:7px;border-color:var(--line);color:var(--brand)}
+body.mechanism-page .model-switcher button[aria-pressed=true]{background:var(--brand);border-color:var(--brand);color:#fff}
+body.voice-lab-page .wrap{max-width:1240px;padding:48px 24px 90px}
+body.voice-lab-page header.top{padding-bottom:18px;border-bottom:1px solid var(--line)}
+body.voice-lab-page header.top h1{font:600 clamp(26px,3.4vw,38px)/1.2 "Host Grotesk","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink)}
+body.voice-lab-page header.top nav a{color:var(--brand);border-color:var(--line)}
+body.voice-lab-page .lede{max-width:70ch;color:var(--ink-soft);font-size:15px;line-height:1.8;margin:16px 0 22px}
+body.voice-lab-page .panel{border:1px solid var(--line);border-radius:12px;background:var(--paper-2);box-shadow:none}
+body.voice-lab-page .mapwrap{border-radius:8px;background:#f0f2ef}
+body.voice-lab-page .btn,body.voice-lab-page .tab{border-radius:7px;border-color:var(--line)}
+body.voice-lab-page .btn:hover,body.voice-lab-page .tab:hover{transform:translateY(-1px)}
+@media(max-width:760px){
+ body.anatomy-page .body-system,body.mechanism-page .layout{grid-template-columns:minmax(0,1fr)}
+ body.master-page .master-wrap,body.anatomy-page .lab-wrap,body.mechanism-page .mechanism,body.voice-lab-page .wrap{padding:32px 18px 64px}
+ body.master-page .master-head{margin-bottom:24px}
+}
+@media(prefers-color-scheme:dark){
+ body.master-page,body.anatomy-page,body.mechanism-page,body.voice-lab-page{--ink:#edf2ee;--ink-soft:#b1beb6;--paper:#101714;--paper-2:#17211c;--line:#304039;--brand:#9ac7b3;--brand-2:#b3d6c6;--gold:#d2b17d;--gold-soft:#d2b17d}
+ body.master-page .topbar,body.anatomy-page .topbar,body.mechanism-page .topbar{background:rgba(16,23,20,.94)}
+ body.anatomy-page .body-figure,body.anatomy-page .body-detail,body.mechanism-page .card{background:var(--paper-2)}
+}
+@media(prefers-reduced-motion:reduce){
+ body.master-page .master-card,body.voice-lab-page .btn,body.voice-lab-page .tab{transition:none}
+}
+/* Taste house rule: every redesigned page has one load-only hero entrance and one text-led moment. */
+body.master-page .master-head[data-enter],
+body.anatomy-page .lab-hero[data-enter],
+body.mechanism-page .hero[data-enter],
+body.voice-lab-page header.top[data-enter]{
+  opacity:0;transform:translateY(12px);
+  animation:tasteInteriorEnter .75s cubic-bezier(.22,1,.36,1) forwards;
+}
+@keyframes tasteInteriorEnter{to{opacity:1;transform:translateY(0)}}
+body.master-page .master-head .mo-wh__text{max-width:68ch;font-size:16px;line-height:1.85}
+body.anatomy-page .lab-hero .mo-wh__text,
+body.mechanism-page .hero .mo-wh__text,
+body.voice-lab-page .lede.mo-wh__text{max-width:70ch;font-size:16px;line-height:1.85}
+@media(prefers-reduced-motion:reduce){
+  body.master-page .master-head[data-enter],
+  body.anatomy-page .lab-hero[data-enter],
+  body.mechanism-page .hero[data-enter],
+  body.voice-lab-page header.top[data-enter]{opacity:1;transform:none;animation:none}
+}
+
+/* Keyboard focus remains visible across the redesigned pages. */
+:where(a,button,input,summary,[role="button"]):focus-visible{
+  outline:3px solid #a85f3d!important;
+  outline-offset:3px!important;
+}
+
+/* Improve contrast and touch targets in the vocal-science index. */
+body.voice-lab-page .count,
+body.voice-lab-page .item small,
+body.voice-lab-page .card .tri,
+body.voice-lab-page .row .k,
+body.voice-lab-page .crumb,
+body.voice-lab-page .quiz-h,
+body.voice-lab-page .chip,
+body.voice-lab-page .chip b{color:#47554d}
+body.voice-lab-page .search-label{display:block;margin:0 0 6px;color:#46544c;font-size:13px;font-weight:600}
+body.voice-lab-page .crumb{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+body.voice-lab-page .crumb button,
+body.voice-lab-page details.ev>summary,
+body.voice-lab-page .note a{display:inline-flex;align-items:center;min-height:44px;padding:7px 8px}
+body.voice-lab-page .toolrow,
+body.voice-lab-page .tabs{gap:8px}
+body.voice-lab-page .btn,
+body.voice-lab-page .tab,
+body.voice-lab-page .qbtn,
+body.voice-lab-page .item{min-height:44px;border-radius:9px}
+body.voice-lab-page .btn.ok,
+body.voice-lab-page .tab.on,
+body.voice-lab-page .item.on,
+body.voice-lab-page .qbtn{background:var(--ink);border-color:var(--ink);color:#fff}
+body.voice-lab-page .qbtn.ghost,
+body.voice-lab-page .btn,
+body.voice-lab-page .tab{background:#fff;color:var(--ink);border:1px solid var(--line)}
+body.voice-lab-page #detail{position:relative;z-index:1;clear:both;margin-top:14px}
+body.voice-lab-page #list{position:relative;z-index:0}
+body.voice-lab-page .item small{color:#47554d}
+body.voice-lab-page .item.on small{color:#fff}
+body.anatomy-page .model-caption,
+body.anatomy-page .model-credit,
+body.anatomy-page .model-credit a,
+body.anatomy-page .body-detail .organ-en,
+body.anatomy-page .body-detail p,
+body.anatomy-page .body-detail ul,
+body.anatomy-page .breath-lab>p,
+body.anatomy-page .body-system-note{color:#47554d}
+body.anatomy-page .model-credit a,
+body.anatomy-page .body-detail .detail-link{min-height:44px;display:inline-flex;align-items:center}
+
+.page-h1-en{display:block;margin-top:10px;color:#47554d;font:500 11px/1.5 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+
+body.voice-lab-page .hero-cta{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:9px 14px;border-radius:999px;background:var(--ink);color:#fff;text-decoration:none;font-size:12px;font-weight:650}
+body.voice-lab-page .section-icon{width:17px;height:17px;margin-right:8px;vertical-align:-3px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+body.voice-lab-page .panel h2{font-size:17px;letter-spacing:.02em}
+body.voice-lab-page .card h3{font-size:15px;line-height:1.35}
+body.voice-lab-page .detail-link,
+body.voice-lab-page .hero-cta{min-height:44px}
+
+body.voice-lab-page .voice-hero{min-height:100svh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;padding:32px 0 48px;gap:16px}
+body.voice-lab-page .voice-hero .top{margin:0}
+
+/* Anatomy page: clear hero, true two-column model split, and no empty detail-card band. */
+body.anatomy-page .lab-wrap{width:calc(100% - 48px);max-width:1280px;margin:0 auto;padding:24px 0 72px;box-sizing:border-box}
+body.anatomy-page .lab-hero{max-width:820px;min-height:calc(100svh - 72px);box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;margin:0 0 32px;padding:32px 0}
+body.anatomy-page .lab-hero .lab-crumb{margin-bottom:28px}
+body.anatomy-page .lab-hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+body.anatomy-page .lab-hero-actions a{display:inline-flex;align-items:center;min-height:44px;padding:9px 15px;border-radius:999px;background:#23483c;color:#fff;text-decoration:none;font-size:12px;font-weight:650}
+body.anatomy-page .lab-hero-actions a+ a{background:#e8efea;color:#23483c}
+body.anatomy-page .lab-hero-note{color:#47554d;font-size:13px;line-height:1.7}
+body.anatomy-page .body-system{min-height:100svh;box-sizing:border-box;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);align-items:start;gap:22px}
+body.anatomy-page .body-detail .detail-link{margin-top:12px}
+body.anatomy-page .breath-lab{min-height:100svh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+body.anatomy-page .breath-controls{gap:10px}
+body.anatomy-page .breath-controls button{display:inline-flex;align-items:center;gap:8px;min-height:44px}
+body.anatomy-page .breath-controls svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+body.anatomy-page .lab-info{min-height:100svh;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+body.anatomy-page .source-icon{width:18px;height:18px;margin-right:8px;vertical-align:-3px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:850px){body.anatomy-page .body-system{grid-template-columns:1fr}}
+@media(max-width:600px){body.anatomy-page .lab-wrap{width:calc(100% - 32px);padding:16px 0 48px}body.anatomy-page .lab-hero{min-height:calc(100svh - 64px);padding:20px 0}body.anatomy-page .body-system,body.anatomy-page .breath-lab,body.anatomy-page .lab-info{min-height:auto}}
+
+/* Laryngeal mechanism page: full-screen entry, model-led split and accessible controls. */
+body.mechanism-page .mechanism{width:calc(100% - 48px);max-width:1280px;margin:0 auto;padding:24px 0 72px;box-sizing:border-box}
+body.mechanism-page .hero{min-height:calc(100svh - 72px);box-sizing:border-box;max-width:860px;display:flex;flex-direction:column;justify-content:center;padding:32px 0;margin:0 0 30px}
+body.mechanism-page .lab-entry{display:flex;flex-wrap:wrap;gap:8px 12px;margin:0 0 20px;font-size:13px;line-height:1.7}
+body.mechanism-page .lab-entry a{color:#23483c;text-decoration:none;border-bottom:1px solid #c9714f;padding-bottom:2px}
+body.mechanism-page .lab-entry span{color:#47554d;font-size:12px}
+body.mechanism-page .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+body.mechanism-page .hero-actions a{display:inline-flex;align-items:center;min-height:44px;padding:9px 15px;border-radius:999px;background:#23483c;color:#fff;text-decoration:none;font-size:12px;font-weight:650}
+body.mechanism-page .hero-actions a+a{background:#e8efea;color:#23483c}
+body.mechanism-page .layout{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(300px,.85fr);align-items:start;gap:22px}
+body.mechanism-page .notice{margin:12px 0;padding:12px 14px;border:1px solid #d5e1d7;border-radius:12px;background:#edf3ed;color:#46544c;font-size:12px;line-height:1.7}
+body.mechanism-page .card{min-width:0}
+body.mechanism-page .viewer-caption,
+body.mechanism-page .credit,
+body.mechanism-page .structure p{color:#47554d}
+body.mechanism-page :where(button,a):focus-visible{outline:3px solid #a85f3d;outline-offset:3px}
+@media(max-width:850px){body.mechanism-page .layout{grid-template-columns:1fr}}
+@media(max-width:600px){body.mechanism-page .mechanism{width:calc(100% - 32px);padding:16px 0 48px}body.mechanism-page .hero{min-height:calc(100svh - 64px);padding:20px 0}}
+
+/* Keep brand navigation and touch targets consistent across interior pages. */
+body.master-page .brand-text small,
+body.anatomy-page .brand-text small,
+body.mechanism-page .brand-text small{white-space:nowrap}
+body.master-page .topbar-inner,
+body.anatomy-page .topbar-inner,
+body.mechanism-page .topbar-inner{gap:14px;min-width:0}
+body.master-page .topbar .nav,
+body.anatomy-page .topbar .nav,
+body.mechanism-page .topbar .nav{display:flex;flex-wrap:wrap;gap:8px}
+body.master-page .master-source a,
+body.master-page .master-actions a,
+body.anatomy-page .model-tabs button,
+body.anatomy-page .lab-btn,
+body.mechanism-page .model-switcher button,
+body.mechanism-page .interaction button{min-height:44px}
+body.mechanism-page .model-switcher{display:flex;flex-wrap:wrap;gap:8px}
+body.voice-lab-page .top{flex-wrap:wrap;gap:14px}
+body.voice-lab-page .top nav{display:flex;flex-wrap:wrap;gap:8px}
+body.voice-lab-page .top nav a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap}
+@media(max-width:620px){
+  body.master-page .brand-text small,
+  body.anatomy-page .brand-text small,
+  body.mechanism-page .brand-text small{display:none}
+  body.master-page .topbar-inner,
+  body.anatomy-page .topbar-inner,
+  body.mechanism-page .topbar-inner{gap:8px}
+}
+
+
+/* QA pass 2: shared responsive, contrast and touch-target baseline. */
+body.master-page,body.anatomy-page,body.mechanism-page,body.voice-lab-page{width:100%;max-width:100%;overflow-x:clip}
+body.master-page :where(*,*::before,*::after),
+body.anatomy-page :where(*,*::before,*::after),
+body.mechanism-page :where(*,*::before,*::after),
+body.voice-lab-page :where(*,*::before,*::after){box-sizing:border-box}
+body.master-page :where(img,svg,iframe,video),
+body.anatomy-page :where(img,svg,iframe,video),
+body.mechanism-page :where(img,svg,iframe,video),
+body.voice-lab-page :where(img,svg,iframe,video){max-width:100%}
+body.master-page :where(button,a,input,select,summary),
+body.anatomy-page :where(button,a,input,select,summary),
+body.mechanism-page :where(button,a,input,select,summary),
+body.voice-lab-page :where(button,a,input,select,summary){max-width:100%;min-height:44px}
+body.master-page :where(p,small,figcaption,.tag,.eyebrow,.muted),
+body.anatomy-page :where(p,small,figcaption,.tag,.eyebrow,.muted),
+body.mechanism-page :where(p,small,figcaption,.tag,.eyebrow,.muted),
+body.voice-lab-page :where(p,small,figcaption,.tag,.eyebrow,.muted){overflow-wrap:anywhere}
+body.voice-lab-page .wrap,body.voice-lab-page main.wrap{min-width:0;max-width:100%}
+body.voice-lab-page .layout,body.mechanism-page .layout,body.anatomy-page .body-system{min-width:0}
+body.voice-lab-page .layout>*,
+body.mechanism-page .layout>*,
+body.anatomy-page .body-system>*{min-width:0}
+body.voice-lab-page .panel,body.mechanism-page .card,body.anatomy-page .body-figure{min-width:0}
+body.master-page .master-card{min-width:0}
+body.master-page .master-facts,body.master-page .master-facts>*{min-width:0;overflow-wrap:anywhere}
+@media(max-width:850px){
+ body.master-page .master-wrap,body.anatomy-page .lab-wrap,body.mechanism-page .mechanism,body.voice-lab-page .wrap{width:calc(100% - 32px);max-width:100%;padding-left:0;padding-right:0}
+ body.voice-lab-page .layout,body.mechanism-page .layout,body.anatomy-page .body-system{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:620px){
+ body.master-page .master-wrap,body.anatomy-page .lab-wrap,body.mechanism-page .mechanism,body.voice-lab-page .wrap{width:calc(100% - 28px);padding-top:24px;padding-bottom:48px}
+ body.master-page .master-head h1,body.anatomy-page .lab-hero h1,body.mechanism-page .hero h1,body.voice-lab-page .voice-hero h1{font-size:clamp(28px,8vw,40px);line-height:1.16;overflow-wrap:anywhere}
+ body.anatomy-page .body-system,body.mechanism-page .layout,body.voice-lab-page .layout{gap:14px}
+ body.anatomy-page .model-tabs,body.mechanism-page .model-switcher,body.voice-lab-page .tabs{gap:8px}
+ body.anatomy-page .model-tabs button,body.mechanism-page .model-switcher button,body.voice-lab-page .tabs button{min-height:44px}
+}
+
+
+/* Taste composition pass: distinct editorial hierarchy for each product surface. */
+/* Masterclasses: an editorial programme index, not a generic dashboard. */
+body.master-page .master-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.42fr);align-items:end;column-gap:48px}
+body.master-page .master-head h1{max-width:12ch}
+body.master-page .master-head>p{max-width:44ch;justify-self:end}
+body.master-page .master-hero-cta{grid-column:1/-1}
+body.master-page .master-list{align-items:stretch}
+body.master-page .master-card{display:flex;flex-direction:column;min-height:310px}
+body.master-page .master-card h2,body.master-page .master-card h3{font-size:21px;line-height:1.25}
+body.master-page .master-card-top{padding-bottom:16px;border-bottom:1px solid var(--line)}
+body.master-page .master-card :where(a,button):focus-visible{outline:3px solid #8aa99a;outline-offset:3px}
+@media(max-width:700px){body.master-page .master-head{display:block}body.master-page .master-head>p{margin-top:12px}}
+
+/* Anatomy: the real model is the primary product surface. */
+body.anatomy-page .lab-hero{max-width:900px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+body.anatomy-page .lab-hero h1{max-width:14ch}
+body.anatomy-page .body-system{align-items:stretch}
+body.anatomy-page .body-figure{padding:18px;background:#eef1ed}
+body.anatomy-page .model-frame-wrap{aspect-ratio:16/10;background:#e3e8e2;border-color:#cbd6cd}
+body.anatomy-page .model-frame-wrap iframe{background:#e3e8e2}
+body.anatomy-page .body-detail{padding:26px;gap:18px}
+body.anatomy-page .body-detail .detail-kicker{letter-spacing:.12em;color:var(--brand)}
+body.anatomy-page .breath-lab{margin-top:26px;padding:26px;background:#edf2ed;border-radius:12px}
+body.anatomy-page :where(button,a,[tabindex]):focus-visible{outline:3px solid #8aa99a;outline-offset:3px}
+@media(max-width:620px){body.anatomy-page .body-figure{padding:10px}body.anatomy-page .model-frame-wrap{aspect-ratio:4/3}}
+
+/* Larynx mechanism: prioritize the specimen viewer, then guided interpretation. */
+body.mechanism-page .hero{max-width:920px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+body.mechanism-page .hero h1{max-width:14ch}
+body.mechanism-page .layout{grid-template-columns:minmax(0,1.42fr) minmax(300px,.78fr);align-items:start}
+body.mechanism-page .card{border-radius:12px}
+body.mechanism-page .viewer{padding:16px;background:#e9eee9}
+body.mechanism-page .viewer-frame{aspect-ratio:16/10;background:#dfe6df}
+body.mechanism-page .interaction{padding:24px}
+body.mechanism-page .mech-observation{border-left:3px solid var(--brand);border-radius:8px}
+body.mechanism-page .section{padding-top:20px;border-top:1px solid var(--line)}
+body.mechanism-page .muscle{border-radius:10px}
+body.mechanism-page :where(button,a,[tabindex]):focus-visible{outline:3px solid #8aa99a;outline-offset:3px}
+@media(max-width:820px){body.mechanism-page .layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:620px){body.mechanism-page .viewer{padding:9px}body.mechanism-page .interaction{padding:18px}}
+
+/* Voice Lab: an instrument-like research workspace with clear control hierarchy. */
+body.voice-lab-page .voice-hero{max-width:920px;padding:0 0 22px;border-bottom:1px solid var(--line)}
+body.voice-lab-page .voice-hero h1{max-width:15ch}
+body.voice-lab-page .layout{grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr);gap:18px}
+body.voice-lab-page .panel{border-radius:12px;padding:20px}
+body.voice-lab-page .mapwrap{background:#edf2ee;border-radius:9px}
+body.voice-lab-page .panel h2{font-size:12px;letter-spacing:.08em}
+body.voice-lab-page .list{scrollbar-color:#aabbb0 transparent;scrollbar-width:thin}
+body.voice-lab-page .item{min-height:44px}
+body.voice-lab-page .item:focus-visible,body.voice-lab-page .btn:focus-visible,body.voice-lab-page .tab:focus-visible,body.voice-lab-page .qbtn:focus-visible{outline:3px solid #8aa99a;outline-offset:2px}
+body.voice-lab-page .card{border-left:3px solid var(--brand)}
+body.voice-lab-page footer.note{max-width:920px;margin-inline:auto}
+@media(max-width:880px){body.voice-lab-page .layout{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:620px){body.voice-lab-page .panel{padding:14px}body.voice-lab-page .wrap{padding-top:28px}}
+@media(prefers-reduced-motion:reduce){
+ body.master-page *,body.anatomy-page *,body.mechanism-page *,body.voice-lab-page *,
+ body.master-page *::before,body.anatomy-page *::before,body.mechanism-page *::before,body.voice-lab-page *::before{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
+
+
+/* Final accessibility and composition corrections across the four learning pages. */
+body.master-page .topbar-inner,
+body.anatomy-page .topbar-inner,
+body.mechanism-page .topbar-inner{width:calc(100% - 48px);max-width:1288px;min-height:72px;gap:clamp(10px,1.4vw,20px)}
+body.master-page .topbar .brand,
+body.anatomy-page .topbar .brand,
+body.mechanism-page .topbar .brand{flex:0 0 auto;min-width:max-content}
+body.master-page .topbar .nav,
+body.anatomy-page .topbar .nav,
+body.mechanism-page .topbar .nav{flex:1 1 auto;flex-wrap:nowrap;justify-content:flex-end;gap:clamp(8px,1.2vw,16px);min-width:0;white-space:nowrap}
+body.master-page .topbar .nav a,
+body.anatomy-page .topbar .nav a,
+body.mechanism-page .topbar .nav a{white-space:nowrap;padding-inline:4px;font-size:12px}
+body.master-page .master-head h1,
+body.anatomy-page .lab-hero h1,
+body.mechanism-page .hero h1,
+body.voice-lab-page .voice-hero h1{line-height:1.16}
+body.master-page .master-card h2{font-size:21px}
+body.master-page .master-card h3{font-size:21px;line-height:1.25}
+body.anatomy-page .model-frame-wrap iframe,
+body.mechanism-page .viewer-frame iframe{display:block;width:100%;height:100%;min-height:420px;border:0;border-radius:8px}
+body.anatomy-page #anatomyModelFrame:focus-visible,
+body.mechanism-page #larynxModelFrame:focus-visible{outline:3px solid #17483c;outline-offset:4px;box-shadow:0 0 0 2px #fff}
+body.anatomy-page .lab-kicker,
+body.anatomy-page .body-figure-head span,
+body.mechanism-page .eyebrow,
+body.mechanism-page .readout-kicker,
+body.mechanism-page .structure p,
+body.mechanism-page .viewer-caption,
+body.mechanism-page .credit{color:#46554d}
+body.anatomy-page .body-figure{padding:22px}
+body.anatomy-page .body-figure-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}
+body.anatomy-page .breath-lab{position:relative;isolation:isolate;overflow:hidden}
+body.anatomy-page .breath-lab::before{content:"";position:absolute;z-index:-1;right:6%;top:12%;width:clamp(150px,24vw,280px);aspect-ratio:1;border:1px solid rgba(35,72,60,.18);border-radius:50%;box-shadow:0 0 0 22px rgba(35,72,60,.035),0 0 0 48px rgba(35,72,60,.025)}
+body.anatomy-page .lab-info{position:relative;isolation:isolate}
+body.anatomy-page .lab-info::before{content:"";position:absolute;z-index:-1;right:5%;top:14%;width:120px;aspect-ratio:1;border:1px solid rgba(35,72,60,.2);border-radius:50%;box-shadow:0 0 0 18px rgba(35,72,60,.035)}
+body.mechanism-page .card.info{padding:22px}
+body.mechanism-page .structure-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+body.mechanism-page .structure{min-width:0;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--paper-2)}
+body.mechanism-page .muscle-grid{align-items:stretch}
+body.mechanism-page .muscle{min-width:0;padding:18px;border:1px solid var(--line);background:var(--paper-2)}
+body.mechanism-page .source{padding:28px 0 44px}
+body.mechanism-page .source::before{content:"";display:block;width:100%;height:1px;margin-bottom:24px;background:var(--line)}
+body.mechanism-page .source a{display:inline-flex;align-items:center;min-height:44px;margin-top:16px;padding:8px 14px;border-radius:8px;background:var(--brand);color:#fff;text-decoration:none}
+body.voice-lab-page .voice-hero{min-height:calc(100svh - 72px);justify-content:center}
+body.voice-lab-page .voice-hero .top{width:100%}
+body.voice-lab-page .voice-hero .lede{max-width:68ch}
+body.voice-lab-page .mapwrap{padding:16px}
+body.voice-lab-page .map{display:block;width:100%;max-height:760px}
+body.voice-lab-page .panel{min-width:0}
+body.voice-lab-page .panel .list{max-height:680px;overflow:auto}
+body.voice-lab-page .item{width:100%;text-align:left}
+body.voice-lab-page .count,
+body.voice-lab-page .item small,
+body.voice-lab-page .row .k,
+body.voice-lab-page .crumb,
+body.voice-lab-page .quiz-h{color:#46554d}
+body.master-page .master-head{min-height:calc(100svh - 72px);align-content:center}
+body.master-page .master-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
+body.master-page .master-card{height:100%;padding:22px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2)}
+body.master-page .master-card :where(p,small,dt,dd){overflow-wrap:anywhere}
+body.master-page .master-card-top{border:0}
+body.master-page .master-card h3{margin:0 0 10px}
+@media(max-width:900px){
+ body.master-page .topbar .nav,body.anatomy-page .topbar .nav,body.mechanism-page .topbar .nav{justify-content:flex-start;flex-wrap:wrap}
+ body.master-page .master-list{grid-template-columns:minmax(0,1fr)}
+ body.mechanism-page .structure-list{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:620px){
+ body.master-page .topbar-inner,body.anatomy-page .topbar-inner,body.mechanism-page .topbar-inner{width:calc(100% - 32px);padding:10px 0}
+ body.master-page .topbar .nav,body.anatomy-page .topbar .nav,body.mechanism-page .topbar .nav{order:3;flex-basis:100%;overflow-x:auto;flex-wrap:nowrap}
+ body.master-page .brand-text small,body.anatomy-page .brand-text small,body.mechanism-page .brand-text small{display:none}
+ body.anatomy-page .body-figure{padding:12px}
+ body.anatomy-page .model-frame-wrap iframe,body.mechanism-page .viewer-frame iframe{min-height:320px}
+ body.voice-lab-page .voice-hero{min-height:auto}
+}
+
+/* Taste motion runtime owns the hero entrance; remove the earlier page-local duplicate animations. */
+body.master-page .master-head[data-enter],
+body.anatomy-page .lab-hero[data-enter],
+body.mechanism-page .hero[data-enter],
+body.voice-lab-page .voice-hero[data-enter],
+body.voice-lab-page header.top[data-enter]{opacity:1;transform:none;animation:none}
+body.taste-home .home-hero-copy[data-enter],
+body.taste-home .home-app[data-enter]{opacity:1;transform:none;animation:none}
+body.master-page .hero[data-enter],
+body.anatomy-page .hero[data-enter],
+body.mechanism-page .hero[data-enter],
+body.voice-lab-page .hero[data-enter]{overflow:clip}
+body.master-page .master-card h3{font-size:clamp(18px,1.5vw,21px);line-height:1.28}
+body.master-page .master-card .master-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px}
+body.master-page .master-card .master-fact{min-width:0}
+body.anatomy-page .breath-diagram{width:100%;max-width:620px;margin:22px auto;padding:16px 20px;border:1px solid var(--line);border-radius:12px;background:#f8faf7;color:#23483c}
+body.anatomy-page .breath-diagram svg{width:100%;height:auto;max-height:250px}
+body.anatomy-page .source-methods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}
+body.anatomy-page .source-methods>div{display:flex;flex-direction:column;gap:5px;padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--paper-2)}
+body.anatomy-page .source-methods span{color:var(--brand);font-size:12px;font-variant-numeric:tabular-nums}
+body.anatomy-page .source-methods strong{font-size:14px;color:var(--ink)}
+body.anatomy-page .source-methods small{font-size:12px;color:#46554d}
+body.anatomy-page .source-cta,
+body.mechanism-page .source-cta{display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:18px;padding:10px 16px;border-radius:8px;background:var(--brand);color:#fff;text-decoration:none;font-size:13px;font-weight:650}
+body.mechanism-page .muscle-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+body.mechanism-page .muscle{display:flex;flex-direction:column;gap:8px;padding:12px}
+body.mechanism-page .muscle-visual{display:block;width:100%;height:110px;object-fit:contain;background:#f6f8f5;border-radius:7px}
+body.mechanism-page .muscle .abbr{font-size:18px;color:#23483c}
+body.mechanism-page .muscle h3{font-size:15px;line-height:1.3}
+body.mechanism-page .muscle p{font-size:13px;line-height:1.65;color:#46554d}
+body.mechanism-page .source{min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+body.mechanism-page .source ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 22px}
+body.mechanism-page .source li{min-width:0;padding:10px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+body.mechanism-page .source li a{font-size:13px;color:var(--brand)}
+body.mechanism-page .source p{font-size:13px;color:#46554d}
+body.mechanism-page .disclaimer{padding:18px 0;color:#46554d;font-size:13px}
+@media(max-width:900px){
+ body.anatomy-page .source-methods{grid-template-columns:1fr}
+ body.mechanism-page .muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.mechanism-page .source ul{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+ body.anatomy-page .breath-diagram{padding:10px}
+ body.mechanism-page .muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.mechanism-page .muscle-visual{height:100px}
+ body.master-page .master-card .master-facts{grid-template-columns:1fr}
+}
+
+/* Screen rhythm uses the real header and content offsets on each page. */
+body.master-page .master-head{min-height:calc(100svh - 120px)}
+body.anatomy-page .lab-hero{min-height:calc(100svh - 96px)}
+body.mechanism-page .hero{min-height:calc(100svh - 96px)}
+body.voice-lab-page .voice-hero{min-height:calc(100svh - 120px)}
+body.master-page .master-list{grid-template-columns:repeat(3,minmax(0,1fr));min-height:200svh;align-content:start}
+body.mechanism-page .layout{min-height:200svh}
+body.mechanism-page main>.section{min-height:calc(100svh - 26px);display:flex;flex-direction:column;justify-content:center}
+body.mechanism-page .source{min-height:calc(100svh - 24px)}
+body.mechanism-page .source .disclaimer{margin-top:22px;padding:14px 0;border-top:1px solid var(--line)}
+@media(max-width:1100px){body.master-page .master-list{grid-template-columns:repeat(2,minmax(0,1fr));min-height:auto}}
+@media(max-width:700px){body.master-page .master-list{grid-template-columns:minmax(0,1fr)}body.mechanism-page .layout{min-height:auto}body.mechanism-page main>.section,body.mechanism-page .source{min-height:auto}}
+
+body.voice-lab-page main>.hero[data-enter]{min-height:calc(100svh - 120px);display:flex;align-items:center;padding:0}
+body.voice-lab-page .voice-hero{min-height:0;width:100%;padding:0 0 22px}
+
+
+/* Shared editorial system: consistent outer grid, accessible controls and screen rhythm. */
+body.master-page .topbar,body.anatomy-page .topbar,body.mechanism-page .topbar,body.voice-lab-page .topbar{width:100%;min-height:72px}
+body.master-page .topbar-inner,body.anatomy-page .topbar-inner,body.mechanism-page .topbar-inner,body.voice-lab-page .topbar-inner{width:min(100% - 48px,1240px);margin-inline:auto;display:flex;align-items:center;gap:24px}
+body.master-page .brand,body.anatomy-page .brand,body.mechanism-page .brand,body.voice-lab-page .brand{display:flex;align-items:center;flex:0 0 auto;gap:10px;min-width:0}
+body.master-page .brand-text small,body.anatomy-page .brand-text small,body.mechanism-page .brand-text small,body.voice-lab-page .brand-text small{display:block;white-space:nowrap;font-size:8px;letter-spacing:.09em}
+body.master-page nav.nav-links,body.anatomy-page nav.nav-links,body.mechanism-page nav.nav-links,body.voice-lab-page nav.nav-links{margin-left:auto;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+body.master-page nav.nav-links a,body.anatomy-page nav.nav-links a,body.mechanism-page nav.nav-links a,body.voice-lab-page nav.nav-links a{white-space:nowrap}
+body.master-page main,body.anatomy-page main,body.mechanism-page main,body.voice-lab-page main{width:100%;max-width:none;margin:0;padding-inline:0}
+body.master-page main>section,body.anatomy-page main>section,body.mechanism-page main>section,body.voice-lab-page main>section{box-sizing:border-box}
+body.master-page :is(button,a):focus-visible,body.anatomy-page :is(button,a,iframe):focus-visible,body.mechanism-page :is(button,a,iframe):focus-visible,body.voice-lab-page :is(button,a):focus-visible{outline:3px solid #17483c;outline-offset:3px}
+body.master-page .master-wrap{width:100%;max-width:none;padding:0}
+body.master-page .master-head{width:min(100% - 48px,1240px);min-height:calc(100svh - 72px);margin:0 auto;padding:clamp(42px,7vh,76px) 0;display:flex;justify-content:center;box-sizing:border-box;border:0;border-radius:0;border-bottom:1px solid var(--line);background:transparent;box-shadow:none}
+body.master-page .master-head h1{max-width:18ch;font-size:clamp(38px,5vw,64px);line-height:1.08}
+body.master-page .master-head h1 .page-h1-en{display:block;margin-top:14px;font-size:clamp(15px,1.5vw,19px);font-weight:500;line-height:1.5;letter-spacing:0;color:var(--ink-soft)}
+body.master-page .master-head p{max-width:64ch;font-size:16px}
+body.master-page .master-intro-note{max-width:760px}
+body.master-page #masterList{width:min(100% - 48px,1240px);margin:0 auto;min-height:calc(100svh - 72px);padding:clamp(42px,7vh,76px) 0;align-content:start;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+body.master-page #masterList>h2{grid-column:1/-1}
+body.master-page .master-card{min-width:0;padding:22px;gap:12px;border-radius:14px}
+body.master-page .master-card h3{font-size:20px;line-height:1.35}
+body.master-page .master-card:nth-child(4n+2){background:#edf2ed}
+body.master-page .master-card:nth-child(4n+3){border-top:3px solid var(--brand)}
+body.master-page .master-card:nth-child(4n+4) .master-card-icon{background:var(--brand);color:#fff}
+body.master-page .master-source{border:0;padding-top:4px}
+body.master-page .master-pagination{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 0 0;border-top:1px solid var(--line)}
+body.master-page .master-pagination button{min-height:44px;padding:10px 16px;border:1px solid var(--line);border-radius:8px;background:var(--paper-2);color:var(--brand);font:600 13px inherit}
+body.master-page .master-pagination button:disabled{opacity:.4;cursor:not-allowed}
+body.anatomy-page .lab-wrap{width:100%;max-width:none;margin:0;padding:0;color:var(--ink)}
+body.anatomy-page .lab-hero{width:min(100% - 48px,1240px);max-width:none;min-height:calc(100svh - 72px);margin:0 auto;padding:clamp(42px,7vh,80px) 0;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.anatomy-page .lab-hero h1{max-width:18ch;font-size:clamp(38px,5vw,64px);line-height:1.08}
+body.anatomy-page .lab-hero h1 .page-h1-en{display:block;margin-top:14px;font-size:clamp(15px,1.5vw,19px);font-weight:500;line-height:1.5;letter-spacing:0;color:var(--ink-soft)}
+body.anatomy-page .body-system{width:min(100% - 48px,1240px);margin:0 auto;min-height:calc(100svh - 72px);padding:clamp(36px,6vh,64px) 0;align-content:center;box-sizing:border-box}
+body.anatomy-page .body-figure{min-width:0}
+body.anatomy-page .model-frame-wrap iframe:focus-visible{outline:3px solid #17483c;outline-offset:-4px}
+body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources{width:min(100% - 48px,1240px);margin:0 auto;min-height:calc(100svh - 72px);padding:clamp(36px,6vh,64px);box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+body.anatomy-page .breath-diagram{max-width:760px;width:100%;margin:18px auto}
+body.anatomy-page .source-methods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}
+body.anatomy-page .source-methods>div{display:grid;gap:7px;padding:18px;border:1px solid var(--line);border-radius:10px;background:var(--paper-2)}
+body.anatomy-page .source-methods>div>span{font-size:12px;color:var(--brand);font-weight:700}
+body.mechanism-page .mechanism{width:100%;max-width:none;margin:0;padding:0}
+body.mechanism-page .mechanism>.hero{width:min(100% - 48px,1240px);max-width:none;min-height:calc(100svh - 72px);margin:0 auto;padding:clamp(42px,7vh,80px) 0;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.mechanism-page .hero h1{max-width:18ch;font-size:clamp(38px,5vw,64px);line-height:1.08}
+body.mechanism-page .hero h1 .page-h1-en{display:block;margin-top:14px;font-size:clamp(15px,1.5vw,19px);font-weight:500;line-height:1.5;letter-spacing:0;color:var(--ink-soft)}
+body.mechanism-page .mechanism>.layout,body.mechanism-page .mechanism>.section,body.mechanism-page .mechanism>.source{width:min(100% - 48px,1240px);max-width:none;margin:0 auto;min-height:calc(100svh - 72px);padding:clamp(36px,6vh,64px) 0;box-sizing:border-box;align-content:center}
+body.mechanism-page .layout{grid-template-columns:minmax(0,1.4fr) minmax(300px,.8fr);gap:20px}
+body.mechanism-page .viewer-frame iframe:focus-visible{outline:3px solid #17483c;outline-offset:-4px}
+body.mechanism-page .mode span,body.mechanism-page .viewer-caption,body.mechanism-page .credit,body.mechanism-page .section-intro{color:#53645b}
+body.mechanism-page .section-title{font-size:clamp(26px,3vw,38px)}
+body.mechanism-page .plate-grid{grid-template-columns:1.15fr .85fr;gap:22px}
+body.mechanism-page .plate:nth-child(2){margin-top:42px}
+body.mechanism-page .muscle-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+body.mechanism-page .muscle{grid-column:span 2;min-width:0;border:1px solid var(--line);border-radius:12px;background:var(--paper-2);overflow:hidden}
+body.mechanism-page .muscle:nth-child(4){grid-column:2/span 2}
+body.mechanism-page .muscle:nth-child(5){grid-column:4/span 2}
+body.mechanism-page .muscle:nth-child(even){background:#edf2ed}
+body.mechanism-page .muscle:nth-child(3){border-top:3px solid var(--brand)}
+body.mechanism-page .muscle-visual{width:100%;aspect-ratio:16/9;object-fit:contain;background:#f5f7f4}
+body.mechanism-page .muscle figcaption{color:#53645b}
+body.mechanism-page .source{display:grid;align-content:center}
+body.mechanism-page .source ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;list-style:none;padding:0}
+body.mechanism-page .source li{padding:16px;border:1px solid var(--line);border-radius:10px;background:var(--paper-2);line-height:1.65}
+body.voice-lab-page .wrap{width:min(100% - 48px,1240px);max-width:none;margin-inline:auto;padding:0}
+body.voice-lab-page main.wrap{min-height:0}
+body.voice-lab-page main>section.hero{min-height:calc(100svh - 72px);padding:clamp(40px,7vh,76px) 0;display:flex;align-items:center;box-sizing:border-box}
+body.voice-lab-page .voice-hero{width:100%;padding:clamp(24px,4vw,48px);border:1px solid var(--line);border-radius:16px;background:var(--paper-2)}
+body.voice-lab-page header.top{display:flex;align-items:flex-start;gap:18px}
+body.voice-lab-page header.top h1{max-width:20ch}
+body.voice-lab-page header.top h1 .page-h1-en{display:block;margin-top:12px;font-size:clamp(14px,1.4vw,18px);font-weight:500;letter-spacing:0;color:var(--ink-soft)}
+body.voice-lab-page .layout{min-height:calc(100svh - 72px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-content:center;gap:18px;padding:clamp(36px,6vh,64px) 0;box-sizing:border-box}
+body.voice-lab-page .layout>.panel{min-width:0}
+body.voice-lab-page .panel h2{font-size:16px;letter-spacing:0;text-transform:none}
+body.voice-lab-page .mapwrap{padding:12px}
+body.voice-lab-page .map{max-height:620px}
+body.voice-lab-page .hot:focus-visible{outline:3px solid #17483c;outline-offset:3px}
+body.voice-lab-page .panel .tri,body.voice-lab-page .panel .count,body.voice-lab-page .panel .hint,body.voice-lab-page .panel .row .k,body.voice-lab-page details.ev summary{color:#53645b}
+body.voice-lab-page footer.note{border:0;padding:24px;margin:0 auto;min-height:140px;background:#edf2ed;color:#43544b}
+@media(max-width:900px){
+ body.master-page #masterList{grid-template-columns:1fr}
+ body.anatomy-page .body-system{grid-template-columns:1fr}
+ body.mechanism-page .layout{grid-template-columns:1fr}
+ body.mechanism-page .muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.mechanism-page .muscle,body.mechanism-page .muscle:nth-child(4),body.mechanism-page .muscle:nth-child(5){grid-column:auto}
+ body.voice-lab-page .layout{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+ body.master-page .topbar-inner,body.anatomy-page .topbar-inner,body.mechanism-page .topbar-inner,body.voice-lab-page .topbar-inner{width:calc(100% - 32px);gap:10px}
+ body.master-page .brand-text small,body.anatomy-page .brand-text small,body.mechanism-page .brand-text small,body.voice-lab-page .brand-text small{display:none}
+ body.master-page nav.nav-links,body.anatomy-page nav.nav-links,body.mechanism-page nav.nav-links,body.voice-lab-page nav.nav-links{gap:9px}
+ body.master-page nav.nav-links a,body.anatomy-page nav.nav-links a,body.mechanism-page nav.nav-links a,body.voice-lab-page nav.nav-links a{font-size:11px}
+ body.master-page .master-head,body.anatomy-page .lab-hero,body.mechanism-page .mechanism>.hero{width:calc(100% - 32px);min-height:calc(100svh - 64px);padding-block:42px}
+ body.master-page #masterList,body.anatomy-page .body-system,body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources,body.mechanism-page .mechanism>.layout,body.mechanism-page .mechanism>.section,body.mechanism-page .mechanism>.source{width:calc(100% - 32px);padding-block:34px}
+ body.master-page #masterList{grid-template-columns:1fr}
+ body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources{padding:24px}
+ body.anatomy-page .source-methods{grid-template-columns:1fr}
+ body.mechanism-page .plate-grid,body.mechanism-page .source ul{grid-template-columns:1fr}
+ body.mechanism-page .plate:nth-child(2){margin-top:0}
+ body.mechanism-page .muscle-grid{grid-template-columns:1fr}
+ body.voice-lab-page .wrap{width:calc(100% - 32px)}
+ body.voice-lab-page main>section.hero{padding-block:32px}
+ body.voice-lab-page .voice-hero{padding:22px}
+ body.voice-lab-page header.top{display:block}
+ body.voice-lab-page header.top nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+ body.voice-lab-page .layout{padding-block:28px}
+}
+
+
+/* Masterclass programme page: a measured hero and a two-column, paged catalogue. */
+body.master-page .master-hero-proof{display:flex;align-items:center;gap:16px;margin:26px 0;padding:18px 20px;border:1px solid var(--line);border-radius:12px;background:#edf2ed}
+body.master-page .master-proof-mark{width:58px;height:58px;display:grid;place-items:center;flex:0 0 58px;border-radius:12px;background:var(--brand);color:#fff}
+body.master-page .master-proof-mark svg{width:38px;height:38px}
+body.master-page .master-hero-proof>span:last-child{display:grid;gap:5px}
+body.master-page .master-hero-proof strong{font-size:17px;color:var(--ink)}
+body.master-page .master-hero-proof small{font-size:12px;color:#53645b}
+body.master-page .master-list-section{width:100%;min-height:calc(100svh - 72px);padding:clamp(42px,7vh,76px) 0;box-sizing:border-box;background:#edf2ed}
+body.master-page .master-list-head{width:min(100% - 48px,1240px);margin:0 auto 28px;display:flex;align-items:end;justify-content:space-between;gap:24px}
+body.master-page .master-list-head h2{margin:8px 0;font-size:clamp(28px,3.2vw,42px);line-height:1.15}
+body.master-page .master-list-head p{margin:0;color:#53645b;font-size:14px}
+body.master-page .master-count{padding:9px 13px;border:1px solid #cbd7ce;border-radius:8px;background:#fff;color:#294b3d;font-size:12px;white-space:nowrap}
+body.master-page #masterList .master-list{width:min(100% - 48px,1240px);margin:0 auto;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-content:start}
+body.master-page #masterList .master-card{min-height:0}
+body.master-page #masterList .master-card h3{margin:0;font-size:20px;line-height:1.35}
+body.master-page #masterList .master-card .master-description{font-size:13px;line-height:1.7}
+body.master-page #masterList .master-card .master-facts{gap:9px 14px}
+body.master-page #masterList .master-card .master-source{margin-top:6px}
+body.master-page #masterList .master-card .master-actions{margin-top:auto}
+body.master-page .master-pagination{width:min(100% - 48px,1240px);margin:22px auto 0;padding-top:16px;border-top:1px solid #cbd7ce}
+body.master-page .master-pagination button{min-width:112px;background:var(--brand);border-color:var(--brand);color:#fff;cursor:pointer}
+body.master-page .master-pagination button:hover:not(:disabled){background:var(--brand-2)}
+body.master-page .master-pagination button:disabled{background:#fff;color:#68776e;border-color:#cbd7ce;opacity:1}
+body.master-page .master-pagination span{color:#53645b;font-size:13px;font-variant-numeric:tabular-nums}
+@media(max-width:680px){
+ body.master-page .master-list-section{padding-block:38px}
+ body.master-page .master-list-head{width:calc(100% - 32px);display:block}
+ body.master-page .master-count{display:inline-flex;margin-top:14px}
+ body.master-page #masterList .master-list{width:calc(100% - 32px);grid-template-columns:1fr}
+ body.master-page .master-pagination{width:calc(100% - 32px)}
+ body.master-page .master-hero-proof{padding:14px}
+}
+
+
+/* Final interaction, contrast and section rhythm corrections. */
+body.master-page .master-hero-cta,body.master-page .master-link,body.master-page .master-link-primary{min-height:44px;padding:10px 16px;border:1px solid var(--brand)!important;border-radius:8px!important;background:var(--brand)!important;color:#fff!important;box-shadow:none!important}
+body.master-page .master-hero-cta:hover,body.master-page .master-link:hover,body.master-page .master-link-primary:hover{background:var(--brand-2)!important;border-color:var(--brand-2)!important}
+body.master-page .master-link:focus-visible,body.master-page .master-hero-cta:focus-visible{outline:3px solid #17483c!important;outline-offset:3px}
+body.anatomy-page .page-h1-en,body.mechanism-page .page-h1-en{display:block;margin:14px 0 0;color:#53645b;font-size:clamp(15px,1.5vw,19px);line-height:1.55;letter-spacing:0}
+body.anatomy-page .lab-hero .lab-crumb,body.mechanism-page .crumb{color:#53645b}
+body.anatomy-page .body-system,body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources,body.mechanism-page .mechanism>.layout,body.mechanism-page .mechanism>.section,body.mechanism-page .mechanism>.source{scroll-margin-top:72px}
+body.anatomy-page .body-figure-head span,body.anatomy-page .model-caption,body.anatomy-page .model-credit,body.anatomy-page .body-system-note{color:#53645b}
+body.anatomy-page .model-tab,body.anatomy-page .organ-chip,body.anatomy-page .lab-btn{min-height:44px;border-radius:8px}
+body.anatomy-page .body-detail .organ-en{color:#53645b}
+body.anatomy-page .source-methods small{color:#53645b}
+body.mechanism-page .eyebrow,body.mechanism-page .tag,body.mechanism-page .readout-kicker{color:#53645b}
+body.mechanism-page .model-switcher button,body.mechanism-page .mode,body.mechanism-page .hero-actions a{min-height:48px;border-radius:8px}
+body.mechanism-page .mode span{color:#53645b;font-size:11px;line-height:1.5}
+body.mechanism-page .readout{background:#edf2ed}
+body.mechanism-page .structure p,body.mechanism-page .card.info li{color:#43544b;line-height:1.75}
+body.mechanism-page .card-head{border-bottom:0}
+body.mechanism-page .credit{align-items:center;padding:12px 18px 18px;color:#53645b}
+body.mechanism-page .source a{color:#17483c;text-decoration:underline;text-underline-offset:3px}
+body.mechanism-page .source li{color:#43544b}
+body.voice-lab-page main.wrap{width:min(100% - 48px,1240px);margin:0 auto}
+body.voice-lab-page .voice-heading{display:grid;gap:12px;max-width:780px}
+body.voice-lab-page .voice-heading h1{max-width:18ch;margin:0;font-size:clamp(36px,4.6vw,58px);line-height:1.1;letter-spacing:-.04em}
+body.voice-lab-page .voice-heading .eyebrow{color:#53645b;font-size:12px;letter-spacing:.12em}
+body.voice-lab-page .voice-heading .page-h1-en{margin:0;color:#53645b;font-size:clamp(15px,1.4vw,18px)}
+body.voice-lab-page .voice-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.7fr);gap:24px;align-items:center}
+body.voice-lab-page .voice-hero .lede{grid-column:1/-1;margin:0;max-width:70ch}
+body.voice-lab-page .chips{grid-column:1/-1;margin:0;gap:8px}
+body.voice-lab-page .chip{min-height:38px;display:inline-flex;align-items:center;border-radius:8px;color:#43544b}
+body.voice-lab-page .hero-cta{min-height:44px;display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid var(--brand);border-radius:8px;background:var(--brand);color:#fff;text-decoration:none}
+body.voice-lab-page .layout{min-height:calc(100svh - 72px);grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr)}
+body.voice-lab-page .map{max-height:560px}
+body.voice-lab-page .mapwrap{max-width:100%;overflow:hidden}
+body.voice-lab-page .panel{min-width:0;padding:22px}
+body.voice-lab-page .panel h2{display:flex;align-items:center;gap:10px;color:var(--ink)}
+body.voice-lab-page .section-icon{width:24px;height:24px;flex:0 0 24px;color:var(--brand)}
+body.voice-lab-page .card .tri{display:block;clear:both;margin:4px 0 16px;color:#53645b;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+body.voice-lab-page .card h3{font-size:20px;line-height:1.3;margin:0 0 4px}
+body.voice-lab-page .tabs{gap:7px}
+body.voice-lab-page .tab,body.voice-lab-page .btn,body.voice-lab-page .qbtn{min-height:40px;padding:8px 12px;border-radius:8px}
+body.voice-lab-page .item{min-height:42px;border-radius:8px}
+body.voice-lab-page .count,body.voice-lab-page .hint,body.voice-lab-page .row .k,body.voice-lab-page details.ev summary{color:#53645b}
+body.voice-lab-page .src a{color:#17483c;text-decoration:underline;text-underline-offset:3px}
+body.voice-lab-page footer.note{width:100%;max-width:none;min-height:0;margin:0;padding:24px max(24px,calc((100vw - 1240px)/2));border:0;background:#edf2ed;color:#43544b}
+@media(max-width:900px){
+ body.voice-lab-page .voice-hero{grid-template-columns:1fr}
+ body.voice-lab-page .layout{min-height:0}
+ body.voice-lab-page .map{max-height:none}
+}
+@media(max-width:680px){
+ body.voice-lab-page main.wrap{width:calc(100% - 32px)}
+ body.voice-lab-page .voice-hero{padding:22px}
+ body.voice-lab-page .layout{padding-block:28px}
+ body.voice-lab-page .panel{padding:16px}
+ body.voice-lab-page footer.note{padding:22px 16px}
+}
+
+
+/* Anatomy reference: separate model, selected-structure notes and physiology into clear screens. */
+body.anatomy-page main.lab-wrap{width:min(100% - 48px,1240px);max-width:1240px;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(290px,.75fr);gap:0 18px}
+body.anatomy-page main.lab-wrap>.lab-hero{grid-column:1/-1;width:100%;min-height:calc(100svh - 72px);padding:clamp(42px,7vh,76px) 0;margin:0;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+body.anatomy-page .lab-hero h1{max-width:18ch;font-size:clamp(38px,5vw,64px);line-height:1.08}
+body.anatomy-page .anatomy-proof{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;margin-top:22px;padding:14px 18px;border:1px solid var(--line);border-radius:10px;background:#edf2ed;max-width:560px}
+body.anatomy-page .anatomy-proof span{font-size:22px;font-weight:700;color:var(--brand);font-variant-numeric:tabular-nums}
+body.anatomy-page .anatomy-proof strong{font-size:12px;color:#43544b}
+body.anatomy-page .body-figure-section{grid-column:1;min-width:0;width:100%;min-height:calc(100svh - 72px);margin:0;padding:clamp(28px,5vh,54px) 0;display:flex;align-items:center;box-sizing:border-box}
+body.anatomy-page .body-figure{width:100%;padding:18px;border-radius:14px}
+body.anatomy-page .body-detail-section{grid-column:2;min-width:0;width:100%;min-height:calc(100svh - 72px);margin:0;padding:clamp(28px,5vh,54px) 0;display:flex;align-items:center;box-sizing:border-box}
+body.anatomy-page .body-detail{width:100%;min-height:0;padding:clamp(22px,3vw,34px);border-radius:14px}
+body.anatomy-page .body-detail h2{font-size:clamp(24px,2.5vw,32px);line-height:1.2}
+body.anatomy-page .body-detail h3{font-size:14px}
+body.anatomy-page .body-detail p,body.anatomy-page .body-detail li{color:#43544b;line-height:1.75}
+body.anatomy-page .body-detail .organ-en{color:#53645b}
+body.anatomy-page .model-frame-wrap iframe:focus{outline:3px solid #17483c;outline-offset:-4px}
+body.anatomy-page .model-tab,body.anatomy-page .organ-chip,body.anatomy-page .lab-btn,body.anatomy-page .detail-link{border-radius:8px;min-height:44px}
+body.anatomy-page .detail-link{padding:10px 14px;border:1px solid var(--brand);background:var(--brand);color:#fff}
+body.anatomy-page .breath-lab{grid-column:1/-1;width:100%;min-height:calc(100svh - 72px);margin:0;padding:clamp(30px,5vh,56px);box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+body.anatomy-page .breath-lab h2{font-size:clamp(28px,3vw,38px)}
+body.anatomy-page .breath-diagram{max-width:680px;max-height:300px;margin:12px auto;overflow:hidden}
+body.anatomy-page .breath-diagram svg{max-height:300px}
+body.anatomy-page .breath-controls{justify-content:center}
+body.anatomy-page .anatomy-sources{grid-column:1/-1;width:100%;min-height:calc(100svh - 72px);margin:0;padding:clamp(30px,5vh,56px);box-sizing:border-box;display:flex;flex-direction:column;justify-content:center}
+body.anatomy-page .source-methods{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+body.anatomy-page .source-method{position:relative;min-height:150px;display:grid;grid-template-columns:42px 1fr;grid-template-rows:auto auto;align-content:center;gap:5px 12px;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2)}
+body.anatomy-page .source-method svg{grid-row:1/3;width:42px;height:42px;fill:none;stroke:var(--brand);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+body.anatomy-page .source-method>span{font-size:10px;color:#53645b}
+body.anatomy-page .source-method strong{font-size:15px}
+body.anatomy-page .source-method small{font-size:12px;color:#53645b}
+body.anatomy-page .anatomy-sources>ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px;padding-left:18px}
+body.anatomy-page .anatomy-sources>ul li{padding:8px 0;color:#43544b;line-height:1.65}
+body.anatomy-page .anatomy-sources>ul a{color:#17483c;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){
+ body.anatomy-page main.lab-wrap{grid-template-columns:1fr}
+ body.anatomy-page main.lab-wrap>.lab-hero,body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section,body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources{grid-column:1}
+ body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section{min-height:100svh}
+}
+@media(max-width:680px){
+ body.anatomy-page main.lab-wrap{width:calc(100% - 32px)}
+ body.anatomy-page main.lab-wrap>.lab-hero{min-height:calc(100svh - 64px);padding-block:38px}
+ body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section{padding-block:28px}
+ body.anatomy-page .body-figure{padding:12px}
+ body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources{padding:24px}
+ body.anatomy-page .source-methods,body.anatomy-page .anatomy-sources>ul{grid-template-columns:1fr}
+ body.anatomy-page .source-method{min-height:100px}
+ body.anatomy-page .breath-diagram{max-height:240px}
+ body.anatomy-page .breath-diagram svg{max-height:240px}
+}
+
+/* Larynx learning flow: one subject per screen, with the real model kept primary. */
+body.mechanism-page main.mechanism{width:100%;max-width:none;margin:0;padding:0}
+body.mechanism-page .mechanism>.hero,body.mechanism-page .mechanism>.model-section,body.mechanism-page .mechanism>.interaction-section,body.mechanism-page .mechanism>.structure-section,body.mechanism-page .mechanism>.section,body.mechanism-page .mechanism>.source{width:min(100% - 48px,1240px);max-width:1240px;margin:0 auto;min-height:calc(100svh - 72px);padding:clamp(34px,6vh,64px) 0;box-sizing:border-box}
+body.mechanism-page .mechanism>.hero{display:flex;flex-direction:column;justify-content:center}
+body.mechanism-page .model-section{display:flex;align-items:center}
+body.mechanism-page .model-section>.card{width:100%;max-width:1000px;margin-inline:auto}
+body.mechanism-page .viewer-frame{aspect-ratio:16/9;max-height:520px}
+body.mechanism-page .viewer-frame iframe:focus{outline:3px solid #17483c;outline-offset:-4px}
+body.mechanism-page .interaction-section{display:grid;grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr);align-items:center;gap:clamp(24px,5vw,64px)}
+body.mechanism-page .interaction-visual figure{margin:0;padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--paper-2)}
+body.mechanism-page .interaction-visual img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain}
+body.mechanism-page .interaction-visual figcaption{margin-top:12px;color:#43544b;font-size:12px;text-align:center}
+body.mechanism-page .interaction{min-width:0;padding:0}
+body.mechanism-page .interaction h2{font-size:clamp(26px,3vw,38px);line-height:1.2}
+body.mechanism-page .interaction>p{color:#43544b;font-size:14px;line-height:1.75}
+body.mechanism-page .modes{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+body.mechanism-page .mode{min-height:74px;padding:13px 14px;border-radius:9px}
+body.mechanism-page .mech-observation,body.mechanism-page .readout{border-radius:10px}
+body.mechanism-page .structure-section{display:flex;flex-direction:column;justify-content:center;gap:26px}
+body.mechanism-page .structure-intro{max-width:760px}
+body.mechanism-page .structure-intro h2{font-size:clamp(28px,3vw,40px);line-height:1.2;margin:8px 0}
+body.mechanism-page .structure-intro p{color:#43544b;line-height:1.7}
+body.mechanism-page .structure-section .side{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+body.mechanism-page .structure-section .card.info{padding:22px;border-radius:12px;min-width:0}
+body.mechanism-page .structure-section .card.info:nth-child(2){background:#edf2ed}
+body.mechanism-page .structure-section .card.info:nth-child(3){border-top:3px solid var(--brand)}
+body.mechanism-page .structure-section .card.info h3{font-size:18px;line-height:1.3;margin:0 0 10px}
+body.mechanism-page .structure-section .card.info p,body.mechanism-page .structure-section .card.info li{font-size:13px;line-height:1.75;color:#43544b}
+body.mechanism-page .mechanism>.section{display:flex;flex-direction:column;justify-content:center;gap:18px}
+body.mechanism-page .plate-grid{grid-template-columns:1.1fr .9fr;align-items:start}
+body.mechanism-page .plate{border:1px solid var(--line);border-radius:12px;background:var(--paper-2)}
+body.mechanism-page .plate:nth-child(2){margin-top:36px}
+body.mechanism-page .plate figcaption{color:#43544b;background:#fff;line-height:1.7}
+body.mechanism-page .plate figcaption b{color:#17231f;font-size:14px;margin-bottom:5px}
+body.mechanism-page .muscle-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+body.mechanism-page .muscle{grid-column:span 2;display:flex;flex-direction:column;min-width:0;border-radius:12px;overflow:hidden}
+body.mechanism-page .muscle:nth-child(4){grid-column:2/span 2}
+body.mechanism-page .muscle:nth-child(5){grid-column:4/span 2}
+body.mechanism-page .muscle:nth-child(2){background:#edf2ed}
+body.mechanism-page .muscle:nth-child(3){border-top:3px solid var(--brand)}
+body.mechanism-page .muscle:nth-child(4){background:#f1eee7}
+body.mechanism-page .muscle:nth-child(5){background:#e9f0eb}
+body.mechanism-page .muscle-visual{width:100%;height:170px;object-fit:contain;background:#fff}
+body.mechanism-page .muscle .abbr{margin:16px 18px 0;color:#53645b;font-size:11px;letter-spacing:.12em}
+body.mechanism-page .muscle h3{margin:5px 18px;font-size:18px}
+body.mechanism-page .muscle p{margin:0 18px 18px;color:#43544b;font-size:13px;line-height:1.7}
+body.mechanism-page .mechanism>.source{display:flex;flex-direction:column;justify-content:center;gap:16px}
+body.mechanism-page .source-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+body.mechanism-page .source-group{min-width:0;padding:20px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2)}
+body.mechanism-page .source-group:nth-child(2){background:#edf2ed}
+body.mechanism-page .source-group>svg{width:38px;height:38px;fill:none;stroke:var(--brand);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+body.mechanism-page .source-group h3{font-size:17px;margin:10px 0}
+body.mechanism-page .source-group ul{display:grid;gap:10px;list-style:none;padding:0;margin:0}
+body.mechanism-page .source-group li{padding:0;color:#43544b;font-size:12px;line-height:1.65}
+body.mechanism-page .source-group a{color:#17483c;text-decoration:underline;text-underline-offset:3px}
+body.mechanism-page .source>p{color:#43544b;line-height:1.7}
+body.mechanism-page .source .disclaimer{padding:14px 16px;border:0;border-radius:9px;background:#edf2ed;color:#43544b}
+body.mechanism-page .source-cta{align-self:flex-start;min-height:44px;padding:10px 16px;border:1px solid var(--brand);border-radius:8px;background:var(--brand);color:#fff;text-decoration:none}
+body.mechanism-page .source-cta:hover{background:var(--brand-2)}
+@media(max-width:900px){
+ body.mechanism-page .interaction-section{grid-template-columns:1fr}
+ body.mechanism-page .interaction-visual{max-width:560px;margin-inline:auto}
+ body.mechanism-page .structure-section .side{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+ body.mechanism-page .mechanism>.hero,body.mechanism-page .mechanism>.model-section,body.mechanism-page .mechanism>.interaction-section,body.mechanism-page .mechanism>.structure-section,body.mechanism-page .mechanism>.section,body.mechanism-page .mechanism>.source{width:calc(100% - 32px);min-height:100svh;padding-block:30px}
+ body.mechanism-page .viewer-frame{aspect-ratio:4/3}
+ body.mechanism-page .interaction-section{gap:18px}
+ body.mechanism-page .interaction-visual{max-width:100%}
+ body.mechanism-page .modes{grid-template-columns:1fr}
+ body.mechanism-page .structure-section .side,body.mechanism-page .plate-grid,body.mechanism-page .source-grid{grid-template-columns:1fr}
+ body.mechanism-page .plate:nth-child(2){margin-top:0}
+ body.mechanism-page .muscle-grid{grid-template-columns:1fr;gap:18px}
+ body.mechanism-page .muscle,body.mechanism-page .muscle:nth-child(4),body.mechanism-page .muscle:nth-child(5){grid-column:auto}
+ body.mechanism-page .muscle-visual{height:auto;max-height:240px}
+}
+
+body.anatomy-page .body-figure-section .body-system{display:block;width:100%;max-width:none;margin:0;padding:0}
+
+
+/* Taste 2.5.1 shared navigation, section grid and accessible controls. */
+header.topbar{position:absolute!important;inset:0 0 auto;z-index:80;width:100%;max-width:none;min-height:72px;margin:0;padding:0;display:block;background:rgba(246,241,230,.92);border-bottom:1px solid #d9dfd8;backdrop-filter:blur(14px);box-sizing:border-box}
+header.topbar .topbar-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;min-height:72px;margin:0 auto;padding:0;display:flex;align-items:center;justify-content:space-between;gap:24px}
+header.topbar .brand{flex:0 0 auto;min-width:0;max-width:none;white-space:nowrap;flex-wrap:nowrap}
+header.topbar .brand-text{display:block;white-space:nowrap}
+header.topbar .brand-text small{display:none!important}
+header.topbar nav.nav-links{display:flex;flex:0 0 auto;flex-wrap:nowrap;align-items:center;justify-content:flex-end;gap:16px;margin-left:auto;white-space:nowrap}
+header.topbar nav.nav-links a{flex:0 0 auto;white-space:nowrap}
+.skip-link{position:absolute;left:16px;top:-100px;z-index:1000;padding:10px 14px;background:#fff;color:#17483c;border:2px solid var(--action);border-radius:8px}
+.skip-link:focus{top:10px}
+:focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+iframe:focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.master-page main.master-wrap{width:100%;max-width:none;margin:0;padding:0}
+body.master-page .master-head{width:100%;min-height:100svh;margin:0;padding:calc(72px + clamp(36px,5vh,56px)) 0 clamp(48px,6vh,72px);display:flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box}
+body.master-page .master-head-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+body.master-page .master-head h1{max-width:18ch;font-size:clamp(40px,4.5vw,58px);line-height:1.12;overflow-wrap:anywhere}
+body.master-page .master-list-section{width:100%;min-height:200svh;margin:0;padding:clamp(44px,6vh,64px) 0;display:flex;align-items:center;justify-content:center;background:#edf2ed;box-sizing:border-box}
+body.master-page .master-list-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+body.master-page .master-list-head{width:100%;margin:0;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}
+body.master-page .master-timeline{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+body.master-page .master-timeline-item{min-width:0;min-height:86px;padding:14px;display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;align-items:center;border:1px solid #d4ddd5;border-radius:10px;background:#f9faf6}
+body.master-page .master-timeline-item time{font-size:13px;font-weight:700;color:#285b49}
+body.master-page .master-timeline-item>div{min-width:0;display:grid;gap:5px}
+body.master-page .master-timeline-item strong{font-size:13px;line-height:1.4}
+body.master-page .master-timeline-item small{font-size:11px;color:#52665a;overflow-wrap:anywhere}
+body.master-page #masterCards{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:16px;align-items:stretch}
+body.master-page .master-card{height:100%;min-width:0;display:flex;flex-direction:column;align-items:stretch}
+body.master-page .master-card-icon{width:54px;height:54px;flex:0 0 auto;display:grid;place-items:center}
+body.master-page .master-card-icon svg{width:30px;height:30px}
+body.master-page .master-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 18px;border:0}
+body.master-page .master-facts>*{min-width:0;border:0!important;padding:0!important;overflow-wrap:anywhere}
+body.master-page .master-pagination{width:100%;margin:0;padding:0;border:0!important;display:flex;align-items:center;justify-content:center;gap:12px}
+body.master-page .master-head .hero-cta,body.master-page .master-pagination button{min-height:44px;border-radius:8px}
+body.master-page :is(a,button):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.anatomy-page main.lab-wrap.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);gap:0 20px;box-sizing:border-box}
+body.anatomy-page main.lab-wrap.wrap>.lab-hero,body.anatomy-page main.lab-wrap.wrap>.breath-lab,body.anatomy-page main.lab-wrap.wrap>.anatomy-sources{grid-column:1/-1;width:100%;max-width:none;margin:0}
+body.anatomy-page main.lab-wrap.wrap>.body-figure-section{grid-column:1;width:100%;max-width:none;margin:0}
+body.anatomy-page main.lab-wrap.wrap>.body-detail-section{grid-column:2;width:100%;max-width:none;margin:0}
+body.anatomy-page .lab-hero{min-height:100svh;padding:calc(72px + clamp(36px,5vh,56px)) 0 56px;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.anatomy-page .lab-hero h1{font-size:clamp(42px,4.5vw,58px);line-height:1.12;max-width:18ch}
+body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section{min-height:100svh;padding:clamp(42px,6vh,64px) 18px;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.anatomy-page .body-figure-section .body-system{display:block;width:100%;max-width:none;margin:0;padding:0}
+body.anatomy-page .detail-visual{display:block;width:100%;max-height:170px;object-fit:contain;margin:0 0 16px;border-radius:10px;background:#edf2ed}
+body.anatomy-page .source-visual{display:block;width:100%;max-height:150px;object-fit:contain;margin:0 0 18px;border-radius:10px;background:#edf2ed}
+body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources{min-height:100svh;padding:clamp(42px,6vh,64px) 0;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.anatomy-page .breath-diagram{max-height:240px;overflow:hidden}
+body.anatomy-page .breath-diagram svg{width:100%;max-height:220px}
+body.anatomy-page .source-list{display:grid;grid-template-columns:1fr;gap:8px}
+body.anatomy-page .source-list>*{min-height:40px;padding:10px 12px;border:1px solid #d9e0d9;border-radius:8px}
+body.anatomy-page :is(.organ-chip,.model-tab,.breath-controls button,.detail-link){min-height:44px;height:auto;padding:10px 14px;border-radius:8px;font-size:12px;line-height:1.35}
+body.anatomy-page :is(.organ-chip,.model-tab,.breath-controls button){border:1px solid #b9c9be;background:#f8faf6;color:#1d342b}
+body.anatomy-page :is(.organ-chip[aria-pressed="true"],.model-tab[aria-pressed="true"],.breath-controls button[aria-pressed="true"]){background:#17483c;color:#fff;border-color:#17483c}
+body.anatomy-page h1{font-size:clamp(42px,4.5vw,58px)}
+body.anatomy-page h2{font-size:clamp(24px,2.4vw,30px)}
+body.anatomy-page h3{font-size:17px}
+body.mechanism-page main.mechanism.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:0;box-sizing:border-box}
+body.mechanism-page main.mechanism.wrap>section{width:100%;max-width:none;margin:0}
+body.mechanism-page .hero{min-height:100svh;padding:calc(72px + clamp(36px,5vh,56px)) 0 clamp(48px,6vh,72px);display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .section,body.mechanism-page .source{min-height:100svh;padding:clamp(42px,6vh,64px) 0;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.mechanism-page .model-section .card{width:100%;max-width:none}
+body.mechanism-page .model-frame-wrap iframe{height:min(48vh,420px);min-height:300px}
+body.mechanism-page .interaction-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:24px}
+body.mechanism-page .interaction-visual img{width:100%;max-height:300px;object-fit:contain}
+body.mechanism-page .interaction-section>.interaction-visual,body.mechanism-page .interaction-section>.interaction{min-width:0;width:100%}
+body.mechanism-page .plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+body.mechanism-page .plate{min-width:0;display:flex;flex-direction:column;gap:12px}
+body.mechanism-page .plate-description{order:0;display:grid;gap:4px;line-height:1.55}
+body.mechanism-page .plate img{order:1;width:100%;max-height:340px;object-fit:contain}
+body.mechanism-page .muscle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:14px;align-items:stretch}
+body.mechanism-page .muscle{height:100%;min-width:0;display:flex;flex-direction:column;gap:10px}
+body.mechanism-page .muscle img{width:100%;max-height:180px;object-fit:contain}
+body.mechanism-page .muscle-section{min-height:100svh}
+body.mechanism-page h1{font-size:clamp(42px,4.5vw,58px)}
+body.mechanism-page h2{font-size:clamp(24px,2.4vw,30px)}
+body.mechanism-page h3{font-size:17px}
+body.voice-lab-page main.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:0 20px;box-sizing:border-box}
+body.voice-lab-page main.wrap>.hero{grid-column:1/-1;width:100%;min-height:100svh;padding:calc(72px + clamp(36px,5vh,56px)) 0 56px;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.voice-lab-page main.wrap>.map-section{grid-column:1;width:100%;min-width:0;min-height:100svh;margin:0;padding:clamp(36px,5vh,56px) 18px;display:flex;align-items:stretch;box-sizing:border-box}
+body.voice-lab-page main.wrap>.index-section{grid-column:2;width:100%;min-width:0;min-height:100svh;margin:0;padding:clamp(36px,5vh,56px) 18px;display:flex;align-items:stretch;box-sizing:border-box}
+body.voice-lab-page .panel{width:100%;min-width:0;display:flex;flex-direction:column;gap:14px}
+body.voice-lab-page .voice-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.75fr);align-items:center;gap:18px 28px}
+body.voice-lab-page .voice-hero-visual{grid-column:2;grid-row:1/3;width:100%;max-height:250px;object-fit:contain;border-radius:12px;background:#edf2ed}
+body.voice-lab-page .voice-hero .lede,body.voice-lab-page .voice-hero .meta{grid-column:1/-1}
+body.voice-lab-page .voice-map-reference{display:block;width:100%;max-height:140px;object-fit:contain;border-radius:10px;background:#edf2ed;margin:0 0 12px}
+body.voice-lab-page .structure-overview{display:grid;grid-template-columns:1fr;gap:7px;padding:12px 14px;border:1px solid #d8e0d9;border-radius:10px;background:#f2f5ef}
+body.voice-lab-page .overview-row{display:grid;grid-template-columns:90px minmax(0,1fr) 24px;gap:10px;align-items:center;font-size:11px;color:#294338}
+body.voice-lab-page .overview-track{height:7px;background:#dce5dd;border-radius:8px;overflow:hidden}
+body.voice-lab-page .overview-track i{display:block;height:100%;background:#47735e;border-radius:8px}
+body.voice-lab-page .overview-row b{text-align:right;font-variant-numeric:tabular-nums}
+body.voice-lab-page #list{max-height:220px;overflow:auto;min-width:0}
+body.voice-lab-page #detail{max-height:340px;overflow:auto;min-width:0;line-height:1.65;overflow-wrap:anywhere}
+body.voice-lab-page #detail .tri{float:none!important;position:static!important;display:inline-flex;clear:both;max-width:100%;margin:0 0 10px;white-space:normal;overflow-wrap:anywhere}
+body.voice-lab-page #list .item{width:100%;height:auto;min-height:48px;padding:10px 12px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 8px;white-space:normal;overflow:visible;text-align:left}
+body.voice-lab-page #list .item>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+body.voice-lab-page #list .item small{display:block;white-space:normal;overflow-wrap:anywhere;color:#4b6256}
+body.voice-lab-page .data-note{margin-top:auto;padding:12px 14px;border-top:1px solid #d6dfd8;color:#465a50;font-size:11px;line-height:1.6;overflow-wrap:anywhere}
+body.voice-lab-page .closing{width:100%;min-height:100svh;margin:0;padding:64px 0;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+body.voice-lab-page .closing-inner{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+body.voice-lab-page h1{font-size:clamp(42px,4.5vw,58px)}
+body.voice-lab-page h2{font-size:22px}
+body.voice-lab-page h3{font-size:16px}
+body.voice-lab-page :is(.tab,.btn,.qbtn,#list .item){min-height:44px;height:auto;padding:10px 12px;border-radius:8px;font-size:12px;line-height:1.35}
+body.voice-lab-page :is(.tab,.btn,.qbtn,#list .item){border:1px solid #b9c9be;background:#f8faf6;color:#1d342b}
+body.voice-lab-page :is(.tab[aria-pressed="true"],.btn.primary,.qbtn.primary){background:#17483c;color:#fff;border-color:#17483c}
+body.voice-lab-page :is(button,a,input):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+@media(max-width:900px){
+ header.topbar .topbar-inner{width:calc(100% - 32px)}
+ body.master-page .master-head-inner,body.master-page .master-list-inner{width:calc(100% - 32px)}
+ body.master-page .master-list-section{min-height:100svh}
+ body.master-page #masterCards{grid-template-columns:1fr}
+ body.master-page .master-timeline{grid-template-columns:1fr}
+ body.master-page .master-card{min-height:0}
+ body.anatomy-page main.lab-wrap.wrap{width:calc(100% - 32px);grid-template-columns:1fr}
+ body.anatomy-page main.lab-wrap.wrap>.lab-hero,body.anatomy-page main.lab-wrap.wrap>.body-figure-section,body.anatomy-page main.lab-wrap.wrap>.body-detail-section,body.anatomy-page main.lab-wrap.wrap>.breath-lab,body.anatomy-page main.lab-wrap.wrap>.anatomy-sources{grid-column:1}
+ body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section{min-height:100svh}
+ body.mechanism-page main.mechanism.wrap{width:calc(100% - 32px)}
+ body.mechanism-page .muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.mechanism-page .muscle-section{min-height:200svh}
+ body.voice-lab-page main.wrap{width:calc(100% - 32px);grid-template-columns:1fr}
+ body.voice-lab-page main.wrap>.hero,body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{grid-column:1}
+ body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{min-height:100svh}
+}
+@media(max-width:680px){
+ header.topbar{min-height:64px}
+ header.topbar .topbar-inner{min-height:64px;width:calc(100% - 32px);gap:10px}
+ header.topbar .brand-mark{width:26px;height:26px}
+ header.topbar nav.nav-links{gap:8px}
+ header.topbar nav.nav-links a{font-size:11px;line-height:1.2}
+ body.master-page .master-head{min-height:100svh;padding-top:calc(64px + 30px)}
+ body.master-page .master-head-inner,body.master-page .master-list-inner{width:calc(100% - 32px)}
+ body.master-page .master-timeline-item{grid-template-columns:72px minmax(0,1fr)}
+ body.master-page .master-list-section{padding:34px 0}
+ body.anatomy-page .lab-hero{padding-top:calc(64px + 30px)}
+ body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section,body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources{padding:36px 14px}
+ body.anatomy-page .breath-diagram,body.anatomy-page .breath-diagram svg{max-height:190px}
+ body.anatomy-page .detail-visual{max-height:140px}
+ body.anatomy-page .source-visual{max-height:120px}
+ body.mechanism-page .hero{padding-top:calc(64px + 30px)}
+ body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .section,body.mechanism-page .source{padding:36px 0}
+ body.mechanism-page .interaction-section{grid-template-columns:1fr;gap:14px}
+ body.mechanism-page .interaction-visual img{max-height:220px}
+ body.mechanism-page .plate-grid{grid-template-columns:1fr}
+ body.mechanism-page .muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ body.mechanism-page .muscle img{max-height:120px}
+ body.voice-lab-page main.wrap>.hero{padding-top:calc(64px + 30px)}
+ body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{padding:30px 10px}
+ body.voice-lab-page .voice-hero{grid-template-columns:1fr}
+ body.voice-lab-page .voice-hero-visual{grid-column:1;grid-row:auto;max-height:170px}
+ body.voice-lab-page .voice-map-reference{max-height:110px}
+ body.voice-lab-page #list{max-height:190px}
+ body.voice-lab-page #detail{max-height:280px}
+ body.voice-lab-page .closing{min-height:100svh;padding:40px 0}
+}
+
+/* Final refinements: data-led section lengths, shared alignment and mobile fit. */
+body.master-page .master-list-section{min-height:100svh}
+body.master-page #masterList[data-pages="2"]{min-height:200svh}
+body.master-page .master-card{min-height:320px}
+body.master-page .master-list-section .master-card:last-child{grid-column:auto}
+body.master-page .master-facts{align-content:start}
+body.master-page .master-facts dt{margin:0 0 4px}
+body.master-page .master-facts dd{margin:0;line-height:1.5;overflow-wrap:anywhere}
+body.master-page .master-pagination{border-top:0!important}
+body.master-page .master-list-head h2{font-size:clamp(24px,2.4vw,30px)}
+body.master-page .master-list-head p{max-width:58ch}
+body.master-page .master-head-inner>*{max-width:100%}
+body.anatomy-page main.lab-wrap.wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section{min-height:100svh}
+body.anatomy-page .anatomy-sources{min-height:100svh}
+body.anatomy-page .body-detail-section .detail-visual{max-height:150px}
+body.anatomy-page .anatomy-sources .source-visual{max-height:145px}
+body.anatomy-page .breath-lab{min-height:100svh}
+body.anatomy-page .breath-lab h2{font-size:clamp(24px,2.4vw,30px)}
+body.anatomy-page iframe:focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.mechanism-page .model-section{min-height:100svh}
+body.mechanism-page .model-section article.card{display:flex;flex-direction:column;gap:12px}
+body.mechanism-page .viewer{display:flex;flex-direction:column;gap:12px}
+body.mechanism-page .viewer-caption,body.mechanism-page .credit{order:0;display:flex;align-items:center;gap:12px;line-height:1.5}
+body.mechanism-page .viewer-frame{order:1}
+body.mechanism-page .interaction-visual figure{display:flex;flex-direction:column;gap:10px}
+body.mechanism-page .interaction-visual figcaption{order:0;line-height:1.4;color:#4e6559}
+body.mechanism-page .interaction-visual img{order:1}
+body.mechanism-page .plate-section{min-height:100svh}
+body.mechanism-page .muscle-section{min-height:100svh}
+body.mechanism-page .source{min-height:100svh}
+body.mechanism-page .muscle{min-width:0}
+body.mechanism-page .muscle p{overflow-wrap:anywhere;line-height:1.55}
+body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{min-height:100svh}
+body.voice-lab-page .mapwrap{max-height:470px;overflow:hidden}
+body.voice-lab-page .map{width:100%;max-height:460px;display:block}
+body.voice-lab-page .voice-hero-visual{align-self:center}
+body.voice-lab-page .overview-row{color:#233d31}
+body.voice-lab-page .count{color:#314b3e}
+body.voice-lab-page .data-note{color:#3c5147}
+body.voice-lab-page .closing{min-height:100svh}
+@media(max-width:900px){
+ body.master-page #masterList[data-pages="2"]{min-height:100svh}
+ body.master-page .master-card{min-height:0}
+ body.anatomy-page main.lab-wrap.wrap{grid-template-columns:1fr}
+ body.anatomy-page .anatomy-sources{min-height:200svh}
+ body.mechanism-page .plate-section,body.mechanism-page .source{min-height:200svh}
+ body.mechanism-page .muscle-section{min-height:100svh}
+ body.voice-lab-page .mapwrap{max-height:330px}
+ body.voice-lab-page .map{max-height:320px}
+}
+@media(max-width:680px){
+ body.master-page .master-card{min-height:0}
+ body.master-page .master-list-section{min-height:100svh}
+ body.master-page .master-list-inner{gap:14px}
+ body.master-page .master-timeline-item{min-height:68px;padding:10px}
+ body.anatomy-page .body-detail-section{min-height:100svh}
+ body.anatomy-page .anatomy-sources{min-height:200svh}
+ body.mechanism-page .plate-section,body.mechanism-page .source{min-height:200svh}
+ body.mechanism-page .muscle-section{min-height:100svh}
+ body.mechanism-page .muscle img{max-height:112px}
+ body.voice-lab-page .mapwrap{max-height:280px}
+ body.voice-lab-page .map{max-height:270px}
+ body.voice-lab-page .closing{min-height:100svh}
+}
+
+/* Taste browser report: masterclass page content grid and nav alignment. */
+header.topbar .topbar-inner{position:relative}
+header.topbar .skip-link{left:0;top:-100px}
+header.topbar .skip-link:focus{top:8px}
+body.master-page .master-head{width:min(calc(100% - 128px),1240px);max-width:1240px;height:100svh;min-height:100svh;margin:0 auto;padding:calc(72px + 32px) 0 32px;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+body.master-page .master-head-inner{width:100%;max-width:none;margin:0;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+body.master-page .master-head h1{max-width:16ch;font-size:clamp(38px,4vw,54px);line-height:1.08}
+body.master-page .master-head .master-intro-note{width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+body.master-page .master-head .master-intro-note>*{min-width:0;margin:0;overflow-wrap:anywhere}
+body.master-page .master-head .master-hero-cta{min-height:44px;margin-top:10px;padding:10px 16px;border-radius:8px}
+body.master-page .master-list-section{width:min(calc(100% - 128px),1240px);max-width:1240px;height:calc(var(--h,1) * 100vh);min-height:calc(var(--h,1) * 100vh);margin:0 auto;padding:clamp(32px,5vh,52px) 0;display:flex;align-items:center;justify-content:center;box-sizing:border-box;background:#edf2ed;box-shadow:0 0 0 100vmax #edf2ed;clip-path:inset(0 -100vmax)}
+body.master-page .master-list-inner{width:100%;max-width:none;margin:0;display:flex;flex-direction:column;gap:14px}
+body.master-page .master-list-visual{display:block;width:100%;height:130px;object-fit:cover;object-position:center 44%;border-radius:12px}
+body.master-page .master-timeline{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+body.master-page .master-timeline-item{min-width:0;min-height:82px;padding:10px;display:grid;grid-template-columns:32px 70px minmax(0,1fr);gap:8px;align-items:center;background:#f9faf6;border:1px solid #d4ddd5;border-radius:10px}
+body.master-page .master-timeline-icon{width:28px;height:28px;object-fit:contain}
+body.master-page #masterCards{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:minmax(320px,1fr);gap:14px}
+body.master-page .master-card{width:100%;height:100%;min-height:320px;grid-column:auto!important;border-radius:12px}
+body.master-page .master-card :is(a,button){min-height:44px;border-radius:8px}
+body.master-page :is(.master-hero-cta,.master-link,.master-pagination button){min-height:44px;height:auto;padding:10px 16px;border-radius:8px;font-size:12px;line-height:1.35}
+body.master-page .master-link-primary,body.master-page .master-hero-cta{background:#17483c;color:#fff;border:1px solid #17483c}
+body.master-page .master-link:not(.master-link-primary),body.master-page .master-pagination button{background:transparent;color:#17483c;border:1px solid #aebfb3}
+body.master-page .master-list-head{width:100%;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+body.master-page .master-list-head h2,body.master-page .master-list-head p{margin-left:0;text-align:left}
+body.master-page .master-intro-note{width:100%}
+body.master-page :is(.master-list-head,.master-card,.master-timeline-item)>*{min-width:0;overflow-wrap:anywhere}
+@media(max-width:900px){
+ header.topbar .topbar-inner{width:calc(100% - 32px);gap:8px}
+ header.topbar nav.nav-links{gap:8px}
+ header.topbar nav.nav-links a{font-size:11px}
+ body.master-page .master-head,body.master-page .master-list-section{width:calc(100% - 32px);height:100svh;min-height:100svh;--h:1}
+ body.master-page .master-head{padding-top:calc(64px + 24px);padding-bottom:24px}
+ body.master-page .master-head-inner{gap:10px}
+ body.master-page .master-head h1{font-size:clamp(30px,5vw,38px);max-width:14ch}
+ body.master-page .master-list-inner{gap:10px}
+ body.master-page .master-list-visual{height:96px}
+ body.master-page .master-timeline{grid-template-columns:repeat(3,minmax(0,1fr))}
+ body.master-page .master-timeline-item{grid-template-columns:24px minmax(0,1fr);grid-template-rows:auto auto;gap:4px 7px;min-height:74px}
+ body.master-page .master-timeline-item time{grid-column:2}
+ body.master-page .master-timeline-item>div{grid-column:1/-1}
+ body.master-page .master-timeline-icon{grid-row:1}
+ body.master-page #masterCards{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(260px,1fr)}
+ body.master-page .master-card{min-height:260px}
+}
+@media(max-width:680px){
+ header.topbar .topbar-inner{width:calc(100% - 32px);gap:6px}
+ header.topbar .brand-mark{width:22px;height:22px}
+ header.topbar .brand-text{font-size:13px}
+ header.topbar nav.nav-links{gap:6px}
+ header.topbar nav.nav-links a{font-size:10px}
+ body.master-page .master-head,body.master-page .master-list-section{width:calc(100% - 32px);height:100svh;min-height:100svh}
+ body.master-page .master-head{padding-top:calc(64px + 18px);padding-bottom:18px}
+ body.master-page .master-head h1{font-size:30px;max-width:12ch;line-height:1.08}
+ body.master-page .master-head p{font-size:13px;line-height:1.5}
+ body.master-page .master-head .master-hero-cta{margin-top:4px}
+ body.master-page .master-list-visual{height:72px}
+ body.master-page .master-timeline{grid-template-columns:1fr;gap:6px}
+ body.master-page .master-timeline-item{min-height:50px;padding:7px;grid-template-columns:22px 64px minmax(0,1fr);grid-template-rows:auto}
+ body.master-page .master-timeline-item time{grid-column:auto}
+ body.master-page .master-timeline-item>div{grid-column:auto}
+ body.master-page .master-timeline-icon{grid-row:auto;width:22px;height:22px}
+ body.master-page #masterCards{grid-template-columns:1fr;grid-auto-rows:auto}
+ body.master-page .master-card{min-height:0}
+}
+
+/* Anatomy page: one-screen bands, a real hero visual, and section-aligned controls. */
+body.anatomy-page main.lab-wrap.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:0}
+body.anatomy-page main.lab-wrap.wrap>section{grid-column:1;width:100%;max-width:none;margin:0;box-sizing:border-box}
+body.anatomy-page .lab-hero{height:100svh;min-height:100svh;padding:calc(72px + 36px) 0 36px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);grid-template-rows:auto auto auto auto auto auto auto;align-content:center;align-items:center;gap:10px 28px}
+body.anatomy-page .lab-crumb{grid-column:1/-1}
+body.anatomy-page .lab-kicker,body.anatomy-page .lab-hero h1,body.anatomy-page .lab-hero .page-h1-en,body.anatomy-page .anatomy-proof,body.anatomy-page .lab-hero .mo-wh__text,body.anatomy-page .lab-hero-note,body.anatomy-page .lab-hero-actions{grid-column:1}
+body.anatomy-page .lab-hero-visual{grid-column:2;grid-row:2/8;align-self:center;width:100%;max-height:420px;object-fit:contain;border-radius:14px;background:#edf2ed}
+body.anatomy-page .lab-hero h1{font-size:clamp(40px,4.3vw,56px);line-height:1.1;max-width:17ch}
+body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section,body.anatomy-page .breath-lab{height:100vh;min-height:100vh;padding:clamp(56px,7vh,84px) 0;display:flex;flex-direction:column;justify-content:center;box-sizing:border-box}
+body.anatomy-page .body-system.split{width:100%;max-width:none;display:block;margin:0;padding:0}
+body.anatomy-page .body-figure{width:100%;max-width:none;margin:0;padding:0;overflow:visible}
+body.anatomy-page .body-figure-head{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+body.anatomy-page .model-frame-wrap{width:100%;overflow:visible}
+body.anatomy-page .model-frame-wrap iframe{width:100%;height:min(44vh,390px);min-height:280px}
+body.anatomy-page iframe:focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.anatomy-page .body-detail{width:100%;max-width:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+body.anatomy-page .detail-visual{width:100%;max-height:170px;object-fit:contain;margin:0;background:#edf2ed}
+body.anatomy-page .body-detail h2,body.anatomy-page .body-detail h3,body.anatomy-page .body-detail p,body.anatomy-page .body-detail ul{margin-left:0;text-align:left}
+body.anatomy-page .breath-lab{align-items:stretch}
+body.anatomy-page .breath-lab>*{width:100%;max-width:none;margin-left:0;margin-right:0}
+body.anatomy-page .breath-diagram{width:100%;max-width:none;max-height:220px;margin:0;overflow:hidden}
+body.anatomy-page .breath-diagram svg{width:100%;max-height:210px;display:block}
+body.anatomy-page .breath-readout{width:100%;max-width:none;margin:12px 0 0;padding:14px 16px;box-sizing:border-box}
+body.anatomy-page .anatomy-sources{height:calc(var(--h,2) * 100vh);min-height:calc(var(--h,2) * 100vh);--h:2;padding:clamp(52px,6vh,72px) 0;display:grid;grid-template-columns:minmax(0,1fr);align-content:center;gap:14px;box-sizing:border-box}
+body.anatomy-page .source-visual{width:100%;height:190px;max-height:190px;object-fit:contain;display:block;margin:0;background:#edf2ed}
+body.anatomy-page .source-methods{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+body.anatomy-page .anatomy-sources ul{width:100%;margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr;grid-auto-rows:minmax(44px,auto);gap:8px}
+body.anatomy-page .anatomy-sources li{min-height:44px;width:100%;padding:10px 12px;display:flex;align-items:center;box-sizing:border-box;border:1px solid #d9e0d9;border-radius:8px;overflow-wrap:anywhere}
+body.anatomy-page :is(button,a[role="button"],.detail-link,.lab-btn,.organ-chip,.model-tab,.lab-hero-actions a){min-height:44px;height:auto;padding:10px 14px;border-radius:8px!important;font-size:12px;line-height:1.35;box-shadow:none}
+body.anatomy-page :is(button,.detail-link,.lab-hero-actions a){border:1px solid #b9c9be;background:#f8faf6;color:#1d342b}
+body.anatomy-page :is(button[aria-pressed="true"],.lab-btn.primary,.detail-link){background:#17483c;color:#fff;border-color:#17483c}
+body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section,body.anatomy-page .breath-lab{--padt:72px;--padb:72px}
+@media(max-width:900px){
+ body.anatomy-page main.lab-wrap.wrap{width:calc(100% - 32px)}
+ body.anatomy-page .lab-hero{height:100svh;min-height:100svh;grid-template-columns:minmax(0,1fr) minmax(220px,.75fr);padding-top:calc(64px + 24px);gap:8px 16px}
+ body.anatomy-page .lab-hero-visual{max-height:300px}
+ body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section,body.anatomy-page .breath-lab{height:100vh;min-height:100vh;padding:48px 0}
+ body.anatomy-page .anatomy-sources{height:calc(2 * 100vh);min-height:calc(2 * 100vh)}
+ body.anatomy-page .source-methods{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:680px){
+ body.anatomy-page .lab-hero{grid-template-columns:1fr;grid-template-rows:auto;align-content:center;height:100svh;min-height:100svh;padding:calc(64px + 20px) 0 24px;gap:7px}
+ body.anatomy-page .lab-hero-visual{grid-column:1;grid-row:auto;width:100%;max-height:140px}
+ body.anatomy-page .lab-hero h1{font-size:30px;max-width:14ch}
+ body.anatomy-page .lab-hero .mo-wh__text,body.anatomy-page .lab-hero-note{font-size:12px;line-height:1.45}
+ body.anatomy-page .anatomy-proof{gap:8px}
+ body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section,body.anatomy-page .breath-lab{height:100svh;min-height:100svh;padding:36px 0}
+ body.anatomy-page .model-frame-wrap iframe{height:300px;min-height:260px}
+ body.anatomy-page .model-tabs,body.anatomy-page .organ-chips{display:flex;flex-wrap:wrap;gap:7px}
+ body.anatomy-page .model-tab,body.anatomy-page .organ-chip{min-height:40px;padding:8px 10px}
+ body.anatomy-page .detail-visual{max-height:120px}
+ body.anatomy-page .breath-diagram,body.anatomy-page .breath-diagram svg{max-height:170px}
+ body.anatomy-page .anatomy-sources{height:calc(2 * 100vh);min-height:calc(2 * 100vh);padding:36px 0}
+ body.anatomy-page .source-visual{height:140px;max-height:140px}
+ body.anatomy-page .source-methods{grid-template-columns:1fr}
+}
+
+/* Exact T-height bands and visual fit for the larynx mechanics page. */
+body.mechanism-page .hero{height:100svh;min-height:100svh}
+body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .plate-section,body.mechanism-page .muscle-section,body.mechanism-page .source{height:100vh;min-height:100vh;--h:1}
+body.mechanism-page .viewer-frame{width:100%;height:min(42vh,360px);min-height:260px;overflow:visible}
+body.mechanism-page .viewer-frame iframe{width:100%;height:100%;min-height:260px}
+body.mechanism-page .model-section .card{padding:clamp(18px,2vw,28px)}
+body.mechanism-page .model-section .notice{font-size:12px;line-height:1.55}
+body.mechanism-page .interaction-section .modes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+body.mechanism-page .interaction-section .mode{min-height:52px;height:auto;padding:10px 12px;border-radius:8px;font-size:12px;line-height:1.3}
+body.mechanism-page .interaction-section .mode strong,body.mechanism-page .interaction-section .mode span{display:block;overflow-wrap:anywhere}
+body.mechanism-page .interaction-visual img{max-height:270px}
+body.mechanism-page .structure-section .side{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+body.mechanism-page .structure-section .side>.card{min-width:0;height:100%}
+body.mechanism-page .muscle-grid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;align-items:stretch}
+body.mechanism-page .muscle{height:100%;min-height:0}
+body.mechanism-page .muscle img{max-height:160px}
+body.mechanism-page .plate-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+body.mechanism-page .plate img{max-height:300px}
+body.mechanism-page .source-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+body.mechanism-page .source-group{min-width:0}
+body.mechanism-page :is(button,a[role="button"],.mode,.model-switcher button,.source-cta){min-height:44px;height:auto;padding:10px 14px;border-radius:8px!important;font-size:12px;line-height:1.35}
+body.mechanism-page :is(button,.source-cta){border:1px solid #b9c9be}
+body.mechanism-page :is(button[aria-pressed="true"],.source-cta){background:#17483c;color:#fff;border-color:#17483c}
+body.mechanism-page :is(button,a):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.anatomy-page .anatomy-sources{--h:1;height:calc(var(--h,1) * 100vh);min-height:calc(var(--h,1) * 100vh)}
+body.anatomy-page .source-visual{height:180px;max-height:180px}
+@media(max-width:900px){
+ body.mechanism-page .structure-section .side{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.mechanism-page .source-grid{grid-template-columns:1fr}
+ body.anatomy-page .anatomy-sources{--h:2;height:calc(2 * 100vh);min-height:calc(2 * 100vh)}
+}
+@media(max-width:680px){
+ body.mechanism-page .hero{height:100svh;min-height:100svh}
+ body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .muscle-section{height:100vh;min-height:100vh}
+ body.mechanism-page .plate-section,body.mechanism-page .source{height:200vh;min-height:200vh}
+ body.mechanism-page .viewer-frame{height:300px;min-height:260px}
+ body.mechanism-page .interaction-section .modes{grid-template-columns:1fr}
+ body.mechanism-page .interaction-visual img{max-height:210px}
+ body.mechanism-page .structure-section .side{grid-template-columns:1fr}
+ body.mechanism-page .muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.mechanism-page .muscle img{max-height:112px}
+ body.mechanism-page .plate-grid{grid-template-columns:1fr}
+ body.mechanism-page .source-grid{grid-template-columns:1fr}
+ body.anatomy-page .anatomy-sources{--h:2;height:calc(2 * 100vh);min-height:calc(2 * 100vh)}
+}
+
+/* Voice Lab: separate screen-sized map and index sections; preserve all interactive content. */
+body.voice-lab-page main.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 20px}
+body.voice-lab-page main.wrap>.hero{height:100svh;min-height:100svh;padding:calc(72px + 36px) 0 36px}
+body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{height:100vh;min-height:100vh;padding:clamp(36px,5vh,56px) 18px;display:flex;align-items:stretch;box-sizing:border-box}
+body.voice-lab-page .panel{width:100%;min-width:0;display:flex;flex-direction:column;gap:12px}
+body.voice-lab-page .voice-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.75fr);align-items:center;gap:14px 24px}
+body.voice-lab-page .voice-hero-visual{grid-column:2;grid-row:1/3;max-height:250px;object-fit:contain}
+body.voice-lab-page .voice-hero .lede,body.voice-lab-page .voice-hero .chips{grid-column:1/-1}
+body.voice-lab-page .map-section .panel{gap:10px}
+body.voice-lab-page .voice-map-reference{max-height:105px;object-fit:contain;margin:0 auto 4px}
+body.voice-lab-page .mapwrap{width:100%;height:320px;max-height:36vh;margin:0;overflow:hidden}
+body.voice-lab-page .map{width:100%;height:100%;max-height:320px;display:block}
+body.voice-lab-page .toolrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+body.voice-lab-page .quiz{width:100%;min-width:0;padding:12px 14px}
+body.voice-lab-page .quiz p,body.voice-lab-page .msg{margin:4px 0;line-height:1.45}
+body.voice-lab-page .structure-overview{max-height:150px;overflow:auto;grid-template-columns:1fr}
+body.voice-lab-page .overview-row{min-height:18px}
+body.voice-lab-page #tabs{display:flex;flex-wrap:wrap;gap:7px}
+body.voice-lab-page #list{max-height:150px;overflow:auto;min-width:0}
+body.voice-lab-page #list .item{width:100%;height:auto;min-height:56px;padding:9px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 8px;white-space:normal;overflow:visible;text-align:left}
+body.voice-lab-page #list .item>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+body.voice-lab-page #list .item small{display:block;white-space:normal;overflow-wrap:anywhere;color:#40594c}
+body.voice-lab-page #detail{max-height:230px;overflow:auto;min-width:0;line-height:1.55;overflow-wrap:anywhere}
+body.voice-lab-page #detail .tri{float:none!important;position:static!important;display:inline-flex;clear:both;max-width:100%;margin:0 0 8px;white-space:normal;overflow-wrap:anywhere}
+body.voice-lab-page .data-note{max-height:92px;overflow:auto;margin-top:auto;padding:10px 12px;border-top:1px solid #d6dfd8;color:#3c5147;font-size:10px;line-height:1.5;overflow-wrap:anywhere}
+body.voice-lab-page .closing{height:100svh;min-height:100svh;padding:48px 0}
+body.voice-lab-page .closing-inner{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+body.voice-lab-page h1{font-size:clamp(40px,4.3vw,56px);line-height:1.1}
+body.voice-lab-page h2{font-size:22px;line-height:1.2}
+body.voice-lab-page h3{font-size:16px;line-height:1.3}
+body.voice-lab-page :is(button,.tab,.btn,.qbtn,#list .item){min-height:44px;height:auto;padding:10px 12px;border-radius:8px!important;font-size:12px;line-height:1.35;box-shadow:none}
+body.voice-lab-page :is(button,.tab,.btn,.qbtn,#list .item){border:1px solid #b9c9be;background:#f8faf6;color:#1d342b}
+body.voice-lab-page :is(.tab[aria-pressed="true"],.btn.primary,.qbtn.primary,#list .item[aria-pressed="true"]){background:#17483c;color:#fff;border-color:#17483c}
+body.voice-lab-page :is(button,a,input):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.voice-lab-page .map-section .panel>h2,body.voice-lab-page .index-section .panel>h2{margin:0 0 4px;text-align:left}
+@media(max-width:900px){
+ body.voice-lab-page main.wrap{width:calc(100% - 32px);grid-template-columns:1fr}
+ body.voice-lab-page main.wrap>.hero,body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{grid-column:1}
+ body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{height:100vh;min-height:100vh}
+ body.voice-lab-page .mapwrap{height:300px;max-height:34vh}
+ body.voice-lab-page .map{max-height:300px}
+}
+@media(max-width:680px){
+ body.voice-lab-page main.wrap>.hero{height:100svh;min-height:100svh;padding:calc(64px + 24px) 0 24px}
+ body.voice-lab-page .voice-hero{grid-template-columns:1fr;gap:8px}
+ body.voice-lab-page .voice-hero-visual{grid-column:1;grid-row:auto;max-height:115px;width:100%}
+ body.voice-lab-page .voice-hero h1{font-size:30px;max-width:15ch}
+ body.voice-lab-page .voice-hero .lede{font-size:12px;line-height:1.45}
+ body.voice-lab-page main.wrap>.map-section,body.voice-lab-page main.wrap>.index-section{height:100svh;min-height:100svh;padding:28px 10px}
+ body.voice-lab-page .voice-map-reference{max-height:86px}
+ body.voice-lab-page .mapwrap{height:255px;max-height:30vh}
+ body.voice-lab-page .map{max-height:255px}
+ body.voice-lab-page .structure-overview{max-height:120px}
+ body.voice-lab-page #list{max-height:132px}
+ body.voice-lab-page #detail{max-height:180px}
+ body.voice-lab-page .data-note{max-height:72px;font-size:9px}
+ body.voice-lab-page .closing{height:100svh;min-height:100svh;padding:36px 0}
+}
+
+/* Larynx page: a two-column visual hero, editorial muscle rows and clean image-only plates. */
+body.mechanism-page .hero{height:100vh;min-height:100vh;padding:calc(72px + 36px) 0 36px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);align-content:center;align-items:center;gap:18px 28px;box-sizing:border-box}
+body.mechanism-page .mechanism-hero-copy{width:100%;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+body.mechanism-page .mechanism-hero-copy>*{position:static!important;float:none!important;left:auto!important;right:auto!important;transform:none!important;width:100%;max-width:100%;min-width:0;margin-inline:0!important;overflow-wrap:anywhere;box-sizing:border-box}
+body.mechanism-page .mechanism-hero-visual{display:block;grid-column:2;grid-row:1;width:100%;max-height:420px;object-fit:contain;border-radius:14px;background:#edf2ed}
+body.mechanism-page .hero h1{font-size:clamp(40px,4.2vw,56px);line-height:1.1;max-width:17ch}
+body.mechanism-page .hero .page-h1-en{font-size:15px;line-height:1.4}
+body.mechanism-page .hero .lab-entry{display:flex;flex-direction:column;gap:6px}
+body.mechanism-page .hero .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .plate-section,body.mechanism-page .muscle-section,body.mechanism-page .source{height:100vh;min-height:100vh;--h:1}
+body.mechanism-page .model-section{padding:clamp(36px,5vh,52px) 0}
+body.mechanism-page .model-section article.card{display:flex;flex-direction:column;gap:12px}
+body.mechanism-page .viewer{display:flex;flex-direction:column;gap:12px}
+body.mechanism-page .viewer-frame{width:100%;height:min(42vh,360px);min-height:260px;overflow:visible}
+body.mechanism-page .viewer-frame iframe{width:100%;height:100%;min-height:260px}
+body.mechanism-page iframe:focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+body.mechanism-page .interaction-section{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:24px}
+body.mechanism-page .interaction-section>.interaction-visual,body.mechanism-page .interaction-section>.interaction{width:100%;min-width:0;margin:0;padding:0}
+body.mechanism-page .interaction-visual figure{width:100%;margin:0;display:block}
+body.mechanism-page .interaction-visual img{display:block;width:100%;max-height:270px;object-fit:contain}
+body.mechanism-page .interaction .readout{width:100%;max-width:none;margin:12px 0 0;padding:14px 16px;box-sizing:border-box}
+body.mechanism-page .interaction .readout-kicker,body.mechanism-page .interaction .mech-observation{margin-left:0!important;padding-left:0!important;float:none!important;position:static!important}
+body.mechanism-page .structure-section{padding:clamp(36px,5vh,52px) 0}
+body.mechanism-page .structure-section .side{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+body.mechanism-page .structure-section article.card.info{min-width:0;width:100%;height:100%;padding:18px;border-radius:10px}
+body.mechanism-page .plate-section{padding:clamp(36px,5vh,52px) 0}
+body.mechanism-page .plate-grid{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;gap:20px}
+body.mechanism-page .plate{width:100%;min-width:0;margin:0;display:flex;align-items:stretch;justify-content:center}
+body.mechanism-page .plate img{display:block;width:100%;height:320px;max-height:320px;object-fit:contain}
+body.mechanism-page .muscle-section{height:200vh;min-height:200vh;padding:clamp(40px,5vh,56px) 0}
+body.mechanism-page .muscle-grid{width:100%;display:flex;flex-direction:column;gap:0}
+body.mechanism-page .muscle{width:100%;min-height:150px;height:auto;display:grid;grid-template-columns:160px minmax(0,1fr);align-items:center;gap:18px;padding:14px 0;border:0;border-bottom:1px solid #d7dfd8;border-radius:0;background:transparent;box-shadow:none}
+body.mechanism-page .muscle img{width:100%;height:120px;max-height:120px;object-fit:contain}
+body.mechanism-page .muscle h3{margin:0;font-size:18px;line-height:1.25}
+body.mechanism-page .muscle p{margin:6px 0 0;font-size:13px;line-height:1.55;overflow-wrap:anywhere}
+body.mechanism-page .source{padding:clamp(36px,5vh,52px) 0}
+body.mechanism-page .source-grid{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+body.mechanism-page .source-group{min-width:0}
+body.mechanism-page .source-group ul{display:grid;gap:10px}
+body.mechanism-page .source-group li{color:#263c31;line-height:1.6}
+body.mechanism-page .source-group a{color:#17483c;text-decoration:underline;text-underline-offset:3px;font-weight:600}
+body.mechanism-page .source-cta{min-height:44px;padding:10px 14px;border-radius:8px;border:1px solid #17483c;color:#17483c}
+body.mechanism-page .closing{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:24px 0;display:flex;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid #d7dfd8;color:#3f5649;font-size:12px;line-height:1.5}
+body.mechanism-page :is(button,a[role="button"],.hero-actions a,.mode,.model-switcher button,.source-cta){min-height:44px;height:auto;padding:10px 14px;border-radius:8px!important;font-size:12px;line-height:1.35;box-shadow:none}
+body.mechanism-page :is(button,.hero-actions a,.source-cta){border:1px solid #b9c9be}
+body.mechanism-page :is(button[aria-pressed="true"],.hero-actions a:first-child,.source-cta){background:#17483c;color:#fff;border-color:#17483c}
+body.mechanism-page h1{font-size:clamp(40px,4.2vw,56px);line-height:1.1}
+body.mechanism-page h2{font-size:28px;line-height:1.2}
+body.mechanism-page h3{font-size:18px;line-height:1.25}
+body.mechanism-page :is(button,a):focus-visible{outline:2px solid var(--action)!important;outline-offset:3px!important}
+@media(max-width:900px){
+ body.mechanism-page main.mechanism.wrap{width:calc(100% - 32px)}
+ body.mechanism-page .hero{height:100vh;min-height:100vh;grid-template-columns:minmax(0,1fr) minmax(220px,.8fr);padding-top:calc(64px + 28px)}
+ body.mechanism-page .mechanism-hero-visual{max-height:300px}
+ body.mechanism-page .muscle-section{height:200vh;min-height:200vh}
+ body.mechanism-page .muscle{grid-template-columns:130px minmax(0,1fr);min-height:140px}
+ body.mechanism-page .source-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+ body.mechanism-page .hero{height:100svh;min-height:100svh;grid-template-columns:1fr;grid-template-rows:auto;align-content:center;padding:calc(64px + 18px) 0 20px;gap:8px}
+ body.mechanism-page .mechanism-hero-visual{grid-column:1;grid-row:auto;width:100%;max-height:130px}
+ body.mechanism-page .hero h1{font-size:30px;max-width:14ch}
+ body.mechanism-page .hero .page-h1-en{font-size:12px}
+ body.mechanism-page .hero .mo-wh__text{font-size:12px;line-height:1.45}
+ body.mechanism-page .hero .lab-entry{font-size:11px;line-height:1.4}
+ body.mechanism-page .hero .hero-actions{gap:8px}
+ body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section{height:100vh;min-height:100vh}
+ body.mechanism-page .viewer-frame{height:300px;min-height:250px}
+ body.mechanism-page .interaction-section{grid-template-columns:1fr;gap:14px}
+ body.mechanism-page .interaction-visual img{max-height:180px}
+ body.mechanism-page .interaction .modes{grid-template-columns:1fr}
+ body.mechanism-page .structure-section .side{grid-template-columns:1fr}
+ body.mechanism-page .plate-section,body.mechanism-page .source{height:200vh;min-height:200vh}
+ body.mechanism-page .plate-grid{grid-template-columns:1fr;gap:12px}
+ body.mechanism-page .plate img{height:260px;max-height:260px}
+ body.mechanism-page .muscle-section{height:100vh;min-height:100vh;padding:30px 0}
+ body.mechanism-page .muscle{grid-template-columns:88px minmax(0,1fr);min-height:96px;gap:10px;padding:8px 0}
+ body.mechanism-page .muscle img{height:78px;max-height:78px}
+ body.mechanism-page .muscle h3{font-size:15px}
+ body.mechanism-page .muscle p{font-size:11px;line-height:1.4}
+ body.mechanism-page .source-grid{grid-template-columns:1fr}
+ body.mechanism-page .closing{width:calc(100% - 32px);flex-direction:column;align-items:flex-start}
+}
+
+/* Accessible text remains available to assistive technology without becoming a visual caption. */
+body.mechanism-page .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* Voice Lab final interaction fit and accessible hierarchy. */
+body.voice-lab-page .voice-hero{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.75fr);grid-template-rows:auto auto auto;align-items:center;gap:12px 24px}
+body.voice-lab-page .voice-heading{grid-column:1;grid-row:1;min-width:0}
+body.voice-lab-page .voice-hero-visual{grid-column:2;grid-row:1/3;max-height:260px}
+body.voice-lab-page .voice-hero .lede{grid-column:1;grid-row:2;min-width:0}
+body.voice-lab-page .voice-hero .chips{grid-column:1/-1;grid-row:3}
+body.voice-lab-page #detail .row{width:100%;min-width:0;display:grid;grid-template-columns:88px minmax(0,1fr);align-items:start;gap:8px;margin:10px 0}
+body.voice-lab-page #detail .row>.k{min-width:0;line-height:1.5;color:#344d40}
+body.voice-lab-page #detail .row .rel{min-width:0;width:100%;display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px;position:static!important;float:none!important}
+body.voice-lab-page #detail .row .rel button{position:static!important;float:none!important;display:inline-flex;align-items:center;justify-content:center;min-width:0;max-width:100%;height:44px;min-height:44px;padding:8px 10px;border-radius:8px!important;white-space:normal;overflow-wrap:anywhere}
+body.voice-lab-page #detail .tri{position:static!important;float:none!important;display:inline-flex;max-width:100%;margin:0 0 10px;padding:6px 10px;border-radius:8px;background:#edf2ed;color:#233d31;white-space:normal;overflow-wrap:anywhere}
+body.voice-lab-page #list .item{height:44px;min-height:44px;max-height:44px;display:flex;align-items:center;justify-content:space-between;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:11px}
+body.voice-lab-page #list .item>*{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.voice-lab-page :is(button,.tab,.btn,.qbtn,#list .item,#detail .rel button){height:44px;min-height:44px;max-height:44px;padding:8px 12px;border-radius:8px!important;font-size:12px;line-height:1.25}
+body.voice-lab-page :is(button,.tab,.btn,.qbtn,#list .item,#detail .rel button){color:#1d342b;border-color:#b9c9be}
+body.voice-lab-page :is(.tab span,.count,#detail details.ev summary,.data-note, .data-note code){color:#263c31}
+body.voice-lab-page .data-note code{background:#e7eee8;padding:1px 3px;border-radius:3px}
+body.voice-lab-page .closing{height:100svh;min-height:100svh;padding:48px 0;display:flex;align-items:center;justify-content:center}
+body.voice-lab-page .closing-inner{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:28px;align-items:center}
+body.voice-lab-page .closing-brand{display:grid;grid-template-columns:80px minmax(0,1fr);gap:8px 16px;align-items:center}
+body.voice-lab-page .closing-brand img{grid-row:1/3;width:80px;height:80px;object-fit:contain}
+body.voice-lab-page .closing-brand strong{font-size:32px}
+body.voice-lab-page .closing-brand p{grid-column:2;max-width:50ch;line-height:1.6;color:#465b50}
+body.voice-lab-page .closing-inner nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+body.voice-lab-page .closing-inner nav a{min-height:44px;padding:10px 12px;display:flex;align-items:center;border:1px solid #cbd7ce;border-radius:8px;color:#17483c}
+body.voice-lab-page .closing-note{grid-column:1/-1;margin:0;padding-top:16px;border-top:1px solid #d8e0d9;color:#465b50;font-size:12px;line-height:1.6}
+@media(max-width:680px){
+ body.voice-lab-page .voice-hero{grid-template-columns:1fr;grid-template-rows:auto;gap:8px}
+ body.voice-lab-page .voice-heading,body.voice-lab-page .voice-hero .lede,body.voice-lab-page .voice-hero .chips{grid-column:1;grid-row:auto}
+ body.voice-lab-page .voice-hero-visual{grid-column:1;grid-row:auto;max-height:110px}
+ body.voice-lab-page #detail .row{grid-template-columns:72px minmax(0,1fr);gap:6px}
+ body.voice-lab-page #detail .row .rel button{font-size:10px;padding:7px 8px}
+ body.voice-lab-page .closing-inner{grid-template-columns:1fr;gap:18px}
+ body.voice-lab-page .closing-brand{grid-template-columns:56px minmax(0,1fr)}
+ body.voice-lab-page .closing-brand img{width:56px;height:56px}
+ body.voice-lab-page .closing-brand strong{font-size:26px}
+ body.voice-lab-page .closing-inner nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.voice-lab-page .closing-note{grid-column:1}
+}
+
+/* Full-width main landmarks; each visible band owns one aligned .wrap container. */
+body.master-page main.master-wrap,body.anatomy-page main.lab-wrap,body.mechanism-page main.mechanism,body.voice-lab-page main#main-content{width:100%;max-width:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr);gap:0;box-sizing:border-box}
+body.master-page main.master-wrap>section.wrap,body.anatomy-page main.lab-wrap>section.wrap,body.mechanism-page main.mechanism>section.wrap,body.voice-lab-page main#main-content>section.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;box-sizing:border-box}
+body.master-page .master-head{height:100svh!important;min-height:100svh!important;padding:calc(72px + 32px) clamp(18px,3vw,32px) 32px!important}
+body.master-page .master-head h1{max-width:20ch;font-size:clamp(36px,4vw,52px);line-height:1.08}
+body.master-page .master-head h1 span{display:block;margin-top:8px;font-size:.42em;font-weight:550;letter-spacing:.02em;line-height:1.25;color:#53675d}
+body.master-page .master-intro-note{position:static!important;float:none!important;width:100%;display:grid;grid-template-columns:20px minmax(0,1fr);align-items:start;gap:10px;margin:0;padding:14px 16px;border:1px solid #d8e0d9;border-radius:8px;background:#f4f6f1;line-height:1.55}
+body.master-page .master-intro-note>*{position:static!important;float:none!important;display:block;min-width:0;margin:0;overflow-wrap:anywhere}
+body.master-page .master-list-section{height:calc(2 * 100vh)!important;min-height:calc(2 * 100vh)!important;--h:2;padding:clamp(32px,5vh,52px) clamp(18px,3vw,32px)!important;overflow:visible}
+body.master-page .master-list-inner{width:100%;max-width:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+body.master-page .master-list-head{width:100%;padding:0;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+body.master-page .master-list-head>div{min-width:0;display:grid;gap:8px}
+body.master-page .master-list-head .eyebrow{display:block;margin:0 0 4px}
+body.master-page .master-list-head h2,body.master-page .master-list-head p{margin:0;text-align:left}
+body.master-page .master-count{display:block;max-width:100%;white-space:normal;overflow:visible;overflow-wrap:anywhere;line-height:1.4}
+body.master-page .master-list-visual{width:100%;height:132px;min-height:132px;display:block;overflow:hidden;border-radius:12px;background:#183f35}
+body.master-page .master-list-visual svg{width:100%;height:100%;display:block}
+body.master-page .master-timeline{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+body.master-page .master-timeline-item{width:100%;min-width:0;min-height:82px;padding:10px;display:grid;grid-template-columns:28px 70px minmax(0,1fr);gap:8px;align-items:center}
+body.master-page .master-timeline-item>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+body.master-page #masterCards{width:100%!important;max-width:none!important;margin:0!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-rows:1fr;align-items:stretch;gap:14px}
+body.master-page .master-card{width:100%!important;max-width:none!important;min-width:0!important;height:100%!important;min-height:320px;grid-column:auto!important;display:flex;flex-direction:column}
+body.master-page .master-card h3,body.master-page .master-card p,body.master-page .master-card dd{overflow-wrap:anywhere}
+body.master-page .master-card .master-actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+body.master-page :is(button,.master-hero-cta,.master-link,.master-pagination button,.master-card a){height:44px!important;min-height:44px!important;max-height:44px!important;padding:8px 12px!important;border-radius:8px!important;font-size:12px!important;line-height:1.25!important;white-space:normal;box-shadow:none}
+body.master-page .master-list-section .master-pagination{margin-top:4px;padding:0}
+body.master-page footer.closing{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto;padding:36px 0;display:flex;align-items:center;justify-content:center}
+body.master-page footer.closing .footer-inner{width:100%;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:24px;align-items:center}
+body.master-page footer.closing nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+body.master-page footer.closing nav a{min-height:44px;padding:10px 12px;display:flex;align-items:center;border:1px solid #cbd7ce;border-radius:8px;color:#17483c}
+body.master-page footer.closing small{grid-column:1/-1;padding-top:14px;border-top:1px solid #d8e0d9;color:#52665a}
+body.anatomy-page main.lab-wrap{grid-template-columns:1fr}
+body.anatomy-page main.lab-wrap>section.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto}
+body.mechanism-page main.mechanism{grid-template-columns:1fr}
+body.mechanism-page main.mechanism>section.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto}
+body.voice-lab-page main#main-content{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 20px}
+body.voice-lab-page main#main-content>.hero.wrap{grid-column:1/-1;width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto}
+body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto}
+@media(max-width:900px){
+ body.master-page main.master-wrap>section.wrap,body.anatomy-page main.lab-wrap>section.wrap,body.mechanism-page main.mechanism>section.wrap,body.voice-lab-page main#main-content>section.wrap{width:calc(100% - 32px)}
+ body.master-page .master-head{height:100svh!important;min-height:100svh!important;padding:calc(64px + 24px) 16px 24px!important}
+ body.master-page .master-list-section{height:auto!important;min-height:100svh;--hm:1;padding:24px 16px!important}
+ body.master-page .master-list-visual{height:96px;min-height:96px}
+ body.master-page #masterCards{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:minmax(260px,auto)}
+ body.master-page .master-card{min-height:260px}
+ body.master-page .master-list-inner{gap:10px}
+ body.master-page footer.closing{width:calc(100% - 32px)}
+ body.anatomy-page main.lab-wrap{grid-template-columns:1fr}
+ body.mechanism-page main.mechanism{grid-template-columns:1fr}
+ body.voice-lab-page main#main-content{grid-template-columns:1fr}
+ body.voice-lab-page main#main-content>.hero.wrap,body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{grid-column:1;width:calc(100% - 32px)}
+}
+@media(max-width:680px){
+ header.topbar.nav .brand-text{font-size:13px}
+ header.topbar.nav .brand-mark{width:22px;height:22px}
+ header.topbar.nav nav.nav-links{gap:5px}
+ header.topbar.nav nav.nav-links a{font-size:10px;padding:5px 4px}
+ @media(max-width:360px){header.topbar.nav .brand-text{font-size:11px}header.topbar.nav .brand-mark{width:18px;height:18px}header.topbar.nav nav.nav-links{gap:2px}header.topbar.nav nav.nav-links a{font-size:9px;padding:4px 2px}}
+ body.master-page .master-head{height:100svh!important;min-height:100svh!important;padding:calc(64px + 16px) 12px 16px!important}
+ body.master-page .master-head h1{font-size:28px;max-width:15ch}
+ body.master-page .master-head h1 span{font-size:11px;line-height:1.3}
+ body.master-page .master-head .page-h1-en{font-size:12px;line-height:1.4}
+ body.master-page .master-intro-note{padding:10px 12px;font-size:11px}
+ body.master-page .master-head .master-hero-cta{margin-top:2px}
+ body.master-page .master-list-section{height:auto!important;min-height:100svh;--hm:1;padding:18px 12px!important}
+ body.master-page .master-list-head{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+ body.master-page .master-list-head>div{gap:4px}
+ body.master-page .master-list-head .eyebrow{font-size:9px}
+ body.master-page .master-list-head p{font-size:11px;line-height:1.35}
+ body.master-page .master-count{font-size:11px}
+ body.master-page .master-list-visual{height:64px;min-height:64px}
+ body.master-page .master-timeline{display:none!important}
+ body.master-page #masterCards{grid-template-columns:1fr!important;grid-auto-rows:auto}
+ body.master-page .master-card{min-height:0;padding:16px}
+ body.master-page .master-card .master-actions{margin-top:14px}
+ body.master-page footer.closing{width:calc(100% - 32px)}
+ body.master-page footer.closing .footer-inner{grid-template-columns:1fr;gap:16px}
+ body.master-page footer.closing small{grid-column:1}
+}
+
+/* Voice Lab after moving the .wrap containers onto each in-flow section. */
+body.voice-lab-page main#main-content>.hero.wrap{height:100svh;min-height:100svh;padding:calc(72px + 36px) 0 36px;box-sizing:border-box}
+body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{height:100vh;min-height:100vh;padding:clamp(36px,5vh,56px) 18px;display:flex;align-items:stretch;box-sizing:border-box}
+@media(max-width:900px){
+ body.voice-lab-page main#main-content>.hero.wrap{height:100svh;min-height:100svh;padding:calc(64px + 24px) 0 24px}
+ body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{height:100vh;min-height:100vh;padding:32px 12px}
+}
+@media(max-width:680px){
+ body.voice-lab-page main#main-content>.hero.wrap{height:100svh;min-height:100svh;padding:calc(64px + 24px) 0 24px}
+ body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{height:100svh;min-height:100svh;padding:28px 10px}
+}
+
+/* Voice Lab: independent, top-level learning bands with aligned visual and text groups. */
+body.voice-lab-page main#main-content{grid-template-columns:minmax(0,1fr);gap:0}
+body.voice-lab-page main#main-content>section.wrap{grid-column:1;width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto}
+body.voice-lab-page #workspace{height:100vh;min-height:100vh;padding:clamp(40px,6vh,64px) 18px;display:flex;flex-direction:column;align-items:stretch;gap:12px}
+body.voice-lab-page #workspace>*{width:100%;max-width:none;margin-left:0;margin-right:0}
+body.voice-lab-page #workspace .mapwrap{height:300px;max-height:34vh}
+body.voice-lab-page #workspace .map{height:100%;max-height:300px}
+body.voice-lab-page .index-overview,body.voice-lab-page .index-detail{height:100vh;min-height:100vh;padding:clamp(36px,5vh,52px) 18px;display:flex;flex-direction:column;align-items:stretch;gap:10px}
+body.voice-lab-page .index-overview h2,body.voice-lab-page .index-detail h2{margin:0;text-align:left}
+body.voice-lab-page .index-overview .voice-map-reference{width:100%;height:110px;max-height:110px;object-fit:contain;margin:0}
+body.voice-lab-page .structure-overview{width:100%;max-height:130px;overflow:auto;display:grid;grid-template-columns:1fr;gap:4px}
+body.voice-lab-page .overview-row{width:100%;min-width:0;min-height:22px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;overflow:visible}
+body.voice-lab-page .overview-row span{min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+body.voice-lab-page .overview-row b{white-space:nowrap}
+body.voice-lab-page #tabs{width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+body.voice-lab-page #tabs .tab{position:static!important;float:none!important;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+body.voice-lab-page #tabs .tab span{position:static!important;display:inline-block;color:#263c31!important;font-size:11px;line-height:1}
+body.voice-lab-page .index-overview #list{max-height:150px;overflow:auto}
+body.voice-lab-page .index-overview #list .item{height:44px;min-height:44px;max-height:44px;display:flex;align-items:center;justify-content:space-between;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.voice-lab-page .index-detail-intro{margin:0;max-width:70ch;line-height:1.55;color:#263c31}
+body.voice-lab-page .voice-detail-visual{width:100%;height:180px;max-height:180px;object-fit:contain;margin:0;background:#edf2ed}
+body.voice-lab-page #detail{width:100%;max-width:none;max-height:220px;overflow:auto;min-width:0;line-height:1.55;overflow-wrap:anywhere}
+body.voice-lab-page #detail h3{font-size:16px!important;line-height:1.3!important;margin:0 0 8px}
+body.voice-lab-page #detail .crumb{position:static!important;display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 10px}
+body.voice-lab-page #detail .crumb button{position:static!important;float:none!important;display:inline-flex;align-items:center;justify-content:center;min-height:44px;height:44px;padding:8px 12px;border-radius:8px}
+body.voice-lab-page .data-note{width:100%;max-height:none;overflow:visible;white-space:normal;overflow-wrap:anywhere;word-break:break-word;padding:10px 12px;border-top:1px solid #d6dfd8;color:#263c31;font-size:11px;line-height:1.55}
+body.voice-lab-page .data-note code{white-space:normal;overflow-wrap:anywhere;color:#263c31;background:#e7eee8}
+body.voice-lab-page .closing{height:100svh;min-height:100svh;padding:clamp(36px,5vh,52px) 18px;display:flex;align-items:center;justify-content:center}
+body.voice-lab-page .closing-inner{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);align-items:center;gap:28px}
+body.voice-lab-page .closing-brand{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+body.voice-lab-page .closing-brand strong{font-size:clamp(30px,3vw,42px)}
+body.voice-lab-page .closing-brand p{max-width:50ch;margin:0;line-height:1.65;color:#263c31}
+body.voice-lab-page .closing-brand nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+body.voice-lab-page .closing-brand nav a{min-width:0;min-height:44px;padding:10px 12px;display:flex;align-items:center;border:1px solid #cbd7ce;border-radius:8px;color:#17483c;overflow-wrap:anywhere}
+body.voice-lab-page .closing-note{margin:0;padding-top:14px;border-top:1px solid #d8e0d9;color:#465b50;font-size:12px;line-height:1.6}
+body.voice-lab-page .closing-visual{width:100%;height:280px;max-height:280px;object-fit:contain}
+body.voice-lab-page :is(button,.tab,.btn,.qbtn,#list .item,#detail .rel button,#detail .crumb button){height:44px;min-height:44px;max-height:44px;padding:8px 12px;border-radius:8px!important;font-size:12px;line-height:1.25}
+body.voice-lab-page :is(button,.tab,.btn,.qbtn,#list .item,#detail .rel button,#detail .crumb button){color:#1d342b;border-color:#b9c9be}
+body.voice-lab-page :is(.tab span,.count,#detail details.ev summary,.data-note,.data-note code){color:#263c31!important}
+@media(max-width:900px){
+ body.voice-lab-page main#main-content>section.wrap{width:calc(100% - 32px)}
+ body.voice-lab-page #workspace,body.voice-lab-page .index-overview,body.voice-lab-page .index-detail{height:100vh;min-height:100vh;padding:30px 12px}
+ body.voice-lab-page .closing{width:calc(100% - 32px)}
+}
+@media(max-width:680px){
+ body.voice-lab-page #workspace,body.voice-lab-page .index-overview,body.voice-lab-page .index-detail{height:100svh;min-height:100svh;padding:24px 10px}
+ body.voice-lab-page #workspace .mapwrap{height:250px;max-height:30vh}
+ body.voice-lab-page #workspace .map{max-height:250px}
+ body.voice-lab-page .index-overview .voice-map-reference{height:76px;max-height:76px}
+ body.voice-lab-page .structure-overview{max-height:100px}
+ body.voice-lab-page .index-overview #list{max-height:112px}
+ body.voice-lab-page .voice-detail-visual{height:120px;max-height:120px}
+ body.voice-lab-page #detail{max-height:180px}
+ body.voice-lab-page .data-note{font-size:10px;padding:8px}
+ body.voice-lab-page .closing{height:100svh;min-height:100svh;padding:24px 10px}
+ body.voice-lab-page .closing-inner{grid-template-columns:1fr;gap:14px}
+ body.voice-lab-page .closing-visual{height:120px;max-height:120px;grid-row:1}
+ body.voice-lab-page .closing-brand{grid-row:2}
+ body.voice-lab-page .closing-brand nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* Masterclasses: a full-height hero, two deliberate list groups, and a complete closing band. */
+body.master-page main.master-wrap{width:100%;max-width:none;margin:0;padding:0;display:block}
+body.master-page main.master-wrap>section.wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin:0 auto}
+body.master-page .master-head{height:100vh!important;min-height:100vh!important;width:min(calc(100% - 128px),1240px);padding:calc(72px + 28px) 24px 28px!important;display:flex;align-items:center;box-sizing:border-box}
+body.master-page .master-head-inner{width:100%;max-width:100%;padding:18px 0;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+body.master-page .master-head h1{max-width:22ch;font-size:clamp(36px,4vw,52px);line-height:1.08}
+body.master-page .master-head h1 span{display:block;margin-top:8px;font-size:.4em;font-weight:550;letter-spacing:.02em;line-height:1.25;color:#53675d}
+body.master-page .master-intro-note{position:static!important;float:none!important;display:block;width:100%;max-width:68ch;margin:0;padding:14px 16px;border:1px solid #d8e0d9;border-radius:8px;background:#f4f6f1;line-height:1.55;overflow-wrap:anywhere}
+body.master-page .master-list-section{width:min(calc(100% - 128px),1240px);height:calc(2 * 100vh)!important;min-height:calc(2 * 100vh)!important;--h:2;padding:0 24px!important;overflow:visible;box-sizing:border-box}
+body.master-page .master-list-inner{width:100%;height:100%;max-width:none;margin:0;padding:0;display:grid;grid-template-rows:repeat(2,minmax(0,1fr));gap:0}
+body.master-page .master-list-overview,body.master-page .master-list-results{width:100%;min-width:0;height:100%;padding:32px 0;display:flex;flex-direction:column;justify-content:center;gap:14px;box-sizing:border-box}
+body.master-page .master-list-head{width:100%;padding:0;display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+body.master-page .master-list-head>div{min-width:0;display:grid;gap:8px}
+body.master-page .master-list-head .eyebrow{display:block;margin:0 0 4px}
+body.master-page .master-list-head h2,body.master-page .master-list-head p{margin:0;text-align:left}
+body.master-page .master-count{display:block;max-width:100%;white-space:normal;overflow:visible;overflow-wrap:anywhere;line-height:1.4}
+body.master-page .master-list-visual{width:100%;height:132px;min-height:132px;display:block;overflow:hidden;border-radius:12px;background:#183f35}
+body.master-page .master-list-visual svg{width:100%;height:100%;display:block}
+body.master-page .master-timeline{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+body.master-page .master-timeline-item{width:100%;min-width:0;min-height:82px;padding:10px;display:grid;grid-template-columns:28px 70px minmax(0,1fr);gap:8px;align-items:center}
+body.master-page .master-timeline-item>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+body.master-page #masterCards{width:100%!important;max-width:none!important;margin:0!important;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-rows:minmax(0,1fr);align-items:stretch;gap:14px}
+body.master-page .master-card{width:100%!important;max-width:none!important;min-width:0!important;height:100%!important;min-height:280px;grid-column:auto!important;display:flex;flex-direction:column}
+body.master-page .master-card h3,body.master-page .master-card p,body.master-page .master-card dd{overflow-wrap:anywhere}
+body.master-page .master-card .master-actions{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px}
+body.master-page :is(button,.master-hero-cta,.master-link,.master-pagination button,.master-card a,footer.closing nav a){display:inline-flex;align-items:center;justify-content:center;height:44px!important;min-height:44px!important;max-height:44px!important;padding:8px 12px!important;border-radius:8px!important;font-size:12px!important;line-height:1.25!important;white-space:normal;box-shadow:none}
+body.master-page footer.closing{width:min(calc(100% - 128px),1240px);height:100vh;min-height:100vh;margin:0 auto;padding:40px 24px;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+body.master-page footer.closing .footer-inner{width:100%;max-width:100%;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:28px;align-items:center;box-sizing:border-box}
+body.master-page footer.closing .footer-copy{min-width:0;display:flex;flex-direction:column;gap:16px}
+body.master-page footer.closing .footer-copy strong{font-size:clamp(30px,3vw,42px)}
+body.master-page footer.closing .footer-copy p{max-width:52ch;line-height:1.7;color:#465b50}
+body.master-page footer.closing nav{width:100%;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+body.master-page footer.closing nav a{min-width:0;border:1px solid #cbd7ce;color:#17483c;overflow-wrap:anywhere}
+body.master-page footer.closing small{padding-top:14px;border-top:1px solid #d8e0d9;color:#52665a}
+body.master-page .footer-visual{width:100%;height:280px;overflow:hidden;border-radius:14px}
+body.master-page .footer-visual svg{width:100%;height:100%;display:block}
+@media(max-width:900px){
+ body.master-page main.master-wrap>section.wrap{width:calc(100% - 32px)}
+ body.master-page .master-head{height:100vh!important;min-height:100vh!important;padding:calc(64px + 24px) 16px 24px!important}
+ body.master-page .master-list-section{height:auto!important;min-height:100vh;--hm:1;padding:0 16px!important}
+ body.master-page .master-list-inner{height:auto;display:flex;flex-direction:column;gap:8px}
+ body.master-page .master-list-overview,body.master-page .master-list-results{height:auto;padding:18px 0;gap:10px}
+ body.master-page .master-list-visual{height:96px;min-height:96px}
+ body.master-page #masterCards{grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:minmax(250px,auto)}
+ body.master-page .master-card{min-height:250px}
+ body.master-page footer.closing{width:calc(100% - 32px)}
+}
+@media(max-width:680px){
+ header.topbar.nav .brand-text{font-size:13px}
+ header.topbar.nav .brand-mark{width:22px;height:22px}
+ header.topbar.nav nav.nav-links{gap:4px}
+ header.topbar.nav nav.nav-links a{font-size:10px;padding:5px 4px;min-height:44px;display:inline-flex;align-items:center}
+ body.master-page .master-head{height:100svh!important;min-height:100svh!important;padding:calc(64px + 16px) 12px 16px!important}
+ body.master-page .master-head h1{font-size:28px;max-width:15ch}
+ body.master-page .master-head h1 span{font-size:10px;line-height:1.3}
+ body.master-page .master-head .page-h1-en{font-size:12px;line-height:1.4}
+ body.master-page .master-intro-note{padding:10px 12px;font-size:11px}
+ body.master-page .master-head .master-hero-cta{margin-top:2px}
+ body.master-page .master-list-section{height:auto!important;min-height:100svh;--hm:1;padding:0 12px!important}
+ body.master-page .master-list-overview,body.master-page .master-list-results{height:auto;padding:12px 0;gap:8px}
+ body.master-page .master-list-head{display:grid;grid-template-columns:minmax(0,1fr);gap:6px}
+ body.master-page .master-list-head>div{gap:4px}
+ body.master-page .master-list-head .eyebrow{font-size:9px}
+ body.master-page .master-list-head p{font-size:11px;line-height:1.35}
+ body.master-page .master-count{font-size:11px}
+ body.master-page .master-list-visual{height:64px;min-height:64px}
+ body.master-page .master-timeline{display:none!important}
+ body.master-page #masterCards{grid-template-columns:1fr!important;grid-auto-rows:auto}
+ body.master-page .master-card{min-height:0;padding:16px}
+ body.master-page .master-card .master-actions{margin-top:14px}
+ body.master-page footer.closing{width:calc(100% - 32px);height:auto;min-height:100svh;padding:32px 12px}
+ body.master-page footer.closing .footer-inner{grid-template-columns:1fr;gap:18px}
+ body.master-page footer.closing .footer-visual{height:120px}
+ body.master-page footer.closing nav{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:360px){
+ header.topbar.nav .brand-text{font-size:11px}
+ header.topbar.nav .brand-mark{width:18px;height:18px}
+ header.topbar.nav nav.nav-links{gap:2px}
+ header.topbar.nav nav.nav-links a{font-size:9px;padding:4px 2px}
+}
+
+
+/* Responsive repair pass — measured overflow, section collision and thumb targets. */
+html,body{max-width:100%;overflow-x:clip}
+body.master-page,body.anatomy-page,body.mechanism-page,body.voice-lab-page{min-width:0;max-width:100%;overflow-x:clip}
+body.master-page :is(main,section,article,header,footer,nav,div,ul,ol,dl){min-width:0}
+body.anatomy-page :is(main,section,article,header,footer,nav,div,ul,ol,dl){min-width:0}
+body.mechanism-page :is(main,section,article,header,footer,nav,div,ul,ol,dl){min-width:0}
+body.voice-lab-page :is(main,section,article,header,footer,nav,div,ul,ol,dl){min-width:0}
+body.master-page :is(h1,h2,h3,p,a,button,small,strong,span,dd,dt,li){overflow-wrap:anywhere}
+body.anatomy-page :is(h1,h2,h3,p,a,button,small,strong,span,dd,dt,li){overflow-wrap:anywhere}
+body.mechanism-page :is(h1,h2,h3,p,a,button,small,strong,span,dd,dt,li){overflow-wrap:anywhere}
+body.voice-lab-page :is(h1,h2,h3,p,a,button,small,strong,span,dd,dt,li){overflow-wrap:anywhere}
+header.topbar.nav .topbar-inner{width:100%;max-width:100%;box-sizing:border-box;flex-wrap:wrap}
+header.topbar.nav nav.nav-links{min-width:0;max-width:100%;flex-wrap:wrap}
+header.topbar.nav nav.nav-links a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:8px 9px;box-sizing:border-box}
+body.master-page .master-list-inner,body.master-page .master-list-head,body.master-page #masterCards{min-width:0;width:100%;max-width:100%}
+body.master-page .master-list-head{align-items:flex-start}
+body.master-page .master-list-head>div{min-width:0;max-width:100%}
+body.master-page .master-list-head .master-count{white-space:normal;overflow-wrap:anywhere}
+body.master-page .master-timeline{align-items:stretch}
+body.master-page .master-timeline-item{min-width:0}
+body.anatomy-page .body-system{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}
+body.anatomy-page .body-system>*{min-width:0;max-width:100%}
+body.anatomy-page .body-detail-section,body.anatomy-page .body-detail-section>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+body.anatomy-page .body-detail-section ul{padding-left:1.25rem}
+body.mechanism-page .mechanism{width:min(calc(100% - 48px),1280px);max-width:1280px;min-width:0}
+body.mechanism-page .layout{grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr)}
+body.mechanism-page .layout>*{min-width:0;max-width:100%}
+body.voice-lab-page main#main-content{min-width:0;max-width:100%;grid-template-columns:minmax(0,1fr)}
+body.voice-lab-page main#main-content>*{min-width:0;max-width:100%}
+@media(max-width:900px){
+ body.anatomy-page .body-system,body.mechanism-page .layout{grid-template-columns:minmax(0,1fr)}
+ body.master-page .master-list-inner{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:680px){
+ header.topbar.nav .topbar-inner{gap:8px;padding-left:16px;padding-right:16px}
+ header.topbar.nav .brand{flex:0 0 auto}
+ header.topbar.nav nav.nav-links{flex:1 1 100%;justify-content:flex-start;gap:4px}
+ header.topbar.nav nav.nav-links a{font-size:12px;padding:8px 9px;min-height:44px}
+ body.master-page .master-head{height:auto!important;min-height:calc(100svh - 64px)!important;padding:28px 16px!important}
+ body.master-page .master-list-section{height:auto!important;min-height:0;padding:24px 16px!important}
+ body.master-page .master-list-inner{height:auto!important;min-height:0}
+ body.master-page .master-list-overview,body.master-page .master-list-results{height:auto!important;min-height:0}
+ body.master-page .master-list-head{display:grid;grid-template-columns:minmax(0,1fr);align-items:start}
+ body.master-page .master-timeline{display:none!important}
+ body.master-page #masterCards{grid-template-columns:minmax(0,1fr)!important;grid-auto-rows:auto}
+ body.master-page .master-card{min-height:0!important;height:auto!important}
+ body.master-page .master-card :is(h3,p,dd,dt){min-width:0;overflow-wrap:anywhere}
+ body.master-page .master-actions{flex-wrap:wrap}
+ body.anatomy-page .lab-wrap{width:calc(100% - 32px);max-width:100%;padding:20px 0 48px}
+ body.anatomy-page .lab-hero{height:auto!important;min-height:calc(100svh - 64px)!important;padding:24px 0!important}
+ body.anatomy-page .body-system,body.anatomy-page .breath-lab,body.anatomy-page .lab-info{height:auto!important;min-height:0!important}
+ body.anatomy-page .body-detail-section{height:auto!important;min-height:0!important;padding-left:16px;padding-right:16px}
+ body.anatomy-page .body-detail-section ul{padding-left:1.15rem}
+ body.mechanism-page .mechanism{width:calc(100% - 32px);padding:20px 0 48px}
+ body.mechanism-page .hero{height:auto!important;min-height:calc(100svh - 64px)!important;padding:24px 0!important;margin-bottom:20px}
+ body.mechanism-page .layout{grid-template-columns:minmax(0,1fr);gap:14px}
+ body.mechanism-page .viewer-frame{aspect-ratio:4/3}
+ body.voice-lab-page main#main-content>.hero.wrap{height:auto!important;min-height:calc(100svh - 64px)!important;padding:24px 0!important}
+ body.voice-lab-page main#main-content>.map-section.wrap,body.voice-lab-page main#main-content>.index-section.wrap{height:auto!important;min-height:0!important}
+ body.voice-lab-page .layout{grid-template-columns:minmax(0,1fr)}
+ body.voice-lab-page .panel,body.voice-lab-page .mapwrap{min-width:0;max-width:100%}
+ body.voice-lab-page .toolrow{flex-wrap:wrap}
+ body.voice-lab-page .toolrow button,body.voice-lab-page .tab,body.voice-lab-page .item{min-height:44px}
+}
+@media(max-width:380px){
+ header.topbar.nav .topbar-inner{padding-left:12px;padding-right:12px}
+ header.topbar.nav nav.nav-links{gap:2px}
+ header.topbar.nav nav.nav-links a{padding:8px 6px;font-size:11px}
+ body.mechanism-page .mechanism{width:calc(100% - 24px)}
+ body.master-page .master-head h1{font-size:27px}
+}
+
+
+/* 2026-11 responsive stabilization: restore normal document flow before polishing screen rhythm. */
+html,body{width:100%;max-width:100%;overflow-x:hidden}
+body.master-page,body.anatomy-page,body.mechanism-page,body.voice-lab-page{width:100%;max-width:100%;overflow-x:hidden}
+body.master-page *,body.anatomy-page *,body.mechanism-page *,body.voice-lab-page *{box-sizing:border-box;min-width:0}
+body.master-page :is(img,svg,iframe,video),body.anatomy-page :is(img,svg,iframe,video),body.mechanism-page :is(img,svg,iframe,video),body.voice-lab-page :is(img,svg,iframe,video){max-width:100%}
+body.master-page :is(h1,h2,h3,p,a,button,small,strong,span,li,dd,dt),body.anatomy-page :is(h1,h2,h3,p,a,button,small,strong,span,li,dd,dt),body.mechanism-page :is(h1,h2,h3,p,a,button,small,strong,span,li,dd,dt),body.voice-lab-page :is(h1,h2,h3,p,a,button,small,strong,span,li,dd,dt){overflow-wrap:anywhere;word-break:normal}
+body.master-page .topbar-inner,body.anatomy-page .topbar-inner,body.mechanism-page .topbar-inner{width:min(calc(100% - 128px),1240px);max-width:1240px;margin-inline:auto}
+body.master-page .topbar .nav,body.anatomy-page .topbar .nav,body.mechanism-page .topbar .nav{min-width:0;flex-wrap:nowrap;white-space:normal}
+body.master-page main.master-wrap,body.anatomy-page main,body.mechanism-page main,body.voice-lab-page main#main-content{width:100%;max-width:100%;min-width:0}
+body.master-page main.master-wrap>section,body.anatomy-page main#main-content>section,body.mechanism-page main#main-content>section,body.voice-lab-page main#main-content>section{box-sizing:border-box;min-width:0;max-width:100%;overflow:visible}
+body.master-page .master-head,body.anatomy-page .lab-hero,body.mechanism-page .hero,body.voice-lab-page main#main-content>.hero{height:auto!important;min-height:100svh!important;max-width:none}
+body.master-page .master-head{width:min(calc(100% - 128px),1240px);margin-inline:auto}
+body.master-page .master-list-section{width:min(calc(100% - 128px),1240px);height:auto!important;min-height:100svh!important;overflow:visible}
+body.master-page .master-list-inner{height:auto!important;display:block}
+body.master-page .master-list-overview,body.master-page .master-list-results{height:auto!important;min-height:0!important;padding:40px 0}
+body.master-page #masterCards{height:auto!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:auto!important}
+body.master-page .master-card{height:auto!important;min-height:0!important}
+body.master-page footer.closing{width:min(calc(100% - 128px),1240px);height:auto!important;min-height:420px!important;margin-inline:auto}
+body.master-page footer.closing .footer-inner{align-items:start}
+body.anatomy-page .lab-wrap{width:min(calc(100% - 128px),1240px);max-width:1240px;margin-inline:auto}
+body.anatomy-page .lab-hero{height:auto!important;min-height:100svh!important;max-width:100%;margin:0}
+body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section,body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources{height:auto!important;min-height:100svh!important;max-width:1240px;margin-inline:auto}
+body.anatomy-page .body-system{height:auto!important;min-height:0!important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:start}
+body.anatomy-page .body-figure,body.anatomy-page .body-detail{height:auto!important;min-height:0!important;overflow:visible}
+body.anatomy-page .model-frame-wrap{width:100%;min-width:0}
+body.anatomy-page .model-frame-wrap iframe{display:block;width:100%;height:clamp(360px,55vw,680px);min-height:0}
+body.anatomy-page .body-detail-section .body-detail{width:100%;max-width:100%}
+body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources{padding-block:64px}
+body.mechanism-page .mechanism{width:min(calc(100% - 128px),1240px);max-width:1240px;margin-inline:auto}
+body.mechanism-page .hero{height:auto!important;min-height:100svh!important;max-width:100%;margin:0}
+body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .plate-section,body.mechanism-page .muscle-section,body.mechanism-page .source{height:auto!important;min-height:100svh!important;padding-block:64px}
+body.mechanism-page .layout{height:auto!important;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);align-items:start}
+body.mechanism-page .viewer-frame{width:100%;aspect-ratio:4/3;min-height:0}
+body.mechanism-page .viewer-frame iframe{display:block;width:100%;height:100%;min-height:0}
+body.mechanism-page .structure-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.8fr);gap:24px;align-items:start}
+body.mechanism-page .structure-section>.structure-intro{grid-column:1/-1}
+body.mechanism-page .structure-section>.side{min-width:0}
+body.mechanism-page .structure-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+body.mechanism-page .plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+body.mechanism-page .plate{min-width:0;margin:0}
+body.mechanism-page .plate img{display:block;width:100%;height:auto}
+body.mechanism-page .muscle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+body.mechanism-page .muscle{min-width:0;height:auto}
+body.mechanism-page .muscle-visual{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:contain}
+body.voice-lab-page main#main-content>.hero{width:min(calc(100% - 128px),1240px);margin-inline:auto}
+body.voice-lab-page #workspace,body.voice-lab-page #side,body.voice-lab-page .index-detail{height:auto!important;min-height:100svh!important;max-width:1240px;margin-inline:auto;overflow:visible}
+body.voice-lab-page #workspace{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);align-items:start;gap:24px}
+body.voice-lab-page #workspace>.panel,body.voice-lab-page #workspace>.mapwrap{min-width:0;max-width:100%}
+body.voice-lab-page #side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+body.voice-lab-page #list{max-height:680px;overflow:auto}
+body.voice-lab-page #detail{position:relative;clear:both;margin:0;min-width:0;overflow-wrap:anywhere}
+body.voice-lab-page .data-note{position:static!important;clear:both;margin-top:16px}
+body.voice-lab-page .overview-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center}
+body.voice-lab-page .overview-row>*{min-width:0;overflow-wrap:anywhere}
+body.voice-lab-page footer.closing{height:auto!important;min-height:420px!important}
+body.master-page :is(button,a),body.anatomy-page :is(button,a),body.mechanism-page :is(button,a),body.voice-lab-page :is(button,a){max-width:100%;min-height:44px}
+@media(min-width:640px) and (max-width:1023px){
+ body.master-page .topbar-inner,body.anatomy-page .topbar-inner,body.mechanism-page .topbar-inner{width:calc(100% - 96px)}
+ body.master-page main.master-wrap>section,body.anatomy-page main#main-content>section,body.mechanism-page main#main-content>section,body.voice-lab-page main#main-content>section{width:calc(100% - 96px);margin-inline:auto}
+ body.master-page .master-head,body.master-page .master-list-section{width:calc(100% - 96px)}
+ body.master-page #masterCards{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ body.anatomy-page .body-system,body.mechanism-page .layout{grid-template-columns:minmax(0,1fr)}
+ body.voice-lab-page #workspace{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:639px){
+ body.master-page .topbar-inner,body.anatomy-page .topbar-inner,body.mechanism-page .topbar-inner{width:calc(100% - 32px);min-height:0;padding-block:8px;display:flex;flex-wrap:wrap;gap:8px}
+ body.master-page .topbar .nav,body.anatomy-page .topbar .nav,body.mechanism-page .topbar .nav{order:3;flex:1 1 100%;display:flex;flex-wrap:wrap;justify-content:flex-start;gap:4px;overflow:visible;white-space:normal}
+ body.master-page .topbar .nav a,body.anatomy-page .topbar .nav a,body.mechanism-page .topbar .nav a{min-height:44px;padding:8px 7px;font-size:12px;white-space:normal}
+ body.master-page main.master-wrap>section,body.anatomy-page main#main-content>section,body.mechanism-page main#main-content>section,body.voice-lab-page main#main-content>section{width:calc(100% - 32px);max-width:100%;margin-inline:auto}
+ body.master-page .master-head,body.anatomy-page .lab-hero,body.mechanism-page .hero,body.voice-lab-page main#main-content>.hero{height:auto!important;min-height:calc(100svh - 64px)!important;padding:28px 0!important}
+ body.master-page .master-list-section,body.anatomy-page .body-figure-section,body.anatomy-page .body-detail-section,body.anatomy-page .breath-lab,body.anatomy-page .anatomy-sources,body.mechanism-page .model-section,body.mechanism-page .interaction-section,body.mechanism-page .structure-section,body.mechanism-page .plate-section,body.mechanism-page .muscle-section,body.mechanism-page .source,body.voice-lab-page #workspace,body.voice-lab-page #side,body.voice-lab-page .index-detail{height:auto!important;min-height:0!important;padding-block:28px!important}
+ body.master-page .master-list-inner{height:auto!important;display:block}
+ body.master-page .master-list-overview,body.master-page .master-list-results{height:auto!important;min-height:0!important;padding:18px 0}
+ body.master-page #masterCards{grid-template-columns:minmax(0,1fr)!important}
+ body.master-page .master-card{height:auto!important;min-height:0!important}
+ body.master-page footer.closing{width:calc(100% - 32px);height:auto!important;min-height:0!important;padding:32px 0}
+ body.master-page footer.closing .footer-inner{grid-template-columns:minmax(0,1fr);gap:20px}
+ body.anatomy-page .body-system,body.mechanism-page .layout,body.voice-lab-page #workspace,body.voice-lab-page #side{grid-template-columns:minmax(0,1fr);gap:16px}
+ body.anatomy-page .body-figure,body.anatomy-page .body-detail{height:auto!important;min-height:0!important}
+ body.anatomy-page .model-frame-wrap iframe{height:clamp(300px,90vw,440px)}
+ body.mechanism-page .structure-section{display:block}
+ body.mechanism-page .structure-list,body.mechanism-page .plate-grid,body.mechanism-page .muscle-grid{grid-template-columns:minmax(0,1fr)}
+ body.mechanism-page .viewer-frame{aspect-ratio:4/3}
+ body.mechanism-page .viewer-frame iframe{min-height:0}
+ body.voice-lab-page .voice-hero{min-height:calc(100svh - 64px);height:auto;padding:28px 0}
+ body.voice-lab-page #list{max-height:420px}
+ body.voice-lab-page #detail{margin-top:0}
+ body.voice-lab-page footer.closing{height:auto!important;min-height:0!important}
+ body.master-page footer.closing .footer-inner,body.anatomy-page footer.closing .footer-inner,body.mechanism-page footer.closing .footer-inner{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:380px){
+ body.master-page .topbar .nav a,body.anatomy-page .topbar .nav a,body.mechanism-page .topbar .nav a{font-size:11px;padding-inline:5px}
+ body.mechanism-page .model-switcher{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.mechanism-page .model-switcher button{width:100%;white-space:normal}
+ body.anatomy-page .organ-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.anatomy-page .organ-chip{width:100%;white-space:normal}
+}

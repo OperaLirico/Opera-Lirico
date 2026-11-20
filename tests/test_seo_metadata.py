@@ -1,4 +1,5 @@
 import unittest
+import re
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
@@ -9,20 +10,84 @@ MASTER = (ROOT / "masterclasses.html").read_text(encoding="utf-8")
 
 class SeoAndSharingTests(unittest.TestCase):
     def test_homepage_has_canonical_and_social_preview_metadata(self):
-        self.assertIn('<title>OperaLab.｜意大利声乐机会、音乐学院招生与曲目资料</title>', HOME)
+        self.assertIn('<title>OperaLab.｜欧洲声乐机会、音乐学院招生与曲目资料</title>', HOME)
         self.assertIn('property="og:site_name" content="OperaLab."', HOME)
+        self.assertIn('property="og:title" content="OperaLab.｜欧洲声乐机会与申请信息"', HOME)
+        self.assertIn('name="twitter:title" content="OperaLab.｜欧洲声乐机会、音乐学院招生与曲目资料"', HOME)
+        self.assertIn('name="page-type" content="software"', HOME)
+        self.assertIn('当前开放报名的声乐机会', HOME)
+        self.assertIn('近期开放项目', HOME)
         self.assertNotIn('Italia Audizioni', HOME)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/"', HOME)
         self.assertIn('property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png"', HOME)
         self.assertIn('name="twitter:card" content="summary_large_image"', HOME)
         self.assertIn('"@type": "WebSite"', HOME)
 
+    def test_every_redesigned_page_uses_taste_hero_entry_and_real_moment_runtime(self):
+        pages = [
+            "index.html",
+            "masterclasses.html",
+            "voice-anatomy.html",
+            "larynx-mechanism.html",
+            "voice-lab.html",
+        ]
+        for name in pages:
+            page = (ROOT / name).read_text(encoding="utf-8")
+            self.assertIn('<header class="topbar nav">', page, name)
+            self.assertIn("data-enter", page, name)
+            self.assertIn('data-moment="word-highlight"', page, name)
+            self.assertIn('assets/moments/moments.js', page, name)
+        self.assertTrue((ROOT / "assets/moments/lib.js").is_file())
+        self.assertTrue((ROOT / "assets/moments/word-highlight/moment.js").is_file())
+        self.assertTrue((ROOT / "assets/moments/word-highlight/moment.css").is_file())
+        self.assertNotIn("taste-home.js?v=1", HOME)
+
+    def test_taste_moment_runtime_modules_have_valid_javascript_syntax(self):
+        import subprocess
+        for relative in (
+            "assets/moments/moments.js",
+            "assets/moments/lib.js",
+            "assets/moments/word-highlight/moment.js",
+        ):
+            subprocess.run(["node", "--check", str(ROOT / relative)], check=True)
+
+    def test_homepage_landmarks_and_section_markup_are_well_formed(self):
+        home = (ROOT / "index.html").read_text(encoding="utf-8")
+        header_start = home.index('<header class="topbar nav">')
+        skip_link = home.index('<a class="skip-link"')
+        main_end = home.index("</main>")
+        footer = home.index("<footer")
+        self.assertLess(header_start, skip_link)
+        self.assertLess(main_end, footer)
+        self.assertEqual(home.count("<section"), home.count("</section>"))
+
+    def test_anatomy_and_voice_lab_navigation_accessibility(self):
+        anatomy = (ROOT / "voice-anatomy.html").read_text(encoding="utf-8")
+        voice_lab = (ROOT / "voice-lab.html").read_text(encoding="utf-8")
+        larynx = (ROOT / "larynx-mechanism.html").read_text(encoding="utf-8")
+        self.assertIn('id="organLink" href="larynx-mechanism.html"', anatomy)
+        self.assertIn('<main class="lab-wrap" id="main-content">', anatomy)
+        self.assertIn('class="body-system split"', anatomy)
+        self.assertIn('<label class="search-label" for="q">搜索结构</label>', voice_lab)
+        self.assertIn('class="voice-hero"', voice_lab)
+        self.assertIn('<main id="main-content">', voice_lab)
+        self.assertIn('<main class="mechanism" id="main-content">', larynx)
+        self.assertIn('class="hero-actions"', larynx)
+
+    def test_masterclass_cards_keep_safe_location_display_and_hero_action(self):
+        page = (ROOT / "masterclasses.html").read_text(encoding="utf-8")
+        self.assertIn('<main class="master-wrap" id="main-content">', page)
+        self.assertIn('class="master-hero-cta"', page)
+        self.assertIn("const formatLocation=", page)
+        self.assertIn('class="master-card-icon"', page)
+
     def test_masterclass_page_has_page_specific_share_metadata(self):
-        self.assertIn('<title>大师班与专业进修｜OperaLab.</title>', MASTER)
+        self.assertIn('<title>欧洲声乐大师班与专业进修｜OperaLab.</title>', MASTER)
         self.assertIn('property="og:site_name" content="OperaLab."', MASTER)
         self.assertNotIn('Italia Audizioni', MASTER)
         self.assertIn('rel="canonical" href="https://operalirico.github.io/Opera-Lirico/masterclasses.html"', MASTER)
-        self.assertIn('property="og:title" content="声乐大师班与专业进修｜OperaLab."', MASTER)
+        self.assertIn('property="og:title" content="欧洲声乐大师班与专业进修｜OperaLab."', MASTER)
+        self.assertIn('name="twitter:title" content="欧洲声乐大师班与专业进修｜OperaLab."', MASTER)
         self.assertIn('name="twitter:card" content="summary_large_image"', MASTER)
 
     def test_voice_anatomy_page_has_page_specific_share_metadata(self):
@@ -63,6 +128,12 @@ class SeoAndSharingTests(unittest.TestCase):
         ])
 
 
+    def test_homepage_masterclass_count_excludes_past_events(self):
+        app = (ROOT / "app.js").read_text(encoding="utf-8")
+        self.assertIn("const eventEnd=item.end_at||item.start_at", app)
+        self.assertIn("isCurrentOrUndated", app)
+        self.assertIn("Number.isFinite(Date.parse(value))", app)
+
     def test_repertoire_quick_search_chips_are_unique(self):
         import re
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
@@ -70,15 +141,16 @@ class SeoAndSharingTests(unittest.TestCase):
         self.assertEqual(len(chips), len(set(chips)))
         self.assertEqual(len(chips), 12)
 
-    def test_repertoire_archive_is_only_merged_after_the_reader_starts_a_search(self):
-        # The archive holds unreviewed entries, so it must never be part of the first
-        # paint. It may be merged into search only when the reader actually searches.
+    def test_repertoire_archive_and_candidates_load_when_library_is_opened(self):
         app = (ROOT / "app.js").read_text(encoding="utf-8")
         self.assertIn("function ensureArchive()", app)
-        archive_start = app.index("async function loadArchive(")
-        self.assertIn("repertoire_archive.json", app[archive_start:])
-        first_paint = app[app.index("async function loadRepertoire("):archive_start]
-        self.assertNotIn("repertoire_archive.json", first_paint)
+        self.assertIn("function ensureCandidates()", app)
+        self.assertIn("repertoire_archive.json", app)
+        self.assertIn("repertoire_candidates.json", app)
+        open_panel_start = app.index("function openPanel(")
+        back_to_tiles_start = app.index("function backToTiles(", open_panel_start)
+        open_panel = app[open_panel_start:back_to_tiles_start]
+        self.assertIn("if(name==='music-library'){ensureArchive();ensureCandidates();}", open_panel)
 
     def test_404_page_exists_and_returns_home_link(self):
         page = (ROOT / "404.html").read_text(encoding="utf-8")
