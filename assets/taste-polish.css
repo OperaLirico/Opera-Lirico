@@ -1,0 +1,88 @@
+/* OperaLab. — Taste refinement layer
+   Content-led layouts: consistent mobile navigation, readable rhythm and robust card sizing.
+   Intentionally avoids forcing every section to an artificial 100vh height. */
+@media (max-width: 760px) {
+  html body header.topbar .topbar-inner {
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:8px 12px;
+    padding-top:8px;
+    padding-bottom:8px;
+    min-height:0;
+  }
+  html body header.topbar .brand { flex:0 0 auto; min-width:0; }
+  html body header.topbar .install-button { margin-left:auto; }
+  html body header.topbar .nav-links {
+    order:3;
+    flex:1 0 100%;
+    width:100%;
+    min-width:0;
+    margin:0;
+    display:flex;
+    flex-wrap:nowrap;
+    gap:5px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    padding:2px 2px 5px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+  html body header.topbar .nav-links::-webkit-scrollbar { display:none; }
+  html body header.topbar .nav-links a {
+    flex:0 0 auto;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:38px;
+    padding:7px 12px;
+    white-space:nowrap;
+  }
+}
+@media (max-width: 420px) {
+  html body header.topbar .topbar-inner { column-gap:8px; }
+  html body header.topbar .brand-mark { width:30px; height:30px; }
+  html body header.topbar .brand-text { font-size:14px; }
+}
+html body main { min-width:0; }
+html body main img, html body main iframe { max-width:100%; }
+html body main :is(.master-card,.lab-card,.card,.panel,.body-figure,.body-detail) { min-width:0; }
+html body main :is(.master-card,.lab-card,.card,.panel) :is(h1,h2,h3,p,li,dd) { overflow-wrap:anywhere; }
+@media (min-width: 761px) {
+  html body .master-head {
+    min-height:clamp(430px, 66svh, 660px);
+    padding:clamp(38px, 5vw, 68px);
+  }
+}
+@media (max-width: 760px) {
+  html body .master-head {
+    min-height:0;
+    padding:42px 24px;
+    margin-bottom:22px;
+  }
+  html body .master-head h1 { max-width:16ch; font-size:clamp(32px, 8vw, 42px); }
+  html body .master-list { grid-template-columns:minmax(0,1fr); gap:13px; }
+  html body .master-card { padding:17px; }
+  html body .master-facts { grid-template-columns:minmax(0,1fr); }
+  html body .lab-wrap,
+  html body .mechanism { padding-left:20px; padding-right:20px; }
+  html body .lab-hero,
+  html body .hero { max-width:100%; }
+  html body .body-system,
+  html body .layout { grid-template-columns:minmax(0,1fr); }
+}
+@media (max-width: 420px) {
+  html body .lab-wrap,
+  html body .mechanism { padding-left:16px; padding-right:16px; }
+  html body .lab-hero h1,
+  html body .hero h1 { font-size:clamp(29px, 9vw, 36px); }
+  html body .body-figure,
+  html body .body-detail,
+  html body .breath-lab,
+  html body .card,
+  html body .panel { border-radius:14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html body * { scroll-behavior:auto !important; }
+}
