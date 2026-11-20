@@ -81,6 +81,33 @@
 @media(max-width:560px){.mechanism{padding:24px 15px 60px}.viewer-frame{aspect-ratio:1/1}.modes{grid-template-columns:1fr}.muscle-grid{grid-template-columns:1fr 1fr}.card-head{padding:14px}.interaction,.info{padding:16px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
+
+/* Anatomy learning-loop enhancement */
+.model-fallback{margin:12px 0 0;padding:14px 15px;border:1px dashed #cbd8cd;border-radius:12px;background:#f8faf7}
+.model-fallback strong{display:block;font-size:12px;color:#29463d;margin-bottom:5px}
+.model-fallback p{font-size:11px;line-height:1.75;color:#66776e;margin:0 0 10px}
+.fallback-plates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fallback-plates a{display:block;color:#365448;text-decoration:none;font-size:11px;line-height:1.6}
+.fallback-plates img{display:block;width:100%;height:auto;border:1px solid #dce5dc;border-radius:8px;background:#fff;margin-bottom:5px}
+.learning-loop{margin-top:22px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:16px}
+.learning-card{padding:18px 20px;border:1px solid #dce5dc;border-radius:15px;background:#fff}
+.learning-card h2{font:500 21px Georgia,serif;color:#183b34;margin:0 0 8px}
+.learning-card>p{font-size:12px;line-height:1.75;color:#66776e;margin:0 0 12px}
+.glossary-search{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #d4dfd6;border-radius:9px;font:inherit;font-size:12px;margin:0 0 10px}
+.glossary-list{display:grid;gap:7px;max-height:340px;overflow:auto}
+.glossary-list details{border:1px solid #e5ebe5;border-radius:9px;padding:9px 11px;background:#fbfcfa}
+.glossary-list summary{cursor:pointer;color:#29463d;font-size:12px;font-weight:650}
+.glossary-list summary span{font-weight:400;color:#819087;margin-left:5px}
+.glossary-list details p{font-size:11px;line-height:1.7;color:#63746b;margin:8px 0 0}
+.quiz-question{font-size:13px;line-height:1.7;color:#29463d;font-weight:650;margin:8px 0 10px}
+.quiz-options{display:grid;gap:7px}
+.quiz-option{width:100%;text-align:left;border:1px solid #d5e0d7;background:#fff;color:#365448;border-radius:9px;padding:9px 11px;font:inherit;font-size:11px;cursor:pointer}
+.quiz-option[aria-pressed=true]{border-color:#315e50;background:#edf3ed}
+.quiz-feedback{min-height:46px;margin-top:10px;padding:10px 11px;border-radius:9px;background:#f4f7f3;color:#63746b;font-size:11px;line-height:1.7}
+.quiz-progress{font-size:10px;letter-spacing:.08em;color:#8a9a8e;margin-bottom:5px}
+.quiz-next{margin-top:10px;border:0;border-radius:999px;padding:9px 14px;background:#23483c;color:white;font:inherit;font-size:11px;cursor:pointer}
+@media(max-width:760px){.learning-loop{grid-template-columns:1fr}.fallback-plates{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.fallback-plates{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -152,6 +179,40 @@
   <article class="muscle"><div class="abbr">TA</div><h3>甲杓肌</h3><p>构成声带体的重要部分，影响声带长度、厚度、刚度和内侧缘形态。</p></article>
   <article class="muscle"><div class="abbr">CT</div><h3>环甲肌</h3><p>使声带伸长、增加张力，参与音高调节；并非唯一的音高控制因素。</p></article>
 </div></section>
+<section class="learning-loop" aria-label="喉部解剖学习工具">
+  <section class="learning-card" aria-labelledby="larynxGlossaryTitle">
+    <h2 id="larynxGlossaryTitle">喉部术语索引</h2>
+    <p>按中文、英文或缩写查找关键结构。术语解释用于结构辨认，详细功能请结合上方机制说明与来源阅读。</p>
+    <label class="sr-only" for="larynxGlossarySearch">搜索喉部术语</label>
+    <input class="glossary-search" id="larynxGlossarySearch" type="search" placeholder="搜索：杓状软骨 / arytenoid / PCA / 声带突">
+    <div class="glossary-list" id="larynxGlossaryList">
+      <details><summary>杓状软骨 <span>Arytenoid cartilage</span></summary><p>成对的小型喉软骨，位于环状软骨板上方；声带突连接声带后端，肌突为多组喉内肌提供附着点。</p></details>
+      <details><summary>声带突 <span>Vocal process</span></summary><p>杓状软骨向前内侧突出的部分，与声带韧带后端相连，是理解声带内收与外展的关键定位点。</p></details>
+      <details><summary>肌突 <span>Muscular process</span></summary><p>杓状软骨向外侧突出的附着区域，环杓后肌与外侧环杓肌作用于此处，产生方向不同的旋转力矩。</p></details>
+      <details><summary>环杓关节 <span>Cricoarytenoid joint</span></summary><p>杓状软骨底部与环状软骨板上缘形成的滑膜关节，允许旋转及有限滑动，参与声门开合。</p></details>
+      <details><summary>环杓后肌 · PCA <span>Posterior cricoarytenoid</span></summary><p>喉内肌中唯一主要的声带外展肌；作用于杓状软骨肌突，使声带突向外侧移动。</p></details>
+      <details><summary>外侧环杓肌 · LCA <span>Lateral cricoarytenoid</span></summary><p>使杓状软骨向内旋转，令声带突靠近中线，参与声带内收；声门后部闭合还涉及杓间肌。</p></details>
+      <details><summary>杓间肌 · IA <span>Interarytenoid</span></summary><p>包括横杓肌与斜杓肌，使左右杓状软骨彼此靠近，参与声门软骨间部闭合。</p></details>
+      <details><summary>甲杓肌 · TA <span>Thyroarytenoid</span></summary><p>构成声带体的重要部分，可影响声带长度、厚度、刚度及内侧缘形态，作用取决于与其他肌群的协同。</p></details>
+      <details><summary>环甲肌 · CT <span>Cricothyroid</span></summary><p>连接甲状软骨与环状软骨；收缩引起两软骨相对倾斜或旋转，增加声带长度与纵向张力。</p></details>
+      <details><summary>声门 <span>Glottis</span></summary><p>通常指两侧声带及其间声门裂隙构成的区域，可区分前方膜间部与后方软骨间部。</p></details>
+    </div>
+    <p id="larynxGlossaryEmpty" hidden>没有找到匹配的术语。</p>
+  </section>
+  <section class="learning-card" aria-labelledby="larynxQuizTitle">
+    <h2 id="larynxQuizTitle">理解检查 · 3 题</h2>
+    <p>完成后会显示解释。题目检验结构与肌肉功能，不评价你的歌唱能力。</p>
+    <div class="quiz-progress" id="larynxQuizProgress">QUESTION 1 / 3</div>
+    <div class="quiz-question" id="larynxQuizQuestion">喉内肌中，哪一组是主要负责声带外展的肌肉？</div>
+    <div class="quiz-options" id="larynxQuizOptions">
+      <button class="quiz-option" type="button" data-answer="0">A · 外侧环杓肌（LCA）</button>
+      <button class="quiz-option" type="button" data-answer="1">B · 后环杓肌（PCA）</button>
+      <button class="quiz-option" type="button" data-answer="2">C · 甲杓肌（TA）</button>
+    </div>
+    <div class="quiz-feedback" id="larynxQuizFeedback" aria-live="polite">选择一个答案，查看原因。</div>
+    <button class="quiz-next" id="larynxQuizNext" type="button" disabled>下一题</button>
+  </section>
+</section>
 <section class="source"><h2>模型来源与科学依据</h2><ul>
 <li><a href="https://sketchfab.com/3d-models/larynx-with-muscles-and-ligaments-3b247ff11b104e24acbb1c453f5bad46" target="_blank" rel="noopener">Larynx with Muscles and Ligaments · University of Dundee School of Medicine</a>：Eve Laws 为 Dundee Centre for Anatomy and Human Identification 制作；学校说明该模型用于 ENT 教学，模型由 CT 数据导入并结合医学艺术雕塑制作。</li>
 <li><a href="https://www.dundee.ac.uk/tilt/medical-illustration/parapharyngeal-space" target="_blank" rel="noopener">University of Dundee · Medical illustration project</a>：项目背景、医学艺术家与教学用途。</li>
