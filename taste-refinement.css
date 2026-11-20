@@ -73,7 +73,7 @@ body.voice-lab-page main#main-content>section{padding-inline:0}
 body.taste-home footer.closing,body.master-page footer.closing,body.anatomy-page footer.closing,
 body.mechanism-page footer.closing,body.voice-lab-page footer.closing{
   width:calc(100% - 48px);max-width:1200px;margin:40px auto 0;padding:36px 0;
-  min-height:0;height:auto;border-top:1px solid var(--ol-line);background:transparent;box-sizing:border-box
+  min-height:0;height:auto;padding-inline:0;border-top:1px solid var(--ol-line);background:transparent;box-sizing:border-box
 }
 body.master-page footer .footer-inner,body.anatomy-page footer .footer-inner,
 body.mechanism-page footer .footer-inner,body.voice-lab-page footer .footer-inner{
@@ -129,6 +129,7 @@ body.taste-home .newsletter-preview{padding:24px;border-radius:14px;background:#
 body.taste-home footer.closing{width:calc(100% - 48px);max-width:1200px}
 
 /* MASTERCLASSES — editorial listing with the overview and course cards on a shared grid. */
+body.master-page main.master-wrap{width:100%;max-width:none;margin:0;padding:0}
 body.master-page .master-head{
   min-height:calc(100svh - 76px);height:auto;margin:0;padding-block:clamp(56px,8vh,96px);
   display:flex;align-items:center;border:0;border-bottom:1px solid var(--ol-line);border-radius:0;background:transparent;box-shadow:none
