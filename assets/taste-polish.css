@@ -971,3 +971,24 @@ body.master-page footer.closing { min-height:0 !important; height:auto !importan
   body.master-page .master-link { width:100%; }
   body.master-page footer.closing { padding-bottom:0; }
 }
+
+
+/* Keep section widths aligned to the page container; legacy rules applied a second inner gutter. */
+body.anatomy-page main#main-content.lab-wrap,
+body.master-page main#main-content.master-wrap {
+  width:min(calc(100% - 64px),1240px) !important;
+  max-width:1240px !important;
+  margin-inline:auto !important;
+}
+body.anatomy-page main#main-content > section,
+body.master-page main#main-content > section {
+  width:100% !important;
+  max-width:100% !important;
+  margin-inline:0 !important;
+}
+@media (max-width:639px) {
+  body.anatomy-page main#main-content.lab-wrap,
+  body.master-page main#main-content.master-wrap {
+    width:calc(100% - 32px) !important;
+  }
+}
