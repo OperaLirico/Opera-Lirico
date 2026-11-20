@@ -785,3 +785,13 @@ renderTiles();
 loadRepertoire();
 loadConservatori();
 loadMasterclassCount();
+
+/* Direct links from other pages can open a homepage panel by hash. */
+window.addEventListener('load',()=>{
+  const panelName=decodeURIComponent(location.hash.slice(1));
+  if(['open-calls','conservatori','opera-academies','music-library'].includes(panelName)){
+    openPanel(panelName,{scroll:false});
+    const panel=document.getElementById(panelName);
+    if(panel)requestAnimationFrame(()=>panel.scrollIntoView({behavior:'smooth',block:'start'}));
+  }
+},{once:true});
