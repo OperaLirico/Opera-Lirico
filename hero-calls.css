@@ -1,0 +1,38 @@
+/* 首屏「最近截止」三条 */
+#heroCallsWrap{margin-top:26px;padding-top:18px;border-top:1px solid var(--line)}
+#heroCallsWrap .hc-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:6px}
+#heroCallsWrap .hc-head span{color:var(--gold);font-size:12px;font-weight:600;letter-spacing:.04em}
+#heroCallsWrap .hc-more{display:none;padding:4px 0;border:0;border-bottom:1px solid var(--line);background:none;color:var(--brand-2);font:600 13px var(--sans);cursor:pointer}
+#heroCallsWrap .hc-more:hover{border-color:var(--brand-2)}
+#heroCalls{list-style:none;margin:0;padding:0}
+#heroCalls .hc-row{border-bottom:1px solid var(--line)}
+#heroCalls .hc-link{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:baseline;gap:12px;padding:11px 0;text-decoration:none;color:inherit}
+#heroCalls .hc-link:hover .hc-main strong{color:var(--brand-2)}
+#heroCalls .hc-left{justify-self:start;padding:2px 8px;border:1px solid var(--line);border-radius:999px;background:var(--paper-2);color:var(--brand);font-size:12px;white-space:nowrap}
+#heroCalls .hc-main{display:flex;flex-direction:column;gap:2px;min-width:0}
+#heroCalls .hc-main strong{font-family:var(--serif);font-size:15px;font-weight:600;line-height:1.35;overflow-wrap:anywhere}
+#heroCalls .hc-main small{color:var(--ink-soft);font-size:12px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#heroCalls .hc-date{color:var(--ink-soft);font-size:12px;white-space:nowrap}
+@media (max-width:620px){
+  #heroCalls .hc-link{grid-template-columns:auto minmax(0,1fr);row-gap:2px}
+  #heroCalls .hc-date{grid-column:2;color:var(--ink-soft)}
+}
+
+/* 「看全部」按钮：默认要看得见，靠 hidden 属性隐藏 */
+#heroCallsWrap .hc-more{display:inline-block}
+#heroCallsWrap .hc-more[hidden]{display:none}
+/* 底部更新条：从大数字块压成一行，别跟上面三行抢注意力 */
+#heroCallsWrap ~ .home-proof,body.taste-home .home-proof{margin-top:26px;padding-top:14px;gap:10px;flex-wrap:wrap}
+body.taste-home .home-proof-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;min-width:0}
+body.taste-home .home-proof-line b{color:var(--brand);font:600 16px/1.3 var(--serif)}
+body.taste-home .home-proof-line span{color:var(--ink-soft);font-size:12px}
+body.taste-home .home-proof-line [id="updatedAt"]::before{content:"·";margin-right:10px;color:var(--line)}
+@media (max-width:620px){
+  body.taste-home .home-proof-line b{font-size:15px}
+}
+
+/* 手机上顶栏导航换行后变高（约 114px），首屏上内距原来只留 28px，标题被压到栏下。
+   这里按实际栏高留出空间，别再让 H1 钻到导航底下。 */
+@media (max-width:620px){
+  body.taste-home #top{padding-top:132px}
+}

@@ -1,0 +1,48 @@
+/* 可选配色：暖纸底 + 酒红。删掉 index.html 里这一行就回到原来的墨绿。 */
+:root{
+  --ink:#231b19;
+  --ink-soft:#584a46;
+  --paper:#f8f2e9;
+  --paper-2:#fffcf6;
+  --line:#e2d6c5;
+  --brand:#5b2230;
+  --brand-2:#7a3040;
+  --gold:#8d6430;
+  --gold-soft:#c19553;
+  --action:#5b2230;
+}
+body.taste-home{--ink:#231b19;--ink-soft:#584a46;--paper:#f8f2e9;--paper-2:#fffcf6;--line:#e2d6c5;--brand:#5b2230;--brand-2:#7a3040;--gold:#8d6430;--gold-soft:#c19553}
+body.taste-home .topbar{background:rgba(248,242,233,.94)}
+@media (prefers-color-scheme:dark){
+  body.taste-home{--ink:#f2eae3;--ink-soft:#bfb0aa;--paper:#15100f;--paper-2:#1e1716;--line:#3a2e2b;--brand:#e2a898;--brand-2:#f0c2b4;--gold:#e0bb85;--gold-soft:#e0bb85}
+  body.taste-home .brand-mark{background:var(--brand);color:#241512}
+  body.taste-home .home-button--primary{background:var(--brand);color:#241512;border-color:var(--brand)}
+}
+
+/* 原样式里有一批硬编码墨绿，这里统一换成酒红系 */
+body.taste-home .home-button--primary,body.taste-home .newsletter-link{background:#5b2230;color:#fff;border-color:#5b2230}
+body.taste-home .home-button--primary:hover,body.taste-home .newsletter-link:hover{background:#7a3040;border-color:#7a3040}
+body.taste-home :is(.home-text-link,.home-refresh,.ghost-toggle){background:#fffcf6;color:#5b2230}
+body.taste-home .home-app-row{border-color:#e6dac9;background:#fffcf6}
+body.taste-home .home-app-row:hover{background:#fbf3e8}
+body.taste-home .tile{border-color:#e6dac9;background:#fffcf6}
+body.taste-home .home-app-state i{background:#8d6430}
+body.taste-home .hc-left{background:#fffcf6;border-color:#e6dac9;color:#5b2230}
+@media (prefers-color-scheme:dark){
+  body.taste-home .home-button--primary,body.taste-home .newsletter-link{background:#e2a898;color:#241512;border-color:#e2a898}
+  body.taste-home .home-button--primary:hover,body.taste-home .newsletter-link:hover{background:#f0c2b4;border-color:#f0c2b4}
+  body.taste-home :is(.home-text-link,.home-refresh,.ghost-toggle){background:#1e1716;color:#e2a898}
+  body.taste-home .home-app-row,body.taste-home .tile{border-color:#3a2e2b;background:#1e1716}
+  body.taste-home .home-app-row:hover{background:#261d1c}
+  body.taste-home .hc-left{background:#1e1716;border-color:#3a2e2b;color:#f0c2b4}
+}
+
+/* 深色下顶栏原本被硬编码成浅米色，这里跟着换深 */
+@media (prefers-color-scheme:dark){
+  header.topbar{background:rgba(20,15,14,.92)!important;border-bottom-color:#3a2e2b}
+  header.topbar .brand-text,header.topbar .brand-text small{color:#f2eae3}
+  header.topbar nav.nav-links a{color:#d6cac4}
+  header.topbar nav.nav-links a:hover{color:#f0c2b4}
+  header.topbar .install-btn,header.topbar .brand-mark{background:#1e1716;border-color:#3a2e2b;color:#f0c2b4}
+  body.taste-home .topbar{background:rgba(20,15,14,.92)}
+}
