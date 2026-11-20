@@ -75,4 +75,48 @@
     new MutationObserver(read).observe(num,{childList:true,characterData:true,subtree:true});
     read();
   }
+
+  /* 另外五个数字（院校／项目／大师班／曲目）也滚一遍，口径与首屏大数字一致 */
+  ['statCalls','statSchools','statAcademies','statMasterclasses','statSongs'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(!el||still)return;
+    let shown=NaN,silent=false,raf=0;
+    const to=target=>{
+      const from=isNaN(shown)?0:shown;
+      const dur=target>from?620:220;
+      const t0=performance.now();
+      cancelAnimationFrame(raf);
+      const step=t=>{
+        const k=Math.min(1,(t-t0)/dur);
+        const e=1-Math.pow(1-k,3);
+        silent=true;el.textContent=String(Math.round(from+(target-from)*e));silent=false;
+        if(k<1)raf=requestAnimationFrame(step);
+        else{silent=true;el.textContent=String(target);silent=false;shown=target;}
+      };
+      raf=requestAnimationFrame(step);
+    };
+    const read=()=>{
+      if(silent)return;
+      const v=parseInt(String(el.textContent||'').replace(/[^0-9]/g,''),10);
+      if(!isNaN(v)&&v!==shown){shown=v;to(v);}
+    };
+    new MutationObserver(read).observe(el,{childList:true,characterData:true,subtree:true});
+    read();
+  });
+
+  /* 面板从入口卡切进来时给一次入场，切走再切回会重播 */
+  const panels=document.querySelectorAll('section.panel');
+  if(panels.length&&!still){
+    const ro=new MutationObserver(muts=>{
+      muts.forEach(m=>{
+        const el=m.target;
+        if(el.hasAttribute('hidden'))return;
+        el.classList.remove('is-opening');
+        void el.offsetWidth;
+        el.classList.add('is-opening');
+        setTimeout(()=>el.classList.remove('is-opening'),460);
+      });
+    });
+    panels.forEach(p=>ro.observe(p,{attributes:true,attributeFilter:['hidden']}));
+  }
 })();
