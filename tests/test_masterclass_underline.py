@@ -27,11 +27,11 @@ class MasterclassUnderlineTests(unittest.TestCase):
     def test_homepage_masterclass_tile_has_no_underline_in_all_link_states(self):
         self.assertIn('styles.css?v=ux19', HOME)
         self.assertIn('taste-home.css?v=1', HOME)
-        taste_css = (ROOT / 'taste-home.css').read_text(encoding='utf-8')
-        self.assertIn('.home-resource{', taste_css)
-        self.assertIn('text-decoration:none', taste_css)
-        self.assertIn('.home-resource:hover', taste_css)
-        self.assertIn('home-resource', HOME)
+        clean_css = (ROOT / 'assets/opera-clean.css').read_text(encoding='utf-8')
+        self.assertIn('.home-card-grid .tile {', clean_css)
+        self.assertIn('text-decoration:none', clean_css)
+        self.assertIn('.home-card-grid .tile:hover', clean_css)
+        self.assertIn('class="tile tile-link" href="masterclasses.html"', HOME)
 
 
 if __name__ == "__main__":
