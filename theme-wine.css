@@ -46,3 +46,23 @@ body.taste-home .hc-left{background:#fffcf6;border-color:#e6dac9;color:#5b2230}
   header.topbar .install-btn,header.topbar .brand-mark{background:#1e1716;border-color:#3a2e2b;color:#f0c2b4}
   body.taste-home .topbar{background:rgba(20,15,14,.92)}
 }
+
+/* 还有一些零散的墨绿底/灰绿描边没跟着换，这里补齐（浅色） */
+body.taste-home .home-app-state i{background:#8d6430}
+body.taste-home :is(.tile-icon,.home-resource-icon,.home-app-icon,.newsletter-icon){background:#f4e9dc;color:#5b2230}
+body.taste-home :is(.home-resource-visual,.newsletter-preview,.home-process-step,.home-process-line){background:#f7efe4;border-color:#e6dac9}
+body.taste-home .home-resource{border-bottom-color:#e6dac9}
+body.taste-home footer.closing nav a{border-color:#e6dac9}
+body.taste-home .footer-note{border-top-color:#e6dac9;color:#584a46}
+body.taste-home .skip-link{background:#fffcf6;color:#5b2230}
+body.taste-home :is(a,button,input,select,summary,textarea):focus-visible{outline-color:#5b2230}
+@media (prefers-color-scheme:dark){
+  body.taste-home .home-app-state i{background:#e0bb85}
+  body.taste-home :is(.tile-icon,.home-resource-icon,.home-app-icon,.newsletter-icon){background:#271d1b;color:#f0c2b4}
+  body.taste-home :is(.home-resource-visual,.newsletter-preview,.home-process-step,.home-process-line){background:#1e1716;border-color:#3a2e2b}
+  body.taste-home .home-resource{border-bottom-color:#3a2e2b}
+  body.taste-home footer.closing nav a{border-color:#3a2e2b}
+  body.taste-home .footer-note{border-top-color:#3a2e2b;color:#bfb0aa}
+  body.taste-home .skip-link{background:#1e1716;color:#f0c2b4}
+  body.taste-home :is(a,button,input,select,summary,textarea):focus-visible{outline-color:#f0c2b4}
+}
