@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T08:40:26+01:00",
+  "generated_at": "2026-11-20T08:37:46+01:00",
   "source_file": "data/opportunities.json",
   "total_records": 7,
   "published_records_in_file": 7,
@@ -86,7 +86,64 @@
   "published_missing_both_application_and_pdf": [],
   "published_missing_deadline": [],
   "pending_or_non_official_records": [],
-  "stale_verification_over_7_days": [],
+  "stale_verification_over_7_days": [
+    {
+      "id": "aslico-2027-78th-young-singers",
+      "title": "78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027",
+      "deadline": "2026-11-25T18:00:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-12T11:49:52+01:00"
+    },
+    {
+      "id": "morlacchi-2026-international-vocal-competition",
+      "title": "Concorso Internazionale di Canto lirico Francesco Morlacchi 2026",
+      "deadline": "2026-11-30T23:59:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-12T11:49:52+01:00"
+    },
+    {
+      "id": "carlofelice-academy-2027",
+      "title": "Accademia di alto perfezionamento per cantanti lirici e pianisti accompagnatori 2027",
+      "deadline": "2026-12-10T23:59:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-12T11:49:52+01:00"
+    },
+    {
+      "id": "carlofelice-choir-tenors-2026",
+      "title": "Audizione per Artisti del Coro – Tenori",
+      "deadline": "2026-11-23T23:59:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-12T11:49:52+01:00"
+    },
+    {
+      "id": "carlofelice-choir-basses-2026",
+      "title": "Concorso per Artisti del Coro – Bassi",
+      "deadline": "2026-12-07T23:59:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-12T11:49:52+01:00"
+    },
+    {
+      "id": "carlofelice-choir-baritones-2026",
+      "title": "Concorso per Artisti del Coro – Baritoni",
+      "deadline": "2026-12-07T23:59:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-12T11:49:52+01:00"
+    },
+    {
+      "id": "teatro-massimo-2-contralti-2026",
+      "title": "Selezione pubblica per 2 Contralti – Teatro Massimo 2026",
+      "deadline": "2026-12-04T12:00:00+01:00",
+      "application_url_missing": false,
+      "official_pdf_missing": false,
+      "last_verified_at": "2026-11-12T11:49:52+01:00"
+    }
+  ],
   "invalid_or_non_rome_timezone_dates": [],
   "duplicate_ids": [],
   "frontend_publication_gate_violations": []
