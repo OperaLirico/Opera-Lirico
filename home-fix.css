@@ -1,0 +1,49 @@
+/* 首页「曲目与训练」资源行对齐修复
+   原 #resources [data-home-resource] 只声明 3 列，body.taste-home .home-resource 只声明 4 列，
+   而这一行实际有 5 个子元素（图标 / 序号 / 标题 / 计数 / 箭头）。列数不足时，
+   「咏叹调及艺术歌曲汇总」这条被挤进 1 个字宽的列，文字就竖着排下来了。
+   这里按子元素数量给出 5 列，窄屏隐藏计数后给 4 列，手机上序号也被原有样式隐藏，给 3 列。 */
+body.taste-home #resources .home-resource-list > .home-resource,
+body.taste-home #resources [data-home-resource]{
+  display:grid;
+  grid-template-columns:40px 34px minmax(0,1fr) 104px 18px;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  min-height:104px;
+  padding:18px 0;
+  border:0;
+  border-bottom:1px solid var(--line);
+  border-radius:0;
+  background:transparent;
+  box-shadow:none;
+  color:inherit;
+  text-align:left;
+  text-decoration:none;
+  cursor:pointer;
+}
+body.taste-home #resources [data-home-resource] > .home-resource-icon,
+body.taste-home #resources .home-resource-list > .home-resource > .home-resource-icon{width:38px;height:38px}
+body.taste-home #resources [data-home-resource] > .home-resource-no,
+body.taste-home #resources .home-resource-list > .home-resource > .home-resource-no{white-space:nowrap}
+body.taste-home #resources [data-home-resource] > .home-resource-count,
+body.taste-home #resources .home-resource-list > .home-resource > .home-resource-count{text-align:right}
+
+@media (max-width:1100px){
+  /* 这一档资源列表只剩 350px 左右，先收掉计数，把标题那一列让出来 */
+  body.taste-home #resources .home-resource-list > .home-resource,
+  body.taste-home #resources [data-home-resource]{grid-template-columns:34px 34px minmax(0,1fr) 18px;gap:10px}
+  body.taste-home #resources .home-resource-list > .home-resource > .home-resource-count,
+  body.taste-home #resources [data-home-resource] > .home-resource-count{display:none}
+}
+@media (max-width:900px){
+  body.taste-home #resources .home-resource-list > .home-resource,
+  body.taste-home #resources [data-home-resource]{grid-template-columns:34px 34px minmax(0,1fr) 18px;min-height:94px;padding:15px 0}
+  body.taste-home #resources .home-resource-list > .home-resource > .home-resource-count,
+  body.taste-home #resources [data-home-resource] > .home-resource-count{display:none}
+}
+@media (max-width:620px){
+  /* 手机上序号和计数都被原有样式隐藏，只剩图标 / 标题 / 箭头三项，给 3 列 */
+  body.taste-home #resources .home-resource-list > .home-resource,
+  body.taste-home #resources [data-home-resource]{grid-template-columns:26px minmax(0,1fr) 16px;gap:9px}
+}
