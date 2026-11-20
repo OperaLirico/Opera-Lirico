@@ -1,0 +1,114 @@
+/* taste-skill 2.5 合规修补：只修“手机上真的用不了”和“版面没对齐”这两类，
+   不为了跑分改结构（首页仍是一屏看全八项 + 四个面板）。 */
+
+/* 1. 「看全部 8 项」在手机上只有 26px 高、离下一行 6px，拇指会点错。
+      给到 44px，并和下面的行拉开 8px 以上。 */
+@media (max-width:700px){
+  #heroCallsWrap .hc-more{display:inline-flex;align-items:center;min-height:44px;padding:0}
+  #heroCallsWrap .hc-head{margin-bottom:12px}
+}
+
+/* 2. 手机上「来源 · 比赛」那行原来 nowrap + 省略号，实测被右边缘切掉 134px。
+      小屏改成允许折两行，宁可多一行也不要切字。 */
+@media (max-width:620px){
+  #heroCalls .hc-main small{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+}
+
+/* 3. 小屏三条竖线：顶栏、区块、页脚原来各走各的边距（18px / 12px / 16px），
+      统一到左右各 16px。 */
+@media (max-width:520px){
+  body.taste-home .shell,
+  body.taste-home .topbar-inner,
+  body.taste-home footer,
+  body.taste-home .home-section{width:calc(100% - 32px);max-width:calc(100% - 32px)}
+}
+
+/* 4. 区块标题的右栏说明浮在 x≈962 的任意位置，没落在网格线上。
+      桌面端把标题排成 12 棚：左栏 1–7，右栏从第 8 棚（＝网格线）起。 */
+@media (min-width:901px){
+  body.taste-home .home-section-head{
+    display:grid;
+    grid-template-columns:repeat(12,minmax(0,1fr));
+    column-gap:24px;
+    align-items:end;
+  }
+  body.taste-home .home-section-head>:first-child{grid-column:1/span 7;max-width:none}
+  body.taste-home .home-section-head>:last-child{grid-column:8/-1;justify-self:end}
+  body.taste-home .home-section-head>p{max-width:38ch}
+}
+
+/* 5. 「发现来源 → 保留官方入口」四步原来带 22px 内距，首尾都缩进一格。
+      桌面端改成四等分、无侧内距，首步贴左线、末步贴右线。 */
+@media (min-width:901px){
+  body.taste-home .home-verification .home-process-line{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    column-gap:24px;
+    padding:22px 0;
+  }
+  body.taste-home .home-verification .home-process-line>i{display:none}
+}
+
+/* 6. 深色模式漏网：核验四步的底色仍写死浅色 #f5f6f1，深底上压着浅字看不出；
+      页脚链接也还留着墨绿。这两处按深色补齐。 */
+@media (prefers-color-scheme:dark){
+  body.taste-home .home-process-line .process-step{background:#1e1716;border-color:#3a2e2b}
+  body.taste-home .home-verification .home-process-line{background:transparent}
+  body.taste-home footer.closing p{color:#c9bbb4}
+  body.taste-home footer.closing nav a{color:#e6d8d2;border-color:#3a2e2b}
+  body.taste-home .newsletter-preview-item small{color:#c9bbb4}
+}
+
+/* 7. 浅色下页脚正文与右栏说明对比度不到 4.5，往下压一点墨色 */
+body.taste-home footer.closing p{color:#4a3a35}
+body.taste-home .newsletter-preview-item small{color:#4a3a35}
+
+/* 8. 资源行与入口卡缺焦点描边，键盘走到看不到自己在哪 */
+body.taste-home a.home-resource:focus-visible,
+body.taste-home button.home-resource:focus-visible,
+body.taste-home .home-card-grid .tile:focus-visible{border-radius:4px;outline:2px solid var(--brand);outline-offset:4px}
+
+/* 9. 手机上资源区把解剖图藏了，整节只剩文字。小屏改成图接在三行后面，
+      既补上视觉，也让“发声机制”这条不落在纯文字上。 */
+@media (max-width:700px){
+  body.taste-home .home-resource-layout{grid-template-columns:minmax(0,1fr)}
+  body.taste-home #resources .home-resource-visual{display:flex;min-height:200px;margin-top:16px;padding:14px}
+  body.taste-home #resources .home-resource-visual img{min-height:150px;max-height:220px}
+}
+
+/* 深色收口（必须放在浅色规则之后，否则被覆盖） */
+@media (prefers-color-scheme:dark){
+  body.taste-home footer.closing p{color:#c9bbb4}
+  body.taste-home .newsletter-preview-item small{color:#c9bbb4}
+  body.taste-home footer.closing nav a{color:#e6d8d2;border-color:#3a2e2b}
+}
+
+/* 10. 区块标题里那段装饰图标原来被网格自动甩到单独一行，占 41% 空着。
+       缩到 56px 并钉在第 7 棚线上；右栏说明从第 8 棚线上起步（不再左右浮动）。 */
+@media (min-width:901px){
+  body.taste-home .home-section-head>.home-tiles-art{
+    grid-column:7/span 1;justify-self:end;align-self:end;
+    width:56px;height:56px;
+  }
+  body.taste-home .home-section-head>:last-child{justify-self:start}
+}
+
+/* 11. #tiles 的标题区被它自己的一条两列网格规则压住（id 优先），这里对同一层改写。 */
+@media (min-width:901px){
+  body.taste-home #tiles .home-section-head{
+    display:grid;
+    grid-template-columns:repeat(12,minmax(0,1fr));
+    column-gap:24px;
+    align-items:end;
+  }
+  body.taste-home #tiles .home-section-head>.home-tiles-art{
+    grid-column:7/span 1;justify-self:end;align-self:end;
+    width:56px;height:56px;margin-left:0;
+  }
+}
+
+/* 12. 上面那条里标题占 1–7 棚、图标也钉在第 7 棚，会撞出第二行。
+       标题收 6 棚，图标独占第 7 棚，说明文字 8–12 棚，三者同排。 */
+@media (min-width:901px){
+  body.taste-home #tiles .home-section-head>:first-child{grid-column:1/span 6}
+}

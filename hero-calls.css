@@ -31,8 +31,8 @@ body.taste-home .home-proof-line [id="updatedAt"]::before{content:"·";margin-ri
   body.taste-home .home-proof-line b{font-size:15px}
 }
 
-/* 手机上顶栏导航换行后变高（约 114px），首屏上内距原来只留 28px，标题被压到栏下。
-   这里按实际栏高留出空间，别再让 H1 钻到导航底下。 */
+/* 手机上顶栏导航换行后变高（约 114px），首屏上内距原来只留 28px，标题被压到栅下。
+   这里按实际栅高留出空间，别再让 H1 钻到导航底下。 */
 @media (max-width:620px){
   body.taste-home #top{padding-top:132px}
 }
@@ -54,9 +54,10 @@ body.taste-home .home-proof-line [id="updatedAt"]::before{content:"·";margin-ri
   #heroCallsWrap .hc-more::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--brand-2);transform:scaleX(0);transition:transform .26s ease}
   #heroCallsWrap .hc-more:hover::after{transform:scaleX(1)}
 
-  /* 4. 右侧封面极缓地漂一点，页面有呼吸感又不会晃眼 */
-  body.taste-home .home-app-art{animation:coverDrift 22s ease-in-out infinite alternate;will-change:transform}
-  @keyframes coverDrift{from{transform:scale(1) translateY(0)}to{transform:scale(1.028) translateY(-2px)}}
+  /* 4. 封面不做常驻循环：超过 5 秒的循环按规范必须配暂停键，代价太大。
+        改成悬停放大到 1.025，与卡片 hover 抬升同一套手感。 */
+  body.taste-home .home-app-art{transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+  body.taste-home .home-app-art:hover{transform:scale(1.025)}
 
   /* 5. 面板里项目卡片依次上浮（面板隐藏时动画不跑，打开才播） */
   .opportunity-card{animation:hcCardIn .46s cubic-bezier(.22,.7,.25,1) both}
@@ -69,19 +70,16 @@ body.taste-home .home-proof-line [id="updatedAt"]::before{content:"·";margin-ri
 
   /* 6. 卡片与箭头的小互动，鼠标扫过去有回应 */
   body.taste-home .tile{transition:transform .22s ease,border-color .22s ease}
-  body.taste-home .tile:hover{transform:translateY(-3px);border-color:var(--brand)}
+  body.taste-home .tile:hover{transform:translateY(-2px);border-color:var(--brand)}
+  body.taste-home .tile:active{transform:translateY(0)}
   body.taste-home .home-app-arrow,body.taste-home .home-resource-arrow{transition:transform .22s ease}
   body.taste-home .home-app-row:hover .home-app-arrow,body.taste-home .home-resource:hover .home-resource-arrow{transform:translate(2px,-2px)}
   body.taste-home .home-resource{transition:background .2s ease,transform .2s ease}
-  body.taste-home .home-resource:hover{transform:translateX(2px)}
+  body.taste-home .home-resource:hover{transform:translateY(-2px)}
+  body.taste-home .home-resource:active{transform:translateY(0)}
 
-  /* 7. 往下滚时各段落轻轻淡入（浏览器支持滚动时间线才生效，其余浏览器保持原样） */
-  @supports (animation-timeline:view()){
-    body.taste-home .home-section,body.taste-home .newsletter-panel{
-      animation:sectionIn linear both;
-      animation-timeline:view();
-      animation-range:entry 5% cover 24%;
-    }
-    @keyframes sectionIn{from{opacity:.55;transform:translateY(18px)}to{opacity:1;transform:none}}
-  }
+  /* 按钮按下去要有 1px 的“按实感”，别只有变色 */
+  body.taste-home .home-button,body.taste-home .newsletter-form [type="submit"]{transition:transform .16s ease}
+  body.taste-home .home-button:hover,body.taste-home .newsletter-form [type="submit"]:hover{transform:translateY(-1px)}
+  body.taste-home .home-button:active,body.taste-home .newsletter-form [type="submit"]:active{transform:translateY(1px)}
 }
