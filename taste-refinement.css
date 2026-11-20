@@ -1,0 +1,252 @@
+/* Taste refinement system — OperaLab. visual and responsive pass, 2026-11 */
+:root{
+  --ol-ink:#17231f;--ol-muted:#59675f;--ol-paper:#f5f6f2;--ol-surface:#fff;
+  --ol-line:#dce4dd;--ol-green:#17483c;--ol-green-2:#236453;--ol-rust:#a85f3d;
+  --ol-radius:16px;--ol-shadow:0 12px 36px rgba(23,35,31,.07);
+}
+html{scroll-behavior:smooth}
+body.taste-home,body.master-page,body.anatomy-page,body.mechanism-page,body.voice-lab-page{
+  background:var(--ol-paper);color:var(--ol-ink);
+  font-family:Inter,"Avenir Next",Avenir,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.65;
+}
+body.taste-home::before,body.master-page::before,body.anatomy-page::before,body.mechanism-page::before,body.voice-lab-page::before{display:none}
+body.taste-home :is(main>section,.shell,.wrap),body.master-page :is(main>section,.master-wrap,.wrap),
+body.anatomy-page :is(main>section,.lab-wrap,.wrap),body.mechanism-page :is(main>section,.mechanism,.wrap),
+body.voice-lab-page :is(main>section,.wrap){min-width:0}
+body.taste-home .topbar,body.master-page .topbar,body.anatomy-page .topbar,body.mechanism-page .topbar,body.voice-lab-page .topbar{
+  position:sticky;top:0;z-index:50;background:rgba(247,248,245,.94);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--ol-line);box-shadow:0 3px 16px rgba(23,35,31,.035)
+}
+body.taste-home .topbar-inner,body.master-page .topbar-inner,body.anatomy-page .topbar-inner,body.mechanism-page .topbar-inner,body.voice-lab-page .topbar-inner{
+  width:min(calc(100% - 48px),1200px);max-width:1200px;min-height:76px;margin-inline:auto;
+  display:flex;align-items:center;gap:28px;flex-wrap:nowrap
+}
+body.taste-home .brand,body.master-page .brand,body.anatomy-page .brand,body.mechanism-page .brand,body.voice-lab-page .brand{
+  color:var(--ol-ink);text-decoration:none;font-weight:750;letter-spacing:-.045em;font-size:21px;white-space:nowrap
+}
+body.taste-home .brand-mark,body.master-page .brand-mark,body.anatomy-page .brand-mark,body.mechanism-page .brand-mark,body.voice-lab-page .brand-mark{color:var(--ol-green-2)}
+body.taste-home .nav-links,body.master-page .nav-links,body.anatomy-page .nav-links,body.mechanism-page .nav-links,body.voice-lab-page .nav-links{
+  display:flex;align-items:center;justify-content:flex-end;gap:8px;margin-left:auto;min-width:0;flex-wrap:wrap
+}
+body.taste-home .nav-links a,body.master-page .nav-links a,body.anatomy-page .nav-links a,body.mechanism-page .nav-links a,body.voice-lab-page .nav-links a{
+  display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 13px;
+  color:var(--ol-muted);font-size:13px;font-weight:600;text-decoration:none;border-radius:999px;
+  transition:background .18s ease,color .18s ease,transform .18s ease
+}
+body.taste-home .nav-links a:hover,body.master-page .nav-links a:hover,body.anatomy-page .nav-links a:hover,body.mechanism-page .nav-links a:hover,body.voice-lab-page .nav-links a:hover{
+  background:#e8eee8;color:var(--ol-green);transform:translateY(-1px)
+}
+body.taste-home main#main-content>section,body.master-page main.master-wrap>section,
+body.anatomy-page main#main-content>section,body.mechanism-page main#main-content>section,
+body.voice-lab-page main#main-content>section{
+  width:min(calc(100% - 48px),1200px);max-width:1200px;margin-inline:auto;padding-inline:0
+}
+body.taste-home :is(h1,h2,h3),body.master-page :is(h1,h2,h3),body.anatomy-page :is(h1,h2,h3),
+body.mechanism-page :is(h1,h2,h3),body.voice-lab-page :is(h1,h2,h3){
+  color:var(--ol-ink);letter-spacing:-.035em;text-wrap:balance
+}
+body.taste-home h1,body.master-page h1,body.anatomy-page h1,body.mechanism-page h1,body.voice-lab-page h1{
+  font-size:clamp(38px,5.1vw,68px);line-height:1.08;font-weight:720;max-width:16ch
+}
+body.taste-home h2,body.master-page h2,body.anatomy-page h2,body.mechanism-page h2,body.voice-lab-page h2{
+  font-size:clamp(27px,3.3vw,42px);line-height:1.15;font-weight:680
+}
+body.taste-home :is(p,.lede,.page-h1-en),body.master-page :is(p,.lede,.page-h1-en),
+body.anatomy-page :is(p,.lede,.page-h1-en),body.mechanism-page :is(p,.lede,.page-h1-en),
+body.voice-lab-page :is(p,.lede,.page-h1-en){color:var(--ol-muted);line-height:1.75}
+body.taste-home :is(button,a,input,select),body.master-page :is(button,a,input,select),
+body.anatomy-page :is(button,a,input,select),body.mechanism-page :is(button,a,input,select),
+body.voice-lab-page :is(button,a,input,select){max-width:100%;font:inherit}
+body.taste-home :is(button,a,input,select):focus-visible,body.master-page :is(button,a,input,select):focus-visible,
+body.anatomy-page :is(button,a,input,select):focus-visible,body.mechanism-page :is(button,a,input,select):focus-visible,
+body.voice-lab-page :is(button,a,input,select):focus-visible{outline:3px solid #b87958;outline-offset:3px}
+body.taste-home :is(.tile,.home-app,.home-resource,.newsletter-panel),body.master-page :is(.master-card,.master-list-overview),
+body.anatomy-page :is(.body-figure,.body-detail,.breath-lab,.anatomy-sources),
+body.mechanism-page :is(.model-section,.interaction-section,.structure-section,.plate,.muscle),
+body.voice-lab-page :is(#workspace,#side,.index-detail){
+  border:1px solid var(--ol-line);border-radius:var(--ol-radius);background:var(--ol-surface);
+  box-shadow:var(--ol-shadow)
+}
+body.taste-home :is(.tile,.home-app-row,.home-resource),body.master-page .master-card,
+body.anatomy-page :is(.model-tab,.organ-chip,.lab-btn),body.mechanism-page :is(.mode,.model-switcher button),
+body.voice-lab-page :is(.tab,.btn,.qbtn){
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease
+}
+body.taste-home :is(.tile,.home-app-row,.home-resource):hover,body.master-page .master-card:hover,
+body.anatomy-page :is(.model-tab,.organ-chip,.lab-btn):hover,body.mechanism-page :is(.mode,.model-switcher button):hover,
+body.voice-lab-page :is(.tab,.btn,.qbtn):hover{transform:translateY(-2px);border-color:#a9bdb0;box-shadow:0 12px 28px rgba(23,35,31,.08)}
+body.taste-home #top{min-height:100svh;height:auto;padding-block:clamp(72px,10vh,120px) 56px;display:grid;align-content:center}
+body.taste-home .home-hero{width:100%;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.85fr);gap:clamp(36px,6vw,88px);align-items:center}
+body.taste-home .home-hero-copy{max-width:680px}
+body.taste-home .home-hero h1{max-width:13ch}
+body.taste-home .home-app{padding:22px 24px;border-radius:18px;background:#fff;box-shadow:var(--ol-shadow)}
+body.taste-home .home-app-row{border-bottom:1px solid var(--ol-line);min-height:66px}
+body.taste-home .home-section,body.taste-home #tiles,body.taste-home #resources,body.taste-home #verification{
+  min-height:78svh;height:auto;padding-block:clamp(64px,8vw,112px);display:flex;flex-direction:column;justify-content:center
+}
+body.taste-home .home-section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.65fr);gap:32px;align-items:end;margin-bottom:32px}
+body.taste-home .home-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+body.taste-home .home-card-grid .tile{min-height:260px;padding:26px;text-align:left;border:1px solid var(--ol-line);border-radius:16px;background:#fff}
+body.taste-home .home-resource-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;align-items:center}
+body.taste-home .home-resource-list{display:grid;gap:12px}
+body.taste-home .home-resource{padding:18px 20px;border:1px solid var(--ol-line);border-radius:14px;background:#fff}
+body.taste-home .home-resource-visual{border-radius:18px;overflow:hidden;background:#e8eee8}
+body.taste-home .home-resource-visual img{display:block;width:100%;height:auto;max-height:480px;object-fit:contain}
+body.taste-home #verification .home-process-line{width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+body.taste-home #verification .process-step{min-width:0;min-height:96px;padding:18px;border:1px solid var(--ol-line);border-radius:14px;background:#fff}
+body.taste-home .newsletter-panel{min-height:72svh;height:auto;padding:clamp(36px,5vw,64px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:40px;align-items:center}
+body.taste-home .newsletter-content{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+body.taste-home .newsletter-form{width:100%;max-width:480px}
+body.taste-home .newsletter-preview{padding:24px;border-radius:16px;background:#edf2ed}
+body.taste-home footer.closing{width:min(calc(100% - 48px),1200px);min-height:280px;height:auto;margin:40px auto 0;padding:48px 0;border-top:1px solid var(--ol-line)}
+body.master-page .master-head,body.anatomy-page .lab-hero,body.mechanism-page .hero,body.voice-lab-page main#main-content>.hero{
+  min-height:100svh;height:auto;padding-block:clamp(72px,10vh,120px);display:flex;align-items:center
+}
+body.master-page .master-head-inner{width:100%;max-width:900px;margin-inline:auto}
+body.master-page .master-head h1{max-width:15ch}
+body.master-page .master-hero-proof{margin-top:28px}
+body.master-page .master-list-section{padding-block:clamp(56px,7vw,88px)}
+body.master-page .master-list-inner{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:28px;align-items:start}
+body.master-page .master-list-overview{padding:24px;border-radius:16px}
+body.master-page .master-list-visual{border-radius:12px;overflow:hidden;margin-top:24px}
+body.master-page .master-list-visual svg{display:block;width:100%;height:auto}
+body.master-page #masterCards{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+body.master-page .master-card{padding:24px;border-radius:16px;background:#fff;border:1px solid var(--ol-line)}
+body.anatomy-page .lab-hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.8fr);gap:28px 64px;align-content:center;align-items:center}
+body.anatomy-page .lab-hero .lab-crumb,body.anatomy-page .lab-hero .lab-kicker{grid-column:1/-1}
+body.anatomy-page .lab-hero h1,body.anatomy-page .lab-hero .page-h1-en,
+body.anatomy-page .lab-hero .anatomy-proof,body.anatomy-page .lab-hero .mo-wh__text,
+body.anatomy-page .lab-hero .lab-hero-note,body.anatomy-page .lab-hero .lab-hero-actions{grid-column:1}
+body.anatomy-page .lab-hero-visual{grid-column:2;grid-row:3/span 5;width:100%;max-height:560px;object-fit:contain;border-radius:16px;background:#e8eee8}
+body.anatomy-page :is(.body-figure-section,.body-detail-section,.breath-lab,.anatomy-sources){min-height:72svh;padding-block:clamp(48px,7vw,88px)}
+body.anatomy-page .body-system{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+body.anatomy-page .body-figure,body.anatomy-page .body-detail{width:100%;padding:clamp(18px,3vw,32px);border:1px solid var(--ol-line);border-radius:18px;background:#fff;box-shadow:var(--ol-shadow)}
+body.anatomy-page .model-frame-wrap{overflow:hidden;border-radius:14px;background:#edf1ed}
+body.anatomy-page .model-frame-wrap iframe{width:100%;height:clamp(420px,54vw,680px);border:0}
+body.anatomy-page .detail-visual{width:min(100%,560px);height:auto;object-fit:contain;border-radius:14px;background:#edf1ed}
+body.anatomy-page .breath-diagram{max-width:720px;margin:24px auto;padding:24px;border-radius:16px;background:#edf2ed}
+body.anatomy-page .anatomy-sources{padding:clamp(24px,4vw,48px);background:#fff}
+body.mechanism-page :is(.model-section,.interaction-section,.structure-section,.plate-section,.muscle-section,.source){min-height:72svh;padding-block:clamp(48px,7vw,88px)}
+body.mechanism-page .layout{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:28px;align-items:start}
+body.mechanism-page .viewer-frame{overflow:hidden;border-radius:16px;background:#edf1ed}
+body.mechanism-page .viewer-frame iframe{width:100%;height:clamp(400px,48vw,620px);border:0}
+body.mechanism-page .interaction-section{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:32px;align-items:center}
+body.mechanism-page .interaction-visual img{display:block;width:100%;height:auto;border-radius:16px;background:#edf1ed}
+body.mechanism-page .interaction{min-width:0}
+body.mechanism-page .structure-section{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start}
+body.mechanism-page .structure-section>.structure-intro{grid-column:1/-1}
+body.mechanism-page .structure-section .card{padding:24px;border:1px solid var(--ol-line);border-radius:14px;background:#fff}
+body.mechanism-page .plate-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+body.mechanism-page .plate{padding:14px;overflow:hidden}
+body.mechanism-page .plate img{display:block;width:100%;height:auto;object-fit:contain}
+body.mechanism-page .muscle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+body.mechanism-page .muscle{overflow:hidden;padding:16px;background:#fff;border:1px solid var(--ol-line);border-radius:16px}
+body.mechanism-page .muscle-visual{width:100%;height:190px;object-fit:contain;background:#edf2ed;border-radius:10px}
+body.mechanism-page .source-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+body.voice-lab-page main#main-content>.hero{min-height:100svh;padding-block:clamp(72px,10vh,120px);display:flex;align-items:center}
+body.voice-lab-page .voice-hero{width:100%;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,.85fr);gap:24px 56px;align-items:center}
+body.voice-lab-page .voice-heading{grid-column:1}
+body.voice-lab-page .voice-hero-visual{grid-column:2;grid-row:1/span 3;width:100%;height:auto;max-height:560px;object-fit:contain;border-radius:16px;background:#edf2ed}
+body.voice-lab-page #workspace,body.voice-lab-page #side,body.voice-lab-page .index-detail{
+  min-height:72svh;height:auto;padding:clamp(22px,4vw,40px);margin-block:32px;border:1px solid var(--ol-line);border-radius:18px;background:#fff;box-shadow:var(--ol-shadow)
+}
+body.voice-lab-page #workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.85fr);gap:24px;align-items:start}
+body.voice-lab-page #workspace>h2{grid-column:1/-1}
+body.voice-lab-page #workspace>.voice-map-reference{grid-column:1/-1;width:min(100%,720px);height:auto;margin-inline:auto;object-fit:contain}
+body.voice-lab-page #workspace>.mapwrap{width:100%;min-width:0;max-width:100%;margin:0}
+body.voice-lab-page #workspace>.mapwrap .map{display:block;width:100%;height:auto;max-height:680px}
+body.voice-lab-page #workspace>.toolrow,body.voice-lab-page #workspace>.msg,body.voice-lab-page #workspace>.quiz{grid-column:1/-1}
+body.voice-lab-page #side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
+body.voice-lab-page #side>h2,body.voice-lab-page #side>.voice-map-reference{grid-column:1/-1}
+body.voice-lab-page #side>.voice-map-reference{width:min(100%,560px);height:auto;margin-inline:auto;object-fit:contain}
+body.voice-lab-page #sideVisual,body.voice-lab-page #tabs,body.voice-lab-page #list{min-width:0;max-width:100%}
+body.voice-lab-page #list{max-height:620px;overflow:auto}
+body.voice-lab-page .index-detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);gap:18px;align-items:start}
+body.voice-lab-page .index-detail>h2,body.voice-lab-page .index-detail>.index-detail-intro{grid-column:1/-1}
+body.voice-lab-page .index-detail>.voice-detail-visual{width:100%;max-width:520px;height:auto;grid-column:2;grid-row:3;object-fit:contain}
+body.voice-lab-page #detail{grid-column:1;min-width:0;overflow-wrap:anywhere}
+body.voice-lab-page .data-note{grid-column:1/-1;position:static;margin-top:14px}
+body.taste-home footer.closing,body.master-page footer.closing,body.anatomy-page footer.closing,
+body.mechanism-page footer.closing,body.voice-lab-page footer.closing{
+  width:min(calc(100% - 48px),1200px);height:auto;min-height:0;margin:40px auto 0;padding:40px 0;
+  border-top:1px solid var(--ol-line);background:transparent
+}
+body.master-page footer.closing .footer-inner,body.anatomy-page footer.closing .footer-inner,
+body.mechanism-page footer.closing .footer-inner,body.voice-lab-page footer.closing .footer-inner{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.7fr);gap:32px;align-items:center
+}
+@media(max-width:900px){
+  body.taste-home .home-hero,body.taste-home .home-resource-layout,
+  body.master-page .master-list-inner,body.anatomy-page .lab-hero,
+  body.mechanism-page .interaction-section,body.mechanism-page .structure-section,
+  body.voice-lab-page .voice-hero,body.voice-lab-page #workspace{grid-template-columns:minmax(0,1fr)}
+  body.anatomy-page .lab-hero-visual,body.voice-lab-page .voice-hero-visual{grid-column:1;grid-row:auto;max-height:420px}
+  body.taste-home .home-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.mechanism-page .muscle-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.voice-lab-page #side{grid-template-columns:minmax(0,1fr)}
+  body.voice-lab-page .index-detail{grid-template-columns:minmax(0,1fr)}
+  body.voice-lab-page .index-detail>.voice-detail-visual{grid-column:1;grid-row:auto;max-width:100%}
+}
+@media(max-width:639px){
+  body.taste-home .topbar-inner,body.master-page .topbar-inner,body.anatomy-page .topbar-inner,
+  body.mechanism-page .topbar-inner,body.voice-lab-page .topbar-inner{
+    width:calc(100% - 32px);min-height:0;padding-block:8px;display:grid;
+    grid-template-columns:minmax(0,1fr) auto;gap:6px 10px
+  }
+  body.taste-home .brand,body.master-page .brand,body.anatomy-page .brand,body.mechanism-page .brand,body.voice-lab-page .brand{grid-column:1;grid-row:1}
+  body.taste-home .nav-links,body.master-page .nav-links,body.anatomy-page .nav-links,body.mechanism-page .nav-links,body.voice-lab-page .nav-links{
+    grid-column:1/-1;grid-row:2;justify-content:flex-start;margin:0;gap:4px;flex-wrap:wrap;width:100%
+  }
+  body.taste-home .nav-links a,body.master-page .nav-links a,body.anatomy-page .nav-links a,body.mechanism-page .nav-links a,body.voice-lab-page .nav-links a{
+    min-height:44px;padding:7px 10px;font-size:12px
+  }
+  body.taste-home main#main-content>section,body.master-page main.master-wrap>section,
+  body.anatomy-page main#main-content>section,body.mechanism-page main#main-content>section,
+  body.voice-lab-page main#main-content>section{width:calc(100% - 32px);padding-inline:0}
+  body.taste-home #top,body.master-page .master-head,body.anatomy-page .lab-hero,
+  body.mechanism-page .hero,body.voice-lab-page main#main-content>.hero{
+    min-height:calc(100svh - 104px);height:auto;padding-block:36px;display:flex;align-items:center
+  }
+  body.taste-home .home-hero,body.voice-lab-page .voice-hero{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+  body.taste-home .home-hero h1,body.master-page h1,body.anatomy-page h1,body.mechanism-page h1,body.voice-lab-page h1{font-size:clamp(34px,9vw,46px);max-width:14ch}
+  body.taste-home .home-app{padding:16px}
+  body.taste-home .home-section,body.taste-home #tiles,body.taste-home #resources,body.taste-home #verification{
+    min-height:0;height:auto;padding-block:56px
+  }
+  body.taste-home .home-section-head{display:block;margin-bottom:24px}
+  body.taste-home .home-card-grid,body.mechanism-page .muscle-grid,body.mechanism-page .plate-grid{grid-template-columns:minmax(0,1fr)}
+  body.taste-home .home-card-grid .tile{min-height:0;padding:20px}
+  body.taste-home #verification .home-process-line{grid-template-columns:repeat(2,minmax(0,1fr))}
+  body.taste-home .newsletter-panel{min-height:0;grid-template-columns:minmax(0,1fr);padding:28px 20px;gap:22px}
+  body.taste-home .newsletter-preview{display:block;padding:18px}
+  body.master-page .master-list-inner{grid-template-columns:minmax(0,1fr);gap:18px}
+  body.master-page .master-list-overview{padding:18px}
+  body.master-page .master-card{padding:18px}
+  body.anatomy-page .lab-hero{display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+  body.anatomy-page .lab-hero-visual{width:100%;max-height:300px;order:3}
+  body.anatomy-page :is(.body-figure-section,.body-detail-section,.breath-lab,.anatomy-sources),
+  body.mechanism-page :is(.model-section,.interaction-section,.structure-section,.plate-section,.muscle-section,.source){
+    min-height:0;height:auto;padding-block:36px
+  }
+  body.anatomy-page .body-figure,body.anatomy-page .body-detail{padding:16px}
+  body.anatomy-page .model-frame-wrap iframe{height:clamp(300px,90vw,440px)}
+  body.mechanism-page .layout,body.mechanism-page .structure-section,body.mechanism-page .interaction-section{display:grid;grid-template-columns:minmax(0,1fr);gap:18px}
+  body.mechanism-page .structure-section>.structure-intro{grid-column:1}
+  body.mechanism-page .viewer-frame iframe{height:360px}
+  body.voice-lab-page #workspace,body.voice-lab-page #side,body.voice-lab-page .index-detail{
+    min-height:0;height:auto;padding:18px;margin-block:18px
+  }
+  body.voice-lab-page #workspace{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+  body.voice-lab-page #workspace>*,body.voice-lab-page #side>*,body.voice-lab-page .index-detail>*{min-width:0;max-width:100%}
+  body.voice-lab-page #workspace>.mapwrap{overflow:hidden}
+  body.voice-lab-page #workspace>.mapwrap .map{width:100%;height:auto}
+  body.voice-lab-page #side{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+  body.voice-lab-page .index-detail{display:grid;grid-template-columns:minmax(0,1fr)}
+  body.voice-lab-page .index-detail>.voice-detail-visual{grid-column:1;grid-row:auto}
+  body.voice-lab-page #list{max-height:380px}
+  body.taste-home footer.closing,body.master-page footer.closing,body.anatomy-page footer.closing,
+  body.mechanism-page footer.closing,body.voice-lab-page footer.closing{width:calc(100% - 32px);padding:30px 0}
+  body.master-page footer.closing .footer-inner,body.anatomy-page footer.closing .footer-inner,
+  body.mechanism-page footer.closing .footer-inner,body.voice-lab-page footer.closing .footer-inner{grid-template-columns:minmax(0,1fr)}
+}
