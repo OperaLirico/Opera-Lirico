@@ -104,7 +104,7 @@ jobs:
               raise SystemExit(f"Missing panel sections: {missing}")
 
           if len(re.findall(r'<button class="tile"', html)) != 4:
-              raise SystemExit("Expected exactly five entry tiles on the homepage")
+              raise SystemExit("Expected exactly four primary entry tiles on the homepage")
 
           tile_titles = re.findall(r'<span class="tile-title">([^<]+)</span>', html)
           if len(tile_titles) != 6:
