@@ -1,252 +1,260 @@
 <!doctype html>
-<html lang="zh-CN" data-type="service" data-radius="soft" data-buttons="solid" data-motion>
+<html lang="zh-CN" data-type="software" data-radius="soft" data-motion>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>OperaLab：欧洲剧院与音乐学院的公开信息，中文一处查</title>
-<meta name="description" content="每周翻一遍欧洲剧院、音乐学院与大师班的公开页面，把项目名、截止日、声部要求和原文链接抄在一处，中国声乐学生用中文查。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="OperaLab：欧洲剧院与音乐学院的公开信息">
-<meta property="og:description" content="项目名、截止日、声部要求、原文链接，每周整理一次。">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#efe9e0">
-<meta name="site-kind" content="other">
-<meta name="page-type" content="service">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400..700&family=Hanken+Grotesk:wght@400..600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/system.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/ui/cards.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/motion/motion.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/backgrounds/backgrounds.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/layout/layout.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/icons/icon.css">
-<style>
-:root {
-  --p-bg: #efe9e0; --p-surface: #e2d9cb; --p-ink: #22261f; --p-muted: #5a5c53;
-  --p-accent: #2e5b44; --p-accent-ink: #ffffff; --p-action: #2e5b44; --p-action-ink: #ffffff;
-  --p-inv-bg: #22261f; --p-inv-surface: #2e322a; --p-inv-ink: #efe9e0; --p-inv-muted: #a19e96;
-  --p-inv-accent: #efe9e0; --p-inv-accent-ink: #22261f; --p-inv-action: #efe9e0; --p-inv-action-ink: #22261f;
-  --font-display: "Newsreader", Georgia, serif;
-  --font-text: "Hanken Grotesk", system-ui, sans-serif;
-  --display-weight: 400;
-  --display-tracking: -0.018em;
-  --display-tracking-xl: -0.025em;
-  --ly-scale: 1.06;
-}
-</style>
-<style>
-  .closing__links > .grid { width: 100%; }
-  #iscrizione > .wrap > .grid { flex: 1 1 auto; min-height: 0; align-content: stretch; }
-  /* 中文：不在词中间断行，标题尽量均分两行 */
-  h1, h2, h3, .t-lead, .mo-wh__text { line-break: strict; overflow-wrap: normal; }
-  h1, h2, .close__h2, .section-head h2 { text-wrap: balance; }
-  @media (min-width: 640px) {
-    #progetti .wrap > .group { flex: 1 1 auto; min-height: 0; }
-    #progetti .grid { flex: 1 1 auto; min-height: 0; align-content: stretch; }
-    #progetti .card { display: flex; flex-direction: column; min-height: 0; }
-    #progetti .card .panel { flex: 1 1 auto; min-height: 220px; }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17483c">
+  <meta name="page-type" content="software">
+  <meta name="site-kind" content="software">
+  <meta name="description" content="OperaLab. 为中国声乐学习者整理欧洲歌剧院招募、音乐学院招生、比赛、大师班与古典声乐曲目资料，保留官方来源，帮助你核对申请要求。">
+  <link rel="canonical" href="https://operalirico.github.io/Opera-Lirico/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="OperaLab.">
+  <meta property="og:title" content="OperaLab.｜欧洲声乐机会与申请信息">
+  <meta property="og:description" content="为中国声乐学习者整理欧洲歌剧院招募、音乐学院招生、比赛、大师班与古典声乐曲目资料。">
+  <meta property="og:url" content="https://operalirico.github.io/Opera-Lirico/">
+  <meta property="og:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png">
+  <meta property="og:image:secure_url" content="https://operalirico.github.io/Opera-Lirico/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OperaLab. 欧洲声乐机会与申请信息">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OperaLab.｜欧洲声乐机会、音乐学院招生与曲目资料">
+  <meta name="twitter:description" content="为中国声乐学习者整理欧洲歌剧院招募、音乐学院招生、比赛、大师班与古典声乐曲目资料。">
+  <meta name="twitter:image" content="https://operalirico.github.io/Opera-Lirico/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "OperaLab.",
+    "alternateName": "OperaLab.",
+    "url": "https://operalirico.github.io/Opera-Lirico/",
+    "inLanguage": "zh-CN",
+    "description": "为中国声乐学习者整理欧洲歌剧院招募、音乐学院招生、比赛、大师班与古典声乐曲目资料。"
   }
-  @media (max-width: 639px) {
-    #iscrizione .grid > .frame { min-height: 220px; }
-    /* 手机两屏：三张卡把余量撑满，节尾不留大块空白 */
-    #progetti .wrap > .group { flex: 1 1 auto; min-height: 0; }
-    #progetti .grid { flex: 1 1 auto; min-height: 0; align-content: stretch; }
-    #progetti .card { display: flex; flex-direction: column; min-height: 0; }
-    #progetti .card .panel { flex: 1 1 auto; min-height: 120px; }
-  }
-</style>
-<script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
-<script src="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/backgrounds/backgrounds.js"></script>
-<script>document.documentElement.classList.add('mo-js');setTimeout(()=>document.documentElement.classList.add('mo-safe'),2500)</script>
-<link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/moments/moments.js">
-<link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/moments/lib.js">
-<link rel="modulepreload" href="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/moments/word-highlight/moment.js">
+  </script>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="stylesheet" href="styles.css?v=ux19">
+  <link rel="stylesheet" href="hero-facts.css?v=1">
+  <link rel="stylesheet" href="taste-home.css?v=1">
+  <link rel="stylesheet" href="assets/motion/motion.css">
+  <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+  <title>OperaLab.｜欧洲声乐机会、音乐学院招生与曲目资料</title>
 </head>
-<body>
-
-<header class="nav">
-  <div class="wrap nav__bar">
-    <a class="skip-link" href="#top">跳到正文</a>
-    <a class="nav__logo" href="#top">OperaLab</a>
-    <nav class="nav__links" aria-label="主导航">
-      <div class="nav__item"><a class="nav__link" href="#progetti">项目</a></div>
-      <div class="nav__item"><a class="nav__link" href="#repertorio">曲库</a></div>
-      <div class="nav__item"><a class="nav__link" href="#lettura">来源</a></div>
-      <div class="nav__item"><a class="nav__link" href="#iscrizione">订阅</a></div>
-    </nav>
-    <div class="nav__actions">
-      <a class="nav__link" href="#iscrizione">订阅简报</a>
-      <a class="btn btn--primary" href="#progetti">看本周开放项目</a>
+<body class="taste-home">
+  <header class="topbar nav">
+    <a class="skip-link" href="#main-content">跳转至主要内容</a>
+    <div class="wrap topbar-inner">
+      <a class="brand" href="./" aria-label="OperaLab. 首页">
+        <span class="brand-mark" aria-hidden="true">♫</span>
+        <span class="brand-text">OperaLab.</span>
+      </a>
+      <nav class="nav-links" aria-label="板块导航">
+        <a href="#open-calls" data-open="open-calls">开放项目</a>
+        <a href="#conservatori" data-open="conservatori">音乐学院</a>
+        <a href="masterclasses.html">大师班</a>
+        <a href="#music-library" data-open="music-library">曲目资料</a>
+      </nav>
+      <button id="installButton" class="install-button" hidden>安装到主屏幕</button>
     </div>
-    <button class="nav__toggle" type="button" aria-expanded="false" aria-label="菜单">
-      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 5h14M2 13h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-</header>
-
-<main id="top">
-
-  <section class="hero hero--split" data-enter aria-labelledby="hero-h">
-    <div class="wrap">
-      <div class="hero-text grid hero-split">
-        <div class="hero-copy span-6">
-          <h1 id="hero-h">歌剧试唱、入学考<br>与声乐曲库</h1>
-          <p class="t-lead">给中国声乐学生看的欧洲公开信息。项目名、截止日、声部要求、原文链接，每周抄一遍更新；曲库整理 16 条，档案里另有 464 条待核。</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="#progetti">看本周开放项目<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
-            <a class="btn btn--secondary" href="#repertorio">翻曲库</a>
-          </div>
-          <dl class="hero-facts">
-            <div><dt>更新</dt><dd>每周一次</dd></div>
-            <div><dt>曲库</dt><dd>16 条</dd></div>
-            <div><dt>档案</dt><dd>464 条</dd></div>
-          </dl>
+  </header>
+  <main id="main-content">
+    <section id="top" class="shell wrap home-hero hero" data-enter aria-labelledby="home-title">
+      <div class="home-hero-copy">
+        <div class="home-kicker">OperaLab. / 欧洲声乐信息平台</div>
+        <h1 id="home-title">中国声乐学生 · 欧洲机会与申请</h1><p class="home-hero-en">European vocal opportunities for Chinese singers</p>
+        <p class="home-lede">为计划赴欧学习或发展的中国声乐学习者，整理欧洲音乐学院招生、歌剧院招募、比赛与大师班信息。每条正式项目都保留原始公告入口，方便你核对要求。</p>
+        <div class="home-actions">
+          <button class="home-button home-button--primary" type="button" data-open="open-calls">查看开放项目 <span aria-hidden="true">↗</span></button>
+          <button class="home-text-link" type="button" data-open="conservatori">查看音乐学院招生</button>
         </div>
-        <div class="hero-visual frame frame--photo span-6 start-7">
-          <img class="frame__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/La_Fenice_auditorium_during_performance.jpg/1280px-La_Fenice_auditorium_during_performance.jpg" alt="威尼斯凤凰剧院的包厢与观众" fetchpriority="high" data-source="library" data-subject="venice la fenice boxes">
+        <div class="home-proof">
+          <div class="home-proof-number"><strong id="factCalls">—</strong><span>项</span></div>
+          <div class="home-proof-copy"><b>当前开放报名的声乐机会</b><span class="home-static-fact">4 个核心资源入口 · 官方来源优先</span><span id="updatedAt">正在载入最新数据…</span></div>
+          <button id="refreshButton" class="home-refresh" type="button">重新载入</button>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="progetti" style="--hm:2" aria-labelledby="progetti-h">
-    <div class="wrap">
-      <div class="group">
-        <div class="section-head">
-          <h2 id="progetti-h">三类可以申请的事。<br><span class="muted">剧院、院校、大师班</span></h2>
+      <div class="home-app" aria-label="OperaLab 主要资料入口"><img class="home-app-art" src="og-image.svg" width="1200" height="630" loading="eager" decoding="async" alt="OperaLab. 连接世界歌剧舞台，汇集招募、招生、大师班与曲目资料">
+        <div class="home-app-head">
+          <div class="home-app-title"><span class="home-app-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><span><span class="home-app-overline">资料入口</span><strong>欧洲声乐机会目录</strong></span></div>
+          <span class="home-app-state"><i aria-hidden="true"></i>持续整理</span>
         </div>
-        <div class="grid">
-          <article class="card card--row card--open span-4">
-            <h3>查剧院季前招募</h3>
-            <p>合唱、替补、青年项目。写明报名窗口、试唱曲目要求，附剧院原页链接。</p>
-            <div class="panel"><img class="frame__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/The_auditorium_of_the_Odessa_Opera_House_04.jpg/1280px-The_auditorium_of_the_Odessa_Opera_House_04.jpg" alt="敖德萨歌剧院的观众席穹顶" loading="lazy" data-source="library" data-subject="odessa opera auditorium"></div>
-          </article>
-          <article class="card card--row card--open span-4">
-            <h3>对院校入学考</h3>
-            <p>意大利与德国的音乐学院。考试内容、语言门槛、报名截止，按年份记。</p>
-            <div class="panel"><img class="frame__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/MDW_Lothringerstrasse_18_%28cropped%29.jpg/1280px-MDW_Lothringerstrasse_18_%28cropped%29.jpg" alt="维也纳音乐表演艺术大学临街立面" loading="lazy" data-source="library" data-subject="vienna music university facade"></div>
-          </article>
-          <article class="card card--row card--open span-4">
-            <h3>盯大师班与比赛</h3>
-            <p>短训班和比赛按季节开。报名起止、导师、所需曲目，一条一条列。</p>
-            <div class="panel"><img class="frame__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/Palazzo_Stauffer_piano_in_a_class_room.jpg/1280px-Palazzo_Stauffer_piano_in_a_class_room.jpg" alt="Palazzo Stauffer 琴房里的三角钢琴" loading="lazy" data-source="library" data-subject="piano room"></div>
-          </article>
+        <div class="home-app-list">
+          <button class="home-app-row" type="button" data-open="open-calls">
+            <span class="home-app-number">01</span><span class="home-app-copy"><strong>歌剧院开放项目</strong><small>角色试唱 · 合唱团 · 国际比赛</small></span><span class="home-app-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="home-app-row" type="button" data-open="conservatori">
+            <span class="home-app-number">02</span><span class="home-app-copy"><strong>音乐学院招生</strong><small>课程 · 入学考试 · 官方简章</small></span><span class="home-app-arrow" aria-hidden="true">↗</span>
+          </button>
+          <button class="home-app-row" type="button" data-open="opera-academies">
+            <span class="home-app-number">03</span><span class="home-app-copy"><strong>剧院 Accademia</strong><small>专业培养 · 选拔 · 舞台实践</small></span><span class="home-app-arrow" aria-hidden="true">↗</span>
+          </button>
+          <a class="home-app-row" href="masterclasses.html">
+            <span class="home-app-number">04</span><span class="home-app-copy"><strong>大师班与专业进修</strong><small>导师 · 地点 · 费用 · 报名要求</small></span><span class="home-app-arrow" aria-hidden="true">↗</span>
+          </a>
         </div>
+        <div class="home-app-foot"><span>官方来源优先</span><span>中文信息整理</span><span>候选内容单独审核</span></div>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="repertorio" style="--hm:2" aria-labelledby="repertorio-h">
-    <div class="wrap">
+    </section>
+    <section class="shell wrap home-section" id="tiles" aria-labelledby="opportunity-title">
+      <div class="home-section-head">
+        <div><span class="home-section-index">01 / 机会与申请</span><h2 id="opportunity-title">找到下一步可以申请的项目</h2></div><img class="home-tiles-art" src="icon.svg" width="160" height="160" loading="eager" decoding="async" alt="OperaLab. 音乐与舞台平台标识">
+        <p>从公开招募到院校入学考试，区分项目性质、申请要求与官方报名入口。</p>
+      </div>
+      <div class="home-card-grid">
+        <button class="tile" type="button" data-open="open-calls">
+          <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v7a8 8 0 0 1-16 0z"/><path d="M8 10h.01M16 10h.01M9 15q3 2 6 0"/></svg></span><span class="tile-index">01</span><span class="tile-title">歌剧院开放项目</span>
+          <span class="tile-desc">查找歌剧角色招募、合唱团选拔、青年艺术家项目及国际声乐比赛。</span>
+          <span class="tile-stat"><b id="statCalls">—</b><span>项当前开放报名</span></span>
+        </button>
+        <button class="tile" type="button" data-open="conservatori">
+          <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-5 9 5M5 10v9m4-9v9m6-9v9m4-9v9M3 20h18"/></svg></span><span class="tile-index">02</span><span class="tile-title">音乐学院招生</span>
+          <span class="tile-desc">查看意大利公立音乐学院的学位课程、入学考试、报名时间与官方招生简章。</span>
+          <span class="tile-stat"><b id="statSchools">—</b><span>所院校有可读招生资料</span></span>
+        </button>
+        <button class="tile" type="button" data-open="opera-academies">
+          <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16M6 20V8l6-4 6 4v12M9 12h6M9 16h6"/></svg></span><span class="tile-index">03</span><span class="tile-title">剧院 Accademia</span>
+          <span class="tile-desc">了解歌剧院与专业机构的歌唱家培养项目，区分它们与音乐学院学位课程。</span>
+          <span class="tile-stat"><b id="statAcademies">—</b><span>个专业培养项目</span></span>
+        </button>
+      </div>
+    </section>
+    <section class="shell wrap section panel" id="open-calls" hidden>
+      <button class="panel-back" type="button" data-back="tiles">← 返回首页</button>
       <div class="section-head">
-        <h2 id="repertorio-h">曲库按声部标好。<br><span class="muted">每条都指回原版乐谱页</span></h2>
+        <div><div class="eyebrow">Open calls</div><h2>近期开放项目</h2><p>这里只展示已确认仍在报名的项目。报名截止时间按意大利当地时间显示；申请前请以主办方公告为准。</p></div>
+        <span id="opportunityCount" class="count-pill">—</span>
       </div>
-      <div class="grid grid--top fill">
-        <ul class="rows span-6">
-          <li data-peek-to="a1" tabindex="0"><span class="rows__name">Nessun dorma</span><p>男高音 · Turandot 第三幕</p><span class="rows__value">Puccini</span></li>
-          <li data-peek-to="a2" tabindex="0"><span class="rows__name">Casta Diva</span><p>女高音 · Norma 第一幕</p><span class="rows__value">Bellini</span></li>
-          <li data-peek-to="a3" tabindex="0"><span class="rows__name">Voi che sapete</span><p>女中音 · Le nozze di Figaro 第二幕</p><span class="rows__value">Mozart</span></li>
-          <li data-peek-to="a4" tabindex="0"><span class="rows__name">Una furtiva lagrima</span><p>男高音 · L'elisir d'amore 第二幕</p><span class="rows__value">Donizetti</span></li>
-          <li data-peek-to="a5" tabindex="0"><span class="rows__name">An die Musik</span><p>艺术歌曲 · D 547</p><span class="rows__value">Schubert</span></li>
-        </ul>
-        <div class="frame frame--photo frame--fill span-6 start-7">
-          <img class="frame__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Nabucco%2C_score%2C_2014.jpg/1280px-Nabucco%2C_score%2C_2014.jpg" alt="摊开的《纳布科》总谱" loading="lazy" data-source="library" data-subject="nabucco score">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="lettura" data-moment="word-highlight" aria-labelledby="lettura-h">
-    <div class="wrap">
-      <div class="group">
-        <div class="section-head">
-          <h2 id="lettura-h">信息从哪来。<br><span class="muted">公开页面，逐条留链接</span></h2>
-        </div>
-        <p class="mo-wh__text">每条都写清 <strong>出处</strong>：哪家剧院、哪所院校、哪个页面，什么时候看到的。改动过的地方在简报里标出来，看的人自己核对。</p>
-        <div class="faq grid">
-          <div class="faq__item span-6">
-            <h3>会不会替人提交申请？</h3>
-            <p>不会。卡片上的链接直接到剧院或院校的官方页面，填表、付费、上传都在那边完成。</p>
-          </div>
-          <div class="faq__item span-6">
-            <h3>乐谱从哪来？</h3>
-            <p>只记版本信息和指认链接，指到公共版本库的原页，不放文件、不镜像。</p>
-          </div>
-          <div class="faq__item span-6">
-            <h3>标着待核的是什么？</h3>
-            <p>自动抓来的条目，要人工看一遍才进曲库。没看过的留在档案里，写作时别直接引。</p>
-          </div>
-          <div class="faq__item span-6">
-            <h3>多久动一次？</h3>
-            <p>每周一次。新增、截止、取消都写进本周简报，不留中间状态。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="iscrizione" aria-labelledby="iscrizione-h">
-    <div class="wrap">
+      <div id="opportunities" class="opportunity-list" aria-live="polite"></div>
+    </section>
+    <section class="shell wrap section music-section panel" id="music-library" hidden>
+      <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
       <div class="section-head">
-        <h2 id="iscrizione-h">每周一封。<br><span class="muted">只写这周能做什么</span></h2>
+        <div><div class="eyebrow">Vocal Repertoire</div><h2>咏叹调及艺术歌曲汇总</h2><p>持续汇集歌剧咏叹调、各国艺术歌曲及其他古典声乐作品。可按作品名称、作曲家、歌词和声部搜索；曲目资料持续整理与更新。</p></div>
+        <span id="repertoireCount" class="count-pill">读取曲目…</span>
       </div>
-      <div class="grid grid--top">
-        <div class="span-6">
-          <p class="t-lead">写清本周新开的项目、快到期的截止、和你声部对得上的曲目。随时退订。</p>
-          <ul class="rows">
-            <li><span class="rows__name">新增项目</span><p>本周新开的剧院、院校与大师班</p><span class="rows__value">带原页链接</span></li>
-            <li><span class="rows__name">快到期的</span><p>两周内截止的报名，标出日期</p><span class="rows__value">按截止排</span></li>
-            <li><span class="rows__name">对上声部</span><p>只写和你声部相关的曲目要求</p><span class="rows__value">按声部分</span></li>
-          </ul>
-          <form class="form" action="https://buttondown.com/wl19971007" method="post" data-sent="订阅已收到，下周一见。" novalidate>
-            <div class="field"><label for="f-email">邮箱</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
-              <p class="field__error" id="f-email-err" hidden>写一个带 @ 的邮箱，例如 name@example.com。</p></div>
-            <div class="btn-row"><button class="btn btn--primary" type="submit">订阅简报</button></div>
-            <p class="form__status" role="status" data-form-status></p>
-            <p class="t-small muted">周一早上发，不转发邮箱给任何人。</p>
-          </form>
-        </div>
-        <div class="frame frame--photo frame--fill span-6 start-7">
-          <img class="frame__img" src="https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Sheet_music_on_stand_-_Regent_St_Festival_2010_%28photo_by_Garry_Knight%29.jpg/1280px-Sheet_music_on_stand_-_Regent_St_Festival_2010_%28photo_by_Garry_Knight%29.jpg" alt="谱架上的分谱与铅笔" loading="lazy" data-source="library" data-subject="sheet music on a stand">
-        </div>
+      <form id="musicSearchForm" class="music-search" role="search">
+        <label class="music-search-field">
+          <span aria-hidden="true">⌕</span>
+          <input id="musicSearchInput" type="search" placeholder="搜索作品、作曲家或歌词，例如 An die Musik" autocomplete="off" aria-label="搜索声乐曲目">
+        </label>
+        <button type="submit">搜索</button>
+      </form>
+      <div class="music-filter-row"><label class="music-voice-filter"><span>按声部筛选</span><select id="musicVoiceFilter" aria-label="按声部筛选曲目"><option value="all">全部声部</option><option value="tenor">男高音</option><option value="soprano">女高音</option><option value="mezzo">女中音</option><option value="contralto">女低音</option><option value="baritone">男中音</option><option value="bass">男低音</option></select></label></div>
+      <div class="chipbar">
+        <span>热门作品：</span>
+        <button type="button" class="search-chip" data-query="Nessun dorma">Nessun dorma</button>
+        <button type="button" class="search-chip" data-query="La donna è mobile">La donna è mobile</button>
+        <button type="button" class="search-chip" data-query="Amarilli, mia bella">Amarilli</button>
+        <button type="button" class="search-chip" data-query="Una furtiva lagrima">Una furtiva lagrima</button>
+        <button type="button" class="search-chip" data-query="Nina">Nina</button>
+        <button type="button" class="search-chip" data-query="Lascia ch'io pianga">Lascia ch'io pianga</button>
+        <button type="button" class="search-chip" data-query="O mio babbino caro">O mio babbino caro</button>
+        <button type="button" class="search-chip" data-query="Casta Diva">Casta Diva</button>
+        <button type="button" class="search-chip" data-query="An die Musik">An die Musik</button>
+        <button type="button" class="search-chip" data-query="Ständchen">Ständchen</button>
+        <button type="button" class="search-chip" data-query="L'invitation au voyage">Duparc · L'invitation</button>
+        <button type="button" class="search-chip" data-query="Ideale">Ideale</button>
       </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer closing" id="contact" aria-labelledby="close-h">
-  <div class="wrap">
-    <div class="closing__cta close--type">
+      <div id="musicSearchResults" aria-live="polite"></div>
+      <p class="music-rights-note">本站提供作品文本检索与阅读。点击“原文朗读”可打开 Google 翻译收听发音；乐谱链接将跳转至 IMSLP 对应作品页面。下载前请确认版本及当地版权规定。</p>
+    </section>
+    <section class="shell wrap section panel" id="conservatori" hidden>
+      <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
       <div class="section-head">
-        <h2 id="close-h">看本周开放项目</h2>
-        <p>项目、截止、曲目要求，一页看完；看上了直接点原页。</p>
+        <div><div class="eyebrow">Conservatorio · Admission</div><h2>公立音乐学院入学考试</h2><p>这里仅收录公立音乐学院的学位课程与入学考试。查看本学年的报名状态、考试日期、声乐曲目要求和官方简章；不包含剧院 Accademia 培养项目。</p></div>
+        <span id="conservatoriCount" class="count-pill">—</span>
       </div>
-      <a class="btn btn--primary btn--xl btn--wide" href="#progetti">看本周开放项目<svg class="m-arrow" viewBox="0 0 12 12" aria-hidden="true"><path class="m-arrow__stem" d="M1 6h8"/><path class="m-arrow__head" d="M4.5 2.5 8 6l-3.5 3.5"/></svg></a>
+      <div class="cons-toolbar">
+        <label class="searchbox"><span aria-hidden="true">⌕</span><input id="consSearchInput" type="search" placeholder="搜索城市或院校名称，例如：米兰、博洛尼亚" autocomplete="off" aria-label="搜索院校"></label>
+        <button id="consDateOnly" class="ghost-toggle" type="button" aria-pressed="false">只显示有明确日期的院校</button>
+        <button id="consExpandAll" class="ghost-toggle" type="button" aria-pressed="false">展开全部院校</button>
+      </div>
+      <div id="consGroups" class="cons-groups" aria-live="polite"></div>
+      <div id="conservatoriEmpty"></div>
+    </section>
+    <section class="shell wrap section panel" id="opera-academies" hidden>
+      <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
+      <div class="section-head">
+        <div><div class="eyebrow">Teatri · Opera Accademie</div><h2>剧院学院与专业培养项目</h2><p>这类项目由歌剧院或专业机构组织，侧重歌唱家培养、剧目实践、导师指导与舞台经验，不等同于公立音乐学院的学位入学考试。每个项目的课程性质、选拔方式和证书效力请以官方公告为准。</p></div>
+        <span id="academyCount" class="count-pill">—</span>
+      </div>
+      <div class="cons-toolbar">
+        <label class="searchbox"><span aria-hidden="true">⌕</span><input id="academySearchInput" type="search" placeholder="搜索城市、剧院或 Accademia 名称" autocomplete="off" aria-label="搜索剧院学院与专业培养项目"></label>
+        <button id="academyDateOnly" class="ghost-toggle" type="button" aria-pressed="false">只显示有明确日期的项目</button>
+        <button id="academyExpandAll" class="ghost-toggle" type="button" aria-pressed="false">展开全部项目</button>
+      </div>
+      <div id="academyGroups" class="cons-groups" aria-live="polite"></div>
+      <div id="academyEmpty"></div>
+    </section>
+    <section class="shell wrap home-section home-resources" id="resources" aria-labelledby="resources-title">
+      <div class="home-section-head">
+        <div><span class="home-section-index">02 / 曲目与训练</span><h2 id="resources-title">准备学习与舞台实践</h2></div>
+        <p>把课程、曲目和发声知识放在同一处，按需要继续查找。</p>
+      </div>
+      <div class="home-resource-layout"><div class="home-resource-list">
+        <a class="home-resource" href="masterclasses.html">
+          <span class="home-resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10v2a7 7 0 0 0 14 0v-2M12 19v3M8 22h8"/></svg></span><span class="home-resource-no">04</span><span class="home-resource-main"><span class="tile-title">大师班与专业进修</span><small>查看已核验课程、导师、地点、费用与官方报名入口。</small></span><span class="home-resource-count"><b id="statMasterclasses">—</b><small>个已核验项目</small></span><span class="home-resource-arrow" aria-hidden="true">↗</span>
+        </a>
+        <button class="tile" type="button" data-home-resource data-open="music-library">
+          <span class="home-resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h7"/></svg></span><span class="home-resource-no">05</span><span class="home-resource-main"><span class="tile-title">咏叹调及艺术歌曲汇总</span><small>搜索歌剧咏叹调、各国艺术歌曲与其他古典声乐作品。</small></span><span class="home-resource-count"><b id="statSongs">—</b><small>首作品与归档</small></span><span class="home-resource-arrow" aria-hidden="true">↗</span>
+        </button>
+        <a class="home-resource" href="voice-anatomy.html">
+          <span class="home-resource-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v5M8 6h8M7 10c-2 1-3 3-3 5a5 5 0 0 0 5 5h6a5 5 0 0 0 5-5c0-2-1-4-3-5"/><path d="M9 12c-1 1-1 3 0 4m6-4c1 1 1 3 0 4"/></svg></span><span class="home-resource-no">06</span><span class="home-resource-main"><span class="tile-title">发声机制实验室</span><small>通过真实解剖模型与生理说明，观察呼吸、声道和喉部结构。</small></span><span class="home-resource-count"><b>01</b><small>交互式学习模块</small></span><span class="home-resource-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div><aside class="home-resource-visual" aria-label="发声解剖参考图"><span class="eyebrow">ANATOMY REFERENCE</span><img src="assets/anatomy/larynx-sagittal.png" width="960" height="640" loading="eager" decoding="async" alt="喉部正中矢状面解剖示意图，显示喉腔与声道的空间关系"></aside></div>
+    </section>
+    <section class="shell wrap home-section home-verification" id="verification" aria-labelledby="verification-title">
+      <div class="home-section-head">
+        <div><span class="home-section-index">03 / 信息核验</span><h2 id="verification-title">公开信息如何进入平台</h2></div>
+        <p>自动发现不等于自动发布。项目经过来源与内容核对后，才会进入正式列表。</p>
+      </div>
+      <p class="taste-statement mo-wh__text" data-moment="word-highlight" aria-label="正式发布的项目保留主办方官方来源；新发现的线索先进入候选审核，核验前不会混入正式列表。">正式发布的项目保留主办方<strong>官方来源</strong>；新发现的线索先进入候选审核，核验前不会混入正式列表。</p>
+      <div class="home-process-line" aria-label="信息整理步骤"><span class="process-step"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>发现来源</span><i aria-hidden="true"></i><span class="process-step"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>核验内容</span><i aria-hidden="true"></i><span class="process-step"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10"/></svg>中文整理</span><i aria-hidden="true"></i><span class="process-step"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7M10 14 21 3M20 14v6H4V4h6"/></svg>保留官方入口</span></div>
+    </section>
+    <section class="shell wrap newsletter-panel" aria-labelledby="newsletter-title">
+    <div class="newsletter-content"><div class="newsletter-copy">
+      <span class="newsletter-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+      <div class="eyebrow">OperaLab. Weekly</div>
+      <h2 id="newsletter-title">订阅每周简报，获取与你声部相关的机会</h2>
+      <p>填写邮箱并选择你的声部。每期简报会优先展示适合你声部的招募、比赛和进修机会，同时汇总其他声部的最新信息。声部信息仅用于筛选和整理邮件内容，不会公开显示。邮件由 Buttondown 发送，你可以随时通过邮件中的退订链接取消订阅。</p>
     </div>
-    <div class="closing__links">
-      <div class="grid">
-        <div class="span-4 stack-4">
-          <a class="nav__logo" href="#top">OperaLab</a>
-          <p class="footer__lede">把欧洲剧院、音乐学院与大师班的公开信息整理成中文，每周一次。</p>
-        </div>
-        <div class="span-2 footer__col"><h3>项目</h3><ul><li><a href="#progetti">剧院招募</a></li><li><a href="#progetti">院校入学考</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>曲库</h3><ul><li><a href="#repertorio">咏叹调</a></li><li><a href="#repertorio">艺术歌曲</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>来源</h3><ul><li><a href="#lettura">怎么核对</a></li><li><a href="#lettura">待核条目</a></li></ul></div>
-        <div class="span-2 footer__col"><h3>订阅</h3><ul><li><a href="#iscrizione">每周简报</a></li><li><a href="#contact">联系</a></li></ul></div>
-      </div>
-      <div class="footer__legal">
-        <span>&copy; 2026 OperaLab</span>
-        <a class="credits" href="https://commons.wikimedia.org/wiki/Commons:Licensing">照片：Wikimedia Commons（凤凰剧院、敖德萨歌剧院、维也纳音乐表演艺术大学、Palazzo Stauffer），CC BY / CC BY-SA / CC0</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script type="module" src="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/system.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/motion/motion.js"></script>
-<script type="module" src="https://cdn.jsdelivr.net/gh/Leonxlnx/taste-skill@f6b76575f949707b4e3c37cd86cb44b0b98643e8/skills/taste-skill/assets/layout/layout.js"></script>
+    <form id="newsletterForm" class="newsletter-form" novalidate>
+      <label class="nl-field" for="nlEmail"><span>邮箱</span><input id="nlEmail" name="email" type="email" inputmode="email" autocomplete="email" required placeholder="you@example.com"></label>
+      <label class="nl-field" for="nlVoice"><span>声部</span>
+        <select id="nlVoice" name="voice" required>
+          <option value="">选择你的声部</option>
+          <option value="soprano">女高音 Soprano</option>
+          <option value="mezzo_soprano">女中音 Mezzo-soprano</option>
+          <option value="contralto">女低音 Contralto</option>
+          <option value="countertenor">假声男高音 Countertenor</option>
+          <option value="tenor">男高音 Tenore</option>
+          <option value="baritone">男中音 Baritono</option>
+          <option value="bass">男低音 Basso</option>
+          <option value="all_voices">不限声部 · 只看全部机会</option>
+        </select>
+      </label>
+      <label class="nl-consent" for="nlConsent"><input id="nlConsent" type="checkbox" required><span>我同意用上面的邮箱接收每周简报，并已阅读<a href="privacy.html">隐私说明</a>。</span></label>
+      <input id="nlHp" class="nl-hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="newsletter-link" type="submit" id="nlSubmit">订阅每周简报</button>
+      <p id="nlStatus" class="nl-status" role="status" aria-live="polite"></p>
+      <p class="nl-note">提交后会收到一封确认邮件，点确认才真正订阅。<a href="https://buttondown.com/wl19971007/archive" target="_blank" rel="noopener noreferrer">先看往期 ↗</a></p>
+    </form></div><aside class="newsletter-preview" aria-label="每周简报内容预览"><span class="eyebrow">IN EACH ISSUE</span><img class="newsletter-preview-mark" src="icon.svg" width="72" height="72" loading="eager" alt="" aria-hidden="true"><div class="newsletter-preview-item"><span>01</span><div><strong>试唱与比赛</strong><small>公开招募、报名条件与截止日期</small></div></div><div class="newsletter-preview-item"><span>02</span><div><strong>音乐学院与大师班</strong><small>招生、课程与申请信息</small></div></div><div class="newsletter-preview-item"><span>03</span><div><strong>曲目与职业准备</strong><small>声部相关的学习与舞台资源</small></div></div></aside>
+  </section>
+  </main>
+  <footer class="closing wrap"><div class="footer-inner"><div class="footer-brand"><strong>OperaLab.</strong><p>为中国声乐学习者整理欧洲歌剧院招募、音乐学院招生、大师班与专业进修信息。</p></div><nav aria-label="页脚导航"><a href="./">首页</a><a href="masterclasses.html">大师班</a><a href="voice-anatomy.html">解剖</a><a href="privacy.html">隐私说明</a></nav><span class="footer-note">官方来源优先 · 候选信息单独审核</span></div></footer>
+  <script src="site-config.js?v=1" defer></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"42879f330b824eb4843baa5bd13ba002"}'></script>
+  <script src="subscribe.js?v=1" defer></script>
+  <script src="app.js?v=ux15" defer></script>
+  <script src="hero-facts.js?v=1" defer></script>
+  <script type="module" src="assets/moments/moments.js"></script>
+  <script type="module" src="assets/motion/motion.js"></script>
 </body>
 </html>
