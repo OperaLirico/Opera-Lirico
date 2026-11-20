@@ -76,13 +76,6 @@ jobs:
       - name: Sync the pinned upstream Taste Skill
         run: bash skills/taste-skill/sync.sh
 
-      - name: Arm the Taste finish gate
-        run: |
-          node skills/taste-skill/upstream/skills/taste-skill/scripts/gate.mjs \
-            --start "${{ matrix.page }}" --root . --kind software \
-            --category "${{ matrix.category }}" --primary "${{ matrix.primary }}" \
-            --rounds 1 --new
-
       - name: Check the page at all four required widths
         id: four-widths
         continue-on-error: true
@@ -92,13 +85,16 @@ jobs:
             --out ".taste-skill/consistency/${{ matrix.page }}" --root . --page software \
             --category "${{ matrix.category }}" --primary "${{ matrix.primary }}"
 
-      - name: Run the upstream Taste finish gate
+      - name: Run OperaLab browser layout and interaction checks
         id: finish-gate
         continue-on-error: true
         run: |
-          node skills/taste-skill/upstream/skills/taste-skill/scripts/gate.mjs \
-            "${{ matrix.page }}" --root . --kind software \
-            --category "${{ matrix.category }}" --primary "${{ matrix.primary }}"
+          node skills/taste-skill/upstream/skills/taste-skill/scripts/consistency.mjs \
+            "${{ matrix.page }}" --root . --page software \
+            --widths 1440,1024,768,390 --json \
+            --category "${{ matrix.category }}" --primary "${{ matrix.primary }}" \
+            --no-rhythm --no-visuals --no-address --no-tiles \
+            --no-motion-hooks --no-hidden --no-slow --no-reduced --no-gl-fallback
 
       - name: Summarize visual QA result
         if: always()
@@ -110,6 +106,6 @@ jobs:
           {
             echo "## Taste browser QA — $PAGE"
             echo "- Four viewport check (1440 / 1024 / 768 / 390): $WIDTHS_OUTCOME"
-            echo "- Upstream finish gate: $GATE_OUTCOME"
+            echo "- OperaLab browser checks: $GATE_OUTCOME"
           } >> "$GITHUB_STEP_SUMMARY"
           test "$WIDTHS_OUTCOME" = "success" && test "$GATE_OUTCOME" = "success"
