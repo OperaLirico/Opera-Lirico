@@ -443,3 +443,169 @@ body.master-page .master-card :is(h2,h3,p,li,a) { overflow-wrap:anywhere; }
   body.master-page .master-head { padding:20px 16px 22px; margin-bottom:18px; }
   body.master-page .master-list-section { padding:0 16px 48px; }
 }
+
+
+/* Final correction pass from real viewport findings. */
+html body header.topbar {
+  background:rgba(246,247,244,.96);
+  border-bottom:1px solid #dce5de;
+  position:relative;
+  z-index:30;
+}
+html body header.topbar .topbar-inner {
+  min-height:72px;
+  padding-block:8px;
+  display:flex;
+  align-items:center;
+  gap:14px 22px;
+}
+html body header.topbar .brand { min-height:44px; display:inline-flex; align-items:center; }
+html body header.topbar .nav-links a { min-height:44px; display:inline-flex; align-items:center; padding:0 6px; }
+body.taste-home #refreshButton { display:none !important; }
+body.taste-home .home-actions .home-button { min-height:44px; }
+body.taste-home #tiles .tile { min-width:0; width:100%; }
+body.taste-home .home-proof { min-width:0; }
+
+body.voice-lab-page .wrap {
+  max-width:1240px;
+  margin-inline:auto;
+  padding:24px 24px 48px;
+  box-sizing:border-box;
+}
+body.voice-lab-page header.topbar .topbar-inner {
+  width:100%;
+  max-width:1240px;
+  margin-inline:auto;
+  padding:8px 24px;
+  min-height:72px;
+}
+body.voice-lab-page .voice-hero {
+  width:100%;
+  min-height:0;
+  height:auto;
+  padding:20px 24px;
+  box-sizing:border-box;
+}
+body.voice-lab-page .voice-heading h1 span { display:block; margin-top:8px; }
+body.voice-lab-page #sideVisual { overflow:auto; padding-bottom:8px; }
+body.voice-lab-page .structure-overview { max-height:none; overflow:visible; }
+body.voice-lab-page .overview-row { min-height:24px; }
+body.voice-lab-page .card h3 { font-size:18px; line-height:1.35; }
+body.voice-lab-page :is(.count,.item small,.row .k,.crumb,.quiz-h,.chip,.chip b,.data-note,.hint) {
+  color:#455a4e !important;
+}
+body.voice-lab-page .item,
+body.voice-lab-page .tab,
+body.voice-lab-page .btn,
+body.voice-lab-page .qbtn { min-height:44px; }
+body.voice-lab-page .voice-map-reference { margin-inline:auto; }
+
+body.master-page header.topbar .topbar-inner { max-width:1240px; padding:8px 24px; }
+body.master-page .master-head h1 { line-height:1.12; }
+body.master-page .master-title-en {
+  display:block;
+  margin-top:8px;
+  color:#65766c;
+  font:500 14px/1.4 "Host Grotesk","PingFang SC",sans-serif;
+  letter-spacing:.06em;
+}
+body.master-page .master-description { max-width:68ch; margin:14px 0; font-size:15px; line-height:1.7; color:#52645a; }
+body.master-page .master-hero-cta { min-height:44px; display:inline-flex; align-items:center; }
+body.master-page .master-list-visual { max-height:180px; }
+body.master-page .master-list-visual svg { display:block; width:100%; height:180px; }
+body.master-page .master-count { display:inline-flex; align-items:center; min-height:32px; padding:0 10px; border-radius:999px; border:1px solid #dce5de; background:#f7faf7; }
+body.master-page .master-card :is(button,a) { min-height:44px; }
+body.master-page .master-card :is(p,small) { line-height:1.65; }
+
+body.anatomy-page .lab-wrap {
+  max-width:1240px;
+  padding:24px 24px 48px;
+  box-sizing:border-box;
+}
+body.anatomy-page .lab-hero { margin-bottom:20px; }
+body.anatomy-page .lab-hero h1 { line-height:1.12; }
+body.anatomy-page .lab-hero .mo-wh__text { font-size:14px; line-height:1.65; }
+body.anatomy-page .anatomy-proof { display:flex; flex-wrap:wrap; gap:6px 10px; margin:10px 0; }
+body.anatomy-page .lab-hero-actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+body.anatomy-page .lab-hero-actions a { min-height:44px; display:inline-flex; align-items:center; }
+body.anatomy-page .model-credit { font-size:11px; line-height:1.5; gap:6px 12px; }
+body.anatomy-page .body-figure { min-width:0; }
+body.anatomy-page .body-detail { min-height:0; }
+body.anatomy-page .body-detail-section { margin:20px auto; }
+body.anatomy-page .source-methods { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; }
+body.anatomy-page .source-method { min-width:0; padding:12px; overflow-wrap:anywhere; }
+body.anatomy-page .source-method small { color:#4f6258; line-height:1.45; }
+body.anatomy-page .breath-controls button { min-width:0; overflow-wrap:anywhere; }
+body.anatomy-page .breath-lab { min-width:0; }
+
+body.mechanism-page .mechanism {
+  padding:24px 24px 48px;
+  box-sizing:border-box;
+}
+body.mechanism-page .hero { padding:18px 0 22px; }
+body.mechanism-page .hero .crumb { margin:0 0 12px; padding:0; }
+body.mechanism-page .model-switcher {
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  padding:10px;
+  border-radius:10px;
+  background:#eef3ef;
+}
+body.mechanism-page .model-switcher button {
+  min-height:44px;
+  padding:9px 14px;
+  background:#fff;
+  color:#25483c;
+  border:1px solid #cbd8cf;
+  border-radius:8px;
+}
+body.mechanism-page .model-switcher button[aria-pressed=true] {
+  background:#17483c;
+  color:#fff;
+  border-color:#17483c;
+}
+body.mechanism-page .card-head .tag,
+body.mechanism-page .model-credit,
+body.mechanism-page .notice { color:#435a4f; }
+body.mechanism-page .model-credit a { color:#17483c; }
+body.mechanism-page .model-switcher button,
+body.mechanism-page .mode { min-width:0; }
+
+@media (max-width:760px) {
+  html body header.topbar .topbar-inner { min-height:0; padding:8px 16px; }
+  html body header.topbar .nav-links { padding:0 0 4px; }
+  body.taste-home .home-hero { padding:24px 16px 20px; }
+  body.taste-home .home-proof { display:none; }
+  body.voice-lab-page .wrap { padding:20px 16px 36px; }
+  body.voice-lab-page header.topbar .topbar-inner { padding:8px 16px; }
+  body.voice-lab-page .voice-hero { padding:16px; min-height:0; }
+  body.voice-lab-page .voice-hero-visual { max-height:100px; }
+  body.voice-lab-page .voice-hero .lede { font-size:13px; line-height:1.6; }
+  body.voice-lab-page #sideVisual { padding-bottom:12px; }
+  body.voice-lab-page .structure-overview { max-height:none; overflow:visible; }
+  body.master-page header.topbar .topbar-inner { padding:8px 16px; }
+  body.master-page .master-head { padding:18px 16px 20px; }
+  body.master-page .master-head h1 { font-size:clamp(28px,7.2vw,34px); }
+  body.master-page .master-title-en { font-size:12px; }
+  body.master-page .master-hero-proof { display:none; }
+  body.master-page .master-intro-note { margin:8px 0; font-size:12px; line-height:1.5; }
+  body.master-page .master-hero-cta { margin-top:8px; }
+  body.master-page .master-list-visual,
+  body.master-page .master-list-visual svg { height:120px; max-height:120px; }
+  body.anatomy-page .lab-wrap { padding:18px 16px 36px; }
+  body.anatomy-page .lab-hero-visual { max-height:160px; }
+  body.anatomy-page .anatomy-proof { display:none; }
+  body.anatomy-page .lab-hero-actions { display:grid; grid-template-columns:minmax(0,1fr); }
+  body.anatomy-page .lab-hero-actions a { width:100%; justify-content:center; }
+  body.anatomy-page .source-methods { grid-template-columns:minmax(0,1fr); }
+  body.anatomy-page .source-method { display:grid; grid-template-columns:24px minmax(0,1fr); gap:4px 10px; }
+  body.anatomy-page .source-method svg { grid-row:1 / span 2; width:22px; height:22px; }
+  body.anatomy-page .breath-controls { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  body.anatomy-page .breath-controls button { min-width:0; width:100%; padding:10px 8px; white-space:normal; }
+  body.mechanism-page .mechanism { padding:18px 16px 36px; }
+  body.mechanism-page .hero { padding:12px 0 16px; }
+  body.mechanism-page .hero h1 { font-size:clamp(29px,7.5vw,36px); }
+  body.mechanism-page .model-switcher { display:grid; grid-template-columns:minmax(0,1fr); }
+  body.mechanism-page .model-switcher button { width:100%; }
+}
