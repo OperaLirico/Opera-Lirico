@@ -12,6 +12,7 @@ on:
       - "voice-lab.html"
       - "taste-home.css"
       - "taste-interior.css"
+      - "taste-refinement.css"
       - "taste-home.js"
       - "styles.css"
       - "assets/motion/**"
