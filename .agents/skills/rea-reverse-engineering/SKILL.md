@@ -1,10 +1,10 @@
 ---
 name: rea-reverse-engineering
 metadata:
-  upstream_release: "rea-agents-6.9.0"
+  upstream_release: "rea-agents-6.10.1"
   upstream_skill_version: "62"
-  upstream_main_commit: "237b1ea5b39ea9fc5373aa08a9f54d25715c4873"
-  last_reviewed: "2026-11-17"
+  upstream_main_commit: "8bb01b514ac766c0c3ecc8f362bd38186eaec9c2"
+  last_reviewed: "2026-11-20"
 description: Use REA (Reverse Engineer Anything) to investigate behavior that cannot be established from OperaLab source alone, inspect authorized web/app artifacts, capture browser workflows, preserve evidence and limitations, and turn verified findings into scoped OperaLab implementations. Do not use for ordinary source-code analysis when repository code already answers the question.
 ---
 
@@ -23,9 +23,9 @@ This project skill is an OperaLab-specific operating guide. It does not replace 
 
 ## Upstream compatibility baseline
 
-- Last reviewed against official upstream `rea-agents-6.9.0`, dated 2026-11-11 (GitHub published 2026-11-12T08:59:13Z); upstream `main` commit checked on 2026-11-17: `237b1ea5b39ea9fc5373aa08a9f54d25715c4873`.
-- Upstream skill metadata version at review: `62` (unchanged); npm registry latest and upstream `package.json` both report `6.9.0`.
-- Supported Node.js range in upstream package metadata and installer: `^22.23.4 || ^24.22.1 || >=26.12.1`; the local MCP setup guide matches this range. Post-release upstream `main` includes ELF separate-debug linkage and DWARF compile-unit inspection; the latest commit also adds a CycloneDX 1.6 view for retained Go/Rust dependency Evidence and a verification script. These binary/native inventory capabilities are not needed for OperaLab's current website, browser, repertoire, or anatomy work, so no optional engine or new dependency is added.
+- Last reviewed against official upstream `rea-agents-6.10.1`, released 2026-11-20; upstream `main` commit checked on 2026-11-20: `8bb01b514ac766c0c3ecc8f362bd38186eaec9c2`.
+- Upstream skill metadata version at review: `63`; npm/package release checked at `6.10.1`.
+- Supported Node.js range in upstream package metadata and installer: `^22.23.4 || ^24.22.1 || >=26.12.1`; the local MCP setup guide matches this range. The latest upstream main includes additional packaged/native/runtime safeguards and release tooling changes; these are not needed for OperaLab’s current website, browser, repertoire, or anatomy work, so no optional engine or new dependency is added. These binary/native inventory capabilities are not needed for OperaLab's current website, browser, repertoire, or anatomy work, so no optional engine or new dependency is added.
 - Upstream release notes added/expanded desktop-task capture and AgentEnv build-computer workflows, offline inspection of additional shipped artifacts (including standalone bundles, firmware, NTFS acquisitions, API contracts, and V8 code-cache containers), and retained Evidence with pagination, explicit coverage, and recoverable resource limits.
 - These are upstream capabilities, not proof that this project's local MCP runtime exposes them. Before using a capability, inspect the active REA tool catalog and use its actual schemas. Do not infer runtime availability from this document or from the npm release alone.
 - For OperaLab, prioritize website/browser behavior, reproducible interaction capture, JavaScript/Electron analysis, API-contract comparison, and evidence-backed UI reconstruction. Desktop/native/firmware providers are not project prerequisites and must not be installed unless a concrete authorized task requires them.
