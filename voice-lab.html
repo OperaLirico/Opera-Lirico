@@ -82,6 +82,7 @@
 <link rel="stylesheet" href="taste-interior.css?v=1">
 <link rel="stylesheet" href="assets/motion/motion.css">
 <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
+  <link rel="stylesheet" href="assets/taste-polish.css?v=1">
 </head>
 <body class="voice-lab-page">
 <header class="topbar nav"><div class="wrap topbar-inner"><a class="skip-link" href="#main-content">跳至主要内容</a><a class="brand" href="./" aria-label="OperaLab. 首页"><span class="brand-mark" aria-hidden="true">♫</span><span class="brand-text">OperaLab.</span></a><nav class="nav-links" aria-label="主导航"><a href="./">首页</a><a href="masterclasses.html">大师班</a><a href="voice-anatomy.html">解剖概览</a><a href="larynx-mechanism.html">喉部机制</a></nav></div></header>
@@ -90,11 +91,11 @@
   <div class="voice-hero">
   <div class="voice-heading">
     <p class="eyebrow">VOICE SCIENCE · INTERACTIVE REFERENCE</p>
-    <h1 id="voice-title">发声解剖实验室 <span>Voice Anatomy Lab for Classical Singers</span></h1>
-    <p class="page-h1-en">面向古典歌手的结构学习与发声观察工具</p>
+    <h1 id="voice-title">发声系统结构索引 <span>Vocal Anatomy Reference for Singers</span></h1>
+    <p class="page-h1-en">为古典歌手整理的发声器官结构与功能资料</p>
     <a class="hero-cta" href="#workspace">开始浏览结构 <span aria-hidden="true">↓</span></a>
   </div>
-  <img class="voice-hero-visual" src="assets/anatomy/larynx-intrinsic-muscles.png" width="960" height="640" loading="eager" decoding="async" alt="喉内肌解剖线描参考图"><p class="lede mo-wh__text" data-moment="word-highlight">从鼻腔到膈，逐个查看发声通路结构。每条信息保留出处与审核状态，帮助你把器官位置、功能和歌唱中的作用联系起来。</p>
+  <img class="voice-hero-visual" src="assets/anatomy/larynx-intrinsic-muscles.png" width="960" height="640" loading="eager" decoding="async" alt="喉内肌解剖线描参考图"><p class="lede mo-wh__text" data-moment="word-highlight">从鼻腔、口腔和咽部，到喉、气管、肺与膈肌，逐项查看发声通路中的相关结构。每条资料标明来源与审核状态，帮助你理解器官位置、基本功能及其与歌唱的关系。</p>
   <div class="chips" id="meta"></div>
   </div>
   </section>
@@ -170,7 +171,7 @@
         <button class="btn" id="showAll" type="button">显示全部</button>
         <button class="btn" id="pickRandom" type="button">随便看一个</button>
       </div>
-      <p class="msg" style="margin:10px 4px 0">示意图：只表示结构与相对位置，不是解剖图谱。图上有 13 个可点的块，其余结构从右侧索引进入。</p>
+      <p class="msg" style="margin:10px 4px 0">交互示意图：用于标记结构名称和大致相对位置，不按真实比例绘制，也不能替代医学解剖图谱。更详细的结构信息请从右侧索引查看。</p>
 
       <div class="quiz" id="quiz">
         <div class="quiz-h"><span>发声通路小测</span><span id="quizScore">0 / 0</span></div>
@@ -197,7 +198,7 @@
 
     <section class="index-detail wrap panel card" aria-labelledby="detail-section-title">
       <h2 id="detail-section-title">结构详情</h2>
-      <p class="index-detail-intro">选择结构索引中的项目，查看中文、英文与拉丁名称，以及已核验的功能和歌唱关联。</p>
+      <p class="index-detail-intro">选择一个结构，查看中文、英文和拉丁名称，以及目前已核实的功能、歌唱关联与资料来源。</p>
       <img class="voice-detail-visual" src="assets/anatomy/larynx-intrinsic-muscles.png" width="960" height="640" loading="eager" decoding="async" alt="喉内肌解剖参考图，帮助对照结构详情">
       <div id="detail"></div>
       <div class="data-note">数据口径：仅展示已核验字段；待核信息不参与结果。掌握记录只保存在本机浏览器，不上传。机制细节见 <a href="larynx-mechanism.html">喉部机制</a>。内容不构成医学建议；如有嗓音问题请咨询耳鼻喉科或嗓音治疗师。</div>
