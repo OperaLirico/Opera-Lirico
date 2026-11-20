@@ -16,6 +16,7 @@ on:
       - "styles.css"
       - "assets/motion/**"
       - "assets/moments/**"
+      - "assets/taste-polish.css"
       - "skills/taste-skill/**"
       - ".github/workflows/taste-browser-gate.yml"
 
