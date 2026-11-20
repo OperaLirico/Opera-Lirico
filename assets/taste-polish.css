@@ -142,3 +142,129 @@ body.taste-home #tiles .tile-desc { max-width:34ch; }
   body.taste-home #tiles .tile { padding:12px; }
 }
 /* Keep motion.js, motion.css and all page interactions intact; this layer only changes layout. */
+
+
+/* Final responsive pass: align every page to one shared container and keep content natural-height. */
+html body header.topbar .topbar-inner {
+  width:100%;
+  max-width:1240px;
+  margin-inline:auto;
+  padding-inline:24px;
+  box-sizing:border-box;
+}
+html body main { min-width:0; }
+html body main :is(section,article,aside,figure) { min-width:0; }
+html body main :is(h1,h2,h3,p,li,a,strong,span) { overflow-wrap:anywhere; }
+
+@media (min-width:761px) {
+  body.taste-home .home-hero {
+    min-height:0;
+    display:block;
+    padding:clamp(48px,7vh,76px) 24px 58px;
+  }
+  body.taste-home .home-hero-copy {
+    width:100%;
+    max-width:850px;
+    margin:0 auto;
+  }
+  body.taste-home .home-app { display:none; }
+  body.taste-home .home-hero h1 {
+    max-width:18ch;
+    font-size:clamp(42px,4.8vw,64px);
+  }
+  body.taste-home #tiles .home-card-grid {
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  body.taste-home .home-tiles-art { display:none; }
+  html body .master-head {
+    min-height:0;
+    padding:0 0 28px;
+  }
+}
+@media (min-width:761px) and (max-width:1020px) {
+  body.taste-home #tiles .home-card-grid {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media (max-width:760px) {
+  html body header.topbar .topbar-inner {
+    width:100%;
+    padding-inline:16px;
+    gap:8px 10px;
+  }
+  html body header.topbar .nav-links {
+    padding:2px 0 5px;
+    margin-inline:0;
+    scroll-padding-inline:0;
+  }
+  html body header.topbar .nav-links a:first-child { margin-left:0; }
+  body.taste-home .home-hero {
+    min-height:0;
+    display:block;
+    padding:26px 16px 24px;
+  }
+  body.taste-home .home-app { display:none; }
+  body.taste-home .home-hero-copy { max-width:100%; margin:0; }
+  body.taste-home .home-kicker { font-size:12px; }
+  body.taste-home .home-hero h1 {
+    max-width:17ch;
+    margin-top:12px;
+    font-size:clamp(29px,8vw,36px);
+    line-height:1.18;
+  }
+  body.taste-home .home-lede {
+    max-width:46ch;
+    margin-top:14px;
+    font-size:14px;
+    line-height:1.65;
+  }
+  body.taste-home #heroCallsWrap { display:none; }
+  body.taste-home .home-actions { margin-top:18px; }
+  body.taste-home .home-proof {
+    margin-top:18px;
+    padding-top:12px;
+    gap:8px 12px;
+    flex-wrap:wrap;
+  }
+  body.taste-home #refreshButton { display:none; }
+  body.taste-home #tiles { padding-top:22px; }
+  body.taste-home #tiles .home-tiles-art { display:none; }
+  body.taste-home #tiles .home-section-head { margin-bottom:12px; }
+  body.taste-home #tiles .home-section-head h2 { font-size:24px; line-height:1.25; }
+  body.taste-home #tiles .home-section-head p { margin-top:7px; font-size:13px; line-height:1.55; }
+  body.taste-home #tiles .home-card-grid {
+    grid-template-columns:minmax(0,1fr);
+    gap:9px;
+  }
+  body.taste-home #tiles .tile {
+    width:100%;
+    min-height:0;
+    grid-template-columns:32px minmax(0,1fr) auto;
+    grid-template-rows:auto auto auto;
+    column-gap:10px;
+    row-gap:4px;
+    padding:13px 12px;
+  }
+  body.taste-home #tiles .tile-icon { grid-column:1; grid-row:1 / span 2; width:30px; height:30px; }
+  body.taste-home #tiles .tile-index { grid-column:3; grid-row:1; }
+  body.taste-home #tiles .tile-title { grid-column:2; grid-row:1; font-size:15px; line-height:1.35; }
+  body.taste-home #tiles .tile-desc { grid-column:2 / 4; grid-row:2; font-size:13px; line-height:1.5; }
+  body.taste-home #tiles .tile-stat { grid-column:2 / 4; grid-row:3; margin-top:4px; padding-top:8px; }
+  body.taste-home #tiles .tile-stat b { font-size:14px; }
+  body.master-page .master-wrap,
+  body.anatomy-page .lab-wrap,
+  body.mechanism-page .mechanism { padding-left:16px; padding-right:16px; }
+  body.master-page .master-head { min-height:0; padding:20px 0 24px; margin-bottom:20px; }
+  body.master-page .master-head h1 { font-size:clamp(30px,8vw,38px); }
+  body.master-page .master-list { grid-template-columns:minmax(0,1fr); }
+  body.anatomy-page .lab-hero,
+  body.mechanism-page .hero { margin-top:14px; margin-bottom:22px; }
+  body.anatomy-page .body-system,
+  body.mechanism-page .layout { grid-template-columns:minmax(0,1fr); }
+  body.anatomy-page .body-detail,
+  body.mechanism-page .card,
+  body.voice-lab-page .card { min-width:0; max-width:100%; }
+  body.anatomy-page .body-detail :is(p,li,a),
+  body.mechanism-page .card :is(p,li,a),
+  body.voice-lab-page :is(p,li,a) { overflow-wrap:anywhere; word-break:normal; }
+}
