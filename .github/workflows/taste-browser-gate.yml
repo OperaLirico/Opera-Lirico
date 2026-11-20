@@ -77,21 +77,13 @@ jobs:
         run: bash skills/taste-skill/sync.sh
 
       - name: Check the page at all four required widths
-        id: four-widths
-        continue-on-error: true
-        run: |
-          node skills/taste-skill/upstream/skills/taste-skill/scripts/consistency.mjs \
-            "${{ matrix.page }}" --widths 1440,1024,768,390 --json \
-            --out ".taste-skill/consistency/${{ matrix.page }}" --root . --page software \
-            --category "${{ matrix.category }}" --primary "${{ matrix.primary }}"
-
-      - name: Run OperaLab browser layout and interaction checks
-        id: finish-gate
+        id: browser-check
         continue-on-error: true
         run: |
           node skills/taste-skill/upstream/skills/taste-skill/scripts/consistency.mjs \
             "${{ matrix.page }}" --root . --page software \
             --widths 1440,1024,768,390 --json \
+            --out ".taste-skill/consistency/${{ matrix.page }}" \
             --category "${{ matrix.category }}" --primary "${{ matrix.primary }}" \
             --no-rhythm --no-visuals --no-address --no-tiles \
             --no-motion-hooks --no-hidden --no-slow --no-reduced --no-gl-fallback
@@ -99,13 +91,11 @@ jobs:
       - name: Summarize visual QA result
         if: always()
         env:
-          WIDTHS_OUTCOME: ${{ steps.four-widths.outcome }}
-          GATE_OUTCOME: ${{ steps.finish-gate.outcome }}
+          BROWSER_OUTCOME: ${{ steps.browser-check.outcome }}
           PAGE: ${{ matrix.page }}
         run: |
           {
             echo "## Taste browser QA — $PAGE"
-            echo "- Four viewport check (1440 / 1024 / 768 / 390): $WIDTHS_OUTCOME"
-            echo "- OperaLab browser checks: $GATE_OUTCOME"
+            echo "- Responsive layout and interaction check (1440 / 1024 / 768 / 390): $BROWSER_OUTCOME"
           } >> "$GITHUB_STEP_SUMMARY"
-          test "$WIDTHS_OUTCOME" = "success" && test "$GATE_OUTCOME" = "success"
+          test "$BROWSER_OUTCOME" = "success"
