@@ -86,3 +86,59 @@ html body main :is(.master-card,.lab-card,.card,.panel) :is(h1,h2,h3,p,li,dd) { 
 @media (prefers-reduced-motion: reduce) {
   html body * { scroll-behavior:auto !important; }
 }
+
+
+/* Homepage information architecture: six peer-level destinations, one clear grid. */
+body.taste-home #tiles .home-card-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:16px;
+}
+body.taste-home #tiles .tile {
+  min-width:0;
+  min-height:230px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  text-align:left;
+}
+body.taste-home #tiles .tile-desc { max-width:34ch; }
+@media (max-width: 760px) {
+  body.taste-home .home-hero { padding-top:24px; padding-bottom:24px; }
+  body.taste-home .home-app { display:none; }
+  body.taste-home .home-hero-copy { width:100%; }
+  body.taste-home .home-lede { max-width:42ch; font-size:14px; line-height:1.65; }
+  body.taste-home .home-actions { display:flex; flex-wrap:wrap; gap:8px; }
+  body.taste-home #tiles { padding-top:24px; }
+  body.taste-home #tiles .home-section-head { margin-bottom:14px; }
+  body.taste-home #tiles .home-section-head p { font-size:13px; line-height:1.55; }
+  body.taste-home #tiles .home-card-grid { grid-template-columns:minmax(0,1fr); gap:9px; }
+  body.taste-home #tiles .tile {
+    min-height:0;
+    display:grid;
+    grid-template-columns:34px minmax(0,1fr) auto;
+    grid-template-rows:auto auto auto;
+    column-gap:11px;
+    row-gap:3px;
+    align-items:center;
+    padding:13px 14px;
+    border-radius:14px;
+  }
+  body.taste-home #tiles .tile-icon { grid-column:1; grid-row:1 / span 2; width:32px; height:32px; }
+  body.taste-home #tiles .tile-index { grid-column:3; grid-row:1; justify-self:end; }
+  body.taste-home #tiles .tile-title { grid-column:2; grid-row:1; font-size:15px; line-height:1.35; }
+  body.taste-home #tiles .tile-desc { grid-column:2 / 4; grid-row:2; max-width:none; font-size:12px; line-height:1.45; }
+  body.taste-home #tiles .tile-stat { grid-column:2 / 4; grid-row:3; margin-top:5px; }
+  body.taste-home #tiles .tile-stat b { font-size:13px; }
+  body.taste-home .home-verification { margin-top:26px; }
+  body.taste-home .home-process-line { flex-wrap:wrap; gap:8px; }
+  body.taste-home .newsletter-panel { display:block; padding:20px 16px; }
+  body.taste-home .newsletter-preview { display:none; }
+}
+@media (max-width: 420px) {
+  body.taste-home .shell.wrap { padding-left:16px; padding-right:16px; }
+  body.taste-home .home-hero h1 { font-size:clamp(29px,8.6vw,36px); line-height:1.16; }
+  body.taste-home .home-proof { gap:6px; flex-wrap:wrap; }
+  body.taste-home #tiles .tile { padding:12px; }
+}
+/* Keep motion.js, motion.css and all page interactions intact; this layer only changes layout. */
