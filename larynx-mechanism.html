@@ -83,6 +83,29 @@
 @media(max-width:560px){.mechanism{padding:24px 15px 60px}.viewer-frame{aspect-ratio:1/1}.modes{grid-template-columns:1fr}.muscle-grid{grid-template-columns:1fr 1fr}.card-head{padding:14px}.interaction,.info{padding:16px}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
+
+/* Anatomy learning tools: searchable glossary and evidence-aligned knowledge check */
+.learning-loop{margin:24px auto 0;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:16px}
+.learning-card{min-width:0;padding:18px 20px;border:1px solid #dce5dc;border-radius:15px;background:#fff}
+.learning-card h2{font:500 21px Georgia,serif;color:#183b34;margin:0 0 8px}
+.learning-card>p{font-size:12px;line-height:1.75;color:#66776e;margin:0 0 12px}
+.glossary-search{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #d4dfd6;border-radius:9px;font:inherit;font-size:12px;margin:0 0 10px}
+.glossary-list{display:grid;gap:7px;max-height:340px;overflow:auto}
+.glossary-list details{border:1px solid #e5ebe5;border-radius:9px;padding:9px 11px;background:#fbfcfa}
+.glossary-list summary{cursor:pointer;color:#29463d;font-size:12px;font-weight:650}
+.glossary-list summary span{font-weight:400;color:#718178;margin-left:5px}
+.glossary-list details p{font-size:11px;line-height:1.7;color:#63746b;margin:8px 0 0}
+.quiz-progress{font-size:10px;letter-spacing:.08em;color:#718178;margin-bottom:5px}
+.quiz-question{font-size:13px;line-height:1.7;color:#29463d;font-weight:650;margin:8px 0 10px}
+.quiz-options{display:grid;gap:7px}
+.quiz-option{width:100%;text-align:left;border:1px solid #d5e0d7;background:#fff;color:#365448;border-radius:9px;padding:10px 11px;font:inherit;font-size:12px;cursor:pointer}
+.quiz-option[aria-pressed=true]{border-color:#315e50;background:#edf3ed}
+.quiz-option:focus-visible,.quiz-next:focus-visible{outline:2px solid #315e50;outline-offset:2px}
+.quiz-feedback{min-height:46px;margin-top:10px;padding:10px 11px;border-radius:9px;background:#f4f7f3;color:#52645a;font-size:11px;line-height:1.7}
+.quiz-next{margin-top:10px;border:0;border-radius:999px;padding:9px 14px;background:#23483c;color:white;font:inherit;font-size:11px;cursor:pointer}
+.quiz-next:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:760px){.learning-loop{grid-template-columns:1fr}.learning-card{padding:16px}}
+
 </style>
 <link rel="stylesheet" href="taste-interior.css?v=1">
 <link rel="stylesheet" href="assets/motion/motion.css">
@@ -154,6 +177,42 @@
   <article class="muscle"><img class="muscle-visual" src="assets/anatomy/glottis-ta.jpg" width="640" height="420" loading="lazy" alt="声带体调节示意图"><div class="abbr">TA</div><h3>甲杓肌</h3><p>构成声带体的重要部分，影响声带长度、厚度、刚度和内侧缘形态。</p></article>
   <article class="muscle"><img class="muscle-visual" src="assets/anatomy/glottis-ct.jpg" width="640" height="420" loading="lazy" alt="声带伸长与张力调节示意图"><div class="abbr">CT</div><h3>环甲肌</h3><p>使声带伸长、增加张力，参与音高调节；并非唯一的音高控制因素。</p></article>
 </div></section>
+
+<section class="learning-loop wrap" aria-label="喉部解剖学习工具">
+  <section class="learning-card" aria-labelledby="larynxGlossaryTitle">
+    <h2 id="larynxGlossaryTitle">喉部术语索引</h2>
+    <p>按中文、英文或缩写查找关键结构。术语解释用于结构辨认，详细功能请结合上方机制说明与来源阅读。</p>
+    <label class="sr-only" for="larynxGlossarySearch">搜索喉部术语</label>
+    <input class="glossary-search" id="larynxGlossarySearch" type="search" placeholder="搜索：杓状软骨 / arytenoid / PCA / 声带突">
+    <div class="glossary-list" id="larynxGlossaryList">
+      <details><summary>杓状软骨 <span>Arytenoid cartilage</span></summary><p>成对的小型喉软骨，位于环状软骨板上方；声带突连接声带后端，肌突为多组喉内肌提供附着点。</p></details>
+      <details><summary>声带突 <span>Vocal process</span></summary><p>杓状软骨向前内侧突出的部分，与声带韧带后端相连，是理解声带内收与外展的关键定位点。</p></details>
+      <details><summary>肌突 <span>Muscular process</span></summary><p>杓状软骨向外侧突出的附着区域，环杓后肌与外侧环杓肌作用于此处。</p></details>
+      <details><summary>环杓关节 <span>Cricoarytenoid joint</span></summary><p>杓状软骨底部与环状软骨板上缘形成的滑膜关节，允许旋转及有限滑动，参与声门开合。</p></details>
+      <details><summary>环杓后肌 · PCA <span>Posterior cricoarytenoid</span></summary><p>喉内肌中唯一主要的声带外展肌，使声带突向外侧移动。</p></details>
+      <details><summary>外侧环杓肌 · LCA <span>Lateral cricoarytenoid</span></summary><p>使杓状软骨向内旋转，令声带突靠近中线，参与声带内收。</p></details>
+      <details><summary>杓间肌 · IA <span>Interarytenoid</span></summary><p>包括横杓肌与斜杓肌，使左右杓状软骨彼此靠近，参与声门软骨间部闭合。</p></details>
+      <details><summary>甲杓肌 · TA <span>Thyroarytenoid</span></summary><p>构成声带体的重要部分，可影响声带长度、厚度、刚度及内侧缘形态。</p></details>
+      <details><summary>环甲肌 · CT <span>Cricothyroid</span></summary><p>连接甲状软骨与环状软骨；收缩可增加声带长度与纵向张力。</p></details>
+      <details><summary>声门 <span>Glottis</span></summary><p>两侧声带及其间声门裂隙构成的区域，可区分前方膜间部与后方软骨间部。</p></details>
+    </div>
+    <p id="larynxGlossaryEmpty" hidden>没有找到匹配的术语。</p>
+  </section>
+  <section class="learning-card" aria-labelledby="larynxQuizTitle">
+    <h2 id="larynxQuizTitle">理解检查 · 3 题</h2>
+    <p>完成后会显示解释。题目检验结构与肌肉功能，不评价歌唱能力。</p>
+    <div class="quiz-progress" id="larynxQuizProgress">QUESTION 1 / 3</div>
+    <div class="quiz-question" id="larynxQuizQuestion">喉内肌中，哪一组是主要负责声带外展的肌肉？</div>
+    <div class="quiz-options" id="larynxQuizOptions">
+      <button class="quiz-option" type="button" data-answer="0">A · 外侧环杓肌（LCA）</button>
+      <button class="quiz-option" type="button" data-answer="1">B · 后环杓肌（PCA）</button>
+      <button class="quiz-option" type="button" data-answer="2">C · 甲杓肌（TA）</button>
+    </div>
+    <div class="quiz-feedback" id="larynxQuizFeedback" aria-live="polite">选择一个答案，查看原因。</div>
+    <button class="quiz-next" id="larynxQuizNext" type="button" disabled>下一题</button>
+  </section>
+</section>
+
 <section class="source wrap" aria-labelledby="source-title"><span class="eyebrow">REFERENCES &amp; MODEL CREDITS</span><h2 id="source-title">模型来源与科学依据</h2><div class="source-grid">
 <article class="source-group"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m24 4 18 10v20L24 44 6 34V14L24 4Z"/><path d="m6 14 18 10 18-10M24 24v20"/></svg><h3>三维模型与制作来源</h3><ul>
 <li><a href="https://sketchfab.com/3d-models/human-larynx-9cb56f0a20654072810a12959b812632" target="_blank" rel="noopener">UBC Medicine · Human larynx</a>：人体喉部解剖标本数字模型，本站通过 Sketchfab 官方播放器嵌入。</li><li><a href="https://sketchfab.com/3d-models/larynx-with-muscles-and-ligaments-3b247ff11b104e24acbb1c453f5bad46" target="_blank" rel="noopener">Larynx with Muscles and Ligaments · University of Dundee School of Medicine</a>：Eve Laws 为 Dundee Centre for Anatomy and Human Identification 制作；学校说明该模型用于 ENT 教学，模型由 CT 数据导入并结合医学艺术雕塑制作。</li>
@@ -202,5 +261,58 @@
 </script>
   <script type="module" src="assets/moments/moments.js"></script>
 <script type="module" src="assets/motion/motion.js"></script>
+
+<script>
+(() => {
+ const search=document.getElementById('larynxGlossarySearch');
+ const list=document.getElementById('larynxGlossaryList');
+ const empty=document.getElementById('larynxGlossaryEmpty');
+ if(search&&list){
+  const entries=[...list.querySelectorAll('details')];
+  search.addEventListener('input',()=>{
+   const q=search.value.trim().toLocaleLowerCase();
+   let shown=0;
+   entries.forEach(item=>{
+    const match=item.textContent.toLocaleLowerCase().includes(q);
+    item.hidden=!match;
+    if(match)shown++;
+   });
+   if(empty)empty.hidden=shown!==0;
+  });
+ }
+ const questions=[
+  {q:'喉内肌中，哪一组是主要负责声带外展的肌肉？',a:['外侧环杓肌（LCA）','后环杓肌（PCA）','甲杓肌（TA）'],correct:1,why:'PCA 是喉内肌中主要的声带外展肌，使杓状软骨向外旋转，扩大声门。'},
+  {q:'杓间肌（IA）的主要作用是什么？',a:['使左右杓状软骨靠近，参与声门后部闭合','使声带伸长并增加纵向张力','使声带突向外侧移动'],correct:0,why:'横杓肌与斜杓肌共同参与杓状软骨之间的靠拢，尤其影响声门软骨间部。'},
+  {q:'环甲肌（CT）收缩通常会带来什么变化？',a:['声带缩短且纵向张力下降','声带长度与纵向张力增加','直接控制声门后部完全闭合'],correct:1,why:'CT 使甲状软骨与环状软骨产生相对倾斜或旋转，通常增加声带长度和纵向张力；音高仍受多因素共同影响。'}
+ ];
+ const qEl=document.getElementById('larynxQuizQuestion'),opts=document.getElementById('larynxQuizOptions'),feedback=document.getElementById('larynxQuizFeedback'),progress=document.getElementById('larynxQuizProgress'),next=document.getElementById('larynxQuizNext');
+ if(!qEl||!opts||!feedback||!progress||!next)return;
+ let index=0,answered=false,score=0;
+ function render(){
+  const item=questions[index];answered=false;
+  progress.textContent='QUESTION '+(index+1)+' / '+questions.length+' · 得分 '+score;
+  qEl.textContent=item.q;
+  opts.replaceChildren(...item.a.map((label,i)=>{
+   const b=document.createElement('button');b.type='button';b.className='quiz-option';b.dataset.answer=String(i);b.textContent=String.fromCharCode(65+i)+' · '+label;
+   b.addEventListener('click',()=>answer(i));return b;
+  }));
+  feedback.textContent='选择一个答案，查看原因。';next.disabled=true;next.textContent=index===questions.length-1?'查看结果':'下一题';
+ }
+ function answer(choice){
+  if(answered)return;answered=true;const item=questions[index];const correct=choice===item.correct;if(correct)score++;
+  opts.querySelectorAll('button').forEach((b,i)=>{b.disabled=true;b.setAttribute('aria-pressed',String(i===choice));if(i===item.correct)b.style.borderColor='#315e50';});
+  feedback.textContent=(correct?'回答正确。':'再记一下：正确答案是 '+item.a[item.correct]+'。')+' '+item.why;
+  progress.textContent='QUESTION '+(index+1)+' / '+questions.length+' · 得分 '+score;
+  next.disabled=false;
+ }
+ next.addEventListener('click',()=>{
+  if(!answered)return;
+  if(index<questions.length-1){index++;render();}
+  else{progress.textContent='完成 · '+score+' / '+questions.length; qEl.textContent='学习检查已完成';opts.replaceChildren();feedback.textContent='本练习用于复习基础解剖概念，不代表个体发声评估。你可以重新开始巩固知识。';next.disabled=false;next.textContent='重新开始';next.onclick=()=>{index=0;score=0;next.onclick=null;render();};}
+ });
+ render();
+})();
+</script>
+
 </body>
 </html>
