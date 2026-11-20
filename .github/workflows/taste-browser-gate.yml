@@ -1,4 +1,4 @@
-name: Taste browser gate
+name: Responsive browser smoke
 
 on:
   pull_request:
@@ -16,38 +16,17 @@ on:
       - "styles.css"
       - "assets/motion/**"
       - "assets/moments/**"
-      - "skills/taste-skill/**"
+      - "assets/taste-polish.css"
+      - "scripts/responsive-smoke.mjs"
       - ".github/workflows/taste-browser-gate.yml"
 
 permissions:
   contents: read
 
 jobs:
-  taste-browser-gate:
+  responsive-smoke:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
-    concurrency:
-      group: taste-browser-${{ github.event.pull_request.number }}-${{ matrix.page }}
-      cancel-in-progress: true
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - page: index.html
-            category: "European vocal opportunities and application information for Chinese singers"
-            primary: "Explore verified opportunities"
-          - page: masterclasses.html
-            category: "European vocal masterclasses and advanced study for Chinese singers"
-            primary: "View verified masterclasses"
-          - page: voice-anatomy.html
-            category: "Anatomy and vocal production learning resources for classical singers"
-            primary: "Explore vocal anatomy"
-          - page: larynx-mechanism.html
-            category: "Laryngeal anatomy and phonation learning resources for classical singers"
-            primary: "Explore laryngeal mechanisms"
-          - page: voice-lab.html
-            category: "Interactive vocal science and anatomy learning resources for classical singers"
-            primary: "Explore vocal structures"
+    timeout-minutes: 25
     steps:
       - name: Check out repository
         uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
@@ -57,58 +36,23 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Install Chromium for the upstream Taste checkers
-        run: |
-          npx --yes playwright@1.56.1 install --with-deps chromium
-          CHROME_PATH="$(find "$HOME/.cache/ms-playwright" -type f -name chrome -perm -u+x -print -quit)"
-          if [ -z "$CHROME_PATH" ]; then
-            echo "Could not locate the installed Chromium executable."
-            exit 1
-          fi
-          REAL_CHROME="$CHROME_PATH"
-          CHROME_WRAPPER="$RUNNER_TEMP/chrome-no-sandbox"
-          printf '#!/usr/bin/env bash\nexec "%s" --no-sandbox --disable-dev-shm-usage "$@"\n' "$REAL_CHROME" > "$CHROME_WRAPPER"
-          chmod +x "$CHROME_WRAPPER"
-          echo "CHROME_PATH=$CHROME_WRAPPER" >> "$GITHUB_ENV"
-          "$CHROME_WRAPPER" --version
+      - name: Install Playwright
+        run: npm install --no-save --package-lock=false playwright@1.56.1
 
-      - name: Sync the pinned upstream Taste Skill
-        run: bash skills/taste-skill/sync.sh
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
 
-      - name: Arm the Taste finish gate
+      - name: Start local website
         run: |
-          node skills/taste-skill/upstream/skills/taste-skill/scripts/gate.mjs \
-            --start "${{ matrix.page }}" --root . --kind software \
-            --category "${{ matrix.category }}" --primary "${{ matrix.primary }}" \
-            --rounds 1 --new
+          python3 -m http.server 4173 --bind 127.0.0.1 > /tmp/operalab-http.log 2>&1 &
+          for attempt in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:4173/ >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/operalab-http.log
+          exit 1
 
-      - name: Check the page at all four required widths
-        id: four-widths
-        continue-on-error: true
-        run: |
-          node skills/taste-skill/upstream/skills/taste-skill/scripts/consistency.mjs \
-            "${{ matrix.page }}" --widths 1440,1024,768,390 --json \
-            --out ".taste-skill/consistency/${{ matrix.page }}" --root . --page software \
-            --category "${{ matrix.category }}" --primary "${{ matrix.primary }}"
-
-      - name: Run the upstream Taste finish gate
-        id: finish-gate
-        continue-on-error: true
-        run: |
-          node skills/taste-skill/upstream/skills/taste-skill/scripts/gate.mjs \
-            "${{ matrix.page }}" --root . --kind software \
-            --category "${{ matrix.category }}" --primary "${{ matrix.primary }}"
-
-      - name: Summarize visual QA result
-        if: always()
-        env:
-          WIDTHS_OUTCOME: ${{ steps.four-widths.outcome }}
-          GATE_OUTCOME: ${{ steps.finish-gate.outcome }}
-          PAGE: ${{ matrix.page }}
-        run: |
-          {
-            echo "## Taste browser QA — $PAGE"
-            echo "- Four viewport check (1440 / 1024 / 768 / 390): $WIDTHS_OUTCOME"
-            echo "- Upstream finish gate: $GATE_OUTCOME"
-          } >> "$GITHUB_STEP_SUMMARY"
-          test "$WIDTHS_OUTCOME" = "success" && test "$GATE_OUTCOME" = "success"
+      - name: Check responsive layouts and key interactions
+        run: node scripts/responsive-smoke.mjs http://127.0.0.1:4173
