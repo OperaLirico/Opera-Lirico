@@ -10,6 +10,7 @@ on:
       - "styles.css"
       - "taste-home.css"
       - "taste-interior.css"
+      - "taste-refinement.css"
       - "taste-home.js"
       - "extra.css"
       - "icon.svg"
