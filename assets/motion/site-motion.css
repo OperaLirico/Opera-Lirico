@@ -2,7 +2,10 @@
    只做三件事：进场、响应指针、面板展开。
    不写：随滚动淡入、常驻循环、超过 2px 的呼吸位移。这三类此前已被否掉。
    位移只用 transform 与 opacity，不改布局尺寸，不产生重排。
-   加载顺序放在最后，用来盖住前面样式表里同名的过渡声明。 */
+   加载顺序放在最后，用来盖住前面样式表里同名的过渡声明。
+   几何护栏拆到 assets/layout-guard.css，在本文件顶部引入。 */
+
+@import url("layout-guard.css");
 
 :root {
   --site-ease: cubic-bezier(.2, .8, .2, 1);
@@ -188,53 +191,3 @@
     transform: none !important;
   }
 }
-
-/* --------------------------------------------------------- 布局护栏 v3 — 2026-11-21
-   依据 CDP 实测（390x844，mobile emulation）定位到两个真问题：
-   1) body.taste-home #top / .home-hero 被多层规则写定 height:100svh，
-      首屏实际 780px 高，六张入口卡要到 y=950 才出现，手机上永远看不到入口。
-   2) ≤639px 时导航被改成 flex-wrap:wrap + white-space:normal + min-height:44px，
-      七个小胶囊挤成两行，每个字都折成两行被 44px 高度裁掉。
-   处理：首屏改为内容高度（桌面限高露出入口卡），导航改为单行横向滚动、文字不折。 */
-
-@media (max-width: 639px) {
-  body.taste-home #top {
-    min-height: auto !important;
-    height: auto !important;
-  }
-}
-
-@media (min-width: 640px) {
-  body.taste-home #top {
-    min-height: min(78svh, 700px);
-    height: auto;
-  }
-}
-
-/* 手机导航：单行、可横滑、字不折 */
-@media (max-width: 639px) {
-  body.taste-home nav.nav-links {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    gap: 16px;
-    padding: 6px 0 10px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  body.taste-home nav.nav-links::-webkit-scrollbar { display: none; }
-  body.taste-home nav.nav-links a {
-    white-space: nowrap;
-    min-height: 32px;
-    padding: 6px 0;
-    line-height: 1.6;
-    font-size: 12.5px;
-    background: none !important;
-    border: 0 !important;
-  }
-}
-
-/* 导语不许宽出可视区 */
-.home-lede { max-width: min(54ch, 100%); }
-@media (max-width: 639px) { .home-lede { max-width: 100%; } }
