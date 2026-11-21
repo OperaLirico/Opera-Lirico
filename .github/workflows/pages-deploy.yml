@@ -2,7 +2,7 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main]
-    # 改用 paths-ignore：面上站点的改动一律触发构建。
+    # 改用 paths-ignore：影响站点的改动一律触发构建。
     # 旧的白名单法漏过 hero-calls.css / theme-wine.css / taste-fix.css 等文件，
     # 纯样式提交不触发部署，线上会停在旧产物。
     paths-ignore:
@@ -17,7 +17,7 @@ permissions:
   id-token: write
 # Do not rerun a failed job after the Pages artifact upload: each retry adds
 # another github-pages artifact to the same workflow run. deploy-pages requires
-exactly one artifact; if deployment fails, start a fresh workflow run instead.
+# exactly one artifact; if deployment fails, start a fresh workflow run instead.
 concurrency:
   group: github-pages-deploy
   cancel-in-progress: false
