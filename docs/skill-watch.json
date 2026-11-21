@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T13:20:00+01:00",
+  "updated_at": "2026-11-21T20:30:00+01:00",
   "note": "本文件是 Skill 上游巡检的基线。定时任务每周一读取此文件，对比上游最新 commit；有变化才更新此处。",
   "watch": [
     {
@@ -11,6 +11,74 @@
       "version_hint": "v2.5.1",
       "in_repo": "skills/taste-skill",
       "priority": "high"
+    },
+    {
+      "repo": "pbakaus/impeccable",
+      "skill": "impeccable",
+      "license": "Apache-2.0",
+      "pinned": "b49177d32788f2dc585c42831d845dacf1ebed2c",
+      "pinned_date": "2026-11-18",
+      "version_hint": "v4.10.0",
+      "in_repo": "skills/impeccable",
+      "priority": "high",
+      "note": "评审层，补 taste 只给 PASS/FAIL 的短板"
+    },
+    {
+      "repo": "Cedriccmh/claude-code-skill-scrapling",
+      "skill": "scrapling",
+      "license": "MIT",
+      "pinned": "85dd89f5f85a6326712c516bc82f84c2ceb28c19",
+      "pinned_date": "2026-06-18",
+      "in_repo": "skills/scrapling",
+      "priority": "high",
+      "note": "底层库 D4Vinci/Scrapling 另算，BSD-3-Clause"
+    },
+    {
+      "repo": "coreyhaines31/marketingskills",
+      "skill": "seo-audit, schema, cro, emails",
+      "license": "MIT",
+      "pinned": "5b2b400eec1e7e1cec76245a715d0b0d4fd2a9c1",
+      "pinned_date": "2026-11-20",
+      "in_repo": "skills/marketingskills",
+      "priority": "high",
+      "note": "上游 50+ 技能，只收 4 个"
+    },
+    {
+      "repo": "addyosmani/agent-skills",
+      "skill": "accessibility-engineering, performance-optimization, browser-testing-with-devtools",
+      "license": "MIT",
+      "pinned": "8c99fa36d90068c82d547f7c12a9d67a3e95f4ee",
+      "pinned_date": "2026-11-18",
+      "in_repo": "skills/web-quality",
+      "priority": "medium",
+      "note": "上游 26 技能，只收 3 个"
+    },
+    {
+      "repo": "blader/humanizer",
+      "skill": "humanizer",
+      "license": "MIT",
+      "pinned": "a32f24407364c74c812b43c15926d638bee1e072",
+      "pinned_date": "2026-11-19",
+      "priority": "medium",
+      "note": "去 AI 腔；站点文案仍不由 agent 撰写"
+    },
+    {
+      "repo": "cloudflare/security-audit-skill",
+      "skill": "security-audit",
+      "license": "MIT",
+      "pinned": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8",
+      "pinned_date": "2026-09-14",
+      "priority": "medium",
+      "note": "Worker、订阅表单、埋点 token 的一次性体检"
+    },
+    {
+      "repo": "tt-a1i/archify",
+      "skill": "archify",
+      "license": "Apache-2.0",
+      "pinned": "8509a3d63e763b4d454ea9aafa1f939545fcb1ea",
+      "pinned_date": "2026-11-21",
+      "priority": "low",
+      "note": "抓取到发布的管线画成图，仅写文档用"
     },
     {
       "repo": "JuliusBrussee/caveman",
