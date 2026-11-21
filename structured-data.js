@@ -57,11 +57,14 @@
     .then(function (data) {
       if (!data || !Array.isArray(data.items)) return;
 
+      // Event 必须有 startDate 才算合法标记，所以只收两类日期都齐的条目；
+      // 只有截止日的条目宁可不出现在结构化数据里，也不拿检查时间去凑开始时间。
       var published = data.items.filter(function (item) {
         return item &&
           item.publication_status === 'published' &&
           item.review_status === 'verified' &&
           item.title &&
+          item.application_open_at &&
           item.application_deadline_at;
       });
 
