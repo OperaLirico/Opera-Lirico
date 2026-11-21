@@ -2,7 +2,7 @@
    依据 CDP 实测（390×844 mobile / 1440×900）修正，只碰几何、折行与滚动手感，不动文字与配色。
    与 site-motion.css 同目录，由它 @import 引入。
    1) 首屏不再独占一屏；2) 手机导航单行横滑不折行；3) 导语不出界；
-   4) 手机导航右缘加渐隐，暗示可继续滑；5) 首屏到入口卡的空隙收紧；
+   4) 手机导航右缘渐隐，暗示可继续滑；5) 首屏到入口卡的空隙收紧；
    6) 站内跳转改为平滑滚动（减动效偏好下不生效）。 */
 
 /* 1. 首屏全高：taste-home 里 body.taste-home #top / .home-hero 被多层规则写定 height:100svh，
@@ -65,3 +65,5 @@
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
+
+/* deploy-retry: 2026-11-21 15:32 */
