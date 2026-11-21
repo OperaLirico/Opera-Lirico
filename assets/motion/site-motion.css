@@ -188,3 +188,27 @@
     transform: none !important;
   }
 }
+
+/* --------------------------------------------------------- 布局护栏 2026-11-21
+   依据 1440 / 390 实机截图：
+   1) 安装按钮 [hidden] 仍显示——display 值盖掉了 hidden 属性
+   2) 手机端 .home-lede 的 max-width:54ch 宽出可视区，右侧被切
+   3) 手机端顶部导航横向滚动条把文字下缘裁掉
+   4) 首屏 hero 撑满整屏，六张入口卡全部落在折叠线以下 */
+body.taste-home .install-button[hidden] { display: none !important; }
+.home-lede { max-width: min(54ch, 100%); }
+
+@media (max-width: 620px) {
+  body.taste-home nav.nav-links {
+    gap: 16px;
+    padding: 8px 0 12px;
+    align-items: center;
+    line-height: 1.5;
+  }
+  body.taste-home nav.nav-links a { padding: 4px 0; line-height: 1.5; }
+  .home-lede { max-width: 100%; }
+}
+
+@media (min-width: 1024px) {
+  .home-hero { min-height: min(86svh, 760px); }
+}
