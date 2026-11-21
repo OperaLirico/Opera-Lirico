@@ -2,42 +2,14 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - "index.html"
-      - "app.js"
-      - "site-config.js"
-      - "analytics.js"
-      - "styles.css"
-      - "taste-home.css"
-      - "taste-interior.css"
-      - "taste-home.js"
-      - "extra.css"
-      - "icon.svg"
-      - "manifest.webmanifest"
-      - "og-image.svg"
-      - "robots.txt"
-      - "sitemap.xml"
-      - "404.html"
-      - "service-worker.js"
-      - "data/conservatori.json"
-      - "data/conservatori_manual.json"
-      - "data/conservatori_zh.json"
-      - "data/voice-structures.json"
-      - "masterclasses.html"
-      - "voice-anatomy.html"
-      - "voice-lab.html"
-      - "larynx-mechanism.html"
-      - "assets/anatomy/**"
-      - "assets/moments/**"
-      - "assets/motion/**"
-      - "data/masterclasses.json"
-      - "data/masterclass.schema.json"
-      - "data/opportunities.json"
-      - "data/repertoire.json"
-      - "data/repertoire_archive.json"
-      - "data/repertoire_candidates.json"
-      - "data/pdfs/**"
-      - ".github/workflows/pages-deploy.yml"
+    # 改用 paths-ignore：面上站点的改动一律触发构建。
+    # 旧的白名单法漏过 hero-calls.css / theme-wine.css / taste-fix.css 等文件，
+    # 纯样式提交不触发部署，线上会停在旧产物。
+    paths-ignore:
+      - "docs/**"
+      - "skills/**"
+      - ".agents/**"
+      - "**/*.md"
   workflow_dispatch:
 permissions:
   contents: read
@@ -45,7 +17,7 @@ permissions:
   id-token: write
 # Do not rerun a failed job after the Pages artifact upload: each retry adds
 # another github-pages artifact to the same workflow run. deploy-pages requires
-# exactly one artifact; if deployment fails, start a fresh workflow run instead.
+exactly one artifact; if deployment fails, start a fresh workflow run instead.
 concurrency:
   group: github-pages-deploy
   cancel-in-progress: false
