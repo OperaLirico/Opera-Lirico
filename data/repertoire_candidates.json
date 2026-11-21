@@ -1624,10 +1624,85 @@
       "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
       "collected_at": "2026-11-19T08:40:52+01:00",
       "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-8113283e331f7181",
+      "title": "Pagliacci · Scena II",
+      "aliases": [
+        "Pagliacci"
+      ],
+      "composer": "作者未标注",
+      "work": "Pagliacci",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "NEDA sola, poi TONIO,\nNEDDA (pensierosa)\nQual fiamma avea nel guardo.\nGli occhi abbassai per tema ch’ei leggesse\nil mio pensier segreto.\nOh! S’ei mi sorprendesse...\nBrutale come egli è... Ma basti, orvia.\nSon questi sogni paurosi e fole!\nO che bel sole\ndi mezz’agosto! Io son piena di vita,\ne, tutta illanguidita\nper arcano desìo, non so che bramo!\n(guardando in cielo)\nOh! Che volo d’augelli, e quante strida!\nChe chiedon? dove van? chissà... La mamma\nmia, che la buona ventura annunciava,\ncomprendeva il lor canto e a me bambina\ncosì cantava:\nHui! stridono lassù, liberamente\nlanciati a vol come frecce, gli augel.\nDisfidano le nubi e 'l sol cocente,\ne vanno, e vanno per le vie del ciel.\nLasciateli vagar per l’atmosfera\nquesti assetati di azzurro e splendor:\nseguono anch’essi un sogno, una chimera,\ne vanno, e vanno fra le nubi d’or.\nChe incalzi il vento e latri la tempesta,\ncon l’ali aperte san tutto sfidar;\nla pioggia, i lampi, nulla mai li arresta,\ne vanno, e vanno sugli abissi e i mar.\nVanno laggiù verso un paese strano\nche sognan forse e che cercano invan.\nMa i boëmi del ciel seguon l’arcano\npoter che li sospinge... e vanno... e van!\n(Tonio, durante la canzone, sarà uscito di dietro al teatro e sarà ito ad appoggiarsi all'albero, ascoltando beato; - Nedda, finito il conto, fa per rientrare e lo scorge.)\nNEDDA (bruscamente contrariata).\nSei là! Credea che te ne fossi andato.\nTONIO (ridiscendendo con dolcezza).\nÈ colpa del tuo canto. Affascinato io mi beava!\nNEDDA (ridendo con scherno).\nOh! Quanta poesia!...\nTONIO\nNon rider, Nedda...\nNEDDA\nVa, va all’osteria.\nTONIO\nSo ben che lo scemo contorto son io;\nche desto soltanto lo scherno e l’orror.\nEppure ha ‘l pensiero un sogno, un desìo,\ne un palpito il cor!\nAllor che sdegnosa mi passi d’accanto,\nnon sai tu che pianto mi spreme il dolor,\nperché, mio malgrado, subito ho l’incanto,\nm’ha vinto l’amor!\n{appressandosi)\nOh, lasciami, lasciami\nor dirti...\nNEDDA (interrompendolo e beffeggiandolo)\nChe m’ami?\nHai tempo a ridirmelo\nstasera, se il brami\nfacendo le smorfie\ncolà sulla scena.\nIntanto risparmiati\nper ora la pena.\nTONIO (delirante con impeto).\nNo, è qui che voglio dirtelo,\ne tu m’ascolterai,\nche t’amo e ti desidero,\ne che tu mia sarai!\nNEDDA (seria ed insolente).\nEh! dite, mastro Tonio!\nLa schiena oggi vi prude, o una tirata\nd’orecchi è necessaria\nal vostro ardor?\nTONIO\nTi beffi? sciagurata?\nPer la croce di Dio, bada che puoi\npagarla cara!\nNEDDA\nTu minacci?... Vuoi\nche vada a chiamar Canio?\nTONIO (movento verso di lei).\nNon prima ch’io ti baci.\nNEDDA\nOh, bada!\nTONIO (avanzandosi ed aprendo le braccia per ghermirla\nOh, tosto\nsarai mia!\nNEDDA (sale retrocedendo verso it teatrino, vede la frusta lasciata da Peppe, l'afferra e dà un colpo in faccia a Tonio dicendo):\nMiserabile!...\nTONIO (dà un urlo e retrocede).\nAh! Per la vergin pia di mezz’agosto\nNedda, lo giuro... me la pagherai!...\n(esce, minacciando, dalla sinistra.)\nNEDDA (immobile guardandolo allontanarsi).\nAspide! Va. - Ti sei svelato ormai!\nTonio lo scemo! - Hai l’animo\nsiccome il corpo tuo difforme... lurido!",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Pagliacci",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Ruggero Leoncavallo",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-21T08:31:23+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-d61eb8ebae08df58",
+      "title": "Pagliacci · Scena III",
+      "aliases": [
+        "Pagliacci"
+      ],
+      "composer": "作者未标注",
+      "work": "Pagliacci",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "SILVIO, NEDDA e poi TONIO.\nSILVIO (sporgendo la metà del corpo arrampicandosi dal muretto a destra, e chiama a bassa voce.)\nNedda!\nNEDDA (affrettandosi verso di lui).\nSilvio! A quest’ora che imprudenza...\nSILVIO (saltando allegramente e venendo verso di lei).\nAh, bah! sapea ch’io non rischiavo nulla.\nCanio e Beppe da lunge a la taverna\nho scorto con gli amici!... Ma prudente\nper la macchia a me nota qui ne venni.\nNEDDA\nE ancora un poco in Tonio t’imbattevi.\nSILVIO (ridendo).\nOh! Tonio il gobbo!\nNEDDA\nLo scemo è da temersi.\nM’ama... Or qui mel disse... e nel bestiale\ndelirio suo, baci chiedendo, ardiva\ncorrer su me...\nSILVIO\nPer Dio!\nNEDDA\nMa con la frusta\ndel cane immondo la foga calmai.\nSILVIO\nE fra quest’ansie in eterno vivrai:\nNedda, Nedda,\nDecidi il mio destin,\nNedda, Nedda rimani!\nTu il sai, la festa ha fin\ne parte ognun domani.\nNedda, Nedda!\nE quando tu di qui sarai partita\nche addiverrà di me... de la mia vita?\nNEDDA (commossa).\nSilvio!\nSILVIO\nNedda, Nedda, rispondimi.\nSe è ver che Canio non amasti mai,\nse è vero che t’è in odio\nil ramingare e il mestier che tu fai,\nse l’immenso amor tuo una fola non è,\nquesta notte partiam!... fuggi, fuggi, con me.\nNEDDA\nNon mi tentar! Vuoi tu - perder la mia vita?\nTaci, Silvio, non più... - È deliro... è follia!...\nIo mi confido a te - cui diedi il cor\nNon abusar di me - de 'l mio febbrile amor!...\nNon mi tentar! Pietà di me!\nNon mi tentar! E poi... Chissà! meglio è partir.\nSta il destin contro noi - È vano il nostro dir!\nEppure da 'l mio cor - strapparti non poss’io.\nVivrò sol dell’amor - ch’hai destato al cor mio.\n(Tonio appare dal fondo a sinistra)\nSILVIO\nAh! Nedda! fuggiam!\nNEDDA\nNon mi tentar! Vuoi tu perder la vita mia?\necc.\nSILVIO\nNedda, rimani!\nChe mai sarà di me quando sarai partita?\nRiman! Nedda! Fuggiam! Deh vien!\nAh! fuggi con me! Deh vien!\nNo, più non m’ami!\nTONIO (scorgendoli, a parte).\nT’ho colta, sgualdrina!\n(fugge dan sentiero minacciando)\nNEDDA\nSì, t’amo, t’amo!...\nSILVIO\nE parti domattina?...\n(amorosamente, cercando ammaliarla)\nE allor perché, di’, tu m’hai stregato\nse vuoi lasciarmi senza pietà?\nQuel bacio tuo perché me l’hai dato\nfra spasmi ardenti di voluttà?\nSe tu scordasti l’ore fugaci\nio non lo posso, e voglio ancor\nque’ spasmi ardenti, que’ caldi baci\nche tanta febbre m’han messo in cor!\nNEDDA (vinta e smarrita)\nNulla scordai, sconvolta e turbata\nquesto amor che nel guardo ti sfavilla.\nViver voglio a te avvinta, affascinata,\nuna vita d’amor calma e tranquilla.\nA te mi dono; su me solo impera.\nEd io ti prendo e m’abbandono intera.\nSILVIO\nVerrai?\nNEDDA\nSì. - Baciami!\nSILVIO\nTutto scordiamo...\nNEDDA\nNegli occhi guardami!\nSì, ti guardo e ti bacio, e t’amo... t’amo!",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Pagliacci",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Ruggero Leoncavallo",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-21T08:31:23+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-f40ad6bdf5a414e0",
+      "title": "Pagliacci · Scena IV",
+      "aliases": [
+        "Pagliacci"
+      ],
+      "composer": "作者未标注",
+      "work": "Pagliacci",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "I precedenti, CANIO pio BEPPE\n(Mentre Silvio e Nedda s' avviano parlando verso il muricciolo, arrivano camminando furtivamente dalla scorciatoia, Canio e Tonio.)\nTONIO (ritenendo Canio).\nCammina adagio e li sorprenderai.\n(Canio s'avanza cautamente, sempre ritenuto da Tonio, non potendo vedere, dal punto dove si trova, Silvio che scavalca il muricciuolo).\nSILVIO (che ha già la metà del corpo dall'altro lato, ritenendosi al muro).\nAd alta notte laggiù mi terrò.\nCauta discendi e mi ritroverai.\n(Silvio scompare e Canio si appressa all'angolo del teatro).\nNEDDA (a Silvio che sarà scomparso di sotto)\nA stanotte - e per sempre tua sarò!\nCANIO (che dal punto ove si trova ode queste parole, dà un urlo.))\nOh!...\nNEDDA\nFuggi!...\n(D'un balzo Canio arriva anch’esso al muro: Nedd gli si para divante, ma dopo breve lotta egli la spinge da un canto, scavalca il muro e scompare. - Tonio resta a sinistra guardando Nedda che, inchiodata presso il muro, cerce sentire se si ode rumore di lotta, mormorando):\nAitalo...\nSignor!...\nTONIO (ridendo cinicamente)\nAh!...Ah!...\nLA VOCE DI CANIO (di dentro)\nVile, t’ascondi!\nNEDDA (al riso di Tonio si è voltata e dice con disprezzo, fissandolo).\nBravo!\nBravo il mio Tonio!\nTONIO\nFo quello che posso!\nNEDDA\nÈ quello che pensavo!\nTONIO\nMa di far assai meglio non dispero.\nNEDDA\nMi far schifo e ribrezzo.\nTONIO\nOh, non sai come\nlieto ne son!\n(Canio incanto scavalca di nuovo il muro e ritorna in iscena pallido, asciugando il sudore con un fazzoletto di colore oscuro.)\nCANIO (con rabbia concentrata).\nDerisione e scherno!\nNulla! Ei ben lo conosce quel sentiero.\nFa lo stesso; poiché del drudo il nome\nor mi dirai.\nNEDDA (volgendosi turbata)\nChi?\nCANIO (furente)\nTu, pel padre eterno!...\n(cavando dalla cinta lo stiletto)\nE se in questo momento qui scannata\nnon t’ho già, gli è perché pria di lordarla\nnel tuo fetido sangue, o svergognata,\ncodesta lama, io vo’ il suo nome. - Parla!\nNEDDA\nVano è l’insulto. - È muto il labbro mio.\nCANIO (urlando).\nIl nome, il nome, non tardare, o donna!\nNEDDA\nNo, nol dirò giammai...\nCANIO (slanciandosi furente col pugnale alzato)\nPer la Madonna!...\n(Beppe, che sarà entrato dalla sinistra, sulla risposta di nedda corre a Canio e gli strappa il pugnale che gitta via fra gli alberi).\nBEPPE\nPadron! Che fate!... Per l’amor di Dio...\nLa gente esce di chiesa e allo spettacolo\nqui muove... andiamo, Canio, via, calmatevi!\nCANIO (dibattendosi)\nLasciami, Beppe. - Il nome, il nome!\nBEPPE\nTonio,\nvieni a tenerlo. Andiamo, arriva il pubblico.\n(Tonio prende Canio per mano, mentre Beppe si volge a\nNedda.)\nVi spiegherete... - E voi di lì tiratevi,\nandatevi a vestir. - Sapete, Canio\nè violento, ma buono...\n(Spinge Nedda sotto la tenda e scompare con essa.)\nCANIO (strigendo il capo fra le mani)\nInfamia! Infamia!\nTONIO (piano a Canio spingendolo sul davanti sella scena).\nCalmatevi, padrone. - È meglio fingere;\nil ganzo tornerà. - Di me fidatevi.\nIo la sorveglio. - Ora facciam la recita.\nChissà che egli non venga allo spettacolo\ne si tradisca! Or via!- Bisogna fingere\nper riuscir...\nBEPPE (uscendo dalle scene)\nAndiamo, via, vestitevi,\npadrone. - E tu batti la cassa, Tonio.\n(Tonio va di dietro al teatro e Peppe anch'esso ritorna all'interno mentre Canio accasciato si avvia lentamente verso la cortina.)\nCANIO\nRecitar! Mentre preso dal delirio\nnon so più quel che dico e quel che faccio!\nEppur...è d’uopo...sforzati!\nBah, se’ tu forse un uom! Tu se’ Pagliaccio!\nVesti la giubba e la faccia infarina.\nLa gente paga e rider vuole qua.\nE se Arlecchin t’invola Colombina,\nridi Pagliaccio, e ognun applaudirà!\nTramuta in lazzi lo spasmo ed il pianto;\nin una smorfia il singhiozzo e il dolore...\nRidi Pagliaccio, sul tuo amore infranto!\nRidi del duol che t’avvelena il cor!\n(Entra commosso sotto la tenda, mentre la tela cade lentamente.)\nFine del primo atto\nIntermezzo\nATTO SECONDO\nLa stessa scena dell'atto primo.",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Pagliacci",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Ruggero Leoncavallo",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-21T08:31:23+01:00",
+      "collection_source": "it.wikisource.org"
     }
   ],
-  "generated_at": "2026-11-20T08:38:06+01:00",
+  "generated_at": "2026-11-21T08:31:23+01:00",
   "source": "Italian Wikisource opera libretti; candidate-only, human review required",
-  "aria_opera": 4,
+  "aria_opera": 5,
   "aria_scene": 0
 }
