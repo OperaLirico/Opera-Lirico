@@ -1,14 +1,9 @@
 {
-  "updated_at": "2026-11-20T08:55:17+01:00",
+  "updated_at": "2026-11-21T08:51:35+01:00",
   "source_count": 13,
-  "candidate_count": 4,
-  "new_or_refreshed_this_run": 2,
+  "candidate_count": 5,
+  "new_or_refreshed_this_run": 3,
   "fetch_errors": [
-    {
-      "source": "Breno Italy International Music Academy",
-      "status": "robots_policy_unavailable",
-      "http_status": null
-    },
     {
       "source": "VeniceOperaArts",
       "status": "http_error",
@@ -24,7 +19,7 @@
       "publisher_status": "official",
       "source_url": "https://www.accademialiricaosimo.com/en/master-class/",
       "discovered_from": "https://www.accademialiricaosimo.com/en/master-class/",
-      "checked_at": "2026-11-20T08:55:17+01:00",
+      "checked_at": "2026-11-21T08:51:35+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
@@ -54,7 +49,7 @@
       ],
       "evidence_excerpt": "Master Class – Accademia Lirica Osimo Accademia Lirica Osimo Accademia Lirica Osimo Home About us History Association Organization Teacher Administrative Transparency Training Agency News Press Review Courses Singing Course for Opera Advanced Course for Opera Coaches Master Class Regulations Enrollment Application Activities Master & Meeting Concerts Operas Special Project Singers Student Singing student A.A. 2026-2027 Professional Commitments of Singers Students and Alumni Scholarships Gallery Anno 2026 Anno 2025 Anno 2024 Anno 2023 Anno 2022 Anno 2021 Anno 2020 Anno 2019 Anno 2018 Anno 2017 Anno 2016 Anno 2015 Anno 2014 Anno 2013 Anno 2012 Anno 2011 Supporters Our Friends Private Art Bonus",
       "verification_note": "Discovery signal only. Confirm the organizer, edition, dates, deadline, eligibility, fees and application link on the original organizer page.",
-      "first_seen_at": "2026-11-20T08:55:17+01:00",
+      "first_seen_at": "2026-11-21T08:51:35+01:00",
       "review_notes": "",
       "reviewed_at": ""
     },
@@ -115,7 +110,7 @@
       "publisher_status": "official",
       "source_url": "https://www.cantoalato.it/masterclass-di-canto-con-anna-pirozzi-2026/",
       "discovered_from": "https://www.cantoalato.it/masterclass/",
-      "checked_at": "2026-11-20T08:55:17+01:00",
+      "checked_at": "2026-11-21T08:51:35+01:00",
       "discovery_status": "candidate_found",
       "review_status": "rejected",
       "publication_status": "not_published",
@@ -148,6 +143,48 @@
       "first_seen_at": "2026-11-12T08:55:33+01:00",
       "review_notes": "已核对 Cantoalato 官方详情页：本期课程为 2026-11-01 至 2026-11-03，11-04 举行结业音乐会；正式学员申请截止 2026-10-27，旁听截止 2026-11-01。以上日期截至 2026-11-13 均已过去，因此不得作为即将举行的机会发布。",
       "reviewed_at": "2026-11-13T21:40:00+01:00"
+    },
+    {
+      "candidate_id": "0891cf6ed691",
+      "title_hint": "Masterclass di Canto con Gregory Kunde",
+      "source_name": "Cantoalato Academy",
+      "source_type": "organizer",
+      "publisher_status": "official",
+      "source_url": "https://www.cantoalato.it/masterclass-con-gregory-kunde/",
+      "discovered_from": "https://www.cantoalato.it/masterclass/",
+      "checked_at": "2026-11-21T08:51:35+01:00",
+      "discovery_status": "candidate_found",
+      "review_status": "pending_manual_review",
+      "publication_status": "not_published",
+      "date_signals": [
+        "29 Maggio 2026",
+        "2 Giugno 2026",
+        "14 luglio 2026",
+        "30 giugno 2026",
+        "30 giugno 2026",
+        "2026",
+        "3 luglio 2026",
+        "2026",
+        "12 giugno 2026",
+        "2026",
+        "30 giugno 2026",
+        "15 luglio 2026"
+      ],
+      "date_context": [
+        "lefono Attiva/disattiva menu MASTERCLASS | NEWS Masterclass con Gregory Kunde Di Cantoalato Academy 29 Maggio 2026 2 Giugno 2026 ITALIANO ENGLISH Masterclass di Canto con Gregory Kunde «Dalla Tecnica all’Emozione»",
+        "isattiva menu MASTERCLASS | NEWS Masterclass con Gregory Kunde Di Cantoalato Academy 29 Maggio 2026 2 Giugno 2026 ITALIANO ENGLISH Masterclass di Canto con Gregory Kunde «Dalla Tecnica all’Emozione» M° Gioele Mugl",
+        "sterclass di Canto con Gregory Kunde «Dalla Tecnica all’Emozione» M° Gioele Muglialdo | pianista 12-14 luglio 2026 15 luglio: Concerto Finale | Salone d’Onore – Casa Verdi, Milano INCONTRO CON L’AGENTE Sarà present",
+        "ievi uditori: 250€ Art. 5 – Iscrizione allievi effettivi Le iscrizioni sono aperte e chiuderanno il 30 giugno 2026. I documenti sottoindicati devono pervenire, entro e non oltre il 30 giugno 2026, all’indirizzo ema",
+        "e e chiuderanno il 30 giugno 2026. I documenti sottoindicati devono pervenire, entro e non oltre il 30 giugno 2026, all’indirizzo email info@cantoalato.it tramite la compilazione del form a questa pagina 1. Due fil",
+        "Associazione Ottavanota APS Iban: IT41H0623001619000040312311 Causale: Iscrizione Masterclass KUNDE 2026 – Nome e Cognome dell’allievo Sarà effettuata una selezione in base ai materiali audio/video inviat",
+        "ata. Art. 6 – Frequenza Gli iscritti confermati come effettivi devono inviare, entro e non oltre il 3 luglio 2026, ricevuta della quota di frequenza di € 400,00 da versare all’ordine di: Associazione Ottavanota AP",
+        "Associazione Ottavanota APS Iban: IT41H0623001619000040312311 Causale: FREQUENZA Masterclass KUNDE 2026 – Nome e Cognome dell’allievo Art.7 – Iscrizione uditori Le iscrizioni sono aperte e chiuderanno il"
+      ],
+      "evidence_excerpt": "Masterclass con Gregory Kunde - Cantoalato Salta al contenuto ATTIVITA’ Espandi CALENDARIO CORSO PREPARATORIO AMMISSIONE CONSERVATORIO PACCHETTI DI LEZIONI REPERTOIRE COACHING MASTERCLASS WORKSHOP OPERA STUDIO CONCERTI MISSION DOCENTI COLLABORAZIONI SERVIZI NEWS GALLERY PRESS CONTATTI STAFF Facebook Instagram Email Telefono Attiva/disattiva menu MASTERCLASS | NEWS Masterclass con Gregory Kunde Di Cantoalato Academy 29 Maggio 2026 2 Giugno 2026 ITALIANO ENGLISH Masterclass di Canto con Gregory Kunde «Dalla Tecnica all’Emozione» M° Gioele Muglialdo | pianista 12-14 luglio 2026 15 luglio: Concerto Finale | Salone d’Onore – Casa Verdi, Milano INCONTRO CON L’AGENTE Sarà presente il Dott. Marco Im",
+      "verification_note": "Discovery signal only. Confirm the organizer, edition, dates, deadline, eligibility, fees and application link on the original organizer page.",
+      "first_seen_at": "2026-11-21T08:51:35+01:00",
+      "review_notes": "",
+      "reviewed_at": ""
     }
   ]
 }
