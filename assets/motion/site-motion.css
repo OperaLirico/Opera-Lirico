@@ -1,214 +1,50 @@
-/* OperaLab 首屏与面板动效层
-   只做三件事：进场、响应指针、面板展开。
-   不写：随滚动淡入、常驻循环、超过 2px 的呼吸位移。这三类此前已被否掉。
-   位移只用 transform 与 opacity，不改布局尺寸，不产生重排。
-   加载顺序放在最后，用来盖住前面样式表里同名的过渡声明。 */
+/* 布局护栏 v3 — 2026-11-21
+   依据 CDP 实测（390x844，mobile emulation）定位到两个真问题：
+   1) body.taste-home #top / .home-hero 被多层规则写定 height:100svh，
+      首屏实际 780px 高，六张入口卡要到 y=950 才出现，手机上永远看不到入口。
+   2) ≤639px 时导航被改成 flex-wrap:wrap + white-space:normal + min-height:44px，
+      七个小胶囊挤成两行，每个字都折成两行被 44px 高度裁掉。
+   处理：首屏改为内容高度（桌面限高露出入口卡），导航改为单行横向滚动、文字不折。 */
 
-:root {
-  --site-ease: cubic-bezier(.2, .8, .2, 1);
-  --site-ease-out: cubic-bezier(.22, 1, .36, 1);
-  --site-in: 160ms;
-  --site-out: 120ms;
-  --site-enter: 460ms;
-}
-
-/* --------------------------------------------------------- 首屏进场 */
-@keyframes site-rise {
-  from { opacity: 0; transform: translateY(9px); }
-  to   { opacity: 1; transform: none; }
-}
-
-@keyframes site-panel-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: none; }
-}
-
-@keyframes site-tile-in {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: none; }
-}
-
-.home-hero-copy > * {
-  animation: site-rise var(--site-enter) var(--site-ease-out) backwards;
-}
-.home-hero-copy > .home-kicker   { animation-delay: 40ms; }
-.home-hero-copy > #home-title    { animation-delay: 110ms; }
-.home-hero-copy > .home-lede     { animation-delay: 190ms; }
-.home-hero-copy > .home-actions  { animation-delay: 270ms; }
-.home-hero-copy > .home-proof    { animation-delay: 350ms; }
-
-/* 入口卡依次落下：每张差 50ms，最后一张 400ms 收完 */
-.home-card-grid > .tile {
-  animation: site-tile-in 420ms var(--site-ease-out) backwards;
-}
-.home-card-grid > .tile:nth-child(1) { animation-delay: 60ms; }
-.home-card-grid > .tile:nth-child(2) { animation-delay: 110ms; }
-.home-card-grid > .tile:nth-child(3) { animation-delay: 160ms; }
-.home-card-grid > .tile:nth-child(4) { animation-delay: 210ms; }
-.home-card-grid > .tile:nth-child(5) { animation-delay: 260ms; }
-.home-card-grid > .tile:nth-child(6) { animation-delay: 310ms; }
-
-/* --------------------------------------------------------- 按钮与文字链 */
-.home-button,
-.home-text-link,
-.home-refresh,
-.panel-back,
-.install-button {
-  transition:
-    transform var(--site-out) var(--site-ease),
-    background-color var(--site-out) var(--site-ease),
-    border-color var(--site-out) var(--site-ease),
-    color var(--site-out) var(--site-ease),
-    box-shadow var(--site-out) var(--site-ease);
-}
-
-.home-text-link {
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
-  transition: text-decoration-color var(--site-in) var(--site-ease),
-              transform var(--site-out) var(--site-ease);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .home-button:hover { transform: translateY(-1px); }
-  .home-button:active { transform: translateY(1px) scale(.995); }
-
-  .home-text-link:hover,
-  .home-text-link:focus-visible {
-    text-decoration-color: currentColor;
-  }
-
-  .home-refresh:hover { transform: translateY(-1px); }
-  .home-refresh:active { transform: translateY(1px); }
-
-  .panel-back:hover { transform: translateX(-2px); }
-  .panel-back:active { transform: translateX(0); }
-
-  /* 入口卡：抬 2px，箭头往右上走，图标先抬头；按下回 1px */
-  .home-card-grid > .tile {
-    transition:
-      transform var(--site-out) var(--site-ease),
-      box-shadow var(--site-out) var(--site-ease),
-      border-color var(--site-out) var(--site-ease),
-      background-color var(--site-out) var(--site-ease);
-  }
-  .home-card-grid > .tile:hover {
-    transform: translateY(-2px);
-    transition-duration: var(--site-in);
-  }
-  .home-card-grid > .tile:active { transform: translateY(1px); }
-
-  .tile-icon,
-  .tile-arrow {
-    transition: transform var(--site-out) var(--site-ease);
-  }
-  .home-card-grid > .tile:hover .tile-icon { transform: translateY(-2px); }
-  .home-card-grid > .tile:hover .tile-arrow { transform: translate(2px, -2px); }
-
-  /* 导航：下划线从透明升起，不做位移 */
-  .nav-links a {
-    text-decoration: underline;
-    text-decoration-color: transparent;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 5px;
-    transition: text-decoration-color var(--site-in) var(--site-ease);
-  }
-  .nav-links a:hover,
-  .nav-links a:focus-visible { text-decoration-color: currentColor; }
-
-  /* 搜索芯片与筛选按钮 */
-  .search-chip,
-  .ghost-toggle {
-    transition: transform var(--site-out) var(--site-ease),
-                background-color var(--site-out) var(--site-ease),
-                border-color var(--site-out) var(--site-ease);
-  }
-  .search-chip:hover { transform: translateY(-1px); }
-  .search-chip:active { transform: translateY(1px); }
-}
-
-/* --------------------------------------------------------- 面板展开 */
-.section.panel:not([hidden]),
-.newsletter-panel {
-  animation: site-panel-in 340ms var(--site-ease-out) backwards;
-}
-
-/* --------------------------------------------------------- 键盘焦点 */
-.tile:focus-visible,
-.home-button:focus-visible,
-.home-text-link:focus-visible,
-.home-refresh:focus-visible,
-.panel-back:focus-visible,
-.nav-links a:focus-visible,
-.search-chip:focus-visible,
-.ghost-toggle:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 3px;
-}
-
-/* --------------------------------------------------------- 减动效 */
-/* 系统要求减动效时，颜色与焦点仍保留，位移与缩放全部取消。 */
-@media (prefers-reduced-motion: reduce) {
-  .home-hero-copy > *,
-  .home-card-grid > .tile,
-  .section.panel:not([hidden]),
-  .newsletter-panel {
-    animation: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .home-button,
-  .home-text-link,
-  .home-refresh,
-  .panel-back,
-  .install-button,
-  .home-card-grid > .tile,
-  .tile-icon,
-  .tile-arrow,
-  .nav-links a,
-  .search-chip,
-  .ghost-toggle {
-    transition-duration: 1ms !important;
-  }
-
-  .home-button:hover,
-  .home-button:active,
-  .home-refresh:hover,
-  .home-refresh:active,
-  .panel-back:hover,
-  .home-card-grid > .tile:hover,
-  .home-card-grid > .tile:active,
-  .home-card-grid > .tile:hover .tile-icon,
-  .home-card-grid > .tile:hover .tile-arrow,
-  .search-chip:hover,
-  .search-chip:active {
-    transform: none !important;
+/* 首屏不再撑满整屏 */
+@media (max-width: 639px) {
+  body.taste-home #top {
+    min-height: auto !important;
+    height: auto !important;
   }
 }
 
-/* --------------------------------------------------------- 布局护栏 2026-11-21
-   依据 1440 / 390 实机截图：
-   1) 安装按钮 [hidden] 仍显示——display 值盖掉了 hidden 属性
-   2) 手机端 .home-lede 的 max-width:54ch 宽出可视区，右侧被切
-   3) 手机端顶部导航横向滚动条把文字下缘裁掉
-   4) 首屏 hero 撑满整屏，六张入口卡全部落在折叠线以下 */
-body.taste-home .install-button[hidden] { display: none !important; }
-.home-lede { max-width: min(54ch, 100%); }
+@media (min-width: 640px) {
+  body.taste-home #top {
+    min-height: min(78svh, 700px);
+    height: auto;
+  }
+}
 
-@media (max-width: 620px) {
+/* 手机导航：单行、可横滑、字不折 */
+@media (max-width: 639px) {
   body.taste-home nav.nav-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
     gap: 16px;
-    padding: 8px 0 12px;
-    align-items: center;
-    line-height: 1.5;
+    padding: 6px 0 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
-  body.taste-home nav.nav-links a { padding: 4px 0; line-height: 1.5; }
-  .home-lede { max-width: 100%; }
+  body.taste-home nav.nav-links::-webkit-scrollbar { display: none; }
+  body.taste-home nav.nav-links a {
+    white-space: nowrap;
+    min-height: 32px;
+    padding: 6px 0;
+    line-height: 1.6;
+    font-size: 12.5px;
+    background: none !important;
+    border: 0 !important;
+  }
 }
 
-@media (min-width: 1024px) {
-  .home-hero { min-height: min(86svh, 760px); }
-}
+/* 导语不许宽出可视区 */
+.home-lede { max-width: min(54ch, 100%); }
+@media (max-width: 639px) { .home-lede { max-width: 100%; } }
