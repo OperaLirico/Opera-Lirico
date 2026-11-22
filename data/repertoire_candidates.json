@@ -1899,10 +1899,110 @@
       "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
       "collected_at": "2026-11-22T08:28:42+01:00",
       "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-404c691129a69edc",
+      "title": "Le Villi · secondo/Scena I · Scena I",
+      "aliases": [
+        "Le Villi"
+      ],
+      "composer": "Giacomo Puccini",
+      "work": "Le Villi",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Atto secondo - Parte Sinfonica - Secondo tempo\nAtto secondo - Scena II\nGuglielmo solo.\n(siede sulla porta di casa in atto di dolore profondo)\nNo! possibil non è che invendicata\nResti la colpa sua. – Vivea beata\nE tranquilla al mio fianco135\nLa mia dolce figliola,\nEd egli venne... e, colla sua parola,\nD’amor le smanie in lei destò...\n(alzandosi con impeto)\nChi, dunque,\nO scellerato, l’amor tuo ti chiese?\nChi i giuramenti tuoi?140\nQuali orribili offese\nT’abbiam mai fatto noi\nPer uccider quell’angelo,\nE agli estremi miei giorni\nSerbar cotanta angoscia?...145\nNo! possibil non è che invendicata\nResti colpa sì grande!\nAnima santa della figlia mia,\nSe la leggenda delle Villi è vera,\nDeh! non esser con lui, qual fosti, pia...150\nMa qui l’attendi al cadere della sera...\nS’io potessi saperti vendicata\nLieto saluterei l’ultimo dì...\nAh, perdona, o Signor, l’idea spietata\nChe dal mio cor, che sanguina, fuggì...\n(rientra nella casa)",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Le_Villi/Atto_secondo/Scena_I",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Ferdinando Fontana",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-22T09:02:45+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-ad4008ce7c4bef44",
+      "title": "Le Villi · secondo/Scena II · Scena II",
+      "aliases": [
+        "Le Villi"
+      ],
+      "composer": "Giacomo Puccini",
+      "work": "Le Villi",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Atto secondo - Scena I\nAtto secondo - Scena III\nCoro di Villi interno, poi Roberto.\nCoro155\nEi giunge! Anna!... Anna!... Anna!...\nDi morte alla condanna,\nAlla vendetta – che qui l’aspetta,\nEi viene il traditor!\nEccolo... Ei s’avvicina...160\nSu... Dannato... Cammina!...\nRoberto appare sul ponticello.\nRoberto\nEcco la casa... Dio, che orrenda notte!\nStrane voci m’inseguono... Le Villi...\nEvvia!... Son fole!...\n(scende)\nNo, delle Villi – me non perseguita165\nLa vendetta fatal!\nTu sol m’insegui, – rimorso!... Vipera\nDal veleno infernal!\nTorna ai felici dì\nDolente il mio pensier...170\nRidean del maggio i fior,\nFiorìa per me l’amor...\nOr tutto si coprì\nDi lugubre mister\nEd io non ho nel cuor175\nChe tristezza e terror!...\nForse ella vive!...\n(guarda verso la casa, poi va verso di essa come avesse presa una decisione)\nBussiam!\n(fa per bussare, ma indietreggia come se una forza ignota glielo impedisse)\nQual brivido\nMi colse!... Invan\nDi quella soglia – tentai sul limite\nLevar la man!\nCoro di Villi\n(interno)180\nSu... Dannato, cammina!\nRoberto\n(con spavento)\nPur d’intender parmi\nDavvero un canto funebre!...\n(si inginocchia, come estenuato, per pregare)\nO sommo Iddio! – del mio cammino,\nDel mio destino – questa è la meta...185\nFa che il perdono – la renda lieta...\nUn solo istante... – e poi morrò!\nCoro di Villi\n(interno)\nSu!... Cammina!... Cammina!\nRoberto\n(balzando in piedi)\nPregar non posso!... Ah, maledetto il dì\nChe andai lontan di qui!...190\nE maledetta sia la tua bellezza,\nO cortigiana vil...\nPer te, quaggiù, sofferse ogni amarezza\nL’angiolo più gentil...\nTu corrompesti la mia giovinezza195\nAd un verme simil!\nMaledetta in eterno!\nMaledetta in eterno!\nVoce di Anna\n(interna)\nRoberto!...\nRoberto\nCiel!...",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Le_Villi/Atto_secondo/Scena_II",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Ferdinando Fontana",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-22T09:02:45+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-3d5fc7c563dc5cd6",
+      "title": "Le Villi · secondo/Scena III · Scena III",
+      "aliases": [
+        "Le Villi"
+      ],
+      "composer": "Giacomo Puccini",
+      "work": "Le Villi",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Atto secondo - Scena II\nAtto secondo - Scena ultima\nRoberto – Anna che appare sul ponticello.\nAnna\nRoberto!\nRoberto\nLa sua voce!\n(volgendosi, scorgendo Anna e andando verso di lei)\nDunque spento non sei, dolce amor mio!\nAnna200\nIo non son più l’amor... Son la vendetta!\nRoberto cade affranto su un sasso. – Anna scende verso di lui.\nRoberto\nGran Dio!... Gran Dio!...\nAnna\nRicordi\nQuel che dicevi nel mese dei fiori?\nTu dell’infanzia mia\nI giuochi dividesti e le carezze...205\nDa te soave e pia\nImparai della vita le dolcezze...\nEro povero... E tu l’affetto mio\nPiù d’ogni ricco volesti pregiar...\nAh, dubita di Dio...210\nMa no, dell’amor mio, non dubitar!\nIo t’amo!... Io t’amo!\nIo t’amai... Tu mi tradisti...\nIo ti attesi... e non venisti...\nMa è tremendo dolore215\nIn silenzio soffrir!\nSenza speranza in cuore\nMi facesti morir...\nRoberto\nL’amor mio della sua vita\nEra il raggio... E l’ho tradita.220\nOr serbato al mio cuore\nÈ lo stesso martir...\nDelirando d’amore\nAnch’io debbo morir!...\nRoberto va verso Anna spinto da una forza ignota; poi fa per vincere il fascino che lo investe, ma non può, e si slancia verso di lei; Anna, avanzandosi, stende le braccia e lo attira a sé. Intanto le Villi accorrono, circondano Roberto ed Anna e li trascinano, danzando vertiginosamente, fuori di scena.",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Le_Villi/Atto_secondo/Scena_III",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Ferdinando Fontana",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-22T09:02:45+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-e76aed09180de233",
+      "title": "Le Villi · secondo/Scena ultima · Scena ULTIMA",
+      "aliases": [
+        "Le Villi"
+      ],
+      "composer": "Giacomo Puccini",
+      "work": "Le Villi",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Atto secondo - Scena III\nCori interni di Spiriti e di Villi, poi Roberto, poi Anna, poi le Villi, poi Guglielmo.\nSpiriti e Villi\n(internamente)\nQui noi t’aspettiam, traditor...225\nDa noi non attender pietà!\nChi in vita fu sordo all’amor\nIn morte perdono non ha...\nGira!... Balza!...\nBalza!... Gira!\nRoberto accorrendo ansimante, coi capelli irti, va a bussare alla casa di Guglielmo; poi, scorgendo le Villi, che lo inseguono venendo dalla destra, fa per fuggire dalla parte opposta; ma Anna appare alla sinistra, gli sbarra il passo, lo riafferra e lo travolge nuovamente in una ridda, fra le Villi che sopraggiungono.\nRoberto\n(sfinito, cadendole ai piedi)230\nAnna... Pietà!...\n(muore)\nAnna\n(disparendo)\nSei mio!\nVilli\n(seguendo Anna)\nOsanna!...\nGuglielmo\n(uscendo e vedendo il cadavere di Roberto)\nÈ giusto Iddio!...",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Le_Villi/Atto_secondo/Scena_ultima",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Ferdinando Fontana",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-22T09:02:45+01:00",
+      "collection_source": "it.wikisource.org"
     }
   ],
-  "generated_at": "2026-11-22T08:28:42+01:00",
+  "generated_at": "2026-11-22T09:02:45+01:00",
   "source": "Italian Wikisource opera libretti; candidate-only, human review required",
-  "aria_opera": 5,
-  "aria_scene": 8
+  "aria_opera": 6,
+  "aria_scene": 0
 }
