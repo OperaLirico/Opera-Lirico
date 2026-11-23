@@ -13,6 +13,13 @@
   --ol-accent:#a77b4f;
   --ol-radius:16px;
   --ol-shadow:0 8px 28px rgba(52,35,32,.055);
+  --ink:var(--ol-ink);--ink-soft:var(--ol-muted);
+  --paper:var(--ol-paper);--paper-2:var(--ol-surface);--line:var(--ol-line);
+  --brand:var(--ol-brand);--brand-2:var(--ol-brand-strong);
+  --gold:var(--ol-accent);--gold-soft:#c8a77f;--action:var(--ol-brand);
+  --bg:var(--ol-paper);--surface:var(--ol-surface);--accent:var(--ol-brand);
+  --serif:Georgia,"Songti SC",serif;
+  --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
 }
 html{scroll-behavior:smooth;scroll-padding-top:112px}
 body{
@@ -164,4 +171,54 @@ html body .science-subnav a[aria-current="page"]{
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   html body *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+/* Homepage: six peer-level destinations, never three unrelated categories. */
+html body.taste-home #tiles .home-card-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+}
+html body.taste-home #tiles .tile{
+  min-height:196px;padding:20px;display:grid;
+  grid-template-columns:38px minmax(0,1fr) 18px;
+  grid-template-rows:auto 1fr auto;align-items:start;gap:12px;
+  border:1px solid var(--ol-line);border-radius:16px;
+  background:var(--ol-surface);box-shadow:0 5px 18px rgba(52,35,32,.035);
+  color:var(--ol-ink);text-decoration:none;text-align:left;
+}
+html body.taste-home #tiles .tile-icon{grid-column:1;grid-row:1;width:36px;height:36px;background:#f1e7e3;color:var(--ol-brand);border-radius:11px}
+html body.taste-home #tiles .tile-main{grid-column:2;grid-row:1 / span 2;min-width:0}
+html body.taste-home #tiles .tile-title{display:block;color:var(--ol-ink);font-size:16px;font-weight:700;line-height:1.45}
+html body.taste-home #tiles .tile-desc{display:block;margin-top:7px;color:var(--ol-muted);font-size:12px;line-height:1.65;max-width:34ch}
+html body.taste-home #tiles .tile-stat{grid-column:2;grid-row:3;align-self:end;margin-top:8px;color:var(--ol-muted)}
+html body.taste-home #tiles .tile-stat b{color:var(--ol-brand);font-size:17px}
+html body.taste-home #tiles .tile-arrow{grid-column:3;grid-row:1;color:var(--ol-accent)}
+html body.taste-home #tiles .tile:hover{transform:translateY(-2px);border-color:#d8bfc0;box-shadow:0 12px 28px rgba(52,35,32,.075)}
+html body.taste-home .home-source-note{margin-top:14px;color:var(--ol-muted);font-size:12px;line-height:1.7}
+html body :is(.master-page,.anatomy-page,.mechanism-page,.voice-lab-page){background:var(--ol-paper)!important;color:var(--ol-ink)}
+html body.master-page .master-head{
+  background:radial-gradient(ellipse at 88% 12%,rgba(167,123,79,.13),transparent 42%),linear-gradient(135deg,#f2e9e3,#fffdf9 72%);
+  border-color:var(--ol-line);box-shadow:var(--ol-shadow);
+}
+html body :is(.master-list-section,.body-figure-section,.model-section,.interaction-section,.map-section){
+  max-width:1240px;
+}
+html body :is(.master-card,.body-figure,.body-detail,.card,.panel,.lab-card){
+  background:var(--ol-surface);border-color:var(--ol-line);
+}
+html body :is(.lab-hero,.voice-hero,.mechanism-hero-copy) h1,
+html body .master-head h1{color:var(--ol-ink)}
+html body :is(.lab-hero,.voice-hero,.mechanism-hero-copy) :is(p,.lede){color:var(--ol-muted)}
+html body :is(.body-figure-head,.card-head){border-color:var(--ol-line)}
+@media(max-width:900px){
+  html body.taste-home #tiles .home-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:760px){
+  html body.taste-home #tiles .home-card-grid{grid-template-columns:minmax(0,1fr);gap:9px}
+  html body.taste-home #tiles .tile{min-height:0;padding:14px;grid-template-columns:34px minmax(0,1fr) 16px;grid-template-rows:auto auto}
+  html body.taste-home #tiles .tile-icon{width:32px;height:32px;grid-row:1 / span 2}
+  html body.taste-home #tiles .tile-main{grid-column:2;grid-row:1 / span 2}
+  html body.taste-home #tiles .tile-title{font-size:15px}
+  html body.taste-home #tiles .tile-desc{max-width:none;margin-top:4px}
+  html body.taste-home #tiles .tile-stat{grid-column:2;grid-row:3;margin-top:5px}
+  html body.taste-home #tiles .tile-arrow{grid-column:3;grid-row:1}
 }
