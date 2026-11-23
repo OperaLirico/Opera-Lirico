@@ -1,7 +1,7 @@
 /* OperaLab. — shared release design system */
 :root{--ol-ink:#2b211f;--ol-muted:#6b5a55;--ol-paper:#f7f2ea;--ol-surface:#fffdf8;--ol-line:#e6d9ca;--ol-wine:#642b39;--ol-wine-2:#823e4c;--ol-gold:#9a7445;--ol-radius:16px}
 html{scroll-behavior:smooth;scroll-padding-top:88px}
-body{background:var(--ol-paper);color:var(--ol-ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+body{--ink:var(--ol-ink);--ink-soft:var(--ol-muted);--paper:var(--ol-paper);--paper-2:var(--ol-surface);--line:var(--ol-line);--brand:var(--ol-wine);--brand-2:var(--ol-wine-2);--gold:var(--ol-gold);--gold-soft:#c9a979;background:var(--ol-paper);color:var(--ol-ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
 body::before{background:radial-gradient(900px 420px at 8% -12%,rgba(154,116,69,.09),transparent 62%),radial-gradient(900px 420px at 92% 0,rgba(100,43,57,.055),transparent 66%)}
 a{color:var(--ol-wine-2)}h1,h2,h3,h4{color:var(--ol-ink)}
 .topbar{background:rgba(247,242,234,.94);border-bottom:1px solid var(--ol-line);backdrop-filter:blur(14px)}
@@ -56,7 +56,7 @@ body.taste-home footer.closing{border-top:1px solid var(--ol-line)}
 .europe-institution-links a{font-size:11px;font-weight:650;color:var(--ol-wine);text-decoration:none}
 .europe-institution-links a:hover{text-decoration:underline;text-underline-offset:3px}
 .europe-disclaimer{margin-top:14px;padding:12px 14px;border-left:3px solid #b88c69;background:#f7f0e8;color:#69584f;font-size:11px;line-height:1.8}
-body.master-page,body.anatomy-page{background:var(--ol-paper);color:var(--ol-ink)}
+body.master-page,body.anatomy-page,body.mechanism-page{--ink:var(--ol-ink);--ink-soft:var(--ol-muted);--paper:var(--ol-paper);--paper-2:var(--ol-surface);--line:var(--ol-line);--brand:var(--ol-wine);--brand-2:var(--ol-wine-2);--gold:var(--ol-gold);--gold-soft:#c9a979;background:var(--ol-paper);color:var(--ol-ink)}
 body.master-page .master-wrap,body.anatomy-page .lab-wrap{max-width:1160px}
 body.master-page .master-head{min-height:0;margin:28px auto 30px;padding:clamp(28px,5vw,58px);border-color:var(--ol-line);border-radius:16px;background:radial-gradient(ellipse at 90% 0,rgba(154,116,69,.12),transparent 44%),linear-gradient(135deg,rgba(100,43,57,.045),var(--ol-surface));box-shadow:none}
 body.master-page .master-head h1,body.anatomy-page .lab-hero h1{font-family:Georgia,"Songti SC",serif;color:var(--ol-ink)}
@@ -112,3 +112,17 @@ body.mechanism-page .tag{background:#f4eae5;color:var(--ol-wine)}
 body.mechanism-page .source-cta{background:var(--ol-wine);border-color:var(--ol-wine)}
 .topbar nav a{color:var(--ol-muted)}
 .topbar nav a:hover{color:var(--ol-wine)}
+
+@media(prefers-color-scheme:dark){
+ :root{--ol-ink:#f1e8e2;--ol-muted:#c3b3ac;--ol-paper:#171211;--ol-surface:#241b19;--ol-line:#493633;--ol-wine:#e2aa9c;--ol-wine-2:#f0c3b7;--ol-gold:#e1bd8b}
+ body{--ink:var(--ol-ink);--ink-soft:var(--ol-muted);--paper:var(--ol-paper);--paper-2:var(--ol-surface);--line:var(--ol-line);--brand:var(--ol-wine);--brand-2:var(--ol-wine-2);--gold:var(--ol-gold);background:var(--ol-paper);color:var(--ol-ink)}
+ body.taste-home .home-card-grid .tile,body.taste-home .newsletter-panel,body.taste-home .europe-discovery{background:var(--ol-surface);border-color:var(--ol-line)}
+ body.taste-home .home-card-grid .tile-icon{background:#3b2929;color:var(--ol-wine)}
+ body.taste-home .home-button--primary,body.taste-home .newsletter-link{background:var(--ol-wine);border-color:var(--ol-wine);color:#251715}
+ .europe-institution-card{background:#2a211f;border-color:var(--ol-line)}
+ .europe-institution-meta span{background:#392b29;color:var(--ol-muted)}
+ .europe-disclaimer{background:#302320;color:#d2bdb2;border-color:var(--ol-gold)}
+ .europe-country-group{background:var(--ol-surface);border-color:var(--ol-line)}
+ body.master-page .master-date{background:#392a2a;border-color:#59403e;color:var(--ol-wine)}
+ body:not(.taste-home) footer.closing{border-color:var(--ol-line)}
+}
