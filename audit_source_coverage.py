@@ -10,10 +10,14 @@ import argparse
 import hashlib
 import json
 import re
+import ssl
 import time
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlsplit, urlunsplit
+from urllib.request import Request, urlopen
+
+from lxml import html as lxml_html
 from zoneinfo import ZoneInfo
 
 from scrapling.fetchers import Fetcher
@@ -147,11 +151,33 @@ def inventory_hash(inventory: list[dict]) -> str:
 
 
 def source_fetch_url(url: str) -> str:
-    """Use the institution's verified canonical host when its www alias has a bad certificate."""
-    parts = urlsplit(url.strip())
-    if parts.hostname and parts.hostname.lower() == "www.tls-belli.it":
-        return urlunsplit((parts.scheme, "tls-belli.it", parts.path, parts.query, ""))
+    """Keep the publisher's exact URL; transport selection is handled separately."""
     return url
+
+
+def fetch_tls_belli_page(url: str) -> tuple[int, str, str]:
+    """Fetch TLS Belli with stdlib HTTPS, retaining CA and hostname verification.
+
+    Scrapling's curl_cffi transport rejects this host even though Python's default
+    SSL context verifies the same DNS endpoint. This narrowly scoped transport
+    avoids that client-specific incompatibility without weakening TLS checks.
+    """
+    request = Request(
+        url,
+        headers={
+            "User-Agent": "OperaLiricoSourceMonitor/1.0 (+https://github.com/OperaLirico/Opera-Lirico)",
+            "Accept": "text/html,application/xhtml+xml",
+            "Accept-Encoding": "identity",
+        },
+    )
+    with urlopen(request, timeout=25, context=ssl.create_default_context()) as response:
+        status = int(response.status)
+        payload = response.read()
+    document = lxml_html.fromstring(payload)
+    title = core.clean_line(" ".join(document.xpath("//title//text()")))
+    body = document.xpath("//body")
+    raw_text = "\n".join(body[0].itertext()) if body else document.text_content()
+    return status, title, raw_text
 
 
 def scan_one(source: dict, previous: dict | None, checked_at: str) -> dict:
@@ -180,11 +206,15 @@ def scan_one(source: dict, previous: dict | None, checked_at: str) -> dict:
         "error": None,
     }
     try:
-        response = Fetcher.get(fetch_url, timeout=25, retries=0)
-        http_status = getattr(response, "status", None)
+        host = (urlsplit(fetch_url).hostname or "").lower()
+        if host in {"www.tls-belli.it", "tls-belli.it"}:
+            http_status, title, text = fetch_tls_belli_page(fetch_url)
+        else:
+            response = Fetcher.get(fetch_url, timeout=25, retries=0)
+            http_status = getattr(response, "status", None)
+            title = core.clean_line(response.css("title::text").get() or "")
+            text = response.get_all_text(separator="\n") or ""
         result["http_status"] = http_status
-        title = core.clean_line(response.css("title::text").get() or "")
-        text = response.get_all_text(separator="\n") or ""
         normalized = "\n".join(core.clean_line(line) for line in text.splitlines() if core.clean_line(line))
         combined = f"{title}\n{normalized}".strip()
         result["title"] = title
