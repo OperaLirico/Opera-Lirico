@@ -2,17 +2,17 @@
 
 - Cycle: 2026-W48
 - Started: 2026-11-23T16:07:59+01:00
-- Last updated: 2026-11-23T16:09:48+01:00
-- Status: **in_progress**
-- Coverage: **36/46** checked; 10 remaining
+- Last updated: 2026-11-23T16:10:13+01:00
+- Status: **completed**
+- Coverage: **46/46** checked; 0 remaining
 - Failed/restricted/extraction errors: 2 (restricted: 0)
-- Changed normalized text hashes: 15
-- Sources with anomalies: 17
-- Registered sources: 34; candidate queue entries: 2
-- Source review classifications: auto_approved_official=20, auto_approved_third_party=6, duplicate_candidate=1, irrelevant_candidate=7, needs_review=2
-- Official + relevant: 19
+- Changed normalized text hashes: 18
+- Sources with anomalies: 20
+- Registered sources: 44; candidate queue entries: 2
+- Source review classifications: auto_approved_official=26, auto_approved_third_party=6, duplicate_candidate=1, irrelevant_candidate=9, needs_review=4
+- Official + relevant: 25
 - Third-party + relevant: 5
-- Needs review / irrelevant / unclassified: 9
+- Needs review / irrelevant / unclassified: 13
 - Duplicate candidates (registered): 1
 - Inventory SHA-256: 3830ac0c9ca41cf14b119aaf2376dfd86c357fc05588afd3ab2d1aa1acc17cd8 (inventory identity only)
 
@@ -123,6 +123,24 @@ Keyword/vocal signals are discovery clues only. Source identity and relevance ar
 - URL: https://www.liricamente.it/audizioni-canto-lirico-cori-cantanti-lirici.asp
 - Status: ok / HTTP 200
 - Last success: 2026-11-23T16:09:05+01:00
+- Anomalies: normalized_page_text_changed
+
+### Teatro Regio Torino (source-4)
+- URL: https://www.teatroregio.torino.it/selezione-personale
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:09:50+01:00
+- Anomalies: normalized_page_text_changed
+
+### Teatro Verdi Trieste (source-6)
+- URL: https://www.teatroverdi-trieste.com/amministrazione-tras/bandi-di-concorso-2026/
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:09:50+01:00
+- Anomalies: normalized_page_text_changed
+
+### AsLiCo (source-9)
+- URL: https://aslico.org/edizione-in-corso/
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:09:50+01:00
 - Anomalies: normalized_page_text_changed
 
 ## Coverage limitations
