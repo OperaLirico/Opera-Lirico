@@ -28,8 +28,10 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Run source quality tests
         run: python -m unittest discover -s tests -v
-      - name: Discover conservatories
+      - name: Discover Italian conservatories
         run: python grow_conservatori.py
+      - name: Discover European music institutions
+        run: python discover_europe_institutions.py
       - name: Discover and screen audition source candidates
         run: python grow_sources.py --discover
       - name: Save source registry refresh and pending candidates
@@ -40,7 +42,7 @@ jobs:
           # grow_sources.py writes all four outputs below, including the merged
           # data/sources.json snapshot. Stage every generated output before rebase
           # so no generated working-tree changes are left unstaged.
-          git add data/conservatori_extra.json data/sources_extra.json data/source_candidates.json data/source_fetch_policies.json data/sources.json
+          git add data/conservatori_extra.json data/europe_institutions.json data/sources_extra.json data/source_candidates.json data/source_fetch_policies.json data/sources.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update source discovery data and pending candidates'
             git fetch origin main
