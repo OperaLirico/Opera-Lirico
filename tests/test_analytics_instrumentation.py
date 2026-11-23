@@ -22,6 +22,7 @@ class AnalyticsInstrumentationTests(unittest.TestCase):
                 html = (ROOT / page).read_text(encoding="utf-8")
                 self.assertIn(BEACON, html)
                 self.assertIn(TOKEN, html)
+                self.assertIn('type="module"', html)
                 self.assertEqual(html.count(BEACON), 1)
 
 
