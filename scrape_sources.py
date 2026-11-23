@@ -12,7 +12,7 @@ from urllib.parse import urljoin, urlsplit
 from zoneinfo import ZoneInfo
 
 from lxml import html as lxml_html
-from scrapling.fetchers import Fetcher
+from era_research.compat import Fetcher
 
 
 SOURCES = [
