@@ -142,11 +142,20 @@ def inventory_hash(inventory: list[dict]) -> str:
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
+def source_fetch_url(url: str) -> str:
+    """Use the institution's verified canonical host when its www alias has a bad certificate."""
+    parts = urlsplit(url.strip())
+    if parts.hostname and parts.hostname.lower() == "www.tls-belli.it":
+        return urlunsplit((parts.scheme, "tls-belli.it", parts.path, parts.query, ""))
+    return url
+
+
 def scan_one(source: dict, previous: dict | None, checked_at: str) -> dict:
+    fetch_url = source_fetch_url(source["url"])
     result = {
         "source_id": source["source_id"],
         "name": source["name"],
-        "url": source["url"],
+        "url": fetch_url,
         "kind": source["kind"],
         "review_status": source["review_status"],
         "publisher_status": source["publisher_status"],
@@ -167,7 +176,7 @@ def scan_one(source: dict, previous: dict | None, checked_at: str) -> dict:
         "error": None,
     }
     try:
-        response = Fetcher.get(source["url"], timeout=25, retries=0)
+        response = Fetcher.get(fetch_url, timeout=25, retries=0)
         http_status = getattr(response, "status", None)
         result["http_status"] = http_status
         title = core.clean_line(response.css("title::text").get() or "")
