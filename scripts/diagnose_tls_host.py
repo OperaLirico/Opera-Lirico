@@ -67,6 +67,8 @@ def fetch_page(url: str) -> dict:
 def main() -> None:
     hosts = sys.argv[1:] or ["www.tls-belli.it", "tls-belli.it"]
     urls = [
+        "https://www.tls-belli.it/",
+        "https://www.tls-belli.it/category/news/",
         "https://www.tls-belli.it/bandi_e_avvisi/",
         "https://www.tls-belli.it/concorso-di-canto-2026/",
     ]
