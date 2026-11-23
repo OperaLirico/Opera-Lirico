@@ -31,7 +31,7 @@ from pathlib import Path
 from urllib.parse import urljoin, urlparse
 from zoneinfo import ZoneInfo
 
-from scrapling.fetchers import Fetcher
+from era_research.compat import Fetcher
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 EXTRA_PATH = DATA_DIR / "conservatori_extra.json"
