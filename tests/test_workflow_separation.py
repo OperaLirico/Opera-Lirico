@@ -19,11 +19,18 @@ class WorkflowSeparationTests(unittest.TestCase):
 
     def test_pages_deploy_handles_site_content_without_running_scrapers(self):
         workflow = (ROOT / ".github/workflows/pages-deploy.yml").read_text(encoding="utf-8")
-        self.assertIn('"app.js"', workflow)
-        self.assertIn('"data/opportunities.json"', workflow)
-        self.assertIn('"data/conservatori.json"', workflow)
+        # The deployment workflow intentionally uses paths-ignore rather than a
+        # fragile site-file allowlist: every site change (including new CSS/JS
+        # assets) must publish, while documentation-only changes stay excluded.
+        self.assertIn("paths-ignore:", workflow)
+        self.assertIn('"docs/**"', workflow)
+        self.assertIn('"skills/**"', workflow)
+        self.assertIn('".agents/**"', workflow)
+        self.assertIn('"**/*.md"', workflow)
         self.assertIn("group: github-pages-deploy", workflow)
         self.assertRegex(workflow, r"actions/deploy-pages@(?:v5|[0-9a-f]{40})(?: # v5)?")
+        self.assertNotIn("scrape_sources.py", workflow)
+        self.assertNotIn("daily-source-refresh", workflow)
 
     def test_weekly_coverage_has_independent_concurrency(self):
         workflow = (ROOT / ".github/workflows/weekly-source-coverage.yml").read_text(encoding="utf-8")
