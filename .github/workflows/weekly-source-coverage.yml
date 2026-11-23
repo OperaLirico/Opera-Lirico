@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - "audit_source_coverage.py"
+      - "tests/test_workflow_separation.py"
       - ".github/workflows/weekly-source-coverage.yml"
   workflow_run:
     workflows: ["Daily source refresh"]
