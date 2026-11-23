@@ -1,4 +1,5 @@
 import unittest
+from unittest import mock
 
 import audit_source_coverage as audit
 
@@ -15,24 +16,40 @@ class SourceCoverageTests(unittest.TestCase):
             audit.inventory_hash(items + [{"source_id": "source-3", "url": "https://example.org/c", "kind": "registered"}]),
         )
 
-    def test_source_fetch_url_uses_verified_non_www_tls_belli_host(self):
-        self.assertEqual(
-            audit.source_fetch_url("https://www.tls-belli.it/bandi_e_avvisi/?x=1"),
-            "https://tls-belli.it/bandi_e_avvisi/?x=1",
-        )
-        self.assertEqual(
-            audit.source_fetch_url("https://www.tls-belli.it/concorso-di-canto-2026/"),
-            "https://tls-belli.it/concorso-di-canto-2026/",
-        )
+    def test_source_fetch_url_preserves_tls_belli_publisher_hostname(self):
+        url = "https://www.tls-belli.it/bandi_e_avvisi/?x=1"
+        self.assertEqual(audit.source_fetch_url(url), url)
+
+    def test_inventory_hash_tracks_publisher_url_exactly(self):
+        www = [{"source_id": "source-10", "url": "https://www.tls-belli.it/bandi_e_avvisi/", "kind": "registered"}]
+        apex = [{"source_id": "source-10", "url": "https://tls-belli.it/bandi_e_avvisi/", "kind": "registered"}]
+        self.assertNotEqual(audit.inventory_hash(www), audit.inventory_hash(apex))
+
+    def test_tls_belli_scan_uses_verified_stdlib_transport(self):
+        source = {
+            "source_id": "source-10",
+            "name": "Teatro Lirico Sperimentale di Spoleto",
+            "url": "https://www.tls-belli.it/bandi_e_avvisi/",
+            "kind": "registered",
+            "review_status": "auto_approved_official",
+            "publisher_status": "official",
+            "relevance_status": "relevant",
+            "audit_confidence": "high",
+        }
+        with mock.patch.object(
+            audit, "fetch_tls_belli_page",
+            return_value=(200, "Bandi e avvisi", "Concorso internazionale di canto per giovani cantanti lirici"),
+        ) as fallback, mock.patch.object(audit.Fetcher, "get") as scrapling_get:
+            result = audit.scan_one(source, None, "2026-11-23T00:00:00+00:00")
+        fallback.assert_called_once_with(source["url"])
+        scrapling_get.assert_not_called()
+        self.assertEqual(result["status"], "ok")
+        self.assertEqual(result["http_status"], 200)
+        self.assertTrue(result["vocal_signal"])
 
     def test_source_fetch_url_does_not_rewrite_other_hosts(self):
         url = "https://www.example.org/path"
         self.assertEqual(audit.source_fetch_url(url), url)
-
-    def test_inventory_hash_tracks_effective_fetch_url(self):
-        original = [{"source_id": "source-10", "url": "https://www.tls-belli.it/bandi_e_avvisi/", "kind": "registered"}]
-        canonical = [{"source_id": "source-10", "url": "https://tls-belli.it/bandi_e_avvisi/", "kind": "registered"}]
-        self.assertEqual(audit.inventory_hash(original), audit.inventory_hash(canonical))
 
     def test_canonical_url_drops_fragment_only(self):
         self.assertEqual(
