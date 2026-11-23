@@ -6,6 +6,7 @@ on:
     paths:
       - "system_health_check.py"
       - "analytics_watchdog.py"
+      - "tests/test_workflow_separation.py"
       - ".github/workflows/system-health-check.yml"
   schedule:
     - cron: "0 9 * * *"
