@@ -135,7 +135,11 @@ def source_inventory() -> list[dict]:
 
 def inventory_hash(inventory: list[dict]) -> str:
     stable = [
-        {key: item[key] for key in ("source_id", "url", "kind")}
+        {
+            "source_id": item["source_id"],
+            "url": source_fetch_url(item["url"]),
+            "kind": item["kind"],
+        }
         for item in inventory
     ]
     payload = json.dumps(stable, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
