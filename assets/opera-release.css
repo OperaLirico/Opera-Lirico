@@ -100,3 +100,15 @@ body:not(.taste-home) footer.closing a{color:var(--ol-wine)}
  body.anatomy-page .lab-wrap{padding:24px 16px 54px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* The larynx mechanism page is part of the same learning-lab family. */
+body.mechanism-page{background:var(--ol-paper);color:var(--ol-ink)}
+body.mechanism-page .mechanism{max-width:1160px}
+body.mechanism-page .mechanism-hero-copy h1{font-family:Georgia,"Songti SC",serif;color:var(--ol-ink)}
+body.mechanism-page .mechanism-hero-copy .eyebrow{color:var(--ol-gold)}
+body.mechanism-page .crumb a,body.mechanism-page .lab-entry{color:var(--ol-wine)}
+body.mechanism-page .card{border-color:var(--ol-line);border-radius:14px;box-shadow:0 3px 14px rgba(48,31,26,.035)}
+body.mechanism-page .tag{background:#f4eae5;color:var(--ol-wine)}
+body.mechanism-page .source-cta{background:var(--ol-wine);border-color:var(--ol-wine)}
+.topbar nav a{color:var(--ol-muted)}
+.topbar nav a:hover{color:var(--ol-wine)}
