@@ -2,16 +2,16 @@
 
 - Cycle: 2026-W48
 - Started: 2026-11-23T16:07:59+01:00
-- Last updated: 2026-11-23T16:09:03+01:00
+- Last updated: 2026-11-23T16:09:48+01:00
 - Status: **in_progress**
-- Coverage: **24/46** checked; 22 remaining
+- Coverage: **36/46** checked; 10 remaining
 - Failed/restricted/extraction errors: 2 (restricted: 0)
-- Changed normalized text hashes: 10
-- Sources with anomalies: 12
-- Registered sources: 22; candidate queue entries: 2
-- Source review classifications: auto_approved_official=11, auto_approved_third_party=3, duplicate_candidate=1, irrelevant_candidate=7, needs_review=2
-- Official + relevant: 10
-- Third-party + relevant: 2
+- Changed normalized text hashes: 15
+- Sources with anomalies: 17
+- Registered sources: 34; candidate queue entries: 2
+- Source review classifications: auto_approved_official=20, auto_approved_third_party=6, duplicate_candidate=1, irrelevant_candidate=7, needs_review=2
+- Official + relevant: 19
+- Third-party + relevant: 5
 - Needs review / irrelevant / unclassified: 9
 - Duplicate candidates (registered): 1
 - Inventory SHA-256: 3830ac0c9ca41cf14b119aaf2376dfd86c357fc05588afd3ab2d1aa1acc17cd8 (inventory identity only)
@@ -93,6 +93,36 @@ Keyword/vocal signals are discovery clues only. Source identity and relevance ar
 - URL: https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/
 - Status: ok / HTTP 200
 - Last success: 2026-11-23T16:08:30+01:00
+- Anomalies: normalized_page_text_changed
+
+### Teatro Carlo Felice (source-2)
+- URL: https://carlofelice.it/audizioni-e-concorsi/
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:09:05+01:00
+- Anomalies: normalized_page_text_changed
+
+### Valsesia Musica - 声乐比赛 (source-20)
+- URL: https://www.valsesiamusica.com/sezione_canto_lirico.htm
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:09:05+01:00
+- Anomalies: normalized_page_text_changed
+
+### Sportello Spettacolo（演艺行业信息平台） (source-27)
+- URL: https://www.sportellospettacolo.it/bandi-call/
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:09:05+01:00
+- Anomalies: normalized_page_text_changed
+
+### Opera Mundus（歌剧比赛信息平台） (source-28)
+- URL: https://www.operamundus.com/en/concorsi/
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:09:05+01:00
+- Anomalies: normalized_page_text_changed
+
+### Liricamente（声乐行业信息平台） (source-29)
+- URL: https://www.liricamente.it/audizioni-canto-lirico-cori-cantanti-lirici.asp
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:09:05+01:00
 - Anomalies: normalized_page_text_changed
 
 ## Coverage limitations
