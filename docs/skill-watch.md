@@ -5,6 +5,11 @@
 | 日期 | 仓库 | 新 commit | 变化摘要 | 是否已同步 |
 |---|---|---|---|---|
 | 2026-11-19 | 基线 | 见 `skill-watch.json` | 六个仓库的当前 HEAD 已记录 | — |
+| 2026-11-23 | `Leonxlnx/taste-skill` | `6c0b5c78` | 仅 README 增一行赞助者头像，SKILL.md 与 scripts 未变 | 不需要，保持现有 vendored 版本 |
+| 2026-11-23 | `JuliusBrussee/caveman` | `b89752f6` | 245 个文件：engine/proxy/packages 与 caveman-compress 的 SKILL.md、compress.py、validate.py，压缩行为有实质改动 | 未同步（本仓库未引入该技能） |
+| 2026-11-23 | `vercel-labs/agent-skills` | `5a37a632` | 只改 `skills/web-design-guidelines`：1.0.0→1.1.0，规则改为内置快照（附 SHA-256）；我们采用的三个技能未动 | 不需要 |
+
+本周结论：6 个仓库里 3 个有新提交，均不需要同步，未发现 LICENSE 变更。
 
 ## 巡检范围
 

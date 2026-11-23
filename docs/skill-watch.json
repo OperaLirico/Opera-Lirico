@@ -1,16 +1,17 @@
 {
-  "updated_at": "2026-11-21T20:30:00+01:00",
+  "updated_at": "2026-11-23T18:21:00+01:00",
   "note": "本文件是 Skill 上游巡检的基线。定时任务每周一读取此文件，对比上游最新 commit；有变化才更新此处。",
   "watch": [
     {
       "repo": "Leonxlnx/taste-skill",
       "skill": "design-taste-frontend",
       "license": "MIT",
-      "pinned": "f6b76575f949707b4e3c37cd86cb44b0b98643e8",
-      "pinned_date": "2026-11-07",
+      "pinned": "6c0b5c78f5d31776e2210305abaa210cdc0030bf",
+      "pinned_date": "2026-11-22",
       "version_hint": "v2.5.1",
       "in_repo": "skills/taste-skill",
-      "priority": "high"
+      "priority": "high",
+      "last_change": "仅 README.md 增一行赞助者头像；SKILL.md、scripts、references 未变，无需重新 vendoring"
     },
     {
       "repo": "pbakaus/impeccable",
@@ -84,10 +85,11 @@
       "repo": "JuliusBrussee/caveman",
       "skill": "caveman",
       "license": "Apache-2.0",
-      "pinned": "a192894723a8f47e7f504c7b5041967ff1f18e55",
-      "pinned_date": "2026-11-17",
+      "pinned": "b89752f6bca5a26bfde8b019813554241800ca99",
+      "pinned_date": "2026-11-23",
       "version_hint": "4.x",
-      "priority": "low"
+      "priority": "low",
+      "last_change": "245 个文件：engine/、proxy/、packages/，以及 skills/caveman-compress 的 SKILL.md 与 compress/validate 脚本，压缩行为有实质改动；未入库，暂不同步"
     },
     {
       "repo": "greensock/gsap-skills",
@@ -119,10 +121,11 @@
       "repo": "vercel-labs/agent-skills",
       "skill": "npx skills CLI",
       "license": "未固化",
-      "pinned": "1a2c79d4e6c4a2283dc2c614b6538cbe1ed5ca62",
-      "pinned_date": "2026-10-27",
+      "pinned": "5a37a6329fbad3666c3207392a6a7c0110e92efb",
+      "pinned_date": "2026-11-20",
       "priority": "medium",
-      "note": "安装命令依赖它的 CLI 行为"
+      "note": "安装命令依赖它的 CLI 行为",
+      "last_change": "只改 skills/web-design-guidelines（1.0.0→1.1.0，规则改为内置快照）；我们采用的 accessibility-engineering / performance-optimization / browser-testing-with-devtools 未动"
     }
   ]
 }
