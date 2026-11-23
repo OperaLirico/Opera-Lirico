@@ -2,16 +2,16 @@
 
 - Cycle: 2026-W48
 - Started: 2026-11-23T16:43:50+01:00
-- Last updated: 2026-11-23T16:45:05+01:00
+- Last updated: 2026-11-23T16:45:38+01:00
 - Status: **in_progress**
-- Coverage: **24/45** checked; 21 remaining
+- Coverage: **36/45** checked; 9 remaining
 - Failed/restricted/extraction errors: 4 (restricted: 1)
 - Change comparison: first baseline; no previous complete weekly scan exists yet
 - Sources with anomalies: 3
-- Registered sources: 23; candidate queue entries: 1
-- Source review classifications: auto_approved_official=11, auto_approved_third_party=3, duplicate_candidate=1, irrelevant_candidate=7, needs_review=2
-- Official + relevant: 11
-- Third-party + relevant: 2
+- Registered sources: 35; candidate queue entries: 1
+- Source review classifications: auto_approved_official=20, auto_approved_third_party=6, duplicate_candidate=1, irrelevant_candidate=7, needs_review=2
+- Official + relevant: 20
+- Third-party + relevant: 5
 - Needs review / irrelevant / unclassified: 9
 - Duplicate candidates (registered): 1
 - Inventory SHA-256: 27f13efcba9e91a843513c709ebf9a3eb96089e69020d8d01b803607e6c07780 (inventory identity only)
