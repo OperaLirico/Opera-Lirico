@@ -72,17 +72,19 @@ def source_inventory() -> list[dict]:
     sources = read_json(DATA / "sources.json", [])
     if isinstance(sources, list):
         for item in sources:
-            url = item.get("url", "")
+            number = item.get("number")
+            fallback_url = item.get("url", "")
+            fallback_canonical = canonical_url(fallback_url) if fallback_url.startswith("http") else fallback_url
+            source_id = str(item.get("source_id") or f"source-{number if number is not None else fallback_canonical}")
+            # Persistent overrides outrank generated registry fields and the immutable baseline.
+            override = overrides_by_id.get(source_id) or {}
+            url = override.get("source_url") or fallback_url
             if not url.startswith("http"):
                 continue
             canonical = canonical_url(url)
             if canonical in seen_urls:
                 continue
             seen_urls.add(canonical)
-            number = item.get("number")
-            source_id = str(item.get("source_id") or f"source-{number if number is not None else canonical}")
-            # Persistent overrides outrank generated registry fields and the immutable baseline.
-            override = overrides_by_id.get(source_id) or {}
             baseline = audit_by_id.get(source_id) or audit_by_number.get(number) or {}
             evidence_urls = override.get("evidence_urls") or item.get("evidence_urls") or []
             evidence = override.get("audit_evidence") or item.get("audit_evidence") or []
@@ -155,7 +157,7 @@ def source_fetch_url(url: str) -> str:
     return url
 
 
-def fetch_tls_belli_page(url: str) -> tuple[int, str, str]:
+def fetch_tls_belli_page(url: str) -> tuple[int, str, str, str]:
     """Fetch TLS Belli with stdlib HTTPS, retaining CA and hostname verification.
 
     Scrapling's curl_cffi transport rejects this host even though Python's default
@@ -172,12 +174,13 @@ def fetch_tls_belli_page(url: str) -> tuple[int, str, str]:
     )
     with urlopen(request, timeout=25, context=ssl.create_default_context()) as response:
         status = int(response.status)
+        final_url = response.geturl()
         payload = response.read()
     document = lxml_html.fromstring(payload)
     title = core.clean_line(" ".join(document.xpath("//title//text()")))
     body = document.xpath("//body")
     raw_text = "\n".join(body[0].itertext()) if body else document.text_content()
-    return status, title, raw_text
+    return status, title, raw_text, final_url
 
 
 def scan_one(source: dict, previous: dict | None, checked_at: str) -> dict:
@@ -208,7 +211,8 @@ def scan_one(source: dict, previous: dict | None, checked_at: str) -> dict:
     try:
         host = (urlsplit(fetch_url).hostname or "").lower()
         if host in {"www.tls-belli.it", "tls-belli.it"}:
-            http_status, title, text = fetch_tls_belli_page(fetch_url)
+            http_status, title, text, final_url = fetch_tls_belli_page(fetch_url)
+            result["final_url"] = final_url
         else:
             response = Fetcher.get(fetch_url, timeout=25, retries=0)
             http_status = getattr(response, "status", None)
@@ -222,7 +226,9 @@ def scan_one(source: dict, previous: dict | None, checked_at: str) -> dict:
         result["normalized_text_sha256"] = hashlib.sha256(combined.encode("utf-8")).hexdigest() if combined else None
         result["relevant_line_count"] = len(core.rank_relevant_lines(normalized.splitlines()))
         result["vocal_signal"] = bool(VOCAL_RE.search(combined))
-        if http_status in (403, 429):
+        password_wall = bool(re.search(r"password.{0,40}protected|protected.{0,40}password", combined, re.IGNORECASE))
+        password_redirect = "password-protected=login" in (result.get("final_url") or "").lower()
+        if http_status in (403, 429) or password_wall or password_redirect:
             result["status"] = "restricted"
         elif http_status is not None and http_status >= 400:
             result["status"] = "http_error"
