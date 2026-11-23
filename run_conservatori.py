@@ -29,7 +29,7 @@ try:  # the workflow installs pypdf; a missing reader must not break the run
 except Exception:  # pragma: no cover - optional dependency
     PdfReader = None
 
-from scrapling.fetchers import Fetcher as RawFetcher
+from era_research.compat import Fetcher as RawFetcher
 
 import scrape_conservatori as core
 
