@@ -99,6 +99,12 @@ class SourceCoverageTests(unittest.TestCase):
         report = audit.render_report(state)
         self.assertIn("Changed normalized text hashes: 0", report)
 
+    def test_tls_belli_registry_uses_current_official_homepage(self):
+        inventory = audit.source_inventory()
+        official = next(item for item in inventory if item["source_id"] == "source-10")
+        self.assertEqual(official["url"], "https://www.tls-belli.it/")
+        self.assertFalse(any(item["source_id"] == "candidate-2" for item in inventory))
+
     def test_inventory_is_unique_and_does_not_double_count_extra_registry(self):
         inventory = audit.source_inventory()
         ids = [item["source_id"] for item in inventory]
