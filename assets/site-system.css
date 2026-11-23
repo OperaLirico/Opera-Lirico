@@ -1,0 +1,167 @@
+/* OperaLab. shared design system — release polish, 2026-11-23
+   One visual language across discovery, repertoire, masterclasses and voice science.
+   Page-specific layouts remain intact; this file owns shared tokens and navigation. */
+:root{
+  color-scheme:light;
+  --ol-ink:#2b2424;
+  --ol-muted:#6c605d;
+  --ol-paper:#f8f5ef;
+  --ol-surface:#fffdf9;
+  --ol-line:#e6ddd3;
+  --ol-brand:#642d3d;
+  --ol-brand-strong:#7c3c4c;
+  --ol-accent:#a77b4f;
+  --ol-radius:16px;
+  --ol-shadow:0 8px 28px rgba(52,35,32,.055);
+}
+html{scroll-behavior:smooth;scroll-padding-top:112px}
+body{
+  color:var(--ol-ink);
+  background:var(--ol-paper);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+body::before{display:none!important}
+a{color:var(--ol-brand)}
+a:hover{color:var(--ol-brand-strong)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--ol-brand)!important;outline-offset:3px
+}
+/* Shared masthead */
+html body header.topbar{
+  position:sticky;top:0;z-index:100;
+  background:rgba(248,245,239,.94)!important;
+  border-bottom:1px solid var(--ol-line)!important;
+  box-shadow:0 3px 16px rgba(40,28,26,.035);
+  backdrop-filter:blur(16px) saturate(140%);
+}
+html body header.topbar .topbar-inner{
+  width:min(100% - 48px,1240px);max-width:1240px;min-height:70px;
+  margin:0 auto;padding:10px 0;display:flex;align-items:center;
+  justify-content:space-between;gap:22px;flex-wrap:nowrap;
+}
+html body header.topbar .brand{display:inline-flex;align-items:center;gap:10px;flex:0 0 auto;text-decoration:none}
+html body header.topbar .brand-mark{
+  display:grid;place-items:center;width:36px;height:36px;border-radius:11px;
+  background:var(--ol-brand)!important;color:#fff!important;border:0!important;
+  font-size:18px;font-weight:600;
+}
+html body header.topbar .brand-text{
+  color:var(--ol-ink)!important;font-size:17px;font-weight:700;
+  letter-spacing:-.035em;font-family:Georgia,"Songti SC",serif;
+}
+html body header.topbar .nav-links{
+  display:flex;align-items:center;justify-content:flex-end;gap:4px;
+  min-width:0;flex:1 1 auto;flex-wrap:nowrap;overflow:visible;
+}
+html body header.topbar .nav-links a{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-height:38px;padding:8px 11px;border:1px solid transparent;border-radius:999px;
+  color:var(--ol-muted)!important;font-size:12px;font-weight:600;
+  text-decoration:none;white-space:nowrap;transition:background .18s ease,color .18s ease,border-color .18s ease;
+}
+html body header.topbar .nav-links a:hover,
+html body header.topbar .nav-links a[aria-current="page"]{
+  color:var(--ol-brand)!important;background:#f0e6e2;border-color:#e8d7d1;
+}
+html body header.topbar .install-button{
+  flex:0 0 auto;min-height:38px;padding:8px 12px;border:1px solid var(--ol-line);
+  border-radius:999px;background:var(--ol-surface);color:var(--ol-brand);font-size:12px;
+}
+html body .skip-link{z-index:120;background:var(--ol-brand);color:#fff}
+html body footer.closing{
+  width:min(100% - 48px,1240px);max-width:1240px;margin:54px auto 0;
+  padding:28px 0 34px;border-top:1px solid var(--ol-line);
+  background:transparent;color:var(--ol-muted);
+}
+html body footer.closing :is(.footer-inner,.closing-inner){max-width:none}
+html body footer.closing :is(.footer-brand,.footer-copy,.closing-brand) strong{
+  color:var(--ol-ink);font-family:Georgia,"Songti SC",serif;font-size:20px;
+}
+html body footer.closing p{color:var(--ol-muted);font-size:13px;line-height:1.7}
+html body footer.closing nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+html body footer.closing nav a{
+  display:inline-flex;align-items:center;min-height:34px;padding:6px 11px;
+  border:1px solid var(--ol-line);border-radius:999px;color:var(--ol-muted);
+  font-size:12px;text-decoration:none;
+}
+html body footer.closing nav a:hover{border-color:#d7bfc0;color:var(--ol-brand)}
+html body footer.closing :is(.footer-note,small,.closing-note){display:block;margin-top:14px;color:var(--ol-muted);font-size:11px}
+/* Consistent page canvas and section rhythm */
+html body :is(.home-section,.master-wrap,.lab-wrap,.mechanism,.closing){min-width:0}
+html body main :is(.home-section,.master-list-section,.body-figure-section,.model-section,.interaction-section,.map-section){
+  scroll-margin-top:112px;
+}
+html body :is(.master-head,.lab-hero,.mechanism-hero-copy,.voice-hero,.home-hero){
+  color:var(--ol-ink);
+}
+html body :is(.master-head,.lab-hero,.home-hero){
+  border-color:var(--ol-line);
+}
+html body :is(.eyebrow,.home-kicker,.home-section-index,.lab-kicker,.anatomy-section-number){
+  color:var(--ol-accent);
+}
+html body :is(.home-section-head h2,.section-head h2,.master-list-head h2,.anatomy-section-head h2){
+  color:var(--ol-ink);
+}
+html body :is(.tile,.master-card,.card,.panel,.body-figure,.body-detail,.lab-card){
+  border-color:var(--ol-line);
+}
+html body :is(.tile,.master-card,.card,.panel,.body-figure,.body-detail,.lab-card){
+  box-shadow:var(--ol-shadow);
+}
+html body :is(.home-button--primary,.master-hero-cta,.hero-cta){
+  background:var(--ol-brand)!important;border-color:var(--ol-brand)!important;color:#fff!important;
+}
+html body :is(.home-button--primary,.master-hero-cta,.hero-cta):hover{
+  background:var(--ol-brand-strong)!important;border-color:var(--ol-brand-strong)!important;
+}
+/* A small local pathway connects the three voice-science pages. */
+html body .science-subnav{
+  width:min(100% - 48px,1240px);margin:14px auto 0;
+  display:flex;align-items:center;flex-wrap:wrap;gap:7px;
+  color:var(--ol-muted);font-size:11px;
+}
+html body .science-subnav-label{margin-right:4px;font-weight:700;letter-spacing:.04em}
+html body .science-subnav a{
+  display:inline-flex;align-items:center;min-height:32px;padding:5px 10px;
+  border:1px solid var(--ol-line);border-radius:999px;background:rgba(255,253,249,.7);
+  color:var(--ol-muted);font-size:11px;text-decoration:none;
+}
+html body .science-subnav a[aria-current="page"]{
+  color:var(--ol-brand);border-color:#d9c2c3;background:#f1e7e5;font-weight:700;
+}
+@media(max-width:1050px){
+  html body header.topbar .topbar-inner{gap:12px}
+  html body header.topbar .nav-links{justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
+  html body header.topbar .nav-links::-webkit-scrollbar{display:none}
+  html body header.topbar .nav-links a{padding-inline:9px}
+}
+@media(max-width:760px){
+  html body header.topbar .topbar-inner{
+    width:calc(100% - 32px);min-height:0;padding:9px 0 7px;
+    display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;
+  }
+  html body header.topbar .brand-mark{width:32px;height:32px}
+  html body header.topbar .brand-text{font-size:15px}
+  html body header.topbar .nav-links{
+    grid-column:1/-1;grid-row:2;display:flex;justify-content:flex-start;
+    width:100%;overflow-x:auto;overflow-y:hidden;gap:5px;padding:1px 0 4px;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+  }
+  html body header.topbar .nav-links a{flex:0 0 auto;min-height:36px;padding:7px 10px;font-size:11px}
+  html body header.topbar .install-button{justify-self:end}
+  html body footer.closing{width:calc(100% - 32px);margin-top:36px;padding-top:22px}
+  html body .science-subnav{width:calc(100% - 32px);gap:6px}
+  html body .science-subnav-label{flex:0 0 100%}
+  html body :is(.home-section,.master-wrap,.lab-wrap,.mechanism){min-width:0}
+}
+@media(max-width:420px){
+  html body header.topbar .topbar-inner{width:calc(100% - 28px)}
+  html body header.topbar .nav-links a{padding-inline:9px}
+  html body footer.closing{width:calc(100% - 28px)}
+  html body .science-subnav{width:calc(100% - 28px)}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html body *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
