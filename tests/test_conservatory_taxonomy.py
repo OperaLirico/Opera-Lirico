@@ -14,6 +14,31 @@ class ConservatoryTaxonomyTests(unittest.TestCase):
         self.assertEqual(sum(item["institution_type"] == "opera_academy" for item in items.values()), 9)
         self.assertEqual(sum(item["institution_type"] == "choral_school" for item in items.values()), 2)
 
+
+    def test_replaced_retired_conservatory_domains_with_current_official_sites(self):
+        scraper = (ROOT / "scrape_conservatori.py").read_text(encoding="utf-8")
+        expected = (
+            "https://www.madernalettimi.it/",
+            "https://www.conservatoriocosenza.it/",
+            "https://www.conssp.it/",
+            "https://www.conservatoriorossini.it/",
+            "https://www.conservatorionicolini.com/",
+            "https://www.consalerno.it/",
+        )
+        for url in expected:
+            with self.subTest(url=url):
+                self.assertIn(url, scraper)
+        retired = (
+            "conservatoriomaderna-cesena.it",
+            "portale.conservatoriodicosenza.it",
+            "conservatoriopuccini.com",
+            "conservatorionicolini.it",
+            "consalerno.com",
+        )
+        for domain in retired:
+            with self.subTest(domain=domain):
+                self.assertNotIn(domain, scraper)
+
     def test_conservatory_and_opera_academy_are_separate_panels(self):
         html = (ROOT / "index.html").read_text(encoding="utf-8")
         app = (ROOT / "app.js").read_text(encoding="utf-8")
