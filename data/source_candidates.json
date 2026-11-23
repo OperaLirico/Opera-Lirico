@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T11:49:52+01:00",
+  "updated_at": "2026-11-23T17:10:55+01:00",
   "items": [
     {
       "candidate_id": 1,
@@ -115,6 +115,106 @@
         }
       ],
       "access_policy_note": "A strict HTTPS request to the homepage returns HTTP 200 but redirects to a password-protected login page. The former Bandi e Avvisi and competition child paths return 404. DUE MONDI NEWS reported that the institution planned to present its new website and the 81st competition on 26 November 2026; this is third-party context, not official competition terms."
+    },
+    {
+      "number": 3,
+      "source": "Avis d'audition - Ballet du Grand Théâtre de Genève - Grand Théâtre de",
+      "url": "https://www.gtg.ch/danseuses-danseurs-ballet-gtg-saison2027-2028/",
+      "checked_at": "2026-11-23T17:10:46+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Avis d'audition - Ballet du Grand Théâtre de Genève - Grand Théâtre de Genève",
+      "relevant_lines": [
+        "Les auditions pour ces postes auront lieu le samedi 27 février 2027. Une invitation sera transmise aux candidats sélectionnés le lundi 18 janvier 2027.",
+        "Nous vous remercions de nous faire parvenir votre dossier de candidature complet exclusivement via ce lien avec tous les éléments suivants :",
+        "The Croatian mezzo-soprano Ena Pongrac trained at the Universities of the Arts in Graz and Berlin, furthering her training with the likes of Christa Ludwig, Gundula Janowitz, Brigitte Fassbaender and Anne Sofie von Otter. In 2016, she made her debut as Zerlina (",
+        "William Meinert’s awards include first prize in the Shreveport Opera Mary Jacobs Smith Singer of the Year 2022 competition and the Houston Grand Opera Eleanor McCollum Competition 2019. He recently graduated from Washington National Opera’s Cafritz Young Artist program, where he sang Sarastro in",
+        "William Meinert a remporté le premier prix du concours Shreveport Opera Mary Jacobs Smith Singer of the Year 2022 et de la Houston Grand Opera Eleanor McCollum Competition 2019, et est finaliste de la Loren L. Zachary National Vocal Competition 2022. Il est récemment diplômé du programme Cafritz Young Artist du Washington National Opera, où il a interprété Sarastro dans",
+        "La mezzo-soprano croate, Ena Pongrac a été formée aux Universités des Arts de Graz et de Berlin et elle approfondit sa formation auprès notamment de Christa Ludwig, Gundula Janowitz, Brigitte Fassbaender ou encore Anne Sofie von Otter. En 2016, elle fait ses débuts en Zerlina (",
+        "Danseuses et danseurs à 100% pour la saison 2027/2028",
+        "Août 2027",
+        "Délai d’inscription : Dimanche 29 novembre 2026 à 23h00.",
+        "Tous droits réservés © 2026",
+        "Originally from South Korea, Sunghyun Hong studied at the Korea National University of Arts, where he completed both a bachelor’s and a master’s degree in contemporary dance. In 2023, he was awarded the Grand Prize at the Korea International Contemporary Dance Competition. He took part in the world premiere of Boléro X by Shahar Binyamini and has toured internationally, working with choreographers including Sidi Larbi Cherkaoui, Damien Jalet, Emio Greco and Hofesh Shechter, as well as with the Korea National Contemporary Dance Company and Sejong Dance Company. Alongside his career as a dancer, he is also active as a choreographer and collaborates across a range of artistic fields. He has worked as a movement director and assistant director on music videos for K-pop artists, as well as on Korean television dramas and films. He has been a member of the Ballet du Grand Théâtre de Genève since 2026.",
+        "Originaire de Corée du Sud, le danseur Sunghyun Hong étudie à l’Université nationale des arts de Corée où il obtient un bachelor et un master en danse contemporaine. En 2023, il reçoit le Grand Prix du Concours international de danse contemporaine de Corée. Il participe à la création mondiale de Boléro X de Shahar Binyamini et se produit dans le cadre de tournées internationales, travaillant avec des chorégraphes tels que Sidi Larbi Cherkaoui, Damien Jalet, Emio Greco et Hofesh Shechter, ainsi qu’avec la Compagnie nationale de danse contemporaine de Corée et la Compagnie de danse Sejong. Parallèlement à sa carrière de danseur, il développe une activité de chorégraphe et collabore dans différents domaines artistiques. Il travaille notamment comme collaborateur au mouvement et assistant réalisateur sur des clips d’artistes de K-pop, ainsi que sur des séries et des films coréens. Depuis 2026, il est membre du Ballet du Grand Théâtre de Genève.",
+        "Originally from Taoyuan, Taiwan, Hsin-Hsuan Yu studied at Taipei National University of the Arts. In 2021, she created and performed the original duet Mutualism at the Stray Birds Dance Platform. In 2022, she collaborated with Cheng Tsung-lung on Blue Hour with Cloud Gate Dance Theatre and was invited to perform Dawn Chorus at MASDANZA. After joining the Akram Khan Company, she took part in the first two creative phases of Thikra: A Night of Remembering, before touring with the production in 2025. With her original duet KOWAW | Eagle, she reached the final of the 23rd Burgos & New York International Choreographic Contest, won the joint First Audience Prize at the Danza en el Camino Festival in 2025, and received the Adelaide Fringe Best Dance Award at the Adelaide Fringe Festival in 2026. She has been a member of the Ballet du Grand Théâtre de Genève since 2026.",
+        "Originaire de Taoyuan (Taïwan), la danseuse Hsin-Hsuan Yu étudie à l’Université nationale des arts de Taipei. En 2021, elle crée et interprète le duo original Mutualism dans le cadre de la Stray Birds Dance Platform. En 2022, elle collabore avec Cheng Tsung-lung sur Blue Hour avec le Cloud Gate Dance Theatre et est invitée à interpréter Dawn Chorus à MASDANZA. Après avoir rejoint l’Akram Khan Company, elle participe aux deux premières phases de création de Thikra: A Night of Remembering, puis à la tournée du spectacle en 2025. Avec son duo KOWAW | Eagle, elle atteint la finale de la 23e édition du Concours international de chorégraphie Burgos & New York, remporte le prix du public au festival Danza en el Camino en 2025, puis participe à l’Adelaide Fringe Festival en 2026, où elle reçoit le prix du meilleur spectacle de danse. Depuis 2026, elle est membre du Ballet du Grand Théâtre de Genève.",
+        "Originally from Santa Clara, Cuba, Naara Amisaday trained at the Olga Alonso Professional School of Arts before joining the Acosta Danza Academy. As part of her training, in 2020 she took part in a choreographic project bringing together the Prix de Lausanne’s partner schools. After graduating, she joined Acosta Danza, where she became a Principal Dancer. She performed a wide-ranging repertoire of works by leading choreographers, including Sidi Larbi Cherkaoui, Ben Stevenson, Goyo Montero, Pontus Lidberg and Carlos Acosta. Her career has taken her to major international stages, including the Royal Opera House, Covent Garden, where she performed alongside Carlos Acosta. She has been a member of the Ballet du Grand Théâtre de Genève since 2026."
+      ],
+      "error": null,
+      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
+      "candidate_id": 3,
+      "discovered_at": "2026-11-23T17:10:46+01:00",
+      "review_status": "pending_manual_review",
+      "screening_status": "heuristic_passed",
+      "publisher_status": "unverified",
+      "review_notes": ""
+    },
+    {
+      "number": 4,
+      "source": "Bando audizioni per eventuali assunzioni a tempo determinato Orchestra",
+      "url": "https://orchestrasinfonicasiciliana.it/it/audizioni/bando-audizioni-eventuali-assunzioni-tempo-determinato-orchestra-lanno-2027",
+      "checked_at": "2026-11-23T17:10:48+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Bando audizioni per eventuali assunzioni a tempo determinato Orchestra per l'anno 2027 | Orchestra Sinfonica Siciliana",
+      "relevant_lines": [
+        "scadenza presentazione domande di audizione 25 novembre 2026",
+        "Bando audizioni per eventuali assunzioni a tempo determinato Orchestra per l'anno 2027 | Orchestra Sinfonica Siciliana",
+        "Bando audizioni per eventuali assunzioni a tempo determinato Orchestra per l'anno 2027",
+        "Bando di audizioni Orchestra anno 2027",
+        "Domanda di partecipazione audizioni anno 2027",
+        "Bando Audizioni Orchestra",
+        "Bando di audizioni Orchestra",
+        "Domanda partecipazione Audizioni",
+        "Calendario Audizioni Orchestra",
+        "Calendario Audizioni Orchestra",
+        "Programma stagione 2026/2027",
+        "25 Novembre 2026",
+        "Il Coro di Voci Bianche"
+      ],
+      "error": null,
+      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
+      "candidate_id": 4,
+      "discovered_at": "2026-11-23T17:10:48+01:00",
+      "review_status": "pending_manual_review",
+      "screening_status": "heuristic_passed",
+      "publisher_status": "unverified",
+      "review_notes": ""
+    },
+    {
+      "number": 5,
+      "source": "Casting Stagione Teatrale 2027/2028 - Teatro di Roma casting-Teatro di",
+      "url": "https://www.teatrodiroma.net/comunicazione/news/casting-stagione-teatrale-2027-2028/",
+      "checked_at": "2026-11-23T17:10:53+01:00",
+      "status": "ok",
+      "http_status": 200,
+      "title": "Casting Stagione Teatrale 2027/2028 - Teatro di Roma casting-Teatro di Roma",
+      "relevant_lines": [
+        "Casting Stagione Teatrale 2027/2028 - Teatro di Roma casting-Teatro di Roma",
+        "Casting Stagione Teatrale 2027/2028",
+        "Casting Stagione Teatrale 2027/2028",
+        "I candidati dovranno possedere caratteristiche sceniche e vocali adatte a interpretare personaggi in età preadolescenziale. Sono requisiti indispensabili lineamenti delicati e un’altezza inferiore a 160 cm.",
+        "MODALITÀ DI CANDIDATURA",
+        "I file dovranno essere nominati indicando nome e cognome del candidato, seguiti dalla tipologia del documento (es. Mario.Rossi.foto_figura_intera; Mario.Rossi.foto_primo_piano; Mario.Rossi.cv; Mario.Rossi.privacy).",
+        "La candidatura dovrà essere inviata all’indirizzo:",
+        "bando.selezione@teatrodiroma.net",
+        "Lo stesso indirizzo potrà essere utilizzato per richiedere eventuali informazioni e chiarimenti relativi al presente bando.",
+        "verranno contattati esclusivamente i candidati ammessi alla seconda fase di selezione che consisterà in un incontro con il regista presso il Teatro Argentina di Roma. La data dell’incontro sarà comunicata in un secondo momento.",
+        "Stagione 2026-2027",
+        "Stagione 2026-2027",
+        "Stagione 2026-2027",
+        "Per una prossima produzione della Fondazione Teatro di Roma, nell’ambito della stagione teatrale 2027/2028, si cercano 2 attrici e 2 attori di età compresa tra i 18 e i 25 anni.",
+        "30 novembre 2026"
+      ],
+      "error": null,
+      "discovered_from": "https://www.sportellospettacolo.it/bandi-call/",
+      "candidate_id": 5,
+      "discovered_at": "2026-11-23T17:10:53+01:00",
+      "review_status": "pending_manual_review",
+      "screening_status": "heuristic_passed",
+      "publisher_status": "unverified",
+      "review_notes": ""
     }
   ]
 }
