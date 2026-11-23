@@ -1,0 +1,102 @@
+/* OperaLab. — shared release design system */
+:root{--ol-ink:#2b211f;--ol-muted:#6b5a55;--ol-paper:#f7f2ea;--ol-surface:#fffdf8;--ol-line:#e6d9ca;--ol-wine:#642b39;--ol-wine-2:#823e4c;--ol-gold:#9a7445;--ol-radius:16px}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{background:var(--ol-paper);color:var(--ol-ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+body::before{background:radial-gradient(900px 420px at 8% -12%,rgba(154,116,69,.09),transparent 62%),radial-gradient(900px 420px at 92% 0,rgba(100,43,57,.055),transparent 66%)}
+a{color:var(--ol-wine-2)}h1,h2,h3,h4{color:var(--ol-ink)}
+.topbar{background:rgba(247,242,234,.94);border-bottom:1px solid var(--ol-line);backdrop-filter:blur(14px)}
+.topbar-inner{width:100%;max-width:1200px;min-height:68px;gap:20px}
+.brand{color:var(--ol-ink);flex:0 0 auto}.brand-mark{width:36px;height:36px;border-radius:10px;background:var(--ol-wine);color:#fffaf4}
+.brand-text{font-family:Georgia,"Songti SC",serif;font-size:17px;font-weight:650;letter-spacing:-.02em}
+.nav-links{gap:4px;min-width:0}.nav-links a{min-height:40px;display:inline-flex;align-items:center;padding:8px 11px;color:var(--ol-muted);border-radius:8px;font-size:12px;white-space:nowrap}
+.nav-links a:hover,.nav-links a:focus-visible{background:rgba(100,43,57,.07);color:var(--ol-wine);text-decoration:none;outline-offset:1px}
+.install-button{border-color:var(--ol-line);border-radius:9px;color:var(--ol-wine);background:var(--ol-surface)}
+body.taste-home{--ink:var(--ol-ink);--ink-soft:var(--ol-muted);--paper:var(--ol-paper);--paper-2:var(--ol-surface);--line:var(--ol-line);--brand:var(--ol-wine);--brand-2:var(--ol-wine-2);--gold:var(--ol-gold);--gold-soft:#c9a979;background:var(--ol-paper)}
+body.taste-home .home-hero{display:block;min-height:0;max-width:1120px;padding:clamp(54px,8vw,92px) 24px 44px}
+body.taste-home .home-hero-copy{max-width:790px}
+body.taste-home .home-kicker,body.taste-home .home-section-index{color:var(--ol-gold)}
+body.taste-home .home-hero h1{max-width:18ch;font-family:Georgia,"Songti SC",serif;font-size:clamp(38px,5.2vw,62px);line-height:1.14;letter-spacing:-.035em}
+body.taste-home .home-lede{max-width:62ch;color:var(--ol-muted);font-size:16px;line-height:1.85}
+body.taste-home .home-button--primary,body.taste-home .newsletter-link{background:var(--ol-wine);border-color:var(--ol-wine);color:#fff}
+body.taste-home .home-button--primary:hover,body.taste-home .newsletter-link:hover{background:var(--ol-wine-2);border-color:var(--ol-wine-2)}
+body.taste-home .home-text-link,body.taste-home .home-refresh{color:var(--ol-wine)}
+body.taste-home .home-card-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+body.taste-home .home-card-grid .tile{min-height:126px;border:1px solid var(--ol-line);border-radius:14px;background:var(--ol-surface);box-shadow:0 3px 14px rgba(48,31,26,.035)}
+body.taste-home .home-card-grid .tile:hover{border-color:rgba(100,43,57,.34);box-shadow:0 12px 28px rgba(48,31,26,.075)}
+body.taste-home .home-card-grid .tile-icon{background:#f3e9e4;color:var(--ol-wine)}
+body.taste-home .home-card-grid .tile-title{font-family:Georgia,"Songti SC",serif;color:var(--ol-ink)}
+body.taste-home .home-card-grid .tile-desc{color:var(--ol-muted)}
+body.taste-home .home-card-grid .tile-stat b{color:var(--ol-wine)}body.taste-home .home-card-grid .tile-arrow{color:var(--ol-gold)}
+body.taste-home .home-section-head h2,body.taste-home .section-head h2{font-family:Georgia,"Songti SC",serif}
+body.taste-home .home-source-note{color:var(--ol-muted)}body.taste-home .panel-back{color:var(--ol-wine)}
+body.taste-home .count-pill{border-color:var(--ol-line);background:var(--ol-surface)}
+body.taste-home .opportunity-card,body.taste-home .cons-card,body.taste-home .music-result{border-color:var(--ol-line);border-radius:14px;box-shadow:0 3px 14px rgba(48,31,26,.035)}
+body.taste-home .newsletter-panel{border:1px solid var(--ol-line);background:var(--ol-surface);border-radius:16px}
+body.taste-home footer.closing{border-top:1px solid var(--ol-line)}
+.europe-discovery{margin-top:36px;padding:clamp(20px,3vw,30px);border:1px solid var(--ol-line);border-radius:16px;background:rgba(255,253,248,.78)}
+.europe-discovery-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:18px}
+.europe-discovery-head h3{font:600 clamp(22px,3vw,30px)/1.25 Georgia,"Songti SC",serif;margin:0 0 8px}
+.europe-discovery-head p{max-width:62ch;color:var(--ol-muted);font-size:13px;line-height:1.75}
+.europe-summary{display:flex;flex-direction:column;align-items:flex-end;gap:4px;white-space:nowrap;color:var(--ol-muted);font-size:11px}
+.europe-summary strong{font:600 22px/1.2 Georgia,serif;color:var(--ol-wine)}
+.europe-toolbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,240px);gap:12px;margin:18px 0}
+.europe-country-label{display:flex;align-items:center;gap:10px;color:var(--ol-muted);font-size:12px}
+.europe-country-label select{min-height:42px;flex:1;min-width:0;padding:8px 12px;border:1px solid var(--ol-line);border-radius:9px;background:var(--ol-surface);color:var(--ol-ink)}
+.europe-country-group{margin:10px 0;border:1px solid var(--ol-line);border-radius:12px;background:var(--ol-surface);overflow:hidden}
+.europe-country-group>summary{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:12px 16px;cursor:pointer;list-style:none;font-size:13px;font-weight:650}
+.europe-country-group>summary::-webkit-details-marker{display:none}.europe-country-group>summary:after{content:"＋";color:var(--ol-wine);font-size:16px}
+.europe-country-group[open]>summary:after{content:"−"}.europe-country-group>summary small{margin-left:auto;color:var(--ol-muted);font-weight:400}
+.europe-institution-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:0 12px 12px}
+.europe-institution-card{min-width:0;padding:14px;border:1px solid var(--ol-line);border-radius:10px;background:#fffefa}
+.europe-institution-meta{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.europe-institution-meta span{padding:3px 7px;border-radius:5px;background:#f4eee7;color:var(--ol-muted);font-size:10px}
+.europe-institution-card h4{font-size:14px;line-height:1.45;margin:0 0 5px;overflow-wrap:anywhere}
+.europe-institution-card p{font-size:11px;color:var(--ol-muted)}
+.europe-institution-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.europe-institution-links a{font-size:11px;font-weight:650;color:var(--ol-wine);text-decoration:none}
+.europe-institution-links a:hover{text-decoration:underline;text-underline-offset:3px}
+.europe-disclaimer{margin-top:14px;padding:12px 14px;border-left:3px solid #b88c69;background:#f7f0e8;color:#69584f;font-size:11px;line-height:1.8}
+body.master-page,body.anatomy-page{background:var(--ol-paper);color:var(--ol-ink)}
+body.master-page .master-wrap,body.anatomy-page .lab-wrap{max-width:1160px}
+body.master-page .master-head{min-height:0;margin:28px auto 30px;padding:clamp(28px,5vw,58px);border-color:var(--ol-line);border-radius:16px;background:radial-gradient(ellipse at 90% 0,rgba(154,116,69,.12),transparent 44%),linear-gradient(135deg,rgba(100,43,57,.045),var(--ol-surface));box-shadow:none}
+body.master-page .master-head h1,body.anatomy-page .lab-hero h1{font-family:Georgia,"Songti SC",serif;color:var(--ol-ink)}
+body.master-page .master-head .eyebrow,body.anatomy-page .lab-kicker{color:var(--ol-gold)}
+body.master-page .master-head p,body.anatomy-page .lab-hero p{color:var(--ol-muted)}
+body.master-page .master-hero-cta{background:var(--ol-wine);border-radius:9px}
+body.master-page .master-card{border-color:var(--ol-line);border-radius:14px;box-shadow:0 3px 14px rgba(48,31,26,.035)}
+body.master-page .master-card:before{background:linear-gradient(180deg,var(--ol-gold),var(--ol-wine))}
+body.master-page .master-date{color:var(--ol-wine);background:#f6ece9;border-color:#ead8d4}
+body.master-page .master-link,body.master-page .master-link-primary{color:var(--ol-wine)!important;border-color:var(--ol-line)!important}
+body.master-page .master-link-primary{background:var(--ol-wine)!important;color:white!important;border-color:var(--ol-wine)!important}
+body.anatomy-page .lab-hero{margin-bottom:24px}
+body.anatomy-page .lab-hero h1{font-size:clamp(34px,5vw,54px)}
+body.anatomy-page .anatomy-section-head h2{font-family:Georgia,"Songti SC",serif;color:var(--ol-ink)}
+body.anatomy-page .body-detail .detail-kicker{color:var(--ol-gold)}
+body.anatomy-page .body-detail h2,body.anatomy-page .breath-lab h2,body.anatomy-page .lab-info h2{font-family:Georgia,"Songti SC",serif;color:var(--ol-ink)}
+body.anatomy-page .detail-link{color:var(--ol-wine);border-color:#d8bfc0}
+body.anatomy-page .model-tab[aria-pressed=true],body.anatomy-page .organ-chip[aria-pressed=true]{background:var(--ol-wine);border-color:var(--ol-wine)}
+body.anatomy-page .lab-btn.primary,body.anatomy-page .lab-btn[aria-pressed=true]{background:var(--ol-wine);border-color:var(--ol-wine)}
+body.anatomy-page .lab-kicker{letter-spacing:.1em}
+body:not(.taste-home) footer.closing{max-width:1160px;border-top:1px solid var(--ol-line);padding-top:18px;padding-bottom:24px}
+body:not(.taste-home) footer.closing a{color:var(--ol-wine)}
+@media(max-width:980px){body.taste-home .home-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ .topbar-inner{display:flex;flex-wrap:wrap;gap:6px 12px;padding-top:8px;padding-bottom:8px}
+ .topbar-inner>.brand{min-height:38px}.topbar-inner>.install-button{margin-left:auto}
+ .nav-links{order:3;flex:1 0 100%;width:100%;margin-left:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;gap:5px;padding:1px 0 3px}
+ .nav-links::-webkit-scrollbar{display:none}.nav-links a{flex:0 0 auto;min-height:40px;padding:7px 10px}
+ body.taste-home .home-hero{padding:42px 18px 30px}
+ body.taste-home .home-hero h1{font-size:clamp(34px,9vw,46px)}
+ body.taste-home .home-lede{font-size:14px}
+ body.taste-home .home-proof{align-items:flex-start;flex-wrap:wrap}
+ body.taste-home .home-card-grid{grid-template-columns:1fr;gap:10px}
+ body.taste-home .home-card-grid .tile{min-height:104px;padding:15px}
+ .europe-discovery{margin-top:26px;padding:18px 14px}
+ .europe-discovery-head{align-items:flex-start;flex-direction:column;gap:8px}
+ .europe-summary{align-items:flex-start}.europe-toolbar{grid-template-columns:1fr}
+ .europe-institution-grid{grid-template-columns:1fr}
+ body.master-page .master-head{margin:18px auto 22px;padding:24px 20px}
+ body.master-page .master-card{padding:17px}
+ body.anatomy-page .lab-wrap{padding:24px 16px 54px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
