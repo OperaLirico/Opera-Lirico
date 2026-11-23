@@ -1,6 +1,15 @@
 name: ERA Research Engine Integration
 
 on:
+  push:
+    branches: [feat/use-era-research-engine]
+    paths:
+      - "scrape_sources.py"
+      - "scrape_conservatori.py"
+      - "run_conservatori.py"
+      - "grow_sources.py"
+      - "requirements.txt"
+      - ".github/workflows/era-engine-integration.yml"
   pull_request:
     paths:
       - "scrape_sources.py"
