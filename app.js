@@ -31,6 +31,9 @@ let candidatesLoaded = false;
 let candidatesLoading = false;
 let candidatesFailed = false;
 let masterclassCount = null;
+let europeInstitutions = [];
+let europeQuery = "";
+let europeCountry = "all";
 let conservatoriData = [];
 let manualNotes = {};
 let zhNotes = {};
@@ -709,6 +712,74 @@ async function loadConservatori(){
   renderCalls();
 }
 
+
+/* ---------- European institution discovery index ---------- */
+const europeCountryNames={
+  Armenia:"亚美尼亚",Austria:"奥地利",Belarus:"白俄罗斯",Belgium:"比利时",
+  "Bosnia and Herzegovina":"波黑",Bulgaria:"保加利亚",Croatia:"克罗地亚",Cyprus:"塞浦路斯",
+  "Czech Republic":"捷克",Denmark:"丹麦",Estonia:"爱沙尼亚",Finland:"芬兰",France:"法国",
+  Georgia:"格鲁吉亚",Germany:"德国",Greece:"希腊",Hungary:"匈牙利",Iceland:"冰岛",Ireland:"爱尔兰"
+};
+function safeExternalUrl(value){
+  try{const url=new URL(String(value||""));return ["https:","http:"].includes(url.protocol)?url.href:"";}catch{return "";}
+}
+function renderEuropeInstitutions(){
+  const target=$("#europeInstitutions");
+  if(!target)return;
+  const query=normalizeSearch(europeQuery);
+  const filtered=europeInstitutions.filter(item=>{
+    const countryMatch=europeCountry==="all"||item.country===europeCountry;
+    const haystack=normalizeSearch([item.institution,item.city,item.country].join(" "));
+    return countryMatch&&(!query||haystack.includes(query));
+  }).sort((a,b)=>String(a.country).localeCompare(String(b.country))||String(a.institution).localeCompare(String(b.institution)));
+  const count=$("#europeCount");
+  if(count)count.textContent=filtered.length+" / "+europeInstitutions.length+" 所候选院校";
+  if(!filtered.length){
+    target.innerHTML='<div class="empty">没有找到匹配的院校。请调整关键词或国家筛选。</div>';
+    return;
+  }
+  const countries=[...new Set(filtered.map(item=>item.country))];
+  target.innerHTML=countries.map(country=>{
+    const items=filtered.filter(item=>item.country===country);
+    const cards=items.map(item=>{
+      const website=safeExternalUrl(item.official_website);
+      const profile=safeExternalUrl(item.aec_profile_url);
+      const membership=item.aec_membership==="active_members"?"AEC 正式成员":"AEC 副成员";
+      const status=item.official_website?"目录已列出官网":item.profile_fetch_status==="no_official_website_listed"?"AEC 档案未列官网":item.profile_fetch_status==="fetch_error"?"AEC 档案读取失败":"AEC 档案待读取";
+      return '<article class="europe-institution-card">'+
+        '<div class="europe-institution-meta"><span>'+esc(membership)+'</span><span>'+esc(status)+'</span></div>'+
+        '<h4>'+esc(item.institution||"未命名机构")+'</h4>'+
+        '<p>'+esc(europeCountryNames[item.country]||item.country)+(item.city?" · "+esc(item.city):"")+'</p>'+
+        '<div class="europe-institution-links">'+
+        (website?'<a href="'+esc(website)+'" target="_blank" rel="noopener noreferrer">院校官网 ↗</a>':"")+
+        (profile?'<a href="'+esc(profile)+'" target="_blank" rel="noopener noreferrer">AEC 档案 ↗</a>':"")+
+        '</div></article>';
+    }).join("");
+    return '<details class="europe-country-group" '+(query||europeCountry!=="all"?"open":"")+'><summary><span>'+
+      esc(europeCountryNames[country]||country)+'</span><small>'+items.length+' 所</small></summary>'+
+      '<div class="europe-institution-grid">'+cards+'</div></details>';
+  }).join("");
+}
+async function loadEuropeInstitutions(){
+  const target=$("#europeInstitutions");
+  try{
+    const response=await fetch(new URL("data/europe_institutions.json",sourceRoot),{cache:"no-store"});
+    if(!response.ok)throw new Error("HTTP "+response.status);
+    const data=await response.json();
+    europeInstitutions=Array.isArray(data.items)?data.items:[];
+    const countries=[...new Set(europeInstitutions.map(item=>item.country).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+    const select=$("#europeCountryFilter");
+    if(select)select.innerHTML='<option value="all">全部国家</option>'+countries.map(country=>'<option value="'+esc(country)+'">'+esc(europeCountryNames[country]||country)+'</option>').join("");
+    const websites=europeInstitutions.filter(item=>safeExternalUrl(item.official_website)).length;
+    const webCount=$("#europeWebCount");
+    if(webCount)webCount.textContent=websites+" 所已从 AEC 档案找到官网入口";
+    renderEuropeInstitutions();
+  }catch(error){
+    if(target)target.innerHTML='<div class="empty">欧洲院校目录暂时无法载入，请稍后刷新。</div>';
+    const count=$("#europeCount");if(count)count.textContent="目录暂不可用";
+  }
+}
+
 /* ---------- wiring ---------- */
 function bindPanelLinks(){
   document.addEventListener('click',event=>{
@@ -724,6 +795,10 @@ function bindPanelLinks(){
 }
 bindPanelLinks();
 $('#refreshButton').addEventListener('click',()=>{loadConservatori();loadRepertoire();});
+const europeInput=$('#europeSearchInput');
+if(europeInput)europeInput.addEventListener('input',event=>{europeQuery=event.target.value;renderEuropeInstitutions();});
+const europeSelect=$('#europeCountryFilter');
+if(europeSelect)europeSelect.addEventListener('change',event=>{europeCountry=event.target.value;renderEuropeInstitutions();});
 const consInput=$('#consSearchInput');
 if(consInput)consInput.addEventListener('input',event=>{consQuery=event.target.value;renderConservatori();});
 const academyInput=$('#academySearchInput');
@@ -785,6 +860,7 @@ renderTiles();
 loadRepertoire();
 loadConservatori();
 loadMasterclassCount();
+loadEuropeInstitutions();
 
 /* Direct links from other pages can open a homepage panel by hash. */
 window.addEventListener('load',()=>{
