@@ -4,6 +4,8 @@ on:
   push:
     branches: ["quality/**"]
     paths:
+      - "data/source_candidates.json"
+      - "data/source_review_overrides.json"
       - "app.js"
       - "data/opportunities.json"
       - "data/conservatori_manual.json"
@@ -28,7 +30,8 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - "scripts/diagnose_tls_host.py"
+      - "data/source_candidates.json"
+      - "data/source_review_overrides.json"
       - "discover_masterclasses.py"
       - "data/masterclass_sources.json"
       - "data/masterclasses.json"
@@ -79,8 +82,6 @@ jobs:
         run: python -m pip install -r requirements.txt
       - name: Run source quality tests
         run: python -m unittest discover -s tests -v
-      - name: Diagnose TLS Belli DNS endpoints (read-only)
-        run: python scripts/diagnose_tls_host.py www.tls-belli.it tls-belli.it
       - name: Audit GitHub Actions security
         run: python audit_workflow_security.py
       - name: Smoke-test read-only audit reports
