@@ -15,6 +15,20 @@ class SourceCoverageTests(unittest.TestCase):
             audit.inventory_hash(items + [{"source_id": "source-3", "url": "https://example.org/c", "kind": "registered"}]),
         )
 
+    def test_source_fetch_url_uses_verified_non_www_tls_belli_host(self):
+        self.assertEqual(
+            audit.source_fetch_url("https://www.tls-belli.it/bandi_e_avvisi/?x=1"),
+            "https://tls-belli.it/bandi_e_avvisi/?x=1",
+        )
+        self.assertEqual(
+            audit.source_fetch_url("https://www.tls-belli.it/concorso-di-canto-2026/"),
+            "https://tls-belli.it/concorso-di-canto-2026/",
+        )
+
+    def test_source_fetch_url_does_not_rewrite_other_hosts(self):
+        url = "https://www.example.org/path"
+        self.assertEqual(audit.source_fetch_url(url), url)
+
     def test_canonical_url_drops_fragment_only(self):
         self.assertEqual(
             audit.canonical_url("HTTPS://Example.org/a?x=1#section"),
