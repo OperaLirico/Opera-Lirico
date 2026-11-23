@@ -69,17 +69,16 @@
     {
       "candidate_id": 2,
       "source": "Teatro Lirico Sperimentale di Spoleto — 81st International Singing Competition",
-      "url": "https://www.tls-belli.it/concorso-di-canto-2026/",
-      "checked_at": "2026-11-11T11:31:58+01:00",
-      "status": "web_accessible",
-      "http_status": null,
-      "fetch_method": "official_site_link_and_web_open",
-      "title": "CONCORSO INTERNAZIONALE DI CANTO — 81ª edizione",
+      "url": "https://www.tls-belli.it/",
+      "checked_at": "2026-11-23T16:00:00+01:00",
+      "status": "access_restricted",
+      "http_status": 200,
+      "fetch_method": "stdlib_https_redirect_to_password_wall",
+      "title": "Teatro Lirico Sperimentale di Spoleto — official homepage",
       "relevant_lines": [
-        "già Concorso \"Comunità Europea\" per giovani cantanti lirici",
-        "81ª edizione",
-        "Spoleto, Teatro Caio Melisso — 16–20 febbraio 2027",
-        "Bando e informazioni disponibili prossimamente"
+        "Official homepage identifies Istituzione Teatro Lirico Sperimentale di Spoleto A. Belli.",
+        "Search-indexed official homepage announces the 81st International Singing Competition for 16–20 February 2027.",
+        "The official indexed page says the competition call and further information will be available soon."
       ],
       "discovered_from": "https://www.tls-belli.it/bandi_e_avvisi/",
       "discovered_at": "2026-11-11T11:31:58+01:00",
@@ -89,16 +88,16 @@
       "relevance_status": "relevant",
       "auto_review_status": "auto_approved_official",
       "confidence": "high",
-      "evidence_url": "https://www.tls-belli.it/concorso-di-canto-2026/",
+      "evidence_url": "https://www.tls-belli.it/",
       "evidence_urls": [
-        "https://www.tls-belli.it/bandi_e_avvisi/",
-        "https://www.tls-belli.it/concorso-di-canto-2026/"
+        "https://www.tls-belli.it/",
+        "https://www.duemondinews.com/il-teatro-lirico-sperimentale-svela-il-suo-futuro-nuova-immagine-giovani-talenti-e-grandi-progetti"
       ],
       "audit_date": "2026-11-12",
       "auto_review_checked_at": "2026-11-12T11:49:52+01:00",
-      "access_policy_status": "not_independently_verified_for_child_path",
+      "access_policy_status": "password_protected_at_2026-11-23",
       "auto_review_reason": "The official Bandi e avvisi page directly links to this dedicated page; the page identifies the 81st International Singing Competition for young opera singers, gives the dates 16–20 February 2027, and its footer identifies Istituzione Teatro Lirico Sperimentale di Spoleto A. Belli. Publisher identity and vocal relevance are high-confidence. The parent page was successfully fetched by the existing production source refresh on 2026-11-11; robots.txt for this exact child path was not independently retrievable in this audit.",
-      "review_notes": "Source candidate only. Rechecked 2026-11-12: the official page still announces the 81st International Singing Competition for 16–20 February 2027 and says the bando/information will be available soon. No application deadline, eligibility, fee, application route or official PDF is published. Do not create or publish an opportunity until the official call and supporting details appear. The separate libere-audizioni-2026 page is historical.",
+      "review_notes": "Source candidate only; do not promote or publish an opportunity from this record. On 2026-11-23 the official root hostname passes standard TLS certificate and hostname verification, but the homepage is password-protected and the former child paths return 404. The official site's indexed content announces the 81st competition for 16–20 February 2027 and says the call is forthcoming. Recheck the official site after its reported 26 November 2026 relaunch. No deadline, eligibility, fee or application route is currently verified.",
       "production_activation": false,
       "audit_method": "evidence_based",
       "auto_review_evidence": [
@@ -114,7 +113,8 @@
           "excerpt": "The official competition page still announces 16–20 February 2027 and says the bando and further information will be available soon; no deadline, eligibility, fee or application form is published.",
           "checked_at": "2026-11-12T11:49:52+01:00"
         }
-      ]
+      ],
+      "access_policy_note": "A strict HTTPS request to the homepage returns HTTP 200 but redirects to a password-protected login page. The former Bandi e Avvisi and competition child paths return 404. DUE MONDI NEWS reported that the institution planned to present its new website and the 81st competition on 26 November 2026; this is third-party context, not official competition terms."
     }
   ]
 }

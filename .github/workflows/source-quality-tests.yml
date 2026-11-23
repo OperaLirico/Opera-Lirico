@@ -4,6 +4,8 @@ on:
   push:
     branches: ["quality/**"]
     paths:
+      - "data/source_candidates.json"
+      - "data/source_review_overrides.json"
       - "app.js"
       - "data/opportunities.json"
       - "data/conservatori_manual.json"
@@ -28,6 +30,8 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - "data/source_candidates.json"
+      - "data/source_review_overrides.json"
       - "discover_masterclasses.py"
       - "data/masterclass_sources.json"
       - "data/masterclasses.json"
