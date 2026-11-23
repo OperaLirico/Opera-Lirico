@@ -1,39 +1,43 @@
 # Weekly source coverage audit
 
 - Cycle: 2026-W48
-- Started: 2026-11-23T16:32:35+01:00
-- Last updated: 2026-11-23T16:34:43+01:00
-- Status: **completed**
-- Coverage: **46/46** checked; 0 remaining
-- Failed/restricted/extraction errors: 2 (restricted: 0)
+- Started: 2026-11-23T16:43:50+01:00
+- Last updated: 2026-11-23T16:44:18+01:00
+- Status: **in_progress**
+- Coverage: **12/45** checked; 33 remaining
+- Failed/restricted/extraction errors: 3 (restricted: 1)
 - Change comparison: first baseline; no previous complete weekly scan exists yet
-- Sources with anomalies: 0
-- Registered sources: 44; candidate queue entries: 2
-- Source review classifications: auto_approved_official=26, auto_approved_third_party=6, duplicate_candidate=1, irrelevant_candidate=9, needs_review=4
-- Official + relevant: 25
-- Third-party + relevant: 5
-- Needs review / irrelevant / unclassified: 13
+- Sources with anomalies: 2
+- Registered sources: 11; candidate queue entries: 1
+- Source review classifications: auto_approved_official=4, auto_approved_third_party=2, duplicate_candidate=1, irrelevant_candidate=5
+- Official + relevant: 4
+- Third-party + relevant: 1
+- Needs review / irrelevant / unclassified: 5
 - Duplicate candidates (registered): 1
-- Inventory SHA-256: cb9ddd5656d6377347395744cc24959f6da47af7a1af716d2e0294027745d586 (inventory identity only)
+- Inventory SHA-256: 27f13efcba9e91a843513c709ebf9a3eb96089e69020d8d01b803607e6c07780 (inventory identity only)
 
 This scan checks page access and normalized text changes. A successful HTTP response is not proof of official identity, opportunity validity, or complete announcement capture. Text hashes are not publisher signatures.
 Keyword/vocal signals are discovery clues only. Source identity and relevance are reported separately from HTTP reachability; source-level approval does not approve every notice on a mixed-purpose page.
 
 ## Exceptions and changes
 
-### Teatro Lirico Sperimentale di Spoleto — 81st International Singing Competition (candidate-2)
-- URL: https://tls-belli.it/concorso-di-canto-2026/
-- Status: error / HTTP None
-- Last success: not yet successful
-- Anomalies: none
-- Error: CertificateVerifyError: Failed to perform, curl: (60) SSL: no alternative certificate subject name matches target hostname 'tls-belli.it'. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
-
 ### Teatro Lirico Sperimentale di Spoleto (source-10)
-- URL: https://tls-belli.it/bandi_e_avvisi/
-- Status: error / HTTP None
+- URL: https://www.tls-belli.it/
+- Status: restricted / HTTP 200
 - Last success: not yet successful
 - Anomalies: none
-- Error: CertificateVerifyError: Failed to perform, curl: (60) SSL: no alternative certificate subject name matches target hostname 'tls-belli.it'. See https://curl.se/libcurl/c/libcurl-errors.html first for more details.
+
+### Lavora con noi - Fondazione Aida (source-115)
+- URL: https://www.fondazioneaida.it/lavora-con-noi/
+- Status: extraction_error / HTTP 202
+- Last success: not yet successful
+- Anomalies: empty_extraction
+
+### Audizioni attori e attrici per la commedia brillante "Napule è" (source-117)
+- URL: https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/
+- Status: extraction_error / HTTP 202
+- Last success: not yet successful
+- Anomalies: empty_extraction
 
 ## Coverage limitations
 
