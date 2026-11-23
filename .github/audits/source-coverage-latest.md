@@ -2,17 +2,17 @@
 
 - Cycle: 2026-W48
 - Started: 2026-11-23T16:43:50+01:00
-- Last updated: 2026-11-23T16:44:18+01:00
+- Last updated: 2026-11-23T16:45:05+01:00
 - Status: **in_progress**
-- Coverage: **12/45** checked; 33 remaining
-- Failed/restricted/extraction errors: 3 (restricted: 1)
+- Coverage: **24/45** checked; 21 remaining
+- Failed/restricted/extraction errors: 4 (restricted: 1)
 - Change comparison: first baseline; no previous complete weekly scan exists yet
-- Sources with anomalies: 2
-- Registered sources: 11; candidate queue entries: 1
-- Source review classifications: auto_approved_official=4, auto_approved_third_party=2, duplicate_candidate=1, irrelevant_candidate=5
-- Official + relevant: 4
-- Third-party + relevant: 1
-- Needs review / irrelevant / unclassified: 5
+- Sources with anomalies: 3
+- Registered sources: 23; candidate queue entries: 1
+- Source review classifications: auto_approved_official=11, auto_approved_third_party=3, duplicate_candidate=1, irrelevant_candidate=7, needs_review=2
+- Official + relevant: 11
+- Third-party + relevant: 2
+- Needs review / irrelevant / unclassified: 9
 - Duplicate candidates (registered): 1
 - Inventory SHA-256: 27f13efcba9e91a843513c709ebf9a3eb96089e69020d8d01b803607e6c07780 (inventory identity only)
 
@@ -35,6 +35,12 @@ Keyword/vocal signals are discovery clues only. Source identity and relevance ar
 
 ### Audizioni attori e attrici per la commedia brillante "Napule è" (source-117)
 - URL: https://www.attoricasting.it/casting-teatro/audizioni-attori-e-attrici-per-la-commedia-brillante-napule-e/91421/
+- Status: extraction_error / HTTP 202
+- Last success: not yet successful
+- Anomalies: empty_extraction
+
+### Concorsi 2026 / Primo Oboe - Orchestra della Toscana (source-120)
+- URL: https://www.orchestradellatoscana.it/concorsi-2026-primo-oboe/
 - Status: extraction_error / HTTP 202
 - Last success: not yet successful
 - Anomalies: empty_extraction
