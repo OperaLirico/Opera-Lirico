@@ -42,7 +42,7 @@ html body header.topbar{
   backdrop-filter:blur(16px) saturate(140%);
 }
 html body header.topbar .topbar-inner{
-  width:min(100% - 48px,1240px);max-width:1240px;min-height:70px;
+  width:calc(100% - 48px);max-width:1240px;min-height:70px;
   margin:0 auto;padding:10px 0;display:flex;align-items:center;
   justify-content:space-between;gap:22px;flex-wrap:nowrap;
 }
