@@ -6,6 +6,7 @@ import socket
 import ssl
 import sys
 from datetime import datetime, timezone
+from urllib.request import Request, urlopen
 
 def inspect(host: str) -> dict:
     try:
@@ -43,12 +44,37 @@ def inspect(host: str) -> dict:
         results.append(item)
     return {"host": host, "addresses": results}
 
+def fetch_page(url: str) -> dict:
+    try:
+        request = Request(url, headers={
+            "User-Agent": "OperaLiricoSourceMonitor/1.0",
+            "Accept": "text/html,application/xhtml+xml",
+            "Accept-Encoding": "identity",
+        })
+        with urlopen(request, timeout=15, context=ssl.create_default_context()) as response:
+            body = response.read()
+            return {
+                "url": url,
+                "final_url": response.geturl(),
+                "http_status": response.status,
+                "bytes": len(body),
+                "verified_https": True,
+            }
+    except Exception as exc:
+        return {"url": url, "verified_https": False, "error": f"{type(exc).__name__}: {str(exc)[:240]}"}
+
+
 def main() -> None:
     hosts = sys.argv[1:] or ["www.tls-belli.it", "tls-belli.it"]
+    urls = [
+        "https://www.tls-belli.it/bandi_e_avvisi/",
+        "https://www.tls-belli.it/concorso-di-canto-2026/",
+    ]
     print(json.dumps({
         "checked_at": datetime.now(timezone.utc).isoformat(),
-        "note": "Strict CA and hostname verification is used for verified_tls. The metadata-only handshake never fetches or trusts page content.",
+        "note": "All page requests use the default trusted CA store and strict hostname verification. The metadata-only handshake is diagnostic only.",
         "hosts": [inspect(host) for host in hosts],
+        "strict_https_page_fetches": [fetch_page(url) for url in urls],
     }, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":
