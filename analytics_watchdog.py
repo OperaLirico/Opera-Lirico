@@ -49,6 +49,42 @@ def get_json(url: str, timeout: int = 15) -> dict:
         return json.loads(response.read().decode("utf-8"))
 
 
+
+def assess_traffic_freshness(
+    pageviews_7d: int,
+    pageviews_last_48h: int,
+    latest_date: date | None,
+    today: date,
+) -> tuple[list[str], list[str]]:
+    """Avoid treating a quiet site or Cloudflare's reporting delay as an outage.
+
+    Cloudflare documents up to 24 hours of analytics delay on Free plans.
+    A zero in the rolling two-day bucket is therefore a warning while the
+    latest observed day is within the last 72 hours; it becomes an error only
+    when the data itself is older than that grace window.
+    """
+    problems: list[str] = []
+    notes: list[str] = []
+
+    if pageviews_7d >= 30 and pageviews_last_48h == 0:
+        if latest_date and latest_date >= today - timedelta(days=2):
+            notes.append(
+                f"最近 48 小时没有浏览记录；最近一次统计为 {latest_date.isoformat()}，"
+                "仍在 72 小时容忍窗口内，可能是低流量或统计延迟，暂不判定上报中断"
+            )
+        else:
+            problems.append(
+                "最近 48 小时浏览量为 0，且最近统计日期已超出 72 小时容忍窗口"
+            )
+
+    if pageviews_7d >= 10 and latest_date and latest_date < today - timedelta(days=2):
+        problems.append(
+            f"最新统计停留在 {latest_date.isoformat()}，已超过 72 小时没有新数据"
+        )
+
+    return problems, notes
+
+
 def main() -> int:
     problems: list[str] = []
     notes: list[str] = []
@@ -95,10 +131,9 @@ def main() -> int:
     last48 = sum(day["pageviews"] for day in days if day["date"] >= today - timedelta(days=1))
     latest = days[-1]["date"] if days else None
 
-    if days and pv7 >= 30 and last48 == 0:
-        problems.append(f"最近 48 小时浏览量为 0，但 7 天累计 {pv7}：上报链路可能断了")
-    if latest and pv7 >= 10 and latest < today - timedelta(days=1):
-        problems.append(f"最新统计停留在 {latest.isoformat()}，已超过 48 小时没有新数据")
+    traffic_problems, traffic_notes = assess_traffic_freshness(pv7, last48, latest, today)
+    problems.extend(traffic_problems)
+    notes.extend(traffic_notes)
     if pv7 and visits7 > pv7:
         notes.append(f"visits({visits7}) 高于 pageviews({pv7})，口径需人工确认")
 
