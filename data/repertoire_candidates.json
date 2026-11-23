@@ -2399,10 +2399,85 @@
       "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
       "collected_at": "2026-11-23T08:52:22+01:00",
       "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-0420e6cb5b3c7f4e",
+      "title": "Gianni di Parigi · Atto II · Scena IV",
+      "aliases": [
+        "Gianni di Parigi"
+      ],
+      "composer": "Gaetano Donizetti",
+      "work": "Gianni di Parigi",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Gianni, indi la Principessa, il Siniscalco, Pedrigo\nLorezza ed Oliviero.\nGia.\nSì, mio ben: tu mia sarai,\nMia per sempre, eternamente...\n110Non può il cor, non può la mente\nTanta gioja contener.\nIl rigor, gli affanni immensi\nDel destin più crudo e rio\nTutto ah tutto andrà in obblio\n115Nell’eccesso del piacer,\nQuand’io ti stringerò\nA questo amante cor,\nAllor io ti dirò\nQuanto penai finor.\n120Tu mi sarai mercè\nDel lungo mio soffrir...\nViver vogl’io con te,\nCon te vogl’io morir.\nPri.\nChe vi par, Siniscalco,\nDi sì bell’apparecchio?\nSin.\n125Anch’io sorpreso\nNe son con voi: magnifico mi pare.\nMa... altezza, il desinare...\nPri.\nImpossibil mi sembra\n(come sopra)\nChe ordinato tal pranzo abbia sì presto.\nSin.\n130Sorpreso anch’io ne resto;\nMaggior di sè lo fece\nDi servirvi la brama....\nMa il desinar, madama...\nGia. (al Sin.)\nIo vi ringrazio\nChe servirmi d' interprete volete.\nPri.\nAndiam.\n(avviandosi alla tavola)\nSin.\n(Respiro alfin.)\nPri.\n135Posto prendete.\n(siede, e fa seder Gian. alla destra, e il Sin. alla sinistra)\nGia.\nProcuriamo che il pranzo\nSia più gajo col canto.\nChe vi par Siniscalco, del pensiere?\nSin.\nIo son d’altro parere:\nQuando mangio non canto.\nGia.\n140Ebben: mangiate,\nAscolterete almen.\nSin.\n(sempre mangiando) Sì, sì: cantate.\nGia.\nComincia tu, Oliviero,\nLa canzon del poeta provenzale.\nUna strofa per un ne canteremo.\nPed.\n145E noi risponderemo\nCon allegra ballata alla canzone.\nOli.\nIo son pronto.\n[p. 30 modifica]Ped.\nSilenzio ed attenzione.\n(ai villani e villanelle ecc.)\n(Oliviero comincia la canzone. Dopo la prima strofa le villanelle vanno lietamente ballando).\nOli.\n„Mira, o bella, il Trovatore\n„ 150A tuoi piedi:\n„ Tutto in lui t’esprime amore:\n„ Tu nol vedi.\n„ Deh lo guarda un sol momento;\n„ Deh lo ascolta con pietà...\n„ 155Questo dolce sentimento\n„ Fa più bella la beltà.\n„ Ah! s’è ver che il Trovatore\n„ Sia fedele,\n„ Non avrà la bella il core\n„ 160Più crudele.\n„ Una timida incertezza\n„ Sol ritrosa ancor la fa...\n„ Una dolce sicurezza\n„ Del rigor trionferà.\n(finita la canzone tutti si alzano: cessano le danze)\nPri.\n165Bravo, signor borghese!\nBen scelta è la canzone, ed eseguita\nD’una maniera assai sentimentale.\nChe vi par, Siniscalco?\nSin.\nNon c’è male.\nMa il desinar, Altezza,\n170Il desinar fu cosa sorprendente:\nComincio veramente\nA ricredermi un poco....\nAmico, avete proprio un bravo cuoco.\nGia.\n„ Altezza, quanto io feci\n„ 175È nulla ai paragon di quanto merta\n„ Il rango e la beltà di cui splendete:\n„ Ogni pregio si oscura ove voi siete...\n„ Ma dei momenti vostri\n„ Abusar non vorrei. Termini, amici,\n„ 180Con generale brindisi la festa,\n„ E si dia lode alla bontà di lei,\n„ Che della sua presenza\n„ Onorò questo luogo, e della nostra\n„ Umile mensa non è stata schiva.\nViva la Principessa!...\nTutti (bevendo intorno)\n185Evviva, evviva.\nTutti\nOli. Sin. Ped. Lor. e Coro.\nPersona più amabile\nNon v’è di sua Altezza:\nIl solo suo merito\nNon è la bellezza:\n190Il pregio migliore\nConsiste nel core,\nIl vanto più nobile\nÈ tanta bontà.\nPrin. e Gian.\n(Sì, questo è l’amabile\nOggetto bramato:\nI moti mel dicono\nChe in sen m’ha destato:\nGià vedo in quel ciglio\nDel core il periglio,\nGià sento che l’anima\nResister non sa.)\n(partono tutti)",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Gianni_di_Parigi/Atto_secondo",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Felice Romani",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-23T09:23:03+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-73bd5763a49e4b27",
+      "title": "Gianni di Parigi · Atto II · Scena V",
+      "aliases": [
+        "Gianni di Parigi"
+      ],
+      "composer": "Gaetano Donizetti",
+      "work": "Gianni di Parigi",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Appartamenti.\nGianni e la Principessa, che esce inosservata.\nGia.\nHo simulato assai!\n195Prima che a me s’involi\nPenetrar del suo cor voglio i segreti;\nSe ho da sperar mi sarà noto allora.\nPri.\n(Vediam se in suo proposto è fermo ancora.)\nParmi, signor borghese,\n200Che quando non avete compagnia\nLa solita allegria non conserviate:\nFra voi stesso parlate\nCome gli innamorati... in confidenza.\nSiete voi forse in caso somigliante?\nGia.\n205Ah! pur troppo, madama, io sono amante.\nPri.\nDomandarvi io non vo’ se degno sia\nDel vostro amore l’adorato oggetto.\nGia.\nNulla di più perfetto\nLa natura formò: quanto di bello\n210Sparso si vede in mille è tutto accolto\nNella donna che impressa ho nel pensiero.\nPri.\nOh! ferito d’amor siete davvero.\nMa quel vantar cotanto\nLa vostra bella ad altra donna in faccia,\n215E specialmente a rne, parmi che sia\nPoca galanteria... Ma parliam d’altro.\nVoi siete tanto scaltro, e per le feste\nTanto talento avete,\nChe impiegarlo per me quasi desio.\nGia.\n220Disponete di me: che far degg’io?\nPri.\nNoto vi fia che per far paghi i voti\nDi mio fratello, mi trovai costretta\nA scegliere uno sposo.\nGia.\n(Addio speranza!)\nPri.\nIn questa circostanza\n225Le più brillanti feste si faranno...\nDi volerle dirigere vi prego.\nGia.\nVeramente onorifico è l’impiego!\nMa... mi è permesso, Altezza,\nDomandarvi chi sia di vostra scelta\n230Il fortunato oggetto?\nPri.\nNulla di più perfetto\nLa natura formò: quanto di bello\nSparso si vede in mille è tutto accolto\nNel principe che impresso ho nel pensiero.\nGia.\n(Misero me!)\nPri.\n(Si turba.)\nGia.\n235(E che più spero?)\nQuesto mortai beato\nPerchè con voi non vedo?\nFreddo amator lo credo\nSe presso a voi non è.\nPri.\n240Egli è tuttor frenato\nDa non so qual rispetto...\n(osservandolo attentamente)\nMa... a piedi miei l’aspetto...\nEgli è vicino a me.\nGia.\nDunque vedervi e intendervi\n245Gli fia concesso ognora?\nPri.\nVedermi sì: ma intendermi...\nNon ne son certa ancora.\nGia.\nIl nome suo!...\n(accorgendosi)\nPri.\nMel tace.\nGia.\nPerchè?...\nPri.\nScherzar gli piace.\nGia.\n250Ah! voi sapete il vero...\n(con trasporto)\nPri.\nDunque non più mistero.\n(con grazia)\nGia.\nAh principessa!\nPri.\nAh principe!\na 2\nAlfin trionfa amor.\nSciogliamo ai teneri\n255Affetti il freno:\nDal vostro passino\nA questo seno,\nEd a comprenderli\nCominci il cor.\nGia.\n260Dunque allor ch’io mi credea\nDi sorprendervi, madama...\nPri.\nDetto tutto il re mi avea\nChe consorte a voi mi brama.\nGia.\nEgli? e voi?\nPri.\nLa più sommessa\n265Son fra i sudditi del re.\n[p. 34 modifica]Gia.\nAh lasciate, o principessa,\nCh’io mi prostri al vostro piè.\n(s’inginocchia. La Principessa lo rialza amorevolmente)\na 2\nAh! spiegar non so il diletto\nChe di sè m’inonda il petto:\n270Quando troppo un’alma sente,\nNon può il labbro favellar.\n(partono)",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Gianni_di_Parigi/Atto_secondo",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Felice Romani",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-23T09:23:03+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-323d7239cc8c2439",
+      "title": "Gianni di Parigi · Atto II · Scena ULTIMA",
+      "aliases": [
+        "Gianni di Parigi"
+      ],
+      "composer": "Gaetano Donizetti",
+      "work": "Gianni di Parigi",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Giardino come sopra.\nIl seguito di Gianni e della Principessa che arrivano dopo il Coro incontrati dal Siniscalco, da Oliviero, Pedrigo e Lorezza.\nCoro\nSi canti il piacer,\nLa gioja e l’amor,\nSoavi pensier\n275 D’un tenero cor.\nMa intanto che far?\nNessun ci sa dir\nSe dessi restar,\nSe dessi partir.\n(si ritirano)\nOli.\n280Signore, è preparato\nQuanto avete ordinato. Ecco i compagni\nChe aspettano bramosi di sapere\nQuando si parte, o se si resta ancora.\nPed.\nAltezza, è già mezz’ora\n285Che i cavalli son pronti, e l’altre dame\nNon aspettan che voi.\nPri. (entrano i Cori)\nTutte venite.\nSin.\nSi parte sì o no?\nGia.\nSilenzio! Udite.\n(prima al Sin., indi ai compagni)\nBravi compagni miei, pria di partire\nDa questo lieto albergo, io vo’ che tutti\n290A parte siate d’una gran novella.\nIo sono sposo, e quella\nChe la sua man m’accorda è di Navarra\nLa gentil Principessa.\nPed.\n(Delira.)\nLor.\n(È matto.)\nSin. (confuso)\nVoi madama!\nPri. (con sicurezza)\nIo stessa.\n295Dopo un maturo esame\nDi tutti i pretendenti alla mia destra,\nVedo che questo amabile francese\nOgni rivale nel mio core ha vinto.\nUn dolce e ignoto istinto\n300Qui condusse i miei passi, e qui trovai\nChi spogliarmi dovea del mio rigore.\nSin.\nAltezza!... oh! disonor!\nPri.\nQual disonore?\nA ciascun noto sia\nChe al prence ereditario della Francia\n305Gli affetti io dono e insiem la destra mia.\nPed.\nGianni?\nGia.\nIo stesso.\nSin.\nPerdonate.\nPri.\nSiniscalco, l’approvate?\nFausto sempre splenda il sole,\nSempre il fato a noi sorrida,\n310Di costanza la più fida\nDolce imene sia mercè.\nScorra ognor la nostra vita\nQual ruscello in via fiorita,\nDall’amore fecondata,\n315Coronata - dalla fè.\nD’un’alma che languìa\nSon frante le catene,\nEd or godrà d’un bene\nChe mai potea sperar.\n320La fredda gelosia\nNel tuo bel cor non scenda,\nE da me solo apprenda\nSiccome ei deve amar.\nGli altri\nSempre sì lieto e fausto\n325Del vostro nome adorno,\nVedrem sì caro giorno\nFelice ritornar.\nFINE DEL MELODRAMMA.",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Gianni_di_Parigi/Atto_secondo",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Felice Romani",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-23T09:23:03+01:00",
+      "collection_source": "it.wikisource.org"
     }
   ],
-  "generated_at": "2026-11-23T08:52:22+01:00",
+  "generated_at": "2026-11-23T09:23:03+01:00",
   "source": "Italian Wikisource opera libretti; candidate-only, human review required",
-  "aria_opera": 6,
-  "aria_scene": 16
+  "aria_opera": 7,
+  "aria_scene": 0
 }
