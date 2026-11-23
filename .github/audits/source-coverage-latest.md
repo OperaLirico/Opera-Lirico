@@ -2,17 +2,17 @@
 
 - Cycle: 2026-W48
 - Started: 2026-11-23T16:07:59+01:00
-- Last updated: 2026-11-23T16:08:28+01:00
+- Last updated: 2026-11-23T16:09:03+01:00
 - Status: **in_progress**
-- Coverage: **12/46** checked; 34 remaining
+- Coverage: **24/46** checked; 22 remaining
 - Failed/restricted/extraction errors: 2 (restricted: 0)
-- Changed normalized text hashes: 6
-- Sources with anomalies: 8
-- Registered sources: 10; candidate queue entries: 2
-- Source review classifications: auto_approved_official=4, auto_approved_third_party=2, duplicate_candidate=1, irrelevant_candidate=5
-- Official + relevant: 3
-- Third-party + relevant: 1
-- Needs review / irrelevant / unclassified: 5
+- Changed normalized text hashes: 10
+- Sources with anomalies: 12
+- Registered sources: 22; candidate queue entries: 2
+- Source review classifications: auto_approved_official=11, auto_approved_third_party=3, duplicate_candidate=1, irrelevant_candidate=7, needs_review=2
+- Official + relevant: 10
+- Third-party + relevant: 2
+- Needs review / irrelevant / unclassified: 9
 - Duplicate candidates (registered): 1
 - Inventory SHA-256: 3830ac0c9ca41cf14b119aaf2376dfd86c357fc05588afd3ab2d1aa1acc17cd8 (inventory identity only)
 
@@ -69,6 +69,30 @@ Keyword/vocal signals are discovery clues only. Source identity and relevance ar
 - URL: https://teatrofrancoparenti.it/lavora-con-noi/
 - Status: ok / HTTP 200
 - Last success: 2026-11-23T16:07:59+01:00
+- Anomalies: normalized_page_text_changed
+
+### Casting Robin Hood: cercasi attori, cantanti e ballerini per spettacol (source-121)
+- URL: https://www.provinispettacolo.it/casting-robin-hood-prima-della-leggenda-piemonte/
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:08:30+01:00
+- Anomalies: normalized_page_text_changed
+
+### Fringe in Progress 2027 | Un’azione per progetti in crescita – Torino  (source-123)
+- URL: https://www.tofringe.it/partecipa/fringe-in-progress-selezione-per-progetti-in-crescita-torino-fringe-festival-2027/
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:08:30+01:00
+- Anomalies: normalized_page_text_changed
+
+### CLIP Portofino (source-14)
+- URL: https://www.portofinoclip.it/clip-2026/
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:08:30+01:00
+- Anomalies: normalized_page_text_changed
+
+### Teatro La Fenice - 招募与选拔 (source-16)
+- URL: https://www.teatrolafenice.it/fondazione-teatro-la-fenice/lavora-con-noi/
+- Status: ok / HTTP 200
+- Last success: 2026-11-23T16:08:30+01:00
 - Anomalies: normalized_page_text_changed
 
 ## Coverage limitations
