@@ -12,6 +12,8 @@ on:
       - "data/conservatori.json"
       - "scrape_sources.py"
       - "grow_sources.py"
+      - "discover_europe_institutions.py"
+      - "tests/test_europe_institution_discovery.py"
       - "audit_source_coverage.py"
       - "audit_opportunity_quality.py"
       - "audit_pdf_integrity.py"
