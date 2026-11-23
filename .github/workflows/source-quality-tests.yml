@@ -28,6 +28,7 @@ on:
   pull_request:
     branches: [main]
     paths:
+      - "scripts/diagnose_tls_host.py"
       - "discover_masterclasses.py"
       - "data/masterclass_sources.json"
       - "data/masterclasses.json"
