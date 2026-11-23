@@ -161,7 +161,7 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
         self.assertEqual(candidate["relevance_status"], "relevant")
         self.assertEqual(candidate["confidence"], "high")
         self.assertFalse(candidate["production_activation"])
-        self.assertEqual(candidate["access_policy_status"], "not_independently_verified_for_child_path")
+        self.assertEqual(candidate["access_policy_status"], "password_protected_at_2026-11-23")
 
         sources = json.loads((ROOT / "data" / "sources.json").read_text(encoding="utf-8"))
         policies = json.loads((ROOT / "data" / "source_fetch_policies.json").read_text(encoding="utf-8"))
