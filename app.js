@@ -615,7 +615,7 @@ function renderConservatori(){
   if(!wrap)return;
   const schools=conservatoriData.filter(c=>(c.number||0)<300);
   const readable=schools.filter(c=>c.status==='ok');
-  $('#conservatoriCount').textContent=`${readable.length}/${schools.length} 所院校页面可正常读取`;
+  $('#conservatoriCount').textContent=`${readable.length}/${schools.length} 所院校有可用资料`;
   const filtered=filterInstitutionRecords(schools,consQuery,consDateOnly);
   const groups=filtered.length?[{title:'公立音乐学院',hint:'Conservatorio',items:filtered}]:[];
   wrap.innerHTML=groups.map(g=>`<section class="cons-group"><div class="cons-group-head"><h3>${g.title}</h3><span>${g.hint} · ${g.items.length} 所</span></div><div class="cons-list">${g.items.map(consCard).join('')}</div></section>`).join('');
@@ -632,11 +632,16 @@ function renderAcademies(){
     {title:'歌剧院 Accademia',hint:'Opera Academy',items:filtered.filter(c=>c.institution_type==='opera_academy')},
     {title:'剧院合唱学校',hint:'Choral School · 独立培养类别',items:filtered.filter(c=>c.institution_type==='choral_school')}
   ].filter(g=>g.items.length);
-  wrap.innerHTML=groups.map(g=>`<section class="cons-group"><div class="cons-group-head"><h3>${g.title}</h3><span>${g.hint} · ${g.items.length} 个项目</span></div><div class="cons-list">${g.items.map(consCard).join('')}</div></section>`).join('');
-  const total=programs.filter(c=>c.institution_type==='opera_academy').length;
-  $('#academyCount').textContent=`${total} 个 Accademia · ${programs.filter(c=>c.institution_type==='choral_school').length} 个合唱学校`;
+  const activeAcademies=opportunities.map(publishedOpportunity).filter(item=>item&&item.category==='青年艺术家项目')
+    .filter(item=>!academyQuery||normalizeSearch([item.title,item.place,item.summary].join(' ')).includes(normalizeSearch(academyQuery)));
+  const institutionHtml=groups.map(g=>'<section class="cons-group"><div class="cons-group-head"><h3>'+esc(g.title)+'</h3><span>'+esc(g.hint)+' · '+g.items.length+' 个项目</span></div><div class="cons-list">'+g.items.map(consCard).join('')+'</div></section>').join('');
+  const academyHtml=activeAcademies.map(item=>'<article class="opportunity-card academy-opportunity-card"><div class="card-top"><span class="badge">官方核验 · 青年歌唱家培养</span><span class="deadline">报名截止：'+esc(formatDate(item.deadline))+esc(countdown(String(item.deadline).slice(0,10)))+'</span></div><h3>'+esc(item.title)+'</h3>'+(item.originalTitle?'<p class="opportunity-original">'+esc(item.originalTitle)+'</p>':'')+'<p>'+esc(humanText(item.summary))+'</p><div class="card-meta"><span>⌖ '+esc(item.place)+'</span><span>'+esc(item.source)+'</span></div><a class="card-link" href="'+esc(item.url)+'" target="_blank" rel="noopener noreferrer">查看主办方公告 <span>↗</span></a>'+(item.applicationUrl?'<a class="card-link" href="'+esc(item.applicationUrl)+'" target="_blank" rel="noopener noreferrer">查看申请材料 <span>↗</span></a>':'')+(item.officialPdfUrl?'<a class="card-link" href="'+esc(item.officialPdfUrl)+'" target="_blank" rel="noopener noreferrer">下载官方简章 PDF <span>↗</span></a>':'')+'</article>').join('');
+  wrap.innerHTML=institutionHtml+(academyHtml?'<section class="cons-group"><div class="cons-group-head"><h3>正在开放报名的培养项目</h3><span>Verified · '+activeAcademies.length+' 个</span></div><div class="opportunity-list">'+academyHtml+'</div></section>':'');
+  const total=programs.filter(c=>c.institution_type==='opera_academy').length+activeAcademies.length;
+  const count=$('#academyCount');
+  if(count)count.textContent=total+' 个已核验项目';
   const emptyBox=$('#academyEmpty');
-  if(emptyBox)emptyBox.innerHTML=filtered.length?'':'<div class="empty">没有找到匹配的剧院学院或专业培养项目。</div>';
+  if(emptyBox)emptyBox.innerHTML=(filtered.length||activeAcademies.length)?'':'<div class="empty">目前还没有可展示的已核验项目。我们会持续跟踪歌剧院与专业机构的官方公告；已发布的培养机会也会同步出现在“招募与比赛”中。</div>';
   renderTiles();
 }
 
@@ -644,7 +649,7 @@ function renderTiles(){
   const callsCount=$('#opportunities')?$('#opportunities').querySelectorAll('.opportunity-card').length:0;
   const schools=conservatoriData.filter(c=>(c.number||0)<300);
   const readable=schools.filter(c=>c.status==='ok').length;
-  const academyCount=conservatoriData.filter(c=>c.institution_type==='opera_academy').length;
+  const academyCount=conservatoriData.filter(c=>c.institution_type==='opera_academy').length+opportunities.filter(o=>o.opportunity_type==='young_artist'&&publishedOpportunity(o)).length;
   const set=(id,text)=>{const el=document.getElementById(id);if(el)el.textContent=text;};
   set('statCalls',callsCount?String(callsCount):'0');
   set('statSchools',schools.length?String(readable):'—');
