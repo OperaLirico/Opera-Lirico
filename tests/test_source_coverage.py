@@ -38,7 +38,7 @@ class SourceCoverageTests(unittest.TestCase):
         }
         with mock.patch.object(
             audit, "fetch_tls_belli_page",
-            return_value=(200, "Bandi e avvisi", "Concorso internazionale di canto per giovani cantanti lirici"),
+            return_value=(200, "Bandi e avvisi", "Concorso internazionale di canto per giovani cantanti lirici", source["url"]),
         ) as fallback, mock.patch.object(audit.Fetcher, "get") as scrapling_get:
             result = audit.scan_one(source, None, "2026-11-23T00:00:00+00:00")
         fallback.assert_called_once_with(source["url"])
@@ -46,6 +46,27 @@ class SourceCoverageTests(unittest.TestCase):
         self.assertEqual(result["status"], "ok")
         self.assertEqual(result["http_status"], 200)
         self.assertTrue(result["vocal_signal"])
+
+    def test_tls_belli_password_login_page_is_restricted_not_healthy(self):
+        source = {
+            "source_id": "source-10",
+            "name": "Teatro Lirico Sperimentale di Spoleto",
+            "url": "https://www.tls-belli.it/",
+            "kind": "registered",
+            "review_status": "auto_approved_official",
+            "publisher_status": "official",
+            "relevance_status": "relevant",
+            "audit_confidence": "high",
+        }
+        final_url = "https://tls-belli.it/?password-protected=login&redirect_to=https%3A%2F%2Fwww.tls-belli.it%2F"
+        with mock.patch.object(
+            audit, "fetch_tls_belli_page",
+            return_value=(200, "Password Protected", "Please enter your password", final_url),
+        ):
+            result = audit.scan_one(source, None, "2026-11-23T00:00:00+00:00")
+        self.assertEqual(result["http_status"], 200)
+        self.assertEqual(result["status"], "restricted")
+        self.assertEqual(result["final_url"], final_url)
 
     def test_source_fetch_url_does_not_rewrite_other_hosts(self):
         url = "https://www.example.org/path"
