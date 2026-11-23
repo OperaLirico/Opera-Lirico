@@ -42,7 +42,7 @@ self.addEventListener('fetch',event=>{
  const path=url.pathname;
  if(path.endsWith('/data/repertoire_archive.json')){
    cacheThenRefresh(request,event);
- }else if(path.endsWith('/data/sources.json')||path.endsWith('/data/repertoire.json')||path.endsWith('/data/conservatori.json')||path.endsWith('/data/conservatori_extra.json')||path.endsWith('/data/conservatori_zh.json')||path.endsWith('/data/conservatori_manual.json')||path.endsWith('/data/voice-structures.json')||path.endsWith('/research/evidence.json')){
+ }else if(path.endsWith('/data/sources.json')||path.endsWith('/data/repertoire.json')||path.endsWith('/data/conservatori.json')||path.endsWith('/data/conservatori_extra.json')||path.endsWith('/data/conservatori_zh.json')||path.endsWith('/data/conservatori_manual.json')||path.endsWith('/data/europe_institutions.json')||path.endsWith('/data/voice-structures.json')||path.endsWith('/research/evidence.json')){
    freshFirst(request,event);
  }else if(request.mode==='navigate'||path.endsWith('/index.html')||/\.(?:css|js)$/.test(path)){
    freshFirst(request,event);

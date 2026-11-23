@@ -31,6 +31,9 @@ let candidatesLoaded = false;
 let candidatesLoading = false;
 let candidatesFailed = false;
 let masterclassCount = null;
+let europeInstitutions = [];
+let europeQuery = "";
+let europeCountry = "all";
 let conservatoriData = [];
 let manualNotes = {};
 let zhNotes = {};
@@ -612,7 +615,7 @@ function renderConservatori(){
   if(!wrap)return;
   const schools=conservatoriData.filter(c=>(c.number||0)<300);
   const readable=schools.filter(c=>c.status==='ok');
-  $('#conservatoriCount').textContent=`${readable.length}/${schools.length} 所院校页面可正常读取`;
+  $('#conservatoriCount').textContent=`${readable.length}/${schools.length} 所院校有可用资料`;
   const filtered=filterInstitutionRecords(schools,consQuery,consDateOnly);
   const groups=filtered.length?[{title:'公立音乐学院',hint:'Conservatorio',items:filtered}]:[];
   wrap.innerHTML=groups.map(g=>`<section class="cons-group"><div class="cons-group-head"><h3>${g.title}</h3><span>${g.hint} · ${g.items.length} 所</span></div><div class="cons-list">${g.items.map(consCard).join('')}</div></section>`).join('');
@@ -629,11 +632,16 @@ function renderAcademies(){
     {title:'歌剧院 Accademia',hint:'Opera Academy',items:filtered.filter(c=>c.institution_type==='opera_academy')},
     {title:'剧院合唱学校',hint:'Choral School · 独立培养类别',items:filtered.filter(c=>c.institution_type==='choral_school')}
   ].filter(g=>g.items.length);
-  wrap.innerHTML=groups.map(g=>`<section class="cons-group"><div class="cons-group-head"><h3>${g.title}</h3><span>${g.hint} · ${g.items.length} 个项目</span></div><div class="cons-list">${g.items.map(consCard).join('')}</div></section>`).join('');
-  const total=programs.filter(c=>c.institution_type==='opera_academy').length;
-  $('#academyCount').textContent=`${total} 个 Accademia · ${programs.filter(c=>c.institution_type==='choral_school').length} 个合唱学校`;
+  const activeAcademies=opportunities.map(publishedOpportunity).filter(item=>item&&item.category==='青年艺术家项目')
+    .filter(item=>!academyQuery||normalizeSearch([item.title,item.place,item.summary].join(' ')).includes(normalizeSearch(academyQuery)));
+  const institutionHtml=groups.map(g=>'<section class="cons-group"><div class="cons-group-head"><h3>'+esc(g.title)+'</h3><span>'+esc(g.hint)+' · '+g.items.length+' 个项目</span></div><div class="cons-list">'+g.items.map(consCard).join('')+'</div></section>').join('');
+  const academyHtml=activeAcademies.map(item=>'<article class="opportunity-card academy-opportunity-card"><div class="card-top"><span class="badge">官方核验 · 青年歌唱家培养</span><span class="deadline">报名截止：'+esc(formatDate(item.deadline))+esc(countdown(String(item.deadline).slice(0,10)))+'</span></div><h3>'+esc(item.title)+'</h3>'+(item.originalTitle?'<p class="opportunity-original">'+esc(item.originalTitle)+'</p>':'')+'<p>'+esc(humanText(item.summary))+'</p><div class="card-meta"><span>⌖ '+esc(item.place)+'</span><span>'+esc(item.source)+'</span></div><a class="card-link" href="'+esc(item.url)+'" target="_blank" rel="noopener noreferrer">查看主办方公告 <span>↗</span></a>'+(item.applicationUrl?'<a class="card-link" href="'+esc(item.applicationUrl)+'" target="_blank" rel="noopener noreferrer">查看申请材料 <span>↗</span></a>':'')+(item.officialPdfUrl?'<a class="card-link" href="'+esc(item.officialPdfUrl)+'" target="_blank" rel="noopener noreferrer">下载官方简章 PDF <span>↗</span></a>':'')+'</article>').join('');
+  wrap.innerHTML=institutionHtml+(academyHtml?'<section class="cons-group"><div class="cons-group-head"><h3>正在开放报名的培养项目</h3><span>Verified · '+activeAcademies.length+' 个</span></div><div class="opportunity-list">'+academyHtml+'</div></section>':'');
+  const total=programs.filter(c=>c.institution_type==='opera_academy').length+activeAcademies.length;
+  const count=$('#academyCount');
+  if(count)count.textContent=total+' 个已核验项目';
   const emptyBox=$('#academyEmpty');
-  if(emptyBox)emptyBox.innerHTML=filtered.length?'':'<div class="empty">没有找到匹配的剧院学院或专业培养项目。</div>';
+  if(emptyBox)emptyBox.innerHTML=(filtered.length||activeAcademies.length)?'':'<div class="empty">目前还没有可展示的已核验项目。我们会持续跟踪歌剧院与专业机构的官方公告；已发布的培养机会也会同步出现在“招募与比赛”中。</div>';
   renderTiles();
 }
 
@@ -641,7 +649,7 @@ function renderTiles(){
   const callsCount=$('#opportunities')?$('#opportunities').querySelectorAll('.opportunity-card').length:0;
   const schools=conservatoriData.filter(c=>(c.number||0)<300);
   const readable=schools.filter(c=>c.status==='ok').length;
-  const academyCount=conservatoriData.filter(c=>c.institution_type==='opera_academy').length;
+  const academyCount=conservatoriData.filter(c=>c.institution_type==='opera_academy').length+opportunities.filter(o=>o.opportunity_type==='young_artist'&&publishedOpportunity(o)).length;
   const set=(id,text)=>{const el=document.getElementById(id);if(el)el.textContent=text;};
   set('statCalls',callsCount?String(callsCount):'0');
   set('statSchools',schools.length?String(readable):'—');
@@ -709,6 +717,74 @@ async function loadConservatori(){
   renderCalls();
 }
 
+
+/* ---------- European institution discovery index ---------- */
+const europeCountryNames={
+  Armenia:"亚美尼亚",Austria:"奥地利",Belarus:"白俄罗斯",Belgium:"比利时",
+  "Bosnia and Herzegovina":"波黑",Bulgaria:"保加利亚",Croatia:"克罗地亚",Cyprus:"塞浦路斯",
+  "Czech Republic":"捷克",Denmark:"丹麦",Estonia:"爱沙尼亚",Finland:"芬兰",France:"法国",
+  Georgia:"格鲁吉亚",Germany:"德国",Greece:"希腊",Hungary:"匈牙利",Iceland:"冰岛",Ireland:"爱尔兰"
+};
+function safeExternalUrl(value){
+  try{const url=new URL(String(value||""));return ["https:","http:"].includes(url.protocol)?url.href:"";}catch{return "";}
+}
+function renderEuropeInstitutions(){
+  const target=$("#europeInstitutions");
+  if(!target)return;
+  const query=normalizeSearch(europeQuery);
+  const filtered=europeInstitutions.filter(item=>{
+    const countryMatch=europeCountry==="all"||item.country===europeCountry;
+    const haystack=normalizeSearch([item.institution,item.city,item.country].join(" "));
+    return countryMatch&&(!query||haystack.includes(query));
+  }).sort((a,b)=>String(a.country).localeCompare(String(b.country))||String(a.institution).localeCompare(String(b.institution)));
+  const count=$("#europeCount");
+  if(count)count.textContent=filtered.length+" / "+europeInstitutions.length+" 所候选院校";
+  if(!filtered.length){
+    target.innerHTML='<div class="empty">没有找到匹配的院校。请调整关键词或国家筛选。</div>';
+    return;
+  }
+  const countries=[...new Set(filtered.map(item=>item.country))];
+  target.innerHTML=countries.map(country=>{
+    const items=filtered.filter(item=>item.country===country);
+    const cards=items.map(item=>{
+      const website=safeExternalUrl(item.official_website);
+      const profile=safeExternalUrl(item.aec_profile_url);
+      const membership=item.aec_membership==="active_members"?"AEC 正式成员":"AEC 副成员";
+      const status=item.official_website?"目录已列出官网":item.profile_fetch_status==="no_official_website_listed"?"AEC 档案未列官网":item.profile_fetch_status==="fetch_error"?"AEC 档案读取失败":"AEC 档案待读取";
+      return '<article class="europe-institution-card">'+
+        '<div class="europe-institution-meta"><span>'+esc(membership)+'</span><span>'+esc(status)+'</span></div>'+
+        '<h4>'+esc(item.institution||"未命名机构")+'</h4>'+
+        '<p>'+esc(europeCountryNames[item.country]||item.country)+(item.city?" · "+esc(item.city):"")+'</p>'+
+        '<div class="europe-institution-links">'+
+        (website?'<a href="'+esc(website)+'" target="_blank" rel="noopener noreferrer">院校官网 ↗</a>':"")+
+        (profile?'<a href="'+esc(profile)+'" target="_blank" rel="noopener noreferrer">AEC 档案 ↗</a>':"")+
+        '</div></article>';
+    }).join("");
+    return '<details class="europe-country-group" '+(query||europeCountry!=="all"?"open":"")+'><summary><span>'+
+      esc(europeCountryNames[country]||country)+'</span><small>'+items.length+' 所</small></summary>'+
+      '<div class="europe-institution-grid">'+cards+'</div></details>';
+  }).join("");
+}
+async function loadEuropeInstitutions(){
+  const target=$("#europeInstitutions");
+  try{
+    const response=await fetch(new URL("data/europe_institutions.json",sourceRoot),{cache:"no-store"});
+    if(!response.ok)throw new Error("HTTP "+response.status);
+    const data=await response.json();
+    europeInstitutions=Array.isArray(data.items)?data.items:[];
+    const countries=[...new Set(europeInstitutions.map(item=>item.country).filter(Boolean))].sort((a,b)=>a.localeCompare(b));
+    const select=$("#europeCountryFilter");
+    if(select)select.innerHTML='<option value="all">全部国家</option>'+countries.map(country=>'<option value="'+esc(country)+'">'+esc(europeCountryNames[country]||country)+'</option>').join("");
+    const websites=europeInstitutions.filter(item=>safeExternalUrl(item.official_website)).length;
+    const webCount=$("#europeWebCount");
+    if(webCount)webCount.textContent=websites+" 所已从 AEC 档案找到官网入口";
+    renderEuropeInstitutions();
+  }catch(error){
+    if(target)target.innerHTML='<div class="empty">欧洲院校目录暂时无法载入，请稍后刷新。</div>';
+    const count=$("#europeCount");if(count)count.textContent="目录暂不可用";
+  }
+}
+
 /* ---------- wiring ---------- */
 function bindPanelLinks(){
   document.addEventListener('click',event=>{
@@ -724,6 +800,10 @@ function bindPanelLinks(){
 }
 bindPanelLinks();
 $('#refreshButton').addEventListener('click',()=>{loadConservatori();loadRepertoire();});
+const europeInput=$('#europeSearchInput');
+if(europeInput)europeInput.addEventListener('input',event=>{europeQuery=event.target.value;renderEuropeInstitutions();});
+const europeSelect=$('#europeCountryFilter');
+if(europeSelect)europeSelect.addEventListener('change',event=>{europeCountry=event.target.value;renderEuropeInstitutions();});
 const consInput=$('#consSearchInput');
 if(consInput)consInput.addEventListener('input',event=>{consQuery=event.target.value;renderConservatori();});
 const academyInput=$('#academySearchInput');
@@ -785,6 +865,7 @@ renderTiles();
 loadRepertoire();
 loadConservatori();
 loadMasterclassCount();
+loadEuropeInstitutions();
 
 /* Direct links from other pages can open a homepage panel by hash. */
 window.addEventListener('load',()=>{

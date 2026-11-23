@@ -152,11 +152,32 @@ await interactionCheck(
   (page) => page.locator("#detail").evaluate((element) => element.textContent.trim().length > 0)
 );
 
+
+await interactionCheck(
+  "index.html",
+  '.tile[data-open="conservatori"]',
+  "open the conservatory panel and filter the European institution directory",
+  async (page) => {
+    await page.waitForFunction(
+      () => document.querySelectorAll("#europeInstitutions .europe-country-group").length > 0,
+      { timeout: 12000 }
+    );
+    const total = await page.locator("#europeCount").textContent();
+    if (!total || !total.includes("105")) return false;
+    await page.locator("#europeCountryFilter").selectOption("Germany");
+    await page.waitForFunction(
+      () => document.querySelectorAll("#europeInstitutions .europe-country-group").length === 1,
+      { timeout: 7000 }
+    );
+    return (await page.locator("#europeInstitutions .europe-country-group summary").innerText()).includes("德国");
+  }
+);
+
 await browser.close();
 
 for (const error of pageErrors) failures.push(`JavaScript runtime error: ${error}`);
 
-console.log(`Checked ${pages.length} pages at ${viewports.length} viewport widths and exercised 5 key interactions.`);
+console.log(`Checked ${pages.length} pages at ${viewports.length} viewport widths and exercised 6 key interactions.`);
 if (failures.length) {
   console.error(`Responsive smoke test failed with ${failures.length} issue(s):`);
   for (const failure of failures) console.error(`- ${failure}`);
