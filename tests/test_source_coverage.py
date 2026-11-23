@@ -29,6 +29,11 @@ class SourceCoverageTests(unittest.TestCase):
         url = "https://www.example.org/path"
         self.assertEqual(audit.source_fetch_url(url), url)
 
+    def test_inventory_hash_tracks_effective_fetch_url(self):
+        original = [{"source_id": "source-10", "url": "https://www.tls-belli.it/bandi_e_avvisi/", "kind": "registered"}]
+        canonical = [{"source_id": "source-10", "url": "https://tls-belli.it/bandi_e_avvisi/", "kind": "registered"}]
+        self.assertEqual(audit.inventory_hash(original), audit.inventory_hash(canonical))
+
     def test_canonical_url_drops_fragment_only(self):
         self.assertEqual(
             audit.canonical_url("HTTPS://Example.org/a?x=1#section"),
