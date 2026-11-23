@@ -49,6 +49,7 @@
   <link rel="stylesheet" href="taste-fix.css?v=1">
   <link rel="stylesheet" href="assets/opera-clean.css?v=1">
   <link rel="stylesheet" href="assets/motion/site-motion.css?v=1">
+  <link rel="stylesheet" href="assets/opera-release.css?v=1">
   <script>document.documentElement.classList.add('m-enter');setTimeout(()=>document.documentElement.classList.add('m-enter-done'),700)</script>
   <title>OperaLab.｜欧洲声乐机会、音乐学院招生与曲目资料</title>
 </head>
@@ -97,7 +98,7 @@
     </button>
     <button class="tile" type="button" data-open="conservatori">
       <span class="tile-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-5 9 5M5 10v9m4-9v9m6-9v9m4-9v9M3 20h18"/></svg></span>
-      <span class="tile-main"><span class="tile-title">音乐学院招生</span><span class="tile-desc">意大利公立音乐学院的声乐课程、入学考试和招生简章。</span></span>
+      <span class="tile-main"><span class="tile-title">音乐学院招生</span><span class="tile-desc">意大利公立音乐学院招生信息，并逐步整理欧洲其他国家的音乐院校。</span></span>
       <span class="tile-stat"><b id="statSchools">—</b><small>所院校</small></span><span class="tile-arrow" aria-hidden="true">↗</span>
     </button>
     <button class="tile" type="button" data-open="opera-academies">
@@ -176,6 +177,18 @@
       </div>
       <div id="consGroups" class="cons-groups" aria-live="polite"></div>
       <div id="conservatoriEmpty"></div>
+      <section class="europe-discovery" aria-labelledby="europe-directory-title">
+        <div class="europe-discovery-head">
+          <div><span class="eyebrow">EUROPEAN INSTITUTION INDEX</span><h3 id="europe-directory-title">欧洲音乐院校候选目录</h3><p>从欧洲音乐院校协会（AEC）成员目录发现院校，作为后续核实声乐课程与招生信息的起点。</p></div>
+          <div class="europe-summary"><strong id="europeCount">正在载入目录…</strong><span id="europeWebCount">官网入口统计载入中</span></div>
+        </div>
+        <div class="europe-toolbar">
+          <label class="searchbox"><span aria-hidden="true">⌕</span><input id="europeSearchInput" type="search" placeholder="搜索国家、城市或院校名称" autocomplete="off" aria-label="搜索欧洲音乐院校"></label>
+          <label class="europe-country-label"><span>国家</span><select id="europeCountryFilter" aria-label="按国家筛选"><option value="all">全部国家</option></select></label>
+        </div>
+        <div id="europeInstitutions" class="europe-country-groups" aria-live="polite"><div class="empty">正在载入欧洲院校目录…</div></div>
+        <p class="europe-disclaimer">重要说明：AEC 会员身份仅用于发现高等音乐教育机构，不代表该校一定开设古典声乐专业或当前开放招生。当前目录中的声乐课程与招生状态尚未逐校核实；请以院校官网为准。官网入口和 AEC 档案分别标注，避免把候选机构误认为已确认机会。</p>
+      </section>
     </section>
     <section class="shell wrap section panel" id="opera-academies" hidden>
       <button class="panel-back" type="button" data-back="tiles">← 返回入口</button>
@@ -220,7 +233,7 @@
   <script src="site-config.js?v=1" defer></script>
   <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"42879f330b824eb4843baa5bd13ba002"}'></script>
   <script src="subscribe.js?v=1" defer></script>
-  <script src="app.js?v=ux15" defer></script>
+  <script src="app.js?v=release1" defer></script>
   <script src="hero-facts.js?v=1" defer></script>
   <script src="structured-data.js?v=1" defer></script>
   <script type="module" src="assets/moments/moments.js"></script>
