@@ -16,7 +16,8 @@ on:
       - "styles.css"
       - "assets/motion/**"
       - "assets/moments/**"
-      - "assets/taste-polish.css"\n      - "assets/site-system.css"
+      - "assets/taste-polish.css"
+      - "assets/site-system.css"
       - "scripts/responsive-smoke.mjs"
       - ".github/workflows/taste-browser-gate.yml"
 
