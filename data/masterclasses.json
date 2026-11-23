@@ -1,40 +1,6 @@
 {
-  "updated_at": "2026-11-13T21:40:00+01:00",
+  "updated_at": "2026-11-23T16:20:00+01:00",
   "items": [
-    {
-      "id": "wj-gregory-kunde-milano-2026-11",
-      "title": "Masterclass di alto perfezionamento — Gregory Kunde",
-      "teacher": "Gregory Kunde; accompagnamento pianistico: Wei Jiang",
-      "instrument_or_voice": "Canto lirico · tecnica vocale e interpretazione musicale",
-      "location": "WJ Opera Music Academy, Via Antonio Oroboni 64, Milano, Italia",
-      "start_at": "2026-11-16T00:00:00+01:00",
-      "end_at": "2026-11-17T23:59:00+01:00",
-      "fee_eur": 200,
-      "description_zh": "课程为期两天，重点围绕声乐技术与音乐诠释展开。官方报名表注明：正式学员每节课 €200，报名两节共 €400；旁听费用为 €50。课程即将开始，是否还有名额及具体上课安排，请直接向主办方确认。",
-      "source_name": "WJ Opera Music Academy",
-      "source_url": "https://www.wj-operamusic.academy/",
-      "application_url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/09/masterclass_registration_form_Gregory-Kunde.pdf",
-      "publisher_status": "official",
-      "review_status": "verified",
-      "publication_status": "published",
-      "checked_at": "2026-11-12T00:39:00+01:00",
-      "last_verified_at": "2026-11-12T00:39:00+01:00",
-      "evidence": [
-        {
-          "url": "https://www.wj-operamusic.academy/",
-          "excerpt": "Iscrizioni Aperte; Docente: M° Gregory Kunde; Date: 16–17 Novembre 2026; focus: Tecnica vocale e interpretazione musicale.",
-          "checked_at": "2026-11-12T00:39:00+01:00"
-        },
-        {
-          "url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/09/masterclass_registration_form_Gregory-Kunde.pdf",
-          "excerpt": "Allievo effettivo: 200€ per 1 lezione / 400€ per 2 lezioni; uditore: 50€; M° Gregory Kunde, 16–17 novembre 2026.",
-          "checked_at": "2026-11-12T00:39:00+01:00"
-        }
-      ],
-      "title_zh": "Gregory Kunde 声乐大师班",
-      "focus_zh": "声乐技术与音乐诠释",
-      "fee_label_zh": "正式学员：€200/节（两节共 €400）；旁听：€50"
-    },
     {
       "id": "consvv-thomas-heyer-2026-11",
       "title": "Voce – Risonanza – Respiro: Masterclass di Canto",
@@ -52,8 +18,8 @@
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
-      "checked_at": "2026-11-12T00:39:00+01:00",
-      "last_verified_at": "2026-11-12T00:39:00+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://consvv.it/evento/masterclass-di-canto-prof-thomas-heyer",
@@ -64,6 +30,11 @@
           "url": "https://consvv.it/wp-content/uploads/modulo_masterclass_canto.pdf",
           "excerpt": "Domanda di iscrizione Masterclass di Canto – Prof. Thomas Heyer; modalità uditore/effettivo, interno/esterno.",
           "checked_at": "2026-11-12T00:39:00+01:00"
+        },
+        {
+          "url": "https://consvv.it/evento/masterclass-di-canto-prof-thomas-heyer",
+          "excerpt": "Official Conservatorio page rechecked 23 Nov 2026: Masterclass with Prof. Thomas Heyer on 30 November and 1 December 2026; applications due 25 November 2026; external active participants €80 and auditors €30.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "title_zh": "Thomas Heyer 声乐大师班：声音、共鸣与呼吸",
@@ -86,8 +57,8 @@
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
-      "checked_at": "2026-11-12T00:39:00+01:00",
-      "last_verified_at": "2026-11-12T00:39:00+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.wj-operamusic.academy/",
@@ -98,6 +69,11 @@
           "url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/10/Modulo-Masterclass-Leone-Magiera.pdf",
           "excerpt": "Allievo effettivo: 350€/3 giorni; uditore: 50€; M° Leone Magiera; 4–6 dicembre 2026.",
           "checked_at": "2026-11-12T00:39:00+01:00"
+        },
+        {
+          "url": "https://www.wj-operamusic.academy/",
+          "excerpt": "Official WJ Opera Music Academy page rechecked 23 Nov 2026: applications open for Leone Magiera masterclass for opera singers and collaborative pianists, 4–6 December 2026, at Via Antonio Oroboni 64, Milan.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "title_zh": "Leone Magiera 歌剧演唱与艺术指导大师班",
@@ -121,13 +97,18 @@
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
-      "checked_at": "2026-11-12T00:39:00+01:00",
-      "last_verified_at": "2026-11-12T00:39:00+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.cantoalato.it/masterclass-di-canto-con-leo-nucci-rigoletto-il-trovatore-la-traviata/",
           "excerpt": "11–14 dicembre 2026; concerto finale 15 dicembre; iscrizioni allievi effettivi entro il 30 novembre 2026; limite d'età 42 anni; costo €650 effettivi e €250 uditori.",
           "checked_at": "2026-11-12T00:39:00+01:00"
+        },
+        {
+          "url": "https://www.cantoalato.it/masterclass-di-canto-con-leo-nucci-rigoletto-il-trovatore-la-traviata/",
+          "excerpt": "Official Cantoalato page rechecked 23 Nov 2026: Leo Nucci masterclass 11–14 December 2026 with final concert 15 December; active-student applications close 30 November; active fee €650, auditor fee €250; age limit 42.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "title_zh": "Leo Nucci：威尔第歌剧角色诠释",
@@ -147,13 +128,18 @@
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
-      "checked_at": "2026-11-12T00:44:00+01:00",
-      "last_verified_at": "2026-11-12T00:44:00+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.regiumlepidi.com/en/academy/masterclasses",
           "excerpt": "Verdi Marathon 2027 · Teatro G. Verdi · Busseto (PR) · March 2027. Six days of masterclasses and workshops with Mirko Matarazzo and Davide Cavalli, ending with an Opera Gala. Applications are not open yet.",
           "checked_at": "2026-11-12T00:44:00+01:00"
+        },
+        {
+          "url": "https://www.regiumlepidi.com/en/academy/masterclasses",
+          "excerpt": "Official Regium Lepidi Opera page rechecked 23 Nov 2026: Verdi Marathon 2027 is planned for March at Teatro G. Verdi, Busseto; seven days including six days of masterclasses/workshops and an Opera Gala with Mirko Matarazzo and Davide Cavalli; applications are not open yet.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "date_label_zh": "2027年3月（具体日期待公布）",
@@ -178,13 +164,18 @@
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
-      "checked_at": "2026-11-12T00:57:00+01:00",
-      "last_verified_at": "2026-11-12T00:57:00+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.cantoalato.it/masterclass-di-canto-con-alessandro-corbelli/",
           "excerpt": "8–11 marzo 2027; concerto finale 12 marzo; allievi effettivi €650, uditori €250; iscrizioni effettivi entro 19 febbraio 2027; uditori entro 8 marzo; limite d'età 42 anni; 10 posti effettivi.",
           "checked_at": "2026-11-12T00:57:00+01:00"
+        },
+        {
+          "url": "https://www.cantoalato.it/masterclass-di-canto-con-alessandro-corbelli/",
+          "excerpt": "Official Cantoalato page rechecked 23 Nov 2026: Alessandro Corbelli masterclass 8–11 March 2027, final concert 12 March; active-student applications close 19 February 2027; active fee €650 and auditor fee €250; age limit 42.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "title_zh": "Alessandro Corbelli：从古典主义到美声唱法",
@@ -201,18 +192,23 @@
       "end_at": "2027-02-12T23:59:00+01:00",
       "description_zh": "Cantoalato Academy 的 2026–2027 学年日历已列出本期课程：2027 年 2 月 8 日至 12 日，由 Gregory Kunde 授课。目前公开日历尚未提供具体上课地点、费用、申请条件和报名截止日期，也不能据此判断报名已经开放。请留意主办方后续公告。",
       "source_name": "Cantoalato Academy",
-      "source_url": "https://www.cantoalato.it/calendario/",
-      "application_url": "https://www.cantoalato.it/calendario/",
+      "source_url": "https://www.cantoalato.it/masterclass/",
+      "application_url": "https://www.cantoalato.it/masterclass/",
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
-      "checked_at": "2026-11-12T00:55:00+01:00",
-      "last_verified_at": "2026-11-12T00:55:00+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.cantoalato.it/calendario/",
           "excerpt": "Calendario 2026–2027: 8–12 febbraio 2027 – Masterclass di Canto con Gregory Kunde.",
           "checked_at": "2026-11-12T00:55:00+01:00"
+        },
+        {
+          "url": "https://www.cantoalato.it/masterclass/",
+          "excerpt": "Official Cantoalato 2026–2027 calendar rechecked 23 Nov 2026: Gregory Kunde masterclass is listed for 8–12 February 2027; venue, fee, application conditions and deadline are not yet published.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "title_zh": "Gregory Kunde 声乐大师班（2027 年 2 月）",
@@ -229,18 +225,23 @@
       "end_at": "2027-04-02T23:59:00+02:00",
       "description_zh": "根据 Cantoalato Academy 公布的 2026–2027 学年日历，本期课程安排在 2027 年 3 月 29 日至 4 月 2 日，由 Leo Nucci 授课，曲目主题包括《纳布科》《麦克白》和《埃尔纳尼》。目前日历尚未公布费用、申请条件、具体上课地点及报名截止日期，报名安排有待主办方进一步通知。",
       "source_name": "Cantoalato Academy",
-      "source_url": "https://www.cantoalato.it/calendario/",
-      "application_url": "https://www.cantoalato.it/calendario/",
+      "source_url": "https://www.cantoalato.it/masterclass/",
+      "application_url": "https://www.cantoalato.it/masterclass/",
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
-      "checked_at": "2026-11-12T00:55:00+01:00",
-      "last_verified_at": "2026-11-12T00:55:00+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.cantoalato.it/calendario/",
           "excerpt": "29 marzo–2 aprile 2027 – Masterclass di Canto con Leo Nucci (Nabucco, Macbeth, Ernani).",
           "checked_at": "2026-11-12T00:55:00+01:00"
+        },
+        {
+          "url": "https://www.cantoalato.it/masterclass/",
+          "excerpt": "Official Cantoalato 2026–2027 calendar rechecked 23 Nov 2026: Leo Nucci masterclass is listed for 29 March–2 April 2027, with Nabucco, Macbeth and Ernani as the repertoire focus; fee and application details are not yet published.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "title_zh": "Leo Nucci：威尔第歌剧选段与角色诠释",
@@ -257,18 +258,23 @@
       "end_at": "2027-06-18T23:59:00+02:00",
       "description_zh": "Cantoalato Academy 的 2026–2027 学年日历列出了这期课程，时间为 2027 年 6 月 14 日至 18 日，由 Leo Nucci 授课，重点曲目包括《假面舞会》《命运之力》和《唐·卡洛》。费用、申请条件、具体上课地点和报名截止日期目前均未公布，需等待主办方后续通知。",
       "source_name": "Cantoalato Academy",
-      "source_url": "https://www.cantoalato.it/calendario/",
-      "application_url": "https://www.cantoalato.it/calendario/",
+      "source_url": "https://www.cantoalato.it/masterclass/",
+      "application_url": "https://www.cantoalato.it/masterclass/",
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
-      "checked_at": "2026-11-12T00:55:00+01:00",
-      "last_verified_at": "2026-11-12T00:55:00+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.cantoalato.it/calendario/",
           "excerpt": "14–18 giugno 2027 – Masterclass di Canto con Leo Nucci (Un ballo in maschera, La forza del destino, Don Carlo).",
           "checked_at": "2026-11-12T00:55:00+01:00"
+        },
+        {
+          "url": "https://www.cantoalato.it/masterclass/",
+          "excerpt": "Official Cantoalato 2026–2027 calendar rechecked 23 Nov 2026: Leo Nucci masterclass is listed for 14–18 June 2027, with Un ballo in maschera, La forza del destino and Don Carlo as the repertoire focus; fee and application details are not yet published.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "title_zh": "Leo Nucci：威尔第歌剧选段与角色诠释",
@@ -285,18 +291,23 @@
       "end_at": "2027-08-05T23:59:00+02:00",
       "description_zh": "Cantoalato Academy 的 2026–2027 学年日历已公布本期课程日期：2027 年 8 月 2 日至 5 日，授课导师为 Giorgio Lormi。目前公开日历尚未说明具体举办城市、费用、申请条件和报名截止日期，相关信息以主办方后续公告为准。",
       "source_name": "Cantoalato Academy",
-      "source_url": "https://www.cantoalato.it/calendario/",
-      "application_url": "https://www.cantoalato.it/calendario/",
+      "source_url": "https://www.cantoalato.it/masterclass/",
+      "application_url": "https://www.cantoalato.it/masterclass/",
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
-      "checked_at": "2026-11-12T00:55:00+01:00",
-      "last_verified_at": "2026-11-12T00:55:00+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.cantoalato.it/calendario/",
           "excerpt": "2–5 agosto 2027 – Masterclass di Canto con Giorgio Lormi.",
           "checked_at": "2026-11-12T00:55:00+01:00"
+        },
+        {
+          "url": "https://www.cantoalato.it/masterclass/",
+          "excerpt": "Official Cantoalato 2026–2027 calendar rechecked 23 Nov 2026: Giorgio Lormi masterclass is listed for 2–5 August 2027; venue, fee, application conditions and deadline are not yet published.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "title_zh": "Giorgio Lormi 声乐大师班",
@@ -314,13 +325,13 @@
       "fee_eur": 450,
       "description_zh": "面向歌剧演唱者的四日国际声乐大师班，由男中音 Simone Piazzola 与钢琴家 Alberto Bellio 指导，内容包括声乐技术、意大利语咬字、乐句、音准、音乐诠释与舞台表达。正式学员需提交至少两首准备演唱的曲目，并将填写签名的报名表发送至 lyric@veniceoperaarts.com；旁听学员也可报名。官方报名规则把截止日期写为“2026年11月31日 00:30”，但11月没有31日；同一文件另说明满15名报名者即提前关闭报名。因此平台不填写未经确认的截止日期，建议申请前直接向主办方确认剩余名额和正确截止时间。",
       "source_name": "VeniceOperaArts",
-      "source_url": "https://www.veniceoperaarts.com/index.php/masterclass",
+      "source_url": "https://www.veniceoperaarts.com/index.php/masterclass-canto-lirico-padova2-5dicembre2026",
       "application_url": "https://www.veniceoperaarts.com/images/lyric/masterclass-canto-lirico/MODULO-DI-ISCRIZIONE_Masterclass-Padova-2-5-dicembre-2026.pdf",
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
-      "checked_at": "2026-11-13T21:40:00+01:00",
-      "last_verified_at": "2026-11-13T21:40:00+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.veniceoperaarts.com/index.php/masterclass",
@@ -336,6 +347,11 @@
           "url": "https://www.veniceoperaarts.com/images/lyric/masterclass-canto-lirico/MODULO-DI-ISCRIZIONE_Masterclass-Padova-2-5-dicembre-2026.pdf",
           "excerpt": "Official registration form confirms the Padova masterclass dates 2–5 December 2026, venue Teatro Torresino, and the active-singer/auditor registration categories.",
           "checked_at": "2026-11-13T21:40:00+01:00"
+        },
+        {
+          "url": "https://www.veniceoperaarts.com/index.php/masterclass-canto-lirico-padova2-5dicembre2026",
+          "excerpt": "Official VeniceOperaArts event page rechecked 23 Nov 2026: Simone Piazzola and Alberto Bellio masterclass in Padova, 2–5 December 2026, at Teatro Torresino; final concert 5 December at 20:15. The separate official rules PDF contains an invalid '31 November' deadline, so no deadline is asserted.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "title_zh": "Padova 国际声乐大师班：Simone Piazzola & Alberto Bellio",

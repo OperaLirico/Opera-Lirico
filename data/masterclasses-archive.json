@@ -1,0 +1,42 @@
+{
+  "archived_at": "2026-11-23T16:20:00+01:00",
+  "note": "已结束的课程从公开大师班列表移出，保留原始记录供审计与历史追溯。",
+  "items": [
+    {
+      "id": "wj-gregory-kunde-milano-2026-11",
+      "title": "Masterclass di alto perfezionamento — Gregory Kunde",
+      "teacher": "Gregory Kunde; accompagnamento pianistico: Wei Jiang",
+      "instrument_or_voice": "Canto lirico · tecnica vocale e interpretazione musicale",
+      "location": "WJ Opera Music Academy, Via Antonio Oroboni 64, Milano, Italia",
+      "start_at": "2026-11-16T00:00:00+01:00",
+      "end_at": "2026-11-17T23:59:00+01:00",
+      "fee_eur": 200,
+      "description_zh": "课程为期两天，重点围绕声乐技术与音乐诠释展开。官方报名表注明：正式学员每节课 €200，报名两节共 €400；旁听费用为 €50。课程即将开始，是否还有名额及具体上课安排，请直接向主办方确认。",
+      "source_name": "WJ Opera Music Academy",
+      "source_url": "https://www.wj-operamusic.academy/",
+      "application_url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/09/masterclass_registration_form_Gregory-Kunde.pdf",
+      "publisher_status": "official",
+      "review_status": "verified",
+      "publication_status": "published",
+      "checked_at": "2026-11-12T00:39:00+01:00",
+      "last_verified_at": "2026-11-12T00:39:00+01:00",
+      "evidence": [
+        {
+          "url": "https://www.wj-operamusic.academy/",
+          "excerpt": "Iscrizioni Aperte; Docente: M° Gregory Kunde; Date: 16–17 Novembre 2026; focus: Tecnica vocale e interpretazione musicale.",
+          "checked_at": "2026-11-12T00:39:00+01:00"
+        },
+        {
+          "url": "https://www.wj-operamusic.academy/wp-content/uploads/2026/09/masterclass_registration_form_Gregory-Kunde.pdf",
+          "excerpt": "Allievo effettivo: 200€ per 1 lezione / 400€ per 2 lezioni; uditore: 50€; M° Gregory Kunde, 16–17 novembre 2026.",
+          "checked_at": "2026-11-12T00:39:00+01:00"
+        }
+      ],
+      "title_zh": "Gregory Kunde 声乐大师班",
+      "focus_zh": "声乐技术与音乐诠释",
+      "fee_label_zh": "正式学员：€200/节（两节共 €400）；旁听：€50",
+      "archive_reason": "课程于 2026-11-16 至 2026-11-17 举行，已结束；不再作为当前开放机会发布。",
+      "archived_at": "2026-11-23T16:20:00+01:00"
+    }
+  ]
+}
