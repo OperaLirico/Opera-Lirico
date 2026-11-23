@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-11-13T11:34:22+01:00",
+  "updated_at": "2026-11-23T16:00:00+01:00",
   "items": [
     {
       "source_id": "source-12",
@@ -76,6 +76,12 @@
       "audit_http_status": 200,
       "review_notes": "比赛内容与声乐领域高度相关，页面列出主办协会、合作组织和联系邮箱；但身份依据仍集中在比赛站点自述，未取得独立机构目录或可核验的外部官方交叉证据，因此保留 needs_review。",
       "production_activation": false
+    },
+    {
+      "source_id": "source-10",
+      "source_url": "https://www.tls-belli.it/",
+      "monitoring_status": "restricted",
+      "monitoring_note": "On 2026-11-23, strict standard-library HTTPS verification succeeds, but the homepage redirects to a password-protected login page. The former /bandi_e_avvisi/ path returns 404. Keep this official source monitored as restricted until the public site is restored."
     }
   ]
 }
