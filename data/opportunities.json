@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T16:20:00+01:00",
+  "updated_at": "2026-11-23T16:25:00+01:00",
   "items": [
     {
       "id": "aslico-2027-78th-young-singers",
@@ -23,8 +23,8 @@
       "application_deadline_at": "2026-11-25T18:00:00+01:00",
       "fee_eur": 70,
       "eligibility_summary": "分为歌剧角色赛与新秀歌手赛，报名时须选择其中一个组别；不同预选场次有名额限制，具体资格、曲目和出生日期要求请查看官方章程。",
-      "checked_at": "2026-11-23T16:20:00+01:00",
-      "last_verified_at": "2026-11-23T16:20:00+01:00",
+      "checked_at": "2026-11-23T16:25:00+01:00",
+      "last_verified_at": "2026-11-23T16:25:00+01:00",
       "evidence": [
         {
           "url": "https://aslico.org/edizione-in-corso/",
@@ -63,9 +63,16 @@
           "url": "https://aslico.org/current-edition/?lang=en",
           "excerpt": "Official AsLiCo Edition 2027 page rechecked 23 Nov 2026: 78th International AsLiCo Competition for Young Opera Singers 2027; applications run 16 October–25 November 2026 at 18:00; fee €70. Official call confirms pre-selections 5–21 December 2026 and final in Como on 6 January 2027 at 15:30.",
           "checked_at": "2026-11-23T16:20:00+01:00"
+        },
+        {
+          "url": "https://aslico.org/wp-content/uploads/2026/10/Bando-78-Concorso-Internazionale-AsLiCo-per-Giovani-Cantanti-Lirici-78-International-AsLiCo-Competition-for-Young-Opera-Singers-2027_agg.15.10.26_.pdf",
+          "page_title": "Bando ufficiale 78° Concorso AsLiCo 2027",
+          "excerpt": "Official 78th AsLiCo Competition 2027 regulations rechecked 23 Nov 2026: Section A candidates must be born on or after 1 January 1995; Section B on or after 1 January 1999; the competition takes place in Como from 3–6 January 2027, with the final on 6 January at 15:30; applications close 25 November 2026 at 18:00 and the fee is €70.",
+          "checked_at": "2026-11-23T16:25:00+01:00",
+          "pdf_page": 3
         }
       ],
-      "notes": "官方 2027 页面与章程已复核。预选安排在 2026 年 12 月 5–21 日多个欧洲城市；科莫正式比赛阶段为 2027 年 1 月 3–6 日，决赛为 1 月 6 日 15:30。A 组出生日期要求为 1995 年 1 月 1 日及以后，B 组为 1999 年 1 月 1 日及以后；报名时须选择一个组别，具体曲目和角色要求以官方章程为准。",
+      "notes": "官方 78 届 2027 章程 PDF 已于 2026-11-23 复核。注意：官网英文页面正文有一处将正式比赛年份误写为 2026；以同页链接的官方章程 PDF 为准，科莫正式比赛阶段为 2027 年 1 月 3–6 日，决赛 1 月 6 日 15:30。A 组出生日期要求为 1995 年 1 月 1 日及以后，B 组为 1999 年 1 月 1 日及以后；报名截止 2026 年 11 月 25 日 18:00，报名费 €70。",
       "application_url": "https://aslico.org/current-edition/?lang=en",
       "official_pdf_url": "https://aslico.org/wp-content/uploads/2026/10/Bando-78-Concorso-Internazionale-AsLiCo-per-Giovani-Cantanti-Lirici-78-International-AsLiCo-Competition-for-Young-Opera-Singers-2027_agg.15.10.26_.pdf",
       "title_zh": "第 78 届 AsLiCo 国际青年歌唱家比赛（2027）"
