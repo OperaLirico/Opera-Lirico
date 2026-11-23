@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T11:49:52+01:00",
+  "updated_at": "2026-11-23T16:20:00+01:00",
   "items": [
     {
       "id": "aslico-2027-78th-young-singers",
@@ -14,8 +14,8 @@
       ],
       "location": "科莫及意大利、欧洲多地预选",
       "source_name": "AsLiCo",
-      "source_url": "https://aslico.org/edizione-in-corso/",
-      "announcement_url": "https://aslico.org/edizione-in-corso/",
+      "source_url": "https://aslico.org/current-edition/?lang=en",
+      "announcement_url": "https://aslico.org/current-edition/?lang=en",
       "publisher_status": "official",
       "review_status": "verified",
       "publication_status": "published",
@@ -23,8 +23,8 @@
       "application_deadline_at": "2026-11-25T18:00:00+01:00",
       "fee_eur": 70,
       "eligibility_summary": "分为歌剧角色赛与新秀歌手赛，报名时须选择其中一个组别；不同预选场次有名额限制，具体资格、曲目和出生日期要求请查看官方章程。",
-      "checked_at": "2026-11-12T11:49:52+01:00",
-      "last_verified_at": "2026-11-12T11:49:52+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://aslico.org/edizione-in-corso/",
@@ -58,10 +58,15 @@
           "excerpt": "Art. 4 confirms applications from 16 October 2026 through 25 November 2026 at 18:00 and a €70 fee; Art. 1 gives separate birth-date eligibility for Sections A and B.",
           "checked_at": "2026-11-12T11:49:52+01:00",
           "pdf_page": 5
+        },
+        {
+          "url": "https://aslico.org/current-edition/?lang=en",
+          "excerpt": "Official AsLiCo Edition 2027 page rechecked 23 Nov 2026: 78th International AsLiCo Competition for Young Opera Singers 2027; applications run 16 October–25 November 2026 at 18:00; fee €70. Official call confirms pre-selections 5–21 December 2026 and final in Como on 6 January 2027 at 15:30.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
-      "notes": "官方页面列出 2027/28 歌剧制作角色和多地预选安排；页面对最终比赛日期的年份表述存在不一致，因此本记录不展示未经确认的最终比赛日期。",
-      "application_url": "https://aslico.org/edizione-in-corso/",
+      "notes": "官方 2027 页面与章程已复核。预选安排在 2026 年 12 月 5–21 日多个欧洲城市；科莫正式比赛阶段为 2027 年 1 月 3–6 日，决赛为 1 月 6 日 15:30。A 组出生日期要求为 1995 年 1 月 1 日及以后，B 组为 1999 年 1 月 1 日及以后；报名时须选择一个组别，具体曲目和角色要求以官方章程为准。",
+      "application_url": "https://aslico.org/current-edition/?lang=en",
       "official_pdf_url": "https://aslico.org/wp-content/uploads/2026/10/Bando-78-Concorso-Internazionale-AsLiCo-per-Giovani-Cantanti-Lirici-78-International-AsLiCo-Competition-for-Young-Opera-Singers-2027_agg.15.10.26_.pdf",
       "title_zh": "第 78 届 AsLiCo 国际青年歌唱家比赛（2027）"
     },
@@ -86,8 +91,8 @@
       "age_max": 35,
       "fee_eur": 80,
       "eligibility_summary": "面向18至35岁的各国歌剧歌手。需提交四首曲目（至少三首歌剧咏叹调）、两段视频、四份PDF乐谱及个人简历；视频预选后进入佩鲁贾现场半决赛和决赛。",
-      "checked_at": "2026-11-12T11:49:52+01:00",
-      "last_verified_at": "2026-11-12T11:49:52+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.concorsomorlacchi.it/",
@@ -131,6 +136,11 @@
           "excerpt": "The official one-page registration form is accessible and identifies the 14–15 December 2026 competition and voice-register field.",
           "checked_at": "2026-11-12T11:49:52+01:00",
           "pdf_page": 0
+        },
+        {
+          "url": "https://www.concorsomorlacchi.it/",
+          "excerpt": "Official bilingual competition page rechecked 23 Nov 2026: Francesco Morlacchi International Vocal Competition takes place in Perugia on 14–15 December 2026; applications close 30 November 2026 at 23:59; fee €80; candidates aged 18–35 as of 1 June 2026.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "notes": "比赛日期为2026年12月14日至15日；14日上午安排半决赛选手与官方钢琴伴奏排练，14日14:00开始半决赛，15日18:00举行公开决赛。具体材料和汇款方式以官网章程为准。",
@@ -160,8 +170,8 @@
       "application_deadline_at": "2026-12-10T23:59:00+01:00",
       "fee_eur": 0,
       "eligibility_summary": "面向出生于1997年1月1日及以后的歌手与钢琴合作人员；非欧盟申请人须符合公告所列有效居留或学习许可要求。歌手现场试唱须背谱；现场选拔安排在2027年1月10日至11日。具体角色及材料见官方简章。",
-      "checked_at": "2026-11-12T11:49:52+01:00",
-      "last_verified_at": "2026-11-12T11:49:52+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
@@ -186,6 +196,11 @@
           "excerpt": "The official bando states that the application must be submitted by 23:59 on Thursday 10 December 2026 and that candidates must have been born from 1 January 1997.",
           "checked_at": "2026-11-12T11:49:52+01:00",
           "pdf_page": 1
+        },
+        {
+          "url": "https://www.carlofelice.it/accademia/",
+          "excerpt": "Official Teatro Carlo Felice Academy page rechecked 23 Nov 2026: 2027 academy for opera singers and collaborative pianists; applications and attendance are free; application deadline is 10 December 2026 at 23:59.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "notes": "现场选拔安排在2027年1月10日至11日；官方 PDF 第1页列出歌手角色，第2页列出截止日期及现场选拔信息。",
@@ -211,8 +226,8 @@
       "audition_start_at": "2026-11-28T14:00:00+01:00",
       "age_min": 18,
       "eligibility_summary": "面向18岁及以上男高音。选拔用于建立合唱团候选名单，可能用于2026/27乐季的定期或临时用工；申请材料和居留要求见官方简章。",
-      "checked_at": "2026-11-12T11:49:52+01:00",
-      "last_verified_at": "2026-11-12T11:49:52+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
@@ -250,6 +265,11 @@
           "excerpt": "The official bando confirms the audition on 28 November 2026 at 14:00.",
           "checked_at": "2026-11-12T11:49:52+01:00",
           "pdf_page": 2
+        },
+        {
+          "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+          "excerpt": "Official Teatro Carlo Felice auditions page rechecked 23 Nov 2026: choir-tenor audition applications close 23 November 2026 at 23:59; the audition is scheduled for 28 November 2026 at 14:00.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "notes": "请在申请前再次检查剧院公告是否有时间或程序变更。",
@@ -275,8 +295,8 @@
       "audition_start_at": "2026-12-15T09:00:00+01:00",
       "age_min": 18,
       "eligibility_summary": "面向男低音合唱团岗位，最低年龄18岁；岗位为合唱团正式岗位选拔，具体劳动及居留资格要求见官方简章。",
-      "checked_at": "2026-11-12T11:49:52+01:00",
-      "last_verified_at": "2026-11-12T11:49:52+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
@@ -314,6 +334,11 @@
           "excerpt": "The official bando confirms the bass audition on 15 December 2026 at 09:00.",
           "checked_at": "2026-11-12T11:49:52+01:00",
           "pdf_page": 2
+        },
+        {
+          "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+          "excerpt": "Official Teatro Carlo Felice auditions page rechecked 23 Nov 2026: international choir competition for basses and baritones; applications close 7 December 2026 at 23:59.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "notes": "官方公告把男低音和男中音放在同一份简章中；此处按不同声部拆分，以准确显示试唱日期。",
@@ -339,8 +364,8 @@
       "audition_start_at": "2026-12-16T14:00:00+01:00",
       "age_min": 18,
       "eligibility_summary": "面向男中音合唱团岗位，最低年龄18岁；岗位为合唱团正式岗位选拔，具体劳动及居留资格要求见官方简章。",
-      "checked_at": "2026-11-12T11:49:52+01:00",
-      "last_verified_at": "2026-11-12T11:49:52+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
@@ -378,6 +403,11 @@
           "excerpt": "The official bando confirms the baritone audition on 16 December 2026 at 14:00.",
           "checked_at": "2026-11-12T11:49:52+01:00",
           "pdf_page": 2
+        },
+        {
+          "url": "https://www.carlofelice.it/audizioni-e-concorsi/",
+          "excerpt": "Official Teatro Carlo Felice auditions page rechecked 23 Nov 2026: international choir competition for basses and baritones; applications close 7 December 2026 at 23:59.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "notes": "官方公告把男低音和男中音放在同一份简章中；此处按不同声部拆分，以准确显示试唱日期。",
@@ -392,7 +422,7 @@
       ],
       "location": "巴勒莫 · Teatro Massimo",
       "source_name": "Fondazione Teatro Massimo di Palermo",
-      "source_url": "https://www.teatromassimo.it/audizioni/",
+      "source_url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/",
       "announcement_url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/",
       "publisher_status": "official",
       "review_status": "verified",
@@ -400,8 +430,8 @@
       "application_deadline_at": "2026-12-04T12:00:00+01:00",
       "age_min": 18,
       "eligibility_summary": "年满18岁；意大利或欧盟公民，或持有允许在意大利从事全职无固定期限工作的有效居留许可；须具备意大利语能力、高中学历、护照及 PEC 电子邮箱，并符合公告列出的其他法定资格。申请需通过官网在线表格提交。",
-      "checked_at": "2026-11-12T11:49:52+01:00",
-      "last_verified_at": "2026-11-12T11:49:52+01:00",
+      "checked_at": "2026-11-23T16:20:00+01:00",
+      "last_verified_at": "2026-11-23T16:20:00+01:00",
       "evidence": [
         {
           "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/",
@@ -443,6 +473,11 @@
           "excerpt": "The official PDF Art. 6 states that the exam begins on 20 December 2026 at 10:00. The conflict with the official page persists; do not populate a structured audition date.",
           "checked_at": "2026-11-12T11:49:52+01:00",
           "pdf_page": 5
+        },
+        {
+          "url": "https://www.teatromassimo.it/audizioni/selezione-pubblica-per-2-contralti/",
+          "excerpt": "Official Teatro Massimo notice rechecked 23 Nov 2026: public selection for two contralto chorus artists; applications close 4 December 2026 at 12:00; examinations begin 20 December 2026 at 10:00.",
+          "checked_at": "2026-11-23T16:20:00+01:00"
         }
       ],
       "notes": "全职、无固定期限的合唱团岗位，招聘2名Contralto。考试日期存在官方来源冲突：招聘网页写2026年12月19日10:00，官方简章PDF第6页（PDF第5页索引）写2026年12月20日10:00。为避免误导，暂不填写结构化考试日期；出行前应向剧院确认。官网简章列出第一轮需背谱演唱三首不同作曲家的歌剧咏叹调（至少一首意大利语），另有视唱练耳/声乐练习及合唱曲目。公告未明确列出报名费，本记录不将其推定为免费。\n2026-11-12 recheck: the official page still says 19 December 2026 at 10:00, while the official PDF still says 20 December 2026 at 10:00. audition_start_at remains empty pending organizer clarification.",
