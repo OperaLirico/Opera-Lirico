@@ -1,6 +1,11 @@
 name: Weekly source discovery
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/weekly-source-discovery.yml"
+      - "discover_europe_institutions.py"
   schedule:
     - cron: "30 6 * * 1"
   workflow_dispatch:
