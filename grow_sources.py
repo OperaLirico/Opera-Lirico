@@ -283,7 +283,7 @@ def sync_fetch_policies(merged_sources: list[dict]) -> int:
             "source_id": str(source_id),
             "source_name": source.get("source") or source.get("name") or str(source_id),
             "url": url,
-            "current_fetch_method": "scrapling",
+            "current_fetch_method": "era-research-engine",
             "strategy_status": "baseline_only",
             "alternatives_assessed": False,
             "alternative_candidates": [
@@ -293,7 +293,7 @@ def sync_fetch_policies(merged_sources: list[dict]) -> int:
             "timeout_seconds": TIMEOUT,
             "minimum_delay_seconds": 1.2,
             "last_assessed_at": None,
-            "assessment_note": "Current production fetch path is Scrapling. No source-specific alternative has been verified yet.",
+            "assessment_note": "Current production fetch path is ERA Research Engine (Scrapling preferred, stdlib fallback). No source-specific alternative has been verified yet.",
         })
         known_urls.add(url)
         added += 1
