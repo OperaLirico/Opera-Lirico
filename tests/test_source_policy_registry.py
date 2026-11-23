@@ -169,10 +169,13 @@ class SourceFetchPolicyRegistryTests(unittest.TestCase):
         self.assertNotIn(candidate["url"], {item["url"] for item in policies["entries"]})
 
         from audit_source_coverage import source_inventory
-        audited = next(item for item in source_inventory() if item["source_id"] == "candidate-2")
+        inventory = source_inventory()
+        audited = next(item for item in inventory if item["source_id"] == "source-10")
+        self.assertEqual(audited["url"], candidate["url"])
         self.assertEqual(audited["review_status"], "auto_approved_official")
         self.assertEqual(audited["publisher_status"], "official")
         self.assertEqual(audited["audit_confidence"], "high")
+        self.assertFalse(any(item["source_id"] == "candidate-2" for item in inventory))
 
 if __name__ == "__main__":
     unittest.main()
