@@ -21,6 +21,12 @@
   --serif:Georgia,"Songti SC",serif;
   --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
 }
+html body.taste-home{
+  --ink:var(--ol-ink);--ink-soft:var(--ol-muted);--paper:var(--ol-paper);--paper-2:var(--ol-surface);
+  --line:var(--ol-line);--brand:var(--ol-brand);--brand-2:var(--ol-brand-strong);
+  --gold:var(--ol-accent);--gold-soft:#c8a77f;--action:var(--ol-brand);
+  color:var(--ol-ink);background:var(--ol-paper);
+}
 html{scroll-behavior:smooth;scroll-padding-top:112px}
 body{
   color:var(--ol-ink);
@@ -194,7 +200,7 @@ html body.taste-home #tiles .tile-stat b{color:var(--ol-brand);font-size:17px}
 html body.taste-home #tiles .tile-arrow{grid-column:3;grid-row:1;color:var(--ol-accent)}
 html body.taste-home #tiles .tile:hover{transform:translateY(-2px);border-color:#d8bfc0;box-shadow:0 12px 28px rgba(52,35,32,.075)}
 html body.taste-home .home-source-note{margin-top:14px;color:var(--ol-muted);font-size:12px;line-height:1.7}
-html body :is(.master-page,.anatomy-page,.mechanism-page,.voice-lab-page){background:var(--ol-paper)!important;color:var(--ol-ink)}
+html body.master-page,html body.anatomy-page,html body.mechanism-page,html body.voice-lab-page{background:var(--ol-paper)!important;color:var(--ol-ink)}
 html body.master-page .master-head{
   background:radial-gradient(ellipse at 88% 12%,rgba(167,123,79,.13),transparent 42%),linear-gradient(135deg,#f2e9e3,#fffdf9 72%);
   border-color:var(--ol-line);box-shadow:var(--ol-shadow);
