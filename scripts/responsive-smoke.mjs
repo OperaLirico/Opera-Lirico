@@ -13,6 +13,7 @@ const viewports = [
   { width: 1024, height: 768 },
   { width: 768, height: 1024 },
   { width: 390, height: 844 },
+  { width: 320, height: 720 },
 ];
 
 const browser = await chromium.launch({
