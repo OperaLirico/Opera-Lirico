@@ -10,7 +10,7 @@
 - 隐私说明在 `privacy.html`，表单必须勾选后才允许提交。
 - 按声部细分的实现与运维见 `docs/newsletter-segmentation.md`；正文写法见 `docs/newsletter-copy-guide.md`。
 
-后台（`ops-dashboard`）目前只读订阅汇总与草稿，尚未提供发送操作。目标是把它升级为带权限控制的 Newsletter 审核与发送后台；站点前台不展示订阅人数。
+后台（`ops-dashboard`）提供登录保护、订阅汇总、邮件草稿预览与审核发送入口。发送入口默认关闭，必须由 Worker 环境变量 `NEWSLETTER_SEND_ENABLED=true` 显式启用；站点前台不展示订阅人数。
 
 ## Cloudflare Web Analytics
 
@@ -43,7 +43,7 @@ Masterclass records may include `poster_image_url`, `image_alt_zh`, `image_sourc
 
 ## Current operational status (2026-11-24)
 
-The repository already contains a working subscription architecture: the site form posts to the operations Worker, which creates an unactivated Buttondown subscriber; Buttondown sends the confirmation email. A verification record dated 2026-11-15 documents a successful end-to-end subscription write and a successful weekly segmented draft. The scheduled weekly workflow currently creates a private draft only; it does not send. The product decision is now a staged workflow: initially, a human reviews the prepared campaign in the private operations dashboard and explicitly clicks **Approve & send**; later, weekly automated checks may authorize sending only when every hard validation passes. This decision does not authorize immediate unattended sending or bypassing the initial human approval phase.
+The repository already contains a working subscription architecture: the site form posts to the operations Worker, which creates an unactivated Buttondown subscriber; Buttondown sends the confirmation email. A verification record dated 2026-11-15 documents a successful end-to-end subscription write and a successful weekly segmented draft. The scheduled weekly workflow creates a private draft only; it does not send. The product decision is a staged workflow: initially, a human reviews the prepared campaign in the private operations dashboard and explicitly clicks **审核并发送**; later, weekly automated checks run in shadow mode before any unattended sending is enabled.
 
 ## Newsletter operating model: human approval first, guarded automation later
 
@@ -55,9 +55,9 @@ The weekly job prepares a campaign; it must not send it. The private dashboard s
 - Included items with source URL, publication/event date, last-checked timestamp, and an explanation of why each item is included.
 - Validation results for broken links, missing dates, duplicate stories, stale/expired opportunities, missing source attribution, empty segments, and unsubscribe/footer presence.
 - A clear status lifecycle: `draft` → `ready_for_review` → `approved` → `sending` → `sent`, with `blocked` and `failed` terminal/recoverable states as appropriate.
-- Actions: edit content, exclude an item, regenerate preview, approve and send, or leave pending. The send action must require an explicit authenticated click and show the recipient/segment counts before confirmation.
+- Actions: preview, edit content in Buttondown, approve and send, or leave pending. The send action requires an authenticated same-origin POST, an explicit confirmation click, and a visible active-subscriber count before confirmation. The first implementation exposes the send button only for the expected weekly voice-segment draft slug.
 
-The send endpoint must be server-side only. Never expose the Buttondown API key in browser code, static assets, logs, or downloadable preview artifacts. Enforce dashboard authentication/authorization, CSRF protection where cookie sessions are used, server-side validation, idempotency (a campaign cannot be sent twice by double-click/retry), and an immutable audit record of who approved/sent what and when. After a send request, show the provider's actual result; do not mark a campaign as sent before confirmation.
+The send endpoint is server-side only. Never expose the Buttondown API key in browser code, static assets, logs, or downloadable preview artifacts. The initial Worker implementation checks the signed dashboard session, same-origin request, explicit confirmation, exact weekly draft slug, Buttondown draft status, disabled archive mode, and a KV send-attempt lock. It sends by changing the existing draft status to `about_to_send`; the UI reports that the request was queued, not that delivery is complete. KV locking is a duplicate-attempt guard, not a mathematically strong exactly-once guarantee under concurrent cross-region requests; the dashboard must retain the Buttondown status as the final source of truth. An ambiguous provider timeout is locked for manual reconciliation rather than retried automatically.
 
 ### Phase 2 — automated checks, with human approval retained
 
@@ -72,9 +72,21 @@ Provide a global pause switch, a per-campaign manual hold, a maximum-recipient g
 ### Release gates
 
 1. Verify the existing subscription confirmation and segmentation flow.
-2. Implement the authenticated dashboard review UI and a server-side, idempotent send action.
+2. Deploy and verify the authenticated dashboard preview and gated manual-send action; confirm the Worker has its `CONTENT_DRAFTS` KV binding and `NEWSLETTER_SEND_ENABLED` variable.
 3. Test with a dedicated internal/test audience and verify suppression/unsubscribe behavior.
 4. Confirm provider responses, audit logs, retry behavior, and duplicate-send protection.
 5. Launch Phase 1 with automatic sending disabled.
 6. Run automated checks in shadow mode for several campaigns, then explicitly enable Phase 2 automatic sending only after the owner accepts the observed results; do not enable unattended sending merely because CI passes.
 
+
+
+## Implementation status (2026-11-24)
+
+The operations Worker branch now includes:
+- A sandboxed in-dashboard email body preview loaded server-side from Buttondown.
+- An **审核并发送** action with a confirmation prompt and current active-subscriber count.
+- Server-side session and same-origin checks; only the exact weekly `-voiced` draft slug, still in `draft` state with archive disabled, is eligible.
+- A send-attempt KV lock; ambiguous provider results are held for manual reconciliation.
+- Sending is disabled unless `NEWSLETTER_SEND_ENABLED=true` is explicitly configured in the Worker environment, and the existing `CONTENT_DRAFTS` KV binding is available.
+
+This is implementation on the PR branch only. It has not been deployed or exercised against the live Buttondown account. Keep the feature flag OFF until the Worker binding and manual test procedure are verified. The scheduled digest workflow remains draft-only.
