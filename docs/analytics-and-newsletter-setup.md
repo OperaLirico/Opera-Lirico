@@ -76,5 +76,5 @@ Provide a global pause switch, a per-campaign manual hold, a maximum-recipient g
 3. Test with a dedicated internal/test audience and verify suppression/unsubscribe behavior.
 4. Confirm provider responses, audit logs, retry behavior, and duplicate-send protection.
 5. Launch Phase 1 with automatic sending disabled.
-6. Collect operational evidence before considering Phase 2/3; do not enable unattended sending merely because CI passes.
+6. Run automated checks in shadow mode for several campaigns, then explicitly enable Phase 2 automatic sending only after the owner accepts the observed results; do not enable unattended sending merely because CI passes.
 
