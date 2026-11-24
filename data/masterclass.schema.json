@@ -137,6 +137,31 @@
     },
     "fee_label_zh": {
       "type": "string"
+    },
+    "poster_image_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "HTTPS URL to an official or otherwise rights-cleared event poster image."
+    },
+    "image_alt_zh": {
+      "type": "string",
+      "description": "Concise Chinese alternative text for the image."
+    },
+    "image_source_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Page where the image was published or supplied."
+    },
+    "image_rights_status": {
+      "type": "string",
+      "enum": [
+        "official_provided",
+        "permission_granted",
+        "public_domain",
+        "link_only",
+        "unknown"
+      ],
+      "description": "Rights review state; unknown images must not be copied or republished."
     }
   },
   "allOf": [
