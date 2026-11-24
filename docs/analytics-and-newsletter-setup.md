@@ -30,3 +30,17 @@ The loader only inserts Cloudflare's beacon script when a non-empty, valid-looki
 - With a configured site token, inspect the browser Network panel for `beacon.min.js` and successful analytics collection.
 - Submit the site form once with a test address, confirm the confirmation email arrives and the subscriber appears as `unactivated` in Buttondown with `metadata.voice` set.
 - Empty `subscribeEndpoint` in a local copy: the form must show "订阅服务还没配置好" and make no network request.
+
+
+## Visual media for events and institutions
+
+Masterclass records may include `poster_image_url`, `image_alt_zh`, `image_source_url`, and `image_rights_status`. Opportunity records may additionally include `institution_image_url` for an official theatre, conservatory, or organizer image. These fields are optional: existing records remain valid and render without an image.
+
+- Prefer images supplied by the organizer or theatre, or images with documented permission/public-domain status.
+- Record the source page and a concise Chinese alt text.
+- Do not download, mirror, or republish an image when rights are unknown; leave the image URL empty and link to the official page instead.
+- Use lazy loading and responsive containment so portrait posters remain legible on mobile and do not distort card layouts.
+
+## Current operational status (2026-11-24)
+
+The repository already contains a working subscription architecture: the site form posts to the operations Worker, which creates an unactivated Buttondown subscriber; Buttondown sends the confirmation email. A verification record dated 2026-11-15 documents a successful end-to-end subscription write and a successful weekly segmented draft. The scheduled weekly workflow creates a private draft only; it intentionally does not send. Before the next public send, manually rerun the read-only `Newsletter capability probe` and `Newsletter state check`, verify a current subscriber confirmation and draft state, preview the segmented draft in Buttondown, then send manually after the editorial checklist. Do not change the workflow to auto-send without a separate explicit decision and a safe approval gate.
