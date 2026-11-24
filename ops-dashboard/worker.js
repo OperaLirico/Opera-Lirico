@@ -111,15 +111,15 @@ function renderDrafts(items){
   const small=document.createElement("small");small.textContent=[item.created,item.slug].filter(Boolean).join(" · ");content.append(small);
   const preview=document.createElement("details");preview.style.marginTop="9px";
   const summary=document.createElement("summary");summary.textContent="查看邮件正文预览";summary.style.cursor="pointer";preview.append(summary);
-  const body=document.createElement("pre");body.style.cssText="white-space:pre-wrap;overflow-wrap:anywhere;max-height:420px;overflow:auto;background:#f6f3eb;border:1px solid var(--line);border-radius:9px;padding:14px;font:13px/1.65 system-ui,sans-serif";
-  body.textContent="展开后加载预览…";preview.append(body);
-  let loaded=false;preview.addEventListener("toggle",async()=>{if(!preview.open||loaded)return;loaded=true;try{const r=await fetch("/api/newsletter/drafts/"+encodeURIComponent(item.id),{cache:"no-store"});if(!r.ok)throw new Error("邮件预览读取失败");const d=await r.json();body.textContent=d.body||"（邮件正文为空）";}catch(err){body.textContent=err.message;loaded=false;}});
+  const frame=document.createElement("iframe");frame.title="邮件正文预览";frame.setAttribute("sandbox","");frame.style.cssText="width:100%;height:460px;border:1px solid var(--line);border-radius:9px;background:white;margin-top:10px";
+  frame.srcdoc="<p style='font:14px system-ui;padding:16px;color:#66736c'>展开后加载预览…</p>";preview.append(frame);
+  let loaded=false;preview.addEventListener("toggle",async()=>{if(!preview.open||loaded)return;loaded=true;try{const r=await fetch("/api/newsletter/drafts/"+encodeURIComponent(item.id),{cache:"no-store"});if(!r.ok)throw new Error("邮件预览读取失败");const d=await r.json();frame.srcdoc=d.body||"<p>（邮件正文为空）</p>";}catch(err){frame.srcdoc="<p style='font:14px system-ui;padding:16px;color:#9a3d32'>"+String(err.message).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))+"</p>";loaded=false;}});
   content.append(preview);row.append(content);
   const actions=document.createElement("div");actions.style.cssText="display:flex;flex-direction:column;gap:8px;min-width:112px";
   const send=document.createElement("button");send.className="primary";send.textContent="审核并发送";send.disabled=item.send_enabled!==true;
   send.title=send.disabled?"发送功能尚未在 Worker 环境中启用":"发送给当前订阅者，请先检查正文预览";
   send.addEventListener("click",async()=>{
-   if(!window.confirm("确认发送这封邮件给 Opera Lirico Weekly 的订阅者？发送后将无法撤回。"))return;
+   if(!window.confirm("确认发送这封邮件给 Opera Lirico Weekly 的当前有效订阅者（约 "+$("subscribers").textContent+" 人）？发送后将无法撤回。"))return;
    send.disabled=true;send.textContent="正在发送…";
    try{const r=await fetch("/api/newsletter/drafts/"+encodeURIComponent(item.id)+"/send",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({confirm:true})});const d=await r.json().catch(()=>({}));
     if(!r.ok)throw new Error(d.error==="sending_disabled"?"发送功能尚未启用，请检查 Worker 配置。":(d.message||d.error||"发送失败"));
