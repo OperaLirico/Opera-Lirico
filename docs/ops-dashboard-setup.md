@@ -7,7 +7,7 @@
 - Cloudflare Web Analytics：过去 30 天页面浏览量、访问次数和每日趋势。
 - Buttondown：当前有效订阅人数、过去 7 天新增人数、待审核草稿数量、标题和创建日期。
 - GitHub Actions：最近 20 次自动化工作流运行状态、失败结论、分支和运行链接；只读取公开仓库的 Actions 元数据，不需要新增 GitHub Token。
-- 后台只读，不包含发送邮件、订阅者导出或删除操作。现有每周邮件流程仍然只创建草稿。
+- 后台可预览每周邮件草稿；在功能开关开启后，可对符合规则的每周按声部简报执行人工审核发送。不会提供订阅者邮箱导出或删除操作。每周定时任务仍然只创建草稿。
 - 工作流状态来自公开 GitHub Actions API；后台仅显示运行元数据和运行链接，不读取构建日志、仓库密钥或私有内容。
 
 ## 首次部署前需要配置的 GitHub Actions Secrets
@@ -43,13 +43,22 @@
 
 打开 URL，使用 `OPS_DASHBOARD_PASSWORD` 登录。
 
+## Newsletter 人工审核发送
+
+- `NEWSLETTER_SEND_ENABLED` 由 GitHub Actions 仓库变量控制；未设置或不等于 `true` 时默认关闭。初期保持关闭，完成预览、KV 绑定和测试后，管理员才可在 Settings → Secrets and variables → Actions → Variables 中设置为 `true`。
+- 发送按钮仅对 `opera-lirico-weekly-YYYY-MM-DD-voiced` 格式、仍处于 `draft` 状态且 `archival_mode=disabled` 的邮件开放。
+- 后台先显示正文预览与当前有效订阅人数；点击「审核并发送」后还会要求浏览器二次确认。
+- Worker 验证登录会话和严格同源请求，使用 `CONTENT_DRAFTS` KV 记录发送尝试，设置默认 250 人的收件上限。若 Buttondown 请求超时或结果不明确，后台锁定该次尝试，要求先人工核对 Buttondown 状态，不会自动重试。
+- Buttondown API 把邮件状态改为 `about_to_send` 即会将邮件排入发送队列；这不是可撤回的草稿保存操作。必须先展开预览、检查声部条件段和退订页脚，再确认发送。
+- 当前功能仅为人工审核发送；定时工作流不会自动发送。后续自动审核必须先经过多期 shadow mode 验证，自动发送开关默认关闭。
+
 ## 安全与数据边界
 
 - 后台不在公开 GitHub Pages 中；只有知道地址且持有密码的人可查看。
 - 会话 Cookie 使用 HttpOnly、Secure、SameSite=Strict，最长有效期 8 小时。
 - 登录有基础失败次数限制；请使用强随机密码。
 - Buttondown API 返回的邮箱字段只在 Worker 内存中用于计数，不会写日志、保存或返回给浏览器。
-- 后台仅读取 Cloudflare RUM 数据和 Buttondown 订阅/草稿信息，不调用任何邮件发送接口。
+- 后台仅读取 Cloudflare RUM 数据和 Buttondown 订阅/草稿信息；只有在功能开关开启且管理员明确点击确认后，才会调用 Buttondown 发送状态接口。
 - 如果 Cloudflare 统计暂时没有数据，可能需要等待 Beacon 收集并处理首批访问数据。
 
 ## 自动化失败提醒
