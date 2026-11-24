@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://operalirico.github.io/Opera-Lirico/data/repertoire-score.schema.json",
+  "title": "OperaLab Vocal Score Source",
+  "description": "Rights-aware score source metadata. A source record is not publishable until its rights status and territory are verified.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "source_url", "rights_status"],
+  "properties": {
+    "format": {
+      "type": "string",
+      "enum": ["pdf", "mei", "musicxml", "mxl", "external_page"]
+    },
+    "source_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "file_url": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "pattern": "^https://"
+    },
+    "edition_title": { "type": ["string", "null"], "maxLength": 300 },
+    "publisher": { "type": ["string", "null"], "maxLength": 200 },
+    "editor": { "type": ["string", "null"], "maxLength": 200 },
+    "publication_year": {
+      "type": ["integer", "null"],
+      "minimum": 1400,
+      "maximum": 2200
+    },
+    "source_name": { "type": ["string", "null"], "maxLength": 200 },
+    "attribution": { "type": ["string", "null"], "maxLength": 1000 },
+    "rights_status": {
+      "type": "string",
+      "enum": ["public_domain_verified", "permission_granted", "licensed", "link_only", "unknown"]
+    },
+    "rights_basis": {
+      "type": ["string", "null"],
+      "maxLength": 2000
+    },
+    "territories": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 2, "maxLength": 80 },
+      "uniqueItems": true
+    },
+    "rights_checked_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "access_mode": {
+      "type": "string",
+      "enum": ["embedded_viewer", "external_link"],
+      "default": "external_link"
+    },
+    "viewer_engine": {
+      "type": ["string", "null"],
+      "enum": ["pdfjs", "verovio", null]
+    },
+    "notes": { "type": ["string", "null"], "maxLength": 2000 }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "rights_status": {
+            "enum": ["public_domain_verified", "permission_granted", "licensed"]
+          },
+          "access_mode": { "const": "embedded_viewer" }
+        },
+        "required": ["rights_status", "access_mode"]
+      },
+      "then": {
+        "required": ["file_url", "rights_basis", "rights_checked_at", "territories", "viewer_engine"]
+      }
+    }
+  ]
+}
