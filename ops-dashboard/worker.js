@@ -749,7 +749,8 @@ export default {
     const newsletterSendMatch = url.pathname.match(/^\/api\/newsletter\/drafts\/(em_[A-Za-z0-9]+)\/send$/);
     if (newsletterSendMatch && request.method === "POST") {
       if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
-      if (!sameOrigin(request)) return json({ error: "forbidden" }, 403);
+      const requestOrigin = request.headers.get("Origin");
+      if (!requestOrigin || requestOrigin !== new URL(request.url).origin) return json({ error: "forbidden" }, 403);
       if (env.NEWSLETTER_SEND_ENABLED !== "true") return json({ error: "sending_disabled" }, 503);
       if (!env.BUTTONDOWN_API_KEY || !env.CONTENT_DRAFTS) return json({ error: "newsletter_send_storage_not_configured" }, 503);
       let input = {}; try { input = await request.json(); } catch {}
@@ -764,6 +765,16 @@ export default {
         const headers = { Authorization: "Token " + env.BUTTONDOWN_API_KEY, "Content-Type": "application/json", "X-API-Version": "2026-04-01" };
         const current = await fetchJson("https://api.buttondown.com/v1/emails/" + id, { Authorization: headers.Authorization, "X-API-Version": headers["X-API-Version"] });
         const validSlug = /^opera-lirico-weekly-\d{4}-\d{2}-\d{2}-voiced$/.test(String(current.slug || ""));
+        const maxRecipients = Number(env.NEWSLETTER_MAX_RECIPIENTS || 250);
+        if (!Number.isInteger(maxRecipients) || maxRecipients < 1 || maxRecipients > 100000) {
+          await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "blocked", reason: "invalid_recipient_limit", checked_at: new Date().toISOString() }), { expirationTtl: 60 * 60 * 24 * 30 });
+          return json({ error: "recipient_limit_not_configured", message: "收件人数上限配置无效，已阻止发送。" }, 503);
+        }
+        const audience = await getButtondown(env);
+        if (audience.active_subscribers > maxRecipients) {
+          await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "blocked", reason: "recipient_limit_exceeded", recipients: audience.active_subscribers, max_recipients: maxRecipients, checked_at: new Date().toISOString() }), { expirationTtl: 60 * 60 * 24 * 30 });
+          return json({ error: "recipient_limit_exceeded", message: "当前有效订阅人数超过发送上限，已阻止发送。" }, 409);
+        }
         if (current.status !== "draft" || !validSlug || current.archival_mode !== "disabled") {
           await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "blocked", reason: "draft_validation_failed", checked_at: new Date().toISOString() }), { expirationTtl: 60 * 60 * 24 * 30 });
           return json({ error: "draft_validation_failed", message: "邮件状态、简报标识或归档设置不符合发送条件，已阻止发送。" }, 409);
@@ -774,8 +785,8 @@ export default {
           await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "failed", provider_status: response.status, finished_at: new Date().toISOString() }), { expirationTtl: 60 * 60 * 24 * 30 });
           return json({ error: "buttondown_send_failed", message: String(result.detail || result.code || "Buttondown rejected the send request").slice(0, 200) }, 502);
         }
-        await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "queued", finished_at: new Date().toISOString(), provider_status: response.status }), { expirationTtl: 60 * 60 * 24 * 30 });
-        return json({ ok: true, status: "已提交 Buttondown 发送队列", provider_status: response.status });
+        await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "queued", finished_at: new Date().toISOString(), provider_status: response.status, recipients: audience.active_subscribers, max_recipients: maxRecipients }), { expirationTtl: 60 * 60 * 24 * 30 });
+        return json({ ok: true, status: "已提交 Buttondown 发送队列", recipients: audience.active_subscribers, provider_status: response.status });
       } catch (error) {
         await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "needs_manual_check", finished_at: new Date().toISOString() }), { expirationTtl: 60 * 60 * 24 * 30 });
         return json({ error: "send_result_uncertain", message: "发送结果暂时无法确认。已锁定重复操作，请先到 Buttondown 核对状态。" }, 502);
