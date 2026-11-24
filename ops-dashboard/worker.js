@@ -78,7 +78,7 @@ input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10
 <p class="hint">每日自动发现的课程线索。核实时必须填写主办方官方 HTTPS 页面/文件链接，并粘贴至少 40 个字符的原文证据；第三方目录不能作为核验依据。核实通过只代表审核完成，不会自动发布到网站。</p>
 <div id="masterclassQueue" class="masterclassQueue"><div class="empty">正在读取大师班候选…</div></div>
 </div></section>
-<p class="notice">安全说明：访问统计、订阅汇总和社交媒体草稿均受后台登录保护；此后台不提供自动发布或邮件发送操作。</p>
+<p class="notice">安全说明：访问统计、订阅汇总和社交媒体草稿均受后台登录保护；邮件仅在管理员启用发送开关并完成正文预览、二次确认后才可人工提交，定时任务只创建草稿。</p>
 </main>
 <script>
 const $=id=>document.getElementById(id);
@@ -361,7 +361,7 @@ function cookie(value, maxAge) {
 }
 function sameOrigin(request) {
   const origin = request.headers.get("Origin");
-  return !origin || origin === new URL(request.url).origin;
+  return !!origin && origin === new URL(request.url).origin;
 }
 async function fetchJson(url, headers = {}) {
   const r = await fetch(url, { headers: { Accept: "application/json", ...headers }, signal: AbortSignal.timeout(20000) });
