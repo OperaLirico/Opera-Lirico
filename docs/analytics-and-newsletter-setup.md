@@ -10,7 +10,7 @@
 - 隐私说明在 `privacy.html`，表单必须勾选后才允许提交。
 - 按声部细分的实现与运维见 `docs/newsletter-segmentation.md`；正文写法见 `docs/newsletter-copy-guide.md`。
 
-后台（`ops-dashboard`）只读订阅汇总与草稿，不提供发送操作。站点前台不展示订阅人数。
+后台（`ops-dashboard`）目前只读订阅汇总与草稿，尚未提供发送操作。目标是把它升级为带权限控制的 Newsletter 审核与发送后台；站点前台不展示订阅人数。
 
 ## Cloudflare Web Analytics
 
@@ -43,4 +43,38 @@ Masterclass records may include `poster_image_url`, `image_alt_zh`, `image_sourc
 
 ## Current operational status (2026-11-24)
 
-The repository already contains a working subscription architecture: the site form posts to the operations Worker, which creates an unactivated Buttondown subscriber; Buttondown sends the confirmation email. A verification record dated 2026-11-15 documents a successful end-to-end subscription write and a successful weekly segmented draft. The scheduled weekly workflow creates a private draft only; it intentionally does not send. Before the next public send, manually rerun the read-only `Newsletter capability probe` and `Newsletter state check`, verify a current subscriber confirmation and draft state, preview the segmented draft in Buttondown, then send manually after the editorial checklist. Do not change the workflow to auto-send without a separate explicit decision and a safe approval gate.
+The repository already contains a working subscription architecture: the site form posts to the operations Worker, which creates an unactivated Buttondown subscriber; Buttondown sends the confirmation email. A verification record dated 2026-11-15 documents a successful end-to-end subscription write and a successful weekly segmented draft. The scheduled weekly workflow currently creates a private draft only; it does not send. The product decision is now a staged workflow: initially, a human reviews the prepared campaign in the private operations dashboard and explicitly clicks **Approve & send**; later, weekly automated checks may authorize sending only when every hard validation passes. This decision does not authorize immediate unattended sending or bypassing the initial human approval phase.
+
+## Newsletter operating model: human approval first, guarded automation later
+
+### Phase 1 — review in the operations dashboard (initial launch)
+
+The weekly job prepares a campaign; it must not send it. The private dashboard should show:
+
+- Campaign period, subject, preheader, segmented audience counts, and the exact content preview for each voice segment.
+- Included items with source URL, publication/event date, last-checked timestamp, and an explanation of why each item is included.
+- Validation results for broken links, missing dates, duplicate stories, stale/expired opportunities, missing source attribution, empty segments, and unsubscribe/footer presence.
+- A clear status lifecycle: `draft` → `ready_for_review` → `approved` → `sending` → `sent`, with `blocked` and `failed` terminal/recoverable states as appropriate.
+- Actions: edit content, exclude an item, regenerate preview, approve and send, or leave pending. The send action must require an explicit authenticated click and show the recipient/segment counts before confirmation.
+
+The send endpoint must be server-side only. Never expose the Buttondown API key in browser code, static assets, logs, or downloadable preview artifacts. Enforce dashboard authentication/authorization, CSRF protection where cookie sessions are used, server-side validation, idempotency (a campaign cannot be sent twice by double-click/retry), and an immutable audit record of who approved/sent what and when. After a send request, show the provider's actual result; do not mark a campaign as sent before confirmation.
+
+### Phase 2 — automated checks, with human approval retained
+
+Once Phase 1 is stable, run the same checks automatically every week and prepare a review-ready campaign. The system may recommend “all checks passed”, but sending remains behind the human **Approve & send** action. This is the rollout period for measuring false positives/negatives and editorial quality.
+
+### Phase 3 — opt-in automatic sending
+
+Only after a sustained successful review period, add an explicit owner-controlled setting for automatic sending. Default it to OFF. Automatic sending is allowed only when all mandatory checks pass and the campaign is within the configured schedule, audience, and content limits. Any failed, uncertain, or unavailable check must fail closed: hold the campaign in `blocked`/ `ready_for_review`, notify the owner, and do not send.
+
+Provide a global pause switch, a per-campaign manual hold, a maximum-recipient guard, a test-send/preview path, and a visible send log. Changing auto-send from OFF to ON must require an authenticated owner action and a clear confirmation; the system must never enable it as a side effect of deployment.
+
+### Release gates
+
+1. Verify the existing subscription confirmation and segmentation flow.
+2. Implement the authenticated dashboard review UI and a server-side, idempotent send action.
+3. Test with a dedicated internal/test audience and verify suppression/unsubscribe behavior.
+4. Confirm provider responses, audit logs, retry behavior, and duplicate-send protection.
+5. Launch Phase 1 with automatic sending disabled.
+6. Collect operational evidence before considering Phase 2/3; do not enable unattended sending merely because CI passes.
+
