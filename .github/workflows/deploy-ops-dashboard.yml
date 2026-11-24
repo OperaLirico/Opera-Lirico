@@ -90,6 +90,7 @@ jobs:
           BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
           OPS_DASHBOARD_PASSWORD: ${{ secrets.OPS_DASHBOARD_PASSWORD }}
           OPS_BACKUP_TOKEN: ${{ secrets.OPS_BACKUP_TOKEN }}
+          NEWSLETTER_SEND_ENABLED: ${{ vars.NEWSLETTER_SEND_ENABLED || 'false' }}
         run: |
           set -euo pipefail
           printf '%s' "$CLOUDFLARE_ACCOUNT_ID" | wrangler secret put CF_ACCOUNT_ID --config ops-dashboard/wrangler.generated.toml
@@ -104,6 +105,13 @@ jobs:
             # caller with 503 backup_not_configured, which is what kept the nightly
             # health check red and left the KV backup silently skipping.
             printf '%s' "$OPS_DASHBOARD_PASSWORD" | wrangler secret put OPS_BACKUP_TOKEN --config ops-dashboard/wrangler.generated.toml
+          fi
+          # Manual newsletter sends are OFF by default. Set the repository Actions
+          # variable NEWSLETTER_SEND_ENABLED=true only after the owner is ready.
+          if [ "$NEWSLETTER_SEND_ENABLED" = "true" ]; then
+            printf 'true' | wrangler secret put NEWSLETTER_SEND_ENABLED --config ops-dashboard/wrangler.generated.toml
+          else
+            printf 'false' | wrangler secret put NEWSLETTER_SEND_ENABLED --config ops-dashboard/wrangler.generated.toml
           fi
 
       # Temporary drill hook: fires only when the commit message contains
