@@ -12,6 +12,7 @@ on:
       - "**/*.md"
   workflow_dispatch:
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -78,6 +79,30 @@ jobs:
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
         with:
           path: .
+      # The artifact service can take a short time to expose a just-finalized
+      # Pages artifact through the REST metadata endpoint. deploy-pages fails
+      # immediately if that list is temporarily empty, even when upload succeeded.
+      - name: Wait for Pages artifact metadata
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for attempt in $(seq 1 12); do
+            curl --fail --silent --show-error \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?per_page=100" \
+              -o /tmp/pages-artifacts.json
+            count="$(jq '[.artifacts[] | select(.name == "github-pages" and .expired == false)] | length' /tmp/pages-artifacts.json)"
+            if [ "$count" -eq 1 ]; then
+              echo "Pages artifact metadata is visible."
+              exit 0
+            fi
+            echo "Waiting for Pages artifact metadata ($attempt/12)..."
+            sleep 5
+          done
+          echo "::error::The uploaded Pages artifact did not become visible to the deployment API."
+          exit 1
       - name: Publish the website
         id: deployment
         uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
