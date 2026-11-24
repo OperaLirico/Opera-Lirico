@@ -23,3 +23,8 @@ OperaLab. 是一个可添加到手机主屏幕的歌剧与古典声乐专业信�
 - 音乐学院清单不是写死的：每轮从维基数据补齐尚未收录的院校（每轮最多 6 所，先验证招生页确实能读出内容才收录）；只摘录各校官网公开的招生页面：报名期限与考试日期保留原文表述，完整的分专业曲目要求通常在校方 PDF 里，卡片会直接给出官方文件链接。
 - 歌剧剧本页面是整场/场景文本，不能直接等同于一首独立咏叹调；候选必须人工确认唱段边界、声部和版权后才能公开展示。
 - 网页结构变化、PDF 或第三方报名表可能无法自动读取；每条来源都保留官网链接供核对。
+
+
+## Design research
+
+- [OperaLab design system research specification](docs/design/operalab-design-system-2026-11-24.md) — REA-led reference study, original design direction, information architecture, and phased implementation plan.
