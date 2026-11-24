@@ -449,7 +449,7 @@ async function getButtondown(env) {
     draftCount = Number(page.count ?? draftCount + (page.results || []).length);
     for (const item of (page.results || [])) {
       if (drafts.length >= 10) break;
-      drafts.push({ id: String(item.id || ""), slug: String(item.slug || ""), status: String(item.status || ""), send_enabled: env.NEWSLETTER_SEND_ENABLED === "true" && !!env.CONTENT_DRAFTS && /^opera-lirico-weekly-\\d{4}-\\d{2}-\\d{2}-voiced$/.test(String(item.slug || "")) && item.status === "draft", subject: String(item.subject || "（无标题）").slice(0, 160), created: String(item.creation_date || "").slice(0, 10) });
+      drafts.push({ id: String(item.id || ""), slug: String(item.slug || ""), status: String(item.status || ""), send_enabled: env.NEWSLETTER_SEND_ENABLED === "true" && !!env.CONTENT_DRAFTS && /^opera-lirico-weekly-\d{4}-\d{2}-\d{2}-voiced$/.test(String(item.slug || "")) && item.status === "draft", subject: String(item.subject || "（无标题）").slice(0, 160), created: String(item.creation_date || "").slice(0, 10) });
     }
     emailUrl = page.next || null;
   }
@@ -734,7 +734,7 @@ export default {
       await env.CONTENT_DRAFTS.put("masterclass-review:" + id, JSON.stringify(record), { expirationTtl: 60 * 60 * 24 * 365 });
       return json({ ok: true, review: record });
     }
-    const newsletterPreviewMatch = url.pathname.match(/^\\/api\\/newsletter\\/drafts\\/(em_[A-Za-z0-9]+)$/);
+    const newsletterPreviewMatch = url.pathname.match(/^\/api\/newsletter\/drafts\/(em_[A-Za-z0-9]+)$/);
     if (newsletterPreviewMatch && request.method === "GET") {
       if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
       if (!env.BUTTONDOWN_API_KEY) return json({ error: "newsletter_not_configured" }, 503);
@@ -746,7 +746,7 @@ export default {
         return json({ error: "newsletter_preview_failed", message: String(error?.message || "Preview unavailable").slice(0, 200) }, 502);
       }
     }
-    const newsletterSendMatch = url.pathname.match(/^\\/api\\/newsletter\\/drafts\\/(em_[A-Za-z0-9]+)\\/send$/);
+    const newsletterSendMatch = url.pathname.match(/^\/api\/newsletter\/drafts\/(em_[A-Za-z0-9]+)\/send$/);
     if (newsletterSendMatch && request.method === "POST") {
       if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
       if (!sameOrigin(request)) return json({ error: "forbidden" }, 403);
@@ -763,7 +763,7 @@ export default {
       try {
         const headers = { Authorization: "Token " + env.BUTTONDOWN_API_KEY, "Content-Type": "application/json", "X-API-Version": "2026-04-01" };
         const current = await fetchJson("https://api.buttondown.com/v1/emails/" + id, { Authorization: headers.Authorization, "X-API-Version": headers["X-API-Version"] });
-        const validSlug = /^opera-lirico-weekly-\\d{4}-\\d{2}-\\d{2}-voiced$/.test(String(current.slug || ""));
+        const validSlug = /^opera-lirico-weekly-\d{4}-\d{2}-\d{2}-voiced$/.test(String(current.slug || ""));
         if (current.status !== "draft" || !validSlug || current.archival_mode !== "disabled") {
           await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "blocked", reason: "draft_validation_failed", checked_at: new Date().toISOString() }), { expirationTtl: 60 * 60 * 24 * 30 });
           return json({ error: "draft_validation_failed", message: "邮件状态、简报标识或归档设置不符合发送条件，已阻止发送。" }, 409);
