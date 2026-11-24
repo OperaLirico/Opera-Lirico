@@ -104,10 +104,30 @@ function drawChart(days){
 function renderDrafts(items){
  const root=$("drafts");root.replaceChildren();
  if(!items.length){const p=document.createElement("div");p.className="empty";p.textContent="目前没有待审核草稿。";root.append(p);return;}
- items.forEach(item=>{const row=document.createElement("div");row.className="draft";
- const left=document.createElement("div");const title=document.createElement("strong");title.textContent=item.subject||"（无标题）";left.append(title);
- const small=document.createElement("small");small.textContent=item.created||"";left.append(small);row.append(left);
- root.append(row);});
+ items.forEach(item=>{
+  const row=document.createElement("article");row.className="draft";row.style.alignItems="flex-start";
+  const content=document.createElement("div");content.style.flex="1";content.style.minWidth="0";
+  const title=document.createElement("strong");title.textContent=item.subject||"（无标题）";content.append(title);
+  const small=document.createElement("small");small.textContent=[item.created,item.slug].filter(Boolean).join(" · ");content.append(small);
+  const preview=document.createElement("details");preview.style.marginTop="9px";
+  const summary=document.createElement("summary");summary.textContent="查看邮件正文预览";summary.style.cursor="pointer";preview.append(summary);
+  const body=document.createElement("pre");body.style.cssText="white-space:pre-wrap;overflow-wrap:anywhere;max-height:420px;overflow:auto;background:#f6f3eb;border:1px solid var(--line);border-radius:9px;padding:14px;font:13px/1.65 system-ui,sans-serif";
+  body.textContent="展开后加载预览…";preview.append(body);
+  let loaded=false;preview.addEventListener("toggle",async()=>{if(!preview.open||loaded)return;loaded=true;try{const r=await fetch("/api/newsletter/drafts/"+encodeURIComponent(item.id),{cache:"no-store"});if(!r.ok)throw new Error("邮件预览读取失败");const d=await r.json();body.textContent=d.body||"（邮件正文为空）";}catch(err){body.textContent=err.message;loaded=false;}});
+  content.append(preview);row.append(content);
+  const actions=document.createElement("div");actions.style.cssText="display:flex;flex-direction:column;gap:8px;min-width:112px";
+  const send=document.createElement("button");send.className="primary";send.textContent="审核并发送";send.disabled=item.send_enabled!==true;
+  send.title=send.disabled?"发送功能尚未在 Worker 环境中启用":"发送给当前订阅者，请先检查正文预览";
+  send.addEventListener("click",async()=>{
+   if(!window.confirm("确认发送这封邮件给 Opera Lirico Weekly 的订阅者？发送后将无法撤回。"))return;
+   send.disabled=true;send.textContent="正在发送…";
+   try{const r=await fetch("/api/newsletter/drafts/"+encodeURIComponent(item.id)+"/send",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({confirm:true})});const d=await r.json().catch(()=>({}));
+    if(!r.ok)throw new Error(d.error==="sending_disabled"?"发送功能尚未启用，请检查 Worker 配置。":(d.message||d.error||"发送失败"));
+    send.textContent="已提交发送";small.textContent+=" · "+(d.status||"已进入发送队列");await loadData();
+   }catch(err){send.disabled=false;send.textContent=err.message;}
+  });
+  actions.append(send);row.append(actions);root.append(row);
+ });
 }
 function renderWorkflowRuns(items){
  const root=$("workflowRuns");root.replaceChildren();
@@ -429,7 +449,7 @@ async function getButtondown(env) {
     draftCount = Number(page.count ?? draftCount + (page.results || []).length);
     for (const item of (page.results || [])) {
       if (drafts.length >= 10) break;
-      drafts.push({ subject: String(item.subject || "（无标题）").slice(0, 160), created: String(item.creation_date || "").slice(0, 10) });
+      drafts.push({ id: String(item.id || ""), slug: String(item.slug || ""), status: String(item.status || ""), send_enabled: env.NEWSLETTER_SEND_ENABLED === "true" && !!env.CONTENT_DRAFTS && /^opera-lirico-weekly-\\d{4}-\\d{2}-\\d{2}-voiced$/.test(String(item.slug || "")) && item.status === "draft", subject: String(item.subject || "（无标题）").slice(0, 160), created: String(item.creation_date || "").slice(0, 10) });
     }
     emailUrl = page.next || null;
   }
@@ -713,6 +733,53 @@ export default {
       };
       await env.CONTENT_DRAFTS.put("masterclass-review:" + id, JSON.stringify(record), { expirationTtl: 60 * 60 * 24 * 365 });
       return json({ ok: true, review: record });
+    }
+    const newsletterPreviewMatch = url.pathname.match(/^\\/api\\/newsletter\\/drafts\\/(em_[A-Za-z0-9]+)$/);
+    if (newsletterPreviewMatch && request.method === "GET") {
+      if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
+      if (!env.BUTTONDOWN_API_KEY) return json({ error: "newsletter_not_configured" }, 503);
+      try {
+        const draft = await fetchJson("https://api.buttondown.com/v1/emails/" + newsletterPreviewMatch[1], { Authorization: "Token " + env.BUTTONDOWN_API_KEY });
+        if (draft.status !== "draft" || !String(draft.slug || "").startsWith("opera-lirico-weekly-")) return json({ error: "draft_not_eligible" }, 409);
+        return json({ id: draft.id, subject: String(draft.subject || "").slice(0, 2000), body: String(draft.body || "").slice(0, 180000), slug: draft.slug, status: draft.status });
+      } catch (error) {
+        return json({ error: "newsletter_preview_failed", message: String(error?.message || "Preview unavailable").slice(0, 200) }, 502);
+      }
+    }
+    const newsletterSendMatch = url.pathname.match(/^\\/api\\/newsletter\\/drafts\\/(em_[A-Za-z0-9]+)\\/send$/);
+    if (newsletterSendMatch && request.method === "POST") {
+      if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
+      if (!sameOrigin(request)) return json({ error: "forbidden" }, 403);
+      if (env.NEWSLETTER_SEND_ENABLED !== "true") return json({ error: "sending_disabled" }, 503);
+      if (!env.BUTTONDOWN_API_KEY || !env.CONTENT_DRAFTS) return json({ error: "newsletter_send_storage_not_configured" }, 503);
+      let input = {}; try { input = await request.json(); } catch {}
+      if (input.confirm !== true) return json({ error: "explicit_confirmation_required" }, 400);
+      const id = newsletterSendMatch[1];
+      const lockKey = "newsletter-send:" + id;
+      const previous = await env.CONTENT_DRAFTS.get(lockKey, "json");
+      if (previous) return json({ error: "send_already_attempted", status: previous.status || "unknown", message: "该邮件已有发送尝试记录，请先核对 Buttondown 状态，不要重复点击。" }, 409);
+      const lock = { status: "pending", started_at: new Date().toISOString(), email_id: id };
+      await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify(lock), { expirationTtl: 60 * 60 * 24 * 30 });
+      try {
+        const headers = { Authorization: "Token " + env.BUTTONDOWN_API_KEY, "Content-Type": "application/json", "X-API-Version": "2026-04-01" };
+        const current = await fetchJson("https://api.buttondown.com/v1/emails/" + id, { Authorization: headers.Authorization, "X-API-Version": headers["X-API-Version"] });
+        const validSlug = /^opera-lirico-weekly-\\d{4}-\\d{2}-\\d{2}-voiced$/.test(String(current.slug || ""));
+        if (current.status !== "draft" || !validSlug || current.archival_mode !== "disabled") {
+          await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "blocked", reason: "draft_validation_failed", checked_at: new Date().toISOString() }), { expirationTtl: 60 * 60 * 24 * 30 });
+          return json({ error: "draft_validation_failed", message: "邮件状态、简报标识或归档设置不符合发送条件，已阻止发送。" }, 409);
+        }
+        const response = await fetch("https://api.buttondown.com/v1/emails/" + id, { method: "PATCH", headers, body: JSON.stringify({ status: "about_to_send" }), signal: AbortSignal.timeout(20000) });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) {
+          await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "failed", provider_status: response.status, finished_at: new Date().toISOString() }), { expirationTtl: 60 * 60 * 24 * 30 });
+          return json({ error: "buttondown_send_failed", message: String(result.detail || result.code || "Buttondown rejected the send request").slice(0, 200) }, 502);
+        }
+        await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "queued", finished_at: new Date().toISOString(), provider_status: response.status }), { expirationTtl: 60 * 60 * 24 * 30 });
+        return json({ ok: true, status: "已提交 Buttondown 发送队列", provider_status: response.status });
+      } catch (error) {
+        await env.CONTENT_DRAFTS.put(lockKey, JSON.stringify({ ...lock, status: "needs_manual_check", finished_at: new Date().toISOString() }), { expirationTtl: 60 * 60 * 24 * 30 });
+        return json({ error: "send_result_uncertain", message: "发送结果暂时无法确认。已锁定重复操作，请先到 Buttondown 核对状态。" }, 502);
+      }
     }
     if (url.pathname === "/api/workflows" && request.method === "GET") {
       if (!await validSession(request, env.OPS_DASHBOARD_PASSWORD)) return json({ error: "unauthorized" }, 401);
