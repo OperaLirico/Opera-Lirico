@@ -1,17 +1,8 @@
 #!/usr/bin/env python3
-"""Rule-based first-pass review for the private content queue (L4 automation).
+"""Rule-based first-pass review for the private content queue.
 
-The review queue is human-first by design. This script adds a narrow, auditable
-automation layer in front of it:
-
-* every pending draft is re-checked against machine-verifiable rules
-* only drafts that pass *all* rules are approved automatically
-* everything else stays ``pending_review`` and is annotated so a human still
-  sees it, together with the reason the machine refused to decide
-* nothing is ever published to a social network: publishing stays manual
-
-The rules are deliberately conservative. A wrong "pending_review" costs one
-click; a wrong "approved" puts an unverified claim in front of readers.
+The queue remains human-first. Only drafts passing every conservative,
+machine-verifiable gate can be marked approved. Publishing is always manual.
 """
 from __future__ import annotations
 
@@ -31,7 +22,7 @@ BASE = os.environ.get("OPS_DASHBOARD_URL", "https://opera-lirico-ops.wl19971007.
 PASSWORD = os.environ.get("OPS_DASHBOARD_PASSWORD", "")
 MAX_APPROVALS = int(os.environ.get("AUTO_REVIEW_MAX_APPROVALS", "8"))
 MIN_AGE_MINUTES = int(os.environ.get("AUTO_REVIEW_MIN_AGE_MINUTES", "60"))
-REVIEWER = "auto-review-v1"
+REVIEWER = "auto-review-v1.1"
 
 BANNED_CLAIMS = re.compile(
     r"保证|100%|全网最低|最低价|第一品牌|绝对(?:可靠|有效)|国家级|权威认证|包过|速抢|最后机会|稳赚"
@@ -49,7 +40,7 @@ def request(opener, path, payload=None, method=None):
         headers={
             "Accept": "application/json",
             "Origin": BASE,
-            "User-Agent": "OperaLiricoAutoReview/1.0",
+            "User-Agent": "OperaLabAutoReview/1.1",
             **({"Content-Type": "application/json"} if data else {}),
         },
     )
@@ -62,38 +53,69 @@ def request(opener, path, payload=None, method=None):
 
 
 def official_hosts() -> set[str]:
-    """Hosts the project already treats as official sources."""
+    """Load only explicitly official publishers from the curated registry.
+
+    Published content and discovery candidates are deliberately NOT used to
+    build trust: otherwise an unreviewed item could whitelist its own domain.
+    """
+    path = ROOT / "data" / "masterclass_sources.json"
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, OSError) as exc:
+        print(f"official source registry unavailable: {exc}", file=sys.stderr)
+        return set()
+
+    sources = payload.get("sources") if isinstance(payload, dict) else None
+    if not isinstance(sources, list):
+        print("official source registry has no valid 'sources' list", file=sys.stderr)
+        return set()
+
     hosts: set[str] = set()
-    for name in ("sources.json", "masterclass_sources.json", "opportunities.json", "masterclasses.json"):
-        path = ROOT / "data" / name
-        if not path.exists():
+    for item in sources:
+        if not isinstance(item, dict) or item.get("publisher_status") != "official":
             continue
-        try:
-            payload = json.loads(path.read_text(encoding="utf-8"))
-        except (json.JSONDecodeError, OSError):
+        value = item.get("url")
+        if not isinstance(value, str):
             continue
-        items = payload.get("items") if isinstance(payload, dict) else payload
-        if not isinstance(items, list):
+        parsed = urlparse(value.strip())
+        if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
             continue
-        for item in items:
-            if not isinstance(item, dict):
-                continue
-            for key in ("source_url", "url", "official_source_url", "official_evidence_url"):
-                value = item.get(key)
-                if isinstance(value, str) and value.startswith("https://"):
-                    host = urlparse(value).hostname
-                    if host:
-                        hosts.add(host.lower())
+        hosts.add(parsed.hostname.lower())
     return hosts
 
 
 def host_matches(host: str, allowed: set[str]) -> bool:
     """True when host is an allowed domain or a subdomain of one."""
-    return any(host == candidate or host.endswith("." + candidate) for candidate in allowed)
+    return bool(allowed) and any(host == candidate or host.endswith("." + candidate) for candidate in allowed)
 
 
 def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", text or "").strip().lower()
+
+
+def parse_created_at(value: object) -> datetime | None:
+    """Accept only explicit, timezone-aware ISO-8601 timestamps."""
+    if not isinstance(value, str) or not value.strip():
+        return None
+    try:
+        parsed = datetime.fromisoformat(value.strip().replace("Z", "+00:00"))
+    except ValueError:
+        return None
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        return None
+    return parsed.astimezone(timezone.utc)
+
+
+def creation_time_state(value: object, now: datetime, min_age_minutes: int = MIN_AGE_MINUTES) -> str:
+    """Classify creation timestamps without treating future dates as fresh drafts."""
+    created = parse_created_at(value)
+    if created is None:
+        return "invalid"
+    if created > now + timedelta(minutes=5):
+        return "future"
+    if created > now - timedelta(minutes=min_age_minutes):
+        return "fresh"
+    return "ready"
 
 
 def judge(draft: dict, allowed_hosts: set[str], approved_captions: set[str]) -> tuple[bool, list[str]]:
@@ -113,14 +135,16 @@ def judge(draft: dict, allowed_hosts: set[str], approved_captions: set[str]) -> 
         reasons.append(f"正文过长（{len(caption)} 字），需要人工删减")
 
     parsed = urlparse(source_url) if source_url else None
-    if not parsed or parsed.scheme != "https" or not parsed.hostname:
-        reasons.append("来源链接缺失或不是 HTTPS")
+    if not parsed or parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+        reasons.append("来源链接缺失、不是安全 HTTPS 链接或包含用户凭据")
     else:
         host = parsed.hostname.lower()
         if host in SHORTENER_HOSTS:
             reasons.append("来源是短链跳转，无法核实原文")
-        elif allowed_hosts and not host_matches(host, allowed_hosts):
-            reasons.append(f"来源域名不在官方来源清单内：{host}")
+        elif not allowed_hosts:
+            reasons.append("官方来源白名单不可用，禁止自动通过")
+        elif not host_matches(host, allowed_hosts):
+            reasons.append(f"来源域名不在明确核准的官方来源清单内：{host}")
 
     hit = BANNED_CLAIMS.search(caption) or BANNED_CLAIMS.search(title)
     if hit:
@@ -147,34 +171,41 @@ def main() -> int:
 
     drafts = request(opener, "/api/content/drafts").get("items") or []
     allowed_hosts = official_hosts()
+    if not allowed_hosts:
+        print("警告：没有可用的官方来源白名单；本轮所有待审稿件都将升级人工。", file=sys.stderr)
+
     approved_captions = {
         normalize(str(item.get("caption") or ""))[:120]
         for item in drafts
         if item.get("status") in {"approved", "published"}
     }
 
-    cutoff = datetime.now(timezone.utc) - timedelta(minutes=MIN_AGE_MINUTES)
+    now = datetime.now(timezone.utc)
     approved = 0
     escalated = 0
     skipped = 0
+    total_pending = sum(1 for draft in drafts if draft.get("status") == "pending_review")
 
     for draft in drafts:
         if draft.get("status") != "pending_review":
             continue
         draft_id = str(draft.get("id") or "")
         if not re.fullmatch(r"[a-zA-Z0-9_-]{1,100}", draft_id):
+            skipped += 1
+            print("skipped draft with invalid identifier", file=sys.stderr)
             continue
 
-        created_raw = str(draft.get("created_at") or "")
-        try:
-            created = datetime.fromisoformat(created_raw.replace("Z", "+00:00"))
-        except ValueError:
-            created = None
-        if created and created > cutoff:
-            skipped += 1  # too fresh: the generator may still be writing this batch
+        created_state = creation_time_state(draft.get("created_at"), now)
+        if created_state == "invalid":
+            ok, reasons = False, ["创建时间缺失、格式无效或未包含时区；禁止自动通过"]
+        elif created_state == "future":
+            ok, reasons = False, ["创建时间异常地位于未来；禁止自动通过"]
+        elif created_state == "fresh":
+            skipped += 1  # too fresh: generator may still be writing this batch
             continue
+        else:
+            ok, reasons = judge(draft, allowed_hosts, approved_captions)
 
-        ok, reasons = judge(draft, allowed_hosts, approved_captions)
         if ok and approved >= MAX_APPROVALS:
             ok, reasons = False, [f"本轮自动通过已达上限 {MAX_APPROVALS} 条"]
 
@@ -187,10 +218,7 @@ def main() -> int:
         request(
             opener,
             f"/api/content/drafts/{draft_id}",
-            {
-                "status": "approved" if ok else "pending_review",
-                "review": review,
-            },
+            {"status": "approved" if ok else "pending_review", "review": review},
             method="PATCH",
         )
         if ok:
@@ -203,7 +231,7 @@ def main() -> int:
 
     print(
         f"\nsummary: approved={approved} escalated={escalated} "
-        f"too_fresh={skipped} total_pending={sum(1 for d in drafts if d.get('status') == 'pending_review')}"
+        f"too_fresh={skipped} total_pending={total_pending}"
     )
     summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
     if summary_path:
@@ -212,6 +240,7 @@ def main() -> int:
             handle.write(f"- 自动通过：**{approved}**\n")
             handle.write(f"- 升级人工：**{escalated}**\n")
             handle.write(f"- 生成中跳过：**{skipped}**\n")
+            handle.write(f"- 官方来源白名单：**{'可用' if allowed_hosts else '不可用，全部人工'}**\n")
             handle.write(f"- 规则版本：`{REVIEWER}`\n")
     return 0
 
