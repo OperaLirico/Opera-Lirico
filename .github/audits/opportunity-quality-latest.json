@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-24T08:42:19+01:00",
+  "generated_at": "2026-11-25T08:44:01+01:00",
   "source_file": "data/opportunities.json",
   "total_records": 7,
-  "published_records_in_file": 7,
+  "published_records_in_file": 6,
   "currently_open_public_records": 6,
   "deadlines_within_7_days": [
     {
@@ -72,16 +72,7 @@
       "last_verified_at": "2026-11-23T16:20:00+01:00"
     }
   ],
-  "expired_but_still_published_in_file": [
-    {
-      "id": "carlofelice-choir-tenors-2026",
-      "title": "Audizione per Artisti del Coro – Tenori",
-      "deadline": "2026-11-23T23:59:00+01:00",
-      "application_url_missing": false,
-      "official_pdf_missing": false,
-      "last_verified_at": "2026-11-23T16:20:00+01:00"
-    }
-  ],
+  "expired_but_still_published_in_file": [],
   "published_missing_application_url": [],
   "published_missing_official_pdf_url": [],
   "published_missing_both_application_and_pdf": [],

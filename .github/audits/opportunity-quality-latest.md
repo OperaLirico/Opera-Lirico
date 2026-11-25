@@ -1,12 +1,12 @@
 # Daily opportunity data quality
 
-- Generated: 2026-11-24T08:42:19+01:00 (Europe/Rome)
+- Generated: 2026-11-25T08:44:01+01:00 (Europe/Rome)
 - Records in file: 7
-- Published records in file: 7
+- Published records in file: 6
 - Currently open and publication-eligible: 6
 - Deadline within 7 days: 2
 - Deadline within 30 days: 6
-- Expired but still present as published: 1
+- Expired but still present as published: 0
 - Missing application URL: 0
 - Missing official PDF: 0
 - Missing both application URL and PDF: 0
@@ -34,7 +34,7 @@ This is a read-only quality report. It does not change, archive, or publish oppo
 
 ## Expired records still in file
 
-- Audizione per Artisti del Coro – Tenori — 2026-11-23T23:59:00+01:00
+No issues.
 
 ## Records missing both application URL and PDF
 

@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-11-24T08:42:19+01:00",
+  "generated_at": "2026-11-25T08:44:01+01:00",
   "algorithm": "SHA-256",
   "purpose": "Local byte-integrity manifest for mirrored PDF files",
   "publisher_signature_verification": "not_implemented",
-  "referenced_pdf_count": 7,
-  "valid_pdf_count": 7,
+  "referenced_pdf_count": 6,
+  "valid_pdf_count": 6,
   "invalid_or_missing_pdf_count": 0,
-  "unreferenced_pdf_count": 1,
+  "unreferenced_pdf_count": 2,
   "files": [
     {
       "institution": 4,
@@ -27,17 +27,6 @@
       "integrity_status": "valid_pdf_bytes",
       "size_bytes": 2865012,
       "sha256": "e4d2a7e36155e6fbd7190ad96b03a87de494f9eb80e915d6262a6d3d12719fe7",
-      "publisher_signature_status": "not_verified",
-      "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
-    },
-    {
-      "institution": 52,
-      "source_record_number": 52,
-      "local_path": "data/pdfs/52-061126-121739-bando200oreaa20262027signed.pdf",
-      "source_url": "https://consvi.it/public/061126-121739-bando200oreaa20262027signed.pdf",
-      "integrity_status": "valid_pdf_bytes",
-      "size_bytes": 397353,
-      "sha256": "83a423a72c1a506ee14f6b6fb2e25d451dca6c06dbe4e110ec6b1ef6637911cc",
       "publisher_signature_status": "not_verified",
       "verification_note": "SHA-256 verifies byte consistency only; publisher identity/signature has not been verified."
     },
@@ -92,6 +81,14 @@
       "integrity_status": "valid_pdf_bytes",
       "size_bytes": 1648886,
       "sha256": "291c23409e1a450e8210ce2d0d9deb57581744ba3048921ff0a26f51cd47f98a",
+      "publisher_signature_status": "not_verified",
+      "verification_note": "Unreferenced local PDF retained for review; no source identity inferred from filename."
+    },
+    {
+      "local_path": "data/pdfs/52-061126-121739-bando200oreaa20262027signed.pdf",
+      "integrity_status": "valid_pdf_bytes",
+      "size_bytes": 397353,
+      "sha256": "83a423a72c1a506ee14f6b6fb2e25d451dca6c06dbe4e110ec6b1ef6637911cc",
       "publisher_signature_status": "not_verified",
       "verification_note": "Unreferenced local PDF retained for review; no source identity inferred from filename."
     }
