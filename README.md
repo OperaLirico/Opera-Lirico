@@ -25,6 +25,10 @@ OperaLab. 是一个可添加到手机主屏幕的歌剧与古典声乐专业信�
 - 网页结构变化、PDF 或第三方报名表可能无法自动读取；每条来源都保留官网链接供核对。
 
 
+## 产品方向与发布边界
+
+- [双核心服务与周末 Beta 发布准备](docs/product/two-core-services-weekend-release-2026-11-28.md) — 意大利音乐学院申请服务、歌者职业机会入口、共用可信信息系统、当前能力边界与发布前核验清单。
+
 ## Design research
 
 - [OperaLab design system research specification](docs/design/operalab-design-system-2026-11-24.md) — REA-led reference study, original design direction, information architecture, and phased implementation plan.
