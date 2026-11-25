@@ -1,6 +1,6 @@
 # Daily opportunity data quality
 
-- Generated: 2026-11-25T08:44:01+01:00 (Europe/Rome)
+- Generated: 2026-11-25T14:18:22+01:00 (Europe/Rome)
 - Records in file: 7
 - Published records in file: 6
 - Currently open and publication-eligible: 6
@@ -11,6 +11,9 @@
 - Missing official PDF: 0
 - Missing both application URL and PDF: 0
 - Missing deadline: 0
+- Missing source URL: 0
+- Missing/invalid verification timestamp: 0
+- Invalid HTTPS URLs: 0
 - Pending/non-official: 0
 - Verification older than 7 days: 0
 - Invalid/non-Europe-Rome offsets: 0
@@ -41,6 +44,14 @@ No issues.
 No issues.
 
 ## Invalid dates
+
+No issues.
+
+## Missing/invalid verification timestamp
+
+No issues.
+
+## Invalid HTTPS URLs
 
 No issues.
 
