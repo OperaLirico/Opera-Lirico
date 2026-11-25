@@ -3124,10 +3124,85 @@
       "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
       "collected_at": "2026-11-24T08:42:36+01:00",
       "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-f6b529c54cb9c6de",
+      "title": "Tebaldo e Isolina · Atto II · Scena XII",
+      "aliases": [
+        "Tebaldo e Isolina"
+      ],
+      "composer": "Francesco Morlacchi",
+      "work": "Tebaldo e Isolina",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Ermanno, Isolina, Cavalieri, Guardie.\n„ Erm. Ah! quel Boemondo? — Il mio furor\n„ Is. Perdona\n„ La sua ferocia alle sciagure, al padre\n„ Di chi due volte ti salvò la vita.\n„ Erm. Ei svenò mio fratello.\n„ Is. E il tuo fratello\n„ Gli trucidò la sposa, e in lui rivolse\n„ La taccia vil dell’assassinio infame\n„ Gli fè perir la figlia... Ei pur di fame.\n„ Opra de’ suoi furori\n„ Dovea perir.\n„ Erm. Che orrori!\n„ Is. Generoso è il tuo core: a due famiglie\n„ La pace omai ridoni! con fervore\n„ Erm. Come!\n„ Is. Se tu perdoni...\n„ Erm. severo E sperar puoi?...\n[p. 41 modifica]„ Is. Se felice mi vuoi, se vuoi ch’io viva...\n„ Deh? cedi, o padre: con espressione animata\n„ Erm. agitato E ch’io!...\n„ Is. Tebaldo adoro:\n„ Se da lui mi dividi...\n„ Erm. Lasciami... taci... partendo\n„ Is. con forza La tua figlia uccidi. lo segue",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Tebaldo_e_Isolina/Atto_Secondo",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Gaetano Rossi",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-25T08:44:23+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-41f7844618838fb0",
+      "title": "Tebaldo e Isolina · Atto II · Scena XIII",
+      "aliases": [
+        "Tebaldo e Isolina"
+      ],
+      "composer": "Francesco Morlacchi",
+      "work": "Tebaldo e Isolina",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Volte antichissime nella torre del Castello.\nBoemondo senz’elmo, fra guardie, e poi Tebaldo.\nBoe. Il mio fato è compiuto:\nTutto è perduto... fin la speme. Ancora\nPochi momenti; E poi,\nOmbre dilette, a voi\nM’unirà morte... e qual morte!\nfremente rimane cupamente concentrato\nTeb. si ferma L’estremo\nDover si compia: - Io tremo s’avanza\nPadre...tristissimo\nBoe. Indegno! — Tu qui? — che vuoi? — severo\nTeb. Perdono.\nBoe. Osi sperarlo?\nTeb. E in questi ultimi istanti con passione\nIl tuo cuore!deciso\nBoe. L’amor mio ridonarti... a un patto — e giura\nAl mio volere estremo,\nGiura, che obbedirai.\nTeb. Lo giuro\nBoe. Dammi il tuo pugnal.\n[p. 42 modifica]Teb. con raccapriccio Che fai!\nad un severo cenno di Boemondo gli porge tremando il suo pugnale\nBoe. Mira d’avverso fato con fermezza\nCome al furor m’involo;\nTeb. Fra l’ombre, o padre amato, deciso\nNon scenderai tu solo:\nBoe. Morte da vil m’attende:\nTeb. Non resta a me più speme... cava la spada\nBoe. Figlio, si mora insieme\nS’abbracciano: Boemondo alza il pugnale al suo petto: Tebaldo rivolge la spada al suo cuore:\nIn questo...",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Tebaldo_e_Isolina/Atto_Secondo",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Gaetano Rossi",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-25T08:44:23+01:00",
+      "collection_source": "it.wikisource.org"
+    },
+    {
+      "candidate_id": "wikisource-dcbe80cadaa6d81b",
+      "title": "Tebaldo e Isolina · Atto II · Scena ULTIMA",
+      "aliases": [
+        "Tebaldo e Isolina"
+      ],
+      "composer": "Francesco Morlacchi",
+      "work": "Tebaldo e Isolina",
+      "voice": "待核验",
+      "kind": "歌剧唱段候选（整场文本）",
+      "language": "it",
+      "text": "Entra anelante Isolina accorrendo fra Tebaldo; e Boemondo, e loro trattenendo il colpo, mentre Ermanno s’affretta a Boemondo.\nCavalieri, Guardie, Scudieri con due bandiere, un Cavaliere colla spada di Boemondo, Paggi\nIs. a Teb. Ferma!\nErm. a Boe. T’arresta...\nTeb. stupefatto Oh Dio!\nIs. Vivi per me... lieta tenerissima\nErm. a Boe. 7 Sei libero,\nTeb. sorpreso E sarà ver?\nBoe. Che intendo?\nErm. A’ prieghi d’Isolina\nAlla virtù m’arrendo:\nLa vita che Tebaldo\nA me serbò, ti rendo:\n[p. 43 modifica]Cessino gli odj; omai:\nPace trionfi, e amor.\nBoe. E tu sì grande!... e puoi? con ammirazione\nErm. con effusione Tutto obliare Amici,\nFelici in loro... gli stende la mano\ne accenna a Boemondo Isolina e Tebaldo\nBoe. E voi!... commosso a Teb. e Isol.\nTeb. Padre!...\nIs. Signore... gli stendano le braccia\nErm. Abbracciami.\nBoe. non resiste si getta fra le loro braccia\nAh sì! Ci unisca omai\nLa pace, e l’amistà. Tutti ripetono\nI Cavalieri esultano, e gli abbracciano. Gli scudieri alzano e sventolano le due bandiere di Tromberga, e d’Altemburgo e le uniscono sopra i personaggi.\na 4 Come più dolce al core,\nDopo crudel tormento,\nE’ il tenero momento,\nChe giubilar ci fà!\nAlternin pace, e amore\nL’ore di vnostra età\nCoro Alternin pace, e amore\nL’ore di vostra età gruppo analogo.\nFINE DEL MELO-DRAMMA",
+      "summary": "自动收集的歌剧剧本场景文本；并非已确认的独立咏叹调，需人工定位唱段。",
+      "textSource": "https://it.wikisource.org/wiki/Tebaldo_e_Isolina/Atto_Secondo",
+      "textSourceName": "意大利 Wikisource · 歌剧剧本",
+      "scoreUrl": null,
+      "downloadUrl": null,
+      "librettist": "Gaetano Rossi",
+      "section": "待审核候选",
+      "review_status": "pending",
+      "publication_status": "candidate",
+      "candidate_reason": "来源按整幕/场景切分，尚未确认其中是否包含独立咏叹调及其边界。",
+      "collected_at": "2026-11-25T08:44:23+01:00",
+      "collection_source": "it.wikisource.org"
     }
   ],
-  "generated_at": "2026-11-24T08:42:36+01:00",
+  "generated_at": "2026-11-25T08:44:23+01:00",
   "source": "Italian Wikisource opera libretti; candidate-only, human review required",
-  "aria_opera": 8,
-  "aria_scene": 24
+  "aria_opera": 9,
+  "aria_scene": 0
 }
