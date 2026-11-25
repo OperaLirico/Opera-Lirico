@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch public Italian vocal-opportunity pages with Scrapling."""
+"""Fetch public Italian vocal-opportunity pages through ERA Research Engine."""
 
 from __future__ import annotations
 
@@ -12,7 +12,7 @@ from urllib.parse import urljoin, urlsplit
 from zoneinfo import ZoneInfo
 
 from lxml import html as lxml_html
-from scrapling.fetchers import Fetcher
+from era_research.compat import Fetcher
 
 
 SOURCES = [
@@ -277,7 +277,7 @@ def main() -> None:
     with report_path.open("w", encoding="utf-8") as report:
         report.write("# Scrapling 首轮抓取结果\n\n")
         report.write(f"抓取时间：{checked_at}（Europe/Rome）\n\n")
-        report.write("本文件记录 Scrapling 直接访问公开来源页后的结果。页面可访问不代表公告仍有效；报名状态需依据公告日期和截止时间人工判读。\n\n")
+        report.write("本文件记录 ERA Research Engine 访问公开来源页后的结果。页面可访问不代表公告仍有效；报名状态需依据公告日期和截止时间人工判读。\n\n")
         for item in results:
             report.write(f"## {item['number']}. {item['source']}\n\n")
             report.write(f"- 页面：[{item['url']}]({item['url']})\n")
