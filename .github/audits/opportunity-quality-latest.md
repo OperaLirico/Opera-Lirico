@@ -1,11 +1,11 @@
 # Daily opportunity data quality
 
-- Generated: 2026-11-25T14:18:22+01:00 (Europe/Rome)
+- Generated: 2026-11-26T08:43:05+01:00 (Europe/Rome)
 - Records in file: 7
-- Published records in file: 6
-- Currently open and publication-eligible: 6
-- Deadline within 7 days: 2
-- Deadline within 30 days: 6
+- Published records in file: 5
+- Currently open and publication-eligible: 5
+- Deadline within 7 days: 1
+- Deadline within 30 days: 5
 - Expired but still present as published: 0
 - Missing application URL: 0
 - Missing official PDF: 0
@@ -23,12 +23,10 @@ This is a read-only quality report. It does not change, archive, or publish oppo
 
 ## Deadlines within 7 days
 
-- 78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027 — 2026-11-25T18:00:00+01:00
 - Concorso Internazionale di Canto lirico Francesco Morlacchi 2026 — 2026-11-30T23:59:00+01:00
 
 ## Deadlines within 30 days
 
-- 78° Concorso Internazionale AsLiCo per Giovani Cantanti Lirici 2027 — 2026-11-25T18:00:00+01:00
 - Concorso Internazionale di Canto lirico Francesco Morlacchi 2026 — 2026-11-30T23:59:00+01:00
 - Accademia di alto perfezionamento per cantanti lirici e pianisti accompagnatori 2027 — 2026-12-10T23:59:00+01:00
 - Concorso per Artisti del Coro – Bassi — 2026-12-07T23:59:00+01:00
