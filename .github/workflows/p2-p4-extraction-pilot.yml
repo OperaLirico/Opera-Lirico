@@ -39,14 +39,14 @@ jobs:
       - name: Capture and compare five official source pages
         run: python audit_extraction_pilot.py
       - name: Upload raw HTML snapshots
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: p2-p4-raw-html-samples
           path: artifacts/p2-p4-html-samples/
           if-no-files-found: warn
           retention-days: 30
       - name: Upload pilot report
-        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: p2-p4-extraction-report
           path: |
