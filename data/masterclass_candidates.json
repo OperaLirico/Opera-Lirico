@@ -1,9 +1,13 @@
 {
-  "updated_at": "2026-11-26T09:03:49+01:00",
+  "updated_at": "2026-11-27T09:01:55+01:00",
   "source_count": 13,
   "candidate_count": 6,
   "new_or_refreshed_this_run": 5,
   "fetch_errors": [
+    {
+      "source": "Teatro Carlo Felice Academy",
+      "error": "Timeout"
+    },
     {
       "source": "VeniceOperaArts",
       "status": "http_error",
@@ -19,7 +23,7 @@
       "publisher_status": "official",
       "source_url": "https://www.accademialiricaosimo.com/en/master-class/",
       "discovered_from": "https://www.accademialiricaosimo.com/en/master-class/",
-      "checked_at": "2026-11-26T09:03:49+01:00",
+      "checked_at": "2026-11-27T09:01:55+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
@@ -49,7 +53,7 @@
       ],
       "evidence_excerpt": "Master Class – Accademia Lirica Osimo Accademia Lirica Osimo Accademia Lirica Osimo Home About us History Association Organization Teacher Administrative Transparency Training Agency News Press Review Courses Singing Course for Opera Advanced Course for Opera Coaches Master Class Regulations Enrollment Application Activities Master & Meeting Concerts Operas Special Project Singers Student Singing student A.A. 2026-2027 Professional Commitments of Singers Students and Alumni Scholarships Gallery Anno 2026 Anno 2025 Anno 2024 Anno 2023 Anno 2022 Anno 2021 Anno 2020 Anno 2019 Anno 2018 Anno 2017 Anno 2016 Anno 2015 Anno 2014 Anno 2013 Anno 2012 Anno 2011 Supporters Our Friends Private Art Bonus",
       "verification_note": "Discovery signal only. Confirm the organizer, edition, dates, deadline, eligibility, fees and application link on the original organizer page.",
-      "first_seen_at": "2026-11-26T09:03:49+01:00",
+      "first_seen_at": "2026-11-27T09:01:55+01:00",
       "review_notes": "",
       "reviewed_at": ""
     },
@@ -61,7 +65,7 @@
       "publisher_status": "official",
       "source_url": "https://accademiadelloperaitaliana.com/",
       "discovered_from": "https://accademiadelloperaitaliana.com/",
-      "checked_at": "2026-11-26T09:03:49+01:00",
+      "checked_at": "2026-11-27T09:01:55+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
@@ -91,7 +95,7 @@
       "publisher_status": "official",
       "source_url": "https://accademiadelloperaitaliana.com/masterclasses",
       "discovered_from": "https://accademiadelloperaitaliana.com/",
-      "checked_at": "2026-11-26T09:03:49+01:00",
+      "checked_at": "2026-11-27T09:01:55+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
@@ -133,7 +137,7 @@
       "publisher_status": "official",
       "source_url": "https://biimaperformance.com/voice-intensive-masterclass/",
       "discovered_from": "https://biimaperformance.com/voice-intensive-masterclass/",
-      "checked_at": "2026-11-26T09:03:49+01:00",
+      "checked_at": "2026-11-27T09:01:55+01:00",
       "discovery_status": "candidate_found",
       "review_status": "pending_manual_review",
       "publication_status": "not_published",
@@ -199,7 +203,7 @@
       "publisher_status": "official",
       "source_url": "https://www.cantoalato.it/masterclass-di-canto-con-anna-pirozzi-2026/",
       "discovered_from": "https://www.cantoalato.it/masterclass/",
-      "checked_at": "2026-11-26T09:03:49+01:00",
+      "checked_at": "2026-11-27T09:01:55+01:00",
       "discovery_status": "candidate_found",
       "review_status": "rejected",
       "publication_status": "not_published",
