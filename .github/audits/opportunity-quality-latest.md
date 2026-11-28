@@ -1,10 +1,10 @@
 # Daily opportunity data quality
 
-- Generated: 2026-11-27T08:41:46+01:00 (Europe/Rome)
+- Generated: 2026-11-28T08:34:56+01:00 (Europe/Rome)
 - Records in file: 7
 - Published records in file: 5
 - Currently open and publication-eligible: 5
-- Deadline within 7 days: 1
+- Deadline within 7 days: 2
 - Deadline within 30 days: 5
 - Expired but still present as published: 0
 - Missing application URL: 0
@@ -24,6 +24,7 @@ This is a read-only quality report. It does not change, archive, or publish oppo
 ## Deadlines within 7 days
 
 - Concorso Internazionale di Canto lirico Francesco Morlacchi 2026 — 2026-11-30T23:59:00+01:00
+- Selezione pubblica per 2 Contralti – Teatro Massimo 2026 — 2026-12-04T12:00:00+01:00
 
 ## Deadlines within 30 days
 
